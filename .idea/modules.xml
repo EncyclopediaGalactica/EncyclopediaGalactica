@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businesslogic/businesslogic.iml" filepath="$PROJECT_DIR$/businesslogic/businesslogic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businesslogic.exceptions/businesslogic.exceptions.iml" filepath="$PROJECT_DIR$/businesslogic.exceptions/businesslogic.exceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businesslogic.int.tests/businesslogic.int.tests.iml" filepath="$PROJECT_DIR$/businesslogic.int.tests/businesslogic.int.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businesslogic.interfaces/businesslogic.interfaces.iml" filepath="$PROJECT_DIR$/businesslogic.interfaces/businesslogic.interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/businesslogic.unit.tests/businesslogic.unit.tests.iml" filepath="$PROJECT_DIR$/businesslogic.unit.tests/businesslogic.unit.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cache-repositories/cache-repositories.iml" filepath="$PROJECT_DIR$/cache-repositories/cache-repositories.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cache-repositories.int.tests/cache-repositories.int.tests.iml" filepath="$PROJECT_DIR$/cache-repositories.int.tests/cache-repositories.int.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cache-repositories.unit.tests/cache-repositories.unit.tests.iml" filepath="$PROJECT_DIR$/cache-repositories.unit.tests/cache-repositories.unit.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/repositories/dml-repositories.iml" filepath="$PROJECT_DIR$/repositories/dml-repositories.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dml-repositories.int.tests/dml-repositories.int.tests.iml" filepath="$PROJECT_DIR$/dml-repositories.int.tests/dml-repositories.int.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dml-repositories.unit.tests/dml-repositories.unit.tests.iml" filepath="$PROJECT_DIR$/dml-repositories.unit.tests/dml-repositories.unit.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model/model.iml" filepath="$PROJECT_DIR$/model/model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/model.tests/model.unit.tests.iml" filepath="$PROJECT_DIR$/model.tests/model.unit.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/result-bucket-service/result-bucket-service.iml" filepath="$PROJECT_DIR$/result-bucket-service/result-bucket-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/result-bucket-service.interfaces/result-bucket-service-interfaces.iml" filepath="$PROJECT_DIR$/result-bucket-service.interfaces/result-bucket-service-interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/result-bucket-service.int.tests/result-bucket-service.int.tests.iml" filepath="$PROJECT_DIR$/result-bucket-service.int.tests/result-bucket-service.int.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/result-bucket-service.unit.tests/result-bucket-service.unit.tests.iml" filepath="$PROJECT_DIR$/result-bucket-service.unit.tests/result-bucket-service.unit.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sourceformats.worker.iml" filepath="$PROJECT_DIR$/sourceformats.worker.iml" />
+    </modules>
+  </component>
+</project>
