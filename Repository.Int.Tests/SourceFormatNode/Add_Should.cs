@@ -15,7 +15,7 @@ public class Add_Should : BaseTest
         node.Name = "name";
 
         // Act
-        SourceFormatNode res = await _sut.AddAsync(node);
+        SourceFormatNode res = await Sut.AddAsync(node).ConfigureAwait(false);
 
         // Assert
         res.Name.Should().Be(node.Name);

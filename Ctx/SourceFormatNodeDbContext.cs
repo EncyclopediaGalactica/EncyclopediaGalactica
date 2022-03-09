@@ -1,11 +1,12 @@
 namespace Ctx;
 
 using EncyclopediaGalactica.SourceFormats.Worker.Entities;
+using Guards;
 using Microsoft.EntityFrameworkCore;
 
 public class SourceFormatNodeDbContext : DbContext
 {
-    public DbSet<SourceFormatNode> SourceFormatNodes { get; set; }
+    public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
 
     public SourceFormatNodeDbContext(DbContextOptions options) : base(options)
     {
@@ -17,6 +18,9 @@ public class SourceFormatNodeDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        Guard.NotNull(modelBuilder);
+
+#pragma warning disable CA1062
         modelBuilder.Entity<SourceFormatNode>().ToTable("source_format_node");
         modelBuilder.Entity<SourceFormatNode>().HasKey(k => k.Id);
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.Id).ValueGeneratedOnAdd();
@@ -30,5 +34,7 @@ public class SourceFormatNodeDbContext : DbContext
             .HasMany(p => p.ChildrenSourceFormatNodes)
             .WithOne(p => p.ParentSourceFormatNode)
             .HasForeignKey(k => k.ParentNodeId);
+
+#pragma warning restore CA1062
     }
 }

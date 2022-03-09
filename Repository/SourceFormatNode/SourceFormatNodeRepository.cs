@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.SourceFormatNode
 using Ctx;
 using Entities;
 using FluentValidation;
+using Guards;
 using Interfaces;
 
 public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
@@ -14,8 +15,8 @@ public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
         SourceFormatNodeDbContext ctx,
         IValidator<SourceFormatNode> sourceFormatValidator)
     {
-        Guards.Against.It.Is.Null(sourceFormatValidator);
-        Guards.Against.It.Is.Null(ctx);
+        Guard.NotNull(sourceFormatValidator);
+        Guard.NotNull(ctx);
         _ctx = ctx;
         _sourceFormatValidator = sourceFormatValidator;
     }

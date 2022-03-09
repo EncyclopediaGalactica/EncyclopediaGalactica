@@ -10,7 +10,9 @@ using ValidatorService;
 
 public class BaseTest
 {
-    protected readonly ISourceFormatsNodeRepository _sut;
+#pragma warning disable CA1051
+    protected readonly ISourceFormatsNodeRepository Sut;
+#pragma warning restore CA1051
 
     public BaseTest()
     {
@@ -23,6 +25,6 @@ public class BaseTest
             .Options;
         SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(sourceFormatNodeDbContextOptions);
         ctx.Database.EnsureCreated();
-        _sut = new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator());
+        Sut = new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator());
     }
 }

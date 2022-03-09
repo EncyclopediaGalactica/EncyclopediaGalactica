@@ -4,15 +4,17 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\ValidatorService.Exceptions\ValidatorService.Exceptions.csproj"/>
-        <ProjectReference Include="..\ValidatorService.Interfaces\ValidatorService.Interfaces.csproj"/>
+        <PackageReference Include="FluentValidation" Version="10.3.6"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="10.3.6"/>
+        <ProjectReference Include="..\Entities\Entities.csproj"/>
     </ItemGroup>
 
 </Project>

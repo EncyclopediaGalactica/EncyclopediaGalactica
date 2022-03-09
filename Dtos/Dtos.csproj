@@ -6,6 +6,9 @@
         <Nullable>enable</Nullable>
         <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Dtos</AssemblyName>
         <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Dtos</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
 
 </Project>

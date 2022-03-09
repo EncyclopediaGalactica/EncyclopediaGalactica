@@ -9,6 +9,9 @@
         <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.DatabaseService.Unit.Tests</AssemblyName>
 
         <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.DatabaseService.Unit.Tests</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
 
     <ItemGroup>

@@ -13,7 +13,7 @@ public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>
         {
             RuleFor(p => p.Id).Equal(0);
             RuleFor(p => p.Name).NotEmpty().NotNull().NotEqual(" ");
-            RuleFor(p => p.Name.Length).GreaterThanOrEqualTo(3);
+            RuleFor(p => p.Name!.Length).GreaterThanOrEqualTo(3);
         });
     }
 }

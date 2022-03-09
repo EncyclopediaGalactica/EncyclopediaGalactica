@@ -9,6 +9,9 @@
         <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Dtos.Unit.Tests</AssemblyName>
 
         <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Dtos.Unit.Tests</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
 
     <ItemGroup>

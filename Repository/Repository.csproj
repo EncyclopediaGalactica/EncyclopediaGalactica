@@ -6,6 +6,9 @@
         <Nullable>enable</Nullable>
         <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Repository</AssemblyName>
         <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Repository</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
     </PropertyGroup>
 
     <ItemGroup>
