@@ -1,11 +1,13 @@
 namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests.SourceFormatNode;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
 using FluentAssertions;
 using Xunit;
 
-public class Add_Should : BaseTest
+[ExcludeFromCodeCoverage]
+public class AddShould : BaseTest
 {
     [Fact]
     public async Task Add()

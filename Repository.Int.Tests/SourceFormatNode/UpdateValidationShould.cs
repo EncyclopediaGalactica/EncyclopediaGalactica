@@ -1,23 +1,25 @@
 namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests.SourceFormatNode;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
 using Exceptions;
 using FluentAssertions;
 using Xunit;
 
-public class Add_Validation_Should : BaseTest
+[ExcludeFromCodeCoverage]
+public class UpdateValidationShould : BaseTest
 {
     [Theory]
-    [InlineData(1, "asd")]
-    [InlineData(0, "as")]
-    [InlineData(0, "")]
-    [InlineData(0, null)]
-    [InlineData(0, " ")]
-    [InlineData(0, "  ")]
-    [InlineData(0, "   ")]
-    public void Throw_WhenInputIsInvalid(long id, String name)
+    [InlineData(0, "asd")]
+    [InlineData(1, "as")]
+    [InlineData(1, "")]
+    [InlineData(1, null)]
+    [InlineData(1, " ")]
+    [InlineData(1, "  ")]
+    [InlineData(1, "   ")]
+    public void Throw_WhenInputIsInvalid(long id, string name)
     {
         // Arrange
         SourceFormatNode node = new SourceFormatNode();
@@ -25,7 +27,7 @@ public class Add_Validation_Should : BaseTest
         node.Name = name;
 
         // Act
-        Func<Task> action = async () => { await Sut.AddAsync(node).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.UpdateAsync(node).ConfigureAwait(false); };
 
         // Assert
         action.Should().ThrowAsync<SourceFormatNodeRepositoryException>();

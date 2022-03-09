@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests;
 
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using Ctx;
 using Interfaces;
 using Microsoft.Data.Sqlite;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Repository.SourceFormatNode;
 using ValidatorService;
 
+[ExcludeFromCodeCoverage]
 public class BaseTest
 {
 #pragma warning disable CA1051

@@ -8,17 +8,17 @@ using Interfaces;
 
 public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
 {
-    private readonly IValidator<SourceFormatNode> _sourceFormatValidator;
+    private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
     private readonly SourceFormatNodeDbContext _ctx;
 
     public SourceFormatNodeRepository(
         SourceFormatNodeDbContext ctx,
-        IValidator<SourceFormatNode> sourceFormatValidator)
+        IValidator<SourceFormatNode> sourceFormatNodeValidator)
     {
-        Guard.NotNull(sourceFormatValidator);
+        Guard.NotNull(sourceFormatNodeValidator);
         Guard.NotNull(ctx);
         _ctx = ctx;
-        _sourceFormatValidator = sourceFormatValidator;
+        _sourceFormatNodeValidator = sourceFormatNodeValidator;
     }
 
     public async Task<SourceFormatNode> AddChildNode(SourceFormatNode child, SourceFormatNode parent)
@@ -26,22 +26,7 @@ public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
         throw new NotImplementedException();
     }
 
-    public SourceFormatNode Update(SourceFormatNode node)
-    {
-        throw new NotImplementedException();
-    }
-
     public void Delete(SourceFormatNode node)
-    {
-        throw new NotImplementedException();
-    }
-
-    public ICollection<SourceFormatNode> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public SourceFormatNode GetById(long id)
     {
         throw new NotImplementedException();
     }

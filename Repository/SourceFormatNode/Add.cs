@@ -13,7 +13,7 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            await ValidateInputNodeForAdding(node, cancellationToken).ConfigureAwait(false);
+            await ValidateInputNodeForAddingAsync(node, cancellationToken).ConfigureAwait(false);
             _ctx.SourceFormatNodes.Add(node);
             await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             return node;
@@ -26,9 +26,9 @@ public partial class SourceFormatNodeRepository
         }
     }
 
-    private async Task ValidateInputNodeForAdding(SourceFormatNode node, CancellationToken cancellationToken)
+    private async Task ValidateInputNodeForAddingAsync(SourceFormatNode node, CancellationToken cancellationToken)
     {
-        await _sourceFormatValidator.ValidateAsync(node, o =>
+        await _sourceFormatNodeValidator.ValidateAsync(node, o =>
             {
                 o.IncludeRuleSets(SourceFormatNodeValidator.Add);
                 o.ThrowOnFailures();
