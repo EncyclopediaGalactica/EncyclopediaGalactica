@@ -8,15 +8,15 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-public class GetByIdValidationShould : BaseTest
+public class GetByIdWithChildrenValidationShould : BaseTest
 {
     [Fact]
-    public async Task Throw_WhenIdIsZero()
+    public async Task ThrowWhenInputIsInvalid()
     {
         // Act
-        Func<Task> action = async () => { await Sut.GetByIdAsync(0).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.GetByIdWithChildrenAsync(0).ConfigureAwait(false); };
 
         // Assert
-        await action.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
+        await action.Should().ThrowAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
     }
 }

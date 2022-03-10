@@ -19,7 +19,7 @@ public class SourceFormatNodeShould
     {
         Func<Task> action = async () => { new SourceFormatNodeRepository(null, null); };
 
-        await action.Should().ThrowExactlyAsync<GuardAgainstException>();
+        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
     }
 
     [Fact]
@@ -27,7 +27,7 @@ public class SourceFormatNodeShould
     {
         Func<Task> action = async () => { new SourceFormatNodeRepository(null, new SourceFormatNodeValidator()); };
 
-        await action.Should().ThrowExactlyAsync<GuardAgainstException>();
+        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
     }
 
     [Fact]
@@ -38,6 +38,6 @@ public class SourceFormatNodeShould
         SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
         Func<Task> action = async () => { new SourceFormatNodeRepository(ctx, null); };
 
-        await action.Should().ThrowExactlyAsync<GuardAgainstException>();
+        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
     }
 }

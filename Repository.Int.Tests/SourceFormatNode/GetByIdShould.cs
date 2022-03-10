@@ -22,7 +22,7 @@ public class GetByIdShould : BaseTest
         SourceFormatNode node2Result = await Sut.AddAsync(node2).ConfigureAwait(false);
 
         // Act
-        SourceFormatNode result = await Sut.GetById(node2Result.Id).ConfigureAwait(false);
+        SourceFormatNode result = await Sut.GetByIdAsync(node2Result.Id).ConfigureAwait(false);
 
         // Assert
         result.Id.Should().Be(node2.Id);

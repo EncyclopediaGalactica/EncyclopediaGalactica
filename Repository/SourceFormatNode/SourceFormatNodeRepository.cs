@@ -21,22 +21,7 @@ public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
         _sourceFormatNodeValidator = sourceFormatNodeValidator;
     }
 
-    public async Task<SourceFormatNode> AddChildNode(SourceFormatNode child, SourceFormatNode parent)
-    {
-        throw new NotImplementedException();
-    }
-
     public void Delete(SourceFormatNode node)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<SourceFormatNode> GetNodeWithChildren(SourceFormatNode node)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<SourceFormatNode> GetNodeWithTree(SourceFormatNode node)
     {
         throw new NotImplementedException();
     }

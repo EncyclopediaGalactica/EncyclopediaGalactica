@@ -30,7 +30,7 @@ public class GetAll : BaseTest
         }
 
         // Act
-        ICollection<SourceFormatNode> result = await Sut.GetAll().ConfigureAwait(false);
+        ICollection<SourceFormatNode> result = await Sut.GetAllAsync().ConfigureAwait(false);
 
         // Assert
         result.Count.Should().Be(counter);

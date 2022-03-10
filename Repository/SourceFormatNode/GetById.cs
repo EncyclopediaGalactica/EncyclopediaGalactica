@@ -5,7 +5,7 @@ using Exceptions;
 
 public partial class SourceFormatNodeRepository
 {
-    public async Task<SourceFormatNode> GetById(long id)
+    public async Task<SourceFormatNode> GetByIdAsync(long id)
     {
         try
         {
@@ -22,8 +22,9 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg = $"Error happened while executing {nameof(SourceFormatNodeRepository)}.{nameof(GetById)}. " +
-                         $"For further information see the inner exception.";
+            string msg =
+                $"Error happened while executing {nameof(SourceFormatNodeRepository)}.{nameof(GetByIdAsync)}. " +
+                $"For further information see the inner exception.";
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }
