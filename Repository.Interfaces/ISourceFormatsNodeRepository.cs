@@ -9,6 +9,7 @@ public interface ISourceFormatsNodeRepository
     Task<SourceFormatNode> AddChildNodeAsync(
         long childId,
         long parentId,
+        long rootNodeId,
         CancellationToken cancellationToken = default);
 
     Task<SourceFormatNode> UpdateAsync(SourceFormatNode node, CancellationToken cancellationToken = default);

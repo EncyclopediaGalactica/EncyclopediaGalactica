@@ -3,7 +3,6 @@ namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests.Source
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Entities;
 using Exceptions;
 using FluentAssertions;
 using Xunit;
@@ -21,7 +20,7 @@ public class AddChildNodeValidationShould : BaseTest
         // act
         Func<Task> action = async () =>
         {
-            SourceFormatNode res = await Sut.AddChildNodeAsync(childId, parentId).ConfigureAwait(false);
+            await Sut.AddChildNodeAsync(childId, parentId, parentId).ConfigureAwait(false);
         };
 
         // Assert

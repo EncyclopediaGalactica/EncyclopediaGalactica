@@ -11,4 +11,13 @@ public class SourceFormatNode
     public long? RootNodeId { get; set; }
     public Collection<SourceFormatNode> ChildrenSourceFormatNodes { get; } = new Collection<SourceFormatNode>();
     public SourceFormatNode? ParentSourceFormatNode { get; set; }
+
+    public SourceFormatNode()
+    {
+    }
+
+    public SourceFormatNode(string? name)
+    {
+        Name = name;
+    }
 }
