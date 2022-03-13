@@ -17,7 +17,6 @@ public partial class SourceFormatNodeRepository
         {
             CheckInputForAddChildNode(childId, parentId, rootNodeId);
 
-            await _ctx.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
             SourceFormatNode? child = await _ctx.SourceFormatNodes.FindAsync(childId).ConfigureAwait(false);
             SourceFormatNode parent = await _ctx.SourceFormatNodes
                 .Include(i => i.ChildrenSourceFormatNodes)
@@ -34,13 +33,10 @@ public partial class SourceFormatNodeRepository
             child.ParentNodeId = parent.Id;
             _ctx.Entry(child).State = EntityState.Modified;
             await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-
-            await _ctx.Database.CommitTransactionAsync(cancellationToken).ConfigureAwait(false);
             return child;
         }
         catch (Exception e)
         {
-            await _ctx.Database.RollbackTransactionAsync(cancellationToken).ConfigureAwait(false);
             string msg = $"Error happened while executing {nameof(SourceFormatNodeRepository)}." +
                          $"{nameof(AddChildNodeAsync)}. For further information see inner exception.";
             throw new SourceFormatNodeRepositoryException(msg, e);
@@ -70,7 +66,7 @@ public partial class SourceFormatNodeRepository
             throw new SourceFormatNodeRepositoryException(
                 $"Root {nameof(SourceFormatNode)} with id: {rootNodeId} does not exist.");
 
-        if (parent.ChildrenSourceFormatNodes.ToList().FindIndex(i => i.Id == childId) == -1)
+        if (parent.ChildrenSourceFormatNodes.ToList().FindIndex(i => i.Id == childId) != -1)
             throw new SourceFormatNodeRepositoryException(
                 $"Entity with id {child} is already added to entity with id {parentId}");
     }

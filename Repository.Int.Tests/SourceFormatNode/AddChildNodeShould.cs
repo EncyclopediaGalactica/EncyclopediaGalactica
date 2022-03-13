@@ -1,17 +1,18 @@
 namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests.SourceFormatNode;
 
 using System;
-using System.Linq;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
 using Exceptions;
 using FluentAssertions;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
 public class AddChildNodeShould : BaseTest
 {
     [Fact]
-    public async Task AddChildNode()
+    public async Task AddChildNode_AndReturnChildWithoutChildren()
     {
         // Arrange
         SourceFormatNode parentNode = await Sut.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
@@ -26,9 +27,7 @@ public class AddChildNodeShould : BaseTest
 
         // Assert
         res.ChildrenSourceFormatNodes.Should().NotBeNull();
-        res.ChildrenSourceFormatNodes.Should().NotBeEmpty();
-        res.ChildrenSourceFormatNodes.Count.Should().Be(1);
-        res.ChildrenSourceFormatNodes.Where(w => w.Id == childNode.Id).Should().NotBeNull();
+        res.ChildrenSourceFormatNodes.Should().BeEmpty();
     }
 
     [Fact]
@@ -53,10 +52,7 @@ public class AddChildNodeShould : BaseTest
 
         // Assert
         res2.ChildrenSourceFormatNodes.Should().NotBeNull();
-        res2.ChildrenSourceFormatNodes.Should().NotBeEmpty();
-        res2.ChildrenSourceFormatNodes.Count.Should().Be(2);
-        res2.ChildrenSourceFormatNodes.Where(w => w.Id == childNode1.Id).Should().NotBeNull();
-        res2.ChildrenSourceFormatNodes.Where(w => w.Id == childNode2.Id).Should().NotBeNull();
+        res2.ChildrenSourceFormatNodes.Should().BeEmpty();
     }
 
     [Fact]

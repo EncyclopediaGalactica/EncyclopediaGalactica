@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.SourceFormatNode
 using Entities;
 using Exceptions;
 using FluentValidation;
+using Guards;
 using ValidatorService;
 
 public partial class SourceFormatNodeRepository
@@ -28,6 +29,7 @@ public partial class SourceFormatNodeRepository
 
     private async Task ValidateInputNodeForAddingAsync(SourceFormatNode node, CancellationToken cancellationToken)
     {
+        Guard.NotNull(node);
         await _sourceFormatNodeValidator.ValidateAsync(node, o =>
             {
                 o.IncludeRuleSets(SourceFormatNodeValidator.Add);

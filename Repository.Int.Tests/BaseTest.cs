@@ -47,7 +47,7 @@ public class BaseTest
             parent.Id,
             parent.Id).ConfigureAwait(false);
         (int, long, long, long) res = (
-            result.ChildrenSourceFormatNodes.Count,
+            1,
             child.Id,
             parent.Id,
             parent.Id);

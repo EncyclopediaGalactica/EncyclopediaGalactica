@@ -29,7 +29,7 @@ public class GetByIdWithChildrenShould : BaseTest
     public async Task ReturnNullWhenNoResult()
     {
         // Arrange
-        SourceFormatNode rep = await Sut.AddAsync(new SourceFormatNode()).ConfigureAwait(false);
+        SourceFormatNode rep = await Sut.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
 
         // Act
         SourceFormatNode result = await Sut.GetByIdWithChildrenAsync(rep.Id).ConfigureAwait(false);
