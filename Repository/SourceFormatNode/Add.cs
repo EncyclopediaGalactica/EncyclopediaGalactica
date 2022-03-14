@@ -8,6 +8,7 @@ using ValidatorService;
 
 public partial class SourceFormatNodeRepository
 {
+    /// <inheritdoc />
     public async Task<SourceFormatNode> AddAsync(
         SourceFormatNode node,
         CancellationToken cancellationToken = default)

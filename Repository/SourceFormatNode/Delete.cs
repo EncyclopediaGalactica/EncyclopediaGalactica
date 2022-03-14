@@ -6,6 +6,7 @@ using Guards;
 
 public partial class SourceFormatNodeRepository
 {
+    /// <inheritdoc />
     public async Task DeleteAsync(long id, CancellationToken cancellationToken = default)
     {
         try

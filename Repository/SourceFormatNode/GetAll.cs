@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
 {
+    /// <inheritdoc />
     public async Task<List<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try

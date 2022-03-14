@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
 {
+    /// <inheritdoc />
     public async Task<SourceFormatNode> AddChildNodeAsync(
         long childId,
         long parentId,

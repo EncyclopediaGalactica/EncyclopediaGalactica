@@ -5,6 +5,7 @@ using Exceptions;
 
 public partial class SourceFormatNodeRepository
 {
+    /// <inheritdoc />
     public async Task<SourceFormatNode> GetByIdAsync(long id)
     {
         try
