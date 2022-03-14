@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
 {
-    public async Task<ICollection<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<List<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try
         {
@@ -14,9 +14,7 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg =
-                $"Error happened while executing {nameof(SourceFormatNodeRepository)}.{nameof(GetAllAsync)}. " +
-                $"For further information see inner exception.";
+            string msg = prepErrorMessage(nameof(GetAllAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

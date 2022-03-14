@@ -14,7 +14,8 @@ public class GetByIdWithChildrenShould : BaseTest
     {
         // Arrange
         (int childAmount, long childId, long parentId, long rootNodeId) prep =
-            await PrepareSourceFormatNodeRepoWith_OneParentAnd_OneChild();
+            await PrepareSourceFormatNodeRepoWith_OneParentAnd_OneChild()
+                .ConfigureAwait(false);
 
         // Act
         SourceFormatNode res = await Sut.GetByIdWithChildrenAsync(prep.parentId).ConfigureAwait(false);

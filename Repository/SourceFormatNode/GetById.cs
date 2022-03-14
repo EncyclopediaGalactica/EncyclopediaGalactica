@@ -22,9 +22,7 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg =
-                $"Error happened while executing {nameof(SourceFormatNodeRepository)}.{nameof(GetByIdAsync)}. " +
-                $"For further information see the inner exception.";
+            string msg = prepErrorMessage(nameof(GetByIdAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

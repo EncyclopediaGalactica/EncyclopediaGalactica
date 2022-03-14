@@ -13,8 +13,14 @@ public interface ISourceFormatsNodeRepository
         CancellationToken cancellationToken = default);
 
     Task<SourceFormatNode> UpdateAsync(SourceFormatNode node, CancellationToken cancellationToken = default);
-    void Delete(SourceFormatNode node);
-    Task<ICollection<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default);
+
+    Task DeleteAsync(long id, CancellationToken cancellationToken = default);
+
+    Task<List<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default);
+
     Task<SourceFormatNode> GetByIdWithChildrenAsync(long id, CancellationToken cancellationToken = default);
+
     Task<SourceFormatNode> GetByIdAsync(long id);
+
+    Task<List<SourceFormatNode>> GetByIdWithFlatTreeAsync(long id, CancellationToken cancellationToken = default);
 }

@@ -31,14 +31,14 @@ public partial class SourceFormatNodeRepository
             ValidateEntitiesStatesForAddChildNode(childId, parentId, rootNodeId, child, parent, rootNode);
 
             child.ParentNodeId = parent.Id;
+            child.RootNodeId = rootNodeId;
             _ctx.Entry(child).State = EntityState.Modified;
             await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             return child;
         }
         catch (Exception e)
         {
-            string msg = $"Error happened while executing {nameof(SourceFormatNodeRepository)}." +
-                         $"{nameof(AddChildNodeAsync)}. For further information see inner exception.";
+            string msg = prepErrorMessage(nameof(AddChildNodeAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

@@ -21,8 +21,7 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg = $"Error happened while executing {nameof(SourceFormatNodeRepository)}" +
-                         $".{nameof(GetByIdWithChildrenAsync)}. For further details see inner exception.";
+            string msg = prepErrorMessage(nameof(GetByIdWithChildrenAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

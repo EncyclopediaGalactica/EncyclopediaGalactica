@@ -26,6 +26,8 @@ public class AddChildNodeShould : BaseTest
             .ConfigureAwait(false);
 
         // Assert
+        res.ParentNodeId.Should().Be(parentNode.Id);
+        res.RootNodeId.Should().Be(parentNode.Id);
         res.ChildrenSourceFormatNodes.Should().NotBeNull();
         res.ChildrenSourceFormatNodes.Should().BeEmpty();
     }
@@ -51,6 +53,8 @@ public class AddChildNodeShould : BaseTest
             .ConfigureAwait(false);
 
         // Assert
+        res2.ParentNodeId.Should().Be(parentNode.Id);
+        res2.RootNodeId.Should().Be(parentNode.Id);
         res2.ChildrenSourceFormatNodes.Should().NotBeNull();
         res2.ChildrenSourceFormatNodes.Should().BeEmpty();
     }

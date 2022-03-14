@@ -7,6 +7,7 @@ public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>
 {
     public const string Add = "Add";
     public const string Update = "Update";
+    public const string Delete = "Delete";
 
     public SourceFormatNodeValidator()
     {
@@ -22,6 +23,12 @@ public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>
             RuleFor(p => p.Id).NotEqual(0);
             RuleFor(p => p.Name).NotEmpty().NotNull().NotEqual(" ");
             RuleFor(p => p.Name!.Length).GreaterThanOrEqualTo(3);
+        });
+
+        RuleSet(Delete, () =>
+        {
+            RuleFor(r => r.Id).NotEqual(0);
+            RuleFor(r => r.RootNodeId).NotEqual(0);
         });
     }
 }

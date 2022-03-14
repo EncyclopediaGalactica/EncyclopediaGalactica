@@ -21,8 +21,7 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg = $"Exception was thrown while {nameof(SourceFormatNodeRepository)}.{nameof(AddAsync)} " +
-                         $"was executed. For further information see inner exception.";
+            string msg = prepErrorMessage(nameof(AddAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

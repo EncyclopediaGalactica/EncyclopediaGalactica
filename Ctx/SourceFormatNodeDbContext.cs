@@ -27,6 +27,7 @@ public class SourceFormatNodeDbContext : DbContext
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.Id).HasColumnName("id");
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.Name).HasColumnName("name");
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.IsRootNode).HasColumnName("is_root_node");
+        modelBuilder.Entity<SourceFormatNode>().Property(p => p.IsRootNode).IsRequired();
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.ParentNodeId).HasColumnName("parent_node_id");
         modelBuilder.Entity<SourceFormatNode>().Property(p => p.RootNodeId).HasColumnName("root_node_id");
 

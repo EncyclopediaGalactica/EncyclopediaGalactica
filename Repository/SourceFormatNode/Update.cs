@@ -14,7 +14,6 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            await _ctx.Database.BeginTransactionAsync(cancellationToken).ConfigureAwait(false);
             await ValidateInputForUpdatingAsync(node, cancellationToken).ConfigureAwait(false);
             SourceFormatNode? toBeUpdated = await _ctx.SourceFormatNodes.FindAsync(
                 node.Id).ConfigureAwait(false);
@@ -25,14 +24,11 @@ public partial class SourceFormatNodeRepository
             await MapNewValuesToEntity(node, toBeUpdated);
             _ctx.Entry(toBeUpdated).State = EntityState.Modified;
             await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-            await _ctx.Database.CommitTransactionAsync(cancellationToken).ConfigureAwait(false);
             return toBeUpdated;
         }
         catch (Exception e)
         {
-            await _ctx.Database.RollbackTransactionAsync(cancellationToken).ConfigureAwait(false);
-            string msg = $"Exception happened while executing {nameof(SourceFormatNodeRepository)}." +
-                         $"{nameof(UpdateAsync)}. For further information see inner exception!";
+            string msg = prepErrorMessage(nameof(UpdateAsync));
             throw new SourceFormatNodeRepositoryException(msg, e);
         }
     }

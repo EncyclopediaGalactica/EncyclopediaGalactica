@@ -21,8 +21,10 @@ public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
         _sourceFormatNodeValidator = sourceFormatNodeValidator;
     }
 
-    public void Delete(SourceFormatNode node)
+    private string prepErrorMessage(string methodName)
     {
-        throw new NotImplementedException();
+        string msg = $"Error occured while executing {nameof(SourceFormatNodeRepository)}.{methodName}. " +
+                     $"For further information see inner exception!";
+        return msg;
     }
 }
