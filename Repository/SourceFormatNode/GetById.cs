@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.SourceFormatNode
 
 using Entities;
 using Exceptions;
+using Guards;
 
 public partial class SourceFormatNodeRepository
 {
@@ -10,8 +11,7 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            if (id == 0)
-                throw new SourceFormatNodeRepositoryException("Id cannot be 0.");
+            Guard.IsNotEqual(id, 0);
 
             SourceFormatNode? result = await _ctx.SourceFormatNodes.FindAsync(id).ConfigureAwait(false);
 

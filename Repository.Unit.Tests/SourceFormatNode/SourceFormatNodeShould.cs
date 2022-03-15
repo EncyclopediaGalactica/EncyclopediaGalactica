@@ -2,7 +2,6 @@ namespace Repository.Unit.Tests.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 using Ctx;
 using EncyclopediaGalactica.SourceFormats.Worker.Repository.SourceFormatNode;
 using FluentAssertions;
@@ -15,29 +14,29 @@ using Xunit;
 public class SourceFormatNodeShould
 {
     [Fact]
-    public async Task Throw_WhenInjectedServicesAreNull()
+    public void Throw_WhenInjectedServicesAreNull()
     {
-        Func<Task> action = async () => { new SourceFormatNodeRepository(null, null); };
+        Action action = () => { new SourceFormatNodeRepository(null, null); };
 
-        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
     }
 
     [Fact]
-    public async Task Throw_WhenInjectedContextIsNull()
+    public void Throw_WhenInjectedContextIsNull()
     {
-        Func<Task> action = async () => { new SourceFormatNodeRepository(null, new SourceFormatNodeValidator()); };
+        Action action = () => { new SourceFormatNodeRepository(null, new SourceFormatNodeValidator()); };
 
-        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
     }
 
     [Fact]
-    public async Task Throw_WhenInjectedValidatorIsNull()
+    public void Throw_WhenInjectedValidatorIsNull()
     {
         DbContextOptions<SourceFormatNodeDbContext> options = new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
             .Options;
         SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
-        Func<Task> action = async () => { new SourceFormatNodeRepository(ctx, null); };
+        Action action = () => { new SourceFormatNodeRepository(ctx, null); };
 
-        await action.Should().ThrowExactlyAsync<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
     }
 }

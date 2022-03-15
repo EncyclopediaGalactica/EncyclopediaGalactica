@@ -22,7 +22,7 @@ public class DeleteShould : BaseTest
         await Sut.DeleteAsync(node.Id).ConfigureAwait(false);
 
         // Assert
-        List<SourceFormatNode> list = await Sut.GetAllAsync();
+        List<SourceFormatNode> list = await Sut.GetAllAsync().ConfigureAwait(false);
         list.Count.Should().Be(0);
     }
 
@@ -137,6 +137,9 @@ public class DeleteShould : BaseTest
         Func<Task> action = async () => { await Sut.DeleteAsync(100).ConfigureAwait(false); };
 
         // Assert
-        await action.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
+        await action.Should()
+            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, SourceFormatNodeRepositoryException>()
+            .ConfigureAwait(false);
     }
 }

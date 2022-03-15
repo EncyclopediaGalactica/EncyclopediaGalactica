@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Exceptions;
 using FluentAssertions;
+using Guards;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -17,6 +18,9 @@ public class GetByIdWithChildrenValidationShould : BaseTest
         Func<Task> action = async () => { await Sut.GetByIdWithChildrenAsync(0).ConfigureAwait(false); };
 
         // Assert
-        await action.Should().ThrowAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
+        await action.Should()
+            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardValueShouldNotBeEqualToException>()
+            .ConfigureAwait(false);
     }
 }

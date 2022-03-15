@@ -78,6 +78,9 @@ public class AddChildNodeShould : BaseTest
         };
 
         // Assert
-        await action.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
+        await action.Should()
+            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, SourceFormatNodeRepositoryException>()
+            .ConfigureAwait(false);
     }
 }

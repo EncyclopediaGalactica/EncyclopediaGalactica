@@ -17,7 +17,8 @@ public partial class SourceFormatNodeRepository
             Guard.IsNotEqual(id, 0);
             _ctx.ChangeTracker.Clear();
             SourceFormatNode? startNodeInTree = await _ctx.SourceFormatNodes
-                .FindAsync(id).ConfigureAwait(false);
+                .FirstAsync(p => p.Id == id, cancellationToken)
+                .ConfigureAwait(false);
             if (startNodeInTree is null)
                 throw new SourceFormatNodeRepositoryException(
                     $"No {nameof(SourceFormatNode)} entity in the system with id: {id}");

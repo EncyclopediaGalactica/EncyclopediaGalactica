@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Entities;
 using Exceptions;
 using FluentAssertions;
+using FluentValidation;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -30,6 +31,8 @@ public class AddValidationShould : BaseTest
         Func<Task> action = async () => { await Sut.AddAsync(node).ConfigureAwait(false); };
 
         // Assert
-        action.Should().ThrowAsync<SourceFormatNodeRepositoryException>();
+        action.Should()
+            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, ValidationException>();
     }
 }

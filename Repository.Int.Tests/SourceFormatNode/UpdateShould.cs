@@ -44,6 +44,9 @@ public class UpdateShould : BaseTest
         Func<Task> action = async () => { await Sut.UpdateAsync(node).ConfigureAwait(false); };
 
         // Assert
-        await action.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>().ConfigureAwait(false);
+        await action.Should()
+            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, InvalidOperationException>()
+            .ConfigureAwait(false);
     }
 }

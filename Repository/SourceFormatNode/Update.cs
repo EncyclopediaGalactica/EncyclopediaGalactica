@@ -16,13 +16,14 @@ public partial class SourceFormatNodeRepository
         try
         {
             await ValidateInputForUpdatingAsync(node, cancellationToken).ConfigureAwait(false);
-            SourceFormatNode? toBeUpdated = await _ctx.SourceFormatNodes.FindAsync(
-                node.Id).ConfigureAwait(false);
+            SourceFormatNode? toBeUpdated = await _ctx.SourceFormatNodes
+                .FirstAsync(p => p.Id == node.Id, cancellationToken)
+                .ConfigureAwait(false);
 
             if (toBeUpdated is null)
                 throw new SourceFormatNodeRepositoryException($"No entity with id {node.Id}");
 
-            await MapNewValuesToEntity(node, toBeUpdated);
+            MapNewValuesToEntity(node, toBeUpdated);
             _ctx.Entry(toBeUpdated).State = EntityState.Modified;
             await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
             return toBeUpdated;
@@ -34,7 +35,7 @@ public partial class SourceFormatNodeRepository
         }
     }
 
-    private async Task MapNewValuesToEntity(SourceFormatNode node, SourceFormatNode toBeUpdated)
+    private static void MapNewValuesToEntity(SourceFormatNode node, SourceFormatNode toBeUpdated)
     {
         toBeUpdated.Name = node.Name;
         toBeUpdated.IsRootNode = node.IsRootNode;

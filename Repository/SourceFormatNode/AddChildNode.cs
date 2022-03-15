@@ -18,7 +18,9 @@ public partial class SourceFormatNodeRepository
         {
             CheckInputForAddChildNode(childId, parentId, rootNodeId);
 
-            SourceFormatNode? child = await _ctx.SourceFormatNodes.FindAsync(childId).ConfigureAwait(false);
+            SourceFormatNode? child = await _ctx.SourceFormatNodes
+                .FirstAsync(p => p.Id == childId, cancellationToken)
+                .ConfigureAwait(false);
             SourceFormatNode parent = await _ctx.SourceFormatNodes
                 .Include(i => i.ChildrenSourceFormatNodes)
                 .FirstAsync(p => p.Id == parentId, cancellationToken)
@@ -26,7 +28,9 @@ public partial class SourceFormatNodeRepository
             SourceFormatNode? rootNode = null;
             if (rootNodeId != parentId)
             {
-                rootNode = await _ctx.SourceFormatNodes.FindAsync(rootNodeId).ConfigureAwait(false);
+                rootNode = await _ctx.SourceFormatNodes
+                    .FirstAsync(r => r.RootNodeId == rootNodeId, cancellationToken)
+                    .ConfigureAwait(false);
             }
 
             ValidateEntitiesStatesForAddChildNode(childId, parentId, rootNodeId, child, parent, rootNode);
