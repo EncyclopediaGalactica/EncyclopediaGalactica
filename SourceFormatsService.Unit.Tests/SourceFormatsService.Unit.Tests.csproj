@@ -5,6 +5,12 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests</AssemblyName>
+
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests</RootNamespace>
+
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,6 +25,15 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
+        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj"/>
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
     </ItemGroup>
 
 </Project>

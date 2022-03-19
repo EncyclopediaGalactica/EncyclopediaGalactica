@@ -1,13 +1,11 @@
-namespace Ctx;
+namespace EncyclopediaGalactica.SourceFormats.Ctx;
 
-using EncyclopediaGalactica.SourceFormats.Worker.Entities;
+using Entities;
 using Guards;
 using Microsoft.EntityFrameworkCore;
 
 public class SourceFormatNodeDbContext : DbContext
 {
-    public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
-
     public SourceFormatNodeDbContext(DbContextOptions options) : base(options)
     {
     }
@@ -15,6 +13,8 @@ public class SourceFormatNodeDbContext : DbContext
     protected SourceFormatNodeDbContext()
     {
     }
+
+    public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

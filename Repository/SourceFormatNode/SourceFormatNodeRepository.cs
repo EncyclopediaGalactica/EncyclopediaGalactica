@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
 
 using Ctx;
 using Entities;
@@ -8,8 +8,8 @@ using Interfaces;
 
 public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
 {
-    private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
     private readonly SourceFormatNodeDbContext _ctx;
+    private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
 
     public SourceFormatNodeRepository(
         SourceFormatNodeDbContext ctx,

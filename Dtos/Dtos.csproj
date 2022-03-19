@@ -4,11 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Dtos</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Dtos</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Dtos</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Dtos</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
 </Project>

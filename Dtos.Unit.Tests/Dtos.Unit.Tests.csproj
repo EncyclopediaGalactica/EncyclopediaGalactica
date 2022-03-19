@@ -6,9 +6,9 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Dtos.Unit.Tests</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Dtos.Unit.Tests</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Dtos.Unit.Tests</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Dtos.Unit.Tests</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>

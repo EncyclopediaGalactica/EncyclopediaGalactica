@@ -6,12 +6,13 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Repository.Int.Tests</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Repository.Int.Tests</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Repository.Int.Tests</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

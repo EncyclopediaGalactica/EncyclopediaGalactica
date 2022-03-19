@@ -7,6 +7,9 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Ctx</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Ctx</RootNamespace>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

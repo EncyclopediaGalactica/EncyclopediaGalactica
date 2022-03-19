@@ -1,6 +1,6 @@
-namespace ValidatorService;
+namespace EncyclopediaGalactica.SourceFormats.ValidatorService;
 
-using EncyclopediaGalactica.SourceFormats.Worker.Entities;
+using Entities;
 using FluentValidation;
 
 public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>

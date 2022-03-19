@@ -4,6 +4,9 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Exceptions</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Exceptions</RootNamespace>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
 </Project>

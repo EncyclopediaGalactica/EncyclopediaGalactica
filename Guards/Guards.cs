@@ -2,20 +2,35 @@
 
 public static class Guard
 {
+    const string Msg = "Error happened while validating. For further information see inner exception.";
+
     public static void NotNull<T>(T val)
     {
-        if (val is not null) return;
-        string msg = $"The provided object value is null.";
-        throw new GuardValueShouldNoBeNullException(msg);
+        try
+        {
+            if (val is not null) return;
+            throw new GuardValueShouldNoBeNullException($"The provided object value is null.");
+        }
+        catch (Exception e)
+        {
+            throw new GuardException(Msg, e);
+        }
     }
 
     public static void IsNotEqual(long providedValue, long comparedTo)
     {
-        if (providedValue == comparedTo)
+        try
         {
-            string msg;
-            msg = $"The provided value {providedValue} cannot be equal to: {comparedTo}";
-            throw new GuardValueShouldNotBeEqualToException(msg);
+            if (providedValue == comparedTo)
+            {
+                string msg;
+                msg = $"The provided value {providedValue} cannot be equal to: {comparedTo}";
+                throw new GuardValueShouldNotBeEqualToException(msg);
+            }
+        }
+        catch (Exception e)
+        {
+            throw new GuardException(Msg, e);
         }
     }
 }

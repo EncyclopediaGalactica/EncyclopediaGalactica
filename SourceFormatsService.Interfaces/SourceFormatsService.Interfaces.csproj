@@ -4,11 +4,14 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces</RootNamespace>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
         <ProjectReference Include="..\Entities\Entities.csproj"/>
-        <ProjectReference Include="..\SourceFormatsDtos\SourceFormatsDtos.csproj"/>
     </ItemGroup>
 
 </Project>

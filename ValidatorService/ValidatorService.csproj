@@ -7,6 +7,9 @@
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.ValidatorService</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.ValidatorService</RootNamespace>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,6 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
         <ProjectReference Include="..\Entities\Entities.csproj"/>
     </ItemGroup>
 

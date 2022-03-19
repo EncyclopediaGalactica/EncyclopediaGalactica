@@ -1,7 +1,6 @@
-namespace EncyclopediaGalactica.SourceFormats.Worker.Mappers.Unit.Tests;
+namespace EncyclopediaGalactica.SourceFormats.Entities.Unit.Tests;
 
 using System.Diagnostics.CodeAnalysis;
-using Entities;
 using FluentAssertions;
 using Xunit;
 

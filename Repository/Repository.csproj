@@ -4,11 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Worker.Repository</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Worker.Repository</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Repository</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Repository</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
+        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Worker.Repository.Interfaces;
+namespace EncyclopediaGalactica.SourceFormats.Repository.Interfaces;
 
 using Entities;
 using Exceptions;
