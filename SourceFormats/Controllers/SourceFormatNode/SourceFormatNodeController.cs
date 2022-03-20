@@ -1,8 +1,8 @@
-namespace Controllers.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
-using EncyclopediaGalactica.SourceFormats.Api;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
+using Api;
 using Microsoft.AspNetCore.Mvc;
+using SourceFormatsService.Interfaces;
 
 [ApiController]
 [Route(SourceFormatNode.Route)]

@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
 
 using Entities;
 using Exceptions;
-using Guards;
 using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
@@ -12,7 +11,7 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            Guard.IsNotEqual(id, 0);
+            _guard.IsNotEqual(id, 0);
 
             SourceFormatNode result = await _ctx.SourceFormatNodes
                 .Include(i => i.ChildrenSourceFormatNodes)

@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
 
 using Entities;
 using Exceptions;
-using Guards;
 
 public partial class SourceFormatNodeRepository
 {
@@ -11,8 +10,8 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            Guard.NotNull(id);
-            Guard.IsNotEqual(id, 0);
+            _guard.NotNull(id);
+            _guard.IsNotEqual(id, 0);
 
             List<SourceFormatNode> toBeDelete = await GetByIdWithFlatTreeAsync(id, cancellationToken)
                 .ConfigureAwait(false);

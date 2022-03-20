@@ -9,6 +9,7 @@ public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeDt
 
     public SourceFormatNodeDtoValidator()
     {
-        RuleSet(Add, () => { });
+        RuleFor(x => x).NotNull();
+        RuleSet(Add, () => { RuleFor(p => p.Id).Equal(0); });
     }
 }

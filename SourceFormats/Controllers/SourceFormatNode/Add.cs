@@ -1,13 +1,13 @@
-namespace Controllers.SourceFormatNode;
+using SourceFormatsCacheServiceException = SourceFormatsCacheService.Exceptions.SourceFormatsCacheServiceException;
 
-using EncyclopediaGalactica.SourceFormats.Api;
-using EncyclopediaGalactica.SourceFormats.Dtos;
-using EncyclopediaGalactica.SourceFormats.Mappers.Exceptions.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.Repository.Exceptions;
-using FluentValidation;
-using Guards;
+namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
+
+using Api;
+using Dtos;
+using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.AspNetCore.Mvc;
-using SourceFormatsCacheService.Exceptions;
+using Repository.Exceptions;
+using SourceFormatsService.Exceptions;
 
 public partial class SourceFormatNodeController
 {
@@ -23,14 +23,14 @@ public partial class SourceFormatNodeController
                 .ConfigureAwait(false);
             return Ok(result);
         }
-        catch (Exception e) when (e is GuardException || e is ValidationException)
+        catch (Exception e) when (e is SourceFormatNodeServiceInputValidationException)
         {
             return BadRequest(StatusCode(400));
         }
         catch (Exception ex) when (
             ex is SourceFormatNodeMapperException
-            || ex is SourceFormatNodeRepositoryException
-            || ex is SourceFormatsCacheServiceException)
+                or SourceFormatNodeRepositoryException
+                or SourceFormatsCacheServiceException)
         {
             return Problem(statusCode: 500);
         }

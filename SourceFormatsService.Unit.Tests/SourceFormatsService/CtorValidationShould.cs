@@ -1,12 +1,13 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests.SourceFormatsService;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Guards;
 using Interfaces;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
 public class CtorValidationShould
 {
     [Theory]
@@ -22,6 +23,6 @@ public class CtorValidationShould
         };
 
         // Assert
-        action.Should().Throw<GuardException>();
+        action.Should().Throw<ArgumentNullException>();
     }
 }

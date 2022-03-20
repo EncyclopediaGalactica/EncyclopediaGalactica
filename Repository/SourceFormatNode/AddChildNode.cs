@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
 
 using Entities;
 using Exceptions;
-using Guards;
 using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
@@ -21,7 +20,7 @@ public partial class SourceFormatNodeRepository
             SourceFormatNode? child = await _ctx.SourceFormatNodes
                 .FirstAsync(p => p.Id == childId, cancellationToken)
                 .ConfigureAwait(false);
-            SourceFormatNode parent = await _ctx.SourceFormatNodes
+            SourceFormatNode? parent = await _ctx.SourceFormatNodes
                 .Include(i => i.ChildrenSourceFormatNodes)
                 .FirstAsync(p => p.Id == parentId, cancellationToken)
                 .ConfigureAwait(false);
@@ -53,7 +52,7 @@ public partial class SourceFormatNodeRepository
         long parentId,
         long rootNodeId,
         SourceFormatNode? child,
-        SourceFormatNode parent,
+        SourceFormatNode? parent,
         SourceFormatNode? rootNode)
     {
         if (child is null)
@@ -76,12 +75,12 @@ public partial class SourceFormatNodeRepository
                 $"Entity with id {child} is already added to entity with id {parentId}");
     }
 
-    private static void CheckInputForAddChildNode(long childId, long parentId, long rootNodeId)
+    private void CheckInputForAddChildNode(long childId, long parentId, long rootNodeId)
     {
-        Guard.IsNotEqual(childId, 0);
-        Guard.IsNotEqual(parentId, 0);
-        Guard.IsNotEqual(rootNodeId, 0);
-        Guard.IsNotEqual(childId, parentId);
-        Guard.IsNotEqual(childId, rootNodeId);
+        _guard.IsNotEqual(childId, 0);
+        _guard.IsNotEqual(parentId, 0);
+        _guard.IsNotEqual(rootNodeId, 0);
+        _guard.IsNotEqual(childId, parentId);
+        _guard.IsNotEqual(childId, rootNodeId);
     }
 }

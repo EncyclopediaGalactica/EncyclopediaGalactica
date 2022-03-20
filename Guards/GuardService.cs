@@ -1,10 +1,10 @@
 ﻿namespace Guards;
 
-public static class Guard
+public class GuardService : IGuardService
 {
     const string Msg = "Error happened while validating. For further information see inner exception.";
 
-    public static void NotNull<T>(T val)
+    public void NotNull<T>(T val)
     {
         try
         {
@@ -17,7 +17,7 @@ public static class Guard
         }
     }
 
-    public static void IsNotEqual(long providedValue, long comparedTo)
+    public void IsNotEqual(long providedValue, long comparedTo)
     {
         try
         {

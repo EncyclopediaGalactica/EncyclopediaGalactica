@@ -11,29 +11,29 @@ using SourceFormatsCacheService.Interfaces;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {
-    private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
-    private readonly ISourceFormatMappers _sourceFormatMappers;
-    private readonly ISourceFormatsNodeRepository _sourceFormatsNodeRepository;
-    private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
-    private int _cacheExpiresInMinutes = 60;
-
     private const string SourceFormatNodesListKey = "SourceFormatNodesList";
+    private readonly IGuardService _guard;
+    private readonly ISourceFormatMappers _sourceFormatMappers;
+    private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
+    private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
+    private readonly ISourceFormatsNodeRepository _sourceFormatsNodeRepository;
+    private int _cacheExpiresInMinutes = 60;
 
     public SourceFormatNodeService(
         IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
+        IGuardService guardService,
         ISourceFormatMappers sourceFormatMappers,
         ISourceFormatsNodeRepository sourceFormatsNodeRepository,
         ISourceFormatNodeCacheService sourceFormatNodeCacheService)
     {
-        Guard.NotNull(sourceFormatNodeDtoValidator);
-        Guard.NotNull(sourceFormatMappers);
-        Guard.NotNull(sourceFormatsNodeRepository);
-        Guard.NotNull(sourceFormatNodeCacheService);
-
-        _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator;
-        _sourceFormatMappers = sourceFormatMappers;
-        _sourceFormatsNodeRepository = sourceFormatsNodeRepository;
-        _sourceFormatNodeCacheService = sourceFormatNodeCacheService;
+        _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator ??
+                                        throw new ArgumentNullException(nameof(sourceFormatNodeDtoValidator));
+        _guard = guardService ?? throw new ArgumentNullException(nameof(guardService));
+        _sourceFormatMappers = sourceFormatMappers ?? throw new ArgumentNullException(nameof(sourceFormatMappers));
+        _sourceFormatsNodeRepository = sourceFormatsNodeRepository ??
+                                       throw new ArgumentNullException(nameof(sourceFormatsNodeRepository));
+        _sourceFormatNodeCacheService = sourceFormatNodeCacheService ??
+                                        throw new ArgumentNullException(nameof(sourceFormatNodeCacheService));
     }
 
     public async Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(SourceFormatNodeDto childDto,

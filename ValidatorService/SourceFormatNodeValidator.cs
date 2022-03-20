@@ -11,6 +11,8 @@ public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>
 
     public SourceFormatNodeValidator()
     {
+        RuleFor(notNull => notNull).NotNull();
+
         RuleSet(Add, () =>
         {
             RuleFor(p => p.Id).Equal(0);

@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Ctx;
+using Guards;
 using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,7 @@ public class BaseTest
             .Options;
         SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(sourceFormatNodeDbContextOptions);
         ctx.Database.EnsureCreated();
-        Sut = new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator());
+        Sut = new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator(), new GuardService());
     }
 
     protected async Task<(

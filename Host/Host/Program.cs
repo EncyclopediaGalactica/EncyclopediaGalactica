@@ -1,4 +1,4 @@
-using EncyclopediaGalactica.Host.Data;
+using Host.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

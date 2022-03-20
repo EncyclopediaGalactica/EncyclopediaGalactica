@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.Ctx;
 
 using Entities;
-using Guards;
 using Microsoft.EntityFrameworkCore;
 
 public class SourceFormatNodeDbContext : DbContext
@@ -18,7 +17,8 @@ public class SourceFormatNodeDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        Guard.NotNull(modelBuilder);
+        if (modelBuilder is null)
+            throw new ArgumentNullException($"{nameof(modelBuilder)} cannot be null.");
 
 #pragma warning disable CA1062
         modelBuilder.Entity<SourceFormatNode>().ToTable("source_format_node");

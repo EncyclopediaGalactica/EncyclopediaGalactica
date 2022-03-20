@@ -16,17 +16,20 @@ public class SourceFormatNodeShould
     [Fact]
     public void Throw_WhenInjectedServicesAreNull()
     {
-        Action action = () => { new SourceFormatNodeRepository(null, null); };
+        Action action = () => { new SourceFormatNodeRepository(null!, null!, null!); };
 
-        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<ArgumentNullException>();
     }
 
     [Fact]
     public void Throw_WhenInjectedContextIsNull()
     {
-        Action action = () => { new SourceFormatNodeRepository(null, new SourceFormatNodeValidator()); };
+        Action action = () =>
+        {
+            new SourceFormatNodeRepository(null!, new SourceFormatNodeValidator(), new GuardService());
+        };
 
-        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<ArgumentNullException>();
     }
 
     [Fact]
@@ -35,8 +38,19 @@ public class SourceFormatNodeShould
         DbContextOptions<SourceFormatNodeDbContext> options = new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
             .Options;
         SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
-        Action action = () => { new SourceFormatNodeRepository(ctx, null); };
+        Action action = () => { new SourceFormatNodeRepository(ctx, null!, new GuardService()); };
 
-        action.Should().ThrowExactly<GuardValueShouldNoBeNullException>();
+        action.Should().ThrowExactly<ArgumentNullException>();
+    }
+
+    [Fact]
+    public void Throw_WhenInjectedGuardServiceIsNull()
+    {
+        DbContextOptions<SourceFormatNodeDbContext> options = new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
+            .Options;
+        SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
+        Action action = () => { new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator(), null!); };
+
+        action.Should().ThrowExactly<ArgumentNullException>();
     }
 }

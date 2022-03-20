@@ -15,6 +15,9 @@
 
     <ItemGroup>
         <PackageReference Include="FluentAssertions" Version="6.5.1"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.3"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0"/>
         <PackageReference Include="xunit" Version="2.4.1"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
@@ -25,6 +28,15 @@
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Mappers\Mappers.csproj"/>
+        <ProjectReference Include="..\Repository\Repository.csproj"/>
+        <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -1,15 +1,13 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService;
 
-using Guards;
 using Interfaces;
 
 public class SourceFormatsService : ISourceFormatsService
 {
     public SourceFormatsService(ISourceFormatNodeService sourceFormatNodeService)
     {
-        Guard.NotNull(sourceFormatNodeService);
-
-        SourceFormatNodeService = sourceFormatNodeService;
+        SourceFormatNodeService =
+            sourceFormatNodeService ?? throw new ArgumentNullException(nameof(sourceFormatNodeService));
     }
 
     public ISourceFormatNodeService SourceFormatNodeService { get; }

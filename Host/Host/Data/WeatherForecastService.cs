@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Host.Data;
+namespace Host.Data;
 
 public class WeatherForecastService
 {

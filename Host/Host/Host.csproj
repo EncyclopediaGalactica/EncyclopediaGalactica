@@ -5,8 +5,8 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-        <AssemblyName>EncyclopediaGalactica.Host</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.Host</RootNamespace>
+        <!--        <AssemblyName>EncyclopediaGalactica.Host</AssemblyName>-->
+        <!--        <RootNamespace>EncyclopediaGalactica.Host</RootNamespace>-->
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

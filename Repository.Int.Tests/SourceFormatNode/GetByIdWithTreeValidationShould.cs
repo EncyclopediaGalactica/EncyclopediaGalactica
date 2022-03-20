@@ -20,7 +20,8 @@ public class GetByIdWithTreeValidationShould : BaseTest
         // Assert
         await action.Should()
             .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardValueShouldNotBeEqualToException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardException>()
+            .WithInnerExceptionExactly<GuardException, GuardValueShouldNotBeEqualToException>()
             .ConfigureAwait(false);
     }
 }

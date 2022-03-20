@@ -1,10 +1,14 @@
+using SourceFormatsCacheServiceException = SourceFormatsCacheService.Exceptions.SourceFormatsCacheServiceException;
+
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
 using System.Runtime.CompilerServices;
 using Dtos;
 using Entities;
+using Exceptions;
 using FluentValidation;
-using Guards;
+using Mappers.Exceptions.SourceFormatNode;
+using Repository.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
@@ -13,13 +17,27 @@ public partial class SourceFormatNodeService
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
-        Guard.NotNull(dto);
-        await ValidateInputAsync(dto).ConfigureAwait(false);
-        SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
-        SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken);
-        await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
-        SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
-        return mappedResult;
+        try
+        {
+            await ValidateInputAsync(dto).ConfigureAwait(false);
+            SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
+            SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken);
+            await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
+            SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
+            return mappedResult;
+        }
+        catch (Exception e) when (e is ArgumentNullException or ValidationException)
+        {
+            string msg = $"Input validation error at {nameof(SourceFormatNodeService)}.{nameof(AddAsync)}";
+            throw new SourceFormatNodeServiceInputValidationException(msg, e);
+        }
+        catch (Exception e) when (e is SourceFormatNodeMapperException
+                                      or SourceFormatNodeRepositoryException
+                                      or SourceFormatsCacheServiceException)
+        {
+            string msg = $"Error happened while executing {nameof(SourceFormatNodeService)}.{nameof(AddAsync)}.";
+            throw new SourceFormatNodeServiceException(msg, e);
+        }
     }
 
     private SourceFormatNodeDto MapSourceFormatToSourceFormatNodeDto(SourceFormatNode node)
