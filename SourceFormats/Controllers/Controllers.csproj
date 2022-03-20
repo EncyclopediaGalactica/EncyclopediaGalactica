@@ -13,16 +13,15 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Dtos\Dtos.csproj"/>
-        <ProjectReference Include="..\..\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
-        <ProjectReference Include="..\..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
-        <ProjectReference Include="..\..\SourceFormatsService\SourceFormatsService.csproj"/>
-        <ProjectReference Include="..\Api\Api.csproj"/>
-        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
     </ItemGroup>
 
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+        <ProjectReference Include="..\Api\Api.csproj"/>
+        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
+        <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
+        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>

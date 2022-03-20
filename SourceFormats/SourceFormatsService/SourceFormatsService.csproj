@@ -10,14 +10,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Guards\Guards.csproj"/>
+        <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
         <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
-        <ProjectReference Include="..\SourceFormats\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
         <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
     </ItemGroup>
 

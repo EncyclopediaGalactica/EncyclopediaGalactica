@@ -1,12 +1,8 @@
-using SourceFormatsCacheServiceException = SourceFormatsCacheService.Exceptions.SourceFormatsCacheServiceException;
-
 namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
 using Api;
 using Dtos;
-using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.AspNetCore.Mvc;
-using Repository.Exceptions;
 using SourceFormatsService.Exceptions;
 
 public partial class SourceFormatNodeController
@@ -28,9 +24,7 @@ public partial class SourceFormatNodeController
             return BadRequest(StatusCode(400));
         }
         catch (Exception ex) when (
-            ex is SourceFormatNodeMapperException
-                or SourceFormatNodeRepositoryException
-                or SourceFormatsCacheServiceException)
+            ex is SourceFormatNodeServiceException)
         {
             return Problem(statusCode: 500);
         }
