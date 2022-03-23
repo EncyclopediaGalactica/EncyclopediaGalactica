@@ -8,11 +8,19 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
 {
     public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto)
     {
-        throw new NotImplementedException();
+        SourceFormatNode result = new SourceFormatNode();
+        result.Id = dto.Id;
+        result.Name = dto.Name;
+
+        return result;
     }
 
     public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)
     {
-        throw new NotImplementedException();
+        SourceFormatNodeDto result = new SourceFormatNodeDto();
+        result.Id = node.Id;
+        result.Name = node.Name;
+
+        return result;
     }
 }

@@ -8,6 +8,7 @@ using Entities;
 using Exceptions;
 using FluentValidation;
 using Mappers.Exceptions.SourceFormatNode;
+using Microsoft.EntityFrameworkCore;
 using Repository.Exceptions;
 using ValidatorService;
 
@@ -26,14 +27,24 @@ public partial class SourceFormatNodeService
             SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
             return mappedResult;
         }
-        catch (Exception e) when (e is ArgumentNullException or ValidationException)
+        // When Name UNIQUE constraint is violated a DbUpdate Exception is thrown
+        // and it is wrapped in a SourceFormatNodeRepositoryException but it is still input validation context
+        // so that exception is caught here and wrapped and re-thrown
+        // so we can indicate that validation related error happened
+        catch (Exception e) when (e is ArgumentNullException
+                                      or ValidationException
+                                  || e is SourceFormatNodeRepositoryException
+                                  && e.InnerException is DbUpdateException)
+
         {
             string msg = $"Input validation error at {nameof(SourceFormatNodeService)}.{nameof(AddAsync)}";
             throw new SourceFormatNodeServiceInputValidationException(msg, e);
         }
+        // see the previous conditional catch why we have this bit complex condition here
         catch (Exception e) when (e is SourceFormatNodeMapperException
-                                      or SourceFormatNodeRepositoryException
-                                      or SourceFormatsCacheServiceException)
+                                      or SourceFormatsCacheServiceException
+                                  || e is SourceFormatNodeRepositoryException &&
+                                  e.InnerException is not DbUpdateException)
         {
             string msg = $"Error happened while executing {nameof(SourceFormatNodeService)}.{nameof(AddAsync)}.";
             throw new SourceFormatNodeServiceException(msg, e);
