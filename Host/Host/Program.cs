@@ -1,3 +1,4 @@
+using Host.Api.Filters;
 using Host.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<SourceFormatNodeServiceInputValidationExceptionFilter>();
+    options.Filters.Add<SourceFormatNodeServiceExceptionFilter>();
+});
 builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();

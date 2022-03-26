@@ -21,7 +21,7 @@ using ValidatorService;
 [ExcludeFromCodeCoverage]
 public class BaseTest
 {
-    protected readonly ISourceFormatNodeService _sourceFormatNodeService;
+    protected readonly ISourceFormatsService _sourceFormatsService;
 
     public BaseTest()
     {
@@ -41,8 +41,9 @@ public class BaseTest
         ISourceFormatsNodeRepository sourceFormatsNodeRepository = new SourceFormatNodeRepository(
             ctx, nodeValidator, new GuardService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
-        _sourceFormatNodeService =
+        ISourceFormatNodeService sourceFormatNodeService =
             new SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
                 validator, new GuardService(), mappers, sourceFormatsNodeRepository, sourceFormatNodeCacheService);
+        _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
     }
 }

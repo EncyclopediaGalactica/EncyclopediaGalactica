@@ -18,7 +18,12 @@ public class AddValidationShould : BaseTest
     public async Task Throw_WhenInputIsNull()
     {
         // Act
-        Func<Task> task = async () => { await _sourceFormatNodeService.AddAsync(null!).ConfigureAwait(false); };
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService
+                .SourceFormatNodeService
+                .AddAsync(null!).ConfigureAwait(false);
+        };
 
         // Assert
         await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
@@ -40,7 +45,12 @@ public class AddValidationShould : BaseTest
         dto.Name = name;
 
         // Act
-        Func<Task> task = async () => { await _sourceFormatNodeService.AddAsync(dto).ConfigureAwait(false); };
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService
+                .SourceFormatNodeService
+                .AddAsync(dto).ConfigureAwait(false);
+        };
 
         // Assert
         await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
@@ -54,11 +64,18 @@ public class AddValidationShould : BaseTest
         // Arrange
         SourceFormatNodeDto dto = new SourceFormatNodeDto();
         dto.Name = "asd";
-        SourceFormatNodeDto dtoResult = await _sourceFormatNodeService.AddAsync(dto).ConfigureAwait(false);
+        SourceFormatNodeDto dtoResult = await _sourceFormatsService
+            .SourceFormatNodeService
+            .AddAsync(dto).ConfigureAwait(false);
 
         // Act
         // await _sourceFormatNodeService.AddAsync(dto).ConfigureAwait(false);
-        Func<Task> task = async () => { await _sourceFormatNodeService.AddAsync(dto).ConfigureAwait(false); };
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService
+                .SourceFormatNodeService
+                .AddAsync(dto).ConfigureAwait(false);
+        };
 
         // Assert
         await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
