@@ -15,7 +15,10 @@ public class GetByIdWithChildrenValidationShould : BaseTest
     public async Task ThrowWhenInputIsInvalid()
     {
         // Act
-        Func<Task> action = async () => { await Sut.GetByIdWithChildrenAsync(0).ConfigureAwait(false); };
+        Func<Task> action = async () =>
+        {
+            await Sut.SourceFormatNodes.GetByIdWithChildrenAsync(0).ConfigureAwait(false);
+        };
 
         // Assert
         await action.Should()

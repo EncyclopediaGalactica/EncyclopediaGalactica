@@ -16,22 +16,22 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     private readonly ISourceFormatMappers _sourceFormatMappers;
     private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
     private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
-    private readonly ISourceFormatsNodeRepository _sourceFormatsNodeRepository;
+    private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
     private int _cacheExpiresInMinutes = 60;
 
     public SourceFormatNodeService(
         IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
         IGuardService guardService,
         ISourceFormatMappers sourceFormatMappers,
-        ISourceFormatsNodeRepository sourceFormatsNodeRepository,
+        ISourceFormatNodeRepository sourceFormatNodeRepository,
         ISourceFormatNodeCacheService sourceFormatNodeCacheService)
     {
         _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator ??
                                         throw new ArgumentNullException(nameof(sourceFormatNodeDtoValidator));
         _guard = guardService ?? throw new ArgumentNullException(nameof(guardService));
         _sourceFormatMappers = sourceFormatMappers ?? throw new ArgumentNullException(nameof(sourceFormatMappers));
-        _sourceFormatsNodeRepository = sourceFormatsNodeRepository ??
-                                       throw new ArgumentNullException(nameof(sourceFormatsNodeRepository));
+        _sourceFormatNodeRepository = sourceFormatNodeRepository ??
+                                      throw new ArgumentNullException(nameof(sourceFormatNodeRepository));
         _sourceFormatNodeCacheService = sourceFormatNodeCacheService ??
                                         throw new ArgumentNullException(nameof(sourceFormatNodeCacheService));
     }

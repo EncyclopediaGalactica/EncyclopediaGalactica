@@ -3,13 +3,13 @@ namespace EncyclopediaGalactica.SourceFormats.Ctx;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 
-public class SourceFormatNodeDbContext : DbContext
+public class SourceFormatsDbContext : DbContext
 {
-    public SourceFormatNodeDbContext(DbContextOptions options) : base(options)
+    public SourceFormatsDbContext(DbContextOptions options) : base(options)
     {
     }
 
-    protected SourceFormatNodeDbContext()
+    protected SourceFormatsDbContext()
     {
     }
 
@@ -18,7 +18,7 @@ public class SourceFormatNodeDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         if (modelBuilder is null)
-            throw new ArgumentNullException($"{nameof(modelBuilder)} cannot be null.");
+            throw new ArgumentNullException(nameof(modelBuilder));
 
 #pragma warning disable CA1062
         modelBuilder.Entity<SourceFormatNode>().ToTable("source_format_node");

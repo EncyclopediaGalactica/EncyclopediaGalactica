@@ -6,7 +6,7 @@ using Exceptions;
 /// <summary>
 ///     SourceFormatRepository interface for managing stored data in the database.
 /// </summary>
-public interface ISourceFormatsNodeRepository
+public interface ISourceFormatNodeRepository
 {
     /// <summary>
     ///     Adds a new entity to the database.

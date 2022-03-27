@@ -15,7 +15,10 @@ public class GetByIdWithTreeValidationShould : BaseTest
     public async Task ThrowWhenInputIsInvalid()
     {
         // Act
-        Func<Task> action = async () => { await Sut.GetByIdWithFlatTreeAsync(0).ConfigureAwait(false); };
+        Func<Task> action = async () =>
+        {
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(0).ConfigureAwait(false);
+        };
 
         // Assert
         await action.Should()

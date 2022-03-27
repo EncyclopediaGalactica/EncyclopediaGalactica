@@ -35,9 +35,9 @@ public class SourceFormatNodeShould
     [Fact]
     public void Throw_WhenInjectedValidatorIsNull()
     {
-        DbContextOptions<SourceFormatNodeDbContext> options = new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
+        DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
             .Options;
-        SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
+        SourceFormatsDbContext ctx = new SourceFormatsDbContext(options);
         Action action = () => { new SourceFormatNodeRepository(ctx, null!, new GuardService()); };
 
         action.Should().ThrowExactly<ArgumentNullException>();
@@ -46,9 +46,9 @@ public class SourceFormatNodeShould
     [Fact]
     public void Throw_WhenInjectedGuardServiceIsNull()
     {
-        DbContextOptions<SourceFormatNodeDbContext> options = new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
+        DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
             .Options;
-        SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(options);
+        SourceFormatsDbContext ctx = new SourceFormatsDbContext(options);
         Action action = () => { new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator(), null!); };
 
         action.Should().ThrowExactly<ArgumentNullException>();

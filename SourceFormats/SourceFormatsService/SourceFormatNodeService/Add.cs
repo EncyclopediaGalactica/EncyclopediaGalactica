@@ -67,7 +67,7 @@ public partial class SourceFormatNodeService
         SourceFormatNode sourceFormatNode,
         CancellationToken cancellationToken)
     {
-        return _sourceFormatsNodeRepository.AddAsync(
+        return _sourceFormatNodeRepository.AddAsync(
                 sourceFormatNode,
                 cancellationToken)
             .ConfigureAwait(false);

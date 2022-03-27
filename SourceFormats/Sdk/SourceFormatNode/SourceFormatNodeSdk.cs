@@ -1,13 +1,14 @@
 namespace Sdk.SourceFormatNode;
 
+using Core.Interfaces;
 using Interfaces;
 
 public partial class SourceFormatNodeSdk : ISourceFormatNodeSdk
 {
-    private readonly HttpClient _httpClient;
+    private readonly ISdkCore _sdkCore;
 
-    public SourceFormatNodeSdk(HttpClient httpClient)
+    public SourceFormatNodeSdk(ISdkCore sdkCore)
     {
-        _httpClient = httpClient;
+        _sdkCore = sdkCore;
     }
 }

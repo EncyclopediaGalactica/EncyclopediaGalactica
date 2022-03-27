@@ -17,7 +17,7 @@ public class DeleteValidationShould : BaseTest
     public async Task Throw_WhenInputIsInvalid(long id)
     {
         // Act
-        Func<Task> action = async () => { await Sut.DeleteAsync(id).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.DeleteAsync(id).ConfigureAwait(false); };
 
         // Assert
         await action.Should()

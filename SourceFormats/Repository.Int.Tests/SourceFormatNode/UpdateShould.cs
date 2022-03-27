@@ -18,14 +18,14 @@ public class UpdateShould : BaseTest
         // Arrange
         SourceFormatNode node = new SourceFormatNode();
         node.Name = "original name";
-        SourceFormatNode persistedNode = await Sut.AddAsync(node).ConfigureAwait(false);
+        SourceFormatNode persistedNode = await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
 
         SourceFormatNode updatedValues = new SourceFormatNode();
         updatedValues.Name = newName;
         updatedValues.Id = persistedNode.Id;
 
         // Act
-        SourceFormatNode result = await Sut.UpdateAsync(updatedValues).ConfigureAwait(false);
+        SourceFormatNode result = await Sut.SourceFormatNodes.UpdateAsync(updatedValues).ConfigureAwait(false);
 
         // Assert
         result.Id.Should().Be(persistedNode.Id);
@@ -41,7 +41,7 @@ public class UpdateShould : BaseTest
         node.Name = "something";
 
         // Act
-        Func<Task> action = async () => { await Sut.UpdateAsync(node).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.UpdateAsync(node).ConfigureAwait(false); };
 
         // Assert
         await action.Should()

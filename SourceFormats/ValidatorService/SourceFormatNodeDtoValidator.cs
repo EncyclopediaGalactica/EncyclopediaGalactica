@@ -9,6 +9,7 @@ public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeDt
 
     public SourceFormatNodeDtoValidator()
     {
+#pragma warning disable CS8602
         RuleSet(Add, () =>
         {
             RuleFor(p => p.Id).Equal(0);
@@ -22,5 +23,6 @@ public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeDt
                     .GreaterThanOrEqualTo(3);
             });
         });
+#pragma warning restore CS8602
     }
 }

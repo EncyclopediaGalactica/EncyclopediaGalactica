@@ -28,7 +28,7 @@ public class AddValidationShould : BaseTest
         node.Name = name;
 
         // Act
-        Func<Task> action = async () => { await Sut.AddAsync(node).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false); };
 
         // Assert
         action.Should()

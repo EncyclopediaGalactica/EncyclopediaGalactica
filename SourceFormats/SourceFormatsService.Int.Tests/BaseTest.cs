@@ -31,19 +31,19 @@ public class BaseTest
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);
-        DbContextOptions<SourceFormatNodeDbContext> dbContextOptions =
-            new DbContextOptionsBuilder<SourceFormatNodeDbContext>()
+        DbContextOptions<SourceFormatsDbContext> dbContextOptions =
+            new DbContextOptionsBuilder<SourceFormatsDbContext>()
                 .UseSqlite(connection).LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
                 .Options;
-        SourceFormatNodeDbContext ctx = new SourceFormatNodeDbContext(dbContextOptions);
+        SourceFormatsDbContext ctx = new SourceFormatsDbContext(dbContextOptions);
         ctx.Database.EnsureCreated();
-        ISourceFormatsNodeRepository sourceFormatsNodeRepository = new SourceFormatNodeRepository(
+        ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             ctx, nodeValidator, new GuardService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
         ISourceFormatNodeService sourceFormatNodeService =
             new SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
-                validator, new GuardService(), mappers, sourceFormatsNodeRepository, sourceFormatNodeCacheService);
+                validator, new GuardService(), mappers, sourceFormatNodeRepository, sourceFormatNodeCacheService);
         _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
     }
 }

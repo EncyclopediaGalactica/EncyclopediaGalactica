@@ -15,28 +15,32 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_One_FirstLevelNode()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
                 firstFirst.Id,
                 rootNodeResult.Id,
                 rootNodeResult.Id)
             .ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -50,34 +54,39 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Two_FirstLevelNodes()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -93,40 +102,46 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Three_FirstLevelNodes()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -144,48 +159,54 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_One_SecondLevelOne()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -208,54 +229,60 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Two_SecondLevelOne()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -280,60 +307,66 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Three_SecondLevelOne()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -360,68 +393,74 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_One_SecondLevelTwo()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -452,74 +491,80 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Two_SecondLevelTwo()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -552,80 +597,86 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Three_SecondLevelTwo()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoThree =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
-        SourceFormatNode secondTwoThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
+        SourceFormatNode secondTwoThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoThree.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -660,88 +711,94 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_One_SecondLevelThree()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoThree =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
-        SourceFormatNode secondTwoThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
+        SourceFormatNode secondTwoThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoThree.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - three - parent: first_third
         SourceFormatNode secondThreeOne =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
-        SourceFormatNode secondThreeOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
+        SourceFormatNode secondThreeOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeOne.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -780,94 +837,100 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Two_SecondLevelThree()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoThree =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
-        SourceFormatNode secondTwoThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
+        SourceFormatNode secondTwoThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoThree.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - three - parent: first_third
         SourceFormatNode secondThreeOne =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
-        SourceFormatNode secondThreeOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
+        SourceFormatNode secondThreeOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeOne.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondThreeTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
-        SourceFormatNode secondThreeTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
+        SourceFormatNode secondThreeTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeTwo.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -908,100 +971,106 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsFlatTree_Third_SecondLevelThree()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoThree =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
-        SourceFormatNode secondTwoThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
+        SourceFormatNode secondTwoThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoThree.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - three - parent: first_third
         SourceFormatNode secondThreeOne =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
-        SourceFormatNode secondThreeOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
+        SourceFormatNode secondThreeOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeOne.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondThreeTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
-        SourceFormatNode secondThreeTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
+        SourceFormatNode secondThreeTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeTwo.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondThreeThree =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_three")).ConfigureAwait(false);
-        SourceFormatNode secondThreeThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_three")).ConfigureAwait(false);
+        SourceFormatNode secondThreeThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeThree.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(rootNode.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();
@@ -1044,100 +1113,106 @@ public class GetByIdWithFlatTreeShould : BaseTest
     public async Task ReturnsPartialFlatTree()
     {
         // Arrange
-        SourceFormatNode otherOne = await Sut.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
+        SourceFormatNode otherOne =
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("other")).ConfigureAwait(false);
 
         SourceFormatNode rootNode = new SourceFormatNode();
         rootNode.Name = "root";
         rootNode.IsRootNode = 1;
-        SourceFormatNode rootNodeResult = await Sut.AddAsync(rootNode).ConfigureAwait(false);
+        SourceFormatNode rootNodeResult = await Sut.SourceFormatNodes.AddAsync(rootNode).ConfigureAwait(false);
 
         SourceFormatNode setupRootNode = new SourceFormatNode();
         setupRootNode.Id = rootNode.Id;
         setupRootNode.Name = rootNode.Name;
         setupRootNode.RootNodeId = rootNodeResult.Id;
-        SourceFormatNode setupRootNodeResult = await Sut.UpdateAsync(setupRootNode).ConfigureAwait(false);
+        SourceFormatNode setupRootNodeResult =
+            await Sut.SourceFormatNodes.UpdateAsync(setupRootNode).ConfigureAwait(false);
 
         // first level
-        SourceFormatNode firstFirst = await Sut.AddAsync(new SourceFormatNode("first_first")).ConfigureAwait(false);
-        SourceFormatNode firstFirstResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstFirst = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_first"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstFirstResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstFirst.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstSecond = await Sut.AddAsync(new SourceFormatNode("first_second")).ConfigureAwait(false);
-        SourceFormatNode firstSecondResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstSecond = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_second"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstSecondResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstSecond.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
-        SourceFormatNode firstThird = await Sut.AddAsync(new SourceFormatNode("first_third")).ConfigureAwait(false);
-        SourceFormatNode firstThirdResult = await Sut.AddChildNodeAsync(
+        SourceFormatNode firstThird = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("first_third"))
+            .ConfigureAwait(false);
+        SourceFormatNode firstThirdResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             firstThird.Id,
             rootNodeResult.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - one - parent: first_first
         SourceFormatNode secondOneOne =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
-        SourceFormatNode secondOneOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_one")).ConfigureAwait(false);
+        SourceFormatNode secondOneOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneOne.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
-        SourceFormatNode secondOneTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_two")).ConfigureAwait(false);
+        SourceFormatNode secondOneTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneTwo.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondOneThree =
-            await Sut.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
-        SourceFormatNode secondOneThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondOne_three")).ConfigureAwait(false);
+        SourceFormatNode secondOneThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondOneThree.Id,
             firstFirst.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - two - parent: first_second
         SourceFormatNode secondTwoOne =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
-        SourceFormatNode secondTwoOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_one")).ConfigureAwait(false);
+        SourceFormatNode secondTwoOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoOne.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
-        SourceFormatNode secondTwoTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_two")).ConfigureAwait(false);
+        SourceFormatNode secondTwoTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoTwo.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondTwoThree =
-            await Sut.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
-        SourceFormatNode secondTwoThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondTwo_three")).ConfigureAwait(false);
+        SourceFormatNode secondTwoThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondTwoThree.Id,
             firstSecond.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // second level - three - parent: first_third
         SourceFormatNode secondThreeOne =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
-        SourceFormatNode secondThreeOneResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_one")).ConfigureAwait(false);
+        SourceFormatNode secondThreeOneResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeOne.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondThreeTwo =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
-        SourceFormatNode secondThreeTwoResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_two")).ConfigureAwait(false);
+        SourceFormatNode secondThreeTwoResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeTwo.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
         SourceFormatNode secondThreeThree =
-            await Sut.AddAsync(new SourceFormatNode("secondThree_three")).ConfigureAwait(false);
-        SourceFormatNode secondThreeThreeResult = await Sut.AddChildNodeAsync(
+            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("secondThree_three")).ConfigureAwait(false);
+        SourceFormatNode secondThreeThreeResult = await Sut.SourceFormatNodes.AddChildNodeAsync(
             secondThreeThree.Id,
             firstThird.Id,
             rootNodeResult.Id).ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNode> res = await Sut.GetByIdWithFlatTreeAsync(firstThird.Id).ConfigureAwait(false);
+        List<SourceFormatNode> res =
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(firstThird.Id).ConfigureAwait(false);
 
         // Assert
         res.Should().NotBeNull();

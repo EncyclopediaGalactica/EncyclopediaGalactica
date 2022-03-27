@@ -8,7 +8,7 @@ public class SourceFormatMappers : ISourceFormatMappers
         ISourceFormatNodeMappers sourceFormatNodeMappers)
     {
         SourceFormatNodeMappers = sourceFormatNodeMappers ??
-                                  throw new ArgumentNullException($"{nameof(sourceFormatNodeMappers)} cannot be null.");
+                                  throw new ArgumentNullException(nameof(sourceFormatNodeMappers));
     }
 
     public ISourceFormatNodeMappers SourceFormatNodeMappers { get; }

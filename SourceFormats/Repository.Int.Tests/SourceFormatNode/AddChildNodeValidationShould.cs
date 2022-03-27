@@ -21,7 +21,7 @@ public class AddChildNodeValidationShould : BaseTest
         // act
         Func<Task> action = async () =>
         {
-            await Sut.AddChildNodeAsync(childId, parentId, parentId).ConfigureAwait(false);
+            await Sut.SourceFormatNodes.AddChildNodeAsync(childId, parentId, parentId).ConfigureAwait(false);
         };
 
         // Assert

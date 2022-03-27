@@ -26,11 +26,11 @@ public class GetAll : BaseTest
 #pragma warning disable CA5394
             node.Name = "tmp" + _random.Next(1, 100);
 #pragma warning restore CA5394
-            await Sut.AddAsync(node).ConfigureAwait(false);
+            await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
         }
 
         // Act
-        ICollection<SourceFormatNode> result = await Sut.GetAllAsync().ConfigureAwait(false);
+        ICollection<SourceFormatNode> result = await Sut.SourceFormatNodes.GetAllAsync().ConfigureAwait(false);
 
         // Assert
         result.Count.Should().Be(counter);

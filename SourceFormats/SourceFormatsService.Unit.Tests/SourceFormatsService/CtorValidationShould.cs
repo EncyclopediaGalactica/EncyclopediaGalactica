@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests.So
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 using FluentAssertions;
 using Interfaces;
 using Xunit;
@@ -12,7 +11,7 @@ public class CtorValidationShould
 {
     [Theory]
     [InlineData(null)]
-    public async Task Throw_WhenAnyCtorParamIsNull(
+    public void Throw_WhenAnyCtorParamIsNull(
         ISourceFormatNodeService sourceFormatNodeService)
     {
         // Arrange & Act

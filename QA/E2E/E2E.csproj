@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0"/>
+        <PackageReference Include="xunit" Version="2.4.1"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="coverlet.collector" Version="3.1.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Host\Host\Host.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Controllers\Controllers.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Ctx\Ctx.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Dtos\Dtos.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Entities\Entities.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Mappers\Mappers.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Repository\Repository.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Core\Sdk.Core.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\ValidatorService\ValidatorService.csproj"/>
+        <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
+    </ItemGroup>
+
+</Project>

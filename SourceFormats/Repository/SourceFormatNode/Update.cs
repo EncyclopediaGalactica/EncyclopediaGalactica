@@ -15,6 +15,7 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
+#pragma warning disable CA1062
             await ValidateInputForUpdatingAsync(node, cancellationToken).ConfigureAwait(false);
             SourceFormatNode? toBeUpdated = await _ctx.SourceFormatNodes
                 .FirstAsync(p => p.Id == node.Id, cancellationToken)
@@ -22,6 +23,7 @@ public partial class SourceFormatNodeRepository
 
             if (toBeUpdated is null)
                 throw new SourceFormatNodeRepositoryException($"No entity with id {node.Id}");
+#pragma warning restore CA1062
 
             MapNewValuesToEntity(node, toBeUpdated);
             _ctx.Entry(toBeUpdated).State = EntityState.Modified;

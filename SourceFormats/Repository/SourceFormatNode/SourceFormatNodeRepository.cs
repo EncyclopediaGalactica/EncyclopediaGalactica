@@ -6,14 +6,14 @@ using FluentValidation;
 using Guards;
 using Interfaces;
 
-public partial class SourceFormatNodeRepository : ISourceFormatsNodeRepository
+public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
 {
-    private readonly SourceFormatNodeDbContext _ctx;
+    private readonly SourceFormatsDbContext _ctx;
     private readonly IGuardService _guard;
     private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
 
     public SourceFormatNodeRepository(
-        SourceFormatNodeDbContext ctx,
+        SourceFormatsDbContext ctx,
         IValidator<SourceFormatNode> sourceFormatNodeValidator,
         IGuardService guardService)
     {

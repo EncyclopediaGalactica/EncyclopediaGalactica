@@ -15,7 +15,7 @@ public class GetByIdValidationShould : BaseTest
     public async Task Throw_WhenIdIsZero()
     {
         // Act
-        Func<Task> action = async () => { await Sut.GetByIdAsync(0).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(0).ConfigureAwait(false); };
 
         // Assert
         await action.Should()
@@ -29,7 +29,7 @@ public class GetByIdValidationShould : BaseTest
     public async Task Throw_WhenNosuchEntity()
     {
         // Act
-        Func<Task> action = async () => { await Sut.GetByIdAsync(100).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(100).ConfigureAwait(false); };
 
         // Assert
         await action.Should()
