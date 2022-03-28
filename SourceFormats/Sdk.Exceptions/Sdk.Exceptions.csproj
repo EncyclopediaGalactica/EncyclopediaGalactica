@@ -6,9 +6,4 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
-        <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
-    </ItemGroup>
-
 </Project>

@@ -21,7 +21,7 @@ public class AddValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await _sourceFormatsService
-                .SourceFormatNodeService
+                .SourceFormatNode
                 .AddAsync(null!).ConfigureAwait(false);
         };
 
@@ -48,7 +48,7 @@ public class AddValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await _sourceFormatsService
-                .SourceFormatNodeService
+                .SourceFormatNode
                 .AddAsync(dto).ConfigureAwait(false);
         };
 
@@ -65,7 +65,7 @@ public class AddValidationShould : BaseTest
         SourceFormatNodeDto dto = new SourceFormatNodeDto();
         dto.Name = "asd";
         SourceFormatNodeDto dtoResult = await _sourceFormatsService
-            .SourceFormatNodeService
+            .SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
 
         // Act
@@ -73,7 +73,7 @@ public class AddValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await _sourceFormatsService
-                .SourceFormatNodeService
+                .SourceFormatNode
                 .AddAsync(dto).ConfigureAwait(false);
         };
 

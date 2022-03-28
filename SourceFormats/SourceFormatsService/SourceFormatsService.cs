@@ -6,9 +6,9 @@ public class SourceFormatsService : ISourceFormatsService
 {
     public SourceFormatsService(ISourceFormatNodeService sourceFormatNodeService)
     {
-        SourceFormatNodeService =
+        SourceFormatNode =
             sourceFormatNodeService ?? throw new ArgumentNullException(nameof(sourceFormatNodeService));
     }
 
-    public ISourceFormatNodeService SourceFormatNodeService { get; }
+    public ISourceFormatNodeService SourceFormatNode { get; }
 }

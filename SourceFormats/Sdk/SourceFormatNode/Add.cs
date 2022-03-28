@@ -2,6 +2,7 @@ namespace Sdk.SourceFormatNode;
 
 using EncyclopediaGalactica.SourceFormats.Api;
 using EncyclopediaGalactica.SourceFormats.Dtos;
+using Exceptions;
 
 public partial class SourceFormatNodeSdk
 {
@@ -9,15 +10,25 @@ public partial class SourceFormatNodeSdk
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
-        if (dto is null)
-            throw new ArgumentNullException(nameof(dto));
+        try
+        {
+            if (dto is null)
+                throw new ArgumentNullException(nameof(dto));
 
-        HttpRequestMessage message = _sdkCore.PreparePost(dto, SourceFormatNode.Add);
+            const string url = SourceFormatNode.Route + SourceFormatNode.Add;
+            HttpRequestMessage message = _sdkCore.PreparePost(dto, url);
 
-        SourceFormatNodeDto? result = await _sdkCore.SendAsync<SourceFormatNodeDto>(
-                message,
-                cancellationToken)
-            .ConfigureAwait(false);
-        return result;
+            SourceFormatNodeDto? result = await _sdkCore.SendAsync<SourceFormatNodeDto>(
+                    message,
+                    cancellationToken)
+                .ConfigureAwait(false);
+            return result;
+        }
+        catch (Exception e)
+        {
+            string msg = $"Error happened while executing {nameof(SourceFormatNodeSdk)}.{nameof(AddAsync)}. " +
+                         "For further information see inner exception.";
+            throw new SdkException(msg, e);
+        }
     }
 }

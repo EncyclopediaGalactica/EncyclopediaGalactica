@@ -1,28 +1,34 @@
 namespace E2E.SourceFormatNode;
 
 using System.Diagnostics.CodeAnalysis;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
+using EncyclopediaGalactica.SourceFormats.Dtos;
+using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-public class AddShould : IClassFixture<SourceFormatWebApplicationFactory<Program>>
+public class AddShould : TestBase
 {
-    private HttpClient _httpClient;
-    private readonly SourceFormatWebApplicationFactory<Program> _webApplicationFactory;
-
-    public AddShould(SourceFormatWebApplicationFactory<Program> webApplicationFactory)
+    public AddShould(SourceFormatWebApplicationFactory<Program> webApplicationFactory) : base(webApplicationFactory)
     {
-        _webApplicationFactory = webApplicationFactory;
-        _httpClient = _webApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions
-        {
-            AllowAutoRedirect = false
-        });
     }
 
     [Fact]
     public async Task Add()
     {
+        // Arrange
+        SourceFormatNodeDto newDto = new SourceFormatNodeDto
+        {
+            Name = "asdd"
+        };
+
+        // Act
+        SourceFormatNodeDto? saved = await _sourceFormatsSdk.SourceFormatNode.AddAsync(newDto)
+            .ConfigureAwait(false);
+
+        // Assert
+        saved.Should().NotBeNull();
+        saved.Name.Should().Be(newDto.Name);
+        saved.Id.Should().BeGreaterThan(0);
     }
 }

@@ -18,7 +18,7 @@ public class AddShould : BaseTest
 
         // Act
         SourceFormatNodeDto result = await _sourceFormatsService
-            .SourceFormatNodeService
+            .SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
 
         // Assert

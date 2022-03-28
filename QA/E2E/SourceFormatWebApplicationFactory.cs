@@ -2,6 +2,7 @@ namespace E2E;
 
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using EncyclopediaGalactica.SourceFormats.Ctx;
 using EncyclopediaGalactica.SourceFormats.Mappers;
@@ -26,6 +27,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
+[ExcludeFromCodeCoverage]
 public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>
     where TStartup : class
 {

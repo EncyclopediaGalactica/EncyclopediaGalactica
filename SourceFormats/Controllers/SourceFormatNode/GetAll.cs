@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 
 public partial class SourceFormatNodeController
 {
-    [HttpPost]
-    [Route(SourceFormatNode.Add)]
+    [HttpGet]
+    [Route(SourceFormatNode.GetAll)]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<SourceFormatNodeDto>> AddAsync([FromBody] SourceFormatNodeDto dto)
+    public async Task<ActionResult<List<SourceFormatNodeDto>>> GetAsync()
     {
-        SourceFormatNodeDto result = await _sourceFormatsService
+        List<SourceFormatNodeDto> result = await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(dto)
+            .GetAllAsync()
             .ConfigureAwait(false);
         return Ok(result);
     }

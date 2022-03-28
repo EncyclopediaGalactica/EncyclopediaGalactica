@@ -51,4 +51,18 @@ public interface ISourceFormatNodeService
         CancellationToken cancellationToken = default);
 
     Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Returns <see cref="List{T}" />.
+    ///     The returned nodes do not have their navigation properties populated. It is a flat list.
+    /// </summary>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation which includes
+    ///     the result.
+    /// </returns>
+    /// <exception cref="SourceFormatNodeServiceException">If any error happen.</exception>
+    Task<List<SourceFormatNodeDto>> GetAllAsync(CancellationToken cancellationToken = default);
 }

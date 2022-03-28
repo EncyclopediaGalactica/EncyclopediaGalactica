@@ -55,7 +55,7 @@ public partial class SourceFormatNodeService
     {
         return _sourceFormatMappers
             .SourceFormatNodeMappers
-            .MapSourceFormatNodeToSourceFormatNodeDto(node);
+            .MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(node);
     }
 
     private async Task AppendToSourceFormatNodesCachedList(SourceFormatNode node, string key)
