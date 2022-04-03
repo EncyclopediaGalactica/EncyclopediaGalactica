@@ -1,7 +1,7 @@
-namespace Sdk.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.SourceFormatNode;
 
-using EncyclopediaGalactica.SourceFormats.Api;
-using EncyclopediaGalactica.SourceFormats.Dtos;
+using Api;
+using Dtos;
 using Exceptions;
 
 public partial class SourceFormatNodeSdk

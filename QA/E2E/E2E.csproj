@@ -5,6 +5,10 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.QA.E2E</AssemblyName>
+
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.QA.E2E</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,6 +18,8 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.3"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.3"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0"/>
+        <PackageReference Include="SpecFlow" Version="3.9.58"/>
+        <PackageReference Include="SpecFlow.xUnit" Version="3.9.58"/>
         <PackageReference Include="xunit" Version="2.4.1"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -40,6 +46,7 @@
         <ProjectReference Include="..\..\SourceFormats\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk.Core\Sdk.Core.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Models\Sdk.Models.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
@@ -47,6 +54,7 @@
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\ValidatorService\ValidatorService.csproj"/>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
         <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
     </ItemGroup>
 

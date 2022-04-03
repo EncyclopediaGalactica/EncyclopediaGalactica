@@ -3,32 +3,33 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatN
 using Dtos;
 using Entities;
 using FluentValidation;
-using Guards;
 using Interfaces;
 using Mappers.Interfaces;
 using Repository.Interfaces;
+using Sdk.Models;
 using SourceFormatsCacheService.Interfaces;
+using Utils.GuardsService;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {
     private const string SourceFormatNodesListKey = "SourceFormatNodesList";
-    private readonly IGuardService _guard;
+    private readonly IGuardsService _guards;
     private readonly ISourceFormatMappers _sourceFormatMappers;
+    private readonly IValidator<SourceFormatNodeAddRequestModel> _sourceFormatNodeAddModelValidator;
     private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
-    private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
     private int _cacheExpiresInMinutes = 60;
 
     public SourceFormatNodeService(
-        IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
-        IGuardService guardService,
+        IValidator<SourceFormatNodeAddRequestModel> sourceFormatNodeAddModelValidator,
+        IGuardsService guardsService,
         ISourceFormatMappers sourceFormatMappers,
         ISourceFormatNodeRepository sourceFormatNodeRepository,
         ISourceFormatNodeCacheService sourceFormatNodeCacheService)
     {
-        _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator ??
-                                        throw new ArgumentNullException(nameof(sourceFormatNodeDtoValidator));
-        _guard = guardService ?? throw new ArgumentNullException(nameof(guardService));
+        _sourceFormatNodeAddModelValidator = sourceFormatNodeAddModelValidator ??
+                                             throw new ArgumentNullException(nameof(sourceFormatNodeAddModelValidator));
+        _guards = guardsService ?? throw new ArgumentNullException(nameof(guardsService));
         _sourceFormatMappers = sourceFormatMappers ?? throw new ArgumentNullException(nameof(sourceFormatMappers));
         _sourceFormatNodeRepository = sourceFormatNodeRepository ??
                                       throw new ArgumentNullException(nameof(sourceFormatNodeRepository));

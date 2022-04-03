@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Entities;
 using Exceptions;
 using FluentAssertions;
-using Guards;
+using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -34,8 +34,8 @@ public class AddShould : BaseTest
 
         // Assert
         await task.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerException<SourceFormatNodeRepositoryException, GuardException>()
-            .WithInnerExceptionExactly<GuardException, GuardValueShouldNoBeNullException>()
+            .WithInnerException<SourceFormatNodeRepositoryException, GuardsServiceException>()
+            .WithInnerExceptionExactly<GuardsServiceException, GuardsServiceValueShouldNoBeNullException>()
             .ConfigureAwait(false);
     }
 }

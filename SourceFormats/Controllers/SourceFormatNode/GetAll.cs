@@ -7,8 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 public partial class SourceFormatNodeController
 {
-    [HttpGet]
-    [Route(SourceFormatNode.GetAll)]
+    [HttpGet(SourceFormatNode.GetAll)]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

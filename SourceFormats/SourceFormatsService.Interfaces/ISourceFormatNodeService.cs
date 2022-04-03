@@ -3,19 +3,21 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
 using Dtos;
 using Entities;
 using Exceptions;
+using Sdk.Models;
 
 public interface ISourceFormatNodeService
 {
     /// <summary>
     ///     Creates a new <see cref="SourceFormatNode" /> in the system based on the data stored
-    ///     in the provided input <see cref="SourceFormatNodeDto" />.
+    ///     in the provided input <see cref="SourceFormatNodeAddRequestModel" />.
     /// </summary>
-    /// <param name="dto"><see cref="SourceFormatNodeDto" /> contains the details of the new entity.</param>
+    /// <param name="addRequestModel"><see cref="SourceFormatNodeAddRequestModel" /> contains the details of the new entity.</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
     /// <returns>
-    ///     Returns a <see cref="Task{TResult}" /> representing asynchronous operation.
+    ///     Returns a <see cref="Task{TResult}" /> representing asynchronous operation. Which includes
+    ///     a <see cref="SourceFormatNodeAddResponseModel" /> object as result.
     /// </returns>
     /// <exception cref="SourceFormatNodeServiceException">
     ///     Whenever internal error happens which
@@ -25,8 +27,8 @@ public interface ISourceFormatNodeService
     ///     Whenever input validation related
     ///     error happens.
     /// </exception>
-    Task<SourceFormatNodeDto> AddAsync(
-        SourceFormatNodeDto dto,
+    Task<SourceFormatNodeAddResponseModel> AddAsync(
+        SourceFormatNodeAddRequestModel addRequestModel,
         CancellationToken cancellationToken = default);
 
     Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(

@@ -1,4 +1,4 @@
-﻿namespace SourceFormatsCacheService.Exceptions;
+﻿namespace EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService.Exceptions;
 
 using System.Runtime.Serialization;
 

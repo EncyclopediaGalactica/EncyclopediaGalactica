@@ -1,6 +1,6 @@
-﻿namespace Guards;
+﻿namespace EncyclopediaGalactica.Utils.GuardsService;
 
-public class GuardService : IGuardService
+public class GuardsService : IGuardsService
 {
     const string Msg = "Error happened while validating. For further information see inner exception.";
 
@@ -9,11 +9,11 @@ public class GuardService : IGuardService
         try
         {
             if (val is not null) return;
-            throw new GuardValueShouldNoBeNullException($"The provided object value is null.");
+            throw new GuardsServiceValueShouldNoBeNullException($"The provided object value is null.");
         }
         catch (Exception e)
         {
-            throw new GuardException(Msg, e);
+            throw new GuardsServiceException(Msg, e);
         }
     }
 
@@ -25,12 +25,12 @@ public class GuardService : IGuardService
             {
                 string msg;
                 msg = $"The provided value {providedValue} cannot be equal to: {comparedTo}";
-                throw new GuardValueShouldNotBeEqualToException(msg);
+                throw new GuardsServiceValueShouldNotBeEqualToException(msg);
             }
         }
         catch (Exception e)
         {
-            throw new GuardException(Msg, e);
+            throw new GuardsServiceException(Msg, e);
         }
     }
 }

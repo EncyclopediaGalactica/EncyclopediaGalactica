@@ -5,6 +5,10 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
+
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Repository.Unit.Tests</AssemblyName>
+
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Repository.Unit.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

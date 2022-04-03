@@ -1,4 +1,4 @@
-namespace Sdk.Interfaces;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.Interfaces;
 
 public interface ISourceFormatsSdk
 {

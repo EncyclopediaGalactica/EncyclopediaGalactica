@@ -1,6 +1,6 @@
-namespace Guards;
+namespace EncyclopediaGalactica.Utils.GuardsService;
 
-public interface IGuardService
+public interface IGuardsService
 {
     void NotNull<T>(T val);
     void IsNotEqual(long providedValue, long comparedTo);

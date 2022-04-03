@@ -1,4 +1,4 @@
-namespace Sdk.Core.Unit.Tests;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.Core.Unit.Tests;
 
 using System;
 using System.Diagnostics.CodeAnalysis;

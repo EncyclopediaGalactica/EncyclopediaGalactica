@@ -1,31 +1,32 @@
-namespace E2E;
+namespace EncyclopediaGalactica.SourceFormats.QA.E2E;
 
 using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using EncyclopediaGalactica.SourceFormats.Ctx;
-using EncyclopediaGalactica.SourceFormats.Mappers;
-using EncyclopediaGalactica.SourceFormats.Mappers.Interfaces;
-using EncyclopediaGalactica.SourceFormats.Mappers.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.Repository;
-using EncyclopediaGalactica.SourceFormats.Repository.Interfaces;
-using EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService.Interfaces;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsService;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
-using EncyclopediaGalactica.SourceFormats.ValidatorService;
+using Ctx;
+using ExceptionFilters;
 using FluentValidation.AspNetCore;
-using Guards;
+using Mappers;
+using Mappers.Interfaces;
+using Mappers.SourceFormatNode;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Repository;
+using Repository.Interfaces;
+using Repository.SourceFormatNode;
+using SourceFormatsCacheService;
+using SourceFormatsCacheService.Interfaces;
+using SourceFormatsCacheService.SourceFormatNode;
+using SourceFormatsService;
+using SourceFormatsService.Interfaces;
+using SourceFormatsService.SourceFormatNodeService;
+using Utils.GuardsService;
+using ValidatorService;
 
 [ExcludeFromCodeCoverage]
 public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup>
@@ -41,6 +42,11 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
 
             SqliteConnection connection = new SqliteConnection("Filename=:memory:");
             connection.Open();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add<SourceFormatNodeServiceInputValidationExceptionFilter>();
+                options.Filters.Add<SourceFormatNodeServiceExceptionFilter>();
+            });
             services.AddDbContext<SourceFormatsDbContext>(options =>
             {
                 options.UseSqlite(connection);
@@ -52,7 +58,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             services.AddScoped<ISourceFormatsRepository, SourceFormatsRepository>();
             services.AddScoped<ISourceFormatsCacheService, SourceFormatsCacheService>();
             services.AddScoped<ISourceFormatNodeCacheService, SourceFormatNodeCacheService>();
-            services.AddScoped<IGuardService, GuardService>();
+            services.AddScoped<IGuardsService, GuardsService>();
             services.AddScoped<ISourceFormatNodeService, SourceFormatNodeService>();
             services.AddScoped<ISourceFormatsService, SourceFormatsService>();
             services.AddMvc()

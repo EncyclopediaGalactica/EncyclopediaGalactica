@@ -1,13 +1,13 @@
-namespace Repository.Unit.Tests.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.Repository.Unit.Tests.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.SourceFormats.Ctx;
-using EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.ValidatorService;
+using Ctx;
 using FluentAssertions;
-using Guards;
 using Microsoft.EntityFrameworkCore;
+using Repository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -26,7 +26,7 @@ public class SourceFormatNodeShould
     {
         Action action = () =>
         {
-            new SourceFormatNodeRepository(null!, new SourceFormatNodeValidator(), new GuardService());
+            new SourceFormatNodeRepository(null!, new SourceFormatNodeValidator(), new GuardsService());
         };
 
         action.Should().ThrowExactly<ArgumentNullException>();
@@ -38,7 +38,7 @@ public class SourceFormatNodeShould
         DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
             .Options;
         SourceFormatsDbContext ctx = new SourceFormatsDbContext(options);
-        Action action = () => { new SourceFormatNodeRepository(ctx, null!, new GuardService()); };
+        Action action = () => { new SourceFormatNodeRepository(ctx, null!, new GuardsService()); };
 
         action.Should().ThrowExactly<ArgumentNullException>();
     }

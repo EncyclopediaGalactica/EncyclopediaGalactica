@@ -1,5 +1,3 @@
-using SourceFormatsCacheServiceException = SourceFormatsCacheService.Exceptions.SourceFormatsCacheServiceException;
-
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
 using System.Runtime.CompilerServices;
@@ -10,18 +8,20 @@ using FluentValidation;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.EntityFrameworkCore;
 using Repository.Exceptions;
+using Sdk.Models;
+using SourceFormatsCacheService.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
 {
-    public async Task<SourceFormatNodeDto> AddAsync(
-        SourceFormatNodeDto dto,
+    public async Task<SourceFormatNodeAddResponseModel> AddAsync(
+        SourceFormatNodeAddRequestModel addRequestModel,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            await ValidateInputAsync(dto).ConfigureAwait(false);
-            SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
+            await ValidateInputAsync(addRequestModel).ConfigureAwait(false);
+            SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(addRequestModel);
             SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken);
             await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
             SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
@@ -55,7 +55,7 @@ public partial class SourceFormatNodeService
     {
         return _sourceFormatMappers
             .SourceFormatNodeMappers
-            .MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(node);
+            .MapSourceFormatNodeToSourceFormatNodeModelInFlatFashion(node);
     }
 
     private async Task AppendToSourceFormatNodesCachedList(SourceFormatNode node, string key)
@@ -75,14 +75,14 @@ public partial class SourceFormatNodeService
 
     private SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto)
     {
-        return _sourceFormatMappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(dto);
+        return _sourceFormatMappers.SourceFormatNodeMappers.MapSourceFormatNodeModelToSourceFormatNode(dto);
     }
 
-    private async Task ValidateInputAsync(SourceFormatNodeDto dto)
+    private async Task ValidateInputAsync(SourceFormatNodeAddRequestModel addRequestModel)
     {
-        await _sourceFormatNodeDtoValidator.ValidateAsync(dto, o =>
+        await _sourceFormatNodeAddModelValidator.ValidateAsync(addRequestModel, o =>
         {
-            o.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
+            o.IncludeRuleSets(SourceFormatNodeAddModelValidator.Add);
             o.ThrowOnFailures();
         }).ConfigureAwait(false);
     }

@@ -18,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
         <ProjectReference Include="..\Ctx\Ctx.csproj"/>
         <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj"/>
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>

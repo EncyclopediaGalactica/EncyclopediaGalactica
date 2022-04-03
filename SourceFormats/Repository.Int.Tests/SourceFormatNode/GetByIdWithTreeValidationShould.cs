@@ -5,7 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Exceptions;
 using FluentAssertions;
-using Guards;
+using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -23,8 +23,8 @@ public class GetByIdWithTreeValidationShould : BaseTest
         // Assert
         await action.Should()
             .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardException>()
-            .WithInnerExceptionExactly<GuardException, GuardValueShouldNotBeEqualToException>()
+            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardsServiceException>()
+            .WithInnerExceptionExactly<GuardsServiceException, GuardsServiceValueShouldNotBeEqualToException>()
             .ConfigureAwait(false);
     }
 }

@@ -12,6 +12,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Dtos\Dtos.csproj"/>
         <ProjectReference Include="..\Entities\Entities.csproj"/>
+        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
     </ItemGroup>
 

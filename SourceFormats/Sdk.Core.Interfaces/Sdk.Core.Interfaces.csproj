@@ -4,6 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Core.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Core.Interfaces</RootNamespace>
     </PropertyGroup>
 
 </Project>

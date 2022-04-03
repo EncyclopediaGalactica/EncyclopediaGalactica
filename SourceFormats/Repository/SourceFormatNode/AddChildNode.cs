@@ -77,10 +77,10 @@ public partial class SourceFormatNodeRepository
 
     private void CheckInputForAddChildNode(long childId, long parentId, long rootNodeId)
     {
-        _guard.IsNotEqual(childId, 0);
-        _guard.IsNotEqual(parentId, 0);
-        _guard.IsNotEqual(rootNodeId, 0);
-        _guard.IsNotEqual(childId, parentId);
-        _guard.IsNotEqual(childId, rootNodeId);
+        _guards.IsNotEqual(childId, 0);
+        _guards.IsNotEqual(parentId, 0);
+        _guards.IsNotEqual(rootNodeId, 0);
+        _guards.IsNotEqual(childId, parentId);
+        _guards.IsNotEqual(childId, rootNodeId);
     }
 }

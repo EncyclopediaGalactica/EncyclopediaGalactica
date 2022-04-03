@@ -4,11 +4,11 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Ctx;
-using Guards;
 using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Repository.SourceFormatNode;
+using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
@@ -32,7 +32,7 @@ public class BaseTest
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             ctx,
             new SourceFormatNodeValidator(),
-            new GuardService());
+            new GuardsService());
         Sut = new SourceFormatsRepository(sourceFormatNodeRepository);
     }
 

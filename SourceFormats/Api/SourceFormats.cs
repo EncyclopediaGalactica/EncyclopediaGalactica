@@ -9,6 +9,6 @@ public struct SourceFormatNode
 {
     public const string Route = SourceFormats.Route + "/sourceformatnode";
 
-    public const string Add = "/add";
-    public const string GetAll = "/get";
+    public const string Add = "add";
+    public const string GetAll = "get";
 }

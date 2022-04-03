@@ -1,4 +1,4 @@
-namespace Host.Api.Controllers;
+namespace EncyclopediaGalactica.SourceFormats.Host.ErrorController;
 
 using Microsoft.AspNetCore.Mvc;
 

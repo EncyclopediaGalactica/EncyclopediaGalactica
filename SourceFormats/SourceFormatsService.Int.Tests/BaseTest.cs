@@ -5,7 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 using Ctx;
 using Entities;
 using FluentValidation;
-using Guards;
 using Interfaces;
 using Mappers;
 using Mappers.Interfaces;
@@ -16,6 +15,7 @@ using Repository.Interfaces;
 using Repository.SourceFormatNode;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
+using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
@@ -27,7 +27,7 @@ public class BaseTest
     {
         SqliteConnection connection = new SqliteConnection("Filename=:memory:");
         connection.Open();
-        SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
+        SourceFormatNodeAddModelValidator validator = new SourceFormatNodeAddModelValidator();
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);
@@ -39,11 +39,11 @@ public class BaseTest
         SourceFormatsDbContext ctx = new SourceFormatsDbContext(dbContextOptions);
         ctx.Database.EnsureCreated();
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
-            ctx, nodeValidator, new GuardService());
+            ctx, nodeValidator, new GuardsService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
         ISourceFormatNodeService sourceFormatNodeService =
             new SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
-                validator, new GuardService(), mappers, sourceFormatNodeRepository, sourceFormatNodeCacheService);
+                validator, new GuardsService(), mappers, sourceFormatNodeRepository, sourceFormatNodeCacheService);
         _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
     }
 }

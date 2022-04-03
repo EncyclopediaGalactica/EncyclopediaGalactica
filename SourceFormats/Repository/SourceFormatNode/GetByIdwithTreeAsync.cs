@@ -13,7 +13,7 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            _guard.IsNotEqual(id, 0);
+            _guards.IsNotEqual(id, 0);
             _ctx.ChangeTracker.Clear();
             SourceFormatNode? startNodeInTree = await _ctx.SourceFormatNodes
                 .FirstAsync(p => p.Id == id, cancellationToken)

@@ -1,28 +1,28 @@
-namespace Sdk.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.SourceFormatNode;
 
-using EncyclopediaGalactica.SourceFormats.Api;
-using EncyclopediaGalactica.SourceFormats.Dtos;
+using Api;
 using Exceptions;
+using Models;
 
 public partial class SourceFormatNodeSdk
 {
-    public async Task<SourceFormatNodeDto?> AddAsync(
-        SourceFormatNodeDto dto,
+    public async Task<SourceFormatNodeAddResponseModel> AddAsync(
+        SourceFormatNodeAddRequestModel addRequestModel,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            if (dto is null)
-                throw new ArgumentNullException(nameof(dto));
+            if (addRequestModel is null)
+                throw new ArgumentNullException(nameof(addRequestModel));
 
             const string url = SourceFormatNode.Route + SourceFormatNode.Add;
-            HttpRequestMessage message = _sdkCore.PreparePost(dto, url);
+            HttpRequestMessage message = _sdkCore.PreparePost(addRequestModel.Payload, url);
 
-            SourceFormatNodeDto? result = await _sdkCore.SendAsync<SourceFormatNodeDto>(
+            SourceFormatNodeAddResponseModel response = await _sdkCore.SendAsync<SourceFormatNodeAddResponseModel>(
                     message,
                     cancellationToken)
                 .ConfigureAwait(false);
-            return result;
+            return response;
         }
         catch (Exception e)
         {

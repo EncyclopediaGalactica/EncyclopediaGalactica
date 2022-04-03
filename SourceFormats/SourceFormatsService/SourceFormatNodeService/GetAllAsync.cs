@@ -15,7 +15,7 @@ public partial class SourceFormatNodeService
                 .GetAllAsync(cancellationToken)
                 .ConfigureAwait(false);
             List<SourceFormatNodeDto> mapped = _sourceFormatMappers.SourceFormatNodeMappers
-                .MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(sourceFormatNodes);
+                .MapSourceFormatNodesToSourceFormatNodeModelsInFlatFashion(sourceFormatNodes);
             return mapped;
         }
         catch (Exception e)

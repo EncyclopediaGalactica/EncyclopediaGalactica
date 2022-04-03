@@ -28,7 +28,7 @@ public partial class SourceFormatNodeRepository
 
     private async Task ValidateInputNodeForAddingAsync(SourceFormatNode node, CancellationToken cancellationToken)
     {
-        _guard.NotNull(node);
+        _guards.NotNull(node);
         await _sourceFormatNodeValidator.ValidateAsync(node, o =>
             {
                 o.IncludeRuleSets(SourceFormatNodeValidator.Add);

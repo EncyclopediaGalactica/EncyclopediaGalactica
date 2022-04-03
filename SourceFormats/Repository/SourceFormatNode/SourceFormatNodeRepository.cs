@@ -3,24 +3,24 @@ namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
 using Ctx;
 using Entities;
 using FluentValidation;
-using Guards;
 using Interfaces;
+using Utils.GuardsService;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
 {
     private readonly SourceFormatsDbContext _ctx;
-    private readonly IGuardService _guard;
+    private readonly IGuardsService _guards;
     private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
 
     public SourceFormatNodeRepository(
         SourceFormatsDbContext ctx,
         IValidator<SourceFormatNode> sourceFormatNodeValidator,
-        IGuardService guardService)
+        IGuardsService guardsService)
     {
         _ctx = ctx ?? throw new ArgumentNullException(nameof(ctx));
         _sourceFormatNodeValidator = sourceFormatNodeValidator ??
                                      throw new ArgumentNullException(nameof(sourceFormatNodeValidator));
-        _guard = guardService ?? throw new ArgumentNullException(nameof(guardService));
+        _guards = guardsService ?? throw new ArgumentNullException(nameof(guardsService));
     }
 
     private string prepErrorMessage(string methodName)

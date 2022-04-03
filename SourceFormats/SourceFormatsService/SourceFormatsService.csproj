@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
         <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>

@@ -10,8 +10,8 @@ public partial class SourceFormatNodeRepository
     {
         try
         {
-            _guard.NotNull(id);
-            _guard.IsNotEqual(id, 0);
+            _guards.NotNull(id);
+            _guards.IsNotEqual(id, 0);
 
             List<SourceFormatNode> toBeDelete = await GetByIdWithFlatTreeAsync(id, cancellationToken)
                 .ConfigureAwait(false);

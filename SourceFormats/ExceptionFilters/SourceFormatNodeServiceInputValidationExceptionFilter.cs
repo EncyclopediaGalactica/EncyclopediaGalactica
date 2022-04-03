@@ -1,8 +1,9 @@
-namespace Host.Api.Filters;
+namespace EncyclopediaGalactica.SourceFormats.ExceptionFilters;
 
-using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Exceptions;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using SourceFormatsService.Exceptions;
 
 public class SourceFormatNodeServiceInputValidationExceptionFilter : IActionFilter, IOrderedFilter
 {

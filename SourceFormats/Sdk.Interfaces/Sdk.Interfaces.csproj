@@ -4,11 +4,14 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Interfaces</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Dtos\Dtos.csproj"/>
         <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
+        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj"/>
     </ItemGroup>
 
 </Project>
