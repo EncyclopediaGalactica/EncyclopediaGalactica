@@ -3,16 +3,18 @@ namespace EncyclopediaGalactica.SourceFormats.Sdk.SourceFormatNode;
 using Api;
 using Dtos;
 using Exceptions;
+using Models.SourceFormatNode;
 
 public partial class SourceFormatNodeSdk
 {
     /// <inheritdoc />
-    public async Task<List<SourceFormatNodeDto>?> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try
         {
             HttpRequestMessage httpRequestMessage = PrepareGet(SourceFormatNode.GetAll);
-            List<SourceFormatNodeDto>? result = await _sdkCore.SendAsync<List<SourceFormatNodeDto>>(
+            SourceFormatNodeGetAllResponseModel result = await _sdkCore.SendAsync<
+                    SourceFormatNodeGetAllResponseModel, SourceFormatNodeDto>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

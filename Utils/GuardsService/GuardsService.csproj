@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
+        <AssemblyName>EncyclopediaGalactica.Utils.GuardsService</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Utils.GuardsService</RootNamespace>
+    </PropertyGroup>
+
+</Project>

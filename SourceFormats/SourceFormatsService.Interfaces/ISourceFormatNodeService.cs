@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
 using Dtos;
 using Entities;
 using Exceptions;
-using Sdk.Models;
+using Sdk.Models.SourceFormatNode;
 
 public interface ISourceFormatNodeService
 {
@@ -55,7 +55,7 @@ public interface ISourceFormatNodeService
     Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto, CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns <see cref="List{T}" />.
+    ///     Requests all of <see cref="SourceFormatNode" />s from the system.
     ///     The returned nodes do not have their navigation properties populated. It is a flat list.
     /// </summary>
     /// <param name="cancellationToken">
@@ -63,8 +63,9 @@ public interface ISourceFormatNodeService
     /// </param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation which includes
-    ///     the result.
+    ///     the result. The result type is <see cref="SourceFormatNodeGetAllResponseModel" /> which includes
+    ///     information of execution and result.
     /// </returns>
     /// <exception cref="SourceFormatNodeServiceException">If any error happen.</exception>
-    Task<List<SourceFormatNodeDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
 }

@@ -1,13 +1,13 @@
 namespace EncyclopediaGalactica.SourceFormats.ValidatorService;
 
+using Dtos;
 using FluentValidation;
-using Sdk.Models;
 
-public class SourceFormatNodeAddModelValidator : AbstractValidator<SourceFormatNodeAddRequestModel>
+public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeDto>
 {
     public const string Add = "Add";
 
-    public SourceFormatNodeAddModelValidator()
+    public SourceFormatNodeDtoValidator()
     {
 #pragma warning disable CS8602
         RuleSet(Add, () =>

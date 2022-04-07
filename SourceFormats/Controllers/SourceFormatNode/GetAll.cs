@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
 using Api;
-using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Sdk.Models.SourceFormatNode;
 
 public partial class SourceFormatNodeController
 {
@@ -11,9 +11,9 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<List<SourceFormatNodeDto>>> GetAsync()
+    public async Task<ActionResult<SourceFormatNodeGetAllResponseModel>> GetAsync()
     {
-        List<SourceFormatNodeDto> result = await _sourceFormatsService
+        SourceFormatNodeGetAllResponseModel result = await _sourceFormatsService
             .SourceFormatNode
             .GetAllAsync()
             .ConfigureAwait(false);

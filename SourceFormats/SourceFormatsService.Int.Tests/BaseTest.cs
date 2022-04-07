@@ -27,7 +27,7 @@ public class BaseTest
     {
         SqliteConnection connection = new SqliteConnection("Filename=:memory:");
         connection.Open();
-        SourceFormatNodeAddModelValidator validator = new SourceFormatNodeAddModelValidator();
+        SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);

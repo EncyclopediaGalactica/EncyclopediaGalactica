@@ -1,23 +1,23 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Interfaces;
 
-using Dtos;
 using Exceptions;
-using Models;
+using Models.SourceFormatNode;
 
 public interface ISourceFormatNodeSdk
 {
     /// <summary>
     ///     Calls the Encyclopedia Galactica SourceFormats endpoint and returns a
-    ///     <see cref="List{T}" /> of <see cref="SourceFormatNodeDto" />s.
+    ///     <see cref="SourceFormatNodeGetAllResponseModel" /> which includes information
+    ///     about the operation result and the actual result of operation.
     /// </summary>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
     /// <returns>
-    ///     Returns <see cref="Task{T}" /> representing asynchronous operation which includes the result.
+    ///     Returns <see cref="Task{TResult}" /> representing asynchronous operation which includes the result.
     /// </returns>
     /// <exception cref="SdkException">In case of any error</exception>
-    Task<List<SourceFormatNodeDto>?> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Post a <see cref="SourceFormatNodeAddRequestModel" /> to the Encyclopedia Galactica SourceFormat Node endpoint.

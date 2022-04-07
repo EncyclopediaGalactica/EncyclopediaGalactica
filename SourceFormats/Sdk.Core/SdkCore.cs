@@ -1,9 +1,9 @@
 ﻿namespace EncyclopediaGalactica.SourceFormats.Sdk.Core;
 
-using Interfaces;
+using Models;
 using Newtonsoft.Json;
 
-public class SdkCore : ISdkCore
+public class SdkCore
 {
     private readonly HttpClient _httpClient;
 
@@ -24,11 +24,9 @@ public class SdkCore : ISdkCore
         return message;
     }
 
-    public async Task<TModel> SendAsync<TModel, TPayload>(
+    public async Task<IResponseModel<TResponseModelPayload>> SendAsync<TResponseModelPayload>(
         HttpRequestMessage message,
         CancellationToken cancellationToken = default)
-        where TPayload : new()
-        where TModel : new()
     {
         if (message is null)
             throw new ArgumentNullException(nameof(message));
@@ -38,30 +36,44 @@ public class SdkCore : ISdkCore
                 cancellationToken)
             .ConfigureAwait(false);
 
-        TModel res = await CreateResponse<TModel, TPayload>(response, cancellationToken).ConfigureAwait(false);
+        IResponseModel<TResponseModelPayload> res = await CreateResponse<TResponseModelPayload>(
+                response,
+                cancellationToken)
+            .ConfigureAwait(false);
 
-
-        return result;
+        return res;
     }
 
-    private async Task<TModel> CreateResponse<TModel, TPayload>(
+    private async Task<IResponseModel<TResponseModelPayload>> CreateResponse<TResponseModelPayload>(
         HttpResponseMessage httpResponseMessage,
         CancellationToken cancellationToken = default)
-        where TModel : new()
-        where TPayload : new()
     {
-        TModel result = new TModel();
+        IResponseModel<TResponseModelPayload> result =
+            Activator.CreateInstance<IResponseModel<TResponseModelPayload>>();
+
         try
         {
             httpResponseMessage.EnsureSuccessStatusCode();
-            TPayload deserializedPayload = await DeserializeResponse<TPayload>(
+            TResponseModelPayload deserializedPayload = await DeserializeResponse<TResponseModelPayload>(
                     httpResponseMessage,
                     cancellationToken)
                 .ConfigureAwait(false);
+            result.HttpStatusCode = (int)httpResponseMessage.StatusCode;
+            result.Result = deserializedPayload;
+            result.IsOperationSuccessful = true;
+            return result;
+        }
+        catch (HttpRequestException httpRequestException)
+        {
+            string msg = $"Error happened.";
+            result.Message = msg;
+            result.HttpStatusCode = (int)httpResponseMessage.StatusCode;
+            result.IsOperationSuccessful = false;
+            return result;
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            // something bad
             throw;
         }
     }

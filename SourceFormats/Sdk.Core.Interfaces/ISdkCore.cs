@@ -3,5 +3,10 @@
 public interface ISdkCore
 {
     HttpRequestMessage PreparePost(object obj, string url);
-    Task<T> SendAsync<T>(HttpRequestMessage message, CancellationToken cancellationToken = default) where T : new();
+
+    Task<TResponseModel> SendAsync<TResponseModel, TResponsePayload>(
+        HttpRequestMessage message,
+        CancellationToken cancellationToken = default)
+        where TResponseModel : new()
+        where TResponsePayload : new();
 }

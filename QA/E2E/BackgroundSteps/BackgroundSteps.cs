@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.QA.E2E.BackgroundSteps;
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Sdk.Models;
+using Sdk.Models.SourceFormatNode;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 using Utils.Guards;
@@ -11,10 +11,10 @@ using Utils.Guards;
 [ExcludeFromCodeCoverage]
 public partial class BackgroundSteps
 {
-    private readonly ScenarioContext _scenarioContext;
     private const string ENDPOINT_URL = "endpoint_url";
     private const string OPERATION_URL = "operation_url";
     private const string SOURCEFORMATNODE_NAME = "sourceformatnode_name";
+    private readonly ScenarioContext _scenarioContext;
 
     [Given(@"there is the following endpoint")]
     public void GivenThereIsTheFollowingEndpoint(Table table)

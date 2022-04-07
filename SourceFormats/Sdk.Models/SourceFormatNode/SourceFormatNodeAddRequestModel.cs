@@ -1,17 +1,17 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 
 using Dtos;
 
 /// <summary>
-/// This model is used in creating new SourceFormatNode entity in the system.
-/// It provides a Builder to collect all necessary data to do so. However, the builder does not represent
-/// validation for the collected data.
+///     This model is used in creating new SourceFormatNode entity in the system.
+///     It provides a Builder to collect all necessary data to do so. However, the builder does not represent
+///     validation for the collected data.
 /// </summary>
 public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto>
 {
     /// <summary>
-    /// The payload object which contains details of the SourceFormatNode object
-    /// we wish to create.
+    ///     The payload object which contains details of the SourceFormatNode object
+    ///     we wish to create.
     /// </summary>
     public SourceFormatNodeDto Payload { get; private init; }
 

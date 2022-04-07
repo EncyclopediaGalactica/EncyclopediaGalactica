@@ -1,7 +1,9 @@
 namespace Sdk.Models.Unit.Tests;
 
 using System;
+using EncyclopediaGalactica.SourceFormats.Dtos;
 using EncyclopediaGalactica.SourceFormats.Sdk.Models;
+using EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 using FluentAssertions;
 using Xunit;
 
@@ -18,7 +20,7 @@ public class SourceFormatNodeAddModelShould
 
         // Assert
         requestModel.Should().BeOfType<SourceFormatNodeAddRequestModel>();
-        requestModel.Name.Should().Be("asd");
+        requestModel.Payload.Should().BeOfType<SourceFormatNodeDto>();
     }
 
     [Fact]

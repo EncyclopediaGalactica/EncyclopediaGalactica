@@ -6,7 +6,7 @@ using Exceptions.SourceFormatNode;
 
 public interface ISourceFormatNodeMappers
 {
-    SourceFormatNode MapSourceFormatNodeModelToSourceFormatNode(IRequestModel model);
+    SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto);
 
     /// <summary>
     ///     Maps a <see cref="SourceFormatNode" /> to a <see cref="SourceFormatNodeDto" />.
@@ -15,21 +15,21 @@ public interface ISourceFormatNodeMappers
     /// </summary>
     /// <param name="node">The <see cref="SourceFormatNodeDto" /> elem going to be mapped</param>
     /// <returns>
-    ///     Returns a <see cref="IRequestModel" /> which property values equal to the original one.
+    ///     Returns a <see cref="SourceFormatNodeDto" /> which property values equal to the original one.
     /// </returns>
     /// <exception cref="SourceFormatNodeMapperException">In case of any error.</exception>
-    IRequestModel MapSourceFormatNodeToSourceFormatNodeModelInFlatFashion(SourceFormatNode node);
+    SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node);
 
     /// <summary>
-    ///     Maps <see cref="SourceFormatNode" /> elements of a list to <see cref="IRequestModel" />.
+    ///     Maps <see cref="SourceFormatNode" /> elements of a list to <see cref="SourceFormatNodeDto" />.
     ///     Does the mapping in the way the relations are not carried through,
     ///     meaning the navigation properties are not populated.
     /// </summary>
-    /// <param name="sourceFormatNodes">The list of <see cref="IRequestModel" /></param>
+    /// <param name="sourceFormatNodes">The list of <see cref="SourceFormatNodeDto" /></param>
     /// <returns>
     ///     <see cref="List{T}" /> representing the result of operation.
     /// </returns>
     /// <exception cref="SourceFormatNodeMapperException"> in case of any error.</exception>
-    List<IRequestModel> MapSourceFormatNodesToSourceFormatNodeModelsInFlatFashion(
+    List<SourceFormatNodeDto> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
         List<SourceFormatNode> sourceFormatNodes);
 }

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 
 using Dtos;
 
