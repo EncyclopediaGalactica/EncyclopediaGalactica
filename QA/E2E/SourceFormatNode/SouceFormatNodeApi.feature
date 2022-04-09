@@ -1,8 +1,7 @@
-Feature: Source Format Node feature
+Feature: Source Format Node Api feature
 As a data curator
-I need to be able to create structures describing data formats
-in this process managing SourceFormatNodes is essential
-So, I need CRUD and other tree related functionalities available via API.
+I need to be able to manage the Source Format Nodes in the system
+By using its CRUD operations available on its Api
     
     Scenario Outline: API returns Http status code 400 when input is invalid
         Given there is the following endpoint
