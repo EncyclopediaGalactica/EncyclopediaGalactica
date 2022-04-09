@@ -15,15 +15,10 @@ using Xunit;
 [ExcludeFromCodeCoverage]
 public partial class BackgroundSteps
 {
-    private const string ENDPOINT_URL = "endpoint_url";
-    private const string OPERATION_URL = "operation_url";
-    private const string SOURCEFORMATNODE_NAME = "sourceformatnode_name";
-    private const string SDK_OPERATION_BUILDER = "sdk_operation_builder";
-    private const string SDK_OPERATION_RESULT = "sdk_operation_result";
     private readonly ScenarioContext _scenarioContext;
 
     [Given(@"there is the following endpoint")]
-    public void GivenThereIsTheFollowingEndpoint(Table table)
+    public void GivenThereIsTheFollowingEndpoint(TechTalk.SpecFlow.Table table)
     {
         Guards.IsNotNull(table);
 
@@ -31,22 +26,22 @@ public partial class BackgroundSteps
         Guards.IsNotNull(ins);
         Guards.StringIsNotNullOrEmptyOrWhitespace(ins.Url);
 
-        _scenarioContext.Add(ENDPOINT_URL, ins.Url);
+        _scenarioContext.Add(Keys.EndpointUrl, ins.Url);
     }
 
     [Given(@"there is the operation endpoint")]
-    public void GivenThereIsTheOperationEndpoint(Table table)
+    public void GivenThereIsTheOperationEndpoint(TechTalk.SpecFlow.Table table)
     {
         Guards.IsNotNull(table);
         GivenThereIsTheOperationEndpointEntity? entity = table.CreateInstance<GivenThereIsTheOperationEndpointEntity>();
 
         Guards.IsNotNull(entity);
         Guards.StringIsNotNullOrEmptyOrWhitespace(entity.Url);
-        _scenarioContext.Add(OPERATION_URL, entity.Url);
+        _scenarioContext.Add(Keys.OperationUrl, entity.Url);
     }
 
     [Given(@"the following SourceFormatNode data")]
-    public void GivenTheFollowingSourceFormatNodeData(Table table)
+    public void GivenTheFollowingSourceFormatNodeData(TechTalk.SpecFlow.Table table)
     {
         Guards.IsNotNull(table);
 
@@ -55,7 +50,7 @@ public partial class BackgroundSteps
 
         Guards.IsNotNull(entity);
         Guards.StringIsNotNullOrEmptyOrWhitespace(entity.Name);
-        _scenarioContext.Add(SOURCEFORMATNODE_NAME, entity.Name);
+        _scenarioContext.Add(Keys.SourceFormatNodeName, entity.Name);
     }
 
     [When(@"SourceFormatNode is sent to endpoint")]
@@ -66,7 +61,7 @@ public partial class BackgroundSteps
 
     private SourceFormatNodeAddRequestModel ProvideSourceFormatNodeAddModel(ScenarioContext scenarioContext)
     {
-        string name = GetValueFromSpecflowBucket<string>(SOURCEFORMATNODE_NAME);
+        string name = GetValueFromSpecflowBucket<string>(Keys.SourceFormatNodeName);
         SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel.Builder()
             .SetName(name)
             .Build();
@@ -87,16 +82,16 @@ public partial class BackgroundSteps
         Guards.StringIsNotNullOrEmptyOrWhitespace(parameterValue);
         string? stringParameter = ConvertFuzzyValuesToParameterValue(parameterValue);
         SourceFormatNodeAddRequestModel.Builder builder = GetFromContext<SourceFormatNodeAddRequestModel.Builder>(
-            SDK_OPERATION_BUILDER);
+            Keys.SdkRequestModelBuilder);
         builder.SetName(stringParameter!);
-        OverWriteKeyInContext(SDK_OPERATION_BUILDER, builder);
+        OverWriteKeyInContext(Keys.SdkRequestModelBuilder, builder);
     }
 
     [When(@"I prepare the data to be sent")]
     public void WhenIPrepareTheDataToBeSent()
     {
         SourceFormatNodeAddRequestModel.Builder builder = GetFromContext<SourceFormatNodeAddRequestModel.Builder>(
-            SDK_OPERATION_BUILDER);
+            Keys.SdkRequestModelBuilder);
         try
         {
             SourceFormatNodeAddRequestModel model = builder.Build();
@@ -104,18 +99,24 @@ public partial class BackgroundSteps
         }
         catch (Exception e)
         {
-            AddToContext(SDK_OPERATION_RESULT, e);
+            AddToContext(Keys.SdkOperationResult, e);
         }
     }
 
-    [Given(@"there is the Source Format SDK providing '(.*)' functionality")]
-    public void GivenThereIsTheSourceFormatSdkProvidingFunctionality(string functionality)
+    [Given(@"there is the '(.*)' SDK providing '(.*)' functionality")]
+    public void GivenThereIsTheSourceFormatSdkProvidingFunctionality(string sdkType, string operationName)
     {
-        switch (functionality)
+        Guards.StringIsNotNullOrEmptyOrWhitespace(sdkType);
+        Guards.StringIsNotNullOrEmptyOrWhitespace(operationName);
+
+        AddToContext(Keys.SdkType, sdkType);
+
+        switch (operationName)
         {
-            case Operations.ADD_NEW_SOURCEFORMATNODE:
+            case Operations.AddNewSourceFormatNode:
                 SourceFormatNodeAddRequestModel.Builder builder = new SourceFormatNodeAddRequestModel.Builder();
-                _scenarioContext.Add(SDK_OPERATION_BUILDER, builder);
+                _scenarioContext.Add(Keys.SdkRequestModelBuilder, builder);
+                _scenarioContext.Add(Keys.SdkOperationName, operationName);
                 break;
         }
     }
@@ -125,35 +126,100 @@ public partial class BackgroundSteps
     {
         switch (exceptionType)
         {
-            case ExceptionTypes.SDK_MODELS_EXCEPTION:
-                object exception = _scenarioContext[SDK_OPERATION_RESULT];
+            case ExceptionTypes.SdkModelsException:
+                object exception = _scenarioContext[Keys.SdkOperationResult];
                 exception.GetType().ToString().Should().Be(typeof(SdkModelsException).ToString());
                 break;
         }
     }
 
-    internal struct Operations
+    [When(@"I send the data using '(.*)' SDK")]
+    public async Task WhenISendTheDataUsingSdk(string sdkType)
     {
-        public const string ADD_NEW_SOURCEFORMATNODE = "add_new_sourceformatnode";
+        Guards.StringIsNotNullOrEmptyOrWhitespace(sdkType);
+        string operationName = GetFromContext<string>(Keys.SdkOperationName);
+
+        switch (sdkType)
+        {
+            case SdkType.SourceFormatSdk:
+                switch (operationName)
+                {
+                    case Operations.AddNewSourceFormatNode:
+                        await MakeSourceFormatNodeSdkAddCall().ConfigureAwait(false);
+                        break;
+
+                    default:
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                throw new Exception();
+        }
     }
 
-    internal struct ExceptionTypes
+    private async Task MakeSourceFormatNodeSdkAddCall()
     {
-        public const string SDK_MODELS_EXCEPTION = "SdkModelsException";
+        try
+        {
+            SourceFormatNodeAddRequestModel model =
+                GetFromContext<SourceFormatNodeAddRequestModel>(Keys.SdkRequestModel);
+            SourceFormatNodeAddResponseModel result = await SourceFormatsSdk.SourceFormatNode
+                .AddAsync(model)
+                .ConfigureAwait(false);
+            AddToContext(Keys.SdkOperationResult, result);
+        }
+        catch (Exception e)
+        {
+            AddToContext(Keys.SdkOperationResult, e);
+        }
     }
 
-    private class GivenTheFollowingSourceFormatNodeDataEntity
+    [Given(@"I prepare and store the data to be sent")]
+    public void GivenIPrepareAndStoreTheDataToBeSent()
     {
-        public string Name { get; set; }
+        string operation = GetFromContext<string>(Keys.SdkOperationName);
+        switch (operation)
+        {
+            case Operations.AddNewSourceFormatNode:
+                SourceFormatNodeAddRequestModel.Builder builder = GetFromContext<SourceFormatNodeAddRequestModel
+                    .Builder>(Keys.SdkRequestModelBuilder);
+                SourceFormatNodeAddRequestModel model = builder.Build();
+                AddToContext(Keys.SdkRequestModel, model);
+                break;
+        }
     }
 
-    private class GivenThereIsTheOperationEndpointEntity
+    [Then(@"I get an response")]
+    public void ThenIGetAnResponse()
     {
-        public string Url { get; set; }
+        string sdkType = GetFromContext<string>(Keys.SdkType);
+        string operationName = GetFromContext<string>(Keys.SdkOperationName);
+
+        switch (sdkType)
+        {
+            case SdkType.SourceFormatSdk:
+                switch (operationName)
+                {
+                    case Operations.AddNewSourceFormatNode:
+                        CheckResponseModelType<SourceFormatNodeAddResponseModel>();
+                        break;
+
+                    default:
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                throw new Exception();
+        }
     }
 
-    private class GivenThereIsTheFollowingEndpointEntity
+    private void CheckResponseModelType<T>()
     {
-        public string Url { get; set; }
+        object responseModel = _scenarioContext[Keys.SdkOperationResult];
+        responseModel.GetType().ToString().Should().BeOfType<T>();
     }
 }
