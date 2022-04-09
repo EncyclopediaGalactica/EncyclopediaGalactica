@@ -9,6 +9,7 @@ using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class AddChildNodeValidationShould : BaseTest
 {
     [Theory]

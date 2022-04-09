@@ -10,6 +10,7 @@ using FluentValidation;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class AddValidationShould : BaseTest
 {
     [Theory]

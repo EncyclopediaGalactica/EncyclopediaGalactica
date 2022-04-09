@@ -9,6 +9,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class GetAll : BaseTest
 {
     private Random _random = new Random();
@@ -24,7 +25,7 @@ public class GetAll : BaseTest
         {
             SourceFormatNode node = new SourceFormatNode();
 #pragma warning disable CA5394
-            node.Name = "tmp" + _random.Next(1, 100);
+            node.Name = "tmp" + _random.Next(1, 1000000000);
 #pragma warning restore CA5394
             await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
         }

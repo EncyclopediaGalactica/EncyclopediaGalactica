@@ -10,6 +10,7 @@ using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class AddShould : BaseTest
 {
     [Fact]

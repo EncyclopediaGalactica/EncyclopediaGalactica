@@ -7,6 +7,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class GetByIdWithChildrenShould : BaseTest
 {
     [Fact]

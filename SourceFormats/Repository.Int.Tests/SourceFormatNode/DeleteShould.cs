@@ -10,6 +10,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatNode Repository Collection")]
 public class DeleteShould : BaseTest
 {
     [Fact]
