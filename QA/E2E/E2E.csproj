@@ -55,4 +55,8 @@
         <ProjectReference Include="..\..\Utils\Guards\Guards.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <Compile Remove="SourceFormatNode\SouceFormatNodeApi.feature.cs"/>
+    </ItemGroup>
+
 </Project>
