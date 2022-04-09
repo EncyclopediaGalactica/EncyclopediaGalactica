@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 
 using Dtos;
+using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 
 public class SourceFormatNodeGetAllResponseModel : IResponseModel<List<SourceFormatNodeDto>>
 {

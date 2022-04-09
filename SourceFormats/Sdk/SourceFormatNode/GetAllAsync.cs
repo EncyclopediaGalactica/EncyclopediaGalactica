@@ -13,8 +13,8 @@ public partial class SourceFormatNodeSdk
         try
         {
             HttpRequestMessage httpRequestMessage = PrepareGet(SourceFormatNode.GetAll);
-            SourceFormatNodeGetAllResponseModel result = await _sdkCore.SendAsync<
-                    SourceFormatNodeGetAllResponseModel, SourceFormatNodeDto>(
+            SourceFormatNodeGetAllResponseModel result = (SourceFormatNodeGetAllResponseModel)await _sdkCore
+                .SendAsync<SourceFormatNodeGetAllResponseModel, SourceFormatNodeDto>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

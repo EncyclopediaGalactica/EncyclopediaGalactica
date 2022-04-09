@@ -1,9 +1,10 @@
-﻿namespace EncyclopediaGalactica.SourceFormats.Sdk.Core;
+﻿namespace EncyclopediaGalactica.Sdk.Core;
 
-using Models;
+using Interfaces;
+using Model.Interfaces;
 using Newtonsoft.Json;
 
-public class SdkCore
+public class SdkCore : ISdkCore
 {
     private readonly HttpClient _httpClient;
 
@@ -24,7 +25,7 @@ public class SdkCore
         return message;
     }
 
-    public async Task<IResponseModel<TResponseModelPayload>> SendAsync<TResponseModelPayload>(
+    public async Task<IResponseModel<TResponseModelPayload>> SendAsync<TResponseModel, TResponseModelPayload>(
         HttpRequestMessage message,
         CancellationToken cancellationToken = default)
     {
@@ -54,7 +55,7 @@ public class SdkCore
         try
         {
             httpResponseMessage.EnsureSuccessStatusCode();
-            TResponseModelPayload deserializedPayload = await DeserializeResponse<TResponseModelPayload>(
+            TResponseModelPayload? deserializedPayload = await DeserializeResponse<TResponseModelPayload>(
                     httpResponseMessage,
                     cancellationToken)
                 .ConfigureAwait(false);
@@ -85,14 +86,14 @@ public class SdkCore
         return message;
     }
 
-    private async Task<T> DeserializeResponse<T>(HttpResponseMessage response,
+    private async Task<T?> DeserializeResponse<T>(HttpResponseMessage response,
         CancellationToken cancellationToken = default)
     {
         if (response is null)
             throw new ArgumentNullException(nameof(response));
 
         String content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-        T result = JsonConvert.DeserializeObject<T>(content);
+        T? result = JsonConvert.DeserializeObject<T>(content);
         return result;
     }
 

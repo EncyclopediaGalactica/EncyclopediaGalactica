@@ -3,10 +3,10 @@ using Program = Host.Program;
 namespace EncyclopediaGalactica.SourceFormats.QA.E2E;
 
 using System.Net.Http;
+using EncyclopediaGalactica.Sdk.Core;
+using EncyclopediaGalactica.Sdk.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Sdk;
-using Sdk.Core;
-using Sdk.Core.Interfaces;
 using Sdk.Interfaces;
 using Sdk.SourceFormatNode;
 using Xunit;

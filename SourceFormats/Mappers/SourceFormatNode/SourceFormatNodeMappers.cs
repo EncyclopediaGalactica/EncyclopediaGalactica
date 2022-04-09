@@ -7,20 +7,20 @@ using Interfaces;
 
 public class SourceFormatNodeMappers : ISourceFormatNodeMappers
 {
-    public SourceFormatNode MapSourceFormatNodeModelToSourceFormatNode(IRequestModel model)
+    public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto)
     {
-        if (model is null)
-            throw new ArgumentNullException(nameof(model));
+        if (dto is null)
+            throw new ArgumentNullException(nameof(dto));
 
         SourceFormatNode result = new SourceFormatNode();
-        result.Id = model.Id;
-        result.Name = model.Name;
+        result.Id = dto.Id;
+        result.Name = dto.Name;
 
         return result;
     }
 
     /// <inheritdoc />
-    public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeModelInFlatFashion(SourceFormatNode node)
+    public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node)
     {
         if (node is null)
             throw new ArgumentNullException(nameof(node));
@@ -44,7 +44,7 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
             List<SourceFormatNodeDto> result = new List<SourceFormatNodeDto>();
             foreach (SourceFormatNode sourceFormatNode in sourceFormatNodes)
             {
-                SourceFormatNodeDto elem = MapSourceFormatNodeToSourceFormatNodeModelInFlatFashion(sourceFormatNode);
+                SourceFormatNodeDto elem = MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(sourceFormatNode);
                 result.Add(elem);
             }
 

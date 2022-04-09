@@ -9,7 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Sdk.Core\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj"/>
         <ProjectReference Include="..\Dtos\Dtos.csproj"/>
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
     </ItemGroup>
 
 </Project>

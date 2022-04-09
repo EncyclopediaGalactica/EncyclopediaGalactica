@@ -9,10 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Sdk.Core\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\Sdk.Core\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\Sdk.Core\Sdk.Core\Sdk.Core.csproj"/>
         <ProjectReference Include="..\Api\Api.csproj"/>
         <ProjectReference Include="..\Dtos\Dtos.csproj"/>
-        <ProjectReference Include="..\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj"/>
-        <ProjectReference Include="..\Sdk.Core\Sdk.Core.csproj"/>
         <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
         <ProjectReference Include="..\Sdk.Interfaces\Sdk.Interfaces.csproj"/>
     </ItemGroup>

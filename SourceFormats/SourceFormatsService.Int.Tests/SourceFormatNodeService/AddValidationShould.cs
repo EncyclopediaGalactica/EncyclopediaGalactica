@@ -1,87 +1,52 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Dtos;
-using Exceptions;
 using FluentAssertions;
-using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Repository.Exceptions;
+using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
 public class AddValidationShould : BaseTest
 {
     [Fact]
-    public async Task Throw_WhenInputIsNull()
+    public async Task ReturnModel_WithOperationDetails_WhenInputIsNull()
     {
         // Act
-        Func<Task> task = async () =>
-        {
-            await _sourceFormatsService
-                .SourceFormatNode
-                .AddAsync(null!).ConfigureAwait(false);
-        };
+        SourceFormatNodeAddResponseModel result = await _sourceFormatsService.SourceFormatNode
+            .AddAsync(null!)
+            .ConfigureAwait(false);
 
         // Assert
-        await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
-            .WithInnerExceptionExactly<SourceFormatNodeServiceInputValidationException, ArgumentNullException>()
-            .ConfigureAwait(false);
-    }
-
-    [Theory]
-    [InlineData(1, "asd")]
-    [InlineData(0, null)]
-    [InlineData(0, "a")]
-    [InlineData(0, "")]
-    [InlineData(0, "   ")]
-    public async Task Throw_WhenInputIsInvalid(long id, string name)
-    {
-        // Arrange
-        SourceFormatNodeDto dto = new SourceFormatNodeDto();
-        dto.Id = id;
-        dto.Name = name;
-
-        // Act
-        Func<Task> task = async () =>
-        {
-            await _sourceFormatsService
-                .SourceFormatNode
-                .AddAsync(dto).ConfigureAwait(false);
-        };
-
-        // Assert
-        await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
-            .WithInnerExceptionExactly<SourceFormatNodeServiceInputValidationException, ValidationException>()
-            .ConfigureAwait(false);
+        result.Should().NotBeNull();
+        result.Message.Should().NotBeNullOrEmpty();
+        result.Result.Should().BeNull();
+        result.HttpStatusCode.Should().Be(400);
+        result.IsOperationSuccessful.Should().BeFalse();
     }
 
     [Fact]
-    public async Task Throw_WhenNameUniquenessIsViolated()
+    public async Task ReturnResponseModel_WithOperationDetails_WhenNodeNameUniquenessIsViolated()
     {
         // Arrange
-        SourceFormatNodeDto dto = new SourceFormatNodeDto();
-        dto.Name = "asd";
-        SourceFormatNodeDto dtoResult = await _sourceFormatsService
+        string name = "asdasd";
+        SourceFormatNodeAddRequestModel addRequestModel = new SourceFormatNodeAddRequestModel.Builder()
+            .SetName(name)
+            .Build();
+
+        await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(dto).ConfigureAwait(false);
+            .AddAsync(addRequestModel).ConfigureAwait(false);
 
         // Act
-        // await _sourceFormatNodeService.AddAsync(dto).ConfigureAwait(false);
-        Func<Task> task = async () =>
-        {
-            await _sourceFormatsService
-                .SourceFormatNode
-                .AddAsync(dto).ConfigureAwait(false);
-        };
+        SourceFormatNodeAddResponseModel result = await _sourceFormatsService
+            .SourceFormatNode
+            .AddAsync(addRequestModel).ConfigureAwait(false);
 
         // Assert
-        await task.Should().ThrowExactlyAsync<SourceFormatNodeServiceInputValidationException>()
-            .WithInnerExceptionExactly<SourceFormatNodeServiceInputValidationException,
-                SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, DbUpdateException>()
-            .ConfigureAwait(false);
+        result.Should().NotBeNull();
+        result.Message.Should().NotBeNullOrEmpty();
+        result.HttpStatusCode.Should().Be(400);
+        result.IsOperationSuccessful.Should().BeFalse();
     }
 }

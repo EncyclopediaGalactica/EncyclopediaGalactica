@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models;
+namespace EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 
 public interface IResponseModel<TResponsePayloadType>
 {

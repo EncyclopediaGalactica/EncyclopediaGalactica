@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.Sdk.Core.Unit.Tests;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using EncyclopediaGalactica.Sdk.Core;
 using FluentAssertions;
 using Xunit;
 

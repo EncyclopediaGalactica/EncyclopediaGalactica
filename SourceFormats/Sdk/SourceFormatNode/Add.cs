@@ -15,11 +15,13 @@ public partial class SourceFormatNodeSdk
         {
             if (addRequestModel is null)
                 throw new ArgumentNullException(nameof(addRequestModel));
+            if (addRequestModel.Payload is null)
+                throw new ArgumentNullException(nameof(addRequestModel.Payload));
 
             const string url = SourceFormatNode.Route + SourceFormatNode.Add;
             HttpRequestMessage message = _sdkCore.PreparePost(addRequestModel.Payload, url);
 
-            SourceFormatNodeAddResponseModel response = await _sdkCore
+            SourceFormatNodeAddResponseModel response = (SourceFormatNodeAddResponseModel)await _sdkCore
                 .SendAsync<SourceFormatNodeAddResponseModel, SourceFormatNodeDto>(
                     message,
                     cancellationToken)

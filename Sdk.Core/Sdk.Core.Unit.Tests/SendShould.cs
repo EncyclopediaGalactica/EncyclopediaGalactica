@@ -4,7 +4,8 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Exceptions;
+using EncyclopediaGalactica.Sdk.Core;
+using EncyclopediaGalactica.Sdk.Core.Exceptions;
 using FluentAssertions;
 using Xunit;
 
@@ -18,7 +19,7 @@ public class SendShould
         SdkCore sdkCore = new SdkCore(new HttpClient());
 
         // Act
-        Func<Task> task = async () => { await sdkCore.SendAsync<int>(null!); };
+        Func<Task> task = async () => { await sdkCore.SendAsync<int, int>(null!); };
 
         // Assert
         task.Should().ThrowExactlyAsync<SourceFormatsSdkCoreException>();

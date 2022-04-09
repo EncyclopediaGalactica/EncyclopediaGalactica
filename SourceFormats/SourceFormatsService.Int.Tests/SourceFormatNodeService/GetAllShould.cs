@@ -1,10 +1,10 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 public class GetAllShould : BaseTest
@@ -13,34 +13,38 @@ public class GetAllShould : BaseTest
     public async Task ReturnAll()
     {
         // Arrange
-        SourceFormatNodeDto dto = new SourceFormatNodeDto
-        {
-            Name = "bla"
-        };
-        SourceFormatNodeDto result = await _sourceFormatsService.SourceFormatNode
-            .AddAsync(dto)
+        string name = "asdasd";
+        SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel.Builder()
+            .SetName(name)
+            .Build();
+
+        await _sourceFormatsService.SourceFormatNode
+            .AddAsync(requestModel)
             .ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNodeDto> resultList = await _sourceFormatsService.SourceFormatNode
-            .GetAllAsync().ConfigureAwait(false);
+        SourceFormatNodeGetAllResponseModel resultList = await _sourceFormatsService.SourceFormatNode
+            .GetAllAsync()
+            .ConfigureAwait(false);
 
         // Assert
-        resultList.Should().NotBeEmpty();
-        resultList.Count.Should().Be(1);
-        SourceFormatNodeDto elem = resultList.ElementAt(0);
-        elem.Name.Should().Be(dto.Name);
+        resultList.Result.Should().NotBeNull();
+        resultList.Result.Should().NotBeEmpty();
+        resultList.Result.Count.Should().Be(1);
+        SourceFormatNodeDto elem = resultList.Result.ElementAt(0);
+        elem.Name.Should().Be(name);
     }
 
     [Fact]
     public async Task ReturnEmptyList_WhenNoElemInTheDatabase()
     {
         // Act
-        List<SourceFormatNodeDto> result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()
+        SourceFormatNodeGetAllResponseModel result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()
             .ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
-        result.Should().BeEmpty();
+        result.Result.Should().NotBeNull();
+        result.Result.Should().BeEmpty();
     }
 }

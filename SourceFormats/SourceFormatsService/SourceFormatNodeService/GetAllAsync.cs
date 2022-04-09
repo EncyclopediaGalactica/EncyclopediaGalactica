@@ -2,11 +2,12 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatN
 
 using Dtos;
 using Entities;
+using Sdk.Models.SourceFormatNode;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<List<SourceFormatNodeDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try
         {
@@ -16,7 +17,11 @@ public partial class SourceFormatNodeService
                 .ConfigureAwait(false);
             List<SourceFormatNodeDto> mapped = _sourceFormatMappers.SourceFormatNodeMappers
                 .MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(sourceFormatNodes);
-            return mapped;
+            SourceFormatNodeGetAllResponseModel responseModel = new SourceFormatNodeGetAllResponseModel
+            {
+                Result = mapped
+            };
+            return responseModel;
         }
         catch (Exception e)
         {

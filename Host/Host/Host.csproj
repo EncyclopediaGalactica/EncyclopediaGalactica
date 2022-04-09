@@ -29,7 +29,6 @@
         <ProjectReference Include="..\..\SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Repository\Repository.csproj"/>
-        <ProjectReference Include="..\..\SourceFormats\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>

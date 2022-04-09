@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Core.Exceptions</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Core.Exceptions</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Sdk.Core.Model.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Sdk.Core.Model.Interfaces</RootNamespace>
     </PropertyGroup>
 
 </Project>

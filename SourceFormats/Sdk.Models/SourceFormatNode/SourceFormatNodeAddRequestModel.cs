@@ -1,6 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 
 using Dtos;
+using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
+using FluentValidation;
+using ValidatorService;
 
 /// <summary>
 ///     This model is used in creating new SourceFormatNode entity in the system.
@@ -9,22 +12,19 @@ using Dtos;
 /// </summary>
 public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto>
 {
+    private SourceFormatNodeAddRequestModel()
+    {
+    }
+
     /// <summary>
     ///     The payload object which contains details of the SourceFormatNode object
     ///     we wish to create.
     /// </summary>
-    public SourceFormatNodeDto Payload { get; private init; }
+    public SourceFormatNodeDto? Payload { get; private init; }
 
     public class Builder
     {
-        protected long? Id { get; private set; }
         protected string? Name { get; private set; }
-
-        public Builder SetId(long id)
-        {
-            Id = id;
-            return this;
-        }
 
         public Builder SetName(string name)
         {
@@ -34,19 +34,31 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
 
         public SourceFormatNodeAddRequestModel Build()
         {
-            if (string.IsNullOrEmpty(Name) || string.IsNullOrWhiteSpace(Name))
-                throw new SdkModelsException($"Add operation expects {nameof(Name)} being set up.");
-
-            SourceFormatNodeDto dto = new SourceFormatNodeDto
+            try
             {
-                Name = Name
-            };
+                SourceFormatNodeDto dto = new SourceFormatNodeDto
+                {
+                    Name = Name
+                };
 
-            SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel
+                SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
+                validator.Validate(dto, options =>
+                {
+                    options.ThrowOnFailures();
+                    options.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
+                });
+
+                SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel
+                {
+                    Payload = dto
+                };
+                return requestModel;
+            }
+            catch (Exception e)
             {
-                Payload = dto
-            };
-            return requestModel;
+                const string msg = $"Error happened while building {nameof(SourceFormatNodeAddRequestModel)}.";
+                throw new SdkModelsException(msg, e);
+            }
         }
     }
 }
