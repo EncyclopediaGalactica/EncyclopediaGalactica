@@ -2,6 +2,8 @@ namespace EncyclopediaGalactica.SourceFormats.QA.E2E.BackgroundSteps;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using FluentAssertions;
 using Sdk.Models;
@@ -118,6 +120,10 @@ public partial class BackgroundSteps
                 _scenarioContext.Add(Keys.SdkRequestModelBuilder, builder);
                 _scenarioContext.Add(Keys.SdkOperationName, operationName);
                 break;
+
+            default:
+                PossibleStructValues<Operations>();
+                throw new Exception();
         }
     }
 
@@ -142,19 +148,21 @@ public partial class BackgroundSteps
         switch (sdkType)
         {
             case SdkType.SourceFormatSdk:
-                switch (operationName)
+                switch (operationName.ToLower())
                 {
                     case Operations.AddNewSourceFormatNode:
                         await MakeSourceFormatNodeSdkAddCall().ConfigureAwait(false);
                         break;
 
                     default:
+                        PossibleStructValues<Operations>();
                         throw new Exception();
                 }
 
                 break;
 
             default:
+                PossibleStructValues<SdkType>();
                 throw new Exception();
         }
     }
@@ -207,12 +215,14 @@ public partial class BackgroundSteps
                         break;
 
                     default:
+                        PossibleStructValues<Operations>();
                         throw new Exception();
                 }
 
                 break;
 
             default:
+                PossibleStructValues<SdkType>();
                 throw new Exception();
         }
     }
@@ -221,5 +231,99 @@ public partial class BackgroundSteps
     {
         object responseModel = _scenarioContext[Keys.SdkOperationResult];
         responseModel.GetType().ToString().Should().BeOfType<T>();
+    }
+
+    [Then(@"the sdk response contains the '(.*)' property")]
+    public void ThenTheSdkResponseContainsTheProperty(string expectedPropertyName)
+    {
+        string sdkType = GetFromContext<string>(Keys.SdkType);
+        string operationName = GetFromContext<string>(Keys.SdkOperationName);
+
+        switch (sdkType)
+        {
+            case SdkType.SourceFormatSdk:
+                switch (operationName)
+                {
+                    case Operations.AddNewSourceFormatNode:
+                        SourceFormatNodeAddResponseModel responseModel =
+                            GetFromContext<SourceFormatNodeAddResponseModel>(Keys.SdkOperationResult);
+                        PropertyInfo[] props = responseModel.GetType().GetProperties();
+                        props.Where(w =>
+                                string.Equals(w.Name, expectedPropertyName, StringComparison.CurrentCultureIgnoreCase))
+                            .ToList().Count.Should()
+                            .Be(1);
+                        break;
+
+                    default:
+                        PossibleStructValues<Operations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                PossibleStructValues<SdkType>();
+                throw new Exception();
+        }
+    }
+
+    [Then(@"sdk response '(.*)' property is '(.*)'")]
+    public void ThenSdkResponsePropertyIs(string propertyName, string expectedStatus)
+    {
+        string sdkType = GetFromContext<string>(Keys.SdkType);
+        string operationName = GetFromContext<string>(Keys.SdkOperationName);
+
+        switch (sdkType)
+        {
+            case SdkType.SourceFormatSdk:
+                switch (operationName)
+                {
+                    case Operations.AddNewSourceFormatNode:
+                        SourceFormatNodeAddResponseModel responseModel =
+                            GetFromContext<SourceFormatNodeAddResponseModel>(Keys.SdkOperationResult);
+                        ExecuteIsCheck(responseModel, propertyName, expectedStatus);
+                        break;
+
+                    default:
+                        PossibleStructValues<Operations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                PossibleStructValues<SdkType>();
+                throw new Exception();
+        }
+    }
+
+    [Then(@"sdk response '(.*)' property equals to '(.*)'")]
+    public void ThenSdkResponsePropertyTo(string propertyName, string expectedStatus)
+    {
+        string sdkType = GetFromContext<string>(Keys.SdkType);
+        string operationName = GetFromContext<string>(Keys.SdkOperationName);
+
+        switch (sdkType)
+        {
+            case SdkType.SourceFormatSdk:
+                switch (operationName)
+                {
+                    case Operations.AddNewSourceFormatNode:
+                        SourceFormatNodeAddResponseModel responseModel =
+                            GetFromContext<SourceFormatNodeAddResponseModel>(Keys.SdkOperationResult);
+                        ExecuteEqualsToCheck(responseModel, propertyName, expectedStatus);
+                        break;
+
+                    default:
+                        PossibleStructValues<Operations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                PossibleStructValues<SdkType>();
+                throw new Exception();
+        }
     }
 }

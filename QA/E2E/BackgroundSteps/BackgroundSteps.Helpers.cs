@@ -1,6 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.QA.E2E.BackgroundSteps;
 
 using System;
+using System.Reflection;
+using FluentAssertions;
+using Sdk.Models.SourceFormatNode;
 using Utils.Guards;
 
 public partial class BackgroundSteps
@@ -26,14 +29,6 @@ public partial class BackgroundSteps
         _scenarioContext.Add(key, value);
     }
 
-    private struct FuzzyParameters
-    {
-        public const string EmptyString = "emptystring";
-        public const string Null = "null";
-        public const string TwoChars = "2chars";
-        public const string ThreeSpaces = "3spaces";
-    }
-
     private string? ConvertFuzzyValuesToParameterValue(string parameterValue)
     {
         Guards.StringIsNotNullOrEmptyOrWhitespace(parameterValue);
@@ -53,7 +48,85 @@ public partial class BackgroundSteps
                 return "as";
 
             default:
-                throw new ArgumentException(nameof(parameterValue));
+                return parameterValue;
+        }
+    }
+
+    private void PossibleStructValues<T>()
+    {
+        _testOutputHelper.WriteLine($"Values of {typeof(T)} struct.");
+        PropertyInfo[] props = typeof(T).GetProperties();
+        foreach (PropertyInfo propertyInfo in props)
+        {
+            _testOutputHelper.WriteLine(propertyInfo.Name);
+        }
+    }
+
+    private void ExecuteIsCheck(
+        SourceFormatNodeAddResponseModel responseModel,
+        string propertyName,
+        string expectedStatus)
+    {
+        switch (propertyName.ToLower())
+        {
+            case ResponseModelProperties.Result:
+
+                switch (expectedStatus)
+                {
+                    case IsCheckOperations.IsNotNull:
+                        responseModel.Result.Should().NotBeNull();
+                        break;
+
+                    default:
+                        PossibleStructValues<IsCheckOperations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                PossibleStructValues<ResponseModelProperties>();
+                throw new Exception();
+        }
+    }
+
+    private void ExecuteEqualsToCheck(SourceFormatNodeAddResponseModel responseModel, string propertyName,
+        string expectedStatus)
+    {
+        switch (propertyName.ToLower())
+        {
+            case ResponseModelProperties.HttpStatusCode:
+
+                switch (expectedStatus)
+                {
+                    case EqualsToCheckOperations.EqualsTo:
+                        responseModel.HttpStatusCode.ToString().Should().Be(expectedStatus);
+                        break;
+
+                    default:
+                        PossibleStructValues<EqualsToCheckOperations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            case ResponseModelProperties.IsOperationSuccessful:
+                switch (expectedStatus)
+                {
+                    case EqualsToCheckOperations.EqualsTo:
+                        responseModel.IsOperationSuccessful.ToString().Should().Be(expectedStatus);
+                        break;
+
+                    default:
+                        PossibleStructValues<EqualsToCheckOperations>();
+                        throw new Exception();
+                }
+
+                break;
+
+            default:
+                PossibleStructValues<ResponseModelProperties>();
+                throw new Exception();
         }
     }
 }

@@ -17,13 +17,16 @@ For using the system programmatically by its SDK package.
           | 3spaces     |
           
 Scenario Outline: It is possible to create Source Format Node entities using SDK
-    Given there is the Source Format SDK providing 'add_new_sourceformatnode' functionality
+    Given there is the 'source_format' SDK providing 'add_new_sourceformatnode' functionality
     And the 'name' string parameter value is 'asd'
     And I prepare and store the data to be sent
-    When I send the data using 'SourceFormats' SDK
+    When I send the data using 'source_format' SDK
     Then I get an response
-    And the sdk response contains the 'result'
-    And the sdk response contains the 'httpstatuscode'
-    And the sdk response contains the 'succes_status'
-    And the newly created 'SourceFormatNode' entity has valid 'id' value
+    And the sdk response contains the 'result' property
+    And sdk response 'result' property is 'not_null'
+    And the sdk response contains the 'httpstatuscode' property
+    And sdk response 'httpstatuscode' property equals to '201'
+    And the sdk response contains the 'isoperationsuccessful' property
+    And sdk response 'isoperationsuccessful' property equals to 'true'
+#    And the newly created 'SourceFormatNode' entity id value is 'greater_than_zero'
     
