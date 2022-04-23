@@ -11,6 +11,7 @@ using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Repository.Interfaces;
 using Repository.SourceFormatNode;
 using SourceFormatsCacheService.Interfaces;
@@ -41,9 +42,17 @@ public class BaseTest
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             ctx, nodeValidator, new GuardsService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
+        ILogger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService> logger =
+            new Logger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService>(
+                new LoggerFactory());
         ISourceFormatNodeService sourceFormatNodeService =
             new SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
-                validator, new GuardsService(), mappers, sourceFormatNodeRepository, sourceFormatNodeCacheService);
+                validator,
+                new GuardsService(),
+                mappers,
+                sourceFormatNodeRepository,
+                sourceFormatNodeCacheService,
+                logger);
         _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
     }
 }

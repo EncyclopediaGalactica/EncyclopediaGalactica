@@ -13,31 +13,20 @@ public class SdkCore : ISdkCore
         _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
     }
 
-    public HttpRequestMessage PreparePost(object obj, string url)
-    {
-        if (obj is null)
-            throw new ArgumentNullException(nameof(obj));
-        if (string.IsNullOrEmpty(url) || string.IsNullOrWhiteSpace(url))
-            throw new ArgumentNullException(nameof(url));
-
-        StringContent stringContent = CreateStringContent(obj);
-        HttpRequestMessage message = PrepareHttpRequestMessage(stringContent, HttpMethod.Post, url);
-        return message;
-    }
-
-    public async Task<IResponseModel<TResponseModelPayload>> SendAsync<TResponseModel, TResponseModelPayload>(
-        HttpRequestMessage message,
+    public async Task<TResponseModel> SendAsync<TResponseModel, TResponseModelPayload>(
+        HttpRequestMessage httpRequestMessage,
         CancellationToken cancellationToken = default)
+        where TResponseModel : IResponseModel<TResponseModelPayload>
     {
-        if (message is null)
-            throw new ArgumentNullException(nameof(message));
+        if (httpRequestMessage is null)
+            throw new ArgumentNullException(nameof(httpRequestMessage));
 
         HttpResponseMessage response = await _httpClient.SendAsync(
-                message,
+                httpRequestMessage,
                 cancellationToken)
             .ConfigureAwait(false);
 
-        IResponseModel<TResponseModelPayload> res = await CreateResponse<TResponseModelPayload>(
+        TResponseModel res = await CreateResponse<TResponseModel, TResponseModelPayload>(
                 response,
                 cancellationToken)
             .ConfigureAwait(false);
@@ -45,12 +34,13 @@ public class SdkCore : ISdkCore
         return res;
     }
 
-    private async Task<IResponseModel<TResponseModelPayload>> CreateResponse<TResponseModelPayload>(
+    private async Task<TResponseModel> CreateResponse<TResponseModel, TResponseModelPayload>(
         HttpResponseMessage httpResponseMessage,
         CancellationToken cancellationToken = default)
+        where TResponseModel : IResponseModel<TResponseModelPayload>
     {
-        IResponseModel<TResponseModelPayload> result =
-            Activator.CreateInstance<IResponseModel<TResponseModelPayload>>();
+        TResponseModel result =
+            Activator.CreateInstance<TResponseModel>();
 
         try
         {
@@ -97,9 +87,11 @@ public class SdkCore : ISdkCore
         return result;
     }
 
-    private StringContent CreateStringContent(object obj)
+    private StringContent? CreateStringContent<T>(IRequestModel<T> requestModel)
     {
-        String jsonString = JsonConvert.SerializeObject(obj);
+        if (requestModel.Payload is null) return null;
+
+        String jsonString = JsonConvert.SerializeObject(requestModel);
         StringContent content = new StringContent(jsonString);
         return content;
     }

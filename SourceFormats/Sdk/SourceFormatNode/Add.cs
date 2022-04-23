@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.Sdk.SourceFormatNode;
 using Api;
 using Dtos;
 using Exceptions;
+using Models;
 using Models.SourceFormatNode;
 
 public partial class SourceFormatNodeSdk
@@ -19,11 +20,19 @@ public partial class SourceFormatNodeSdk
                 throw new ArgumentNullException(nameof(addRequestModel.Payload));
 
             const string url = SourceFormatNode.Route + SourceFormatNode.Add;
-            HttpRequestMessage message = _sdkCore.PreparePost(addRequestModel.Payload, url);
 
-            SourceFormatNodeAddResponseModel response = (SourceFormatNodeAddResponseModel)await _sdkCore
+            HttpRequestMessageBuilder<SourceFormatNodeDto?> httpRequestMessageBuilder =
+                new HttpRequestMessageBuilder<SourceFormatNodeDto?>();
+            HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
+                .SetContent(addRequestModel.Payload)
+                .SetUri(url)
+                .SetAcceptHeaders(addRequestModel.AcceptHeaders)
+                .SetHttpMethod(HttpMethod.Post)
+                .Build();
+
+            SourceFormatNodeAddResponseModel response = await _sdkCore
                 .SendAsync<SourceFormatNodeAddResponseModel, SourceFormatNodeDto>(
-                    message,
+                    httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);
             return response;

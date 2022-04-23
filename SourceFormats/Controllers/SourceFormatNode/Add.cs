@@ -1,23 +1,30 @@
 namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
-using Api;
+using System.Net.Mime;
+using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Sdk.Models.SourceFormatNode;
 
 public partial class SourceFormatNodeController
 {
-    [HttpPost(SourceFormatNode.Add)]
-    [ProducesResponseType(StatusCodes.Status201Created)]
+    [HttpPost]
+    [Route("add")]
+    [Consumes(MediaTypeNames.Application.Json)]
+    [ProducesResponseType(typeof(SourceFormatNodeAddResponseModel), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<SourceFormatNodeAddResponseModel>> AddAsync(
-        [FromBody] SourceFormatNodeAddRequestModel requestModel)
+        [FromBody] SourceFormatNodeDto dto)
     {
+        if (dto is null)
+            _logger.LogInformation("{RequestModel} is null", nameof(dto));
+
         SourceFormatNodeAddResponseModel result = await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(requestModel)
+            .AddAsync(dto)
             .ConfigureAwait(false);
-        return Ok(result);
+        return Created(new Uri($"http://localhost/{result.Result.Id}"), result);
     }
 }

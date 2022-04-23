@@ -14,12 +14,13 @@ public class GetAllShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel.Builder()
-            .SetName(name)
-            .Build();
+        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        {
+            Name = name
+        };
 
         await _sourceFormatsService.SourceFormatNode
-            .AddAsync(requestModel)
+            .AddAsync(dto)
             .ConfigureAwait(false);
 
         // Act

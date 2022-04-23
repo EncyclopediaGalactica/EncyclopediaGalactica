@@ -1,4 +1,4 @@
-﻿namespace QA.Datasets;
+﻿namespace EncyclopediaGalactica.SourceFormats.QA.Datasets;
 
 public static class SourceFormatNodeDatasets
 {

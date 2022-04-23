@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.Sou
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Dtos;
 using FluentAssertions;
 using Sdk.Models.SourceFormatNode;
 using Xunit;
@@ -30,18 +31,19 @@ public class AddValidationShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeAddRequestModel addRequestModel = new SourceFormatNodeAddRequestModel.Builder()
-            .SetName(name)
-            .Build();
+        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        {
+            Name = name
+        };
 
         await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(addRequestModel).ConfigureAwait(false);
+            .AddAsync(dto).ConfigureAwait(false);
 
         // Act
         SourceFormatNodeAddResponseModel result = await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(addRequestModel).ConfigureAwait(false);
+            .AddAsync(dto).ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();

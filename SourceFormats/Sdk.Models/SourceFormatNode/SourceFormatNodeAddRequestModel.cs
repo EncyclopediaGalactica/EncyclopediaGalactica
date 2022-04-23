@@ -1,5 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
 
+using System.Net.Http.Headers;
+using System.Text.Json.Serialization;
 using Dtos;
 using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 using FluentValidation;
@@ -12,7 +14,10 @@ using ValidatorService;
 /// </summary>
 public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto>
 {
-    private SourceFormatNodeAddRequestModel()
+    /// <summary>
+    /// Creates a new instance.
+    /// </summary>
+    public SourceFormatNodeAddRequestModel()
     {
     }
 
@@ -20,15 +25,29 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
     ///     The payload object which contains details of the SourceFormatNode object
     ///     we wish to create.
     /// </summary>
+    [JsonPropertyName("payload")]
     public SourceFormatNodeDto? Payload { get; private init; }
+
+    public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; } =
+        new List<MediaTypeWithQualityHeaderValue>();
 
     public class Builder
     {
         protected string? Name { get; private set; }
 
+        protected List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private set; } =
+            new List<MediaTypeWithQualityHeaderValue>();
+
         public Builder SetName(string name)
         {
             Name = name;
+            return this;
+        }
+
+        public Builder AddAcceptHeader(string mediaType)
+        {
+            MediaTypeWithQualityHeaderValue value = new MediaTypeWithQualityHeaderValue(mediaType);
+            AcceptHeaders.Add(value);
             return this;
         }
 
@@ -50,7 +69,8 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
 
                 SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel
                 {
-                    Payload = dto
+                    Payload = dto,
+                    AcceptHeaders = AcceptHeaders
                 };
                 return requestModel;
             }

@@ -2,24 +2,28 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.Sou
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Dtos;
 using FluentAssertions;
 using Sdk.Models.SourceFormatNode;
+using Xunit;
 
 [ExcludeFromCodeCoverage]
 public class AddShould : BaseTest
 {
+    [Fact]
     public async Task Add_AnItem_AndReturnIt()
     {
         // Arrange
-        string name = "asdasd";
-        SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel.Builder()
-            .SetName(name)
-            .Build();
+        string name = "asd";
+        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        {
+            Name = name
+        };
 
         // Act
         SourceFormatNodeAddResponseModel result = await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(requestModel).ConfigureAwait(false);
+            .AddAsync(dto).ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();

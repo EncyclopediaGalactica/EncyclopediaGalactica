@@ -9,9 +9,9 @@ public interface ISourceFormatNodeService
 {
     /// <summary>
     ///     Creates a new <see cref="SourceFormatNode" /> in the system based on the data stored
-    ///     in the provided input <see cref="SourceFormatNodeAddRequestModel" />.
+    ///     in the provided input <see cref="SourceFormatNodeDto" />.
     /// </summary>
-    /// <param name="addRequestModel"><see cref="SourceFormatNodeAddRequestModel" /> contains the details of the new entity.</param>
+    /// <param name="dto"><see cref="SourceFormatNodeDto" /> contains the details of the new entity.</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -28,7 +28,7 @@ public interface ISourceFormatNodeService
     ///     error happens.
     /// </exception>
     Task<SourceFormatNodeAddResponseModel> AddAsync(
-        SourceFormatNodeAddRequestModel addRequestModel,
+        SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
 
     Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(

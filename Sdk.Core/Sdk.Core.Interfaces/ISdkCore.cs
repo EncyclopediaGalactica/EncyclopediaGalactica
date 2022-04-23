@@ -4,9 +4,8 @@ using Model.Interfaces;
 
 public interface ISdkCore
 {
-    HttpRequestMessage PreparePost(object obj, string url);
-
-    Task<IResponseModel<TResponseModelPayload>> SendAsync<TResponseModel, TResponseModelPayload>(
-        HttpRequestMessage message,
-        CancellationToken cancellationToken = default);
+    Task<TResponseModel> SendAsync<TResponseModel, TResponseModelPayload>(
+        HttpRequestMessage httpRequestMessage,
+        CancellationToken cancellationToken = default)
+        where TResponseModel : IResponseModel<TResponseModelPayload>;
 }

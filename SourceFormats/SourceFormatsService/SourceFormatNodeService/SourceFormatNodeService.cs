@@ -1,10 +1,12 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
+using System.Net;
 using Dtos;
 using Entities;
 using FluentValidation;
 using Interfaces;
 using Mappers.Interfaces;
+using Microsoft.Extensions.Logging;
 using Repository.Interfaces;
 using Sdk.Models.SourceFormatNode;
 using SourceFormatsCacheService.Interfaces;
@@ -19,22 +21,29 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
     private int _cacheExpiresInMinutes = 60;
+    private readonly ILogger _logger;
 
     public SourceFormatNodeService(
         IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
         IGuardsService guardsService,
         ISourceFormatMappers sourceFormatMappers,
         ISourceFormatNodeRepository sourceFormatNodeRepository,
-        ISourceFormatNodeCacheService sourceFormatNodeCacheService)
+        ISourceFormatNodeCacheService sourceFormatNodeCacheService,
+        ILogger<SourceFormatNodeService> logger)
     {
-        _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator ??
-                                        throw new ArgumentNullException(nameof(sourceFormatNodeDtoValidator));
-        _guards = guardsService ?? throw new ArgumentNullException(nameof(guardsService));
-        _sourceFormatMappers = sourceFormatMappers ?? throw new ArgumentNullException(nameof(sourceFormatMappers));
-        _sourceFormatNodeRepository = sourceFormatNodeRepository ??
-                                      throw new ArgumentNullException(nameof(sourceFormatNodeRepository));
-        _sourceFormatNodeCacheService = sourceFormatNodeCacheService ??
-                                        throw new ArgumentNullException(nameof(sourceFormatNodeCacheService));
+        ArgumentNullException.ThrowIfNull(sourceFormatNodeDtoValidator);
+        ArgumentNullException.ThrowIfNull(guardsService);
+        ArgumentNullException.ThrowIfNull(sourceFormatMappers);
+        ArgumentNullException.ThrowIfNull(sourceFormatNodeRepository);
+        ArgumentNullException.ThrowIfNull(sourceFormatNodeCacheService);
+        ArgumentNullException.ThrowIfNull(logger);
+
+        _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator;
+        _guards = guardsService;
+        _sourceFormatMappers = sourceFormatMappers;
+        _sourceFormatNodeRepository = sourceFormatNodeRepository;
+        _sourceFormatNodeCacheService = sourceFormatNodeCacheService;
+        _logger = logger;
     }
 
     public async Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(SourceFormatNodeDto childDto,
@@ -80,10 +89,13 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         throw new NotImplementedException();
     }
 
-    private SourceFormatNodeAddResponseModel PrepareResponseModel(SourceFormatNodeDto dto)
+    private SourceFormatNodeAddResponseModel PrepareSuccessResponseModel(SourceFormatNodeDto dto)
     {
-        SourceFormatNodeAddResponseModel responseModel = new SourceFormatNodeAddResponseModel();
-        responseModel.Result = dto;
+        SourceFormatNodeAddResponseModel responseModel = new SourceFormatNodeAddResponseModel.Builder()
+            .SetResult(dto)
+            .SetHttpStatusCode(HttpStatusCode.Created)
+            .SetOperationSuccessful()
+            .Build();
         return responseModel;
     }
 }
