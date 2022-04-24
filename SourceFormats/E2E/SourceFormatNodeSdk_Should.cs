@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.E2E;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
@@ -9,6 +10,7 @@ using Sdk.Models;
 using Sdk.Models.SourceFormatNode;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
 public class SourceFormatNodeSdk_Should : TestBase
 {
     public SourceFormatNodeSdk_Should(SourceFormatWebApplicationFactory<Program> webApplicationFactory) : base(

@@ -45,14 +45,15 @@ public class SdkCore : ISdkCore
         try
         {
             httpResponseMessage.EnsureSuccessStatusCode();
-            TResponseModelPayload? deserializedPayload = await DeserializeResponse<TResponseModelPayload>(
+            TResponseModel? deserializedPayload = await DeserializeResponse<TResponseModel>(
                     httpResponseMessage,
                     cancellationToken)
                 .ConfigureAwait(false);
-            result.HttpStatusCode = (int)httpResponseMessage.StatusCode;
-            result.Result = deserializedPayload;
-            result.IsOperationSuccessful = true;
-            return result;
+
+            if (deserializedPayload is null)
+                throw new Exception("Response is null.");
+
+            return deserializedPayload;
         }
         catch (HttpRequestException httpRequestException)
         {

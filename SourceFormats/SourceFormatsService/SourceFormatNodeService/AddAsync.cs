@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
 using System.Net;
-using System.Runtime.CompilerServices;
 using Dtos;
 using Entities;
 using FluentValidation;
@@ -24,7 +23,8 @@ public partial class SourceFormatNodeService
             ArgumentNullException.ThrowIfNull(dto);
             await ValidateInputDataAsync(dto).ConfigureAwait(false);
             SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
-            SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken);
+            SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
+                .ConfigureAwait(false);
             await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
             SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
             SourceFormatNodeAddResponseModel responseModel = PrepareSuccessResponseModel(mappedResult);
@@ -93,14 +93,15 @@ public partial class SourceFormatNodeService
         await _sourceFormatNodeCacheService.AppendToCache(node, key, _cacheExpiresInMinutes);
     }
 
-    private ConfiguredTaskAwaitable<SourceFormatNode> PersistSourceFormatNodeAsync(
-        SourceFormatNode sourceFormatNode,
+    private async Task<SourceFormatNode> PersistSourceFormatNodeAsync(
+        SourceFormatNode newSourceFormatNode,
         CancellationToken cancellationToken)
     {
-        return _sourceFormatNodeRepository.AddAsync(
-                sourceFormatNode,
+        SourceFormatNode result = await _sourceFormatNodeRepository.AddAsync(
+                newSourceFormatNode,
                 cancellationToken)
             .ConfigureAwait(false);
+        return result;
     }
 
     private SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto)
