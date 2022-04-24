@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
+using System.Net;
 using System.Net.Mime;
 using Dtos;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,23 @@ public partial class SourceFormatNodeController
             .SourceFormatNode
             .AddAsync(dto)
             .ConfigureAwait(false);
-        return Created(new Uri($"http://localhost/{result.Result.Id}"), result);
+
+        switch (result.HttpStatusCode)
+        {
+            case (int)HttpStatusCode.Created:
+                return Created(new Uri($"http://localhost/{result.Result.Id}"), result);
+                break;
+
+            case (int)HttpStatusCode.BadRequest:
+                return BadRequest(result);
+                break;
+
+            case (int)HttpStatusCode.InternalServerError:
+                return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError, null);
+                break;
+
+            default:
+                return Problem("Something strange");
+        }
     }
 }

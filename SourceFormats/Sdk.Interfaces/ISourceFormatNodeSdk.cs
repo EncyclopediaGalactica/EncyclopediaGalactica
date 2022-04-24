@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Interfaces;
 
+using Dtos;
 using Exceptions;
 using Models.SourceFormatNode;
 
@@ -37,5 +38,25 @@ public interface ISourceFormatNodeSdk
     /// <exception cref="SdkException">In case of any error.</exception>
     Task<SourceFormatNodeAddResponseModel> AddAsync(
         SourceFormatNodeAddRequestModel addRequestModel,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Sends an <see cref="SourceFormatNodeUpdateRequestModel" /> to the Encyclopedia Galactica Source Format endpoint
+    ///     via PUT Http Method.
+    ///     As a result the system is going to update the defined (by the id) entity with the provided properties.
+    ///     The request includes a <see cref="SourceFormatNodeDto" /> describing changes.
+    /// </summary>
+    /// <param name="updateRequestModel">The model marking which entity should be updated and the desired state after change</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns a <see cref="Task{TResult}" /> representing result of asynchronous operation, it also
+    ///     includes the result which is a <see cref="SourceFormatNodeUpdateResponseModel" /> providing details
+    ///     about the operation and its result.
+    /// </returns>
+    /// <exception cref="SdkException">In case of any error.</exception>
+    Task<SourceFormatNodeUpdateResponseModel> UpdateAsync(
+        SourceFormatNodeUpdateRequestModel updateRequestModel,
         CancellationToken cancellationToken = default);
 }

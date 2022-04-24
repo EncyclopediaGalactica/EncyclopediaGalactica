@@ -11,4 +11,5 @@ public struct SourceFormatNode
 
     public const string Add = "/add";
     public const string GetAll = "/get";
+    public const string Update = "/update";
 }

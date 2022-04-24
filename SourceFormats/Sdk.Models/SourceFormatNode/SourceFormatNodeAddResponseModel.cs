@@ -13,10 +13,10 @@ public class SourceFormatNodeAddResponseModel : IResponseModel<SourceFormatNodeD
 
     public class Builder
     {
-        private SourceFormatNodeDto? _result;
-        private bool _isOperationSuccessful;
         private HttpStatusCode? _httpStatusCode;
+        private bool _isOperationSuccessful;
         private string? _message;
+        private SourceFormatNodeDto? _result;
 
         public Builder SetResult(SourceFormatNodeDto dto)
         {

@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 
 public class HttpRequestMessageBuilder<T>
 {
+    private List<MediaTypeWithQualityHeaderValue> _acceptHeaders;
+    private Uri _baseAddress;
     private T? _content;
     private string _contentType;
-    private List<MediaTypeWithQualityHeaderValue> _acceptHeaders;
-    private string _uri;
     private HttpMethod _httpMethod;
-    private Uri _baseAddress;
+    private string _uri;
 
     public HttpRequestMessage Build()
     {

@@ -11,13 +11,4 @@ public partial class SourceFormatNodeSdk : ISourceFormatNodeSdk
     {
         _sdkCore = sdkCore;
     }
-
-    private HttpRequestMessage PrepareGet(string url)
-    {
-        if (string.IsNullOrEmpty(url) || string.IsNullOrWhiteSpace(url))
-            throw new ArgumentNullException(nameof(url));
-
-        HttpRequestMessage message = new HttpRequestMessage(HttpMethod.Get, url);
-        return message;
-    }
 }

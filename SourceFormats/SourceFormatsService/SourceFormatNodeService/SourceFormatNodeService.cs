@@ -16,12 +16,12 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
 {
     private const string SourceFormatNodesListKey = "SourceFormatNodesList";
     private readonly IGuardsService _guards;
+    private readonly ILogger _logger;
     private readonly ISourceFormatMappers _sourceFormatMappers;
     private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
     private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
     private int _cacheExpiresInMinutes = 60;
-    private readonly ILogger _logger;
 
     public SourceFormatNodeService(
         IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,

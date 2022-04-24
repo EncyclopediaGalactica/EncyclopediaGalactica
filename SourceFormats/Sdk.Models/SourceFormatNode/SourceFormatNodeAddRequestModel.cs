@@ -15,7 +15,7 @@ using ValidatorService;
 public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto>
 {
     /// <summary>
-    /// Creates a new instance.
+    ///     Creates a new instance.
     /// </summary>
     public SourceFormatNodeAddRequestModel()
     {
@@ -33,9 +33,9 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
 
     public class Builder
     {
-        protected string? Name { get; private set; }
+        private string? Name { get; set; }
 
-        protected List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private set; } =
+        private List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; set; } =
             new List<MediaTypeWithQualityHeaderValue>();
 
         public Builder SetName(string name)

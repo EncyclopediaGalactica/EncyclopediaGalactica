@@ -8,8 +8,8 @@ using SourceFormatsService.Interfaces;
 [Route("api/sourceformats/[controller]")]
 public partial class SourceFormatNodeController : ControllerBase
 {
-    private readonly ISourceFormatsService _sourceFormatsService;
     private readonly ILogger<SourceFormatNodeController> _logger;
+    private readonly ISourceFormatsService _sourceFormatsService;
 
     public SourceFormatNodeController(
         ISourceFormatsService sourceFormatsService,
