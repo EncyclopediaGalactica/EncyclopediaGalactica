@@ -32,6 +32,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Mappers\Mappers.csproj"/>
+        <ProjectReference Include="..\QA.Datasets\QA.Datasets.csproj"/>
         <ProjectReference Include="..\Repository\Repository.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>

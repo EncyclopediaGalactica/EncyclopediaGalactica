@@ -17,7 +17,7 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<SourceFormatNodeAddResponseModel>> AddAsync(
-        [FromBody] SourceFormatNodeDto dto)
+        [FromBody] SourceFormatNodeDto? dto)
     {
         if (dto is null)
             _logger.LogInformation("{RequestModel} is null", nameof(dto));
@@ -38,7 +38,7 @@ public partial class SourceFormatNodeController
                 break;
 
             case (int)HttpStatusCode.InternalServerError:
-                return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError, null);
+                return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
                 break;
 
             default:

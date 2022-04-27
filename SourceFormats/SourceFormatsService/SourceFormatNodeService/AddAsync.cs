@@ -21,13 +21,13 @@ public partial class SourceFormatNodeService
         try
         {
             ArgumentNullException.ThrowIfNull(dto);
-            await ValidateInputDataAsync(dto).ConfigureAwait(false);
+            await ValidateInputDataForAddingAsync(dto).ConfigureAwait(false);
             SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
             SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
                 .ConfigureAwait(false);
             await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
-            SourceFormatNodeDto mappedResult = MapSourceFormatToSourceFormatNodeDto(result);
-            SourceFormatNodeAddResponseModel responseModel = PrepareSuccessResponseModel(mappedResult);
+            SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
+            SourceFormatNodeAddResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
             return responseModel;
         }
         // When Name UNIQUE constraint is violated a DbUpdate Exception is thrown
@@ -36,8 +36,8 @@ public partial class SourceFormatNodeService
         // so we can indicate that validation related error happened
         catch (Exception e) when (e is ArgumentNullException
                                       or ValidationException
-                                  || e is SourceFormatNodeRepositoryException
-                                  && e.InnerException is DbUpdateException)
+                                  || (e is SourceFormatNodeRepositoryException
+                                      && e.InnerException is DbUpdateException))
 
         {
             SourceFormatNodeAddResponseModel validationErrorResponseModel =
@@ -60,8 +60,8 @@ public partial class SourceFormatNodeService
         // see the previous conditional catch why we have this bit complex condition here
         catch (Exception e) when (e is SourceFormatNodeMapperException
                                       or SourceFormatsCacheServiceException
-                                  || e is SourceFormatNodeRepositoryException &&
-                                  e.InnerException is not DbUpdateException)
+                                  || (e is SourceFormatNodeRepositoryException &&
+                                      e.InnerException is not DbUpdateException))
         {
             SourceFormatNodeAddResponseModel internalErrorResponseModel = new SourceFormatNodeAddResponseModel.Builder()
                 .SetHttpStatusCode(HttpStatusCode.InternalServerError)
@@ -81,7 +81,7 @@ public partial class SourceFormatNodeService
         }
     }
 
-    private SourceFormatNodeDto MapSourceFormatToSourceFormatNodeDto(SourceFormatNode node)
+    private SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)
     {
         return _sourceFormatMappers
             .SourceFormatNodeMappers
@@ -109,7 +109,7 @@ public partial class SourceFormatNodeService
         return _sourceFormatMappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(dto);
     }
 
-    private async Task ValidateInputDataAsync(SourceFormatNodeDto dto)
+    private async Task ValidateInputDataForAddingAsync(SourceFormatNodeDto dto)
     {
         await _sourceFormatNodeDtoValidator.ValidateAsync(dto, o =>
         {

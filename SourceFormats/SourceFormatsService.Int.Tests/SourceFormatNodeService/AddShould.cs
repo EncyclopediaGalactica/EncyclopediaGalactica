@@ -8,6 +8,7 @@ using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatServiceDatabaseOperationCollection")]
 public class AddShould : BaseTest
 {
     [Fact]
@@ -15,7 +16,7 @@ public class AddShould : BaseTest
     {
         // Arrange
         string name = "asd";
-        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        SourceFormatNodeDto dto = new()
         {
             Name = name
         };

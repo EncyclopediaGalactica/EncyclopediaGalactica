@@ -48,12 +48,12 @@ public class SourceFormatNodeUpdateResponseModel : IResponseModel<SourceFormatNo
             return this;
         }
 
-        public SourceFormatNodeAddResponseModel Build()
+        public SourceFormatNodeUpdateResponseModel Build()
         {
             if (_httpStatusCode is null)
                 throw new ArgumentException("Http status code must be set.");
 
-            SourceFormatNodeAddResponseModel responseModel = new()
+            SourceFormatNodeUpdateResponseModel responseModel = new()
             {
                 Result = _result,
                 IsOperationSuccessful = _isOperationSuccessful,

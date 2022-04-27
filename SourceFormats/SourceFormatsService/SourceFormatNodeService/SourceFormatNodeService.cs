@@ -15,13 +15,13 @@ using Utils.GuardsService;
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {
     private const string SourceFormatNodesListKey = "SourceFormatNodesList";
+    private readonly int _cacheExpiresInMinutes = 60;
     private readonly IGuardsService _guards;
     private readonly ILogger _logger;
     private readonly ISourceFormatMappers _sourceFormatMappers;
     private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
     private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
-    private int _cacheExpiresInMinutes = 60;
 
     public SourceFormatNodeService(
         IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
@@ -77,19 +77,13 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         throw new NotImplementedException();
     }
 
-    public async Task<SourceFormatNodeDto> UpdateSourceFormatNodeAsync(SourceFormatNodeDto dto,
-        CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    private SourceFormatNodeAddResponseModel PrepareSuccessResponseModel(SourceFormatNodeDto dto)
+    private SourceFormatNodeAddResponseModel PrepareSuccessResponseModelForAdd(SourceFormatNodeDto dto)
     {
         SourceFormatNodeAddResponseModel responseModel = new SourceFormatNodeAddResponseModel.Builder()
             .SetResult(dto)

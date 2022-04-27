@@ -12,7 +12,7 @@ using Xunit;
 public class ValidationShould
 {
     [Theory]
-    [MemberData(nameof(SourceFormatNodeDatasets.ValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
+    [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
     public async Task Throw_WhenInputDataIsInvalid(string name)
     {
         // Arrange && Act

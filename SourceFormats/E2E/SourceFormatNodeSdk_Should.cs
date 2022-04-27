@@ -19,7 +19,7 @@ public class SourceFormatNodeSdk_Should : TestBase
     }
 
     [Theory]
-    [MemberData(nameof(SourceFormatNodeDatasets.ValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
+    [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
     public async Task Throw_WhenTheUserTriesToBuildAnInvalidDataset(string name)
     {
         // Arrange & Act
@@ -82,7 +82,7 @@ public class SourceFormatNodeSdk_Should : TestBase
     }
 
     [Fact]
-    public async Task Return_204_AndTheResult_WhenUpdating()
+    public async Task Return_200_AndTheResult_WhenUpdating()
     {
         // Arrange
         string updatedName = "bbsd";
@@ -114,7 +114,7 @@ public class SourceFormatNodeSdk_Should : TestBase
     }
 
     [Fact]
-    public async Task Return_204_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
+    public async Task Return_200_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
     {
         // Arrange
         string updatedName = "asd";

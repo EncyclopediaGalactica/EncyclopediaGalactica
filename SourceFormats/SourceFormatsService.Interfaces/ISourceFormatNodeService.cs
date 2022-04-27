@@ -48,8 +48,23 @@ public interface ISourceFormatNodeService
 
     Task<ICollection<SourceFormatNode>> GetSourceFormatNodesAsync(CancellationToken cancellationToken = default);
 
-    Task<SourceFormatNodeDto> UpdateSourceFormatNodeAsync(
-        SourceFormatNodeDto dto,
+    /// <summary>
+    ///     Updates the defined <see cref="SourceFormatNode" /> entity in the system.
+    ///     The entity properties will be overwritten by the provided object's properties.
+    ///     The entity going to be overwritten is defined by the input object Id property.
+    /// </summary>
+    /// <param name="dto">The object defines which entity properties will be overwritten by this object properties</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing asynchronous operation where the Result is
+    ///     <see cref="SourceFormatNodeUpdateResponseModel" /> providing the result of the operation and the
+    ///     updated entity with its new values.
+    /// </returns>
+    /// <exception cref="SourceFormatNodeServiceException">In case of any error</exception>
+    Task<SourceFormatNodeUpdateResponseModel> UpdateSourceFormatNodeAsync(
+        SourceFormatNodeDto? dto,
         CancellationToken cancellationToken = default);
 
     Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto, CancellationToken cancellationToken = default);

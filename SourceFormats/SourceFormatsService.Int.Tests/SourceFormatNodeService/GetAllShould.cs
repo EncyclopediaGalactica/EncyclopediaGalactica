@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Dtos;
@@ -7,6 +8,8 @@ using FluentAssertions;
 using Sdk.Models.SourceFormatNode;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
+[Collection("SourceFormatServiceDatabaseOperationCollection")]
 public class GetAllShould : BaseTest
 {
     [Fact]
@@ -14,7 +17,7 @@ public class GetAllShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        SourceFormatNodeDto dto = new()
         {
             Name = name
         };
