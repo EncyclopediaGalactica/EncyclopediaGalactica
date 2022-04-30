@@ -1,19 +1,19 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
-using System.Net;
 using Dtos;
 using Entities;
 using Exceptions;
 using FluentValidation;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.Extensions.Logging;
-using Sdk.Models.SourceFormatNode;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeUpdateResponseModel> UpdateSourceFormatNodeAsync(
+    public async Task<SourceFormatNodeSingleResultResponseModel> UpdateSourceFormatNodeAsync(
         SourceFormatNodeDto? dto,
         CancellationToken cancellationToken = default)
     {
@@ -26,49 +26,54 @@ public partial class SourceFormatNodeService
                 .ConfigureAwait(false);
             // TODO: caching!
             SourceFormatNodeDto updatedDto = MapSourceFormatNodeToSourceFormatNodeDto(updated);
-            SourceFormatNodeUpdateResponseModel responseModel = PrepareSuccessResponseModelForUpdate(updatedDto);
+            SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForUpdate(updatedDto);
             return responseModel;
         }
         catch (Exception e) when (e is ArgumentNullException or ValidationException)
         {
             _logger.LogWarning("{Operation} failed due to validation error", nameof(UpdateSourceFormatNodeAsync));
 
-            SourceFormatNodeUpdateResponseModel responseModel = new SourceFormatNodeUpdateResponseModel.Builder()
-                .SetMessage("Validation error")
-                .SetOperationFailed()
-                .SetHttpStatusCode(HttpStatusCode.BadRequest)
-                .Build();
+            SourceFormatNodeSingleResultResponseModel responseModel = new()
+            {
+                Status = SourceFormatsResultStatuses.VALIDATION_ERROR,
+                Result = null,
+                IsOperationSuccessful = false
+            };
             return responseModel;
         }
         catch (Exception e) when (e is SourceFormatNodeMapperException or SourceFormatNodeServiceException)
         {
             _logger.LogWarning("{Operation} failed due to internal error", nameof(UpdateSourceFormatNodeAsync));
-            SourceFormatNodeUpdateResponseModel responseModel = new SourceFormatNodeUpdateResponseModel.Builder()
-                .SetMessage("Internal error")
-                .SetOperationFailed()
-                .SetHttpStatusCode(HttpStatusCode.InternalServerError)
-                .Build();
+            SourceFormatNodeSingleResultResponseModel responseModel = new()
+            {
+                Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                IsOperationSuccessful = false,
+                Result = null
+            };
             return responseModel;
         }
         catch (Exception e)
         {
             _logger.LogWarning("{Operation} failed due to something unexpected", nameof(UpdateSourceFormatNodeAsync));
-            SourceFormatNodeUpdateResponseModel responseModel = new SourceFormatNodeUpdateResponseModel.Builder()
-                .SetMessage("Unexpected error")
-                .SetOperationFailed()
-                .SetHttpStatusCode(HttpStatusCode.InternalServerError)
-                .Build();
+            SourceFormatNodeSingleResultResponseModel responseModel = new()
+            {
+                Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                IsOperationSuccessful = false,
+                Result = null
+            };
             return responseModel;
         }
     }
 
-    private SourceFormatNodeUpdateResponseModel PrepareSuccessResponseModelForUpdate(SourceFormatNodeDto resultDto)
+    private SourceFormatNodeSingleResultResponseModel PrepareSuccessResponseModelForUpdate(
+        SourceFormatNodeDto resultDto)
     {
-        SourceFormatNodeUpdateResponseModel responseModel = new SourceFormatNodeUpdateResponseModel.Builder()
-            .SetResult(resultDto)
-            .SetOperationSuccessful()
-            .SetHttpStatusCode(HttpStatusCode.OK)
-            .Build();
+        SourceFormatNodeSingleResultResponseModel responseModel = new()
+        {
+            Result = resultDto,
+            IsOperationSuccessful = true,
+            Status = SourceFormatsResultStatuses.SUCCESS
+        };
         return responseModel;
     }
 

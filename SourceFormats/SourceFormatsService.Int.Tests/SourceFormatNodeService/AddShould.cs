@@ -4,7 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -22,12 +23,14 @@ public class AddShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeAddResponseModel result = await _sourceFormatsService
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService
             .SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
+        result.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
+        result.IsOperationSuccessful.Should().BeTrue();
         result.Result.Should().NotBeNull();
         result.Result.Id.Should().NotBe(0);
         result.Result.Id.Should().BeGreaterThan(0);

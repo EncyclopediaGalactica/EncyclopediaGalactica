@@ -2,15 +2,17 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatN
 
 using Dtos;
 using Entities;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.Extensions.Logging;
 using Repository.Exceptions;
-using Sdk.Models.SourceFormatNode;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<SourceFormatNodeListResultResponseModel> GetAllAsync(
+        CancellationToken cancellationToken = default)
     {
         try
         {
@@ -20,24 +22,19 @@ public partial class SourceFormatNodeService
                 .ConfigureAwait(false);
             List<SourceFormatNodeDto> mapped = _sourceFormatMappers.SourceFormatNodeMappers
                 .MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(sourceFormatNodes);
-            SourceFormatNodeGetAllResponseModel responseModel = new SourceFormatNodeGetAllResponseModel
-            {
-                IsOperationSuccessful = true,
-                Result = mapped,
-                HttpStatusCode = 200
-            };
+            SourceFormatNodeListResultResponseModel responseModel = PrepareSuccessResponseModelForGetAll(mapped);
+
             _logger.LogInformation($"{nameof(SourceFormatNodeService)}.{nameof(GetAllAsync)} executed.");
             return responseModel;
         }
         catch (Exception e) when (
             e is SourceFormatNodeRepositoryException or SourceFormatNodeMapperException)
         {
-            SourceFormatNodeGetAllResponseModel responseModel = new SourceFormatNodeGetAllResponseModel
+            SourceFormatNodeListResultResponseModel responseModel = new()
             {
                 IsOperationSuccessful = false,
                 Result = null,
-                HttpStatusCode = 500,
-                Message = "Error happened while executing business logic. For further details see logs."
+                Status = SourceFormatsResultStatuses.INTERNAL_ERROR
             };
             _logger.LogError("Business logic error happened. " +
                              "Method name: {MethodName}. " +
@@ -50,12 +47,11 @@ public partial class SourceFormatNodeService
         }
         catch (Exception e)
         {
-            SourceFormatNodeGetAllResponseModel responseModel = new SourceFormatNodeGetAllResponseModel
+            SourceFormatNodeListResultResponseModel responseModel = new()
             {
                 IsOperationSuccessful = false,
                 Result = null,
-                HttpStatusCode = 500,
-                Message = "Unknown error happened. For further details see logs."
+                Status = SourceFormatsResultStatuses.INTERNAL_ERROR
             };
 
             _logger.LogError("Unknown error happened. " +
@@ -69,5 +65,17 @@ public partial class SourceFormatNodeService
 
             return responseModel;
         }
+    }
+
+    private SourceFormatNodeListResultResponseModel PrepareSuccessResponseModelForGetAll(
+        List<SourceFormatNodeDto> mapped)
+    {
+        SourceFormatNodeListResultResponseModel responseModel = new()
+        {
+            IsOperationSuccessful = true,
+            Result = mapped,
+            Status = SourceFormatsResultStatuses.SUCCESS
+        };
+        return responseModel;
     }
 }

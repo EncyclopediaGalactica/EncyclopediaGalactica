@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces.SourceFormatNode;
 
 using Dtos;
 using Entities;
@@ -27,7 +27,7 @@ public interface ISourceFormatNodeService
     ///     Whenever input validation related
     ///     error happens.
     /// </exception>
-    Task<SourceFormatNodeAddResponseModel> AddAsync(
+    Task<SourceFormatNodeSingleResultResponseModel> AddAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
 
@@ -63,7 +63,7 @@ public interface ISourceFormatNodeService
     ///     updated entity with its new values.
     /// </returns>
     /// <exception cref="SourceFormatNodeServiceException">In case of any error</exception>
-    Task<SourceFormatNodeUpdateResponseModel> UpdateSourceFormatNodeAsync(
+    Task<SourceFormatNodeSingleResultResponseModel> UpdateSourceFormatNodeAsync(
         SourceFormatNodeDto? dto,
         CancellationToken cancellationToken = default);
 
@@ -82,5 +82,5 @@ public interface ISourceFormatNodeService
     ///     information of execution and result.
     /// </returns>
     /// <exception cref="SourceFormatNodeServiceException">If any error happen.</exception>
-    Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<SourceFormatNodeListResultResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
 }

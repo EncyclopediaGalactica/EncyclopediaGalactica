@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces.SourceFormatNode;
 
 public partial class SourceFormatNodeController
 {
@@ -16,7 +17,7 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<SourceFormatNodeGetAllResponseModel>> GetAsync()
     {
-        SourceFormatNodeGetAllResponseModel result = await _sourceFormatsService
+        SourceFormatNodeListResultResponseModel result = await _sourceFormatsService
             .SourceFormatNode
             .GetAllAsync()
             .ConfigureAwait(false);

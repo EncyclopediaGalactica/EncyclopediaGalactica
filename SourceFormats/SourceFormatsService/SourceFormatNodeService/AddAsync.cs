@@ -1,20 +1,21 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
-using System.Net;
 using Dtos;
 using Entities;
 using FluentValidation;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Repository.Exceptions;
-using Sdk.Models.SourceFormatNode;
 using SourceFormatsCacheService.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
 {
-    public async Task<SourceFormatNodeAddResponseModel> AddAsync(
+    /// <inheritdoc />
+    public async Task<SourceFormatNodeSingleResultResponseModel> AddAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
@@ -27,7 +28,10 @@ public partial class SourceFormatNodeService
                 .ConfigureAwait(false);
             await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
             SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
-            SourceFormatNodeAddResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
+            SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
+
+            _logger.LogInformation("{Method} is executed successfully", nameof(AddAsync));
+
             return responseModel;
         }
         // When Name UNIQUE constraint is violated a DbUpdate Exception is thrown
@@ -40,12 +44,12 @@ public partial class SourceFormatNodeService
                                       && e.InnerException is DbUpdateException))
 
         {
-            SourceFormatNodeAddResponseModel validationErrorResponseModel =
-                new SourceFormatNodeAddResponseModel.Builder()
-                    .SetMessage("Validation error.")
-                    .SetHttpStatusCode(HttpStatusCode.BadRequest)
-                    .SetOperationFailed()
-                    .Build();
+            SourceFormatNodeSingleResultResponseModel validationErrorResponseModel =
+                new()
+                {
+                    Status = SourceFormatsResultStatuses.VALIDATION_ERROR,
+                    IsOperationSuccessful = false
+                };
 
             _logger.LogError("Validation error." +
                              "Method: {Method}. " +
@@ -63,11 +67,12 @@ public partial class SourceFormatNodeService
                                   || (e is SourceFormatNodeRepositoryException &&
                                       e.InnerException is not DbUpdateException))
         {
-            SourceFormatNodeAddResponseModel internalErrorResponseModel = new SourceFormatNodeAddResponseModel.Builder()
-                .SetHttpStatusCode(HttpStatusCode.InternalServerError)
-                .SetOperationFailed()
-                .SetMessage("Internal Server Error")
-                .Build();
+            SourceFormatNodeSingleResultResponseModel internalErrorResponseModel =
+                new()
+                {
+                    Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                    IsOperationSuccessful = false
+                };
 
             _logger.LogError("Internal error." +
                              "Method: {Method}. " +
@@ -78,6 +83,25 @@ public partial class SourceFormatNodeService
                 e.StackTrace);
 
             return internalErrorResponseModel;
+        }
+        catch (Exception e)
+        {
+            SourceFormatNodeSingleResultResponseModel unexpectedResponseModel =
+                new()
+                {
+                    Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                    IsOperationSuccessful = false
+                };
+
+            _logger.LogError("Internal error." +
+                             "Method: {Method}. " +
+                             "Message: {Message} " +
+                             "Stacktrace: {StackTrace}",
+                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
+                e.Message,
+                e.StackTrace);
+
+            return unexpectedResponseModel;
         }
     }
 
@@ -116,5 +140,16 @@ public partial class SourceFormatNodeService
             o.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
             o.ThrowOnFailures();
         }).ConfigureAwait(false);
+    }
+
+    private SourceFormatNodeSingleResultResponseModel PrepareSuccessResponseModelForAdd(SourceFormatNodeDto dto)
+    {
+        SourceFormatNodeSingleResultResponseModel responseModel = new()
+        {
+            Result = dto,
+            Status = SourceFormatsResultStatuses.SUCCESS,
+            IsOperationSuccessful = true
+        };
+        return responseModel;
     }
 }

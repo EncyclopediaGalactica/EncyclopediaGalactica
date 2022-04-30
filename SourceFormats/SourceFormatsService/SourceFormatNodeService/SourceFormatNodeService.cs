@@ -1,14 +1,12 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 
-using System.Net;
 using Dtos;
 using Entities;
 using FluentValidation;
-using Interfaces;
+using Interfaces.SourceFormatNode;
 using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
 using Repository.Interfaces;
-using Sdk.Models.SourceFormatNode;
 using SourceFormatsCacheService.Interfaces;
 using Utils.GuardsService;
 
@@ -81,15 +79,5 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
-    }
-
-    private SourceFormatNodeAddResponseModel PrepareSuccessResponseModelForAdd(SourceFormatNodeDto dto)
-    {
-        SourceFormatNodeAddResponseModel responseModel = new SourceFormatNodeAddResponseModel.Builder()
-            .SetResult(dto)
-            .SetHttpStatusCode(HttpStatusCode.Created)
-            .SetOperationSuccessful()
-            .Build();
-        return responseModel;
     }
 }

@@ -4,7 +4,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -19,7 +20,7 @@ public class UpdateShould : BaseTest
         {
             Name = "asd"
         };
-        SourceFormatNodeAddResponseModel addResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel addResponseModel = await _sourceFormatsService.SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
         string updatedName = "asdasd";
         SourceFormatNodeDto updateTemplate = new()
@@ -29,10 +30,13 @@ public class UpdateShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeUpdateResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
-            .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
+        SourceFormatNodeSingleResultResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
+            .UpdateSourceFormatNodeAsync(updateTemplate)
+            .ConfigureAwait(false);
 
         // Assert
+        updateResponseModel.Should().NotBeNull();
+        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
         updateResponseModel.Message.Should().BeNull();
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Id.Should().Be(updateTemplate.Id);
@@ -49,12 +53,12 @@ public class UpdateShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeUpdateResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
             .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
 
         // Assert
-        updateResponseModel.Message.Should().NotBeNullOrEmpty();
-        updateResponseModel.Message.Should().NotBeNullOrWhiteSpace();
+        updateResponseModel.Should().NotBeNull();
+        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.NO_SUCH_ENTITY);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

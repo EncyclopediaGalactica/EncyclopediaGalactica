@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces;
+using SourceFormatsService.Interfaces.SourceFormatNode;
 
 public partial class SourceFormatNodeController
 {
@@ -22,24 +24,21 @@ public partial class SourceFormatNodeController
         if (dto is null)
             _logger.LogInformation("{RequestModel} is null", nameof(dto));
 
-        SourceFormatNodeAddResponseModel result = await _sourceFormatsService
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService
             .SourceFormatNode
             .AddAsync(dto)
             .ConfigureAwait(false);
 
-        switch (result.HttpStatusCode)
+        switch (result.Status)
         {
-            case (int)HttpStatusCode.Created:
+            case SourceFormatsResultStatuses.SUCCESS:
                 return Created(new Uri($"http://localhost/{result.Result.Id}"), result);
-                break;
 
-            case (int)HttpStatusCode.BadRequest:
+            case SourceFormatsResultStatuses.VALIDATION_ERROR:
                 return BadRequest(result);
-                break;
 
-            case (int)HttpStatusCode.InternalServerError:
+            case SourceFormatsResultStatuses.INTERNAL_ERROR:
                 return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
-                break;
 
             default:
                 return Problem("Something strange");

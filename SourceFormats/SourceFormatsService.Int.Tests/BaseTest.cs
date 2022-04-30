@@ -6,6 +6,7 @@ using Ctx;
 using Entities;
 using FluentValidation;
 using Interfaces;
+using Interfaces.SourceFormatNode;
 using Mappers;
 using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
@@ -26,9 +27,9 @@ public class BaseTest
 
     public BaseTest()
     {
-        SqliteConnection connection = new SqliteConnection("Filename=:memory:");
+        SqliteConnection connection = new("Filename=:memory:");
         connection.Open();
-        SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
+        SourceFormatNodeDtoValidator validator = new();
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);
@@ -37,7 +38,7 @@ public class BaseTest
                 .UseSqlite(connection).LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
                 .Options;
-        SourceFormatsDbContext ctx = new SourceFormatsDbContext(dbContextOptions);
+        SourceFormatsDbContext ctx = new(dbContextOptions);
         ctx.Database.EnsureCreated();
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             ctx, nodeValidator, new GuardsService());

@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using EncyclopediaGalactica.Sdk.Core;
 using EncyclopediaGalactica.Sdk.Core.Interfaces;
+using Host.RestApi;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Sdk;
 using Sdk.Interfaces;

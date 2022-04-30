@@ -24,6 +24,7 @@ using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
 using SourceFormatsService;
 using SourceFormatsService.Interfaces;
+using SourceFormatsService.Interfaces.SourceFormatNode;
 using SourceFormatsService.SourceFormatNodeService;
 using Utils.GuardsService;
 using ValidatorService;
@@ -40,7 +41,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
                 services.SingleOrDefault(d => d.ServiceType == typeof(SourceFormatsDbContext));
             services.Remove(descriptor!);
 
-            SqliteConnection connection = new SqliteConnection("Filename=:memory:");
+            SqliteConnection connection = new("Filename=:memory:");
             connection.Open();
             services.AddControllers()
                 .AddApplicationPart(typeof(SourceFormatNodeController).Assembly);
@@ -73,7 +74,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             if (sp is null)
                 throw new ArgumentNullException(nameof(sp));
 
-            using (var scope = sp.CreateScope())
+            using (IServiceScope scope = sp.CreateScope())
             {
                 IServiceProvider scopedServices = scope.ServiceProvider;
                 SourceFormatsDbContext db = scopedServices.GetRequiredService<SourceFormatsDbContext>();

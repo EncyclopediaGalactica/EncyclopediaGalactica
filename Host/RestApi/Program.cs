@@ -12,6 +12,7 @@ using EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService.Interfaces;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService.SourceFormatNode;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces.SourceFormatNode;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
 using EncyclopediaGalactica.SourceFormats.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;
@@ -19,7 +20,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -48,7 +49,7 @@ builder.Services.AddLogging(log =>
     log.AddDebug();
 });
 
-SqliteConnection connection = new SqliteConnection("Filename=:memory:");
+SqliteConnection connection = new("Filename=:memory:");
 connection.Open();
 builder.Services.AddDbContext<SourceFormatsDbContext>(options =>
 {
@@ -68,7 +69,7 @@ using (IServiceScope scope = sp.CreateScope())
     db.Database.EnsureCreated();
 }
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -85,6 +86,9 @@ app.MapControllers();
 
 app.Run();
 
-public partial class Program
+namespace EncyclopediaGalactica.Host.RestApi
 {
+    public class Program
+    {
+    }
 }

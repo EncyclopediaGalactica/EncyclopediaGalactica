@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService;
 
 using Interfaces;
+using Interfaces.SourceFormatNode;
 
 public class SourceFormatsService : ISourceFormatsService
 {

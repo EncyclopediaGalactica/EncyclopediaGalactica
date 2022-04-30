@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using Host.RestApi;
 using QA.Datasets;
 using Sdk.Models;
 using Sdk.Models.SourceFormatNode;

@@ -1,11 +1,11 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
-using System.Net;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using QA.Datasets;
-using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 public class UpdateValidationShould : BaseTest
@@ -14,15 +14,15 @@ public class UpdateValidationShould : BaseTest
     public async Task ReturnsResponseModel_ValidationErrorCode_WhenInputIsNull()
     {
         // Act
-        SourceFormatNodeUpdateResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
             .UpdateSourceFormatNodeAsync(null)
             .ConfigureAwait(false);
 
         // Assert
         responseModel.Message.Should().NotBeNull();
         responseModel.Result.Should().BeNull();
-        responseModel.HttpStatusCode.Should().Be((int)HttpStatusCode.BadRequest);
         responseModel.IsOperationSuccessful.Should().BeFalse();
+        responseModel.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
     }
 
     [Theory]
@@ -36,14 +36,14 @@ public class UpdateValidationShould : BaseTest
             Id = id,
             Name = name
         };
-        SourceFormatNodeUpdateResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
             .UpdateSourceFormatNodeAsync(null)
             .ConfigureAwait(false);
 
         // Assert
-        responseModel.Message.Should().NotBeNull();
+        responseModel.Should().NotBeNull();
         responseModel.Result.Should().BeNull();
-        responseModel.HttpStatusCode.Should().Be((int)HttpStatusCode.BadRequest);
+        responseModel.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
         responseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

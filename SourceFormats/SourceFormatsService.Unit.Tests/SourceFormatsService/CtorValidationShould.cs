@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using Interfaces;
+using Interfaces.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

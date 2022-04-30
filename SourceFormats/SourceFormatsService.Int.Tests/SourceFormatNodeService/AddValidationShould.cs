@@ -4,8 +4,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using QA.Datasets;
-using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -15,16 +16,15 @@ public class AddValidationShould : BaseTest
     public async Task ReturnsResponseModel_ValidationErrorCode_AndErrorDetails_WhenInputIsNull()
     {
         // Act
-        SourceFormatNodeAddResponseModel result = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService.SourceFormatNode
             .AddAsync(null!)
             .ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
-        result.Message.Should().NotBeNullOrEmpty();
-        result.Result.Should().BeNull();
-        result.HttpStatusCode.Should().Be(400);
         result.IsOperationSuccessful.Should().BeFalse();
+        result.Result.Should().BeNull();
+        result.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
     }
 
     [Theory]
@@ -34,15 +34,14 @@ public class AddValidationShould : BaseTest
     {
         // Act
         SourceFormatNodeDto dto = new() { Name = name };
-        SourceFormatNodeAddResponseModel result = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService.SourceFormatNode
             .AddAsync(dto)
             .ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
-        result.Message.Should().NotBeNullOrEmpty();
         result.Result.Should().BeNull();
-        result.HttpStatusCode.Should().Be(400);
+        result.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
         result.IsOperationSuccessful.Should().BeFalse();
     }
 
@@ -61,14 +60,14 @@ public class AddValidationShould : BaseTest
             .AddAsync(dto).ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeAddResponseModel result = await _sourceFormatsService
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService
             .SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
         result.Message.Should().NotBeNullOrEmpty();
-        result.HttpStatusCode.Should().Be(400);
+        result.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
         result.IsOperationSuccessful.Should().BeFalse();
     }
 }

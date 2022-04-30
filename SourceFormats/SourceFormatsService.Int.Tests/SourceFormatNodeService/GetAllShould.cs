@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
+using Interfaces;
+using Interfaces.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -27,15 +28,18 @@ public class GetAllShould : BaseTest
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeGetAllResponseModel resultList = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeListResultResponseModel result = await _sourceFormatsService.SourceFormatNode
             .GetAllAsync()
             .ConfigureAwait(false);
 
         // Assert
-        resultList.Result.Should().NotBeNull();
-        resultList.Result.Should().NotBeEmpty();
-        resultList.Result.Count.Should().Be(1);
-        SourceFormatNodeDto elem = resultList.Result.ElementAt(0);
+        result.Should().NotBeNull();
+        result.IsOperationSuccessful.Should().BeTrue();
+        result.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
+        result.Result.Should().NotBeNull();
+        result.Result.Should().NotBeEmpty();
+        result.Result.Count.Should().Be(1);
+        SourceFormatNodeDto elem = result.Result.ElementAt(0);
         elem.Name.Should().Be(name);
     }
 
@@ -43,12 +47,15 @@ public class GetAllShould : BaseTest
     public async Task ReturnsResponseModel_SuccessCode_EmptyList_WhenThereAreNoEntitiesInTheDb()
     {
         // Act
-        SourceFormatNodeGetAllResponseModel result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()
+        SourceFormatNodeListResultResponseModel result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()
             .ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
+        result.IsOperationSuccessful.Should().BeTrue();
+        result.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
         result.Result.Should().NotBeNull();
         result.Result.Should().BeEmpty();
+        result.Result.Count.Should().Be(0);
     }
 }

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests;
 
 using Xunit;
 
