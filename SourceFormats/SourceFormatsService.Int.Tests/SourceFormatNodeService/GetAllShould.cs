@@ -13,7 +13,7 @@ using Xunit;
 public class GetAllShould : BaseTest
 {
     [Fact]
-    public async Task ReturnAll()
+    public async Task ReturnsResponseModel_SuccessCode_AllEntities_WhenThereAreEntitiesInTheDb()
     {
         // Arrange
         string name = "asdasd";
@@ -40,7 +40,7 @@ public class GetAllShould : BaseTest
     }
 
     [Fact]
-    public async Task ReturnEmptyList_WhenNoElemInTheDatabase()
+    public async Task ReturnsResponseModel_SuccessCode_EmptyList_WhenThereAreNoEntitiesInTheDb()
     {
         // Act
         SourceFormatNodeGetAllResponseModel result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()

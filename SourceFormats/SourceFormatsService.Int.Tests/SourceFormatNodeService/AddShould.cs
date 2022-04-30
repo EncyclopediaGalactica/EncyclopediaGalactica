@@ -12,7 +12,7 @@ using Xunit;
 public class AddShould : BaseTest
 {
     [Fact]
-    public async Task Add_AnItem_AndReturnIt()
+    public async Task ReturnsResponseModel_SuccessCode_AndWithOperationResult()
     {
         // Arrange
         string name = "asd";

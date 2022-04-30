@@ -12,7 +12,7 @@ using Xunit;
 public class UpdateShould : BaseTest
 {
     [Fact]
-    public async Task Update_Entity()
+    public async Task ReturnsResponseModel_SuccessCode_AndUpdatedEntity()
     {
         // Arrange
         SourceFormatNodeDto dto = new()
@@ -37,5 +37,24 @@ public class UpdateShould : BaseTest
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Id.Should().Be(updateTemplate.Id);
         updateResponseModel.Result.Name.Should().Be(updateTemplate.Name);
+    }
+
+    [Fact]
+    public async Task ReturnsResponseModel_NoSuchEntityErrorCode_AndErrorDetails_WhenNoSuchEntityToBeUpdated()
+    {
+        SourceFormatNodeDto updateTemplate = new()
+        {
+            Id = 204,
+            Name = "asdasd"
+        };
+
+        // Act
+        SourceFormatNodeUpdateResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
+            .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
+
+        // Assert
+        updateResponseModel.Message.Should().NotBeNullOrEmpty();
+        updateResponseModel.Message.Should().NotBeNullOrWhiteSpace();
+        updateResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

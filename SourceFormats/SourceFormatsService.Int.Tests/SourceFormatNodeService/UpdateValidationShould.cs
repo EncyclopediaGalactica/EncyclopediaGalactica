@@ -11,7 +11,7 @@ using Xunit;
 public class UpdateValidationShould : BaseTest
 {
     [Fact]
-    public async Task Return_ValidationErrorCode_WhenInputIsNull()
+    public async Task ReturnsResponseModel_ValidationErrorCode_WhenInputIsNull()
     {
         // Act
         SourceFormatNodeUpdateResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
@@ -28,10 +28,10 @@ public class UpdateValidationShould : BaseTest
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.UpdateValidationDataSet),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Return_ValidationErrorCode_WhenInputIsInvalid(int id, string name)
+    public async Task ReturnsResponseModel_ValidationErrorCode_WhenInputIsInvalid(int id, string name)
     {
         // Act
-        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        SourceFormatNodeDto dto = new()
         {
             Id = id,
             Name = name
