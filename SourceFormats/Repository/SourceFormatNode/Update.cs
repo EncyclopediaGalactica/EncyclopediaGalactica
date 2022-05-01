@@ -20,9 +20,6 @@ public partial class SourceFormatNodeRepository
             SourceFormatNode? toBeUpdated = await _ctx.SourceFormatNodes
                 .FirstAsync(p => p.Id == node.Id, cancellationToken)
                 .ConfigureAwait(false);
-
-            if (toBeUpdated is null)
-                throw new SourceFormatNodeRepositoryException($"No entity with id {node.Id}");
 #pragma warning restore CA1062
 
             MapNewValuesToEntity(node, toBeUpdated);

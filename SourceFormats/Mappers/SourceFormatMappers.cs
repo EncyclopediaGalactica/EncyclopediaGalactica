@@ -7,8 +7,9 @@ public class SourceFormatMappers : ISourceFormatMappers
     public SourceFormatMappers(
         ISourceFormatNodeMappers sourceFormatNodeMappers)
     {
-        SourceFormatNodeMappers = sourceFormatNodeMappers ??
-                                  throw new ArgumentNullException(nameof(sourceFormatNodeMappers));
+        ArgumentNullException.ThrowIfNull(sourceFormatNodeMappers);
+
+        SourceFormatNodeMappers = sourceFormatNodeMappers;
     }
 
     public ISourceFormatNodeMappers SourceFormatNodeMappers { get; }

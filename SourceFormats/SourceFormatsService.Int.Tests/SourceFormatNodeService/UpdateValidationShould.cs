@@ -19,10 +19,9 @@ public class UpdateValidationShould : BaseTest
             .ConfigureAwait(false);
 
         // Assert
-        responseModel.Message.Should().NotBeNull();
         responseModel.Result.Should().BeNull();
         responseModel.IsOperationSuccessful.Should().BeFalse();
-        responseModel.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
+        responseModel.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
     }
 
     [Theory]
@@ -43,7 +42,7 @@ public class UpdateValidationShould : BaseTest
         // Assert
         responseModel.Should().NotBeNull();
         responseModel.Result.Should().BeNull();
-        responseModel.Status.Should().Be(SourceFormatsResultStatuses.VALIDATION_ERROR);
+        responseModel.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
         responseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

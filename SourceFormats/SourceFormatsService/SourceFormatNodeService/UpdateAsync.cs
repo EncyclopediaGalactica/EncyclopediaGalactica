@@ -8,6 +8,7 @@ using Interfaces;
 using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.Extensions.Logging;
+using Repository.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
@@ -35,9 +36,22 @@ public partial class SourceFormatNodeService
 
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.VALIDATION_ERROR,
+                Status = SourceFormatsResultStatuses.ValidationError,
                 Result = null,
                 IsOperationSuccessful = false
+            };
+            return responseModel;
+        }
+        catch (Exception e) when (e is SourceFormatNodeRepositoryException &&
+                                  e.InnerException is InvalidOperationException)
+        {
+            _logger.LogWarning("{Operation} failed due to there is no item in the sequence",
+                nameof(UpdateSourceFormatNodeAsync));
+            SourceFormatNodeSingleResultResponseModel responseModel = new()
+            {
+                Status = SourceFormatsResultStatuses.NoSuchEntity,
+                IsOperationSuccessful = false,
+                Result = null
             };
             return responseModel;
         }
@@ -46,7 +60,7 @@ public partial class SourceFormatNodeService
             _logger.LogWarning("{Operation} failed due to internal error", nameof(UpdateSourceFormatNodeAsync));
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                Status = SourceFormatsResultStatuses.InternalError,
                 IsOperationSuccessful = false,
                 Result = null
             };
@@ -57,7 +71,7 @@ public partial class SourceFormatNodeService
             _logger.LogWarning("{Operation} failed due to something unexpected", nameof(UpdateSourceFormatNodeAsync));
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                Status = SourceFormatsResultStatuses.InternalError,
                 IsOperationSuccessful = false,
                 Result = null
             };
@@ -72,7 +86,7 @@ public partial class SourceFormatNodeService
         {
             Result = resultDto,
             IsOperationSuccessful = true,
-            Status = SourceFormatsResultStatuses.SUCCESS
+            Status = SourceFormatsResultStatuses.Success
         };
         return responseModel;
     }

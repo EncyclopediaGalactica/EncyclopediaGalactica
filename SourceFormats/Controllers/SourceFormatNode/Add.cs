@@ -6,19 +6,19 @@ using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Sdk.Models.SourceFormatNode;
 using SourceFormatsService.Interfaces;
 using SourceFormatsService.Interfaces.SourceFormatNode;
+using ViewModels;
 
 public partial class SourceFormatNodeController
 {
     [HttpPost]
     [Route("add")]
     [Consumes(MediaTypeNames.Application.Json)]
-    [ProducesResponseType(typeof(SourceFormatNodeAddResponseModel), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(SourceFormatNodeSingleResultViewModel), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<SourceFormatNodeAddResponseModel>> AddAsync(
+    public async Task<ActionResult<SourceFormatNodeSingleResultViewModel>> AddAsync(
         [FromBody] SourceFormatNodeDto? dto)
     {
         if (dto is null)
@@ -31,13 +31,25 @@ public partial class SourceFormatNodeController
 
         switch (result.Status)
         {
-            case SourceFormatsResultStatuses.SUCCESS:
-                return Created(new Uri($"http://localhost/{result.Result.Id}"), result);
+            case SourceFormatsResultStatuses.Success:
+                SourceFormatNodeSingleResultViewModel successViewModel = new()
+                {
+                    Result = result.Result,
+                    IsOperationSuccessful = result.IsOperationSuccessful,
+                    Message = SourceFormatsResultStatuses.Success
+                };
+                return Created(new Uri($"http://localhost/{successViewModel.Result.Id}"), successViewModel);
 
-            case SourceFormatsResultStatuses.VALIDATION_ERROR:
-                return BadRequest(result);
+            case SourceFormatsResultStatuses.ValidationError:
+                SourceFormatNodeSingleResultViewModel validationErrorViewModel = new()
+                {
+                    Result = null,
+                    IsOperationSuccessful = result.IsOperationSuccessful,
+                    Message = SourceFormatsResultStatuses.ValidationError
+                };
+                return BadRequest(validationErrorViewModel);
 
-            case SourceFormatsResultStatuses.INTERNAL_ERROR:
+            case SourceFormatsResultStatuses.InternalError:
                 return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
 
             default:

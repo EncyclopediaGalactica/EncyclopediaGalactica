@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
 
-public enum SourceFormatsResultStatuses
+public static class SourceFormatsResultStatuses
 {
-    SUCCESS,
-    VALIDATION_ERROR,
-    NO_SUCH_ENTITY,
-    INTERNAL_ERROR
+    public const string Success = "Success";
+    public const string ValidationError = "Validation Error";
+    public const string NoSuchEntity = "No Such Entity";
+    public const string InternalError = "Internal Error";
 }

@@ -39,8 +39,7 @@ public class SdkCore : ISdkCore
         CancellationToken cancellationToken = default)
         where TResponseModel : IResponseModel<TResponseModelPayload>
     {
-        TResponseModel result =
-            Activator.CreateInstance<TResponseModel>();
+        TResponseModel result = Activator.CreateInstance<TResponseModel>();
 
         try
         {
@@ -57,22 +56,14 @@ public class SdkCore : ISdkCore
         }
         catch (HttpRequestException httpRequestException)
         {
-            string msg = $"Error happened.";
-            result.Message = msg;
-            result.HttpStatusCode = (int)httpResponseMessage.StatusCode;
             result.IsOperationSuccessful = false;
             return result;
-        }
-        catch (Exception e)
-        {
-            // something bad
-            throw;
         }
     }
 
     private HttpRequestMessage PrepareHttpRequestMessage(StringContent stringContent, HttpMethod httpMethod, string url)
     {
-        HttpRequestMessage message = new HttpRequestMessage(httpMethod, url);
+        HttpRequestMessage message = new(httpMethod, url);
         message.Content = stringContent;
         return message;
     }
@@ -83,7 +74,7 @@ public class SdkCore : ISdkCore
         if (response is null)
             throw new ArgumentNullException(nameof(response));
 
-        String content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+        string content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
         T? result = JsonConvert.DeserializeObject<T>(content);
         return result;
     }
@@ -92,8 +83,8 @@ public class SdkCore : ISdkCore
     {
         if (requestModel.Payload is null) return null;
 
-        String jsonString = JsonConvert.SerializeObject(requestModel);
-        StringContent content = new StringContent(jsonString);
+        string jsonString = JsonConvert.SerializeObject(requestModel);
+        StringContent content = new(jsonString);
         return content;
     }
 }

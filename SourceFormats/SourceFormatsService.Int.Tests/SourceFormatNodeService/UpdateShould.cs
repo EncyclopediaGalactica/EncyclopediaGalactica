@@ -36,8 +36,7 @@ public class UpdateShould : BaseTest
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
-        updateResponseModel.Message.Should().BeNull();
+        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.Success);
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Id.Should().Be(updateTemplate.Id);
         updateResponseModel.Result.Name.Should().Be(updateTemplate.Name);
@@ -58,7 +57,7 @@ public class UpdateShould : BaseTest
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.NO_SUCH_ENTITY);
+        updateResponseModel.Status.Should().Be(SourceFormatsResultStatuses.NoSuchEntity);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

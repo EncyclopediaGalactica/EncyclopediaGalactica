@@ -34,7 +34,7 @@ public partial class SourceFormatNodeService
             {
                 IsOperationSuccessful = false,
                 Result = null,
-                Status = SourceFormatsResultStatuses.INTERNAL_ERROR
+                Status = SourceFormatsResultStatuses.InternalError
             };
             _logger.LogError("Business logic error happened. " +
                              "Method name: {MethodName}. " +
@@ -51,7 +51,7 @@ public partial class SourceFormatNodeService
             {
                 IsOperationSuccessful = false,
                 Result = null,
-                Status = SourceFormatsResultStatuses.INTERNAL_ERROR
+                Status = SourceFormatsResultStatuses.InternalError
             };
 
             _logger.LogError("Unknown error happened. " +
@@ -74,7 +74,7 @@ public partial class SourceFormatNodeService
         {
             IsOperationSuccessful = true,
             Result = mapped,
-            Status = SourceFormatsResultStatuses.SUCCESS
+            Status = SourceFormatsResultStatuses.Success
         };
         return responseModel;
     }

@@ -8,7 +8,6 @@ public class SourceFormatNodeAddResponseModel : IResponseModel<SourceFormatNodeD
 {
     public SourceFormatNodeDto? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
-    public int HttpStatusCode { get; set; }
     public string? Message { get; set; }
 
     public class Builder
@@ -53,12 +52,11 @@ public class SourceFormatNodeAddResponseModel : IResponseModel<SourceFormatNodeD
             if (_httpStatusCode is null)
                 throw new ArgumentException("Http status code must be set.");
 
-            SourceFormatNodeAddResponseModel responseModel = new SourceFormatNodeAddResponseModel
+            SourceFormatNodeAddResponseModel responseModel = new()
             {
                 Result = _result,
                 IsOperationSuccessful = _isOperationSuccessful,
-                Message = _message,
-                HttpStatusCode = (int)_httpStatusCode
+                Message = _message
             };
 
             return responseModel;

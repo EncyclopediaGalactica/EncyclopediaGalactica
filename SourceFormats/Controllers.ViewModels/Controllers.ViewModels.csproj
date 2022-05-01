@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.Controllers.ViewModels</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.Controllers.ViewModels</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
+    </ItemGroup>
+
+</Project>

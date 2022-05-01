@@ -51,7 +51,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         responseModel.Should().NotBeNull();
         responseModel.IsOperationSuccessful.Should().BeTrue();
-        responseModel.HttpStatusCode.Should().Be(201);
         responseModel.Message.Should().BeNull();
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
@@ -79,7 +78,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         responseModel2.Should().NotBeNull();
         responseModel2.IsOperationSuccessful.Should().BeFalse();
-        responseModel2.HttpStatusCode.Should().Be(400);
     }
 
     [Fact]
@@ -106,7 +104,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         updateResponseModel.Should().BeNull();
         updateResponseModel.Message.Should().BeNull();
-        updateResponseModel.HttpStatusCode.Should().Be(204);
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Should().NotBeNull();
         updateResponseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
@@ -138,7 +135,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         updateResponseModel.Should().BeNull();
         updateResponseModel.Message.Should().BeNull();
-        updateResponseModel.HttpStatusCode.Should().Be(204);
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Should().BeNull();
     }
@@ -167,7 +163,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         updateResponseModel.Should().BeNull();
         updateResponseModel.Message.Should().NotBeNull();
-        updateResponseModel.HttpStatusCode.Should().Be(400);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
     }

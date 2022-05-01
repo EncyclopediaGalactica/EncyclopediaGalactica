@@ -8,7 +8,6 @@ public class SourceFormatNodeUpdateResponseModel : IResponseModel<SourceFormatNo
 {
     public SourceFormatNodeDto? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
-    public int HttpStatusCode { get; set; }
     public string? Message { get; set; }
 
     public class Builder
@@ -57,8 +56,7 @@ public class SourceFormatNodeUpdateResponseModel : IResponseModel<SourceFormatNo
             {
                 Result = _result,
                 IsOperationSuccessful = _isOperationSuccessful,
-                Message = _message,
-                HttpStatusCode = (int)_httpStatusCode
+                Message = _message
             };
 
             return responseModel;

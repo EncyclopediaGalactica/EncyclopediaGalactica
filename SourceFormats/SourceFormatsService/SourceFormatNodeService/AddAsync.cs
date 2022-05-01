@@ -47,7 +47,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel validationErrorResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.VALIDATION_ERROR,
+                    Status = SourceFormatsResultStatuses.ValidationError,
                     IsOperationSuccessful = false
                 };
 
@@ -70,7 +70,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel internalErrorResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                    Status = SourceFormatsResultStatuses.InternalError,
                     IsOperationSuccessful = false
                 };
 
@@ -89,7 +89,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel unexpectedResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.INTERNAL_ERROR,
+                    Status = SourceFormatsResultStatuses.InternalError,
                     IsOperationSuccessful = false
                 };
 
@@ -147,7 +147,7 @@ public partial class SourceFormatNodeService
         SourceFormatNodeSingleResultResponseModel responseModel = new()
         {
             Result = dto,
-            Status = SourceFormatsResultStatuses.SUCCESS,
+            Status = SourceFormatsResultStatuses.Success,
             IsOperationSuccessful = true
         };
         return responseModel;

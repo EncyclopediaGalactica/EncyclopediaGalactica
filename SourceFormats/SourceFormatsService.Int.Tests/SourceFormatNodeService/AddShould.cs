@@ -29,7 +29,7 @@ public class AddShould : BaseTest
 
         // Assert
         result.Should().NotBeNull();
-        result.Status.Should().Be(SourceFormatsResultStatuses.SUCCESS);
+        result.Status.Should().Be(SourceFormatsResultStatuses.Success);
         result.IsOperationSuccessful.Should().BeTrue();
         result.Result.Should().NotBeNull();
         result.Result.Id.Should().NotBe(0);

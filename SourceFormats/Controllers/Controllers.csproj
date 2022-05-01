@@ -18,6 +18,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Api\Api.csproj"/>
+        <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj"/>
         <ProjectReference Include="..\Dtos\Dtos.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>

@@ -1,11 +1,14 @@
 namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
 
+using System.Net;
 using System.Net.Mime;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces;
 using SourceFormatsService.Interfaces.SourceFormatNode;
+using ViewModels;
 
 public partial class SourceFormatNodeController
 {
@@ -24,6 +27,31 @@ public partial class SourceFormatNodeController
 
         _logger.LogInformation("{MethodName} executed", nameof(GetAsync));
 
-        return Ok(result);
+        switch (result.Status)
+        {
+            case SourceFormatsResultStatuses.Success:
+                SourceFormatNodeListResultViewModel successViewModel = new()
+                {
+                    Result = result.Result,
+                    IsOperationSuccessful = result.IsOperationSuccessful,
+                    Message = SourceFormatsResultStatuses.Success
+                };
+                return Ok(successViewModel);
+
+            case SourceFormatsResultStatuses.ValidationError:
+                SourceFormatNodeListResultViewModel validationErrorViewModel = new()
+                {
+                    Result = null,
+                    IsOperationSuccessful = result.IsOperationSuccessful,
+                    Message = SourceFormatsResultStatuses.ValidationError
+                };
+                return BadRequest(validationErrorViewModel);
+
+            case SourceFormatsResultStatuses.InternalError:
+                return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
+
+            default:
+                return Problem("Something strange");
+        }
     }
 }

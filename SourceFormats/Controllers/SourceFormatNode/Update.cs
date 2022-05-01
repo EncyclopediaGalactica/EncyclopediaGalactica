@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Sdk.Models.SourceFormatNode;
 using SourceFormatsService.Interfaces;
 using SourceFormatsService.Interfaces.SourceFormatNode;
+using ViewModels;
 
 public partial class SourceFormatNodeController
 {
@@ -30,16 +31,34 @@ public partial class SourceFormatNodeController
 
         switch (responseModel.Status)
         {
-            case SourceFormatsResultStatuses.SUCCESS:
-                return Ok(responseModel);
+            case SourceFormatsResultStatuses.Success:
+                SourceFormatNodeSingleResultViewModel successViewModel = new()
+                {
+                    IsOperationSuccessful = responseModel.IsOperationSuccessful,
+                    Result = responseModel.Result,
+                    Message = SourceFormatsResultStatuses.Success
+                };
+                return Ok(successViewModel);
 
-            case SourceFormatsResultStatuses.VALIDATION_ERROR:
+            case SourceFormatsResultStatuses.ValidationError:
+                SourceFormatNodeSingleResultViewModel validationErrorViewModel = new()
+                {
+                    IsOperationSuccessful = responseModel.IsOperationSuccessful,
+                    Result = null,
+                    Message = SourceFormatsResultStatuses.ValidationError
+                };
                 return BadRequest(responseModel);
 
-            case SourceFormatsResultStatuses.NO_SUCH_ENTITY:
-                return NotFound(responseModel);
+            case SourceFormatsResultStatuses.NoSuchEntity:
+                SourceFormatNodeSingleResultViewModel noSuchEntityViewModel = new()
+                {
+                    IsOperationSuccessful = responseModel.IsOperationSuccessful,
+                    Result = null,
+                    Message = SourceFormatsResultStatuses.NoSuchEntity
+                };
+                return NotFound(noSuchEntityViewModel);
 
-            case SourceFormatsResultStatuses.INTERNAL_ERROR:
+            case SourceFormatsResultStatuses.InternalError:
                 return Problem("Error", "Error happened", (int)HttpStatusCode.InternalServerError);
 
             default:
