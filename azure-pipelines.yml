@@ -1,34 +1,31 @@
-# ASP.NET
-# Build and test ASP.NET projects.
-# Add steps that publish symbols, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
-
 trigger:
-- main
+  branches:
+    include:
+      - main
+        
+pool: 'contabo'
 
-pool:
-  vmImage: 'windows-latest'
 
 variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
+  solutionName: 'EncyclopediaGalactica.sln'
 
-steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
-
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+stages:
+  - stage: Main_branch
+    jobs:
+      - job: restore_solution
+        displayName: Restore Solution
+        steps:
+          - script: dotnet restore $solutionName
+            
+      - job: build_solution
+        displayName: Build Solution
+        dependsOn: restore_solution
+        steps:
+          - script: dotnet build $solutionName
+            
+      - job: test_solution
+        displayName: Test Solution
+        dependsOn: build_solution
+        steps:
+          - script: dotnet test $solutionName
+    
