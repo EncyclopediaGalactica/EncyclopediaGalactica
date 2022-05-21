@@ -26,7 +26,7 @@ public partial class SourceFormatNodeService
             SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
             SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
                 .ConfigureAwait(false);
-            await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
+            //await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
             SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
             SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
 
@@ -47,7 +47,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel validationErrorResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.ValidationError,
+                    Status = SourceFormatsServiceResultStatuses.ValidationError,
                     IsOperationSuccessful = false
                 };
 
@@ -70,7 +70,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel internalErrorResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.InternalError,
+                    Status = SourceFormatsServiceResultStatuses.InternalError,
                     IsOperationSuccessful = false
                 };
 
@@ -89,7 +89,7 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel unexpectedResponseModel =
                 new()
                 {
-                    Status = SourceFormatsResultStatuses.InternalError,
+                    Status = SourceFormatsServiceResultStatuses.InternalError,
                     IsOperationSuccessful = false
                 };
 
@@ -147,7 +147,7 @@ public partial class SourceFormatNodeService
         SourceFormatNodeSingleResultResponseModel responseModel = new()
         {
             Result = dto,
-            Status = SourceFormatsResultStatuses.Success,
+            Status = SourceFormatsServiceResultStatuses.Success,
             IsOperationSuccessful = true
         };
         return responseModel;

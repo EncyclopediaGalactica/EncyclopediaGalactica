@@ -16,10 +16,9 @@ public class SdkCore : ISdkCore
     public async Task<TResponseModel> SendAsync<TResponseModel, TResponseModelPayload>(
         HttpRequestMessage httpRequestMessage,
         CancellationToken cancellationToken = default)
-        where TResponseModel : IResponseModel<TResponseModelPayload>
+        where TResponseModel : IResponseModel<TResponseModelPayload>, new()
     {
-        if (httpRequestMessage is null)
-            throw new ArgumentNullException(nameof(httpRequestMessage));
+        ArgumentNullException.ThrowIfNull(httpRequestMessage);
 
         HttpResponseMessage response = await _httpClient.SendAsync(
                 httpRequestMessage,
@@ -37,13 +36,13 @@ public class SdkCore : ISdkCore
     private async Task<TResponseModel> CreateResponse<TResponseModel, TResponseModelPayload>(
         HttpResponseMessage httpResponseMessage,
         CancellationToken cancellationToken = default)
-        where TResponseModel : IResponseModel<TResponseModelPayload>
+        where TResponseModel : IResponseModel<TResponseModelPayload>, new()
     {
         TResponseModel result = Activator.CreateInstance<TResponseModel>();
+        TResponseModel res = new();
 
         try
         {
-            httpResponseMessage.EnsureSuccessStatusCode();
             TResponseModel? deserializedPayload = await DeserializeResponse<TResponseModel>(
                     httpResponseMessage,
                     cancellationToken)
@@ -61,30 +60,13 @@ public class SdkCore : ISdkCore
         }
     }
 
-    private HttpRequestMessage PrepareHttpRequestMessage(StringContent stringContent, HttpMethod httpMethod, string url)
-    {
-        HttpRequestMessage message = new(httpMethod, url);
-        message.Content = stringContent;
-        return message;
-    }
-
     private async Task<T?> DeserializeResponse<T>(HttpResponseMessage response,
         CancellationToken cancellationToken = default)
     {
-        if (response is null)
-            throw new ArgumentNullException(nameof(response));
+        ArgumentNullException.ThrowIfNull(response);
 
         string content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
         T? result = JsonConvert.DeserializeObject<T>(content);
         return result;
-    }
-
-    private StringContent? CreateStringContent<T>(IRequestModel<T> requestModel)
-    {
-        if (requestModel.Payload is null) return null;
-
-        string jsonString = JsonConvert.SerializeObject(requestModel);
-        StringContent content = new(jsonString);
-        return content;
     }
 }

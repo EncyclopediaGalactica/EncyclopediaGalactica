@@ -7,5 +7,5 @@ public interface ISdkCore
     Task<TResponseModel> SendAsync<TResponseModel, TResponseModelPayload>(
         HttpRequestMessage httpRequestMessage,
         CancellationToken cancellationToken = default)
-        where TResponseModel : IResponseModel<TResponseModelPayload>;
+        where TResponseModel : IResponseModel<TResponseModelPayload>, new();
 }

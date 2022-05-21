@@ -29,25 +29,25 @@ public partial class SourceFormatNodeController
 
         switch (result.Status)
         {
-            case SourceFormatsResultStatuses.Success:
+            case SourceFormatsServiceResultStatuses.Success:
                 SourceFormatNodeListResultViewModel successViewModel = new()
                 {
                     Result = result.Result,
                     IsOperationSuccessful = result.IsOperationSuccessful,
-                    Message = SourceFormatsResultStatuses.Success
+                    Message = SourceFormatsServiceResultStatuses.Success
                 };
                 return Ok(successViewModel);
 
-            case SourceFormatsResultStatuses.ValidationError:
+            case SourceFormatsServiceResultStatuses.ValidationError:
                 SourceFormatNodeListResultViewModel validationErrorViewModel = new()
                 {
                     Result = null,
                     IsOperationSuccessful = result.IsOperationSuccessful,
-                    Message = SourceFormatsResultStatuses.ValidationError
+                    Message = SourceFormatsServiceResultStatuses.ValidationError
                 };
                 return BadRequest(validationErrorViewModel);
 
-            case SourceFormatsResultStatuses.InternalError:
+            case SourceFormatsServiceResultStatuses.InternalError:
                 return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
 
             default:

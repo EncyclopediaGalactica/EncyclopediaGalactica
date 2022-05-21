@@ -31,34 +31,34 @@ public partial class SourceFormatNodeController
 
         switch (responseModel.Status)
         {
-            case SourceFormatsResultStatuses.Success:
+            case SourceFormatsServiceResultStatuses.Success:
                 SourceFormatNodeSingleResultViewModel successViewModel = new()
                 {
                     IsOperationSuccessful = responseModel.IsOperationSuccessful,
                     Result = responseModel.Result,
-                    Message = SourceFormatsResultStatuses.Success
+                    Message = SourceFormatsServiceResultStatuses.Success
                 };
                 return Ok(successViewModel);
 
-            case SourceFormatsResultStatuses.ValidationError:
+            case SourceFormatsServiceResultStatuses.ValidationError:
                 SourceFormatNodeSingleResultViewModel validationErrorViewModel = new()
                 {
                     IsOperationSuccessful = responseModel.IsOperationSuccessful,
                     Result = null,
-                    Message = SourceFormatsResultStatuses.ValidationError
+                    Message = SourceFormatsServiceResultStatuses.ValidationError
                 };
                 return BadRequest(responseModel);
 
-            case SourceFormatsResultStatuses.NoSuchEntity:
+            case SourceFormatsServiceResultStatuses.NoSuchEntity:
                 SourceFormatNodeSingleResultViewModel noSuchEntityViewModel = new()
                 {
                     IsOperationSuccessful = responseModel.IsOperationSuccessful,
                     Result = null,
-                    Message = SourceFormatsResultStatuses.NoSuchEntity
+                    Message = SourceFormatsServiceResultStatuses.NoSuchEntity
                 };
                 return NotFound(noSuchEntityViewModel);
 
-            case SourceFormatsResultStatuses.InternalError:
+            case SourceFormatsServiceResultStatuses.InternalError:
                 return Problem("Error", "Error happened", (int)HttpStatusCode.InternalServerError);
 
             default:

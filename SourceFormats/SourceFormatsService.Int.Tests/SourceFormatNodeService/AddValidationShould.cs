@@ -24,7 +24,7 @@ public class AddValidationShould : BaseTest
         result.Should().NotBeNull();
         result.IsOperationSuccessful.Should().BeFalse();
         result.Result.Should().BeNull();
-        result.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
     }
 
     [Theory]
@@ -41,7 +41,7 @@ public class AddValidationShould : BaseTest
         // Assert
         result.Should().NotBeNull();
         result.Result.Should().BeNull();
-        result.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         result.IsOperationSuccessful.Should().BeFalse();
     }
 
@@ -66,7 +66,7 @@ public class AddValidationShould : BaseTest
 
         // Assert
         result.Should().NotBeNull();
-        result.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         result.IsOperationSuccessful.Should().BeFalse();
     }
 }

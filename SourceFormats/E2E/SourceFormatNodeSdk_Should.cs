@@ -9,9 +9,11 @@ using Host.RestApi;
 using QA.Datasets;
 using Sdk.Models;
 using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("E2E")]
 public class SourceFormatNodeSdk_Should : TestBase
 {
     public SourceFormatNodeSdk_Should(SourceFormatWebApplicationFactory<Program> webApplicationFactory) : base(
@@ -51,7 +53,7 @@ public class SourceFormatNodeSdk_Should : TestBase
         // Assert
         responseModel.Should().NotBeNull();
         responseModel.IsOperationSuccessful.Should().BeTrue();
-        responseModel.Message.Should().BeNull();
+        responseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
         responseModel.Result.Id.Should().BeGreaterThan(0);
@@ -102,8 +104,8 @@ public class SourceFormatNodeSdk_Should : TestBase
             .ConfigureAwait(false);
 
         // Assert
-        updateResponseModel.Should().BeNull();
-        updateResponseModel.Message.Should().BeNull();
+        updateResponseModel.Should().NotBeNull();
+        updateResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Should().NotBeNull();
         updateResponseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
@@ -124,6 +126,10 @@ public class SourceFormatNodeSdk_Should : TestBase
             .ConfigureAwait(false);
 
         // Act
+        if (addResponseModel is null) throw new Exception("addresponsemodel is null");
+
+        if (addResponseModel.Result is null) throw new Exception("result is null");
+
         SourceFormatNodeUpdateRequestModel updateRequestModel = new SourceFormatNodeUpdateRequestModel.Builder()
             .SetId(addResponseModel.Result.Id + 100)
             .SetName(updatedName)
@@ -133,9 +139,9 @@ public class SourceFormatNodeSdk_Should : TestBase
             .ConfigureAwait(false);
 
         // Assert
-        updateResponseModel.Should().BeNull();
-        updateResponseModel.Message.Should().BeNull();
-        updateResponseModel.IsOperationSuccessful.Should().BeTrue();
+        updateResponseModel.Should().NotBeNull();
+        updateResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
     }
 
@@ -161,8 +167,8 @@ public class SourceFormatNodeSdk_Should : TestBase
             .ConfigureAwait(false);
 
         // Assert
-        updateResponseModel.Should().BeNull();
-        updateResponseModel.Message.Should().NotBeNull();
+        updateResponseModel.Should().NotBeNull();
+        updateResponseModel.Message.Should().NotBe(SourceFormatsServiceResultStatuses.ValidationError);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
     }

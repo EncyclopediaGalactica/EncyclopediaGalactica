@@ -14,15 +14,12 @@ public partial class SourceFormatNodeSdk
     {
         try
         {
-            if (addRequestModel is null)
-                throw new ArgumentNullException(nameof(addRequestModel));
-            if (addRequestModel.Payload is null)
-                throw new ArgumentNullException(nameof(addRequestModel.Payload));
+            ArgumentNullException.ThrowIfNull(addRequestModel);
+            ArgumentNullException.ThrowIfNull(addRequestModel.Payload);
 
             const string url = SourceFormatNode.Route + SourceFormatNode.Add;
 
-            HttpRequestMessageBuilder<SourceFormatNodeDto?> httpRequestMessageBuilder =
-                new HttpRequestMessageBuilder<SourceFormatNodeDto?>();
+            HttpRequestMessageBuilder<SourceFormatNodeDto?> httpRequestMessageBuilder = new();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetContent(addRequestModel.Payload)
                 .SetUri(url)

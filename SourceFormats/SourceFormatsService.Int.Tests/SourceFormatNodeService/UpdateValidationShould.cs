@@ -21,7 +21,7 @@ public class UpdateValidationShould : BaseTest
         // Assert
         responseModel.Result.Should().BeNull();
         responseModel.IsOperationSuccessful.Should().BeFalse();
-        responseModel.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
+        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
     }
 
     [Theory]
@@ -42,7 +42,7 @@ public class UpdateValidationShould : BaseTest
         // Assert
         responseModel.Should().NotBeNull();
         responseModel.Result.Should().BeNull();
-        responseModel.Status.Should().Be(SourceFormatsResultStatuses.ValidationError);
+        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         responseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

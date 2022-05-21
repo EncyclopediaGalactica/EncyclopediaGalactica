@@ -35,7 +35,7 @@ public class GetAllShould : BaseTest
         // Assert
         result.Should().NotBeNull();
         result.IsOperationSuccessful.Should().BeTrue();
-        result.Status.Should().Be(SourceFormatsResultStatuses.Success);
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
         result.Result.Should().NotBeNull();
         result.Result.Should().NotBeEmpty();
         result.Result.Count.Should().Be(1);
@@ -53,7 +53,7 @@ public class GetAllShould : BaseTest
         // Assert
         result.Should().NotBeNull();
         result.IsOperationSuccessful.Should().BeTrue();
-        result.Status.Should().Be(SourceFormatsResultStatuses.Success);
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
         result.Result.Should().NotBeNull();
         result.Result.Should().BeEmpty();
         result.Result.Count.Should().Be(0);

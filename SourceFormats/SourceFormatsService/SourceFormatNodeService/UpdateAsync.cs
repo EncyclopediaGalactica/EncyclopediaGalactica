@@ -36,7 +36,7 @@ public partial class SourceFormatNodeService
 
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.ValidationError,
+                Status = SourceFormatsServiceResultStatuses.ValidationError,
                 Result = null,
                 IsOperationSuccessful = false
             };
@@ -49,7 +49,7 @@ public partial class SourceFormatNodeService
                 nameof(UpdateSourceFormatNodeAsync));
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.NoSuchEntity,
+                Status = SourceFormatsServiceResultStatuses.NoSuchEntity,
                 IsOperationSuccessful = false,
                 Result = null
             };
@@ -60,7 +60,7 @@ public partial class SourceFormatNodeService
             _logger.LogWarning("{Operation} failed due to internal error", nameof(UpdateSourceFormatNodeAsync));
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.InternalError,
+                Status = SourceFormatsServiceResultStatuses.InternalError,
                 IsOperationSuccessful = false,
                 Result = null
             };
@@ -71,7 +71,7 @@ public partial class SourceFormatNodeService
             _logger.LogWarning("{Operation} failed due to something unexpected", nameof(UpdateSourceFormatNodeAsync));
             SourceFormatNodeSingleResultResponseModel responseModel = new()
             {
-                Status = SourceFormatsResultStatuses.InternalError,
+                Status = SourceFormatsServiceResultStatuses.InternalError,
                 IsOperationSuccessful = false,
                 Result = null
             };
@@ -86,7 +86,7 @@ public partial class SourceFormatNodeService
         {
             Result = resultDto,
             IsOperationSuccessful = true,
-            Status = SourceFormatsResultStatuses.Success
+            Status = SourceFormatsServiceResultStatuses.Success
         };
         return responseModel;
     }

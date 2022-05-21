@@ -26,30 +26,30 @@ public partial class SourceFormatNodeController
 
         SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService
             .SourceFormatNode
-            .AddAsync(dto)
+            .AddAsync(dto!)
             .ConfigureAwait(false);
 
         switch (result.Status)
         {
-            case SourceFormatsResultStatuses.Success:
+            case SourceFormatsServiceResultStatuses.Success:
                 SourceFormatNodeSingleResultViewModel successViewModel = new()
                 {
                     Result = result.Result,
                     IsOperationSuccessful = result.IsOperationSuccessful,
-                    Message = SourceFormatsResultStatuses.Success
+                    Message = SourceFormatsServiceResultStatuses.Success
                 };
                 return Created(new Uri($"http://localhost/{successViewModel.Result.Id}"), successViewModel);
 
-            case SourceFormatsResultStatuses.ValidationError:
+            case SourceFormatsServiceResultStatuses.ValidationError:
                 SourceFormatNodeSingleResultViewModel validationErrorViewModel = new()
                 {
                     Result = null,
                     IsOperationSuccessful = result.IsOperationSuccessful,
-                    Message = SourceFormatsResultStatuses.ValidationError
+                    Message = SourceFormatsServiceResultStatuses.ValidationError
                 };
                 return BadRequest(validationErrorViewModel);
 
-            case SourceFormatsResultStatuses.InternalError:
+            case SourceFormatsServiceResultStatuses.InternalError:
                 return Problem(null, "Internal Server error", (int)HttpStatusCode.InternalServerError);
 
             default:

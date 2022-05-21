@@ -7,7 +7,9 @@ using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 public class SourceFormatNodeUpdateResponseModel : IResponseModel<SourceFormatNodeDto>
 {
     public SourceFormatNodeDto? Result { get; set; }
+
     public bool IsOperationSuccessful { get; set; }
+
     public string? Message { get; set; }
 
     public class Builder
