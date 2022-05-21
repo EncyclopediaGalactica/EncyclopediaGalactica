@@ -5,6 +5,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		.gitignore = .gitignore
 		.editorconfig = .editorconfig
 		.globalconfig = .globalconfig
+		azure-pipelines.yaml = azure-pipelines.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceFormats", "SourceFormats", "{37C84772-74FE-4A8A-8C5A-528040202EBD}"
