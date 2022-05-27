@@ -113,7 +113,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         updateResponseModel.Result.Name.Should().Be(updatedName);
     }
 
-    [Fact]
     public async Task Return_200_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
     {
         // Arrange
@@ -145,7 +144,6 @@ public class SourceFormatNodeSdk_Should : TestBase
         updateResponseModel.Result.Should().BeNull();
     }
 
-    [Fact]
     public async Task Return_400_WhenSourceFormatNodeNameUniquenessIsViolated_ByUpdate()
     {
         // Arrange
