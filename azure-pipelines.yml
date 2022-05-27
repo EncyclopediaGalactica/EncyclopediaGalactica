@@ -5,7 +5,6 @@ trigger:
         
 pool: 'contabo'
 
-
 variables:
   solutionName: 'EncyclopediaGalactica.sln'
 
