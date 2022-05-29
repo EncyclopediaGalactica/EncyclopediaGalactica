@@ -16,10 +16,6 @@ using Xunit;
 [Collection("E2E")]
 public class SourceFormatNodeSdk_Should : TestBase
 {
-    public SourceFormatNodeSdk_Should(SourceFormatWebApplicationFactory<Program> webApplicationFactory) : base(
-        webApplicationFactory)
-    {
-    }
 
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
@@ -113,6 +109,7 @@ public class SourceFormatNodeSdk_Should : TestBase
         updateResponseModel.Result.Name.Should().Be(updatedName);
     }
 
+    [Fact]
     public async Task Return_200_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
     {
         // Arrange
@@ -144,12 +141,20 @@ public class SourceFormatNodeSdk_Should : TestBase
         updateResponseModel.Result.Should().BeNull();
     }
 
+    [Fact]
     public async Task Return_400_WhenSourceFormatNodeNameUniquenessIsViolated_ByUpdate()
     {
         // Arrange
         string updatedName = "asd";
-        SourceFormatNodeAddRequestModel addRequestModel = new SourceFormatNodeAddRequestModel.Builder()
+        SourceFormatNodeAddRequestModel baseRequestModel = new SourceFormatNodeAddRequestModel.Builder()
             .SetName("asd")
+            .Build();
+        SourceFormatNodeAddResponseModel baseResponseModel = await SourceFormatsSdk.SourceFormatNode
+            .AddAsync(baseRequestModel)
+            .ConfigureAwait(false);
+
+        SourceFormatNodeAddRequestModel addRequestModel = new SourceFormatNodeAddRequestModel.Builder()
+            .SetName("asdff")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
             .AddAsync(addRequestModel)
