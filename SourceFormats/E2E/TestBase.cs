@@ -13,15 +13,15 @@ using Sdk.Interfaces;
 using Sdk.SourceFormatNode;
 using Xunit;
 
-public class TestBase : IClassFixture<SourceFormatWebApplicationFactory<Program>>
+public class TestBase : SourceFormatWebApplicationFactory<Program>
 {
     protected readonly HttpClient _httpClient;
     protected readonly ISourceFormatsSdk SourceFormatsSdk;
     protected readonly SourceFormatWebApplicationFactory<Program> WebApplicationFactory;
 
-    public TestBase(SourceFormatWebApplicationFactory<Program> webApplicationFactory)
+    public TestBase()
     {
-        WebApplicationFactory = webApplicationFactory;
+        WebApplicationFactory = new SourceFormatWebApplicationFactory<Program>();
         _httpClient = WebApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions
         {
             AllowAutoRedirect = false
@@ -33,4 +33,5 @@ public class TestBase : IClassFixture<SourceFormatWebApplicationFactory<Program>
         ISourceFormatNodeSdk sourceFormatNodeSdk = new SourceFormatNodeSdk(sdkCore);
         SourceFormatsSdk = new SourceFormatsSdk(sourceFormatNodeSdk);
     }
+
 }
