@@ -39,7 +39,7 @@
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
         <ProjectReference Include="..\Mappers\Mappers.csproj" />
         <ProjectReference Include="..\QA.Datasets\QA.Datasets.csproj" />
-        <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
+        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
         <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
         <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj" />

@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
-using Exceptions;
 using FluentAssertions;
+using SourceFormatsRepository.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

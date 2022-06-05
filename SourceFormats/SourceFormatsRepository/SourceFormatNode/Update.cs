@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
 using Entities;
+using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Repository.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeRepository

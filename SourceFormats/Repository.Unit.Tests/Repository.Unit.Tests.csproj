@@ -26,7 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
+        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
         <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
     </ItemGroup>

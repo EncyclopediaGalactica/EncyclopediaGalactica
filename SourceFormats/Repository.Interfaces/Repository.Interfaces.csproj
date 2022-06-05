@@ -13,8 +13,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Entities\Entities.csproj"/>
-        <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\Entities\Entities.csproj" />
+        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
     </ItemGroup>
 
 </Project>

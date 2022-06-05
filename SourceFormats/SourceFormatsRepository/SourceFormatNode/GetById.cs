@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
 using Entities;
-using Repository.Exceptions;
+using Exceptions;
 
 public partial class SourceFormatNodeRepository
 {

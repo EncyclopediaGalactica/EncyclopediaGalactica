@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Exceptions;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
 
 using System.Runtime.Serialization;
 

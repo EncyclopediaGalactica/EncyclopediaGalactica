@@ -3,8 +3,8 @@ namespace EncyclopediaGalactica.SourceFormats.Repository.Int.Tests.SourceFormatN
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Exceptions;
 using FluentAssertions;
+using SourceFormatsRepository.Exceptions;
 using Utils.GuardsService;
 using Xunit;
 

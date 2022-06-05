@@ -4,9 +4,9 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
-using Exceptions;
 using FluentAssertions;
 using FluentValidation;
+using SourceFormatsRepository.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

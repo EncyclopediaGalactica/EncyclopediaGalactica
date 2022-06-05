@@ -8,8 +8,8 @@ using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Repository.Exceptions;
 using SourceFormatsCacheService.Exceptions;
+using SourceFormatsRepository.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
