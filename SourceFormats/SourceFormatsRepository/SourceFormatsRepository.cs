@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository;
 
-using Repository.Interfaces;
+using Interfaces;
 
 public class SourceFormatsRepository : ISourceFormatsRepository
 {

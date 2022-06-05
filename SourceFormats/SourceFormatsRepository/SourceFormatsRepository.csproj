@@ -21,7 +21,7 @@
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
         <ProjectReference Include="..\Ctx\Ctx.csproj" />
         <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
+        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
         <ProjectReference Include="..\Entities\Entities.csproj" />
         <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
     </ItemGroup>

@@ -44,7 +44,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository.Int.Tests", "SourceFormats\SourceFormatsRepository.Int.Tests\SourceFormatsRepository.Int.Tests.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Interfaces", "SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj", "{5AA7BE01-6266-4EE4-A7A7-0614B154D141}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository.Interfaces", "SourceFormats\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj", "{5AA7BE01-6266-4EE4-A7A7-0614B154D141}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Unit.Tests", "SourceFormats\Repository.Unit.Tests\Repository.Unit.Tests.csproj", "{8C6E071A-40A8-48D3-8F91-1DC7727E9CAF}"
 EndProject

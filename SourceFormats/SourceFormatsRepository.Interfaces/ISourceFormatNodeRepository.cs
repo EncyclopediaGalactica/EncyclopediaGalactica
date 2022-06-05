@@ -1,7 +1,7 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Interfaces;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces;
 
-using Entities;
-using SourceFormatsRepository.Exceptions;
+using EncyclopediaGalactica.SourceFormats.Entities;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
 
 /// <summary>
 ///     SourceFormatRepository interface for managing stored data in the database.

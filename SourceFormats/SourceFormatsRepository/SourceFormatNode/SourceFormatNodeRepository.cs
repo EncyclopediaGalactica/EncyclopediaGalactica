@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceForm
 using Ctx;
 using Entities;
 using FluentValidation;
-using Repository.Interfaces;
+using Interfaces;
 using Utils.GuardsService;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
