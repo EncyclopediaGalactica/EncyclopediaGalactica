@@ -40,7 +40,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Unit.Tests", "Sourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reposiory.Exceptions", "SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj", "{9490FCF4-D084-4C51-9FDC-920552DA0E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "SourceFormats\Repository\Repository.csproj", "{840C09AB-F7C6-4F37-A433-E0533C00D2BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository", "SourceFormats\SourceFormatsRepository\SourceFormatsRepository.csproj", "{840C09AB-F7C6-4F37-A433-E0533C00D2BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Int.Tests", "SourceFormats\Repository.Int.Tests\Repository.Int.Tests.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
 EndProject

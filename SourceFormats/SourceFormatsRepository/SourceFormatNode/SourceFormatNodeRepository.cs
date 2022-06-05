@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
 using Ctx;
 using Entities;
 using FluentValidation;
-using Interfaces;
+using Repository.Interfaces;
 using Utils.GuardsService;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
