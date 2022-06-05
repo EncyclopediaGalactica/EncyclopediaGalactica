@@ -3,9 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.SourceFormats.Entities;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Entities;
 using FluentAssertions;
 using Xunit;
 
@@ -14,7 +12,7 @@ using Xunit;
 public class AddShould : BaseTest
 {
     [Fact]
-    public async Task Add()
+    public async Task Add_ANewNode()
     {
         // Arrange
         SourceFormatNode node = new SourceFormatNode();
@@ -34,9 +32,8 @@ public class AddShould : BaseTest
         Func<Task> task = async () => { await Sut.SourceFormatNodes.AddAsync(null!).ConfigureAwait(false); };
 
         // Assert
-        await task.Should().ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerException<SourceFormatNodeRepositoryException, GuardsServiceException>()
-            .WithInnerExceptionExactly<GuardsServiceException, GuardsServiceValueShouldNoBeNullException>()
+        await task.Should()
+            .ThrowExactlyAsync<ArgumentNullException>()
             .ConfigureAwait(false);
     }
 }

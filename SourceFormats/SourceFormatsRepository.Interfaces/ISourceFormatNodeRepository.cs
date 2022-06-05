@@ -1,7 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces;
 
-using EncyclopediaGalactica.SourceFormats.Entities;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
+using Entities;
+using Exceptions;
+using FluentValidation;
+using Microsoft.EntityFrameworkCore;
 
 /// <summary>
 ///     SourceFormatRepository interface for managing stored data in the database.
@@ -15,9 +17,20 @@ public interface ISourceFormatNodeRepository
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken">Cancellation token.</see>
     /// </param>
-    /// <exception cref="SourceFormatNodeRepositoryException">
-    ///     Whenever error occurs. Inner exceptions provide additional
-    ///     information about the error.
+    /// <exception cref="ArgumentNullException">
+    ///     When input is null.
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When input is invalid.
+    /// </exception>
+    /// <exception cref="DbUpdateException">
+    ///     Error happened while saving into the database
+    /// </exception>
+    /// <exception cref="DbUpdateConcurrencyException">
+    ///     Concurrency violation happened while saving into the database.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled using <see cref="CancellationToken" />
     /// </exception>
     /// <returns>
     ///     Returns <see cref="Task" /> which includes the new created <see cref="SourceFormatNode" />

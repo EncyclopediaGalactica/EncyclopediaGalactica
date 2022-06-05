@@ -3,8 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.SourceFormats.Entities;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
+using Entities;
 using FluentAssertions;
 using FluentValidation;
 using Xunit;
@@ -33,7 +32,6 @@ public class AddValidationShould : BaseTest
 
         // Assert
         action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, ValidationException>();
+            .ThrowExactlyAsync<ValidationException>();
     }
 }
