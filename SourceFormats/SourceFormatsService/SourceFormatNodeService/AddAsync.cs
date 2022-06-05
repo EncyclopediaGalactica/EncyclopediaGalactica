@@ -8,7 +8,6 @@ using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Repository.Exceptions;
 using SourceFormatsCacheService.Exceptions;
 using ValidatorService;
 
@@ -35,13 +34,9 @@ public partial class SourceFormatNodeService
             return responseModel;
         }
         // When Name UNIQUE constraint is violated a DbUpdate Exception is thrown
-        // and it is wrapped in a SourceFormatNodeRepositoryException but it is still input validation context
-        // so that exception is caught here and wrapped and re-thrown
-        // so we can indicate that validation related error happened
         catch (Exception e) when (e is ArgumentNullException
                                       or ValidationException
-                                  || (e is SourceFormatNodeRepositoryException
-                                      && e.InnerException is DbUpdateException))
+                                      or DbUpdateException)
 
         {
             SourceFormatNodeSingleResultResponseModel validationErrorResponseModel =
@@ -63,9 +58,7 @@ public partial class SourceFormatNodeService
         }
         // see the previous conditional catch why we have this bit complex condition here
         catch (Exception e) when (e is SourceFormatNodeMapperException
-                                      or SourceFormatsCacheServiceException
-                                  || (e is SourceFormatNodeRepositoryException &&
-                                      e.InnerException is not DbUpdateException))
+                                      or SourceFormatsCacheServiceException)
         {
             SourceFormatNodeSingleResultResponseModel internalErrorResponseModel =
                 new()
@@ -83,6 +76,26 @@ public partial class SourceFormatNodeService
                 e.StackTrace);
 
             return internalErrorResponseModel;
+        }
+        // it is separated for later usage where we can discriminate this type of error
+        catch (Exception e) when (e is DbUpdateConcurrencyException)
+        {
+            SourceFormatNodeSingleResultResponseModel dbConcurrencyErrorModel =
+                new()
+                {
+                    Status = SourceFormatsServiceResultStatuses.InternalError,
+                    IsOperationSuccessful = false
+                };
+
+            _logger.LogError("Internal error." +
+                             "Method: {Method}. " +
+                             "Message: {Message} " +
+                             "Stacktrace: {StackTrace}",
+                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
+                e.Message,
+                e.StackTrace);
+
+            return dbConcurrencyErrorModel;
         }
         catch (Exception e)
         {

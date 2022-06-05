@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
+    </PropertyGroup>
+
+</Project>

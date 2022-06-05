@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository</RootNamespace>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>All</AnalysisMode>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="10.4.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
+        <ProjectReference Include="..\Ctx\Ctx.csproj"/>
+        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
+        <ProjectReference Include="..\Entities\Entities.csproj"/>
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
+    </ItemGroup>
+
+</Project>

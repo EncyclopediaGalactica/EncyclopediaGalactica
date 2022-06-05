@@ -23,9 +23,9 @@
         <ProjectReference Include="..\..\SourceFormats\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Mappers\Mappers.csproj"/>
-        <ProjectReference Include="..\..\SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj"/>
-        <ProjectReference Include="..\..\SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj"/>
-        <ProjectReference Include="..\..\SourceFormats\Repository\Repository.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository\SourceFormatsRepository.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj"/>
         <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj"/>

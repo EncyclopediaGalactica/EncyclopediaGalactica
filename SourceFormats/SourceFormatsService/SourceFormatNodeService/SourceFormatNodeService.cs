@@ -6,8 +6,8 @@ using FluentValidation;
 using Interfaces.SourceFormatNode;
 using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
-using Repository.Interfaces;
 using SourceFormatsCacheService.Interfaces;
+using SourceFormatsRepository.Interfaces;
 using Utils.GuardsService;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService

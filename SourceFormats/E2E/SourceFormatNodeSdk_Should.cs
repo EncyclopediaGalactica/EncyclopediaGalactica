@@ -5,7 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Host.RestApi;
 using QA.Datasets;
 using Sdk.Models;
 using Sdk.Models.SourceFormatNode;
@@ -16,7 +15,6 @@ using Xunit;
 [Collection("E2E")]
 public class SourceFormatNodeSdk_Should : TestBase
 {
-
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
     public async Task Throw_WhenTheUserTriesToBuildAnInvalidDataset(string name)

@@ -13,7 +13,7 @@
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
         <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
-        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>

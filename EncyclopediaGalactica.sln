@@ -38,15 +38,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Interfaces", "Sourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Unit.Tests", "SourceFormats\Mappers.Unit.Tests\Mappers.Unit.Tests.csproj", "{AEF72B83-4B8D-4311-B77C-7EA04FE83098}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reposiory.Exceptions", "SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj", "{9490FCF4-D084-4C51-9FDC-920552DA0E7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsReposiory.Exceptions", "SourceFormats\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj", "{9490FCF4-D084-4C51-9FDC-920552DA0E7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "SourceFormats\Repository\Repository.csproj", "{840C09AB-F7C6-4F37-A433-E0533C00D2BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository", "SourceFormats\SourceFormatsRepository\SourceFormatsRepository.csproj", "{840C09AB-F7C6-4F37-A433-E0533C00D2BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Int.Tests", "SourceFormats\Repository.Int.Tests\Repository.Int.Tests.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository.Int.Tests", "SourceFormats\SourceFormatsRepository.Int.Tests\SourceFormatsRepository.Int.Tests.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Interfaces", "SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj", "{5AA7BE01-6266-4EE4-A7A7-0614B154D141}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository.Interfaces", "SourceFormats\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj", "{5AA7BE01-6266-4EE4-A7A7-0614B154D141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Unit.Tests", "SourceFormats\Repository.Unit.Tests\Repository.Unit.Tests.csproj", "{8C6E071A-40A8-48D3-8F91-1DC7727E9CAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsRepository.Unit.Tests", "SourceFormats\SourceFormatsRepository.Unit.Tests\SourceFormatsRepository.Unit.Tests.csproj", "{8C6E071A-40A8-48D3-8F91-1DC7727E9CAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsCacheService", "SourceFormats\SourceFormatsCacheService\SourceFormatsCacheService.csproj", "{8352C9B2-DF66-4E65-9D22-0904B62FCB91}"
 EndProject

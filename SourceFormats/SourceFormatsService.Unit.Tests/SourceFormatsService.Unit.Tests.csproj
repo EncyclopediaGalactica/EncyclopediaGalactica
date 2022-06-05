@@ -34,7 +34,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
-        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
         <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj"/>
