@@ -10,19 +10,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
-        <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
-        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
-        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
-        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
-        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
-        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj"/>
-        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj"/>
-        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
+        <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
+        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
+        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj" />
+        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj" />
+        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.4"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.5" />
     </ItemGroup>
 
 </Project>
