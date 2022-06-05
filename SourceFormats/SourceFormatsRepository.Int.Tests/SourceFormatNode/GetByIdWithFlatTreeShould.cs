@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Int.Tests.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.SourceFormatNode;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using Entities;
+using EncyclopediaGalactica.SourceFormats.Entities;
 using FluentAssertions;
 using Xunit;
 

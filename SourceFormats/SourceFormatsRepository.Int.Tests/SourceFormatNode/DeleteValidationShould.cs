@@ -1,11 +1,11 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Int.Tests.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
+using EncyclopediaGalactica.Utils.GuardsService;
 using FluentAssertions;
-using SourceFormatsRepository.Exceptions;
-using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

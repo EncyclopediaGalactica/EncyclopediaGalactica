@@ -1,16 +1,16 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Int.Tests;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Ctx;
-using Interfaces;
+using EncyclopediaGalactica.SourceFormats.Ctx;
+using EncyclopediaGalactica.SourceFormats.Repository.Interfaces;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
+using EncyclopediaGalactica.SourceFormats.ValidatorService;
+using EncyclopediaGalactica.Utils.GuardsService;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using SourceFormatsRepository;
-using SourceFormatsRepository.SourceFormatNode;
-using Utils.GuardsService;
-using ValidatorService;
 
 [ExcludeFromCodeCoverage]
 public class BaseTest

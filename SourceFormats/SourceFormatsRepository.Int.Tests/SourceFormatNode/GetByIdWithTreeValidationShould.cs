@@ -1,28 +1,24 @@
-namespace EncyclopediaGalactica.SourceFormats.Repository.Int.Tests.SourceFormatNode;
+namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
+using EncyclopediaGalactica.Utils.GuardsService;
 using FluentAssertions;
-using SourceFormatsRepository.Exceptions;
-using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
 [Collection("SourceFormatNode Repository Collection")]
-public class AddChildNodeValidationShould : BaseTest
+public class GetByIdWithTreeValidationShould : BaseTest
 {
-    [Theory]
-    [InlineData(0, 0)]
-    [InlineData(1, 0)]
-    [InlineData(0, 1)]
-    [InlineData(1, 1)]
-    public async Task ThrowWhenInputIsInvalid(long childId, long parentId)
+    [Fact]
+    public async Task ThrowWhenInputIsInvalid()
     {
-        // act
+        // Act
         Func<Task> action = async () =>
         {
-            await Sut.SourceFormatNodes.AddChildNodeAsync(childId, parentId, parentId).ConfigureAwait(false);
+            await Sut.SourceFormatNodes.GetByIdWithFlatTreeAsync(0).ConfigureAwait(false);
         };
 
         // Assert
