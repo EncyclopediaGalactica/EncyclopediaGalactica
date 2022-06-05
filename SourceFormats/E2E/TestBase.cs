@@ -11,7 +11,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Sdk;
 using Sdk.Interfaces;
 using Sdk.SourceFormatNode;
-using Xunit;
 
 public class TestBase : SourceFormatWebApplicationFactory<Program>
 {
@@ -33,5 +32,4 @@ public class TestBase : SourceFormatWebApplicationFactory<Program>
         ISourceFormatNodeSdk sourceFormatNodeSdk = new SourceFormatNodeSdk(sdkCore);
         SourceFormatsSdk = new SourceFormatsSdk(sourceFormatNodeSdk);
     }
-
 }

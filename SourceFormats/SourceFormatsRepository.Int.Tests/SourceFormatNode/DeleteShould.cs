@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.SourceFormats.Entities;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
+using Entities;
+using Exceptions;
 using FluentAssertions;
 using Xunit;
 

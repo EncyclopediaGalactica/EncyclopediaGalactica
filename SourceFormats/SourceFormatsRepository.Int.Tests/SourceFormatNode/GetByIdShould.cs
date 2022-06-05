@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.SourceFormats.Entities;
+using Entities;
 using FluentAssertions;
 using Xunit;
 

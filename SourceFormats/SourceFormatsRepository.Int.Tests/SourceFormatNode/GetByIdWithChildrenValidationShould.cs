@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Exceptions;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Exceptions;
 using FluentAssertions;
+using Utils.GuardsService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

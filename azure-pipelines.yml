@@ -2,7 +2,7 @@ trigger:
   branches:
     include:
       - main
-        
+
 pool: 'contabo'
 
 variables:
@@ -16,7 +16,7 @@ stages:
           - script: |
               echo $PATH
               env | sort
-  
+
   - stage: Feature_branch
     condition: ne(variables['System.PullRequest.SourceBranch'], '')
     jobs:
@@ -36,7 +36,7 @@ stages:
         dependsOn: build_solution
         steps:
           - script: dotnet test $solutionName
-  
+
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
     jobs:
@@ -44,13 +44,13 @@ stages:
         displayName: Restore Solution
         steps:
           - script: dotnet restore $solutionName
-            
+
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
           - script: dotnet build $solutionName
-            
+
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution

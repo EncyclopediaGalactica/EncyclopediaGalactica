@@ -2,12 +2,12 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Unit.Tests
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.SourceFormats.Ctx;
-using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.SourceFormats.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using SourceFormats.SourceFormatsRepository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
