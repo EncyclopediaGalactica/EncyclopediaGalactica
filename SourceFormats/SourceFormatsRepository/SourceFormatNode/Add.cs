@@ -1,7 +1,9 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
+using Ctx;
 using Entities;
 using FluentValidation;
+using Microsoft.EntityFrameworkCore.Storage;
 using ValidatorService;
 
 public partial class SourceFormatNodeRepository
@@ -13,8 +15,25 @@ public partial class SourceFormatNodeRepository
     {
         ArgumentNullException.ThrowIfNull(node);
         await ValidateInputNodeForAddingAsync(node, cancellationToken).ConfigureAwait(false);
-        _ctx.SourceFormatNodes.Add(node);
-        await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using (IDbContextTransaction transaction = await ctx.Database
+                         .BeginTransactionAsync(cancellationToken).ConfigureAwait(false))
+        {
+            try
+            {
+                await ctx.SourceFormatNodes.AddAsync(node, cancellationToken);
+                await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+                await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception te)
+            {
+                // add logging here
+                await transaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+                throw;
+            }
+        }
+
         return node;
     }
 

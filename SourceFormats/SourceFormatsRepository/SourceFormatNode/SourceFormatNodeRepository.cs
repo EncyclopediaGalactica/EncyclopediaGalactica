@@ -4,20 +4,21 @@ using Ctx;
 using Entities;
 using FluentValidation;
 using Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Utils.GuardsService;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
 {
-    private readonly SourceFormatsDbContext _ctx;
+    private readonly DbContextOptions<SourceFormatsDbContext> _dbContextOptions;
     private readonly IGuardsService _guards;
     private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
 
     public SourceFormatNodeRepository(
-        SourceFormatsDbContext ctx,
+        DbContextOptions<SourceFormatsDbContext> dbContextOptions,
         IValidator<SourceFormatNode> sourceFormatNodeValidator,
         IGuardsService guardsService)
     {
-        _ctx = ctx ?? throw new ArgumentNullException(nameof(ctx));
+        _dbContextOptions = dbContextOptions ?? throw new ArgumentNullException(nameof(dbContextOptions));
         _sourceFormatNodeValidator = sourceFormatNodeValidator ??
                                      throw new ArgumentNullException(nameof(sourceFormatNodeValidator));
         _guards = guardsService ?? throw new ArgumentNullException(nameof(guardsService));

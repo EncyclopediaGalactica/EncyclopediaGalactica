@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
+using Ctx;
 using Entities;
-using Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 public partial class SourceFormatNodeRepository
@@ -9,11 +9,12 @@ public partial class SourceFormatNodeRepository
     /// <inheritdoc />
     public async Task<SourceFormatNode> GetByIdWithChildrenAsync(long id, CancellationToken cancellationToken = default)
     {
+        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
         try
         {
             _guards.IsNotEqual(id, 0);
 
-            SourceFormatNode result = await _ctx.SourceFormatNodes
+            SourceFormatNode result = await ctx.SourceFormatNodes
                 .Include(i => i.ChildrenSourceFormatNodes)
                 .FirstAsync(w => w.Id == id, cancellationToken)
                 .ConfigureAwait(false);
@@ -21,8 +22,8 @@ public partial class SourceFormatNodeRepository
         }
         catch (Exception e)
         {
-            string msg = prepErrorMessage(nameof(GetByIdWithChildrenAsync));
-            throw new SourceFormatNodeRepositoryException(msg, e);
+            // logging comes here
+            throw;
         }
     }
 }

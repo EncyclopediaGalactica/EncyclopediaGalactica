@@ -1,8 +1,10 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 
+using Ctx;
 using Entities;
 using Exceptions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 
 public partial class SourceFormatNodeRepository
 {
@@ -13,38 +15,43 @@ public partial class SourceFormatNodeRepository
         long rootNodeId,
         CancellationToken cancellationToken = default)
     {
-        try
-        {
-            CheckInputForAddChildNode(childId, parentId, rootNodeId);
-
-            SourceFormatNode? child = await _ctx.SourceFormatNodes
-                .FirstAsync(p => p.Id == childId, cancellationToken)
-                .ConfigureAwait(false);
-            SourceFormatNode? parent = await _ctx.SourceFormatNodes
-                .Include(i => i.ChildrenSourceFormatNodes)
-                .FirstAsync(p => p.Id == parentId, cancellationToken)
-                .ConfigureAwait(false);
-            SourceFormatNode? rootNode = null;
-            if (rootNodeId != parentId)
+        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using (IDbContextTransaction transaction = await ctx.Database
+                         .BeginTransactionAsync(cancellationToken).ConfigureAwait(false))
+            try
             {
-                rootNode = await _ctx.SourceFormatNodes
-                    .FirstAsync(r => r.RootNodeId == rootNodeId, cancellationToken)
+                CheckInputForAddChildNode(childId, parentId, rootNodeId);
+
+                SourceFormatNode? child = await ctx.SourceFormatNodes
+                    .FirstAsync(p => p.Id == childId, cancellationToken)
                     .ConfigureAwait(false);
+                SourceFormatNode? parent = await ctx.SourceFormatNodes
+                    .Include(i => i.ChildrenSourceFormatNodes)
+                    .FirstAsync(p => p.Id == parentId, cancellationToken)
+                    .ConfigureAwait(false);
+                SourceFormatNode? rootNode = null;
+                if (rootNodeId != parentId)
+                {
+                    rootNode = await ctx.SourceFormatNodes
+                        .FirstAsync(r => r.RootNodeId == rootNodeId, cancellationToken)
+                        .ConfigureAwait(false);
+                }
+
+                ValidateEntitiesStatesForAddChildNode(childId, parentId, rootNodeId, child, parent, rootNode);
+
+                child.ParentNodeId = parent.Id;
+                child.RootNodeId = rootNodeId;
+                ctx.Entry(child).State = EntityState.Modified;
+                await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+                await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
+                return child;
             }
-
-            ValidateEntitiesStatesForAddChildNode(childId, parentId, rootNodeId, child, parent, rootNode);
-
-            child.ParentNodeId = parent.Id;
-            child.RootNodeId = rootNodeId;
-            _ctx.Entry(child).State = EntityState.Modified;
-            await _ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
-            return child;
-        }
-        catch (Exception e)
-        {
-            string msg = prepErrorMessage(nameof(AddChildNodeAsync));
-            throw new SourceFormatNodeRepositoryException(msg, e);
-        }
+            catch (Exception e)
+            {
+                // add logging here
+                await transaction.RollbackAsync(cancellationToken).ConfigureAwait(false);
+                throw;
+            }
     }
 
     private static void ValidateEntitiesStatesForAddChildNode(
