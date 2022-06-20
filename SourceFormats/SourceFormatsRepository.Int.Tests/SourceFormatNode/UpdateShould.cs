@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
-using Exceptions;
 using FluentAssertions;
 using Xunit;
 
@@ -46,8 +45,7 @@ public class UpdateShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, InvalidOperationException>()
+            .ThrowExactlyAsync<InvalidOperationException>()
             .ConfigureAwait(false);
     }
 }

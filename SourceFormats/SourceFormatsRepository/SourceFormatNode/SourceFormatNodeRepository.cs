@@ -23,11 +23,4 @@ public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
                                      throw new ArgumentNullException(nameof(sourceFormatNodeValidator));
         _guards = guardsService ?? throw new ArgumentNullException(nameof(guardsService));
     }
-
-    private string prepErrorMessage(string methodName)
-    {
-        string msg = $"Error occured while executing {nameof(SourceFormatNodeRepository)}.{methodName}. " +
-                     "For further information see inner exception!";
-        return msg;
-    }
 }

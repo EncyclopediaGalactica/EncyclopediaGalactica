@@ -3,7 +3,6 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Exceptions;
 using FluentAssertions;
 using Utils.GuardsService;
 using Xunit;
@@ -27,9 +26,7 @@ public class AddChildNodeValidationShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardsServiceException>()
-            .WithInnerExceptionExactly<GuardsServiceException, GuardsServiceValueShouldNotBeEqualToException>()
+            .ThrowExactlyAsync<GuardsServiceException>()
             .ConfigureAwait(false);
     }
 }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
-using Exceptions;
 using FluentAssertions;
 using Xunit;
 
@@ -17,8 +16,7 @@ public class DeleteShould : BaseTest
     public async Task DeleteItem()
     {
         // Arrange
-        SourceFormatNode node =
-            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
+        SourceFormatNode node = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
 
         // Act
         await Sut.SourceFormatNodes.DeleteAsync(node.Id).ConfigureAwait(false);
@@ -145,8 +143,7 @@ public class DeleteShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, SourceFormatNodeRepositoryException>()
+            .ThrowExactlyAsync<InvalidOperationException>()
             .ConfigureAwait(false);
     }
 }
