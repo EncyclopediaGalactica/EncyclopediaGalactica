@@ -33,6 +33,7 @@ public class BaseTest
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);
+
         DbContextOptions<SourceFormatsDbContext> dbContextOptions =
             new DbContextOptionsBuilder<SourceFormatsDbContext>()
                 .UseSqlite(connection).LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging()
@@ -40,8 +41,9 @@ public class BaseTest
                 .Options;
         SourceFormatsDbContext ctx = new(dbContextOptions);
         ctx.Database.EnsureCreated();
+
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
-            ctx, nodeValidator, new GuardsService());
+            dbContextOptions, nodeValidator, new GuardsService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
         ILogger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService> logger =
             new Logger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService>(

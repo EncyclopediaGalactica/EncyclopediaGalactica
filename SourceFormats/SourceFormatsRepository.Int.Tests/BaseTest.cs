@@ -29,8 +29,9 @@ public class BaseTest
             .Options;
         SourceFormatsDbContext ctx = new SourceFormatsDbContext(sourceFormatNodeDbContextOptions);
         ctx.Database.EnsureCreated();
+
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
-            ctx,
+            sourceFormatNodeDbContextOptions,
             new SourceFormatNodeValidator(),
             new GuardsService());
         Sut = new SourceFormatsRepository(sourceFormatNodeRepository);

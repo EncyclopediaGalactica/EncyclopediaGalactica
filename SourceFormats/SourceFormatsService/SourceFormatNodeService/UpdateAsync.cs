@@ -8,7 +8,6 @@ using Interfaces;
 using Interfaces.SourceFormatNode;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.Extensions.Logging;
-using SourceFormatsRepository.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
@@ -42,8 +41,7 @@ public partial class SourceFormatNodeService
             };
             return responseModel;
         }
-        catch (Exception e) when (e is SourceFormatNodeRepositoryException &&
-                                  e.InnerException is InvalidOperationException)
+        catch (Exception e) when (e is InvalidOperationException)
         {
             _logger.LogWarning("{Operation} failed due to there is no item in the sequence",
                 nameof(UpdateSourceFormatNodeAsync));

@@ -37,8 +37,7 @@ public class SourceFormatNodeShould
     {
         DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
             .Options;
-        SourceFormatsDbContext ctx = new SourceFormatsDbContext(options);
-        Action action = () => { new SourceFormatNodeRepository(ctx, null!, new GuardsService()); };
+        Action action = () => { new SourceFormatNodeRepository(options, null!, new GuardsService()); };
 
         action.Should().ThrowExactly<ArgumentNullException>();
     }
@@ -48,8 +47,7 @@ public class SourceFormatNodeShould
     {
         DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
             .Options;
-        SourceFormatsDbContext ctx = new SourceFormatsDbContext(options);
-        Action action = () => { new SourceFormatNodeRepository(ctx, new SourceFormatNodeValidator(), null!); };
+        Action action = () => { new SourceFormatNodeRepository(options, new SourceFormatNodeValidator(), null!); };
 
         action.Should().ThrowExactly<ArgumentNullException>();
     }

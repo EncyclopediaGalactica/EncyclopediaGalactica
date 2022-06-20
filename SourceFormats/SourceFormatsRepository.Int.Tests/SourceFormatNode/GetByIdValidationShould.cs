@@ -20,9 +20,7 @@ public class GetByIdValidationShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, GuardsServiceException>()
-            .WithInnerExceptionExactly<GuardsServiceException, GuardsServiceValueShouldNotBeEqualToException>()
+            .ThrowExactlyAsync<GuardsServiceException>()
             .ConfigureAwait(false);
     }
 
@@ -35,7 +33,6 @@ public class GetByIdValidationShould : BaseTest
         // Assert
         await action.Should()
             .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
-            .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, SourceFormatNodeRepositoryException>()
             .ConfigureAwait(false);
     }
 }
