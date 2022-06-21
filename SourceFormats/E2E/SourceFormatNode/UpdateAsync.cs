@@ -42,7 +42,7 @@ public partial class SourceFormatNodeSdk_Should
     }
 
     [Fact]
-    public async Task Return_200_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
+    public async Task Return_404_AndNullResult_WhenThereIsNoSuchEntityToBeUpdated()
     {
         // Arrange
         string updatedName = "asd";
