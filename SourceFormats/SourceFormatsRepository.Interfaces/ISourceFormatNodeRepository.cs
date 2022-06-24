@@ -106,9 +106,11 @@ public interface ISourceFormatNodeRepository
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
-    /// <exception cref="SourceFormatNodeRepositoryException">
-    ///     In case of any error and its inner exceptions provide additional details
-    ///     about the error.
+    /// <exception cref="GuardsServiceValueShouldNotBeEqualToException">
+    ///     When provided value equals to a value.
+    /// </exception>
+    /// <exception cref="GuardsServiceValueShouldNoBeNullException">
+    ///     When provided value is null.
     /// </exception>
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a <see cref="CancellationToken" />
