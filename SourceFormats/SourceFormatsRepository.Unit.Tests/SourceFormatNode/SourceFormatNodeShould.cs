@@ -22,7 +22,7 @@ public class SourceFormatNodeShould
     }
 
     [Fact]
-    public void Throw_WhenInjectedContextIsNull()
+    public void Throw_WhenInjectedDbOptionsIsNull()
     {
         Action action = () =>
         {
