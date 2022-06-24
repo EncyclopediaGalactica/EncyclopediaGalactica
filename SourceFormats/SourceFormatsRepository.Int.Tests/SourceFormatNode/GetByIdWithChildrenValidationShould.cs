@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using FluentAssertions;
-using Utils.GuardsService;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -22,7 +22,7 @@ public class GetByIdWithChildrenValidationShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<GuardsServiceException>()
+            .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
             .ConfigureAwait(false);
     }
 }

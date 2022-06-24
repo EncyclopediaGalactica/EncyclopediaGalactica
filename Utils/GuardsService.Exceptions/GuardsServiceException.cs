@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Utils.GuardsService;
+namespace EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 
 using System.Runtime.Serialization;
 

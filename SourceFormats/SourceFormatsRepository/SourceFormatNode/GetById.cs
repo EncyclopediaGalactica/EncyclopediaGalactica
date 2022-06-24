@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceForm
 
 using Ctx;
 using Entities;
-using Exceptions;
 
 public partial class SourceFormatNodeRepository
 {
@@ -17,7 +16,7 @@ public partial class SourceFormatNodeRepository
             SourceFormatNode? result = await ctx.SourceFormatNodes.FindAsync(id).ConfigureAwait(false);
 
             if (result is null)
-                throw new SourceFormatNodeRepositoryException(
+                throw new InvalidOperationException(
                     $"No {nameof(SourceFormatNode)} entity with id: {id}");
 
             return result;

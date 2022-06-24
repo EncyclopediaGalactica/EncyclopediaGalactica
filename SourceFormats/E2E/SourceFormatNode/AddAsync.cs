@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E;
+namespace EncyclopediaGalactica.SourceFormats.E2E.SourceFormatNode;
 
 using System;
 using System.Threading.Tasks;

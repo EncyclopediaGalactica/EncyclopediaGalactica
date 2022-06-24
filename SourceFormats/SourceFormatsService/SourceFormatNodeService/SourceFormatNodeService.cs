@@ -8,7 +8,7 @@ using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {

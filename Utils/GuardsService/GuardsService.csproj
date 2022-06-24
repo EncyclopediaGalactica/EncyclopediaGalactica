@@ -11,4 +11,9 @@
         <RootNamespace>EncyclopediaGalactica.Utils.GuardsService</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
+      <ProjectReference Include="..\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />
+    </ItemGroup>
+
 </Project>

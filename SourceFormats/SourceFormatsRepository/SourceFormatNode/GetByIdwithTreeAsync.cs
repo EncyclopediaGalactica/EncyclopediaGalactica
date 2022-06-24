@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceForm
 
 using Ctx;
 using Entities;
-using Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
@@ -43,11 +42,8 @@ public partial class SourceFormatNodeRepository
         SourceFormatNode? startNodeInTree = await ctx.SourceFormatNodes
             .FirstAsync(p => p.Id == id, cancellationToken)
             .ConfigureAwait(false);
-        if (startNodeInTree is null)
-            throw new SourceFormatNodeRepositoryException(
-                $"No {nameof(SourceFormatNode)} entity in the system with id: {id}");
         if (startNodeInTree.ChildrenSourceFormatNodes.Any())
-            throw new SourceFormatNodeRepositoryException(
+            throw new InvalidOperationException(
                 $"Entity with id: {id} should not include its children.");
 
         List<SourceFormatNode> sourceFormatNodes = await ctx.SourceFormatNodes

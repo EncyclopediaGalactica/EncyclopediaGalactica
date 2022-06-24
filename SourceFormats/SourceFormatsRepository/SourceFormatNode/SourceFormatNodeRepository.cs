@@ -5,7 +5,7 @@ using Entities;
 using FluentValidation;
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
 {
