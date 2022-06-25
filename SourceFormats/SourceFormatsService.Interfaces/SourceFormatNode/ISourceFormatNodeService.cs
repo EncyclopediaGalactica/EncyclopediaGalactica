@@ -31,10 +31,25 @@ public interface ISourceFormatNodeService
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
 
-    Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(
+    /// <summary>
+    ///     Adds the given <see cref="SourceFormatNode" /> to another <see cref="SourceFormatNode" />
+    ///     as child.
+    /// </summary>
+    /// <param name="childDto">The child</param>
+    /// <param name="parentDto">The parent</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation, which includes
+    ///     a <see cref="SourceFormatNodeSingleResultResponseModel" /> which provides details about
+    ///     is the operation was successful and returns with the child <see cref="SourceFormatNode" />.
+    /// </returns>
+    /// <exception cref="Exception">All exceptions are caught</exception>
+    Task<SourceFormatNodeSingleResultResponseModel> AddChildToParentAsync(
         SourceFormatNodeDto childDto,
         SourceFormatNodeDto parentDto,
-        CancellationToken cancellationToken);
+        CancellationToken cancellationToken = default);
 
     Task<SourceFormatNode> GetSourceFormatNodeByIdAsync(long id, CancellationToken cancellationToken = default);
 
@@ -67,7 +82,23 @@ public interface ISourceFormatNodeService
         SourceFormatNodeDto? dto,
         CancellationToken cancellationToken = default);
 
-    Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto, CancellationToken cancellationToken = default);
+    /// <summary>
+    ///     Deletes the marked <see cref="SourceFormatNode" />.
+    ///     If the <see cref="SourceFormatNode" /> has children nodes then those will be deleted too.
+    ///     The system does not allow that a <see cref="SourceFormatNode" /> is attached to multiple parents.
+    /// </summary>
+    /// <param name="dto">The entity should be deleted</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns a <see cref="Task{TResult}" /> representing asynchronous result which
+    ///     includes a <see cref="SourceFormatNodeSingleResultResponseModel" /> indicating the result of the operation.
+    /// </returns>
+    /// <exception cref="Exception">All the exceptions are caught</exception>
+    Task<SourceFormatNodeSingleResultResponseModel> DeleteAsync(
+        SourceFormatNodeDto dto,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Requests all of <see cref="SourceFormatNode" />s from the system.

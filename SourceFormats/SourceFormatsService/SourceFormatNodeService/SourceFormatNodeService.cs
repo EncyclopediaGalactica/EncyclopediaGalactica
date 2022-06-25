@@ -44,13 +44,6 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         _logger = logger;
     }
 
-    public async Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(SourceFormatNodeDto childDto,
-        SourceFormatNodeDto parentDto,
-        CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<SourceFormatNode> GetSourceFormatNodeByIdAsync(long id,
         CancellationToken cancellationToken = default)
     {
@@ -70,12 +63,6 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     }
 
     public async Task<ICollection<SourceFormatNode>> GetSourceFormatNodesAsync(
-        CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

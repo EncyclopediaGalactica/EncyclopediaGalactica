@@ -48,8 +48,20 @@ public interface ISourceFormatNodeRepository
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
-    /// <exception cref="SourceFormatNodeRepositoryException">
-    ///     In case of an error and its inner exceptions provides additional details about the error.
+    /// <exception cref="ArgumentNullException">
+    ///     Input is null
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    ///     Sequence does not contain any element
+    /// </exception>
+    /// <exception cref="GuardsServiceValueShouldNoBeNullException">
+    ///     Provided value is null
+    /// </exception>
+    /// <exception cref="GuardsServiceValueShouldNotBeEqualToException">
+    ///     Provided value equals to an undesired value
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     Operation is cancelled by a <see cref="CancellationToken" />
     /// </exception>
     /// <returns>
     ///     Returns <see cref="Task" /> representing asynchronous operation which includes
@@ -173,4 +185,26 @@ public interface ISourceFormatNodeRepository
     ///     Returns <see cref="Task" /> representing asynchronous operation which includes the result.
     /// </returns>
     Task<List<SourceFormatNode>> GetByIdWithFlatTreeAsync(long id, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Returns with given <see cref="SourceFormatNode" /> where its root node is also attached.
+    ///     If the given node does not have a root node yet, the RootNode property is null.
+    /// </summary>
+    /// <param name="id">Identifier of the <see cref="SourceFormatNode" /></param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <exception cref="ArgumentNullException">
+    ///     Input parameter is null
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    ///     The result sequence does not contain any element.
+    /// </exception>
+    /// <exception cref="GuardsServiceValueShouldNotBeEqualToException">
+    ///     The provided id value is zero.
+    /// </exception>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation including the result.
+    /// </returns>
+    Task<SourceFormatNode> GetByIdWithRootNodeAsync(long id, CancellationToken cancellationToken = default);
 }
