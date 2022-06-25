@@ -2,10 +2,19 @@ namespace EncyclopediaGalactica.SourceFormats.Mappers.Interfaces;
 
 using Dtos;
 using Entities;
-using Exceptions.SourceFormatNode;
 
 public interface ISourceFormatNodeMappers
 {
+    /// <summary>
+    ///     Maps <see cref="SourceFormatNodeDto" /> to a <see cref="SourceFormatNode" />
+    /// </summary>
+    /// <param name="dto">The dto to be mapped</param>
+    /// <exception cref="ArgumentNullException">
+    ///     Input parameter is null
+    /// </exception>
+    /// <returns>
+    ///     Returns a <see cref="SourceFormatNode" /> object
+    /// </returns>
     SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto);
 
     /// <summary>
@@ -14,10 +23,12 @@ public interface ISourceFormatNodeMappers
     ///     navigation properties are not populated.
     /// </summary>
     /// <param name="node">The <see cref="SourceFormatNodeDto" /> elem going to be mapped</param>
+    /// <exception cref="ArgumentNullException">
+    ///     Input parameter is null
+    /// </exception>
     /// <returns>
     ///     Returns a <see cref="SourceFormatNodeDto" /> which property values equal to the original one.
     /// </returns>
-    /// <exception cref="SourceFormatNodeMapperException">In case of any error.</exception>
     SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node);
 
     /// <summary>
@@ -29,7 +40,9 @@ public interface ISourceFormatNodeMappers
     /// <returns>
     ///     <see cref="List{T}" /> representing the result of operation.
     /// </returns>
-    /// <exception cref="SourceFormatNodeMapperException"> in case of any error.</exception>
+    /// <exception cref="ArgumentNullException">
+    ///     Input parameter is null
+    /// </exception>
     List<SourceFormatNodeDto> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
         List<SourceFormatNode> sourceFormatNodes);
 }

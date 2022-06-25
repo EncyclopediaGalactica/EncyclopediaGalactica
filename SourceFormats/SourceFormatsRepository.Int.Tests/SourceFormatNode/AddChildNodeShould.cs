@@ -4,7 +4,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Entities;
-using Exceptions;
 using FluentAssertions;
 using Xunit;
 
@@ -16,10 +15,10 @@ public class AddChildNodeShould : BaseTest
     public async Task AddChildNode_AndReturnChildWithoutChildren()
     {
         // Arrange
-        SourceFormatNode parentNode =
-            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
-        SourceFormatNode childNode =
-            await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("child")).ConfigureAwait(false);
+        SourceFormatNode parentNode = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd"))
+            .ConfigureAwait(false);
+        SourceFormatNode childNode = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("child"))
+            .ConfigureAwait(false);
 
         // Act
         SourceFormatNode res = await Sut.SourceFormatNodes.AddChildNodeAsync(
@@ -88,7 +87,7 @@ public class AddChildNodeShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .ThrowExactlyAsync<InvalidOperationException>()
             .ConfigureAwait(false);
     }
 }
