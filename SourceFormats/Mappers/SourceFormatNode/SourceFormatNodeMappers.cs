@@ -10,8 +10,7 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     {
         try
         {
-            if (dto is null)
-                throw new ArgumentNullException(nameof(dto));
+            ArgumentNullException.ThrowIfNull(dto);
 
             SourceFormatNode result = new SourceFormatNode();
             result.Id = dto.Id;
@@ -32,8 +31,7 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     {
         try
         {
-            if (node is null)
-                throw new ArgumentNullException(nameof(node));
+            ArgumentNullException.ThrowIfNull(node);
 
             SourceFormatNodeDto result = new SourceFormatNodeDto();
             result.Id = node.Id;
@@ -55,8 +53,7 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     {
         try
         {
-            if (sourceFormatNodes is null)
-                throw new ArgumentNullException(nameof(sourceFormatNodes));
+            ArgumentNullException.ThrowIfNull(sourceFormatNodes);
 
             List<SourceFormatNodeDto> result = new List<SourceFormatNodeDto>();
             foreach (SourceFormatNode sourceFormatNode in sourceFormatNodes)
@@ -66,6 +63,29 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
             }
 
             return result;
+        }
+        catch (Exception e)
+        {
+            // logging comes here
+            throw;
+        }
+    }
+
+    /// <inheritdoc />
+    public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode)
+    {
+        try
+        {
+            ArgumentNullException.ThrowIfNull(sourceFormatNode);
+
+            SourceFormatNodeDto dto = new SourceFormatNodeDto();
+            dto.Id = sourceFormatNode.Id;
+            dto.Name = sourceFormatNode.Name;
+            dto.IsRootNode = sourceFormatNode.IsRootNode;
+            dto.RootNodeId = sourceFormatNode.RootNodeId;
+            dto.ParentNodeId = sourceFormatNode.ParentNodeId;
+
+            return dto;
         }
         catch (Exception e)
         {

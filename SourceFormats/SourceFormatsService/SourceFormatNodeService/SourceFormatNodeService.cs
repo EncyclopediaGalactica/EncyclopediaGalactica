@@ -44,12 +44,6 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         _logger = logger;
     }
 
-    public async Task<SourceFormatNode> GetSourceFormatNodeByIdAsync(long id,
-        CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithChildrenAsync(long id,
         CancellationToken cancellationToken = default)
     {

@@ -51,7 +51,23 @@ public interface ISourceFormatNodeService
         SourceFormatNodeDto parentDto,
         CancellationToken cancellationToken = default);
 
-    Task<SourceFormatNode> GetSourceFormatNodeByIdAsync(long id, CancellationToken cancellationToken = default);
+    /// <summary>
+    ///     Returns the details of the designated <see cref="SourceFormatNode" />
+    ///     object
+    /// </summary>
+    /// <param name="id">Unique identifier of the object</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation.
+    ///     It also includes a <see cref="SourceFormatNodeSingleResultResponseModel" /> where
+    ///     the properties provide additional information about the result of the operation and
+    ///     the result of the operation.
+    /// </returns>
+    Task<SourceFormatNodeSingleResultResponseModel> GetByIdAsync(
+        long id,
+        CancellationToken cancellationToken = default);
 
     Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithChildrenAsync(
         long id,

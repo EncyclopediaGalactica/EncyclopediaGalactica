@@ -45,4 +45,18 @@ public interface ISourceFormatNodeMappers
     /// </exception>
     List<SourceFormatNodeDto> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
         List<SourceFormatNode> sourceFormatNodes);
+
+    /// <summary>
+    ///     Maps the provided <see cref="SourceFormatNode" /> object to a <see cref="SourceFormatNodeDto" />.
+    ///     The mapping includes all properties, even those which has a list or tree structure.
+    /// </summary>
+    /// <param name="sourceFormatNode">The object should be mapped</param>
+    /// <returns>
+    ///     Returns a <see cref="SourceFormatNodeDto" /> object where its property values are equal to the original,
+    ///     provided object properties
+    /// </returns>
+    /// <exception cref="ArgumentNullException">
+    ///     Input parameter is null
+    /// </exception>
+    SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode);
 }

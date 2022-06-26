@@ -21,4 +21,14 @@ public class SourceFormatNodeDto
 
     [JsonPropertyName("is_root_node")]
     public int IsRootNode { get; set; }
+
+    /// <summary>
+    ///     Gets or sets RootNodeId
+    /// </summary>
+    public long? RootNodeId { get; set; }
+
+    /// <summary>
+    ///     Gets or sets ParentNodeId
+    /// </summary>
+    public long? ParentNodeId { get; set; }
 }
