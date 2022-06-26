@@ -10,6 +10,7 @@ using QA.Datasets;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Collection("SourceFormatServiceDatabaseOperationCollection")]
 public class AddValidationShould : BaseTest
 {
     [Fact]

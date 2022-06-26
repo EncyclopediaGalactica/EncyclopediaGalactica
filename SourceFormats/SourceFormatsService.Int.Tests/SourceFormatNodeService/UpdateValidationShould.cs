@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
@@ -8,6 +9,8 @@ using Interfaces.SourceFormatNode;
 using QA.Datasets;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
+[Collection("SourceFormatServiceDatabaseOperationCollection")]
 public class UpdateValidationShould : BaseTest
 {
     [Fact]
