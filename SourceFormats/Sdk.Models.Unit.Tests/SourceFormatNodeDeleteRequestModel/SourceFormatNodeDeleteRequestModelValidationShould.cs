@@ -1,10 +1,12 @@
 namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormatNodeDeleteRequestModel;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using SourceFormatNode;
 using Xunit;
 
+[ExcludeFromCodeCoverage]
 public class SourceFormatNodeDeleteRequestModelValidationShould
 {
     [Fact]
