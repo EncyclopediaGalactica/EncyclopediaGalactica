@@ -1,5 +1,7 @@
 ﻿namespace EncyclopediaGalactica.SourceFormats.QA.Datasets;
 
+using Dtos;
+
 public static class SourceFormatNodeDatasets
 {
     public static IEnumerable<object?[]> AddValidationDataSet => new List<object?[]>
@@ -21,4 +23,12 @@ public static class SourceFormatNodeDatasets
         new object?[] { 1, "as " },
         new object?[] { 1, "   " }
     };
+
+    public static IEnumerable<object?> Service_AddChildToAsync_NullInput_Dataset =>
+        new List<object?>
+        {
+            new object?[] { null, null },
+            new object?[] { new SourceFormatNodeDto(), null },
+            new object?[] { null, new SourceFormatNodeDto() },
+        };
 }
