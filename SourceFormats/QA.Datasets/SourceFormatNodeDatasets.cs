@@ -24,11 +24,31 @@ public static class SourceFormatNodeDatasets
         new object?[] { 1, "   " }
     };
 
-    public static IEnumerable<object?> Service_AddChildToAsync_NullInput_Dataset =>
+    public static IEnumerable<object?> Service_AddChildToParentAsync_NullInput_Dataset =>
         new List<object?>
         {
             new object?[] { null, null },
             new object?[] { new SourceFormatNodeDto(), null },
             new object?[] { null, new SourceFormatNodeDto() },
+        };
+
+    public static IEnumerable<object?> Service_AddChildToParentAsync_InvalidInput_Dataset =>
+        new List<object?>
+        {
+            new object?[]
+            {
+                new SourceFormatNodeDto { Id = 0 },
+                new SourceFormatNodeDto { Id = 100 }
+            },
+            new object?[]
+            {
+                new SourceFormatNodeDto { Id = 100 },
+                new SourceFormatNodeDto { Id = 0 }
+            },
+            new object?[]
+            {
+                new SourceFormatNodeDto { Id = 100 },
+                new SourceFormatNodeDto { Id = 100 }
+            }
         };
 }

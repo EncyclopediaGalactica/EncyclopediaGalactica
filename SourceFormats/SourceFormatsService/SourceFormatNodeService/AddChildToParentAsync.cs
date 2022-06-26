@@ -83,9 +83,5 @@ public partial class SourceFormatNodeService
                 };
             return operationCancelledExceptionResponseModel;
         }
-        finally
-        {
-            // logging comes here
-        }
     }
 }
