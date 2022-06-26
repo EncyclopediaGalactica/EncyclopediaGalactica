@@ -9,7 +9,7 @@ using SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-public class ValidationShould
+public class SourceFormatNodeAddModelValidationShould
 {
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
