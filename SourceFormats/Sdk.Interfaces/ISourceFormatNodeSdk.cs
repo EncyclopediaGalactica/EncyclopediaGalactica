@@ -59,4 +59,24 @@ public interface ISourceFormatNodeSdk
     Task<SourceFormatNodeUpdateResponseModel> UpdateAsync(
         SourceFormatNodeUpdateRequestModel updateRequestModel,
         CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Sends a <see cref="SourceFormatNodeDeleteRequestModel" /> to the Encyclopedia Galactica Source Format endpoint
+    ///     via DELETE Http method.
+    ///     As a result the system deletes the marked entity from the system. If the entity has any related entity, mainly
+    ///     children, they also will be deleted.
+    ///     Using the model object our users also can manipulate the accepted headers of the request.
+    /// </summary>
+    /// <param name="deleteRequestModel">The request model containing all information</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns a <see cref="Task{TResult}" /> representing result of asynchronous operation which includes
+    ///     a result object (<see cref="SourceFormatNodeDeleteResponseModel" />) having all details of the operation
+    ///     and its result.
+    /// </returns>
+    Task<SourceFormatNodeDeleteResponseModel> DeleteAsync(
+        SourceFormatNodeDeleteRequestModel deleteRequestModel,
+        CancellationToken cancellationToken = default);
 }

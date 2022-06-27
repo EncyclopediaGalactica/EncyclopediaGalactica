@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.Sdk.SourceFormatNode;
 
 using EncyclopediaGalactica.Sdk.Core.Interfaces;
 using Interfaces;
+using Models.SourceFormatNode;
 
 public partial class SourceFormatNodeSdk : ISourceFormatNodeSdk
 {
@@ -10,5 +11,11 @@ public partial class SourceFormatNodeSdk : ISourceFormatNodeSdk
     public SourceFormatNodeSdk(ISdkCore sdkCore)
     {
         _sdkCore = sdkCore;
+    }
+
+    /// <inheritdoc />
+    public async Task<SourceFormatNodeDeleteResponseModel> DeleteAsync(SourceFormatNodeDeleteRequestModel deleteRequestModel, CancellationToken cancellationToken = default)
+    {
+        throw new NotImplementedException();
     }
 }
