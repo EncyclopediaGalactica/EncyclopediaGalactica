@@ -8,6 +8,7 @@ using Models.SourceFormatNode;
 
 public partial class SourceFormatNodeSdk
 {
+    /// <inheritdoc />
     public async Task<SourceFormatNodeAddResponseModel> AddAsync(
         SourceFormatNodeAddRequestModel addRequestModel,
         CancellationToken cancellationToken = default)
