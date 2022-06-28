@@ -11,6 +11,9 @@ public interface ISourceFormatNodeSdk
     ///     <see cref="SourceFormatNodeGetAllResponseModel" /> which includes information
     ///     about the operation result and the actual result of operation.
     /// </summary>
+    /// <param name="requestModel">
+    ///     <see cref="SourceFormatNodeGetAllRequestModel" />
+    /// </param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -18,7 +21,9 @@ public interface ISourceFormatNodeSdk
     ///     Returns <see cref="Task{TResult}" /> representing asynchronous operation which includes the result.
     /// </returns>
     /// <exception cref="SdkException">In case of any error</exception>
-    Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(
+        SourceFormatNodeGetAllRequestModel requestModel,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Post a <see cref="SourceFormatNodeAddRequestModel" /> to the Encyclopedia Galactica SourceFormat Node endpoint.
