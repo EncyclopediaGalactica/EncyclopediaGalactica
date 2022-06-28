@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatN
 using Dtos;
 using Interfaces;
 using Interfaces.SourceFormatNode;
+using Utils.GuardsService.Exceptions;
 
 public partial class SourceFormatNodeService
 {
@@ -21,10 +22,31 @@ public partial class SourceFormatNodeService
             SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForDelete();
             return responseModel;
         }
-        catch (Exception e)
+        catch (Exception validationException) when (validationException is GuardsServiceValueShouldNoBeNullException
+                                                        or GuardsServiceValueShouldNotBeEqualToException
+                                                        or ArgumentNullException)
         {
-            Console.WriteLine(e);
-            throw;
+            // logging comes here
+            SourceFormatNodeSingleResultResponseModel validationExceptionResponseModel =
+                new SourceFormatNodeSingleResultResponseModel
+                {
+                    Result = null,
+                    IsOperationSuccessful = false,
+                    Status = SourceFormatsServiceResultStatuses.ValidationError
+                };
+            return validationExceptionResponseModel;
+        }
+        catch (Exception noSuchEntityException) when (noSuchEntityException is InvalidOperationException)
+        {
+            // logging comes here
+            SourceFormatNodeSingleResultResponseModel noSuchEntityResponseModel =
+                new SourceFormatNodeSingleResultResponseModel
+                {
+                    Result = null,
+                    IsOperationSuccessful = false,
+                    Status = SourceFormatsServiceResultStatuses.NoSuchEntity
+                };
+            return noSuchEntityResponseModel;
         }
     }
 

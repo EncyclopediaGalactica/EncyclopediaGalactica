@@ -1,10 +1,10 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using Interfaces;
 using Interfaces.SourceFormatNode;
 using Xunit;
 
@@ -146,17 +146,12 @@ public class DeleteShould : BaseTest
     public async Task ThrowWhenNoSuchEntity()
     {
         // Act
-        Func<Task> action = async () =>
-        {
-            await _sourceFormatsService.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto
-            {
-                Id = 100
-            }).ConfigureAwait(false);
-        };
+        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService.SourceFormatNode.DeleteAsync
+            (new SourceFormatNodeDto { Id = 100 }).ConfigureAwait(false);
 
         // Assert
-        await action.Should()
-            .ThrowExactlyAsync<InvalidOperationException>()
-            .ConfigureAwait(false);
+        result.Result.Should().BeNull();
+        result.Status.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        result.IsOperationSuccessful.Should().BeFalse();
     }
 }
