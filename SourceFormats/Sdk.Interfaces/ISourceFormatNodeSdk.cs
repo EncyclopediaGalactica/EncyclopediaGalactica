@@ -84,4 +84,21 @@ public interface ISourceFormatNodeSdk
     Task<SourceFormatNodeDeleteResponseModel> DeleteAsync(
         SourceFormatNodeDeleteRequestModel deleteRequestModel,
         CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Sends a <see cref="SourceFormatNodeGetByIdRequestModel" /> to the Encyclopedia Galactica Source Format endpoint
+    ///     via GET Http method.
+    ///     As a result the system looks up for the defined entity and returns its details.
+    /// </summary>
+    /// <param name="getByIdRequestModel">The <see cref="SourceFormatNodeGetByIdRequestModel" /></param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns a <see cref="Task{TResult}" /> representing result of asynchronous operation which includes
+    ///     a result object <see cref="SourceFormatNodeGetByIdResponseModel" /> having all operation a result details.
+    /// </returns>
+    Task<SourceFormatNodeGetByIdResponseModel> GetByIdAsync(
+        SourceFormatNodeGetByIdRequestModel getByIdRequestModel,
+        CancellationToken cancellationToken = default);
 }

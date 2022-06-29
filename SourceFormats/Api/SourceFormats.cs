@@ -13,4 +13,5 @@ public struct SourceFormatNode
     public const string GetAll = "/get";
     public const string Update = "/update";
     public const string Delete = "/delete";
+    public const string GetById = "/getbyid";
 }
