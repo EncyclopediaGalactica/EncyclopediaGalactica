@@ -28,7 +28,6 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
         private long _childrenNodeId;
         private long _parentNodeId;
         private SourceFormatNodeDto _payload;
-        private long _rootNodeId;
 
         public Builder SetChildrenNodeId(long id)
         {
@@ -42,12 +41,6 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
             return this;
         }
 
-        public Builder SetRootNodeId(long id)
-        {
-            _rootNodeId = id;
-            return this;
-        }
-
         public Builder AddAcceptHeader(MediaTypeWithQualityHeaderValue acceptHeader)
         {
             _acceptHeaders.Add(acceptHeader);
@@ -56,7 +49,7 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
 
         public SourceFormatNodeAddChildToParentRequestModel Build()
         {
-            if (_childrenNodeId == 0 || _parentNodeId == 0 || _rootNodeId == 0)
+            if (_childrenNodeId == 0 || _parentNodeId == 0)
             {
                 throw new SdkModelsException("Id cannot be zero.");
             }
@@ -65,7 +58,6 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
             {
                 Id = _childrenNodeId,
                 ParentNodeId = _parentNodeId,
-                RootNodeId = _rootNodeId
             };
 
             SourceFormatNodeAddChildToParentRequestModel requestModel = new SourceFormatNodeAddChildToParentRequestModel

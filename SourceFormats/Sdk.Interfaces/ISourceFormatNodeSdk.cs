@@ -101,4 +101,21 @@ public interface ISourceFormatNodeSdk
     Task<SourceFormatNodeGetByIdResponseModel> GetByIdAsync(
         SourceFormatNodeGetByIdRequestModel getByIdRequestModel,
         CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Sends a <see cref="SourceFormatNodeAddChildToParentRequestModel" /> to the Encyclopedia Galactica
+    ///     Source Format Node endpoint via PUT method.
+    /// </summary>
+    /// <param name="requestModel">The request model</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>
+    ///     Returns a <see cref="Task{TResult}" /> representing result of asynchronous operation, which also
+    ///     includes the result object type of <see cref="SourceFormatNodeAddChildToParentResponseModel" />. It describes
+    ///     the result of the operation and returns the modified child object.
+    /// </returns>
+    Task<SourceFormatNodeAddChildToParentResponseModel> AddChildToParentAsync(
+        SourceFormatNodeAddChildToParentRequestModel requestModel,
+        CancellationToken cancellationToken = default);
 }

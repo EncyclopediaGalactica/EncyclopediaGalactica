@@ -2,17 +2,17 @@ namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormat
 
 using System;
 using FluentAssertions;
+using QA.Datasets;
 using SourceFormatNode;
 using Xunit;
 
 public class SourceFormatNodeAddChildToParentRequestModelValidationShould
 {
     [Theory]
-    [InlineData(0, 0, 0)]
-    [InlineData(0, 1, 0)]
-    [InlineData(0, 0, 1)]
+    [MemberData(nameof(QA.Datasets.SourceFormatNodeDatasets.SDKModels_AddChildToParent_InputValidation_Dataset),
+        MemberType = typeof(SourceFormatNodeDatasets))]
     public void Throw_WhenUserTriesToBuildRequestModel_WithInvalidInput(
-        long childId, long parentId, long rootId)
+        long childId, long parentId)
     {
         // Act
         Action action = () =>
@@ -21,7 +21,6 @@ public class SourceFormatNodeAddChildToParentRequestModelValidationShould
                     SourceFormatNodeAddChildToParentRequestModel.Builder()
                 .SetChildrenNodeId(childId)
                 .SetParentNodeId(parentId)
-                .SetRootNodeId(rootId)
                 .Build();
         };
 

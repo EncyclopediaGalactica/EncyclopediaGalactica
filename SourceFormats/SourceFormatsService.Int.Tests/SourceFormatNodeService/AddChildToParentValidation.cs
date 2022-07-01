@@ -50,4 +50,23 @@ public class AddChildToParentValidation : BaseTest
         response.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         response.IsOperationSuccessful.Should().BeFalse();
     }
+
+    [Theory]
+    [MemberData(nameof(SourceFormatNodeDatasets.Service_AddChildToParentAsync_InvalidInput_Dataset),
+        MemberType = typeof(SourceFormatNodeDatasets))]
+    public async Task Throw_WhenInputNodeIdsAreInvalid(
+        SourceFormatNodeDto child,
+        SourceFormatNodeDto parent)
+    {
+        // Act
+        SourceFormatNodeSingleResultResponseModel response = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(child, parent)
+            .ConfigureAwait(false);
+
+        // Assert
+        response.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
+        response.Result.Should().BeNull();
+        response.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
+        response.IsOperationSuccessful.Should().BeFalse();
+    }
 }

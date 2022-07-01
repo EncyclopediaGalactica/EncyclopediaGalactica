@@ -51,4 +51,12 @@ public static class SourceFormatNodeDatasets
                 new SourceFormatNodeDto { Id = 100 }
             }
         };
+
+    public static IEnumerable<object?> SDKModels_AddChildToParent_InputValidation_Dataset =>
+        new List<object?>
+        {
+            new object?[] { 0, 0 },
+            new object?[] { 1, 0 },
+            new object?[] { 0, 1 },
+        };
 }

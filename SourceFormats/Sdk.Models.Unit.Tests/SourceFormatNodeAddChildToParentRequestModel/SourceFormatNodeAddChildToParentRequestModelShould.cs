@@ -17,7 +17,6 @@ public class SourceFormatNodeAddChildToParentRequestModelShould
             new SourceFormatNodeAddChildToParentRequestModel.Builder()
                 .SetChildrenNodeId(1)
                 .SetParentNodeId(2)
-                .SetRootNodeId(3)
                 .Build();
 
         // Assert
@@ -27,7 +26,6 @@ public class SourceFormatNodeAddChildToParentRequestModelShould
         requestModel.Payload.Should().BeOfType<SourceFormatNodeDto>();
         requestModel.Payload.Id.Should().Be(1);
         requestModel.Payload.ParentNodeId.Should().Be(2);
-        requestModel.Payload.RootNodeId.Should().Be(3);
         requestModel.AcceptHeaders.Should().NotBeNull();
         requestModel.AcceptHeaders.Should().BeOfType<List<MediaTypeWithQualityHeaderValue>>();
     }
