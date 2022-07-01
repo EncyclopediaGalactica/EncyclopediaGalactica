@@ -60,7 +60,8 @@ public class SdkCore : ISdkCore
         }
     }
 
-    private async Task<T?> DeserializeResponse<T>(HttpResponseMessage response,
+    private async Task<T?> DeserializeResponse<T>(
+        HttpResponseMessage response,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(response);

@@ -3,9 +3,8 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using Exceptions;
 using FluentAssertions;
-using Utils.GuardsService;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -20,19 +19,19 @@ public class GetByIdValidationShould : BaseTest
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<GuardsServiceException>()
+            .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
             .ConfigureAwait(false);
     }
 
     [Fact]
-    public async Task Throw_WhenNosuchEntity()
+    public async Task Throw_WhenNoSuchEntity()
     {
         // Act
         Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(100).ConfigureAwait(false); };
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
+            .ThrowExactlyAsync<InvalidOperationException>()
             .ConfigureAwait(false);
     }
 }

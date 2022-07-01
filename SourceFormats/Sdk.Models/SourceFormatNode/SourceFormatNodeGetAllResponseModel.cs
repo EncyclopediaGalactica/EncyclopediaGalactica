@@ -15,9 +15,9 @@ public class SourceFormatNodeGetAllResponseModel : IResponseModel<List<SourceFor
         private HttpStatusCode? _httpStatusCode;
         private bool _isOperationSuccessful;
         private string? _message;
-        private SourceFormatNodeDto? _result;
+        private List<SourceFormatNodeDto>? _result;
 
-        public Builder SetResult(SourceFormatNodeDto dto)
+        public Builder SetResult(List<SourceFormatNodeDto> dto)
         {
             _result = dto;
             return this;
@@ -47,12 +47,12 @@ public class SourceFormatNodeGetAllResponseModel : IResponseModel<List<SourceFor
             return this;
         }
 
-        public SourceFormatNodeAddResponseModel Build()
+        public SourceFormatNodeGetAllResponseModel Build()
         {
-            if (_httpStatusCode is null)
-                throw new ArgumentException("Http status code must be set.");
+            ArgumentNullException.ThrowIfNull(_httpStatusCode);
+            ArgumentNullException.ThrowIfNull(_message);
 
-            SourceFormatNodeAddResponseModel responseModel = new()
+            SourceFormatNodeGetAllResponseModel responseModel = new()
             {
                 Result = _result,
                 IsOperationSuccessful = _isOperationSuccessful,

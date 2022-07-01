@@ -9,10 +9,14 @@ using Models.SourceFormatNode;
 public partial class SourceFormatNodeSdk
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<SourceFormatNodeGetAllResponseModel> GetAllAsync(
+        SourceFormatNodeGetAllRequestModel requestModel,
+        CancellationToken cancellationToken = default)
     {
         try
         {
+            ArgumentNullException.ThrowIfNull(requestModel);
+
             string uri = SourceFormatNode.Route + SourceFormatNode.GetAll;
 
             HttpRequestMessageBuilder<List<SourceFormatNodeDto>> httpRequestMessageBuilder =
@@ -20,6 +24,7 @@ public partial class SourceFormatNodeSdk
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetUri(uri)
                 .SetHttpMethod(HttpMethod.Get)
+                .SetAcceptHeaders(requestModel.AcceptHeaders)
                 .Build();
 
             SourceFormatNodeGetAllResponseModel result = await _sdkCore

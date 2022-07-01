@@ -1,20 +1,21 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E;
+namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormatNodeAddRequestModel;
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using FluentAssertions;
 using QA.Datasets;
-using Sdk.Models;
-using Sdk.Models.SourceFormatNode;
+using SourceFormatNode;
 using Xunit;
 
-public partial class SourceFormatNodeSdk_Should
+[ExcludeFromCodeCoverage]
+public class SourceFormatNodeAddModelValidationShould
 {
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.AddValidationDataSet), MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Throw_WhenTheUserTriesToBuildAnInvalidDataset(string name)
+    public async Task Throw_WhenInputDataIsInvalid(string name)
     {
-        // Arrange & Act
+        // Arrange && Act
         Action action = () =>
         {
             SourceFormatNodeAddRequestModel model = new SourceFormatNodeAddRequestModel.Builder()
@@ -23,6 +24,6 @@ public partial class SourceFormatNodeSdk_Should
         };
 
         // Assert
-        action.Should().ThrowExactly<SdkModelsException>();
+        action.Should().Throw<SdkModelsException>();
     }
 }

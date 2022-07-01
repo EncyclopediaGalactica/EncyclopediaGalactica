@@ -8,7 +8,7 @@ using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {
@@ -44,19 +44,6 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         _logger = logger;
     }
 
-    public async Task<SourceFormatNodeDto> AddSourceFormatNodeChildToParent(SourceFormatNodeDto childDto,
-        SourceFormatNodeDto parentDto,
-        CancellationToken cancellationToken)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<SourceFormatNode> GetSourceFormatNodeByIdAsync(long id,
-        CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
     public async Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithChildrenAsync(long id,
         CancellationToken cancellationToken = default)
     {
@@ -70,12 +57,6 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     }
 
     public async Task<ICollection<SourceFormatNode>> GetSourceFormatNodesAsync(
-        CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task DeleteSourceFormatNodeAsync(SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

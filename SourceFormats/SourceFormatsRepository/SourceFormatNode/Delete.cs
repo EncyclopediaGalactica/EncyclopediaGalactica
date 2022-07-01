@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceForm
 
 using Ctx;
 using Entities;
-using Exceptions;
 using Microsoft.EntityFrameworkCore.Storage;
 
 public partial class SourceFormatNodeRepository
@@ -27,11 +26,7 @@ public partial class SourceFormatNodeRepository
                     ctx.SourceFormatNodes.RemoveRange(toBeDelete);
                     await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
                     await transaction.CommitAsync(cancellationToken).ConfigureAwait(false);
-                    return;
                 }
-
-                throw new SourceFormatNodeRepositoryException(
-                    $"No {nameof(SourceFormatNode)} entity with id:{id}.");
             }
             catch (Exception e)
             {

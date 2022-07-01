@@ -8,4 +8,8 @@
         <RootNamespace>EncyclopediaGalactica.SourceFormats.QA.Datasets</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Dtos\Dtos.csproj" />
+    </ItemGroup>
+
 </Project>
