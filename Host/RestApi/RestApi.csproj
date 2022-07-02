@@ -10,26 +10,26 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.1.0" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.0" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.6" />
+        <PackageReference Include="FluentValidation" Version="11.1.0"/>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.1.0"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.6"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\SourceFormats\Controllers\Controllers.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Mappers.Exceptions\Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Mappers.Interfaces\Mappers.Interfaces.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Mappers\Mappers.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository\SourceFormatsRepository.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Sdk.Exceptions\Sdk.Exceptions.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj" />
-        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj" />
-        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
+        <ProjectReference Include="..\..\SourceFormats\Controllers\Controllers.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Mappers.Exceptions\Mappers.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Mappers.Interfaces\Mappers.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Mappers\Mappers.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsRepository\SourceFormatsRepository.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj"/>
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj"/>
+        <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj"/>
     </ItemGroup>
 
 </Project>

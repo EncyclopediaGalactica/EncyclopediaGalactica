@@ -12,8 +12,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
-      <ProjectReference Include="..\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />
+        <ProjectReference Include="..\GuardsService.Exceptions\GuardsService.Exceptions.csproj"/>
+        <ProjectReference Include="..\GuardsService.Interfaces\GuardsService.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>
