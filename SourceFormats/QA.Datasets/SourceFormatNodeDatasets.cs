@@ -24,16 +24,16 @@ public static class SourceFormatNodeDatasets
         new object?[] { 1, "   " }
     };
 
-    public static IEnumerable<object?> Service_AddChildToParentAsync_NullInput_Dataset =>
-        new List<object?>
+    public static IEnumerable<object[]?> Service_AddChildToParentAsync_NullInput_Dataset =>
+        new List<object[]?>
         {
             new object?[] { null, null },
             new object?[] { new SourceFormatNodeDto(), null },
             new object?[] { null, new SourceFormatNodeDto() },
         };
 
-    public static IEnumerable<object?> Service_AddChildToParentAsync_InvalidInput_Dataset =>
-        new List<object?>
+    public static IEnumerable<object[]?> Service_AddChildToParentAsync_InvalidInput_Dataset =>
+        new List<object[]?>
         {
             new object?[]
             {
@@ -52,8 +52,8 @@ public static class SourceFormatNodeDatasets
             }
         };
 
-    public static IEnumerable<object?> SDKModels_AddChildToParent_InputValidation_Dataset =>
-        new List<object?>
+    public static IEnumerable<object?[]> SDKModels_AddChildToParent_InputValidation_Dataset =>
+        new List<object?[]>
         {
             new object?[] { 0, 0 },
             new object?[] { 1, 0 },
