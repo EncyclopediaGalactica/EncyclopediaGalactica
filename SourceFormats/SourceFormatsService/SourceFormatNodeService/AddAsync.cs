@@ -5,10 +5,7 @@ using Entities;
 using FluentValidation;
 using Interfaces;
 using Interfaces.SourceFormatNode;
-using Mappers.Exceptions.SourceFormatNode;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using SourceFormatsCacheService.Exceptions;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
@@ -18,104 +15,18 @@ public partial class SourceFormatNodeService
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
-        try
-        {
-            ArgumentNullException.ThrowIfNull(dto);
-            await ValidateInputDataForAddingAsync(dto).ConfigureAwait(false);
-            SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
-            SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
-                .ConfigureAwait(false);
-            //await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
-            SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
-            SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
+        ArgumentNullException.ThrowIfNull(dto);
+        await ValidateInputDataForAddingAsync(dto).ConfigureAwait(false);
+        SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(dto);
+        SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
+            .ConfigureAwait(false);
+        //await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
+        SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
+        SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
 
-            _logger.LogInformation("{Method} is executed successfully", nameof(AddAsync));
+        _logger.LogInformation("{Method} is executed successfully", nameof(AddAsync));
 
-            return responseModel;
-        }
-        // When Name UNIQUE constraint is violated a DbUpdate Exception is thrown
-        catch (Exception e) when (e is ArgumentNullException
-                                      or ValidationException
-                                      or DbUpdateException)
-
-        {
-            SourceFormatNodeSingleResultResponseModel validationErrorResponseModel =
-                new()
-                {
-                    Status = SourceFormatsServiceResultStatuses.ValidationError,
-                    IsOperationSuccessful = false
-                };
-
-            _logger.LogError("Validation error." +
-                             "Method: {Method}. " +
-                             "Message: {Message} " +
-                             "Stacktrace: {StackTrace}",
-                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
-                e.Message,
-                e.StackTrace);
-
-            return validationErrorResponseModel;
-        }
-        // see the previous conditional catch why we have this bit complex condition here
-        catch (Exception e) when (e is SourceFormatNodeMapperException
-                                      or SourceFormatsCacheServiceException)
-        {
-            SourceFormatNodeSingleResultResponseModel internalErrorResponseModel =
-                new()
-                {
-                    Status = SourceFormatsServiceResultStatuses.InternalError,
-                    IsOperationSuccessful = false
-                };
-
-            _logger.LogError("Internal error." +
-                             "Method: {Method}. " +
-                             "Message: {Message} " +
-                             "Stacktrace: {StackTrace}",
-                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
-                e.Message,
-                e.StackTrace);
-
-            return internalErrorResponseModel;
-        }
-        // it is separated for later usage where we can discriminate this type of error
-        catch (Exception e) when (e is DbUpdateConcurrencyException)
-        {
-            SourceFormatNodeSingleResultResponseModel dbConcurrencyErrorModel =
-                new()
-                {
-                    Status = SourceFormatsServiceResultStatuses.InternalError,
-                    IsOperationSuccessful = false
-                };
-
-            _logger.LogError("Internal error." +
-                             "Method: {Method}. " +
-                             "Message: {Message} " +
-                             "Stacktrace: {StackTrace}",
-                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
-                e.Message,
-                e.StackTrace);
-
-            return dbConcurrencyErrorModel;
-        }
-        catch (Exception e)
-        {
-            SourceFormatNodeSingleResultResponseModel unexpectedResponseModel =
-                new()
-                {
-                    Status = SourceFormatsServiceResultStatuses.InternalError,
-                    IsOperationSuccessful = false
-                };
-
-            _logger.LogError("Internal error." +
-                             "Method: {Method}. " +
-                             "Message: {Message} " +
-                             "Stacktrace: {StackTrace}",
-                nameof(SourceFormatNodeService) + "." + nameof(AddAsync),
-                e.Message,
-                e.StackTrace);
-
-            return unexpectedResponseModel;
-        }
+        return responseModel;
     }
 
     private SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)

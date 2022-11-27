@@ -11,6 +11,7 @@ using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsService.ExceptionFilters;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces.SourceFormatNode;
 using EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
@@ -26,7 +27,10 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services
-    .AddControllers()
+    .AddControllers(options =>
+    {
+        options.Filters.Add<ValidationExceptionsFilter>();
+    })
     .AddApplicationPart(typeof(SourceFormatNodeController).Assembly);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -77,6 +81,15 @@ WebApplication app = builder.Build();
 //     app.UseSwagger();
 //     app.UseSwaggerUI();
 // }
+
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/error");
+}
+else
+{
+    app.UseExceptionHandler("/error-development");
+}
 
 app.UseHttpsRedirection();
 

@@ -28,6 +28,7 @@
         <ProjectReference Include="..\..\SourceFormats\Sdk.Exceptions\Sdk.Exceptions.csproj" />
         <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj" />
         <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj" />
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService.ExceptionFilters\SourceFormatsService.ExceptionFilters.csproj" />
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj" />
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
     </ItemGroup>

@@ -1,7 +1,11 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Dtos;
+using FluentAssertions;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -9,12 +13,30 @@ using Xunit;
 public class DeleteValidationShould : BaseTest
 {
     [Fact]
-    public async Task Returns_ValidationErrorResult_WhenInputIsNull()
+    public async Task Throw_ArgumentNullException_WhenInputIsNull()
     {
+        // Act
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode.DeleteAsync(null!)
+                .ConfigureAwait(false);
+        };
+
+        // Assert
+        await task.Should().ThrowExactlyAsync<ArgumentNullException>();
     }
 
     [Fact]
-    public async Task Returns_ValidationErrorResult_WhenInputIsInvalid()
+    public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputDtoIdIsZero()
     {
+        // Act
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto{Id = 0})
+                .ConfigureAwait(false);
+        };
+
+        // Assert
+        await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();
     }
 }
