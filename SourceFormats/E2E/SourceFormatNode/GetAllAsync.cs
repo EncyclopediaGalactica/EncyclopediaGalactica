@@ -30,7 +30,6 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         responseModel.Should().NotBeNull();
-        responseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<List<SourceFormatNodeDto>>();
         responseModel.Result?.Count.Should().Be(1);
@@ -64,7 +63,6 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         responseModel.Should().NotBeNull();
-        responseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<List<SourceFormatNodeDto>>();
         responseModel.Result?.Count.Should().Be(2);
@@ -87,7 +85,6 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         responseModel.Should().NotBeNull();
-        responseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<List<SourceFormatNodeDto>>();
         responseModel.Result?.Count.Should().Be(0);

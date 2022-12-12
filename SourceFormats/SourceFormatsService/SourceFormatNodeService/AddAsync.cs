@@ -3,15 +3,13 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatN
 using Dtos;
 using Entities;
 using FluentValidation;
-using Interfaces;
-using Interfaces.SourceFormatNode;
 using Microsoft.Extensions.Logging;
 using ValidatorService;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeSingleResultResponseModel> AddAsync(
+    public async Task<SourceFormatNodeDto> AddAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
@@ -22,11 +20,10 @@ public partial class SourceFormatNodeService
             .ConfigureAwait(false);
         //await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
         SourceFormatNodeDto mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
-        SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForAdd(mappedResult);
 
         _logger.LogInformation("{Method} is executed successfully", nameof(AddAsync));
 
-        return responseModel;
+        return mappedResult;
     }
 
     private SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)
@@ -64,16 +61,5 @@ public partial class SourceFormatNodeService
             o.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
             o.ThrowOnFailures();
         }).ConfigureAwait(false);
-    }
-
-    private SourceFormatNodeSingleResultResponseModel PrepareSuccessResponseModelForAdd(SourceFormatNodeDto dto)
-    {
-        SourceFormatNodeSingleResultResponseModel responseModel = new()
-        {
-            Result = dto,
-            Status = SourceFormatsServiceResultStatuses.Success,
-            IsOperationSuccessful = true
-        };
-        return responseModel;
     }
 }

@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.ExceptionFilt
 
 using System.Net;
 using FluentValidation;
+using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
@@ -20,9 +21,9 @@ public class ValidationExceptionsFilter : IActionFilter
             or DbUpdateException
             or GuardsServiceValueShouldNotBeEqualToException)
         {
-            context.Result = new ObjectResult("Validation error")
+            context.Result = new ObjectResult(SourceFormatsServiceResultStatuses.ValidationError)
             {
-                StatusCode = (int?)HttpStatusCode.BadRequest
+                StatusCode = (int)HttpStatusCode.BadRequest
             };
             context.ExceptionHandled = true;
         }

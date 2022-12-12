@@ -7,7 +7,7 @@ using Interfaces.SourceFormatNode;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeSingleResultResponseModel> DeleteAsync(
+    public async Task DeleteAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default)
     {
@@ -15,20 +15,5 @@ public partial class SourceFormatNodeService
         _guards.IsNotEqual(dto.Id, 0);
 
         await _sourceFormatNodeRepository.DeleteAsync(dto.Id, cancellationToken).ConfigureAwait(false);
-
-        SourceFormatNodeSingleResultResponseModel responseModel = PrepareSuccessResponseModelForDelete();
-        return responseModel;
-    }
-
-    private SourceFormatNodeSingleResultResponseModel PrepareSuccessResponseModelForDelete()
-    {
-        SourceFormatNodeSingleResultResponseModel responseModel = new SourceFormatNodeSingleResultResponseModel
-        {
-            Result = null,
-            Status = SourceFormatsServiceResultStatuses.Success,
-            IsOperationSuccessful = true
-        };
-
-        return responseModel;
     }
 }

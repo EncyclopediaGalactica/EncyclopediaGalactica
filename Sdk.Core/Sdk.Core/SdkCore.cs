@@ -16,7 +16,7 @@ public class SdkCore : ISdkCore
     public async Task<TResponseModel> SendAsync<TResponseModel, TResponseModelPayload>(
         HttpRequestMessage httpRequestMessage,
         CancellationToken cancellationToken = default)
-        where TResponseModel : IResponseModel<TResponseModelPayload>, new()
+        where TResponseModel : IHttpResponseModel<TResponseModelPayload>, new()
     {
         ArgumentNullException.ThrowIfNull(httpRequestMessage);
 
@@ -36,28 +36,34 @@ public class SdkCore : ISdkCore
     private async Task<TResponseModel> CreateResponse<TResponseModel, TResponseModelPayload>(
         HttpResponseMessage httpResponseMessage,
         CancellationToken cancellationToken = default)
-        where TResponseModel : IResponseModel<TResponseModelPayload>, new()
+        where TResponseModel : IHttpResponseModel<TResponseModelPayload>, new()
     {
         TResponseModel result = Activator.CreateInstance<TResponseModel>();
-        TResponseModel res = new();
-
-        try
-        {
-            TResponseModel? deserializedPayload = await DeserializeResponse<TResponseModel>(
-                    httpResponseMessage,
-                    cancellationToken)
-                .ConfigureAwait(false);
-
-            if (deserializedPayload is null)
-                throw new Exception("Response is null.");
-
-            return deserializedPayload;
-        }
-        catch (HttpRequestException httpRequestException)
+        if (!httpResponseMessage.IsSuccessStatusCode)
         {
             result.IsOperationSuccessful = false;
+
+            string payload = await httpResponseMessage.Content.ReadAsStringAsync(cancellationToken)
+                .ConfigureAwait(false);
+            result.Message = payload;
+
             return result;
         }
+
+        TResponseModelPayload? deserializedPayload = await DeserializeResponse<TResponseModelPayload>(
+                httpResponseMessage,
+                cancellationToken)
+            .ConfigureAwait(false);
+
+        if (deserializedPayload is null
+            && httpResponseMessage.RequestMessage?.Method != HttpMethod.Delete)
+            throw new Exception("Response is null.");
+
+        result.IsOperationSuccessful = true;
+        result.Result = deserializedPayload;
+        result.HttpStatusCode = httpResponseMessage.StatusCode;
+
+        return result;
     }
 
     private async Task<T?> DeserializeResponse<T>(

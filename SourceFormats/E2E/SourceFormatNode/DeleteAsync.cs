@@ -46,7 +46,6 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         deleteResponseModel.Should().NotBeNull();
-        deleteResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         deleteResponseModel.Result.Should().BeNull();
         deleteResponseModel.IsOperationSuccessful.Should().BeTrue();
 
@@ -72,7 +71,9 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         deleteResponseModel.Should().NotBeNull();
-        deleteResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        deleteResponseModel.Message
+            .Substring(1, deleteResponseModel.Message.Length - 2)
+            .Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
         deleteResponseModel.Result.Should().BeNull();
         deleteResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
