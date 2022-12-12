@@ -16,15 +16,15 @@ public class SourceFormatNodeValidator : AbstractValidator<SourceFormatNode>
         RuleSet(Add, () =>
         {
             RuleFor(p => p.Id).Equal(0);
-            RuleFor(p => p.Name).NotEmpty().NotNull().NotEqual(" ");
-            RuleFor(p => p.Name!.Length).GreaterThanOrEqualTo(3);
+            RuleFor(p => p.Name!.Trim()).NotEmpty().NotNull().NotEqual(" ");
+            RuleFor(p => p.Name!.Trim().Length).GreaterThanOrEqualTo(3);
         });
 
         RuleSet(Update, () =>
         {
             RuleFor(p => p.Id).NotEqual(0);
-            RuleFor(p => p.Name).NotEmpty().NotNull().NotEqual(" ");
-            RuleFor(p => p.Name!.Length).GreaterThanOrEqualTo(3);
+            RuleFor(p => p.Name.Trim()).NotEmpty().NotNull().NotEqual(" ");
+            RuleFor(p => p.Name!.Trim().Length).GreaterThanOrEqualTo(3);
         });
 
         RuleSet(Delete, () =>

@@ -33,7 +33,6 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         updateResponseModel.IsOperationSuccessful.Should().BeTrue();
         updateResponseModel.Result.Should().NotBeNull();
         updateResponseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
@@ -54,15 +53,8 @@ public partial class SourceFormatNodeSdk_Should
             .ConfigureAwait(false);
 
         // Act
-        if (addResponseModel is null)
-        {
-            throw new Exception("addresponsemodel is null");
-        }
-
-        if (addResponseModel.Result is null)
-        {
-            throw new Exception("result is null");
-        }
+        addResponseModel.Should().NotBeNull();
+        addResponseModel.Result.Should().NotBeNull();
 
         SourceFormatNodeUpdateRequestModel updateRequestModel = new SourceFormatNodeUpdateRequestModel.Builder()
             .SetId(addResponseModel.Result.Id + 100)
@@ -74,7 +66,9 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        updateResponseModel.Message
+            .Substring(1, updateResponseModel.Message.Length-2)
+            .Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
     }
@@ -109,7 +103,8 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Message.Should().NotBe(SourceFormatsServiceResultStatuses.ValidationError);
+        updateResponseModel.Message.Substring(1, updateResponseModel.Message.Length - 2)
+            .Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
     }

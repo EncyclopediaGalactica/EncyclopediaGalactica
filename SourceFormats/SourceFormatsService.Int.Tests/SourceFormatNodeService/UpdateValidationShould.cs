@@ -1,12 +1,15 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
+using FluentValidation;
 using Interfaces;
 using Interfaces.SourceFormatNode;
 using QA.Datasets;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -14,23 +17,39 @@ using Xunit;
 public class UpdateValidationShould : BaseTest
 {
     [Fact]
-    public async Task ReturnsResponseModel_ValidationErrorCode_WhenInputIsNull()
+    public async Task Throw_ArgumentNullException_WhenInputIsNull()
     {
         // Act
-        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
-            .UpdateSourceFormatNodeAsync(null)
-            .ConfigureAwait(false);
+        Func<Task> task = async() =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .UpdateSourceFormatNodeAsync(null)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        responseModel.Result.Should().BeNull();
-        responseModel.IsOperationSuccessful.Should().BeFalse();
-        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
+        await task.Should().ThrowExactlyAsync<ArgumentNullException>();
+    }
+
+    [Fact]
+    public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputIdIsZero()
+    {
+        // Act
+        Func<Task> task = async() =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .UpdateSourceFormatNodeAsync(new SourceFormatNodeDto{Id = 0})
+                .ConfigureAwait(false);
+        };
+
+        // Assert
+        await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();
     }
 
     [Theory]
-    [MemberData(nameof(SourceFormatNodeDatasets.UpdateValidationDataSet),
+    [MemberData(nameof(SourceFormatNodeDatasets.UpdateValidationDataSet_Without_IdIsZero),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task ReturnsResponseModel_ValidationErrorCode_WhenInputIsInvalid(int id, string name)
+    public async Task Throw_ValidationError_WhenInputIsInvalid(int id, string name)
     {
         // Act
         SourceFormatNodeDto dto = new()
@@ -38,14 +57,14 @@ public class UpdateValidationShould : BaseTest
             Id = id,
             Name = name
         };
-        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
-            .UpdateSourceFormatNodeAsync(null)
-            .ConfigureAwait(false);
+        Func<Task> task = async() =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .UpdateSourceFormatNodeAsync(dto)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        responseModel.Should().NotBeNull();
-        responseModel.Result.Should().BeNull();
-        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
-        responseModel.IsOperationSuccessful.Should().BeFalse();
+        await task.Should().ThrowExactlyAsync<ValidationException>();
     }
 }

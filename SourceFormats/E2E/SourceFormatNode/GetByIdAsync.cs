@@ -29,8 +29,6 @@ public partial class SourceFormatNodeSdk_Should
         // Assert
         getByIdResponseModel.Should().NotBeNull();
         getByIdResponseModel.Should().BeOfType<SourceFormatNodeGetByIdResponseModel>();
-        getByIdResponseModel.Message.Should().NotBeNull();
-        getByIdResponseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         getByIdResponseModel.Result.Should().NotBeNull();
         getByIdResponseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
         getByIdResponseModel.IsOperationSuccessful.Should().BeTrue();

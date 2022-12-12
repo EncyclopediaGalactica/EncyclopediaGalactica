@@ -44,7 +44,6 @@ public partial class SourceFormatNodeSdk_Should
         // Assert
         responseModel.Should().NotBeNull();
         responseModel.IsOperationSuccessful.Should().BeTrue();
-        responseModel.Message.Should().Be(SourceFormatsServiceResultStatuses.Success);
         responseModel.Result.Should().NotBeNull();
         responseModel.Result.Should().BeOfType<SourceFormatNodeDto>();
         responseModel.Result.Id.Should().BeGreaterThan(0);
@@ -70,6 +69,10 @@ public partial class SourceFormatNodeSdk_Should
 
         // Assert
         responseModel2.Should().NotBeNull();
+        responseModel2.Should().BeOfType<SourceFormatNodeAddResponseModel>();
         responseModel2.IsOperationSuccessful.Should().BeFalse();
+        responseModel2.Message.Substring(1, responseModel2.Message.Length - 2)
+            .Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
+        responseModel2.Result.Should().BeNull();
     }
 }

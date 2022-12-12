@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
@@ -16,155 +17,148 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIsAlreadyInTheTree_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeSingleResultResponseModel rootNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto rootNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("rootnode"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
 
-        SourceFormatNodeSingleResultResponseModel addParentToRoot = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(parentNode.Result!, rootNode.Result!)
+        SourceFormatNodeDto addParentToRoot = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(parentNode, rootNode)
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeSingleResultResponseModel addChildToParent = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(childNode.Result!, parentNode.Result!)
+        SourceFormatNodeDto addChildToParent = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
         // Assert
-        addChildToParent.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
-        addChildToParent.Result.Should().NotBeNull();
-        addChildToParent.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
-        addChildToParent.IsOperationSuccessful.Should().BeTrue();
+        addChildToParent.Should().BeOfType<SourceFormatNodeDto>();
+        addChildToParent.Should().NotBeNull();
+        addChildToParent.Id.Should().BeGreaterThan(0);
+        addChildToParent.Name.Should().Be("child");
 
-        addChildToParent.Result!.Id.Should().BeGreaterThan(0);
-        addChildToParent.Result.Name.Should().Be("child");
-
-        SourceFormatNodeSingleResultResponseModel childNodeDetails = await _sourceFormatsService.SourceFormatNode
-            .GetByIdAsync(childNode.Result!.Id)
+        SourceFormatNodeDto childNodeDetails = await _sourceFormatsService.SourceFormatNode
+            .GetByIdAsync(childNode.Id)
             .ConfigureAwait(false);
-        childNodeDetails.Result!.ParentNodeId.Should().Be(parentNode.Result!.Id);
-        childNodeDetails.Result!.RootNodeId.Should().Be(rootNode.Result!.Id);
-        childNodeDetails.Result!.IsRootNode.Should().Be(0);
+        childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
+        childNodeDetails.RootNodeId.Should().Be(rootNode.Id);
+        childNodeDetails.IsRootNode.Should().Be(0);
     }
 
     [Fact]
     public async Task AddChildToParent_WhenParentIdRootNode_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeSingleResultResponseModel rootNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto rootNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("rootnode"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel childNode2 = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode2 = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child2"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel addParentToRoot = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(parentNode.Result!, rootNode.Result!)
+        SourceFormatNodeDto addParentToRoot = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(parentNode, rootNode)
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel addChildToParent = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(childNode.Result!, parentNode.Result!)
+        SourceFormatNodeDto addChildToParent = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeSingleResultResponseModel addChild2ToRoot = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(childNode2.Result!, rootNode.Result!)
+        SourceFormatNodeDto addChild2ToRoot = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(childNode2, rootNode)
             .ConfigureAwait(false);
 
         // Assert
-        addChild2ToRoot.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
-        addChild2ToRoot.Result.Should().NotBeNull();
-        addChild2ToRoot.Result.Should().BeOfType<SourceFormatNodeDto>();
-        addChild2ToRoot.IsOperationSuccessful.Should().BeTrue();
-        addChild2ToRoot.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
+        addChild2ToRoot.Should().BeOfType<SourceFormatNodeDto>();
+        addChild2ToRoot.Should().NotBeNull();
 
-        SourceFormatNodeSingleResultResponseModel child2 = await _sourceFormatsService.SourceFormatNode
-            .GetByIdAsync(childNode2.Result!.Id)
+        SourceFormatNodeDto child2 = await _sourceFormatsService.SourceFormatNode
+            .GetByIdAsync(childNode2.Id)
             .ConfigureAwait(false);
         child2.Should().NotBeNull();
-        child2.Result!.ParentNodeId.Should().Be(rootNode.Result!.Id);
+        child2.ParentNodeId.Should().Be(rootNode.Id);
     }
 
     [Fact]
     public async Task AddChildToParent_WhenParentIsNotRootButShouldBe_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeSingleResultResponseModel parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeSingleResultResponseModel childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeSingleResultResponseModel childNodeAdded = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(childNode.Result!, parentNode.Result!)
+        SourceFormatNodeDto childNodeAdded = await _sourceFormatsService.SourceFormatNode
+            .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
         // Assert
         childNodeAdded.Should().NotBeNull();
-        childNodeAdded.Result.Should().NotBeNull();
-        childNodeAdded.Result.Should().BeOfType<SourceFormatNodeDto>();
-        childNodeAdded.Result!.Id.Should().Be(childNode.Result!.Id);
-        childNodeAdded.Result.Name!.Should().Be(childNode.Result!.Name);
+        childNodeAdded.Should().BeOfType<SourceFormatNodeDto>();
+        childNodeAdded.Id.Should().Be(childNode.Id);
+        childNodeAdded.Name!.Should().Be(childNode.Name);
 
-        SourceFormatNodeSingleResultResponseModel childNodeDetails = await _sourceFormatsService.SourceFormatNode
-            .GetByIdAsync(childNode.Result.Id)
+        SourceFormatNodeDto childNodeDetails = await _sourceFormatsService.SourceFormatNode
+            .GetByIdAsync(childNode.Id)
             .ConfigureAwait(false);
-        childNodeDetails.Result!.ParentNodeId.Should().Be(parentNode.Result!.Id);
+        childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
 
-        SourceFormatNodeSingleResultResponseModel parentNodeDetails = await _sourceFormatsService.SourceFormatNode
-            .GetByIdAsync(parentNode.Result.Id)
+        SourceFormatNodeDto parentNodeDetails = await _sourceFormatsService.SourceFormatNode
+            .GetByIdAsync(parentNode.Id)
             .ConfigureAwait(false);
-        parentNodeDetails.Result!.IsRootNode.Should().Be(1);
+        parentNodeDetails.IsRootNode.Should().Be(1);
     }
 
     [Fact]
-    public async Task Return_ResponseModel_WithFailedOperation_AndNoSuchChildEntityMessage()
+    public async Task Throw_InvalidOperationException_WhenNoSuchChildEntity()
     {
         // Arrange
-        SourceFormatNodeSingleResultResponseModel parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(new SourceFormatNodeDto { Id = 100 }, parentNode.Result!)
-            .ConfigureAwait(false);
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .AddChildToParentAsync(new SourceFormatNodeDto { Id = 100 }, parentNode)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        responseModel.Should().NotBeNull();
-        responseModel.Result.Should().BeNull();
-        responseModel.IsOperationSuccessful.Should().BeFalse();
-        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        await task.Should().ThrowExactlyAsync<InvalidOperationException>();
     }
 
     [Fact]
-    public async Task Return_ResponseModel_WithFailedOperation_AndNoSuchParentEntityMessage()
+    public async Task Throw_InvalidOperationException_When_NoSuchParentEntity()
     {
         // Arrange
-        SourceFormatNodeSingleResultResponseModel childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeSingleResultResponseModel responseModel = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(childNode.Result!, new SourceFormatNodeDto { Id = 100 })
-            .ConfigureAwait(false);
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .AddChildToParentAsync(childNode, new SourceFormatNodeDto { Id = 100 })
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        responseModel.Should().NotBeNull();
-        responseModel.Result.Should().BeNull();
-        responseModel.IsOperationSuccessful.Should().BeFalse();
-        responseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
+        await task.Should().ThrowExactlyAsync<InvalidOperationException>();
     }
 }

@@ -23,6 +23,7 @@ using SourceFormatsRepository;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
 using SourceFormatsService;
+using SourceFormatsService.ExceptionFilters;
 using SourceFormatsService.Interfaces;
 using SourceFormatsService.Interfaces.SourceFormatNode;
 using SourceFormatsService.SourceFormatNodeService;
@@ -44,7 +45,13 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
 
             SqliteConnection connection = new("Filename=:memory:");
             connection.Open();
-            services.AddControllers()
+            services.AddControllers(o =>
+                {
+                    o.Filters.Add<InternalServerErrorExceptionsFilter>();
+                    o.Filters.Add<NoSuchEntityExceptionsFilter>();
+                    o.Filters.Add<ValidationExceptionsFilter>();
+                })
+                .AddNewtonsoftJson()
                 .AddApplicationPart(typeof(SourceFormatNodeController).Assembly);
             services.AddDbContext<SourceFormatsDbContext>(options =>
             {

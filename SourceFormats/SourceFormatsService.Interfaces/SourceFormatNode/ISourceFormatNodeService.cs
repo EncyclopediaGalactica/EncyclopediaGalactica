@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces.So
 using Dtos;
 using Entities;
 using Exceptions;
+using FluentValidation;
 using Sdk.Models.SourceFormatNode;
 
 public interface ISourceFormatNodeService
@@ -23,11 +24,19 @@ public interface ISourceFormatNodeService
     ///     Whenever internal error happens which
     ///     doesn't include input validation.
     /// </exception>
-    /// <exception cref="SourceFormatNodeServiceInputValidationException">
-    ///     Whenever input validation related
-    ///     error happens.
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
     /// </exception>
-    Task<SourceFormatNodeSingleResultResponseModel> AddAsync(
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task<SourceFormatNodeDto> AddAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
 
@@ -45,9 +54,23 @@ public interface ISourceFormatNodeService
     ///     a <see cref="SourceFormatNodeSingleResultResponseModel" /> which provides details about
     ///     is the operation was successful and returns with the child <see cref="SourceFormatNode" />.
     /// </returns>
-    /// <exception cref="Exception">All exceptions are caught</exception>
-    Task<SourceFormatNodeSingleResultResponseModel> AddChildToParentAsync(
-        SourceFormatNodeDto childDto,
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     Whenever internal error happens which
+    ///     doesn't include input validation.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task<SourceFormatNodeDto> AddChildToParentAsync(SourceFormatNodeDto childDto,
         SourceFormatNodeDto parentDto,
         CancellationToken cancellationToken = default);
 
@@ -65,8 +88,24 @@ public interface ISourceFormatNodeService
     ///     the properties provide additional information about the result of the operation and
     ///     the result of the operation.
     /// </returns>
-    Task<SourceFormatNodeSingleResultResponseModel> GetByIdAsync(
-        long id,
+    /// ///
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     Whenever internal error happens which
+    ///     doesn't include input validation.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task<SourceFormatNodeDto> GetByIdAsync(long id,
         CancellationToken cancellationToken = default);
 
     Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithChildrenAsync(
@@ -93,9 +132,23 @@ public interface ISourceFormatNodeService
     ///     <see cref="SourceFormatNodeUpdateResponseModel" /> providing the result of the operation and the
     ///     updated entity with its new values.
     /// </returns>
-    /// <exception cref="SourceFormatNodeServiceException">In case of any error</exception>
-    Task<SourceFormatNodeSingleResultResponseModel> UpdateSourceFormatNodeAsync(
-        SourceFormatNodeDto? dto,
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     Whenever internal error happens which
+    ///     doesn't include input validation.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task<SourceFormatNodeDto> UpdateSourceFormatNodeAsync(SourceFormatNodeDto? dto,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -111,9 +164,23 @@ public interface ISourceFormatNodeService
     ///     Returns a <see cref="Task{TResult}" /> representing asynchronous result which
     ///     includes a <see cref="SourceFormatNodeSingleResultResponseModel" /> indicating the result of the operation.
     /// </returns>
-    /// <exception cref="Exception">All the exceptions are caught</exception>
-    Task<SourceFormatNodeSingleResultResponseModel> DeleteAsync(
-        SourceFormatNodeDto dto,
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     Whenever internal error happens which
+    ///     doesn't include input validation.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task DeleteAsync(SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -128,6 +195,21 @@ public interface ISourceFormatNodeService
     ///     the result. The result type is <see cref="SourceFormatNodeGetAllResponseModel" /> which includes
     ///     information of execution and result.
     /// </returns>
-    /// <exception cref="SourceFormatNodeServiceException">If any error happen.</exception>
-    Task<SourceFormatNodeListResultResponseModel> GetAllAsync(CancellationToken cancellationToken = default);
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     Whenever internal error happens which
+    ///     doesn't include input validation.
+    /// </exception>
+    /// <exception cref="ArgumentNullException">
+    ///     When null input happens
+    /// </exception>
+    /// <exception cref="ValidationException">
+    ///     When validation related exception happens.
+    /// </exception>
+    /// <exception cref="SourceFormatNodeServiceException">
+    ///     When included service has internal server error.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled by a cancellation token.
+    /// </exception>
+    Task<List<SourceFormatNodeDto>> GetAllAsync(CancellationToken cancellationToken = default);
 }

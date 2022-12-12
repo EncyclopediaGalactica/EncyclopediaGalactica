@@ -1,12 +1,13 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Interfaces;
-using Interfaces.SourceFormatNode;
+using FluentValidation;
 using QA.Datasets;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -16,57 +17,57 @@ public class AddChildToParentValidation : BaseTest
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.Service_AddChildToParentAsync_NullInput_Dataset),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Throw_WhenInputsAreNull(
+    public async Task Throw_ArgumentNullException_WhenInputsAreNull(
         SourceFormatNodeDto child,
         SourceFormatNodeDto parent)
     {
         // Act
-        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(child, parent)
-            .ConfigureAwait(false);
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .AddChildToParentAsync(child, parent)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        result.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
-        result.Result.Should().BeNull();
-        result.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
-        result.IsOperationSuccessful.Should().BeFalse();
+        await task.Should().ThrowExactlyAsync<ArgumentNullException>();
     }
 
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.Service_AddChildToParentAsync_NullInput_Dataset),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Throw_WhenInputsAreInvalid(
+    public async Task Throw_ArgumentNullException_WhenInputsAreInvalid(
         SourceFormatNodeDto child,
         SourceFormatNodeDto parent)
     {
         // Act
-        SourceFormatNodeSingleResultResponseModel response = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(child, parent)
-            .ConfigureAwait(false);
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .AddChildToParentAsync(child, parent)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        response.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
-        response.Result.Should().BeNull();
-        response.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
-        response.IsOperationSuccessful.Should().BeFalse();
+        await task.Should().ThrowExactlyAsync<ArgumentNullException>();
     }
 
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.Service_AddChildToParentAsync_InvalidInput_Dataset),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Throw_WhenInputNodeIdsAreInvalid(
+    public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputNodeIdsAreInvalid(
         SourceFormatNodeDto child,
         SourceFormatNodeDto parent)
     {
         // Act
-        SourceFormatNodeSingleResultResponseModel response = await _sourceFormatsService.SourceFormatNode
-            .AddChildToParentAsync(child, parent)
-            .ConfigureAwait(false);
+        Func<Task> task = async () =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .AddChildToParentAsync(child, parent)
+                .ConfigureAwait(false);
+        };
 
         // Assert
-        response.Should().BeOfType<SourceFormatNodeSingleResultResponseModel>();
-        response.Result.Should().BeNull();
-        response.Status.Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
-        response.IsOperationSuccessful.Should().BeFalse();
+        await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();
     }
 }

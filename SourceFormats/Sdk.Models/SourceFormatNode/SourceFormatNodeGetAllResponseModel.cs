@@ -4,11 +4,12 @@ using System.Net;
 using Dtos;
 using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 
-public class SourceFormatNodeGetAllResponseModel : IResponseModel<List<SourceFormatNodeDto>>
+public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<SourceFormatNodeDto>>
 {
     public List<SourceFormatNodeDto>? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
     public string? Message { get; set; }
+    public HttpStatusCode HttpStatusCode { get; set; }
 
     public class Builder
     {
@@ -56,7 +57,8 @@ public class SourceFormatNodeGetAllResponseModel : IResponseModel<List<SourceFor
             {
                 Result = _result,
                 IsOperationSuccessful = _isOperationSuccessful,
-                Message = _message
+                Message = _message,
+                HttpStatusCode = (System.Net.HttpStatusCode)_httpStatusCode
             };
 
             return responseModel;

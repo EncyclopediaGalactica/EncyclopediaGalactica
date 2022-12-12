@@ -110,6 +110,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardsService.Exceptions", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardsService.Interfaces", "Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj", "{AE39BF10-5007-4E4E-AA87-34697E2C2842}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsService.ExceptionFilters", "SourceFormats\SourceFormatsService.ExceptionFilters\SourceFormatsService.ExceptionFilters.csproj", "{5B9AE273-D07B-455B-8139-DC749F889D6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -304,6 +306,10 @@ Global
 		{AE39BF10-5007-4E4E-AA87-34697E2C2842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE39BF10-5007-4E4E-AA87-34697E2C2842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE39BF10-5007-4E4E-AA87-34697E2C2842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B9AE273-D07B-455B-8139-DC749F889D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B9AE273-D07B-455B-8139-DC749F889D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B9AE273-D07B-455B-8139-DC749F889D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B9AE273-D07B-455B-8139-DC749F889D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5435A2E-9B93-4F3C-80A6-49FCB4D1A1CB} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
@@ -353,5 +359,6 @@ Global
 		{5FE1733A-AE9F-494B-AD2E-C0DA7419C2F4} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{1079F6F8-0CF8-436B-817B-0B32A9318791} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
 		{AE39BF10-5007-4E4E-AA87-34697E2C2842} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
+		{5B9AE273-D07B-455B-8139-DC749F889D6E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal

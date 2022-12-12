@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
+using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
@@ -20,31 +21,30 @@ public class UpdateShould : BaseTest
         {
             Name = "asd"
         };
-        SourceFormatNodeSingleResultResponseModel addResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addResponseModel = await _sourceFormatsService.SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
         string updatedName = "asdasd";
         SourceFormatNodeDto updateTemplate = new()
         {
-            Id = addResponseModel.Result.Id,
+            Id = addResponseModel.Id,
             Name = updatedName
         };
 
         // Act
-        SourceFormatNodeSingleResultResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto updateResponseModel = await _sourceFormatsService.SourceFormatNode
             .UpdateSourceFormatNodeAsync(updateTemplate)
             .ConfigureAwait(false);
 
         // Assert
         updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
-        updateResponseModel.IsOperationSuccessful.Should().BeTrue();
-        updateResponseModel.Result.Id.Should().Be(updateTemplate.Id);
-        updateResponseModel.Result.Name.Should().Be(updateTemplate.Name);
+        updateResponseModel.Id.Should().Be(updateTemplate.Id);
+        updateResponseModel.Name.Should().Be(updateTemplate.Name);
     }
 
     [Fact]
-    public async Task ReturnsResponseModel_NoSuchEntityErrorCode_AndErrorDetails_WhenNoSuchEntityToBeUpdated()
+    public async Task Throw_InvalidOperationException_WhenNoSuchEntityToBeUpdated()
     {
+        // Arrange
         SourceFormatNodeDto updateTemplate = new()
         {
             Id = 204,
@@ -52,12 +52,13 @@ public class UpdateShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeSingleResultResponseModel updateResponseModel = await _sourceFormatsService.SourceFormatNode
-            .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
+        Func<Task> task = async() =>
+        {
+            await _sourceFormatsService.SourceFormatNode
+                .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
+        };
 
         // Assert
-        updateResponseModel.Should().NotBeNull();
-        updateResponseModel.Status.Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
-        updateResponseModel.IsOperationSuccessful.Should().BeFalse();
+        await task.Should().ThrowExactlyAsync<InvalidOperationException>();
     }
 }

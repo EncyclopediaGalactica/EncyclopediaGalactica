@@ -24,6 +24,16 @@ public static class SourceFormatNodeDatasets
         new object?[] { 1, "   " }
     };
 
+    public static IEnumerable<object?[]> UpdateValidationDataSet_Without_IdIsZero => new List<object?[]>
+    {
+        new object?[] { 1, null },
+        new object?[] { 1, string.Empty },
+        new object?[] { 1, "  " },
+        new object?[] { 1, "as" },
+        new object?[] { 1, "as " },
+        new object?[] { 1, "   " }
+    };
+
     public static IEnumerable<object[]?> Service_AddChildToParentAsync_NullInput_Dataset =>
         new List<object[]?>
         {

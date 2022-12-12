@@ -23,17 +23,15 @@ public class AddShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeSingleResultResponseModel result = await _sourceFormatsService
+        SourceFormatNodeDto result = await _sourceFormatsService
             .SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
 
         // Assert
         result.Should().NotBeNull();
-        result.Status.Should().Be(SourceFormatsServiceResultStatuses.Success);
-        result.IsOperationSuccessful.Should().BeTrue();
-        result.Result.Should().NotBeNull();
-        result.Result.Id.Should().NotBe(0);
-        result.Result.Id.Should().BeGreaterThan(0);
-        result.Result.Name.Should().Be(name);
+        result.Should().NotBeNull();
+        result.Id.Should().NotBe(0);
+        result.Id.Should().BeGreaterThan(0);
+        result.Name.Should().Be(name);
     }
 }

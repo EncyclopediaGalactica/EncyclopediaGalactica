@@ -9,7 +9,7 @@ using EncyclopediaGalactica.Sdk.Core.Model.Interfaces;
 ///     execution result related information to the client side.
 ///     It is used only in the provided SDK.
 /// </summary>
-public class SourceFormatNodeDeleteResponseModel : IResponseModel<SourceFormatNodeDto>
+public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceFormatNodeDto>
 {
     /// <summary>
     ///     Sets or gets the operation result.
@@ -25,6 +25,11 @@ public class SourceFormatNodeDeleteResponseModel : IResponseModel<SourceFormatNo
     ///     Sets or gets the message
     /// </summary>
     public string Message { get; set; }
+
+    /// <summary>
+    ///     Sets or gets the http status code
+    /// </summary>
+    public HttpStatusCode HttpStatusCode { get; set; }
 
     public class Builder
     {
@@ -116,7 +121,8 @@ public class SourceFormatNodeDeleteResponseModel : IResponseModel<SourceFormatNo
             {
                 Message = _message,
                 Result = _result,
-                IsOperationSuccessful = _isOperationSuccessful
+                IsOperationSuccessful = _isOperationSuccessful,
+                HttpStatusCode = (System.Net.HttpStatusCode)_httpStatusCode
             };
             return responseModel;
         }

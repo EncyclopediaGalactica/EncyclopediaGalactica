@@ -12,6 +12,7 @@
     <ItemGroup>
         <PackageReference Include="FluentValidation" Version="11.4.0" />
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.0" />
@@ -28,6 +29,7 @@
         <ProjectReference Include="..\..\SourceFormats\Sdk.Exceptions\Sdk.Exceptions.csproj" />
         <ProjectReference Include="..\..\SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj" />
         <ProjectReference Include="..\..\SourceFormats\Sdk\Sdk.csproj" />
+        <ProjectReference Include="..\..\SourceFormats\SourceFormatsService.ExceptionFilters\SourceFormatsService.ExceptionFilters.csproj" />
         <ProjectReference Include="..\..\SourceFormats\SourceFormatsService\SourceFormatsService.csproj" />
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
     </ItemGroup>
