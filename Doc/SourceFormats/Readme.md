@@ -11,4 +11,18 @@ In more technical details the above mission looks like the following:
 
 ## Loading Data
 
-In this case the format can be anything which is not a binary format, e.g. RTF, TXT, RSS, Open Office format, you name it. In these cases the system knows and understands these formats and can turn them into the system format, which is an SQL structure.
+In this case the format can be anything which is not a binary format, e.g. RTF, TXT, RSS, Open Office format, you name it. In these cases the system knows and understands these formats and can turn them into the system format, which is an SQL structure. The system makes possible to build a document structure and eventually process an input format.
+
+## Searching in the stored data
+
+The system can search for words and sentences. The system builds its internal trie structures helping search.
+
+The other way of making a search in the system is along the discipline structures described in a thesaurus (in reality it is a graph).
+
+## Create abstract information structures
+
+As I mentioned previously the system offers functionality to build abstract information structures. Based on these structures input information processing can be executed, input format forms (basically forms which represent the information structure on the UI) created.
+
+## Automatic, suggested categorisation and catalogisation
+
+Knowing the discipline structures, stored in a thessaurus, the input information (for example, a text file) can have automatic catalog information. The system can suggest these by meta data or content.
