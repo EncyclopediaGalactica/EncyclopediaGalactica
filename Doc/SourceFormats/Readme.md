@@ -8,3 +8,7 @@ In more technical details the above mission looks like the following:
 - ability to initiate search in the stored documents easily
 - ability to create abstract information structures (tree, graph, thesaurus, taxonomy) and chain the piece of information to this
 - the software should be able to offer categorisation and catalogisation based on provided metadata about the loaded doc
+
+## Loading Data
+
+In this case the format can be anything which is not a binary format, e.g. RTF, TXT, RSS, Open Office format, you name it. In these cases the system knows and understands these formats and can turn them into the system format, which is an SQL structure.
