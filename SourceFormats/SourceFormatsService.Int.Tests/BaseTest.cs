@@ -3,9 +3,11 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
+using Document;
 using Entities;
 using FluentValidation;
 using Interfaces;
+using Interfaces.Document;
 using Interfaces.SourceFormatNode;
 using Mappers;
 using Mappers.Interfaces;
@@ -56,6 +58,11 @@ public class BaseTest
                 sourceFormatNodeRepository,
                 sourceFormatNodeCacheService,
                 logger);
-        _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
+
+        IDocumentService documentService = new DocumentService();
+
+        _sourceFormatsService = new SourceFormatsService(
+            sourceFormatNodeService,
+            documentService);
     }
 }

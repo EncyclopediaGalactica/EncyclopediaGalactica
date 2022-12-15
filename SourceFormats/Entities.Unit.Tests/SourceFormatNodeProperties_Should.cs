@@ -5,7 +5,8 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-public class SourceFormatNodePropertiesShould
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class SourceFormatNodeProperties_Should
 {
     [Fact]
     public void IdWontChange()

@@ -30,8 +30,11 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\Mappers\Mappers.csproj" />
+        <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj" />
         <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
         <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
         <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
         <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj" />
         <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
