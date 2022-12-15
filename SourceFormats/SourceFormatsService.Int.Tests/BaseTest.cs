@@ -59,7 +59,9 @@ public class BaseTest
                 sourceFormatNodeCacheService,
                 logger);
 
-        IDocumentService documentService = new DocumentService();
+        IDocumentService documentService = new DocumentService(
+            new GuardsService(),
+            mappers);
 
         _sourceFormatsService = new SourceFormatsService(
             sourceFormatNodeService,

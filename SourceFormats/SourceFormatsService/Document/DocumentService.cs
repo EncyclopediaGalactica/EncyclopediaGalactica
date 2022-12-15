@@ -3,12 +3,23 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Document;
 using Dtos;
 using Entities;
 using Interfaces.Document;
+using Mappers.Interfaces;
+using Utils.GuardsService.Interfaces;
 
-public class DocumentService : IDocumentService
+/// <inheritdoc />
+public partial class DocumentService : IDocumentService
 {
-    public async Task<DocumentDto> Add(DocumentDto dto)
+    private readonly IGuardsService _guardsService;
+    private readonly ISourceFormatMappers _mappers;
+
+    public DocumentService(
+        IGuardsService guardsService,
+        ISourceFormatMappers mappers)
     {
-        throw new NotImplementedException();
+        ArgumentNullException.ThrowIfNull(guardsService);
+        ArgumentNullException.ThrowIfNull(mappers);
+        _guardsService = guardsService;
+        _mappers = mappers;
     }
 
     public async Task<List<Document>> GetAll()

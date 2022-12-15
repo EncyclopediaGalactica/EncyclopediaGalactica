@@ -28,19 +28,29 @@ public class CtorValidation_Should
 {
     public static IEnumerable<object[]> Throw_WhenAnyCtorParamIsNull_Data => new List<object[]>
     {
-        new []{null, new DocumentService()},
-        new object[]{null!, null!},
-        new []{new SourceFormatNodeService(
-            new SourceFormatNodeDtoValidator(),
-            new GuardsService(),
-            new SourceFormatMappers(new Mock<ISourceFormatNodeMappers>().Object),
-            new SourceFormatNodeRepository(
-                new DbContextOptions<SourceFormatsDbContext>(),
-                new SourceFormatNodeValidator(),
-                new GuardsService()),
-            new SourceFormatNodeCacheService(),
-            new Mock<ILogger<SourceFormatNodeService>>().Object), null},
+        new[]
+        {
+            null,
+            new DocumentService(new GuardsService(),
+                new SourceFormatMappers(new Mock<ISourceFormatNodeMappers>().Object))
+        },
+        new object[] { null!, null! },
+        new[]
+        {
+            new SourceFormatNodeService(
+                new SourceFormatNodeDtoValidator(),
+                new GuardsService(),
+                new SourceFormatMappers(new Mock<ISourceFormatNodeMappers>().Object),
+                new SourceFormatNodeRepository(
+                    new DbContextOptions<SourceFormatsDbContext>(),
+                    new SourceFormatNodeValidator(),
+                    new GuardsService()),
+                new SourceFormatNodeCacheService(),
+                new Mock<ILogger<SourceFormatNodeService>>().Object),
+            null
+        },
     };
+
     [Theory]
     [MemberData(nameof(Throw_WhenAnyCtorParamIsNull_Data))]
     public void Throw_WhenAnyCtorParamIsNull(

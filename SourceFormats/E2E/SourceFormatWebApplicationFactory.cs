@@ -20,6 +20,7 @@ using SourceFormatsCacheService;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
 using SourceFormatsRepository;
+using SourceFormatsRepository.Document;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
 using SourceFormatsService;
@@ -71,6 +72,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             services.AddScoped<IGuardsService, GuardsService>();
             services.AddScoped<ISourceFormatNodeService, SourceFormatNodeService>();
             services.AddScoped<ISourceFormatsService, SourceFormatsService>();
+            services.AddScoped<IDocumentsRepository, DocumentRepository>();
             services.AddScoped<IDocumentService, DocumentService>();
             services.AddMvc()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<SourceFormatNodeValidator>());
