@@ -18,7 +18,7 @@ public class GetByIdValidationShould : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode.GetByIdAsync(0)
+            await Sut.SourceFormatNode.GetByIdAsync(0)
                 .ConfigureAwait(false);
         };
 

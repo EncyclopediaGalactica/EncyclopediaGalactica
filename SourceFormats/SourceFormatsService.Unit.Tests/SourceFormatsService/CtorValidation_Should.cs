@@ -17,6 +17,7 @@ using Microsoft.Extensions.Logging;
 using Moq;
 using SourceFormats.SourceFormatsService.SourceFormatNodeService;
 using SourceFormatsCacheService.SourceFormatNode;
+using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
 using Utils.GuardsService;
 using ValidatorService;
@@ -32,7 +33,10 @@ public class CtorValidation_Should
         {
             null,
             new DocumentService(new GuardsService(),
-                new SourceFormatMappers(new Mock<ISourceFormatNodeMappers>().Object))
+                new SourceFormatMappers(
+                    new Mock<ISourceFormatNodeMappers>().Object,
+                    new Mock<IDocumentMappers>().Object),
+                new Mock<IDocumentsRepository>().Object)
         },
         new object[] { null!, null! },
         new[]
@@ -40,7 +44,9 @@ public class CtorValidation_Should
             new SourceFormatNodeService(
                 new SourceFormatNodeDtoValidator(),
                 new GuardsService(),
-                new SourceFormatMappers(new Mock<ISourceFormatNodeMappers>().Object),
+                new SourceFormatMappers(
+                    new Mock<ISourceFormatNodeMappers>().Object,
+                    new Mock<IDocumentMappers>().Object),
                 new SourceFormatNodeRepository(
                     new DbContextOptions<SourceFormatsDbContext>(),
                     new SourceFormatNodeValidator(),

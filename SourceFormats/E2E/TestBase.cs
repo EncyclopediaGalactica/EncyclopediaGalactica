@@ -9,6 +9,7 @@ using EncyclopediaGalactica.Sdk.Core.Interfaces;
 using Host.RestApi;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Sdk;
+using Sdk.Document;
 using Sdk.Interfaces;
 using Sdk.SourceFormatNode;
 
@@ -30,6 +31,7 @@ public class TestBase : SourceFormatWebApplicationFactory<Program>
             new MediaTypeWithQualityHeaderValue(MediaTypeNames.Application.Json));
         ISdkCore sdkCore = new SdkCore(_httpClient);
         ISourceFormatNodeSdk sourceFormatNodeSdk = new SourceFormatNodeSdk(sdkCore);
-        SourceFormatsSdk = new SourceFormatsSdk(sourceFormatNodeSdk);
+        IDocumentsSdk documentsSdk = new DocumentSdk(sdkCore);
+        SourceFormatsSdk = new SourceFormatsSdk(sourceFormatNodeSdk, documentsSdk);
     }
 }

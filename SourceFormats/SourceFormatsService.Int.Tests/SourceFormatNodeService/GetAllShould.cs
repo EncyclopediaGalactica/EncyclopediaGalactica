@@ -24,12 +24,12 @@ public class GetAllShould : BaseTest
             Name = name
         };
 
-        await _sourceFormatsService.SourceFormatNode
+        await Sut.SourceFormatNode
             .AddAsync(dto)
             .ConfigureAwait(false);
 
         // Act
-        List<SourceFormatNodeDto> result = await _sourceFormatsService.SourceFormatNode
+        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode
             .GetAllAsync()
             .ConfigureAwait(false);
 
@@ -44,7 +44,7 @@ public class GetAllShould : BaseTest
     public async Task ReturnsResponseModel_EmptyList_WhenThereAreNoEntitiesInTheDb()
     {
         // Act
-        List<SourceFormatNodeDto> result = await _sourceFormatsService.SourceFormatNode.GetAllAsync()
+        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode.GetAllAsync()
             .ConfigureAwait(false);
 
         // Assert

@@ -8,6 +8,7 @@ using Document;
 using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using SourceFormats.SourceFormatsRepository.Document;
 using SourceFormats.SourceFormatsRepository.SourceFormatNode;
 using Utils.GuardsService;
 using ValidatorService;
@@ -23,19 +24,21 @@ public class BaseTest
     {
         SqliteConnection connection = new SqliteConnection("Filename=:memory:");
         connection.Open();
-        DbContextOptions<SourceFormatsDbContext> sourceFormatNodeDbContextOptions = new
+        DbContextOptions<SourceFormatsDbContext> sourceFormatsDbContextOptions = new
                 DbContextOptionsBuilder<SourceFormatsDbContext>()
             .UseSqlite(connection)
             .LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging().EnableDetailedErrors()
             .Options;
-        SourceFormatsDbContext ctx = new SourceFormatsDbContext(sourceFormatNodeDbContextOptions);
+        SourceFormatsDbContext ctx = new SourceFormatsDbContext(sourceFormatsDbContextOptions);
         ctx.Database.EnsureCreated();
 
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
-            sourceFormatNodeDbContextOptions,
+            sourceFormatsDbContextOptions,
             new SourceFormatNodeValidator(),
             new GuardsService());
-        IDocumentsRepository documentsRepository = new DocumentRepository();
+        IDocumentsRepository documentsRepository = new DocumentRepository(
+            sourceFormatsDbContextOptions,
+            new DocumentValidator());
         Sut = new SourceFormatsRepository(
             sourceFormatNodeRepository,
             documentsRepository);

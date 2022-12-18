@@ -16,7 +16,9 @@ public partial class SourceFormatNodeSdk
         try
         {
             ArgumentNullException.ThrowIfNull(getByIdRequestModel);
-            string uri = SourceFormatNode.Route + SourceFormatNode.GetById + $"/{getByIdRequestModel.Payload.Id}";
+            string uri = SourceFormats.SourceFormatNode.Route
+                         + SourceFormats.SourceFormatNode.GetById
+                         + $"/{getByIdRequestModel.Payload.Id}";
             HttpRequestMessageBuilder<SourceFormatNodeDto> httpRequestMessageBuilder =
                 new HttpRequestMessageBuilder<SourceFormatNodeDto>();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder

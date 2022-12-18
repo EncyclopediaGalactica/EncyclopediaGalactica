@@ -8,6 +8,7 @@ using Controllers.SourceFormatNode;
 using Ctx;
 using FluentValidation.AspNetCore;
 using Mappers;
+using Mappers.Document;
 using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
 using Microsoft.AspNetCore.Hosting;
@@ -74,6 +75,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             services.AddScoped<ISourceFormatsService, SourceFormatsService>();
             services.AddScoped<IDocumentsRepository, DocumentRepository>();
             services.AddScoped<IDocumentService, DocumentService>();
+            services.AddScoped<IDocumentMappers, DocumentMappers>();
             services.AddMvc()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<SourceFormatNodeValidator>());
             services.AddLogging(log =>

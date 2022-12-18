@@ -19,11 +19,11 @@ public class GetByIdShould : BaseTest
     {
         // Arrange
         SourceFormatNodeDto node = new SourceFormatNodeDto { Name = "asdasd" };
-        SourceFormatNodeDto entity = await _sourceFormatsService.SourceFormatNode.AddAsync(node)
+        SourceFormatNodeDto entity = await Sut.SourceFormatNode.AddAsync(node)
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeDto result = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto result = await Sut.SourceFormatNode
             .GetByIdAsync(entity.Id).ConfigureAwait(false);
 
         // Assert
@@ -38,7 +38,7 @@ public class GetByIdShould : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode.GetByIdAsync(100).ConfigureAwait(false);
+            await Sut.SourceFormatNode.GetByIdAsync(100).ConfigureAwait(false);
         };
 
         // Assert

@@ -17,22 +17,22 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIsAlreadyInTheTree_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto rootNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto rootNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("rootnode"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
 
-        SourceFormatNodeDto addParentToRoot = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addParentToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(parentNode, rootNode)
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeDto addChildToParent = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addChildToParent = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
@@ -42,7 +42,7 @@ public class AddChildToParentShould : BaseTest
         addChildToParent.Id.Should().BeGreaterThan(0);
         addChildToParent.Name.Should().Be("child");
 
-        SourceFormatNodeDto childNodeDetails = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(childNode.Id)
             .ConfigureAwait(false);
         childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
@@ -54,27 +54,27 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIdRootNode_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto rootNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto rootNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("rootnode"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto childNode2 = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode2 = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child2"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto addParentToRoot = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addParentToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(parentNode, rootNode)
             .ConfigureAwait(false);
-        SourceFormatNodeDto addChildToParent = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addChildToParent = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeDto addChild2ToRoot = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addChild2ToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode2, rootNode)
             .ConfigureAwait(false);
 
@@ -82,7 +82,7 @@ public class AddChildToParentShould : BaseTest
         addChild2ToRoot.Should().BeOfType<SourceFormatNodeDto>();
         addChild2ToRoot.Should().NotBeNull();
 
-        SourceFormatNodeDto child2 = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto child2 = await Sut.SourceFormatNode
             .GetByIdAsync(childNode2.Id)
             .ConfigureAwait(false);
         child2.Should().NotBeNull();
@@ -93,15 +93,15 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIsNotRootButShouldBe_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
-        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("child"))
             .ConfigureAwait(false);
 
         // Act
-        SourceFormatNodeDto childNodeAdded = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNodeAdded = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode)
             .ConfigureAwait(false);
 
@@ -111,12 +111,12 @@ public class AddChildToParentShould : BaseTest
         childNodeAdded.Id.Should().Be(childNode.Id);
         childNodeAdded.Name!.Should().Be(childNode.Name);
 
-        SourceFormatNodeDto childNodeDetails = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(childNode.Id)
             .ConfigureAwait(false);
         childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
 
-        SourceFormatNodeDto parentNodeDetails = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(parentNode.Id)
             .ConfigureAwait(false);
         parentNodeDetails.IsRootNode.Should().Be(1);
@@ -126,14 +126,14 @@ public class AddChildToParentShould : BaseTest
     public async Task Throw_InvalidOperationException_WhenNoSuchChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto parentNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
 
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .AddChildToParentAsync(new SourceFormatNodeDto { Id = 100 }, parentNode)
                 .ConfigureAwait(false);
         };
@@ -146,14 +146,14 @@ public class AddChildToParentShould : BaseTest
     public async Task Throw_InvalidOperationException_When_NoSuchParentEntity()
     {
         // Arrange
-        SourceFormatNodeDto childNode = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
             .AddAsync(new SourceFormatNodeDto("parent"))
             .ConfigureAwait(false);
 
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .AddChildToParentAsync(childNode, new SourceFormatNodeDto { Id = 100 })
                 .ConfigureAwait(false);
         };

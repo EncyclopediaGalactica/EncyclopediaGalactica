@@ -18,7 +18,7 @@ public partial class SourceFormatNodeSdk
             ArgumentNullException.ThrowIfNull(addRequestModel);
             ArgumentNullException.ThrowIfNull(addRequestModel.Payload);
 
-            const string url = SourceFormatNode.Route + SourceFormatNode.Add;
+            const string url = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.Add;
 
             HttpRequestMessageBuilder<SourceFormatNodeDto?> httpRequestMessageBuilder = new();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder

@@ -22,7 +22,7 @@ public class UpdateValidationShould : BaseTest
         // Act
         Func<Task> task = async() =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(null)
                 .ConfigureAwait(false);
         };
@@ -37,7 +37,7 @@ public class UpdateValidationShould : BaseTest
         // Act
         Func<Task> task = async() =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(new SourceFormatNodeDto{Id = 0})
                 .ConfigureAwait(false);
         };
@@ -59,7 +59,7 @@ public class UpdateValidationShould : BaseTest
         };
         Func<Task> task = async() =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(dto)
                 .ConfigureAwait(false);
         };

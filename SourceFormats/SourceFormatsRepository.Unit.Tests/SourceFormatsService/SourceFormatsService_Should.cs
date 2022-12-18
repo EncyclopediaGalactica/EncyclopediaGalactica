@@ -19,7 +19,9 @@ public class SourceFormatsService_Should
 {
     public static IEnumerable<object[]> Throw_ArgumentNullException_WhenInjectedIsNull_Data = new List<object[]>
     {
-        new[] { null, new DocumentRepository() },
+        new[] { null, new DocumentRepository(
+            new DbContextOptions<SourceFormatsDbContext>(),
+            new DocumentValidator()) },
         new[]
         {
             new SourceFormatNodeRepository(
