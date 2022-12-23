@@ -25,12 +25,6 @@ public partial class DocumentRepository : IDocumentsRepository
     }
 
     /// <inheritdoc />
-    public async Task<Document> GetByIdAsync(long id, CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
-    }
-
-    /// <inheritdoc />
     public async Task<List<Document>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

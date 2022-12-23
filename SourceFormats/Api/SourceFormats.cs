@@ -21,5 +21,6 @@ public struct SourceFormats
         public const string Route = SourceFormats.Route + "/document";
 
         public const string Add = "/add";
+        public const string GetById = "/getbyid";
     }
 }

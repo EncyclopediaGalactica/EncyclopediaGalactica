@@ -36,6 +36,9 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
+    /// <exception cref="Microsoft.EntityFrameworkCore.DbUpdateException">
+    ///     When a constraint is violated. It is mainly related to validation.
+    /// </exception>
     Task<SourceFormatNodeDto> AddAsync(
         SourceFormatNodeDto dto,
         CancellationToken cancellationToken = default);
