@@ -63,8 +63,8 @@ public partial class DocumentSdk_Should
 
         // Assert
         result2.Result.Should().BeNull();
-        result.HttpStatusCode.Should().Be(HttpStatusCode.BadRequest);
-        result.IsOperationSuccessful.Should().BeFalse();
+        result2.HttpStatusCode.Should().Be(HttpStatusCode.BadRequest);
+        result2.IsOperationSuccessful.Should().BeFalse();
     }
 
     [Theory]

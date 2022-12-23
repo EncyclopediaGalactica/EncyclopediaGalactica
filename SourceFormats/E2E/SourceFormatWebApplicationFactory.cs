@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Controllers.Document;
 using Controllers.SourceFormatNode;
 using Ctx;
 using FluentValidation.AspNetCore;
@@ -56,7 +57,8 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
                     o.Filters.Add<ValidationExceptionsFilter>();
                 })
                 .AddNewtonsoftJson()
-                .AddApplicationPart(typeof(SourceFormatNodeController).Assembly);
+                .AddApplicationPart(typeof(SourceFormatNodeController).Assembly)
+                .AddApplicationPart(typeof(DocumentController).Assembly);
             services.AddDbContext<SourceFormatsDbContext>(options =>
             {
                 options.UseSqlite(connection);
@@ -86,8 +88,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             });
 
             ServiceProvider? sp = services.BuildServiceProvider();
-            if (sp is null)
-                throw new ArgumentNullException(nameof(sp));
+            ArgumentNullException.ThrowIfNull(sp);
 
             using (IServiceScope scope = sp.CreateScope())
             {
