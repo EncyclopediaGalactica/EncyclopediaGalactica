@@ -28,12 +28,7 @@ public partial class DocumentService : IDocumentService
         _repository = documentsRepository;
     }
 
-    public async Task<List<Document>> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-
-    public async Task<Document> GetById(long id)
+    public async Task<List<Document>> GetAll(CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
