@@ -17,7 +17,7 @@ public partial class SourceFormatNodeSdk
         {
             ArgumentNullException.ThrowIfNull(requestModel);
 
-            String uri = SourceFormats.Route + SourceFormatNode.AddChildToParent;
+            String uri = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.AddChildToParent;
 
             HttpRequestMessageBuilder<SourceFormatNodeAddChildToParentRequestModel> builder =
                 new HttpRequestMessageBuilder<SourceFormatNodeAddChildToParentRequestModel>();

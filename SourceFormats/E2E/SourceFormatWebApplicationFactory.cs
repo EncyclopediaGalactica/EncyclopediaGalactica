@@ -4,10 +4,12 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Controllers.Document;
 using Controllers.SourceFormatNode;
 using Ctx;
 using FluentValidation.AspNetCore;
 using Mappers;
+using Mappers.Document;
 using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
 using Microsoft.AspNetCore.Hosting;
@@ -20,11 +22,14 @@ using SourceFormatsCacheService;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
 using SourceFormatsRepository;
+using SourceFormatsRepository.Document;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
 using SourceFormatsService;
+using SourceFormatsService.Document;
 using SourceFormatsService.ExceptionFilters;
 using SourceFormatsService.Interfaces;
+using SourceFormatsService.Interfaces.Document;
 using SourceFormatsService.Interfaces.SourceFormatNode;
 using SourceFormatsService.SourceFormatNodeService;
 using Utils.GuardsService;
@@ -52,7 +57,8 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
                     o.Filters.Add<ValidationExceptionsFilter>();
                 })
                 .AddNewtonsoftJson()
-                .AddApplicationPart(typeof(SourceFormatNodeController).Assembly);
+                .AddApplicationPart(typeof(SourceFormatNodeController).Assembly)
+                .AddApplicationPart(typeof(DocumentController).Assembly);
             services.AddDbContext<SourceFormatsDbContext>(options =>
             {
                 options.UseSqlite(connection);
@@ -69,6 +75,9 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             services.AddScoped<IGuardsService, GuardsService>();
             services.AddScoped<ISourceFormatNodeService, SourceFormatNodeService>();
             services.AddScoped<ISourceFormatsService, SourceFormatsService>();
+            services.AddScoped<IDocumentsRepository, DocumentRepository>();
+            services.AddScoped<IDocumentService, DocumentService>();
+            services.AddScoped<IDocumentMappers, DocumentMappers>();
             services.AddMvc()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<SourceFormatNodeValidator>());
             services.AddLogging(log =>
@@ -79,8 +88,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             });
 
             ServiceProvider? sp = services.BuildServiceProvider();
-            if (sp is null)
-                throw new ArgumentNullException(nameof(sp));
+            ArgumentNullException.ThrowIfNull(sp);
 
             using (IServiceScope scope = sp.CreateScope())
             {

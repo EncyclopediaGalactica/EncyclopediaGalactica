@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.Mappers.Unit.Tests;
 
 using System.Diagnostics.CodeAnalysis;
+using Document;
 using Dtos;
 using Entities;
 using FluentAssertions;
@@ -9,14 +10,15 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [Collection("Mappers")]
-public class SourceFormatNodeMappersShould
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class SourceFormatNodeMappers_Should
 {
     private readonly SourceFormatMappers _mappers;
 
-    public SourceFormatNodeMappersShould()
+    public SourceFormatNodeMappers_Should()
     {
         _mappers = new SourceFormatMappers(
-            new SourceFormatNodeMappers());
+            new SourceFormatNodeMappers(), new DocumentMappers());
     }
 
     [Fact]

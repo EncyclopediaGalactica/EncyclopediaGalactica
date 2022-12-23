@@ -18,7 +18,7 @@ public class DeleteValidationShould : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode.DeleteAsync(null!)
+            await Sut.SourceFormatNode.DeleteAsync(null!)
                 .ConfigureAwait(false);
         };
 
@@ -32,7 +32,7 @@ public class DeleteValidationShould : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto{Id = 0})
+            await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto{Id = 0})
                 .ConfigureAwait(false);
         };
 

@@ -5,6 +5,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [Collection("E2E")]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public partial class SourceFormatNodeSdk_Should : TestBase
 {
 }

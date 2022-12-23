@@ -3,15 +3,16 @@ namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Unit.Tests
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
+using EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.SourceFormatNode;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
-using SourceFormats.SourceFormatsRepository.SourceFormatNode;
 using Utils.GuardsService;
 using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-public class SourceFormatNodeShould
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class SourceFormatNode_Should
 {
     [Fact]
     public void Throw_WhenInjectedServicesAreNull()

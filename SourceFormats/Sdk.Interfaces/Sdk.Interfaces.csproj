@@ -9,9 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
-        <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj"/>
-        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj"/>
+        <ProjectReference Include="..\Dtos\Dtos.csproj" />
+        <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj" />
+        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj" />
     </ItemGroup>
 
 </Project>

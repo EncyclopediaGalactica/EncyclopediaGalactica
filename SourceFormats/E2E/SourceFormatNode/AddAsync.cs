@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.SourceFormats.E2E.SourceFormatNode;
 
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
@@ -71,6 +72,7 @@ public partial class SourceFormatNodeSdk_Should
         responseModel2.Should().NotBeNull();
         responseModel2.Should().BeOfType<SourceFormatNodeAddResponseModel>();
         responseModel2.IsOperationSuccessful.Should().BeFalse();
+        responseModel2.HttpStatusCode.Should().Be(HttpStatusCode.BadRequest);
         responseModel2.Message.Substring(1, responseModel2.Message.Length - 2)
             .Should().Be(SourceFormatsServiceResultStatuses.ValidationError);
         responseModel2.Result.Should().BeNull();

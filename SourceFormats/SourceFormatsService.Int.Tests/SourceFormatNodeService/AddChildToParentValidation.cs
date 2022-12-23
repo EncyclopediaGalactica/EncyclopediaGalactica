@@ -24,7 +24,7 @@ public class AddChildToParentValidation : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .AddChildToParentAsync(child, parent)
                 .ConfigureAwait(false);
         };
@@ -43,7 +43,7 @@ public class AddChildToParentValidation : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .AddChildToParentAsync(child, parent)
                 .ConfigureAwait(false);
         };
@@ -62,7 +62,7 @@ public class AddChildToParentValidation : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .AddChildToParentAsync(child, parent)
                 .ConfigureAwait(false);
         };

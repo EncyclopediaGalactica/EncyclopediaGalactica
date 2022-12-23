@@ -18,7 +18,7 @@ public partial class SourceFormatNodeSdk
             ArgumentNullException.ThrowIfNull(deleteRequestModel);
             ArgumentNullException.ThrowIfNull(deleteRequestModel.Payload);
 
-            const string url = SourceFormatNode.Route + SourceFormatNode.Delete;
+            const string url = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.Delete;
 
             HttpRequestMessageBuilder<SourceFormatNodeDto?> httpRequestMessageBuilder = new();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder

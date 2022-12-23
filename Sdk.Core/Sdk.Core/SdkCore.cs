@@ -46,6 +46,7 @@ public class SdkCore : ISdkCore
             string payload = await httpResponseMessage.Content.ReadAsStringAsync(cancellationToken)
                 .ConfigureAwait(false);
             result.Message = payload;
+            result.HttpStatusCode = httpResponseMessage.StatusCode;
 
             return result;
         }

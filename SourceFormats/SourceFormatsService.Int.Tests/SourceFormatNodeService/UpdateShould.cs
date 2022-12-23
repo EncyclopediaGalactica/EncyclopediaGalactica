@@ -21,7 +21,7 @@ public class UpdateShould : BaseTest
         {
             Name = "asd"
         };
-        SourceFormatNodeDto addResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto addResponseModel = await Sut.SourceFormatNode
             .AddAsync(dto).ConfigureAwait(false);
         string updatedName = "asdasd";
         SourceFormatNodeDto updateTemplate = new()
@@ -31,7 +31,7 @@ public class UpdateShould : BaseTest
         };
 
         // Act
-        SourceFormatNodeDto updateResponseModel = await _sourceFormatsService.SourceFormatNode
+        SourceFormatNodeDto updateResponseModel = await Sut.SourceFormatNode
             .UpdateSourceFormatNodeAsync(updateTemplate)
             .ConfigureAwait(false);
 
@@ -54,7 +54,7 @@ public class UpdateShould : BaseTest
         // Act
         Func<Task> task = async() =>
         {
-            await _sourceFormatsService.SourceFormatNode
+            await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
         };
 

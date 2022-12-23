@@ -1,7 +1,9 @@
 ﻿namespace EncyclopediaGalactica.SourceFormats.QA.Datasets;
 
+using System.Diagnostics.CodeAnalysis;
 using Dtos;
 
+[ExcludeFromCodeCoverage]
 public static class SourceFormatNodeDatasets
 {
     public static IEnumerable<object?[]> AddValidationDataSet => new List<object?[]>

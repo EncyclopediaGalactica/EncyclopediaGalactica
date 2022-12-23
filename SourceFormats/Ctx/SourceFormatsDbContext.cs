@@ -14,6 +14,7 @@ public class SourceFormatsDbContext : DbContext
     }
 
     public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
+    public DbSet<Document> Documents => Set<Document>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -46,6 +47,14 @@ public class SourceFormatsDbContext : DbContext
             .HasForeignKey(k => k.RootNodeId)
             .IsRequired(false);
 
+        modelBuilder.Entity<Document>().ToTable("document");
+        modelBuilder.Entity<Document>().HasKey(k => k.Id);
+        modelBuilder.Entity<Document>().Property(k => k.Id).ValueGeneratedOnAdd();
+        modelBuilder.Entity<Document>().Property(k => k.Id).HasColumnName("id");
+        modelBuilder.Entity<Document>().Property(k => k.Name).HasColumnName("name");
+        modelBuilder.Entity<Document>().HasIndex(k => k.Name).IsUnique();
+        modelBuilder.Entity<Document>().Property(k => k.Description).HasColumnName("description");
+        modelBuilder.Entity<Document>().Property(k => k.Uri).HasColumnName("uri");
 #pragma warning restore CA1062
     }
 }

@@ -6,15 +6,19 @@ using Ctx;
 using Entities;
 using FluentValidation;
 using Interfaces;
+using Interfaces.Document;
 using Interfaces.SourceFormatNode;
 using Mappers;
+using Mappers.Document;
 using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using SourceFormats.SourceFormatsService.Document;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
+using SourceFormatsRepository.Document;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
 using Utils.GuardsService;
@@ -23,7 +27,7 @@ using ValidatorService;
 [ExcludeFromCodeCoverage]
 public class BaseTest
 {
-    protected readonly ISourceFormatsService _sourceFormatsService;
+    protected readonly ISourceFormatsService Sut;
 
     public BaseTest()
     {
@@ -32,7 +36,10 @@ public class BaseTest
         SourceFormatNodeDtoValidator validator = new();
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
-        ISourceFormatMappers mappers = new SourceFormatMappers(sourceFormatNodeMappers);
+        IDocumentMappers documentMappers = new DocumentMappers();
+        ISourceFormatMappers mappers = new SourceFormatMappers(
+            sourceFormatNodeMappers,
+            documentMappers);
 
         DbContextOptions<SourceFormatsDbContext> dbContextOptions =
             new DbContextOptionsBuilder<SourceFormatsDbContext>()
@@ -56,6 +63,17 @@ public class BaseTest
                 sourceFormatNodeRepository,
                 sourceFormatNodeCacheService,
                 logger);
-        _sourceFormatsService = new SourceFormatsService(sourceFormatNodeService);
+
+        IValidator<Entities.Document> documentValidator = new DocumentValidator();
+        IDocumentsRepository documentsRepository = new DocumentRepository(
+            dbContextOptions, documentValidator);
+        IDocumentService documentService = new DocumentService(
+            new GuardsService(),
+            mappers,
+            documentsRepository);
+
+        Sut = new SourceFormatsService(
+            sourceFormatNodeService,
+            documentService);
     }
 }

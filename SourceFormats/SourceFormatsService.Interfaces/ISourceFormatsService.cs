@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
 
+using Document;
 using SourceFormatNode;
 
 /// <summary>
@@ -11,4 +12,9 @@ public interface ISourceFormatsService
     ///     Gets the SourceFormatNode service.
     /// </summary>
     ISourceFormatNodeService SourceFormatNode { get; }
+
+    /// <summary>
+    ///     Gets the Document service.
+    /// </summary>
+    IDocumentService DocumentService { get; }
 }
