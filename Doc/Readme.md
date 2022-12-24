@@ -44,7 +44,7 @@ or content.
 
 ## The document
 
-A [Document](Document/Readme.md) to be processed has a lot of properties, you may call it meta
+A [Document](Entities/Document/Readme.md) to be processed has a lot of properties, you may call it meta
 data, which might define how the processing happens. For example:
 
 - Type
@@ -62,5 +62,5 @@ uploaded.
 
 The system should know the structure of the input data. It can be any text based format like
 XML, RSS, ODT or RTF, or whatever else. This structure is described
-by [SourceFormatNodes](SourceFormats/Readme.md).
+by [SourceFormatNodes](Entities/SourceFormats/Readme.md).
 
