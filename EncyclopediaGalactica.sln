@@ -112,6 +112,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardsService.Interfaces", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsService.ExceptionFilters", "SourceFormats\SourceFormatsService.ExceptionFilters\SourceFormatsService.ExceptionFilters.csproj", "{5B9AE273-D07B-455B-8139-DC749F889D6E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sdk.Generator", "Sdk.Generator", "{7AE47060-BBCC-4DBD-9934-B6F54B79DC61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
