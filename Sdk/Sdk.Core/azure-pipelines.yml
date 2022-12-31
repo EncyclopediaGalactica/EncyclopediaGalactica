@@ -116,7 +116,7 @@ stages:
           - script: |
               pwd
               ls -la
-              npx semantic-release
+              npx semantic-release --debug
             displayName: Semantic Release
             env:
               GH_TOKEN: $(githubToken)
