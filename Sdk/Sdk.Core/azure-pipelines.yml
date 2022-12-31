@@ -110,11 +110,14 @@ stages:
             displayName: PATH
           - script: |
               cp -f Sdk/Sdk.Core/.releaserc `pwd`
+              ls -la
             displayName: copy .releaserc
           - script: |
               cp -f Sdk/Sdk.Core/.bumpversion.cfg `pwd`
+              ls -la
             displayName: copy .bumpversion.cfg
           - script: |
+              ls -la
               npx semantic-release --debug
             displayName: Semantic Release
             env:
