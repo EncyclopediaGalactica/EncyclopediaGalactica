@@ -27,20 +27,24 @@ stages:
         displayName: Restore Solution
         steps:
           - script: |
-              echo "dotnet restore $sdkCoreSolutionName"
-              dotnet restore $sdkCoreSolutionName
+              echo "COMMAND===> dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $sdkCoreSolutionName
+          - script: |
+              echo "COMMAND===> dotnet build Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet build Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution
         steps:
-          - script: dotnet test $sdkCoreSolutionName
+          - script: |
+              echo "COMMAND===> dotnet test Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet test Sdk/Sdk.Core/Sdk.Core.sln
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
@@ -48,19 +52,25 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: |
+              echo "COMMAND===> dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: |
+              echo "COMMAND===> dotnet build Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet build Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution
         steps:
-          - script: dotnet test $solutionName
+          - script: |
+              echo "COMMAND===> dotnet test Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet test Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: install_semantic
         displayName: Install Semantic-Release
