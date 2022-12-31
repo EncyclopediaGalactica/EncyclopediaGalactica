@@ -1,6 +1,6 @@
 {
   "debug": true,
-  "tagFormat": "Sdk.Core - ${version}",
+  "tagFormat": "sdk.core-${version}",
   "branches": [ "main" ],
   "plugins": [
     "@semantic-release/commit-analyzer",
