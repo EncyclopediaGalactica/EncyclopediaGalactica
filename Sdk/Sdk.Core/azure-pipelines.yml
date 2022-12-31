@@ -74,13 +74,13 @@ stages:
 
       - job: nuget
         displayName: Nuget
-        dependsOn: semantic_release
+        dependsOn: test_solution
         workspace:
           clean: all
         steps:
           - script: |
-              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
-              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Model.Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
+              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Core.nuspec
+              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Model.Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Interfaces.nuspec
             displayName: packaging
 
           - script: |
@@ -92,7 +92,7 @@ stages:
 
       - job: install_semantic
         displayName: Install Semantic-Release
-        dependsOn: test_solution
+        dependsOn: nuget
         steps:
           - script: |
               echo '##vso[task.prependpath]$(HOME)/.local/bin'
