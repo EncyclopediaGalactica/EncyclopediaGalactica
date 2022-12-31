@@ -110,9 +110,12 @@ stages:
             displayName: PATH
           - script: |
               cp -f Sdk/Sdk.Core/.releaserc .
+              pwd
+              ls -l
+            displayName: copy .releaserc
           - script: |
-              echo "COMMAND===> npx semantic-release"
-              echo "COMMAND===> "$GH_TOKEN
+              pwd
+              ls -
               npx semantic-release
             displayName: Semantic Release
             env:
