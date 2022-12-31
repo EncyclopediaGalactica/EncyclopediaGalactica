@@ -1,0 +1,62 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+    - Sdk/Sdk.Core/**
+
+pool: 'contabo'
+
+variables:
+  solutionName: 'Sdk.Core.sln'
+
+stages:
+  - stage: Variables
+    jobs:
+      - job:
+        steps:
+          - script: |
+              echo $PATH
+              env | sort
+
+  - stage: Feature_branch
+    condition: ne(variables['System.PullRequest.SourceBranch'], '')
+    jobs:
+      - job: restore_solution
+        displayName: Restore Solution
+        steps:
+          - script: dotnet restore $solutionName
+
+      - job: build_solution
+        displayName: Build Solution
+        dependsOn: restore_solution
+        steps:
+          - script: dotnet build $solutionName
+
+      - job: test_solution
+        displayName: Test Solution
+        dependsOn: build_solution
+        steps:
+          - script: dotnet test $solutionName
+
+  - stage: Main_branch
+    condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
+    jobs:
+      - job: restore_solution
+        displayName: Restore Solution
+        steps:
+          - script: dotnet restore $solutionName
+
+      - job: build_solution
+        displayName: Build Solution
+        dependsOn: restore_solution
+        steps:
+          - script: dotnet build $solutionName
+
+      - job: test_solution
+        displayName: Test Solution
+        dependsOn: build_solution
+        steps:
+          - script: dotnet test $solutionName
+    

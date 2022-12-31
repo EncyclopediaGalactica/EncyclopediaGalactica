@@ -1,0 +1,10 @@
+{
+    "openapi_specification_path": "single_dto_tests_generating_should.yaml",
+    "solution_directory": "./",
+    "solution_base_namespace": "EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.DtoGeneration.SingleDtoTests",
+    "skip_dto_generating": false,
+    "skip_dto_tests_generating": false,
+    "skip_request_model_generating": true,
+    "skip_request_model_tests_generating": true,
+    "test_mode": true
+}

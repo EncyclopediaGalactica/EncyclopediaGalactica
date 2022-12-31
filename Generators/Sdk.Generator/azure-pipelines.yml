@@ -4,11 +4,7 @@ trigger:
       - main
   paths:
     exclude:
-    - Doc/**
-    - Generators/**
-    - Host/**
-    - Sdk/**
-    - Services/**
+    - Generators/Sdk.Generators/**
 
 pool: 'contabo'
 

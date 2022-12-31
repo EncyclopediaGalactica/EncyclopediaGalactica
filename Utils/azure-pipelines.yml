@@ -3,17 +3,13 @@ trigger:
     include:
       - main
   paths:
-    exclude:
-    - Doc/**
-    - Generators/**
-    - Host/**
-    - Sdk/**
-    - Services/**
+    include:
+    - Utils/**
 
 pool: 'contabo'
 
-# variables:
-#   solutionName: 'EncyclopediaGalactica.sln'
+variables:
+  solutionName: 'EncyclopediaGalactica.sln'
 
 # stages:
 #   - stage: Variables

@@ -1,0 +1,10 @@
+{
+    "openapi_specification_path": "dto_filename_collection_should.yaml",
+    "solution_directory": "inplace",
+    "solution_base_namespace": "EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.DtoInfoCollection",
+    "skip_dto_generating": true,
+    "skip_dto_tests_generating": true,
+    "skip_request_model_generating": true,
+    "skip_request_model_tests_generating": true,
+    "test_mode": true
+}

@@ -1,0 +1,17 @@
+namespace {{this.Namespace}};
+
+/// <summary>
+///     The {{this.FileName}} object.
+/// </summary>
+public class {{this.FileName}}
+{
+{{#each this.PropertyInfos}}
+    /// <summary>
+    ///     Gets or set the {{PropertyName}} property's value
+    /// </summary>
+    public {{PropertyTypeName}}{{#IsNullable}}?{{/IsNullable}} {{PropertyName}} { get; set; }
+    {{#unless @last}}
+
+    {{/unless}}
+{{/each}}
+}
