@@ -4,7 +4,6 @@ using Model.Interfaces;
 
 /// <summary>
 /// The Sdk Core Interface
-/// <remarks></remarks>
 /// </summary>
 public interface ISdkCore
 {
