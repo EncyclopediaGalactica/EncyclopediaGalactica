@@ -25,12 +25,8 @@ stages:
     jobs:
       - job: restore_solution
         displayName: Restore Solution
-        workingDirectory: Sdk/Sdk.Core
         steps:
           - script: |
-              echo '$(System.DefaultWorkingDirectory)'
-              dir
-              dir subfoldername
               echo "COMMAND===> dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
               dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
@@ -112,6 +108,8 @@ stages:
           - script: |
               echo '##vso[task.prependpath]$(HOME)/.local/bin'
             displayName: PATH
+          - script: |
+              cp -f Sdk/Sdk.Core/.releaserc .
           - script: |
               echo "COMMAND===> npx semantic-release"
               echo "COMMAND===> "$GH_TOKEN
