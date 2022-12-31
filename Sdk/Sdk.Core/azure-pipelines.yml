@@ -27,8 +27,8 @@ stages:
         displayName: Restore Solution
         steps:
           - script: |
+              echo "dotnet restore Sdk.Core.sln"
               dotnet restore Sdk.Core.sln
-              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
