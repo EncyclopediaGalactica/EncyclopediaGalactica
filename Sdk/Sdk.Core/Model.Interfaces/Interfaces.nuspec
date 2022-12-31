@@ -16,6 +16,6 @@
                 branch="main"/>
     </metadata>
     <files>
-        <file src="bin$configuration$$id$.xml"/>
+        <file src="bin/Release/net7.0/EncyclopediaGalactica.Sdk.Core.Model.Interfaces.xml"/>
     </files>
 </package>

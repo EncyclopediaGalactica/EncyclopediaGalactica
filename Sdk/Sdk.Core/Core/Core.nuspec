@@ -13,6 +13,6 @@
                 branch="main"/>
     </metadata>
     <files>
-        <file src="bin$configuration$$id$.xml"/>
+        <file src="bin/Release/net7.0/EncyclopediaGalactica.Sdk.Core.xml"/>
     </files>
 </package>
