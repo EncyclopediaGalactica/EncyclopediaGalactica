@@ -72,6 +72,24 @@ stages:
               echo "COMMAND===> dotnet test Sdk/Sdk.Core/Sdk.Core.sln"
               dotnet test Sdk/Sdk.Core/Sdk.Core.sln
 
+      - job: nuget
+        displayName: Nuget
+        dependsOn: semantic_release
+        workspace:
+          clean: all
+        steps:
+          - script: |
+              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
+              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Model.Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
+            displayName: packaging
+
+          - script: |
+              dotnet nuget push Sdk/Sdk.Core/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+              dotnet nuget push Sdk/Sdk.Core/Model.Interfaces/bin/Release/EncyclopediaGalactica.Sdk.Core.Model.Interfaces`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+            displayName: publish nuget
+            env:
+              GH_TOKEN: $(githubToken)
+
       - job: install_semantic
         displayName: Install Semantic-Release
         dependsOn: test_solution
@@ -120,24 +138,6 @@ stages:
               ls -la
               npx semantic-release --debug
             displayName: Semantic Release
-            env:
-              GH_TOKEN: $(githubToken)
-
-      - job: nuget
-        displayName: Nuget
-        dependsOn: semantic_release
-        workspace:
-          clean: all
-        steps:
-          - script: |
-              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
-              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Model.Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
-            displayName: packaging
-              
-          - script: |
-              dotnet nuget push Sdk/Sdk.Core/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
-              dotnet nuget push Sdk/Sdk.Core/Model.Interfaces/bin/Release/EncyclopediaGalactica.Sdk.Core.Model.Interfaces`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
-            displayName: publish nuget
             env:
               GH_TOKEN: $(githubToken)
               

@@ -2,7 +2,7 @@
 <package>
     <metadata>
         <id>EncyclopediaGalactica.Sdk.Core</id>
-        <version>1.0.1</version>
+        <version>1.0.0</version>
         <authors>Andras Csanyi</authors>
         <description>SDK Core library of Encyclopedia Galactica</description>
         <projectUrl>https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/tree/main/Sdk/Sdk.Core</projectUrl>
