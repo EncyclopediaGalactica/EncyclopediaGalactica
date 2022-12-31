@@ -13,6 +13,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{93B11F0E-0824-4CE5-9B4F-044271D25D04}"
 	ProjectSection(SolutionItems) = preProject
 		azure-pipelines.yml = azure-pipelines.yml
+		CHANGELOG.md = CHANGELOG.md
+		version.txt = version.txt
+		.bumpversion.cfg = .bumpversion.cfg
+		.releaserc = .releaserc
 	EndProjectSection
 EndProject
 Global

@@ -15,7 +15,7 @@
     [
       "@semantic-release/git", 
       {
-        "assets" : [ "CHANGELOG.md" ],
+        "assets" : [ "Sdk/Sdk.Core/CHANGELOG.md" ],
         "message": "chore(release): ${nextRelease.version} release notes\n\n${nextRelease.notes} [skip ci]"
       }
     ],
