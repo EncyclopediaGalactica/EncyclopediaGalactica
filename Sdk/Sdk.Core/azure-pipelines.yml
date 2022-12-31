@@ -26,7 +26,9 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: |
+              dotnet restore Sdk.Core.sln
+              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
