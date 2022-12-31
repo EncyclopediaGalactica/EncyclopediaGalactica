@@ -9,7 +9,7 @@ trigger:
 pool: 'contabo'
 
 variables:
-  solutionName: 'Sdk.Core.sln'
+  solutionName: 'Sdk/Sdk.Core/Sdk.Core.sln'
 
 stages:
   - stage: Variables
@@ -109,15 +109,13 @@ stages:
           clean: all
         steps:
           - script: |
-              dotnet pack Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Core/Core.nuspec
-              dotnet pack Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Model.Interfaces/Interfaces.nuspec
+              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
+              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
             displayName: packaging
               
           - script: |
-              dotnet nuget push src/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $NUGET_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+              dotnet nuget push Sdk/Sdk.Core/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
             displayName: publish nuget
             env:
               GH_TOKEN: $(githubToken)
-              USERNAME: $(githubUserName)
-              NUGET_TOKEN: $(nugetToken)
               
