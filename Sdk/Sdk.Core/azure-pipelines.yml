@@ -9,7 +9,7 @@ trigger:
 pool: 'contabo'
 
 variables:
-  solutionName: 'Sdk/Sdk.Core/Sdk.Core.sln'
+  sdkCoreSolutionName: 'Sdk/Sdk.Core/Sdk.Core.sln'
 
 stages:
   - stage: Variables
@@ -27,20 +27,20 @@ stages:
         displayName: Restore Solution
         steps:
           - script: |
-              echo "dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
-              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
+              echo "dotnet restore $sdkCoreSolutionName"
+              dotnet restore $sdkCoreSolutionName
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: dotnet build $sdkCoreSolutionName
 
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution
         steps:
-          - script: dotnet test $solutionName
+          - script: dotnet test $sdkCoreSolutionName
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
