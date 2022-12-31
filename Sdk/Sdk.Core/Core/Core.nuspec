@@ -12,4 +12,7 @@
                 url="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/tree/main/Sdk/Sdk.Core"
                 branch="main"/>
     </metadata>
+    <files>
+        <file src="bin$configuration$$id$.xml"/>
+    </files>
 </package>

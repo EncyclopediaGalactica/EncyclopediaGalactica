@@ -134,6 +134,7 @@ stages:
               
           - script: |
               dotnet nuget push Sdk/Sdk.Core/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+              dotnet nuget push Sdk/Sdk.Core/Model.Interfaces/bin/Release/EncyclopediaGalactica.Sdk.Core.Model.Interfaces`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
             displayName: publish nuget
             env:
               GH_TOKEN: $(githubToken)
