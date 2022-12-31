@@ -9,7 +9,7 @@ trigger:
 pool: 'contabo'
 
 variables:
-  solutionName: 'Sdk.Core.sln'
+  sdkCoreSolutionName: 'Sdk/Sdk.Core/Sdk.Core.sln'
 
 stages:
   - stage: Variables
@@ -26,19 +26,25 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: |
+              echo "COMMAND===> dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: |
+              echo "COMMAND===> dotnet build Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet build Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution
         steps:
-          - script: dotnet test $solutionName
+          - script: |
+              echo "COMMAND===> dotnet test Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet test Sdk/Sdk.Core/Sdk.Core.sln
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
@@ -46,19 +52,25 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: |
+              echo "COMMAND===> dotnet restore Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet restore Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: |
+              echo "COMMAND===> dotnet build Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet build Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: test_solution
         displayName: Test Solution
         dependsOn: build_solution
         steps:
-          - script: dotnet test $solutionName
+          - script: |
+              echo "COMMAND===> dotnet test Sdk/Sdk.Core/Sdk.Core.sln"
+              dotnet test Sdk/Sdk.Core/Sdk.Core.sln
 
       - job: install_semantic
         displayName: Install Semantic-Release
@@ -109,12 +121,12 @@ stages:
           clean: all
         steps:
           - script: |
-              dotnet pack Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Core/Core.nuspec
-              dotnet pack Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Model.Interfaces/Interfaces.nuspec
+              dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
+              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
             displayName: packaging
               
           - script: |
-              dotnet nuget push src/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+              dotnet nuget push Sdk/Sdk.Core/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $GH_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
             displayName: publish nuget
             env:
               GH_TOKEN: $(githubToken)
