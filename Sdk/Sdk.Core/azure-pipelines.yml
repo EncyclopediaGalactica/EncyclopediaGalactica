@@ -109,6 +109,8 @@ stages:
               echo '##vso[task.prependpath]$(HOME)/.local/bin'
             displayName: PATH
           - script: |
+              cp -f Sdk/Sdk.Core/.releaserc .
+          - script: |
               echo "COMMAND===> npx semantic-release"
               echo "COMMAND===> "$GH_TOKEN
               npx semantic-release
