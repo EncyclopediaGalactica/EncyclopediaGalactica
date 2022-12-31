@@ -131,7 +131,7 @@ stages:
         steps:
           - script: |
               dotnet pack Sdk/Sdk.Core/Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Core/Core.nuspec
-              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
+              dotnet pack Sdk/Sdk.Core/Model.Interfaces/Model.Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Sdk/Sdk.Core/Model.Interfaces/Interfaces.nuspec
             displayName: packaging
               
           - script: |
