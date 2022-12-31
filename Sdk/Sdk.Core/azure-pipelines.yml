@@ -4,7 +4,7 @@ trigger:
       - main
   paths:
     include:
-    - Sdk/Sdk.Core/**
+      - Sdk/Sdk.Core/**
 
 pool: 'contabo'
 
@@ -59,4 +59,65 @@ stages:
         dependsOn: build_solution
         steps:
           - script: dotnet test $solutionName
-    
+
+      - job: install_semantic
+        displayName: Install Semantic-Release
+        dependsOn: test_solution
+        steps:
+          - script: |
+              echo '##vso[task.prependpath]$(HOME)/.local/bin'
+            displayName: PATH
+          - script: |
+              npm install npm
+            displayName: install npm
+          - script: |
+              npm install semantic-release
+            displayName: install semantic-release
+          - script: |
+              npm install @semantic-release/changelog
+            displayName: install changelog
+          - script: |
+              npm install @semantic-release/exec
+            displayName: install exec
+          - script: |
+              npm install @semantic-release/git
+            displayName: install semantic-git
+          - script: |
+              npm install @semantic-release/github
+            displayName: install semantic-github
+          - script: |
+              pip3 install --user bump2version
+            displayName: install bump2version
+
+      - job: semantic_release
+        displayName: Semantic Release
+        dependsOn: install_semantic
+        steps:
+          - script: |
+              echo '##vso[task.prependpath]$(HOME)/.local/bin'
+            displayName: PATH
+          - script: |
+              npx semantic-release
+            displayName: Semantic Release
+            env:
+              GH_TOKEN: $(githubToken)
+
+      - job: nuget
+        displayName: Nuget
+        dependsOn: semantic_release
+        workspace:
+          clean: all
+        steps:
+          - script: |
+              dotnet pack Core/Core.csproj --configuration Release --include-symbols -p:NuspecFile=Core/Core.nuspec
+              dotnet pack Model.Interfaces/Interfaces.csproj --configuration Release --include-symbols -p:NuspecFile=Model.Interfaces/Interfaces.nuspec
+            displayName: packaging
+              
+          - script: |
+              dotnet nuget push src/Core/bin/Release/EncyclopediaGalactica.Sdk.Core.`cat version.txt`.nupkg --api-key $NUGET_TOKEN --source "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json" --skip-duplicate
+            displayName: publish nuget
+            env:
+              GH_TOKEN: $(githubToken)
+              USERNAME: $(githubUserName)
+              NUGET_TOKEN: $(nugetToken)
+              

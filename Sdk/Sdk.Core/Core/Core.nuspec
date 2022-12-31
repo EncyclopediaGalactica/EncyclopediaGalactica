@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<package>
+    <metadata>
+        <id>EncyclopediaGalactica.Sdk.Core</id>
+        <version>0.1.23</version>
+        <authors>Andras Csanyi</authors>
+        <description>SDK Core library of Encyclopedia Galactica</description>
+        <projectUrl>https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/tree/main/Sdk/Sdk.Core</projectUrl>
+        <title>SDK Core library for SDK clients to communicate with Encyclopedia Galactica system</title>
+        <repository
+                type="git"
+                url="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/tree/main/Sdk/Sdk.Core"
+                branch="main"/>
+    </metadata>
+</package>
