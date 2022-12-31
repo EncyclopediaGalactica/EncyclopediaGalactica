@@ -109,22 +109,17 @@ stages:
               echo '##vso[task.prependpath]$(HOME)/.local/bin'
             displayName: PATH
           - script: |
-              echo "COMMAND===> " $CURR_DIR
-              echo "COMMAND===> " $RELEASERC
-              echo "COMMAND===> " cp -f $RELEASERC $CURR_DIR 
-              cp -f $RELEASERC $CURR_DIR
+              cp -f Sdk/Sdk.Core/.releaserc `pwd`
               pwd
-              ls -l
+              ls -la
             displayName: copy .releaserc
           - script: |
-              echo "COMMAND==> " pwd
-              ls -l
+              pwd
+              ls -la
               npx semantic-release
             displayName: Semantic Release
             env:
               GH_TOKEN: $(githubToken)
-              CURR_DIR: pwd
-              RELEASERC: CURR_DIR/Sdk/Sdk.Core/.releaserc
 
       - job: nuget
         displayName: Nuget
