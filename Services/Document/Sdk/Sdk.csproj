@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Client\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj" />
+        <ProjectReference Include="..\..\..\Client\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Client\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Client\Sdk.Core\Sdk.Core.csproj" />
+        <ProjectReference Include="..\Api\Api.csproj" />
+        <ProjectReference Include="..\Dtos\Dtos.csproj" />
+        <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj" />
+        <ProjectReference Include="..\Sdk.Interfaces\Sdk.Interfaces.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    </ItemGroup>
+
+</Project>
