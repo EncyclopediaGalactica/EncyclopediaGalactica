@@ -26,17 +26,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F0
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{100CBD13-1C4F-4743-8776-A596E8E7D4BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core", "Client\Sdk.Core\Sdk.Core.csproj", "{DCD95EDA-2FA2-433D-9DC5-3C802941F692}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Client\Core\Core.csproj", "{DCD95EDA-2FA2-433D-9DC5-3C802941F692}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Exceptions", "Client\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj", "{6A09CBB8-26F3-4192-AE9F-384D996ADB47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Exceptions", "Client\Core.Exceptions\Core.Exceptions.csproj", "{6A09CBB8-26F3-4192-AE9F-384D996ADB47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Tests.Int", "Client\Sdk.Core.Tests.Int\Sdk.Core.Tests.Int.csproj", "{F3C00757-E616-448E-80D1-438AC1B5A1CD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests.Int", "Client\Core.Tests.Int\Core.Tests.Int.csproj", "{F3C00757-E616-448E-80D1-438AC1B5A1CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Interfaces", "Client\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj", "{C8ED42B5-C8D2-4E32-B098-9BD25980E1DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Interfaces", "Client\Core.Interfaces\Core.Interfaces.csproj", "{C8ED42B5-C8D2-4E32-B098-9BD25980E1DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Model.Interfaces", "Client\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj", "{0AAA98D2-3FFC-47E4-B926-2A4D751336F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Model.Interfaces", "Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj", "{0AAA98D2-3FFC-47E4-B926-2A4D751336F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Tests.Unit", "Client\Sdk.Core.Tests.Unit\Sdk.Core.Tests.Unit.csproj", "{F5399C56-52B7-48C7-B7B1-FC32DA299A9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests.Unit", "Client\Core.Tests.Unit\Core.Tests.Unit.csproj", "{F5399C56-52B7-48C7-B7B1-FC32DA299A9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Services\Document\Api\Api.csproj", "{6F1EE7C2-C59D-4CE4-9275-270108F68419}"
 EndProject

@@ -25,10 +25,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Client\Sdk.Core.Exceptions\Sdk.Core.Exceptions.csproj" />
-        <ProjectReference Include="..\..\..\Client\Sdk.Core.Interfaces\Sdk.Core.Interfaces.csproj" />
-        <ProjectReference Include="..\..\..\Client\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj" />
-        <ProjectReference Include="..\..\..\Client\Sdk.Core\Sdk.Core.csproj" />
+        <ProjectReference Include="..\..\..\Client\Core.Exceptions\Core.Exceptions.csproj" />
+        <ProjectReference Include="..\..\..\Client\Core.Interfaces\Core.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Client\Core\Core.csproj" />
         <ProjectReference Include="..\..\..\Host\RestApi\RestApi.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />

@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj"/>
+        <ProjectReference Include="..\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
     </ItemGroup>
 
 </Project>
