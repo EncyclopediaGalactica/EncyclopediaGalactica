@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit</AssemblyName>
+
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit</RootNamespace>
+
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.8.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.1" />
+        <PackageReference Include="Moq" Version="4.18.3" />
+        <PackageReference Include="Moq.Analyzers" Version="0.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.4.2" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\Mappers\Mappers.csproj" />
+        <ProjectReference Include="..\CacheService\CacheService.csproj" />
+        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
+        <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\Repository\Repository.csproj" />
+        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
+        <ProjectReference Include="..\Service\Service.csproj" />
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
+    </ItemGroup>
+
+</Project>

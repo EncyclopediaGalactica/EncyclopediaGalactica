@@ -1,5 +1,0 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests.SourceFormatNodeAddChildToParentResponseModel;
-
-public class SourceFormatNodeAddChildToParentResponseModelShould
-{
-}

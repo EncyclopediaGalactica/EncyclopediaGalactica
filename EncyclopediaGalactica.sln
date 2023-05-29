@@ -24,11 +24,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ctx", "SourceFormats\Ctx\Ct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos", "SourceFormats\Dtos\Dtos.csproj", "{2959339F-6E76-4526-95C7-BD26C88DC63E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos.Unit.Tests", "SourceFormats\Dtos.Unit.Tests\Dtos.Unit.Tests.csproj", "{524ED778-39AD-44A0-9E03-12DCD6CBA5D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dtos.Tests.Unit", "SourceFormats\Dtos.Tests.Unit\Dtos.Tests.Unit.csproj", "{524ED778-39AD-44A0-9E03-12DCD6CBA5D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "SourceFormats\Entities\Entities.csproj", "{2499B6BA-A664-44F7-A6AF-E9606B25E2EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities.Unit.Tests", "SourceFormats\Entities.Unit.Tests\Entities.Unit.Tests.csproj", "{DD043F8D-BDFC-4BD5-9893-3D2CBB4FFF20}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities.Tests.Unit", "SourceFormats\Entities.Tests.Unit\Entities.Tests.Unit.csproj", "{DD043F8D-BDFC-4BD5-9893-3D2CBB4FFF20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers", "SourceFormats\Mappers\Mappers.csproj", "{5D57F30E-A378-4341-9959-55674EE12C74}"
 EndProject
@@ -36,35 +36,35 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Exceptions", "Sourc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Interfaces", "SourceFormats\Mappers.Interfaces\Mappers.Interfaces.csproj", "{6ECB335F-41A0-4DBC-ACFD-BD84EC73E303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Unit.Tests", "SourceFormats\Mappers.Unit.Tests\Mappers.Unit.Tests.csproj", "{AEF72B83-4B8D-4311-B77C-7EA04FE83098}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers.Tests.Unit", "SourceFormats\Mappers.Tests.Unit\Mappers.Tests.Unit.csproj", "{AEF72B83-4B8D-4311-B77C-7EA04FE83098}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reposiory.Exceptions", "SourceFormats\Reposiory.Exceptions\Reposiory.Exceptions.csproj", "{9490FCF4-D084-4C51-9FDC-920552DA0E7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "SourceFormats\Repository\Repository.csproj", "{840C09AB-F7C6-4F37-A433-E0533C00D2BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Int.Tests", "SourceFormats\Repository.Int.Tests\Repository.Int.Tests.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Int", "SourceFormats\Repository.Tests.Int\Repository.Tests.Int.csproj", "{70C1A530-3AB0-47D8-958D-05B66E04E1C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Interfaces", "SourceFormats\Repository.Interfaces\Repository.Interfaces.csproj", "{5AA7BE01-6266-4EE4-A7A7-0614B154D141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Unit.Tests", "SourceFormats\Repository.Unit.Tests\Repository.Unit.Tests.csproj", "{8C6E071A-40A8-48D3-8F91-1DC7727E9CAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Unit", "SourceFormats\Repository.Tests.Unit\Repository.Tests.Unit.csproj", "{8C6E071A-40A8-48D3-8F91-1DC7727E9CAF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService", "SourceFormats\CacheService\CacheService.csproj", "{8352C9B2-DF66-4E65-9D22-0904B62FCB91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Int.Tests", "SourceFormats\CacheService.Int.Tests\CacheService.Int.Tests.csproj", "{6B29FF86-642F-402A-ABD4-11FCAE9E34A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Tests.Int", "SourceFormats\CacheService.Tests.Int\CacheService.Tests.Int.csproj", "{6B29FF86-642F-402A-ABD4-11FCAE9E34A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Interfaces", "SourceFormats\CacheService.Interfaces\CacheService.Interfaces.csproj", "{9BC76E1D-9F65-42BF-85FF-F7C13D6DA8C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Unit.Tests", "SourceFormats\CacheService.Unit.Tests\CacheService.Unit.Tests.csproj", "{8368FC87-0689-4559-A5FC-6990BAC3C07C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Tests.Unit", "SourceFormats\CacheService.Tests.Unit\CacheService.Tests.Unit.csproj", "{8368FC87-0689-4559-A5FC-6990BAC3C07C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "SourceFormats\Service\Service.csproj", "{FD845A22-1A36-44B7-8565-B8949F04335F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Exceptions", "SourceFormats\Service.Exceptions\Service.Exceptions.csproj", "{B7843A12-40BC-4FC6-A719-1DE49DD1034B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Int.Tests", "SourceFormats\Service.Int.Tests\Service.Int.Tests.csproj", "{AEF88FA0-BC52-4F9C-AA6E-45464FDA2969}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Int", "SourceFormats\Service.Tests.Int\Service.Tests.Int.csproj", "{AEF88FA0-BC52-4F9C-AA6E-45464FDA2969}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Interfaces", "SourceFormats\Service.Interfaces\Service.Interfaces.csproj", "{A7089F63-51D3-47B2-9090-D11D5C33E38C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Unit.Tests", "SourceFormats\Service.Unit.Tests\Service.Unit.Tests.csproj", "{2CD8898B-11AD-49BF-B0CC-E341B4D30DA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Unit", "SourceFormats\Service.Tests.Unit\Service.Tests.Unit.csproj", "{2CD8898B-11AD-49BF-B0CC-E341B4D30DA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatorService", "SourceFormats\ValidatorService\ValidatorService.csproj", "{49185BA1-3142-42FB-94A3-88A9B149448C}"
 EndProject
@@ -72,9 +72,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardsService", "Utils\Guar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk", "SourceFormats\Sdk\Sdk.csproj", "{384216F2-DE6C-47CC-A089-8470852BF48C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Unit.Tests", "SourceFormats\Sdk.Unit.Tests\Sdk.Unit.Tests.csproj", "{F1E264F7-EEB6-4847-928A-A1E0797E8791}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Tests.Unit", "SourceFormats\Sdk.Tests.Unit\Sdk.Tests.Unit.csproj", "{F1E264F7-EEB6-4847-928A-A1E0797E8791}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Int.Tests", "SourceFormats\Sdk.Int.Tests\Sdk.Int.Tests.csproj", "{914AB8E0-359F-40A2-A943-CA7BD7E0DF7D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Tests.Int", "SourceFormats\Sdk.Tests.Int\Sdk.Tests.Int.csproj", "{914AB8E0-359F-40A2-A943-CA7BD7E0DF7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Interfaces", "SourceFormats\Sdk.Interfaces\Sdk.Interfaces.csproj", "{FACBBE65-160B-43D4-B468-D91B82E89E07}"
 EndProject
@@ -82,7 +82,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Exceptions", "SourceFor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Models", "SourceFormats\Sdk.Models\Sdk.Models.csproj", "{BF7DE0BF-3EB8-464B-9F67-E8FB53F1329B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Models.Unit.Tests", "SourceFormats\Sdk.Models.Unit.Tests\Sdk.Models.Unit.Tests.csproj", "{B30726FA-49FF-4027-A7D2-ECC368AF775D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Models.Tests.Unit", "SourceFormats\Sdk.Models.Tests.Unit\Sdk.Models.Tests.Unit.csproj", "{B30726FA-49FF-4027-A7D2-ECC368AF775D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sdk.Core", "Sdk.Core", "{B0E7186B-EB85-49CA-A04B-C7B527676923}"
 EndProject
@@ -98,9 +98,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Unit.Tests", "Sdk.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Core.Model.Interfaces", "Sdk.Core\Sdk.Core.Model.Interfaces\Sdk.Core.Model.Interfaces.csproj", "{AA8CB579-5BC4-4D7E-AA39-67D9556AD9A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QA.Datasets", "SourceFormats\QA.Datasets\QA.Datasets.csproj", "{5B3B7C2C-B6F9-40EE-80F7-77C5D03892D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Datasets", "SourceFormats\Tests.Datasets\Tests.Datasets.csproj", "{5B3B7C2C-B6F9-40EE-80F7-77C5D03892D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2E", "SourceFormats\E2E\E2E.csproj", "{31D43021-281A-4C53-B308-03C92715C034}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "SourceFormats\Tests.E2E\Tests.E2E.csproj", "{31D43021-281A-4C53-B308-03C92715C034}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "Host\RestApi\RestApi.csproj", "{BAD10416-7A8C-4443-BF4E-C0E6E3F65916}"
 EndProject
