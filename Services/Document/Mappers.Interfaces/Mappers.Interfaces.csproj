@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Mappers.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Mappers.Interfaces</RootNamespace>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj" />
+        <ProjectReference Include="..\Dtos\Dtos.csproj" />
+        <ProjectReference Include="..\Entities\Entities.csproj" />
+        <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
+        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj" />
+        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>

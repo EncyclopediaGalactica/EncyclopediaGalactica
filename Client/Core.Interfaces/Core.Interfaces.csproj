@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Client.Core.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Client.Core.Interfaces</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
+    </ItemGroup>
+
+</Project>
