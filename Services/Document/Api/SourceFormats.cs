@@ -2,7 +2,7 @@
 
 public struct SourceFormats
 {
-    public const string Route = "/api/sourceformats";
+    public const string Route = "/api/document";
 
     public struct SourceFormatNode
     {
