@@ -366,5 +366,5 @@ FodyWeavers.xsd
 .DS_Store
 
 # Jetbrains Rider
-.idea
+.idea/
 
