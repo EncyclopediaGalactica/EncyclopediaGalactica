@@ -22,9 +22,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
+        <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
+        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
+        <ProjectReference Include="..\Repository\Repository.csproj" />
     </ItemGroup>
 
 </Project>

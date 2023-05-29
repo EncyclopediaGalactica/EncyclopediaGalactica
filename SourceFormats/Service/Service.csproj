@@ -13,11 +13,11 @@
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
         <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
+        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
+        <ProjectReference Include="..\CacheService.Exceptions\CacheService.Exceptions.csproj" />
+        <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
+        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
         <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
     </ItemGroup>
 

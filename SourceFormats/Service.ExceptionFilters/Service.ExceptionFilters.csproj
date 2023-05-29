@@ -18,9 +18,9 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
       <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
-      <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj" />
-      <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
-      <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
+      <ProjectReference Include="..\CacheService.Exceptions\CacheService.Exceptions.csproj" />
+      <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
+      <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
     </ItemGroup>
 
 </Project>

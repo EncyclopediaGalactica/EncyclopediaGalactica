@@ -36,19 +36,19 @@
         <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
         <ProjectReference Include="..\Mappers\Mappers.csproj" />
         <ProjectReference Include="..\QA.Datasets\QA.Datasets.csproj" />
-        <ProjectReference Include="..\SourceFormatsReposiory.Exceptions\SourceFormatsReposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository.Interfaces\SourceFormatsRepository.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
+        <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
+        <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
+        <ProjectReference Include="..\Repository\Repository.csproj" />
         <ProjectReference Include="..\Sdk.Exceptions\Sdk.Exceptions.csproj" />
         <ProjectReference Include="..\Sdk.Interfaces\Sdk.Interfaces.csproj" />
         <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj" />
         <ProjectReference Include="..\Sdk\Sdk.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj" />
+        <ProjectReference Include="..\CacheService.Exceptions\CacheService.Exceptions.csproj" />
+        <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\CacheService\CacheService.csproj" />
+        <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
+        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
+        <ProjectReference Include="..\Service\Service.csproj" />
         <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
     </ItemGroup>
 

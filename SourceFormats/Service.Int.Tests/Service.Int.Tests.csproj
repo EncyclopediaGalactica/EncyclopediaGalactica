@@ -29,11 +29,11 @@
     <ItemGroup>
         <ProjectReference Include="..\Mappers\Mappers.csproj" />
         <ProjectReference Include="..\QA.Datasets\QA.Datasets.csproj" />
-        <ProjectReference Include="..\SourceFormatsRepository\SourceFormatsRepository.csproj" />
-        <ProjectReference Include="..\SourceFormatsCacheService\SourceFormatsCacheService.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Exceptions\SourceFormatsService.Exceptions.csproj" />
-        <ProjectReference Include="..\SourceFormatsService.Interfaces\SourceFormatsService.Interfaces.csproj" />
-        <ProjectReference Include="..\SourceFormatsService\SourceFormatsService.csproj" />
+        <ProjectReference Include="..\Repository\Repository.csproj" />
+        <ProjectReference Include="..\CacheService\CacheService.csproj" />
+        <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
+        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
+        <ProjectReference Include="..\Service\Service.csproj" />
     </ItemGroup>
 
 </Project>

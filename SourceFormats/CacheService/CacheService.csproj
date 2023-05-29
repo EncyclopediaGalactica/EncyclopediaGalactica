@@ -10,8 +10,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\SourceFormatsCacheService.Exceptions\SourceFormatsCacheService.Exceptions.csproj"/>
-        <ProjectReference Include="..\SourceFormatsCacheService.Interfaces\SourceFormatsCacheService.Interfaces.csproj"/>
+        <ProjectReference Include="..\CacheService.Exceptions\CacheService.Exceptions.csproj" />
+        <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
     </ItemGroup>
 
 </Project>
