@@ -6,9 +6,9 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Entities.Unit.Tests</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Entities.Unit.Tests</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Entities.Unit.Tests</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Entities.Unit.Tests</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>

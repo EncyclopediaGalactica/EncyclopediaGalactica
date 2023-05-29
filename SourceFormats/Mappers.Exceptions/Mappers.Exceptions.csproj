@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Mappers.Exceptions</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Mappers.Exceptions</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Mappers.Exceptions</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Mappers.Exceptions</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

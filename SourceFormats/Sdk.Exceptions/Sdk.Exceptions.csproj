@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Exceptions</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Exceptions</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk.Exceptions</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk.Exceptions</RootNamespace>
     </PropertyGroup>
 
 </Project>

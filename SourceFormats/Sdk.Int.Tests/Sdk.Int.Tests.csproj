@@ -6,9 +6,9 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Int.Tests</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk.Int.Tests</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Int.Tests</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk.Int.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

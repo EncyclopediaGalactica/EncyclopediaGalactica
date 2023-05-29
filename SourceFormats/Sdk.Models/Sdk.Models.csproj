@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Models</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Models</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk.Models</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk.Models</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

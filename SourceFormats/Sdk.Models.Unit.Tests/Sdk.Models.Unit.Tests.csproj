@@ -5,8 +5,8 @@
         <Nullable>enable</Nullable>
 
         <IsPackable>false</IsPackable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsService</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsService</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

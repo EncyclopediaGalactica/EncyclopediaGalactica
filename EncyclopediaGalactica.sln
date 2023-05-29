@@ -8,7 +8,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		azure-pipelines.yml = azure-pipelines.yml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceFormats", "SourceFormats", "{37C84772-74FE-4A8A-8C5A-528040202EBD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{37C84772-74FE-4A8A-8C5A-528040202EBD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utils", "Utils", "{A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}"
 EndProject
@@ -111,6 +111,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuardsService.Interfaces", "Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj", "{AE39BF10-5007-4E4E-AA87-34697E2C2842}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SourceFormatsService.ExceptionFilters", "SourceFormats\SourceFormatsService.ExceptionFilters\SourceFormatsService.ExceptionFilters.csproj", "{5B9AE273-D07B-455B-8139-DC749F889D6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F0AAEAB9-3293-43E2-AD50-7EAD0FEDBC60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -360,5 +362,6 @@ Global
 		{1079F6F8-0CF8-436B-817B-0B32A9318791} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
 		{AE39BF10-5007-4E4E-AA87-34697E2C2842} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
 		{5B9AE273-D07B-455B-8139-DC749F889D6E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{37C84772-74FE-4A8A-8C5A-528040202EBD} = {F0AAEAB9-3293-43E2-AD50-7EAD0FEDBC60}
 	EndGlobalSection
 EndGlobal

@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <IsPackable>false</IsPackable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.E2E</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.E2E</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.E2E</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.E2E</RootNamespace>
         <PreserveCompilationContext>true</PreserveCompilationContext>
     </PropertyGroup>
 

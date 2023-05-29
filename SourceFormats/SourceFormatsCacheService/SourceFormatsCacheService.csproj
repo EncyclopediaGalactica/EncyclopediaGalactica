@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsCacheService</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

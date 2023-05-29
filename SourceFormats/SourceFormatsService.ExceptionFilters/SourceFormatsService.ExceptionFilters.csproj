@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService.ExceptionFilters</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService.ExceptionFilters</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

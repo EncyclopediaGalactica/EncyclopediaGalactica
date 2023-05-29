@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Mappers.Interfaces</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Mappers.Interfaces</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Mappers.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Mappers.Interfaces</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

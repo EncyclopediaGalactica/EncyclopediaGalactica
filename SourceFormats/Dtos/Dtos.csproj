@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Dtos</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Dtos</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Dtos</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Dtos</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>

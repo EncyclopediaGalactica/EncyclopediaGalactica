@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.QA.Datasets</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.QA.Datasets</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.QA.Datasets</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.QA.Datasets</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

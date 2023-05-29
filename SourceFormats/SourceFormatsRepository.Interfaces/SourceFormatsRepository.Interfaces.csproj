@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>

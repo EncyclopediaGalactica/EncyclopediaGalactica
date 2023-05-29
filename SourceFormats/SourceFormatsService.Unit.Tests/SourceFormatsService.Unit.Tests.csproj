@@ -6,9 +6,9 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsService.Unit.Tests</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsService.Unit.Tests</RootNamespace>
 
         <LangVersion>default</LangVersion>
     </PropertyGroup>

@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Mappers.Unit.Tests</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Mappers.Unit.Tests</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Mappers.Unit.Tests</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Mappers.Unit.Tests</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 
