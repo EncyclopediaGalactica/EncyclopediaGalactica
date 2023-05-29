@@ -1,6 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Entities;
-
-using System.Data.Common;
+namespace EncyclopediaGalactica.Services.Document.Entities;
 
 public class Document
 {

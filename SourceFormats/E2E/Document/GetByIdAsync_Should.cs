@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E.Document;
+namespace EncyclopediaGalactica.Services.Document.E2E.Document;
 
 using System;
 using System.Net;

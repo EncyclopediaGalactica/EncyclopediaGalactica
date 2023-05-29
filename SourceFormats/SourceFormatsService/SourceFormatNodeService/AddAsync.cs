@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
 
 using Dtos;
 using Entities;

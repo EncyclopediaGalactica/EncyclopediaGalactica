@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.ValidatorService;
+namespace EncyclopediaGalactica.Services.Document.ValidatorService;
 
 using Entities;
 using FluentValidation;

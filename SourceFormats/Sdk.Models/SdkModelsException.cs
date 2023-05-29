@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models;
 
 using System.Runtime.Serialization;
 

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E;
+namespace EncyclopediaGalactica.Services.Document.E2E;
 
 using System;
 using System.Diagnostics;
@@ -7,6 +7,8 @@ using System.Linq;
 using Controllers.Document;
 using Controllers.SourceFormatNode;
 using Ctx;
+using EncyclopediaGalactica.Utils.GuardsService;
+using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
 using FluentValidation.AspNetCore;
 using Mappers;
 using Mappers.Document;
@@ -32,8 +34,6 @@ using SourceFormatsService.Interfaces;
 using SourceFormatsService.Interfaces.Document;
 using SourceFormatsService.Interfaces.SourceFormatNode;
 using SourceFormatsService.SourceFormatNodeService;
-using Utils.GuardsService;
-using Utils.GuardsService.Interfaces;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]

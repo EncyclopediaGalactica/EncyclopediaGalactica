@@ -1,10 +1,9 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.Document;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Int.Tests.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
-using Entities;
 using FluentAssertions;
 using FluentValidation;
 using QA.Datasets;

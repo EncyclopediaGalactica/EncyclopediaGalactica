@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.QA.Datasets;
+namespace EncyclopediaGalactica.Services.Document.QA.Datasets;
 
 using System.Diagnostics.CodeAnalysis;
 

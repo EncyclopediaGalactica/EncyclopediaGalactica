@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormatNodeDeleteResponseModel;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests.SourceFormatNodeDeleteResponseModel;
 
 using System;
 using System.Diagnostics.CodeAnalysis;

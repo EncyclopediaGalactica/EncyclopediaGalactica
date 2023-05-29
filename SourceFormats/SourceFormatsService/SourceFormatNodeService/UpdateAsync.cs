@@ -1,10 +1,8 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
 
 using Dtos;
 using Entities;
 using FluentValidation;
-using Interfaces;
-using Interfaces.SourceFormatNode;
 using ValidatorService;
 
 public partial class SourceFormatNodeService

@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.Document;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Int.Tests.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using FluentAssertions;
-using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

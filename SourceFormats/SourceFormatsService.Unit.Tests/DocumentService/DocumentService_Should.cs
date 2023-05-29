@@ -1,10 +1,12 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests.DocumentService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Unit.Tests.DocumentService;
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
 using Document;
+using EncyclopediaGalactica.Utils.GuardsService;
+using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
 using Entities;
 using FluentAssertions;
 using FluentValidation;
@@ -14,8 +16,6 @@ using Microsoft.EntityFrameworkCore;
 using Moq;
 using SourceFormatsRepository.Document;
 using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService;
-using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

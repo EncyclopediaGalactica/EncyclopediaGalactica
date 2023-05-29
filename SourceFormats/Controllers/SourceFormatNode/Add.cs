@@ -1,11 +1,11 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
 using System.Net.Mime;
 using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ViewModels;
+using SourceFormats.Services.Document.ViewModels;
 
 public partial class SourceFormatNodeController
 {

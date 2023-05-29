@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.Document;
+namespace EncyclopediaGalactica.Services.Document.Controllers.Document;
 
 using System.Net.Mime;
 using Dtos;

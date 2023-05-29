@@ -1,11 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Document;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
 
-using Dtos;
+using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
 using Entities;
 using Interfaces.Document;
 using Mappers.Interfaces;
 using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService.Interfaces;
 
 /// <inheritdoc />
 public partial class DocumentService : IDocumentService

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Int.Tests.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Int.Tests.SourceFormatNode;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;

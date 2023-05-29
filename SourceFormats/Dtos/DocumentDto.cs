@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Dtos;
+namespace EncyclopediaGalactica.Services.Document.Dtos;
 
 public class DocumentDto
 {

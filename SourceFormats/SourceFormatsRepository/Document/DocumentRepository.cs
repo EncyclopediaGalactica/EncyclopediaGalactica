@@ -1,11 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Document;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
 
 using Ctx;
 using Entities;
 using FluentValidation;
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
-using ValidatorService;
 
 /// <inheritdoc />
 public partial class DocumentRepository : IDocumentsRepository

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormatNodeAddChildToParentRequestModel;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests.SourceFormatNodeAddChildToParentRequestModel;
 
 using System;
 using FluentAssertions;

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.E2E.SourceFormatNode;
 
 using System.Diagnostics.CodeAnalysis;
 using Xunit;

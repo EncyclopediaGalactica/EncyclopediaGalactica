@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Unit.Tests.SourceFormatNodeAddRequestModel;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Unit.Tests.SourceFormatNodeAddRequestModel;
 
 using System;
 using System.Diagnostics.CodeAnalysis;

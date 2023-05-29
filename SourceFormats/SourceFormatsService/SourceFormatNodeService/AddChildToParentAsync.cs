@@ -1,9 +1,7 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
 
 using Dtos;
 using Entities;
-using Interfaces;
-using Interfaces.SourceFormatNode;
 
 public partial class SourceFormatNodeService
 {

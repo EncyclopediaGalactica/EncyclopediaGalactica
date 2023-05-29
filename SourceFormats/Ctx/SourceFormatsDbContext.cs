@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Ctx;
+namespace EncyclopediaGalactica.Services.Document.Ctx;
 
 using Entities;
 using Microsoft.EntityFrameworkCore;

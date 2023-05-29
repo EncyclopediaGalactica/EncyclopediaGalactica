@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Dtos.Unit.Tests;
+namespace EncyclopediaGalactica.Services.Document.Dtos.Unit.Tests;
 
 using FluentAssertions;
 using Xunit;

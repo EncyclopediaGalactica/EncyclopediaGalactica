@@ -1,4 +1,4 @@
-﻿namespace EncyclopediaGalactica.SourceFormats.Api;
+﻿namespace EncyclopediaGalactica.Services.Document.Api;
 
 public struct SourceFormats
 {

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Mappers.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
 
 public interface ISourceFormatMappers
 {

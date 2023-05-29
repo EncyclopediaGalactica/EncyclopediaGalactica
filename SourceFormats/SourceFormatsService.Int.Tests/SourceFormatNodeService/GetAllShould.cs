@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Int.Tests.SourceFormatNodeService;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -6,8 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Interfaces;
-using Interfaces.SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

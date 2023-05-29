@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
 
 using System.Net.Http.Headers;
 using System.Text.Json.Serialization;

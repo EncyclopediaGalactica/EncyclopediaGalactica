@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E;
+namespace EncyclopediaGalactica.Services.Document.E2E;
 
 using Xunit;
 

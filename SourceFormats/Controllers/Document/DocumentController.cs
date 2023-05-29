@@ -1,12 +1,7 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.Document;
+namespace EncyclopediaGalactica.Services.Document.Controllers.Document;
 
-using System.Net.Mime;
-using Dtos;
-using Entities;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SourceFormatNode;
 using SourceFormatsService.Interfaces;
 
 [ApiController]

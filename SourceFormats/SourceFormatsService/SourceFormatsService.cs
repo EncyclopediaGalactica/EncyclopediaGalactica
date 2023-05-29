@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService;
 
 using Interfaces;
 using Interfaces.Document;

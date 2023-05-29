@@ -1,6 +1,5 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.E2E.SourceFormatNode;
 
-using System;
 using System.Net;
 using System.Threading.Tasks;
 using Dtos;

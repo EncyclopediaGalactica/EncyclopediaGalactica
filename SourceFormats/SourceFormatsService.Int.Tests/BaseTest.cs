@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Int.Tests;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Int.Tests;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
+using EncyclopediaGalactica.Utils.GuardsService;
 using Entities;
 using FluentValidation;
 using Interfaces;
@@ -15,13 +16,12 @@ using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using SourceFormats.SourceFormatsService.Document;
+using Services.Document.SourceFormatsService.Document;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsCacheService.SourceFormatNode;
 using SourceFormatsRepository.Document;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
-using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
@@ -52,11 +52,11 @@ public class BaseTest
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             dbContextOptions, nodeValidator, new GuardsService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
-        ILogger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService> logger =
-            new Logger<SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService>(
+        ILogger<Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService> logger =
+            new Logger<Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService>(
                 new LoggerFactory());
         ISourceFormatNodeService sourceFormatNodeService =
-            new SourceFormats.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
+            new Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
                 validator,
                 new GuardsService(),
                 mappers,

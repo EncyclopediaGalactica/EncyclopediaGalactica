@@ -1,6 +1,7 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
 
 using Dtos;
+using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
 using Entities;
 using FluentValidation;
 using Interfaces.SourceFormatNode;
@@ -8,7 +9,6 @@ using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
 using SourceFormatsCacheService.Interfaces;
 using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService
 {

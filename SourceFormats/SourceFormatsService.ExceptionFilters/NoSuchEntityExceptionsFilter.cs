@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.ExceptionFilters;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters;
 
 using System.Net;
 using Interfaces;

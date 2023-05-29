@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.E2E.SourceFormatNode;
 
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
 using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
 using Xunit;
 
 public partial class SourceFormatNodeSdk_Should

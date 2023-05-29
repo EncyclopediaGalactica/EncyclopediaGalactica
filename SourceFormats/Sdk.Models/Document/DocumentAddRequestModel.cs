@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
 
 using System.Net.Http.Headers;
 using Dtos;

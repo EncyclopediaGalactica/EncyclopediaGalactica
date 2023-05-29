@@ -1,11 +1,11 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests.SourceFormatsService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Unit.Tests.SourceFormatsService;
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
 using Document;
-using Entities;
+using EncyclopediaGalactica.Utils.GuardsService;
 using FluentAssertions;
 using Interfaces;
 using Interfaces.Document;
@@ -15,11 +15,10 @@ using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
-using SourceFormats.SourceFormatsService.SourceFormatNodeService;
+using Services.Document.SourceFormatsService.SourceFormatNodeService;
 using SourceFormatsCacheService.SourceFormatNode;
 using SourceFormatsRepository.Interfaces;
 using SourceFormatsRepository.SourceFormatNode;
-using Utils.GuardsService;
 using ValidatorService;
 using Xunit;
 
@@ -66,7 +65,7 @@ public class CtorValidation_Should
         // Arrange & Act
         Action action = () =>
         {
-            ISourceFormatsService sourceFormatsService = new SourceFormats.SourceFormatsService.SourceFormatsService(
+            ISourceFormatsService sourceFormatsService = new Services.Document.SourceFormatsService.SourceFormatsService(
                 sourceFormatNodeService,
                 documentService);
         };

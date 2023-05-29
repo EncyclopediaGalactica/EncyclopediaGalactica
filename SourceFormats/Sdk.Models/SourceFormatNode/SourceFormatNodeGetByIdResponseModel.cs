@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Models.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
 
 using System.Net;
 using Dtos;

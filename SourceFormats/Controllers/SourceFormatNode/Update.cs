@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
 using Dtos;
 using Microsoft.AspNetCore.Http;

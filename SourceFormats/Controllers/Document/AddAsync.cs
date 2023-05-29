@@ -1,11 +1,9 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.Document;
+namespace EncyclopediaGalactica.Services.Document.Controllers.Document;
 
 using System.Net.Mime;
 using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Sdk.Models.Document;
-using ViewModels;
 
 public partial class DocumentController
 {

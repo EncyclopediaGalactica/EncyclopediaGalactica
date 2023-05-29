@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Mappers.Exceptions.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Mappers.Exceptions.SourceFormatNode;
 
 using System.Runtime.Serialization;
 

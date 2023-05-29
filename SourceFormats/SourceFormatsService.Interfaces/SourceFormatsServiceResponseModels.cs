@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
 
 public class SourceFormatsServiceResponseModels<T>
 {

@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Interfaces.Document;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
 
 using Dtos;
+using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using Entities;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Utils.GuardsService.Exceptions;
 
 /// <summary>
 ///     IDocument Service interface.

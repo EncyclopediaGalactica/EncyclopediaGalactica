@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsRepository.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
 
+using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using Entities;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using Utils.GuardsService.Exceptions;
 
 /// <summary>
 ///     SourceFormatRepository interface for managing stored data in the database.

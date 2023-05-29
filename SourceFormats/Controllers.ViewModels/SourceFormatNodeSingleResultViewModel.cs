@@ -1,6 +1,6 @@
-namespace EncyclopediaGalactica.SourceFormats.Controllers.ViewModels;
+namespace EncyclopediaGalactica.SourceFormats.Services.Document.ViewModels;
 
-using Dtos;
+using EncyclopediaGalactica.Services.Document.Dtos;
 
 public class SourceFormatNodeSingleResultViewModel
 {

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.SourceFormatsService.Unit.Tests.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Unit.Tests.SourceFormatNodeService;
 
 using System.Threading.Tasks;
 using Xunit;

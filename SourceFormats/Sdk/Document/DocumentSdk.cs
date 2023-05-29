@@ -1,8 +1,7 @@
-namespace EncyclopediaGalactica.SourceFormats.Sdk.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Document;
 
 using EncyclopediaGalactica.Sdk.Core.Interfaces;
 using Interfaces;
-using Models.Document;
 
 /// <inheritdoc />
 public partial class DocumentSdk : IDocumentsSdk

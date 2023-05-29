@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.SourceFormats.Entities;
+namespace EncyclopediaGalactica.Services.Document.Entities;
 
 using System.Collections.ObjectModel;
 

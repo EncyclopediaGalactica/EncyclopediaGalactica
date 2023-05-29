@@ -1,12 +1,12 @@
-namespace EncyclopediaGalactica.SourceFormats.E2E;
+namespace EncyclopediaGalactica.Services.Document.E2E;
 
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Mime;
+using EncyclopediaGalactica.Host.RestApi;
 using EncyclopediaGalactica.Sdk.Core;
 using EncyclopediaGalactica.Sdk.Core.Interfaces;
-using Host.RestApi;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Sdk;
 using Sdk.Document;
