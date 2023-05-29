@@ -114,6 +114,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "Services\Docum
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidatorService", "Services\Document\ValidatorService\ValidatorService.csproj", "{378FABB3-5200-402E-A176-8336C115E790}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0E2DE441-A4AD-41F6-BD2A-8FFCBEBAE06C}"
+	ProjectSection(SolutionItems) = preProject
+		Services\Document\Docs\DocumentEntityRelations.puml = Services\Document\Docs\DocumentEntityRelations.puml
+		Services\Document\Docs\DocumentApi.yaml = Services\Document\Docs\DocumentApi.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,5 +369,6 @@ Global
 		{08112000-839D-4287-A9A1-F92F794051CA} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{CB89E404-3465-4828-94FB-1A616AC1F13F} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{378FABB3-5200-402E-A176-8336C115E790} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{0E2DE441-A4AD-41F6-BD2A-8FFCBEBAE06C} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal
