@@ -14,6 +14,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class SourceFormatsService_Should
 {
     public static IEnumerable<object[]> Throw_ArgumentNullException_WhenInjectedIsNull_Data = new List<object[]>

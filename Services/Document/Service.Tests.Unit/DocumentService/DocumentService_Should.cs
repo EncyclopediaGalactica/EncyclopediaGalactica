@@ -20,6 +20,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class DocumentService_Should
 {
     public static IEnumerable<object[]> ThrowArgumentNullException_WhenInjected_IsNull_Data = new List<object[]>

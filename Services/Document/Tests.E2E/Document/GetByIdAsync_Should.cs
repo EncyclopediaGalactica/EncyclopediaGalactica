@@ -8,6 +8,7 @@ using FluentAssertions;
 using FluentValidation;
 using Xunit;
 
+[Trait("Category", "DocumentService")]
 public partial class DocumentSdk_Should
 {
     [Fact]

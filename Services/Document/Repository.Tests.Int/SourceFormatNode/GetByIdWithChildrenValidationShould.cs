@@ -8,6 +8,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Trait("Category", "DocumentService")]
 public class GetByIdWithChildrenValidationShould : BaseTest
 {
     [Fact]

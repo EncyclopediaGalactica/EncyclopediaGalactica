@@ -9,6 +9,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class GetById_Should : BaseTest
 {
     [Fact]

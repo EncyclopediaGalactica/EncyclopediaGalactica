@@ -10,6 +10,7 @@ using Services.Document.Tests.Datasets;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Trait("Category", "DocumentService")]
 public class AddChildToParentValidation : BaseTest
 {
     [Theory]

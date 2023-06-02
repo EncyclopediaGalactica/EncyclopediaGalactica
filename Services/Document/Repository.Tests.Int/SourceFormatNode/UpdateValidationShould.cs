@@ -10,6 +10,7 @@ using FluentValidation;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Trait("Category", "DocumentService")]
 public class UpdateValidationShould : BaseTest
 {
     [Theory]

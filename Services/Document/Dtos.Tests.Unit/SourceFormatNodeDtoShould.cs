@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit;
 using FluentAssertions;
 using Xunit;
 
+[Trait("Category", "DocumentService")]
 public class SourceFormatNodeDtoShould
 {
     [Fact]

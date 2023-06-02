@@ -12,6 +12,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class SourceFormatNode_Should
 {
     [Fact]
