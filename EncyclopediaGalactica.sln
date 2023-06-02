@@ -82,19 +82,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Int", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Unit", "Services\Document\Repository.Tests.Unit\Repository.Tests.Unit.csproj", "{822279B6-F32D-4EC1-8DE9-8B97979BFC26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk", "Services\Document\Sdk\Sdk.csproj", "{855BB0C1-03B5-4CEF-94B2-48861E2A6C1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient", "Services\Document\DocumentClient\DocumentClient.csproj", "{855BB0C1-03B5-4CEF-94B2-48861E2A6C1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Exceptions", "Services\Document\Sdk.Exceptions\Sdk.Exceptions.csproj", "{451F6D5C-E2C5-4459-A071-6E18216CA7EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient.Exceptions", "Services\Document\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj", "{451F6D5C-E2C5-4459-A071-6E18216CA7EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Interfaces", "Services\Document\Sdk.Interfaces\Sdk.Interfaces.csproj", "{6E42D738-03F9-43E6-BBDF-2281BCEF909B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient.Interfaces", "Services\Document\DocumentClient.Interfaces\DocumentClient.Interfaces.csproj", "{6E42D738-03F9-43E6-BBDF-2281BCEF909B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Models", "Services\Document\Sdk.Models\Sdk.Models.csproj", "{C8447239-1FD8-4697-A4D0-06FB2A8CB026}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient.Models", "Services\Document\DocumentClient.Models\DocumentClient.Models.csproj", "{C8447239-1FD8-4697-A4D0-06FB2A8CB026}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Models.Tests.Unit", "Services\Document\Sdk.Models.Tests.Unit\Sdk.Models.Tests.Unit.csproj", "{5CD6B445-7DAD-436E-91C5-8E1DF6A74760}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Tests.Int", "Services\Document\Sdk.Tests.Int\Sdk.Tests.Int.csproj", "{077173BA-F55D-40F8-8E7B-7287AD5DC065}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient.Tests.Int", "Services\Document\DocumentClient.Tests.Int\DocumentClient.Tests.Int.csproj", "{077173BA-F55D-40F8-8E7B-7287AD5DC065}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sdk.Tests.Unit", "Services\Document\Sdk.Tests.Unit\Sdk.Tests.Unit.csproj", "{578A1C9E-F40A-404A-94AD-1917E4DB1AF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentClient.Tests.Unit", "Services\Document\DocumentClient.Tests.Unit\DocumentClient.Tests.Unit.csproj", "{578A1C9E-F40A-404A-94AD-1917E4DB1AF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Services\Document\Service\Service.csproj", "{0CA84505-3E3F-46F0-AD08-80AA5BF7656D}"
 EndProject
@@ -142,7 +142,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Services\IAM\Dto\Dto
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Services\IAM\Controller\Controller.csproj", "{B7579A2B-0586-4649-8C04-8E67D7987426}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Services\IAM\Client\Client.csproj", "{AB718B89-BD31-4149-9D23-7D7FC9F0723B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client", "Services\IAM\IAM.Client\IAM.Client.csproj", "{AB718B89-BD31-4149-9D23-7D7FC9F0723B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Interfaces", "Services\IAM\CacheService.Interfaces\CacheService.Interfaces.csproj", "{3D315DCF-22F5-49AF-B379-04AB2F14AB48}"
 EndProject
@@ -152,13 +152,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Tests.Int", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Exceptions", "Services\IAM\CacheService.Exceptions\CacheService.Exceptions.csproj", "{C9F6A87D-4724-42B9-A198-D7E36B02A3DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Exceptions", "Services\IAM\Client.Exceptions\Client.Exceptions.csproj", "{277DF92A-467A-4DB2-BEEB-5E6CF1BACEFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Exceptions", "Services\IAM\IAM.Client.Exceptions\IAM.Client.Exceptions.csproj", "{277DF92A-467A-4DB2-BEEB-5E6CF1BACEFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Models", "Services\IAM\Client.Models\Client.Models.csproj", "{E53378D3-AF40-47A4-88AF-4818DC02713A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Models", "Services\IAM\IAM.Client.Models\IAM.Client.Models.csproj", "{E53378D3-AF40-47A4-88AF-4818DC02713A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Model.Interfaces", "Services\IAM\Client.Model.Interfaces\Client.Model.Interfaces.csproj", "{DF603745-EDED-4FC6-AB38-B4DFD0DCD975}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Model.Interfaces", "Services\IAM\IAM.Client.Model.Interfaces\IAM.Client.Model.Interfaces.csproj", "{DF603745-EDED-4FC6-AB38-B4DFD0DCD975}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Interfaces", "Services\IAM\Client.Interfaces\Client.Interfaces.csproj", "{F497A0AD-38FF-4E94-BF7F-4B86EDC12CEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Interfaces", "Services\IAM\IAM.Client.Interfaces\IAM.Client.Interfaces.csproj", "{F497A0AD-38FF-4E94-BF7F-4B86EDC12CEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller.ViewModels", "Services\IAM\Controller.ViewModels\Controller.ViewModels.csproj", "{918331D0-C7CF-4B40-B719-0D03040AFB45}"
 EndProject
@@ -196,11 +196,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Datasets", "Services\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "Services\IAM\Tests.E2E\Tests.E2E.csproj", "{EB02B7AF-7B08-4187-B638-6DFA5864E80F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Tests.Int", "Services\IAM\Client.Tests.Int\Client.Tests.Int.csproj", "{CD2B299B-FD3E-4C9A-8E11-517953A1F12F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Tests.Int", "Services\IAM\IAM.Client.Tests.Int\IAM.Client.Tests.Int.csproj", "{CD2B299B-FD3E-4C9A-8E11-517953A1F12F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Tests.Unit", "Services\IAM\Client.Tests.Unit\Client.Tests.Unit.csproj", "{62B795AF-1945-4724-8766-DBAAA3476F80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Tests.Unit", "Services\IAM\IAM.Client.Tests.Unit\IAM.Client.Tests.Unit.csproj", "{62B795AF-1945-4724-8766-DBAAA3476F80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Models.Tests.Unit", "Services\IAM\Client.Models.Tests.Unit\Client.Models.Tests.Unit.csproj", "{E6C56880-A043-4488-98F7-0030EF273134}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Models.Tests.Unit", "Services\IAM\IAM.Client.Models.Tests.Unit\IAM.Client.Models.Tests.Unit.csproj", "{E6C56880-A043-4488-98F7-0030EF273134}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1FA852EC-6427-48C7-847E-F18ABA040A84}"
 EndProject
@@ -256,21 +256,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Unit", "Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Int", "Services\Core\Service.Tests.Int\Service.Tests.Int.csproj", "{6D3F9820-4693-44F2-86E7-BB588D2E14AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Services\Core\Client\Client.csproj", "{2373F060-11A9-4BD6-9925-A08A7A2C5807}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client", "Services\Core\Core.Client\Core.Client.csproj", "{2373F060-11A9-4BD6-9925-A08A7A2C5807}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Tests.Unit", "Services\Core\Client.Tests.Unit\Client.Tests.Unit.csproj", "{834E1888-9B1B-4DFE-A534-396F88AE631B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client.Tests.Unit", "Services\Core\Core.Client.Tests.Unit\Core.Client.Tests.Unit.csproj", "{834E1888-9B1B-4DFE-A534-396F88AE631B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Tests.Int", "Services\Core\Client.Tests.Int\Client.Tests.Int.csproj", "{4EE426F4-4862-4AA4-9783-E58ACC0C1E9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client.Tests.Int", "Services\Core\Core.Client.Tests.Int\Core.Client.Tests.Int.csproj", "{4EE426F4-4862-4AA4-9783-E58ACC0C1E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Models.Interfaces", "Services\Core\Client.Models.Interfaces\Client.Models.Interfaces.csproj", "{259EE201-277E-4454-9F7F-6835F03D4718}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client.Models.Interfaces", "Services\Core\Core.Client.Models.Interfaces\Core.Client.Models.Interfaces.csproj", "{259EE201-277E-4454-9F7F-6835F03D4718}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Models", "Services\Core\Client.Models\Client.Models.csproj", "{9D78CA82-A64E-4BB6-9903-BA4DCF12B05C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client.Models", "Services\Core\Core.Client.Models\Core.Client.Models.csproj", "{9D78CA82-A64E-4BB6-9903-BA4DCF12B05C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Models.Tests.Unit", "Services\Core\Client.Models.Tests.Unit\Client.Models.Tests.Unit.csproj", "{517C3800-F4C6-4617-9FF3-7F797B20A6A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Client.Models.Tests.Unit", "Services\Core\Core.Client.Models.Tests.Unit\Core.Client.Models.Tests.Unit.csproj", "{517C3800-F4C6-4617-9FF3-7F797B20A6A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Datasets", "Services\Core\Tests.Datasets\Tests.Datasets.csproj", "{2EEB7111-33A2-4075-A5DC-6564057219D6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "Services\Core\Tests.E2E\Tests.E2E.csproj", "{D4A4AF01-27FD-402E-B44D-8AE3CB820679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers.ViewModels.Tests.Unit", "Services\Document\Controllers.ViewModels.Tests.Unit\Controllers.ViewModels.Tests.Unit.csproj", "{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -766,6 +768,10 @@ Global
 		{D4A4AF01-27FD-402E-B44D-8AE3CB820679}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4A4AF01-27FD-402E-B44D-8AE3CB820679}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4A4AF01-27FD-402E-B44D-8AE3CB820679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D95496D8-08A2-4AA4-A020-AF9DB150FA6B} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
@@ -894,5 +900,6 @@ Global
 		{517C3800-F4C6-4617-9FF3-7F797B20A6A9} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{2EEB7111-33A2-4075-A5DC-6564057219D6} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{D4A4AF01-27FD-402E-B44D-8AE3CB820679} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
+		{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal

@@ -11,6 +11,7 @@ using Services.Document.Tests.Datasets;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[Trait("Category", "DocumentService")]
 public class AddValidationShould : BaseTest
 {
     [Fact]

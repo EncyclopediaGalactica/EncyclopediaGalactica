@@ -24,6 +24,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class CtorValidation_Should
 {
     public static IEnumerable<object[]> Throw_WhenAnyCtorParamIsNull_Data => new List<object[]>

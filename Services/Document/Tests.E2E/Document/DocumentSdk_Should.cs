@@ -5,6 +5,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public partial class DocumentSdk_Should : TestBase
 {
 

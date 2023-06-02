@@ -11,6 +11,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class Add_Validation_Should : BaseTest
 {
     [Fact]

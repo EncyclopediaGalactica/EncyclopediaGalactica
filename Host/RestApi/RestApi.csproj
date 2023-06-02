@@ -34,10 +34,10 @@
         <ProjectReference Include="..\..\Services\Document\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
         <ProjectReference Include="..\..\Services\Document\Repository.Interfaces\Repository.Interfaces.csproj" />
         <ProjectReference Include="..\..\Services\Document\Repository\Repository.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Sdk.Exceptions\Sdk.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Sdk.Interfaces\Sdk.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Sdk.Models\Sdk.Models.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Sdk\Sdk.csproj" />
+        <ProjectReference Include="..\..\Services\Document\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj" />
+        <ProjectReference Include="..\..\Services\Document\DocumentClient.Interfaces\DocumentClient.Interfaces.csproj" />
+        <ProjectReference Include="..\..\Services\Document\DocumentClient.Models\DocumentClient.Models.csproj" />
+        <ProjectReference Include="..\..\Services\Document\DocumentClient\DocumentClient.csproj" />
         <ProjectReference Include="..\..\Services\Document\Service.ExceptionFilters\Service.ExceptionFilters.csproj" />
         <ProjectReference Include="..\..\Services\Document\Service.Exceptions\Service.Exceptions.csproj" />
         <ProjectReference Include="..\..\Services\Document\Service.Interfaces\Service.Interfaces.csproj" />

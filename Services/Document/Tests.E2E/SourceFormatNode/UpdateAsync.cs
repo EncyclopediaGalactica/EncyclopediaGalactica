@@ -8,6 +8,7 @@ using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
 using FluentAssertions;
 using Xunit;
 
+[Trait("Category", "DocumentService")]
 public partial class SourceFormatNodeSdk_Should
 {
     [Fact]

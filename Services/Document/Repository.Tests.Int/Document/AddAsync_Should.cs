@@ -10,6 +10,7 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public class AddAsync_Should : BaseTest
 {
     [Fact]

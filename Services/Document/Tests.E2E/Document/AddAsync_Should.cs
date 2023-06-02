@@ -11,6 +11,7 @@ using FluentValidation;
 using Xunit;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
 public partial class DocumentSdk_Should
 {
     [Fact]
