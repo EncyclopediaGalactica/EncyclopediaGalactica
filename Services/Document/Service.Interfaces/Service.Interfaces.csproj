@@ -13,7 +13,7 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
         <ProjectReference Include="..\Dtos\Dtos.csproj" />
         <ProjectReference Include="..\Entities\Entities.csproj" />
-        <ProjectReference Include="..\Sdk.Models\Sdk.Models.csproj" />
+        <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
         <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
     </ItemGroup>
 
