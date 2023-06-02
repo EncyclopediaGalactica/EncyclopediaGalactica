@@ -15,7 +15,7 @@ public partial class CSharpProcessor_Should
         // Arrange
         SolutionInfo solutionInfo = new SolutionInfo
         {
-            OriginalTargetDirectoryToken = input
+            OriginalBasePathToken = input
         };
         string expected;
         if (input.First().ToString() == "/")

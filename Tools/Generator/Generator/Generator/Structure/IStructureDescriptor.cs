@@ -5,16 +5,6 @@ using cSharp;
 public interface IStructureDescriptor
 {
     /// <summary>
-    ///     Returns the Solution Project Filetype default value
-    /// </summary>
-    string SolutionProjectDefaultFileType { get; }
-
-    /// <summary>
-    ///     Returns the Solution Filetype default value
-    /// </summary>
-    string SolutionDefaultFileType { get; }
-
-    /// <summary>
     ///     Returns he list of projects. This list is the base of all operations during generating the code.
     /// </summary>
     /// <returns>List of projects</returns>

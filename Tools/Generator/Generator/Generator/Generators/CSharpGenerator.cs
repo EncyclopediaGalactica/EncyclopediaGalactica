@@ -182,7 +182,7 @@ public class CSharpGenerator : AbstractGenerator
     private void CheckSolutionProjects()
     {
         GetOriginalSolutionNameTokenFromConfiguration(SolutionInfo);
-        GetOriginalTargetPathTokenFromConfiguration(SolutionInfo);
+        GetOriginalTargetPathFromConfiguration(SolutionInfo);
         GetOriginalSolutionFileTypeTokenFromConfiguration(SolutionInfo);
         GetOriginalSolutionProjectFileTypeTokenFromConfiguration(SolutionInfo);
 
@@ -192,7 +192,6 @@ public class CSharpGenerator : AbstractGenerator
         _cSharpProcessor.ProcessSolutionNameWithFullPath(SolutionInfo);
         _cSharpProcessor.ProcessProjectStructureSlots(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNames(SolutionInfo);
-        _cSharpProcessor.ProcessSolutionProjectFileTypes(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectBasePaths(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNamesWithFileType(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectFilesWithAbsolutePath(SolutionInfo);
@@ -215,8 +214,11 @@ public class CSharpGenerator : AbstractGenerator
         MarkVariablesAsPropertiesFromOpenApiSchema(DtoTestTypeInfos);
 
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTestTypeInfos);
+        GetOriginalDtoTestNamespaceTokenFromConfiguration(DtoTestTypeInfos);
 
-        GetOriginalTargetPathTokenFromConfiguration(DtoTestTypeInfos);
+        GetOriginalTargetPathFromConfiguration(DtoTestTypeInfos);
+        GetOriginalDtoTestProjectBasePathFromConfiguration(DtoTestTypeInfos);
+        GetOriginalDtoTestProjectAdditionalPathFromConfiguration(DtoTestTypeInfos);
 
         PreProcessDtoTestMetadata();
         CopyDtoRenderDataToDtoRenderObject(DtoTestTypeInfos, _dtoTestFileInfosRender);
@@ -231,8 +233,11 @@ public class CSharpGenerator : AbstractGenerator
         MarkVariablesAsPropertiesFromOpenApiSchema(DtoTypeInfos);
 
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTypeInfos);
+        GetOriginalDtoNamespaceTokenFromConfiguration(DtoTypeInfos);
 
-        GetOriginalTargetPathTokenFromConfiguration(DtoTypeInfos);
+        GetOriginalTargetPathFromConfiguration(DtoTypeInfos);
+        GetOriginalDtoProjectBasePathFromConfiguration(DtoTypeInfos);
+        GetOriginalDtoProjectAdditionalPathFromConfiguration(DtoTypeInfos);
 
         PreProcessDtoMetadata();
         CopyDtoRenderDataToDtoRenderObject(DtoTypeInfos, _dtoFileInfosRender);
@@ -419,7 +424,7 @@ public class CSharpGenerator : AbstractGenerator
         _cSharpProcessor.TypeCheckInGenerationScope(DtoTypeInfos, _typesInGenerationScope);
         _cSharpProcessor.AddTypeNamesToGenerationScope(DtoTypeInfos, _typesInGenerationScope);
         _cSharpProcessor.ProcessFileName(DtoTypeInfos, DtoFileNamePostFix, CSharpFileType);
-        _cSharpProcessor.ProcessDtoTargetPath(SolutionInfo, DtoTypeInfos);
+        _cSharpProcessor.ProcessDtoTargetPath(DtoTypeInfos);
         _cSharpProcessor.ProcessPathWithFileName(DtoTypeInfos);
         _cSharpProcessor.ProcessTemplatePath(DtoTypeInfos, DtoTemplatePath);
 

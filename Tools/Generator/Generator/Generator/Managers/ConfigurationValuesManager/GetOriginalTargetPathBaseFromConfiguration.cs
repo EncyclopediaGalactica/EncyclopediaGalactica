@@ -7,7 +7,7 @@ using Models;
 public partial class ConfigurationValuesManager
 {
     /// <inheritdoc />
-    public void GetOriginalTargetDirectoryTokenFromConfiguration(
+    public void GetOriginalTargetPathBaseFromConfiguration(
         List<TypeInfo> typeInfos,
         CodeGeneratorConfiguration? generatorConfiguration)
     {
@@ -15,16 +15,16 @@ public partial class ConfigurationValuesManager
         {
             _logger.LogInformation("{GeneratorConfiguration} is null, skipping {Operation}",
                 nameof(generatorConfiguration),
-                nameof(GetOriginalTargetDirectoryTokenFromConfiguration));
+                nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
-        if (string.IsNullOrEmpty(generatorConfiguration.TargetDirectory)
-            || string.IsNullOrWhiteSpace(generatorConfiguration.TargetDirectory))
+        if (string.IsNullOrEmpty(generatorConfiguration.SolutionBasePath)
+            || string.IsNullOrWhiteSpace(generatorConfiguration.SolutionBasePath))
         {
             _logger.LogInformation("{Param} is empty, skipping {Operation}",
-                nameof(generatorConfiguration.TargetDirectory),
-                nameof(GetOriginalTargetDirectoryTokenFromConfiguration));
+                nameof(generatorConfiguration.SolutionBasePath),
+                nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
@@ -32,17 +32,17 @@ public partial class ConfigurationValuesManager
         {
             _logger.LogInformation("{TypeInfos} list is empty, skipping {Operation}",
                 nameof(typeInfos),
-                nameof(GetOriginalTargetDirectoryTokenFromConfiguration));
+                nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
         foreach (TypeInfo fileInfo in typeInfos)
         {
-            fileInfo.OriginalTargetDirectoryToken = generatorConfiguration.TargetDirectory;
+            fileInfo.OriginalTargetDirectoryToken = generatorConfiguration.SolutionBasePath;
         }
     }
 
-    public void GetOriginalTargetDirectoryTokenFromConfiguration(
+    public void GetOriginalTargetPathBaseFromConfiguration(
         SolutionInfo solutionInfo,
         CodeGeneratorConfiguration? generatorConfiguration)
     {
@@ -50,19 +50,19 @@ public partial class ConfigurationValuesManager
         {
             _logger.LogInformation("{GeneratorConfiguration} is null, skipping {Operation}",
                 nameof(generatorConfiguration),
-                nameof(GetOriginalTargetDirectoryTokenFromConfiguration));
+                nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
-        if (string.IsNullOrEmpty(generatorConfiguration.TargetDirectory)
-            || string.IsNullOrWhiteSpace(generatorConfiguration.TargetDirectory))
+        if (string.IsNullOrEmpty(generatorConfiguration.SolutionBasePath)
+            || string.IsNullOrWhiteSpace(generatorConfiguration.SolutionBasePath))
         {
             _logger.LogInformation("{Param} is empty, skipping {Operation}",
-                nameof(generatorConfiguration.TargetDirectory),
-                nameof(GetOriginalTargetDirectoryTokenFromConfiguration));
+                nameof(generatorConfiguration.SolutionBasePath),
+                nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
-        solutionInfo.OriginalTargetDirectoryToken = generatorConfiguration.TargetDirectory;
+        solutionInfo.OriginalBasePathToken = generatorConfiguration.SolutionBasePath;
     }
 }

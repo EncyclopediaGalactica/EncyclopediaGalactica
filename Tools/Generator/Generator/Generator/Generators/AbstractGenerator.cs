@@ -31,7 +31,7 @@ public abstract class AbstractGenerator : ICodeGenerator
     public abstract string DtoTestTemplatePath { get; }
     public SolutionInfo SolutionInfo { get; } = new SolutionInfo();
 
-    //public List<TypeInfo> DtoTypeInfos { get; } = new List<TypeInfo>();
+    public List<TypeInfo> DtoTypeInfos { get; } = new List<TypeInfo>();
 
     public List<TypeInfo> DtoTestTypeInfos { get; } = new List<TypeInfo>();
 
@@ -153,16 +153,30 @@ public abstract class AbstractGenerator : ICodeGenerator
             GeneratorConfiguration);
     }
 
-    protected void GetOriginalTargetPathTokenFromConfiguration(List<TypeInfo> fileInfos)
+    protected void GetOriginalDtoNamespaceTokenFromConfiguration(List<TypeInfo> fileInfos)
     {
-        ConfigurationValuesManager.GetOriginalTargetDirectoryTokenFromConfiguration(
+        ConfigurationValuesManager.GetOriginalDtoProjectNamespaceTokenFromConfigurationAndAddToTypeInfos(
             fileInfos,
             GeneratorConfiguration);
     }
 
-    protected void GetOriginalTargetPathTokenFromConfiguration(SolutionInfo solutionInfo)
+    protected void GetOriginalDtoTestNamespaceTokenFromConfiguration(List<TypeInfo> fileInfos)
     {
-        ConfigurationValuesManager.GetOriginalTargetDirectoryTokenFromConfiguration(
+        ConfigurationValuesManager.GetOriginalDtoTestProjectNamespaceTokenFromConfigurationAndAddToTypeInfos(
+            fileInfos,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalTargetPathFromConfiguration(List<TypeInfo> fileInfos)
+    {
+        ConfigurationValuesManager.GetOriginalTargetPathBaseFromConfiguration(
+            fileInfos,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalTargetPathFromConfiguration(SolutionInfo solutionInfo)
+    {
+        ConfigurationValuesManager.GetOriginalTargetPathBaseFromConfiguration(
             solutionInfo,
             GeneratorConfiguration);
     }
@@ -178,6 +192,34 @@ public abstract class AbstractGenerator : ICodeGenerator
     {
         ConfigurationValuesManager.GetOriginalSolutionProjectFileTypeTokenFromConfigurationAndAddToSolutionInfo(
             solutionInfo,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalDtoProjectBasePathFromConfiguration(List<TypeInfo> fileInfos)
+    {
+        ConfigurationValuesManager.GetOriginalDtoProjectBasePathFromConfigurationAndAddToTypeInfos(
+            fileInfos,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalDtoTestProjectBasePathFromConfiguration(List<TypeInfo> typeInfos)
+    {
+        ConfigurationValuesManager.GetOriginalDtoTestProjectBasePathFromConfigurationAndAddToTypeInfos(
+            typeInfos,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalDtoTestProjectAdditionalPathFromConfiguration(List<TypeInfo> typeInfos)
+    {
+        ConfigurationValuesManager.GetOriginalDtoTestProjectAdditionalPathFromConfigurationAndAddToTypeInfo(
+            typeInfos,
+            GeneratorConfiguration);
+    }
+
+    protected void GetOriginalDtoProjectAdditionalPathFromConfiguration(List<TypeInfo> fileInfos)
+    {
+        ConfigurationValuesManager.GetOriginalDtoAdditionalPathFromConfigurationAndAddToTypeInfo(
+            fileInfos,
             GeneratorConfiguration);
     }
 

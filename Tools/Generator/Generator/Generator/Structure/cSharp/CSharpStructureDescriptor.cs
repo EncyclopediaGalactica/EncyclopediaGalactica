@@ -18,7 +18,7 @@ public partial class CSharpStructureDescriptor : IStructureDescriptor
             Slots.DtoProjectTestUnit,
             new ProjectDescriptor
             {
-                NamingPattern = "Dto.Tests.Unit",
+                NamingPattern = "Dto.Test.Unit",
                 DependenciesBySlotName = new List<string>
                 {
                     Slots.DtoProject
@@ -30,10 +30,7 @@ public partial class CSharpStructureDescriptor : IStructureDescriptor
     private Logger<CSharpStructureDescriptor> _logger = new Logger<CSharpStructureDescriptor>(
         LoggerFactory.Create(o => o.AddConsole()));
 
-    public string SolutionProjectDefaultFileType { get; } = "csproj";
-    public string SolutionDefaultFileType { get; } = "sln";
-
-    public struct Slots
+    private struct Slots
     {
         public const string DtoProject = "dto_project";
         public const string DtoProjectTestUnit = "dto_project_test_unit";

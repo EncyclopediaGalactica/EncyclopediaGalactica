@@ -8,6 +8,7 @@ using Managers.PathManager;
 using Managers.StringManager;
 using Managers.TemplateManager;
 using Microsoft.OpenApi.Models;
+using Models;
 
 /// <summary>
 ///     Code Generator interface
@@ -20,7 +21,7 @@ public interface ICodeGenerator
     ///         This property stores all the data needed preprocessing Dto generation phase.
     ///     </remarks>
     /// </summary>
-    //public List<TypeInfo> DtoTypeInfos { get; }
+    public List<TypeInfo> DtoTypeInfos { get; }
 
     /// <summary>
     ///     Gets or sets the DtoFileInfos value.
@@ -28,7 +29,7 @@ public interface ICodeGenerator
     ///         This property stores all the data needed Dto Tests preprocessing.
     ///     </remarks>
     /// </summary>
-    //public List<TypeInfo> DtoTestTypeInfos { get; }
+    public List<TypeInfo> DtoTestTypeInfos { get; }
 
     /// <summary>
     ///     Builder method for providing configuration values for the generator.

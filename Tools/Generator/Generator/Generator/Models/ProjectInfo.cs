@@ -56,15 +56,15 @@ public class ProjectInfo
     public string PathFromSolutionBase { get; set; }
 
     /// <summary>
+    ///     Gets or sets the file type of a project file in the solution
+    ///     <remarks>
+    ///         In case of c-sharp it is <b>csproj</b>
+    ///     </remarks>
+    /// </summary>
+    public string SolutionProjectFileType { get; set; }
+
+    /// <summary>
     ///     Gets or sets the solution project file name with filetype extension value
     /// </summary>
     public string SolutionProjectFileWithType { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the type related information of the project.
-    ///     <remarks>
-    ///         A type in c-sharp terminology means a class
-    ///     </remarks>
-    /// </summary>
-    public List<TypeInfo> TypeInfos { get; set; }
 }

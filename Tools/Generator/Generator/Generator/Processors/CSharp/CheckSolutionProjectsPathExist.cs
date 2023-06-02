@@ -14,16 +14,27 @@ public partial class CSharpProcessor
             return;
         }
 
-        solutionInfo.ProjectInfos.ForEach(item =>
+        bool result = solutionInfo.ProjectInfos
+            .All(p => _pathManager.IsPathExists(p.BasePath));
+
+        EvaluateCheckSolutionProjectsPathExistResult(solutionInfo, result);
+    }
+
+    private void EvaluateCheckSolutionProjectsPathExistResult(SolutionInfo solutionInfo, bool result)
+    {
+        if (!result)
         {
-            if (!_pathManager.IsPathExists(item.BasePath))
+            solutionInfo.ProjectInfos.ForEach(p =>
             {
-                _logger.LogInformation(
-                    "{Path} does not exist, please create it",
-                    item.BasePath);
-                throw new GeneratorException(
-                    $"{item.BasePath} does not exist, please create it.");
-            }
-        });
+                if (!_pathManager.IsPathExists(p.BasePath))
+                {
+                    _logger.LogInformation(
+                        "{Path} does not exist, please create it",
+                        p.BasePath);
+                    throw new GeneratorException(
+                        $"{p.BasePath} does not exist, please create it.");
+                }
+            });
+        }
     }
 }

@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Managers.ConfigurationValuesManager;
 
 using Configuration;
-using Microsoft.Extensions.Logging;
 using Models;
 
 public partial class ConfigurationValuesManager
@@ -11,10 +10,9 @@ public partial class ConfigurationValuesManager
         SolutionInfo solutionInfo,
         CodeGeneratorConfiguration generatorConfiguration)
     {
-        if (!string.IsNullOrEmpty(generatorConfiguration.SolutionProjectFileType)
-            || !string.IsNullOrWhiteSpace(generatorConfiguration.SolutionProjectFileType))
+        solutionInfo.ProjectInfos.ForEach(item =>
         {
-            solutionInfo.SolutionProjectFileType = generatorConfiguration.SolutionProjectFileType;
-        }
+            item.SolutionProjectFileType = generatorConfiguration.SolutionProjectFileType;
+        });
     }
 }
