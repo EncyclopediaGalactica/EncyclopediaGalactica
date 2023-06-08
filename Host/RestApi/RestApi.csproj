@@ -26,8 +26,8 @@
         <ProjectReference Include="..\..\Services\Document\Controllers.ViewModels\Controllers.ViewModels.csproj" />
         <ProjectReference Include="..\..\Services\Document\Controllers\Controllers.csproj" />
         <ProjectReference Include="..\..\Services\Document\Ctx\Ctx.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Dtos\Dtos.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Entities\Entities.csproj" />
+        <ProjectReference Include="..\..\Services\Document\Document.Dtos\Document.Dtos.csproj" />
+        <ProjectReference Include="..\..\Services\Document\Document.Entities\Document.Entities.csproj" />
         <ProjectReference Include="..\..\Services\Document\Mappers.Exceptions\Mappers.Exceptions.csproj" />
         <ProjectReference Include="..\..\Services\Document\Mappers.Interfaces\Mappers.Interfaces.csproj" />
         <ProjectReference Include="..\..\Services\Document\Mappers\Mappers.csproj" />
