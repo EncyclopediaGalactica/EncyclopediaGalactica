@@ -6,7 +6,9 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
 {
     public CodeGeneratorConfigurationValidator()
     {
-        RuleFor(p => p.OpenApiSpecificationPath).NotNull().NotEmpty()
+        RuleFor(p => p.OpenApiSpecificationPath)
+            .NotNull()
+            .NotEmpty()
             .WithMessage("OpenApi specification path must be defined.");
 
         RuleFor(p => p.SolutionBasePath).NotNull().NotEmpty()
@@ -18,7 +20,6 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
         RuleFor(p => p.Lang)
             .NotNull()
             .NotEmpty()
-            .NotEqual(string.Empty)
             .WithMessage("Lang must be defined");
 
         RuleFor(p => p.SolutionName).NotNull().NotEmpty()

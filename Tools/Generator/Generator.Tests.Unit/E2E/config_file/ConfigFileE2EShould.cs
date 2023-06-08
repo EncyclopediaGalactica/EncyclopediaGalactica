@@ -1,10 +1,12 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.config_file;
 
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
+[ExcludeFromCodeCoverage]
 [Trait("Category", "Generator")]
 public class ConfigFileE2EShould : TestBase
 {

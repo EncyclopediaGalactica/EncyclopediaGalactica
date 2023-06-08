@@ -1,11 +1,13 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.lang;
 
+using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;
 using FluentValidation;
 using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
+[ExcludeFromCodeCoverage]
 [Trait("Category","Generator")]
 public class LangE2EShould : TestBase
 {
