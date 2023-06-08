@@ -284,6 +284,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator", "Tools\Generato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Tests.Unit", "Tools\Generator\Generator.Tests.Unit\Generator.Tests.Unit.csproj", "{E942FB04-163C-4C98-8F93-6A630F450400}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{15DADD9D-C45E-4D6D-B052-D55226C6705E}"
+	ProjectSection(SolutionItems) = preProject
+		Tools\Generator\Doc\Specification.md = Tools\Generator\Doc\Specification.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -927,5 +932,6 @@ Global
 		{03E563D4-070E-4DFD-ABA6-ABBDDE7CE180} = {6EF5F13D-67C6-4059-B839-83D525EC16A5}
 		{2238110E-A37D-4063-8325-48381F41E51D} = {6EF5F13D-67C6-4059-B839-83D525EC16A5}
 		{E942FB04-163C-4C98-8F93-6A630F450400} = {6EF5F13D-67C6-4059-B839-83D525EC16A5}
+		{15DADD9D-C45E-4D6D-B052-D55226C6705E} = {6EF5F13D-67C6-4059-B839-83D525EC16A5}
 	EndGlobalSection
 EndGlobal

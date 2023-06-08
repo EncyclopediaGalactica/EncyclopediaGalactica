@@ -15,7 +15,10 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
         RuleFor(p => p.SolutionBaseNamespace).NotNull().NotEmpty()
             .WithMessage("Base namespace must be defined.");
 
-        RuleFor(p => p.Lang).NotNull().NotEmpty().NotEqual(string.Empty)
+        RuleFor(p => p.Lang)
+            .NotNull()
+            .NotEmpty()
+            .NotEqual(string.Empty)
             .WithMessage("Lang must be defined");
 
         RuleFor(p => p.SolutionName).NotNull().NotEmpty()

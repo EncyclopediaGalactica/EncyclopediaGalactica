@@ -105,13 +105,13 @@ public class CodeGenerator
                 if (string.IsNullOrEmpty(_generatorConfigurationPath))
                 {
                     _logger.LogError("Path to configuration file is not defined");
-                    return null;
+                    throw new GeneratorException("Path to configuration file is not defined");
                 }
 
                 if (!File.Exists(_generatorConfigurationPath))
                 {
                     _logger.LogError("Config file path is invalid: {Path}", _generatorConfigurationPath);
-                    return null;
+                    throw new GeneratorException($"Config file path is invalid: {_generatorConfigurationPath}");
                 }
 
                 _logger.LogInformation(
@@ -133,7 +133,7 @@ public class CodeGenerator
                 _logger.LogInformation("Generator configuration has been parsed");
 
                 CodeGeneratorConfigurationValidator configFileValidator = new CodeGeneratorConfigurationValidator();
-                configFileValidator.Validate(generatorConfiguration, o => { o.ThrowOnFailures(); });
+                configFileValidator.ValidateAndThrow(generatorConfiguration);
 
                 string yamlFileFullPath = $"{_actualPath}/{generatorConfiguration.OpenApiSpecificationPath}";
                 _logger.LogInformation("OpenApi yaml file location: {Path}", yamlFileFullPath);
@@ -153,9 +153,7 @@ public class CodeGenerator
                     "Inner exception message: {Message} ", e.Message
                 );
                 throw new GeneratorException(
-                    "Unsuccessful code generation. For further information see inner exception. " +
-                    $"Inner exception message: {e.Message} " +
-                    $"Stack trace: {e.StackTrace}",
+                    "Unsuccessful code generation. For further information see inner exception. ",
                     e);
             }
         }
