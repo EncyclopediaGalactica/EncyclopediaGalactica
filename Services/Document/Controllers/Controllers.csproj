@@ -19,7 +19,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Api\Api.csproj" />
         <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj" />
-        <ProjectReference Include="..\Dtos\Dtos.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\CacheService\CacheService.csproj" />
         <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
         <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />

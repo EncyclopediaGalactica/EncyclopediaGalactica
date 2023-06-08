@@ -12,6 +12,7 @@
     <ItemGroup>
         <ProjectReference Include="..\CacheService.Exceptions\CacheService.Exceptions.csproj" />
         <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
     </ItemGroup>
 
 </Project>

@@ -15,7 +15,7 @@
         <ProjectReference Include="..\..\..\Client\Core\Core.csproj" />
         <ProjectReference Include="..\Api\Api.csproj" />
         <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
-        <ProjectReference Include="..\Dtos\Dtos.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj" />
         <ProjectReference Include="..\DocumentClient.Interfaces\DocumentClient.Interfaces.csproj" />
     </ItemGroup>
