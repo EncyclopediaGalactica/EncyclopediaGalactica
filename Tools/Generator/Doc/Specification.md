@@ -73,6 +73,9 @@ If this value is not provided the code generation stops with an error message.
 
 The generator uses the OpenApi file to generate majority of the codebase.
 
+When this file is missing or the parameter contains invalid value the code generation stops
+with and error.
+
 ## Target directory
 
 ```json
