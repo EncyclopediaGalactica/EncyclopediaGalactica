@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Interfaces;
 
 using Dtos;
-using Entities;
 using Models.Document;
 
 /// <summary>

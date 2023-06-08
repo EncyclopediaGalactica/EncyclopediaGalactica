@@ -11,8 +11,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj" />
-        <ProjectReference Include="..\Dtos\Dtos.csproj" />
-        <ProjectReference Include="..\Entities\Entities.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
         <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
         <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
         <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />

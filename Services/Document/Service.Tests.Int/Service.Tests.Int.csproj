@@ -30,6 +30,8 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
         <ProjectReference Include="..\Mappers\Mappers.csproj" />
         <ProjectReference Include="..\Tests.Datasets\Tests.Datasets.csproj" />
         <ProjectReference Include="..\Repository\Repository.csproj" />

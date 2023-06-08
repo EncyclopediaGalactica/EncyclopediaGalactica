@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Dtos\Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
     </ItemGroup>
 
 </Project>

@@ -6,13 +6,12 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.Services.Document.Entities.Tests.Unit</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.Services.Document.Entities.Tests.Unit</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
-        <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -26,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Entities\Entities.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
     </ItemGroup>
 
 </Project>

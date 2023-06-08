@@ -21,6 +21,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
         <ProjectReference Include="..\Tests.Datasets\Tests.Datasets.csproj" />
     </ItemGroup>

@@ -25,6 +25,7 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />
         <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj" />
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
         <ProjectReference Include="..\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
         <ProjectReference Include="..\Repository\Repository.csproj" />
