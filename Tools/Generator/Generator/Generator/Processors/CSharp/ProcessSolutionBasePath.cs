@@ -8,12 +8,12 @@ public partial class CSharpProcessor
     /// <inheritdoc />
     public void ProcessSolutionBasePath(SolutionInfo solutionInfo)
     {
-        if (string.IsNullOrEmpty(solutionInfo.OriginalBasePathToken)
-            || string.IsNullOrWhiteSpace(solutionInfo.OriginalBasePathToken))
+        if (string.IsNullOrEmpty(solutionInfo.OriginalTargetDirectoryToken)
+            || string.IsNullOrWhiteSpace(solutionInfo.OriginalTargetDirectoryToken))
         {
-            _logger.LogInformation("{Path} is empty", nameof(solutionInfo.OriginalBasePathToken));
+            _logger.LogInformation("{Path} is empty", nameof(solutionInfo.OriginalTargetDirectoryToken));
         }
 
-        solutionInfo.BaseAbsolutePath = _pathManager.CheckIfPathAbsoluteOrMakeItOne(solutionInfo.OriginalBasePathToken);
+        solutionInfo.BaseAbsolutePath = _pathManager.CheckIfPathAbsoluteOrMakeItOne(solutionInfo.OriginalTargetDirectoryToken);
     }
 }

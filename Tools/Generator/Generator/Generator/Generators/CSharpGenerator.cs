@@ -182,7 +182,7 @@ public class CSharpGenerator : AbstractGenerator
     private void CheckSolutionProjects()
     {
         GetOriginalSolutionNameTokenFromConfiguration(SolutionInfo);
-        GetOriginalTargetPathFromConfiguration(SolutionInfo);
+        GetOriginalTargetPathTokenFromConfiguration(SolutionInfo);
         GetOriginalSolutionFileTypeTokenFromConfiguration(SolutionInfo);
         GetOriginalSolutionProjectFileTypeTokenFromConfiguration(SolutionInfo);
 
@@ -216,7 +216,7 @@ public class CSharpGenerator : AbstractGenerator
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTestTypeInfos);
         GetOriginalDtoTestNamespaceTokenFromConfiguration(DtoTestTypeInfos);
 
-        GetOriginalTargetPathFromConfiguration(DtoTestTypeInfos);
+        GetOriginalTargetPathTokenFromConfiguration(DtoTestTypeInfos);
         GetOriginalDtoTestProjectBasePathFromConfiguration(DtoTestTypeInfos);
         GetOriginalDtoTestProjectAdditionalPathFromConfiguration(DtoTestTypeInfos);
 
@@ -235,7 +235,7 @@ public class CSharpGenerator : AbstractGenerator
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTypeInfos);
         GetOriginalDtoNamespaceTokenFromConfiguration(DtoTypeInfos);
 
-        GetOriginalTargetPathFromConfiguration(DtoTypeInfos);
+        GetOriginalTargetPathTokenFromConfiguration(DtoTypeInfos);
         GetOriginalDtoProjectBasePathFromConfiguration(DtoTypeInfos);
         GetOriginalDtoProjectAdditionalPathFromConfiguration(DtoTypeInfos);
 

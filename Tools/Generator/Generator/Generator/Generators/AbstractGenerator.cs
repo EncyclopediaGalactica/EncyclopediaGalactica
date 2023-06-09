@@ -167,16 +167,16 @@ public abstract class AbstractGenerator : ICodeGenerator
             GeneratorConfiguration);
     }
 
-    protected void GetOriginalTargetPathFromConfiguration(List<TypeInfo> fileInfos)
+    protected void GetOriginalTargetPathTokenFromConfiguration(List<TypeInfo> fileInfos)
     {
-        ConfigurationValuesManager.GetOriginalTargetPathBaseFromConfiguration(
+        ConfigurationValuesManager.GetOriginalTargetDirectoryTokenFromConfiguration(
             fileInfos,
             GeneratorConfiguration);
     }
 
-    protected void GetOriginalTargetPathFromConfiguration(SolutionInfo solutionInfo)
+    protected void GetOriginalTargetPathTokenFromConfiguration(SolutionInfo solutionInfo)
     {
-        ConfigurationValuesManager.GetOriginalTargetPathBaseFromConfiguration(
+        ConfigurationValuesManager.GetOriginalTargetDirectoryTokenFromConfiguration(
             solutionInfo,
             GeneratorConfiguration);
     }

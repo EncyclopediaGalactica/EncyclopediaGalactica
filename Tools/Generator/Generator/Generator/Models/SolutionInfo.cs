@@ -26,7 +26,7 @@ public class SolutionInfo
     ///         This value is copied directly from the configuration without any modification
     ///     </remarks>
     /// </summary>
-    public string OriginalBasePathToken { get; set; }
+    public string OriginalTargetDirectoryToken { get; set; }
 
     /// <summary>
     ///     Gets or sets the name value

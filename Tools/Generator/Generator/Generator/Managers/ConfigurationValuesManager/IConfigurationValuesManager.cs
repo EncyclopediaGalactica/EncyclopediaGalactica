@@ -34,7 +34,7 @@ public interface IConfigurationValuesManager
     /// </summary>
     /// <param name="typeInfos">List of <see cref="TypeInfo" /></param>
     /// <param name="generatorConfiguration">Instance of <see cref="CodeGeneratorConfiguration" /></param>
-    void GetOriginalTargetPathBaseFromConfiguration(
+    void GetOriginalTargetDirectoryTokenFromConfiguration(
         List<TypeInfo> typeInfos,
         CodeGeneratorConfiguration? generatorConfiguration);
 
@@ -43,7 +43,7 @@ public interface IConfigurationValuesManager
     /// </summary>
     /// <param name="solutionInfo">Solution configuration</param>
     /// <param name="generatorConfiguration">Instance of <see cref="CodeGeneratorConfiguration" /></param>
-    void GetOriginalTargetPathBaseFromConfiguration(
+    void GetOriginalTargetDirectoryTokenFromConfiguration(
         SolutionInfo solutionInfo,
         CodeGeneratorConfiguration? generatorConfiguration);
 

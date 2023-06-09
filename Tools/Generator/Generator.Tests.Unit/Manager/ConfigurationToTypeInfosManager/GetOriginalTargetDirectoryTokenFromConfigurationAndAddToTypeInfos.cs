@@ -7,7 +7,7 @@ using Xunit;
 
 public partial class ConfigurationToTypeInfoManager_Should
 {
-    public static IEnumerable<object[]> GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfosData =
+    public static IEnumerable<object[]> GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfosData =
         new List<object[]>
         {
             new[]
@@ -63,17 +63,17 @@ public partial class ConfigurationToTypeInfoManager_Should
         };
 
     [Fact]
-    public void GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfos_ConfigurationIsNull()
+    public void GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfos_ConfigurationIsNull()
     {
         // Arrange && Act
         Action action = () =>
         {
-            _sut.GetOriginalTargetPathBaseFromConfiguration(
+            _sut.GetOriginalTargetDirectoryTokenFromConfiguration(
                 new List<TypeInfo>(),
                 null!);
         };
 
-        //
+        // Assert
         action.Should().NotThrow();
     }
 
@@ -81,7 +81,7 @@ public partial class ConfigurationToTypeInfoManager_Should
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    public void GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfos_TargetDirectoryNull(
+    public void GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfos_TargetDirectoryNull(
         string? targetDirectoryValue)
     {
         // Arrange
@@ -105,11 +105,11 @@ public partial class ConfigurationToTypeInfoManager_Should
         // Act
         Action action = () =>
         {
-            _sut.GetOriginalTargetPathBaseFromConfiguration(
+            _sut.GetOriginalTargetDirectoryTokenFromConfiguration(
                 list,
                 new CodeGeneratorConfiguration
                 {
-                    SolutionBasePath = targetDirectoryValue!
+                    TargetDirectory = targetDirectoryValue!
                 });
         };
 
@@ -119,7 +119,7 @@ public partial class ConfigurationToTypeInfoManager_Should
     }
 
     [Fact]
-    public void GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfos_TypeInfoEmpty()
+    public void GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfos_TypeInfoEmpty()
     {
         // Arrange
         List<TypeInfo> list = new List<TypeInfo>();
@@ -127,11 +127,11 @@ public partial class ConfigurationToTypeInfoManager_Should
         // Act
         Action action = () =>
         {
-            _sut.GetOriginalTargetPathBaseFromConfiguration(
+            _sut.GetOriginalTargetDirectoryTokenFromConfiguration(
                 list,
                 new CodeGeneratorConfiguration
                 {
-                    SolutionBasePath = "asd"
+                    TargetDirectory = "asd"
                 });
         };
 
@@ -140,19 +140,19 @@ public partial class ConfigurationToTypeInfoManager_Should
     }
 
     [Theory]
-    [MemberData(nameof(GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfosData))]
-    public void GetOriginalTargetPathBaseFromConfigurationAndAddToTypeInfos(
+    [MemberData(nameof(GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfosData))]
+    public void GetOriginalTargetDirectoryTokenFromConfiguration_AndAddToTypeInfos(
         List<TypeInfo> input,
         List<TypeInfo> expected)
     {
         // Arrange
         CodeGeneratorConfiguration configuration = new CodeGeneratorConfiguration
         {
-            SolutionBasePath = "targetpath"
+            TargetDirectory = "targetpath"
         };
 
         // Act
-        _sut.GetOriginalTargetPathBaseFromConfiguration(
+        _sut.GetOriginalTargetDirectoryTokenFromConfiguration(
             input,
             configuration);
 
