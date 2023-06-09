@@ -32,10 +32,6 @@
       "description": "REQUIRED: The name of the solution.",
       "type": "string"
     },
-    "solution_base_path": {
-      "description": "REQUIRED: Path to the directory where the generated source will be placed. It is also the Solution directory.",
-      "type": "string"
-    },
     "solution_base_namespace": {
       "description": "REQUIRED: The base namespace of the solution.",
       "type": "string"

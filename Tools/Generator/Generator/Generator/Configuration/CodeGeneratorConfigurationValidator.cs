@@ -21,7 +21,9 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
             .NotEmpty()
             .WithMessage("Target directory must be specified");
 
-        RuleFor(p => p.SolutionBaseNamespace).NotNull().NotEmpty()
+        RuleFor(p => p.SolutionBaseNamespace)
+            .NotNull()
+            .NotEmpty()
             .WithMessage("Base namespace must be defined.");
 
         RuleFor(p => p.SolutionName).NotNull().NotEmpty()

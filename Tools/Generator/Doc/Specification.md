@@ -91,3 +91,20 @@ The directory can be defined both relative and absolute path way. The code gener
 both.
 
 If the directory does not exist the generator execution stops with an error.
+
+## Solution Base Namespace
+
+```json
+{
+  "solution_base_namespace": "something.namespace"
+}
+```
+
+The solution level base namespace is used to build other namespaces during generation.
+
+The value can be provided only lowercase characters the generator transforms them to the 
+right C# format:
+
+- "something.namespace" ==> "Something.Namespace"
+
+If the namespace is not provided the code generating will stop with an error.

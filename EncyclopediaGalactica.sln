@@ -287,6 +287,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{15DADD9D-C45E-4D6D-B052-D55226C6705E}"
 	ProjectSection(SolutionItems) = preProject
 		Tools\Generator\Doc\Specification.md = Tools\Generator\Doc\Specification.md
+		Tools\Generator\Doc\configuration.schema.json = Tools\Generator\Doc\configuration.schema.json
 	EndProjectSection
 EndProject
 Global
