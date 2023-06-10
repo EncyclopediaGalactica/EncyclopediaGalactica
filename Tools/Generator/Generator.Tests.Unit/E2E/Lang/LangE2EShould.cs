@@ -1,22 +1,22 @@
-namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.target_directory;
+namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.Lang;
 
 using System.Diagnostics.CodeAnalysis;
+using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
 using FluentValidation;
-using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "Generator")]
-public class TargetDirectoryE2EShould : TestBase
+[Trait("Category","Generator")]
+public class LangE2EShould : TestBase
 {
     [Fact]
-    public void ThrowWhenTargetDirectoryIsNotDefined()
+    public void ThrowExceptionWhenLangValueIsNotProvided()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/target_directory/";
-        string configFilePath = $"{currentPath}/path_missing.config.json";
+        string currentPath = $"{BasePath}/E2E/lang/";
+        string configFilePath = $"{currentPath}/missing_lang.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -24,11 +24,11 @@ public class TargetDirectoryE2EShould : TestBase
     }
 
     [Fact]
-    public void ThrowWhenTargetDirectoryIsEmpty()
+    public void ThrowExceptionWhenLangValueIsEmpty()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/target_directory/";
-        string configFilePath = $"{currentPath}/target_directory_is_empty.config.json";
+        string currentPath = $"{BasePath}/E2E/lang/";
+        string configFilePath = $"{currentPath}/empty_lang.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -36,18 +36,18 @@ public class TargetDirectoryE2EShould : TestBase
     }
 
     [Fact]
-    public void ThrowWhenTargetDirectoryIsSpaces()
+    public void ThrowExceptionWhenLangValueIsSpace()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/target_directory/";
-        string configFilePath = $"{currentPath}/target_directory_is_empty.config.json";
+        string currentPath = $"{BasePath}/E2E/lang/";
+        string configFilePath = $"{currentPath}/lang_is_space.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    public TargetDirectoryE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    public LangE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
     }
 }

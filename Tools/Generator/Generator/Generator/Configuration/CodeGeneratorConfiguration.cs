@@ -44,7 +44,7 @@ public class CodeGeneratorConfiguration
     ///     </remarks>
     /// </summary>
     [JsonProperty("solution_name")]
-    public string SolutionName { get; set; }
+    public string? SolutionName { get; set; }
 
     /// <summary>
     ///     Gets or sets the solution base name space.
@@ -54,7 +54,7 @@ public class CodeGeneratorConfiguration
     ///     </remarks>
     /// </summary>
     [JsonProperty("solution_base_namespace")]
-    public string SolutionBaseNamespace { get; set; }
+    public string? SolutionBaseNamespace { get; set; }
 
     [JsonProperty("dto_project_name")]
     public string DtoProjectName { get; set; }

@@ -102,9 +102,10 @@ If the directory does not exist the generator execution stops with an error.
 
 The solution level base namespace is used to build other namespaces during generation.
 
-The value can be provided only lowercase characters the generator transforms them to the 
-right C# format:
-
+Validation and transformation rules are the following:
 - "something.namespace" ==> "Something.Namespace"
-
-If the namespace is not provided the code generating will stop with an error.
+- "something." ==> "Something"
+- ".something" ==> "Something"
+- null ==> throw
+- string.emtpy ==> throw
+- "  " ==> throw

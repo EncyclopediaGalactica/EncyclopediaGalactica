@@ -1,8 +1,8 @@
-namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.config_file;
+namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.ConfigFile;
 
 using System.Diagnostics.CodeAnalysis;
+using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
-using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
