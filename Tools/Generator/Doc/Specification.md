@@ -103,9 +103,73 @@ If the directory does not exist the generator execution stops with an error.
 The solution level base namespace is used to build other namespaces during generation.
 
 Validation and transformation rules are the following:
+
 - "something.namespace" ==> "Something.Namespace"
 - "something." ==> "Something"
 - ".something" ==> "Something"
 - null ==> throw
 - string.emtpy ==> throw
 - "  " ==> throw
+
+## Solution Name
+
+```json
+{
+  "solution_name": "SolutionName"
+}
+```
+
+The name of the solution. The code generator will look for a file with this name with the
+configured file type.
+
+### Errors
+
+- when there is no solution file in the defined directory
+- no solution name is defined
+- solution name is space(s)
+- solution name starts with a non letter character
+- solution name contains other than alphanumerical and dot character(s)
+
+### C# specifics
+
+## Dto Project Name
+
+```json
+{
+  "dto_project_name": "Dto.Project.Name21"
+}
+```
+
+The Dto Project Name defines the name of the Dto project. The Dto project (Data Transfer
+Object) contains the objects representing the contract to the outside. These objects are
+generated based on the schema definitions in the Open Api file.
+
+### Validation
+
+| Input           | Validation Result |
+|-----------------|-------------------|
+| null            | throw             |
+| string.empty    | throw             |
+| "{space(s)}   " | throw             |
+
+### C# Specifics
+
+The generator has a theoretical inner structure for a C# project. The Dto project is located at
+the `{$TargetDirectory}/{$SolutionName}.Dto` directory.
+
+#### Validation and Transformation
+
+The table below inherits all items from the validation rules above
+
+Example for a solution project name: `Something.Project.Name32`
+
+| Input                                                                    | Transformation or Validation result |
+|--------------------------------------------------------------------------|-------------------------------------|
+| Alphanumerical characters and Dot                                        | accept                              |
+| More than Alphanumerical characters and Dot                              | throws                              |
+| Name starts **not** with a letter                                        | throw                               |
+| Name contains dot and the first char after the dot is not letter         | throw                               |
+| Name contains dot and the first char after is a letter but not uppercase | transform to uppercase              |
+| Name starts with lowercase character                                     | transform to uppercase              |
+| Chars after the dot(s) are lowercase                                     | transform to uppercase              |
+

@@ -57,7 +57,7 @@ public class CodeGeneratorConfiguration
     public string? SolutionBaseNamespace { get; set; }
 
     [JsonProperty("dto_project_name")]
-    public string DtoProjectName { get; set; }
+    public string? DtoProjectName { get; set; }
 
     /// <summary>
     ///     Sets or gets the DtoProjectBasePath property

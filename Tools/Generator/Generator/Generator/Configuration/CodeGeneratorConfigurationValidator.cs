@@ -52,8 +52,24 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
 #pragma warning restore CS8604
         });
 
-        RuleFor(p => p.DtoProjectName).NotNull().NotEmpty()
+        RuleFor(p => p.DtoProjectName)
+            .NotNull()
+            .NotEmpty()
             .WithMessage("Dto project name must be provided");
+        When(p => !string.IsNullOrEmpty(p.DtoProjectName) && !string.IsNullOrWhiteSpace(p.DtoProjectName), () =>
+        {
+#pragma warning disable CS8604
+            RuleFor(pp => Regex.IsMatch(pp.DtoProjectName, "^[a-zA-Z0-9.]*$"))
+                .Equal(true)
+                .WithMessage("Dto Project Name must contain only alphanumeric characters and . (dot)");
+            RuleFor(pp => Regex.IsMatch(pp.DtoProjectName, "\\.(?![a-zA-Z.$])"))
+                .Equal(false)
+                .WithMessage("Dto Project Name must have letter after dots");
+            RuleFor(pp => char.IsLetter(pp.DtoProjectName.First()))
+                .Equal(true)
+                .WithMessage("Dto Project Name must start with letter");
+#pragma warning restore CS8604
+        });
 
         RuleFor(p => p.DtoProjectBasePath).NotNull().NotEmpty()
             .WithMessage("Dto project base path must be provided");

@@ -10,12 +10,13 @@ using Xunit.Abstractions;
 [Trait("Category", "Generator")]
 public class ConfigFileE2EShould : TestBase
 {
+    private readonly string _currentPath;
+
     [Fact]
     public void ThrowWhenConfigFilePathIsNotDefined()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/config_file/";
-        string configFilePath = $"{currentPath}/config.json";
+        string configFilePath = $"{_currentPath}/config.json";
         Action action = () => { new CodeGenerator.Builder().Generate(); };
 
         // Assert
@@ -26,8 +27,7 @@ public class ConfigFileE2EShould : TestBase
     public void ThrowWhenConfigFileDoesNotExist()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/config_file/";
-        string configFilePath = $"{currentPath}/config.json";
+        string configFilePath = $"{_currentPath}/config.json";
         Action action = () => { new CodeGenerator.Builder().Generate(); };
 
         // Assert
@@ -36,5 +36,6 @@ public class ConfigFileE2EShould : TestBase
 
     public ConfigFileE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
+        _currentPath = $"{BasePath}/E2E/ConfigFile";
     }
 }
