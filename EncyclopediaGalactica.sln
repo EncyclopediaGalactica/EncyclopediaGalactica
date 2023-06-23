@@ -122,35 +122,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{0E2DE441-A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IAM", "IAM", "{64582B23-FEE0-4315-B14F-A319A05BDBE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Services\IAM\Api\Api.csproj", "{897344EC-EA16-4F99-A9D3-44BFD667789A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Api", "Services\IAM\IAM.Api\IAM.Api.csproj", "{897344EC-EA16-4F99-A9D3-44BFD667789A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService", "Services\IAM\CacheService\CacheService.csproj", "{D3FC97AF-B93E-4C85-9A52-DB2CA215A872}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.CacheService", "Services\IAM\IAM.CacheService\IAM.CacheService.csproj", "{D3FC97AF-B93E-4C85-9A52-DB2CA215A872}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Services\IAM\Repository\Repository.csproj", "{C23D4BB1-F3B7-40F7-8048-CEFD7145C947}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Repository", "Services\IAM\IAM.Repository\IAM.Repository.csproj", "{C23D4BB1-F3B7-40F7-8048-CEFD7145C947}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Services\IAM\Service\Service.csproj", "{A1E7DEE9-8E1D-43AD-8BEA-4AFC9C5D8C8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Service", "Services\IAM\IAM.Service\IAM.Service.csproj", "{A1E7DEE9-8E1D-43AD-8BEA-4AFC9C5D8C8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationService", "Services\IAM\ValidationService\ValidationService.csproj", "{FF5FEB8B-4A63-4DAD-B4F1-A82005DA47AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.ValidationService", "Services\IAM\IAM.ValidationService\IAM.ValidationService.csproj", "{FF5FEB8B-4A63-4DAD-B4F1-A82005DA47AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperService", "Services\IAM\MapperService\MapperService.csproj", "{DFD48534-37D8-4334-9C74-2970C35FE205}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.MapperService", "Services\IAM\IAM.MapperService\IAM.MapperService.csproj", "{DFD48534-37D8-4334-9C74-2970C35FE205}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Services\IAM\Entities\Entities.csproj", "{106D4CB1-2B63-4C9F-AB0A-38EFEF4AB1F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Entities", "Services\IAM\IAM.Entities\IAM.Entities.csproj", "{106D4CB1-2B63-4C9F-AB0A-38EFEF4AB1F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ctx", "Services\IAM\Ctx\Ctx.csproj", "{521FEA59-8EB2-4374-A2C9-3625DB10CB42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Ctx", "Services\IAM\IAM.Ctx\IAM.Ctx.csproj", "{521FEA59-8EB2-4374-A2C9-3625DB10CB42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Services\IAM\Dto\Dto.csproj", "{3FC54F6A-A5D1-4BD0-AC44-D3B3095AED61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Dto", "Services\IAM\IAM.Dto\IAM.Dto.csproj", "{3FC54F6A-A5D1-4BD0-AC44-D3B3095AED61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Services\IAM\Controller\Controller.csproj", "{B7579A2B-0586-4649-8C04-8E67D7987426}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Controller", "Services\IAM\IAM.Controller\IAM.Controller.csproj", "{B7579A2B-0586-4649-8C04-8E67D7987426}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client", "Services\IAM\IAM.Client\IAM.Client.csproj", "{AB718B89-BD31-4149-9D23-7D7FC9F0723B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Interfaces", "Services\IAM\CacheService.Interfaces\CacheService.Interfaces.csproj", "{3D315DCF-22F5-49AF-B379-04AB2F14AB48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.CacheService.Interfaces", "Services\IAM\IAM.CacheService.Interfaces\IAM.CacheService.Interfaces.csproj", "{3D315DCF-22F5-49AF-B379-04AB2F14AB48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Tests.Unit", "Services\IAM\CacheService.Tests.Unit\CacheService.Tests.Unit.csproj", "{3B1A2CA6-B216-4A52-83A0-92979EDBD122}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.CacheService.Tests.Unit", "Services\IAM\IAM.CacheService.Tests.Unit\IAM.CacheService.Tests.Unit.csproj", "{3B1A2CA6-B216-4A52-83A0-92979EDBD122}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Tests.Int", "Services\IAM\CacheService.Tests.Int\CacheService.Tests.Int.csproj", "{CBE0A27C-1447-4FC2-8AEB-87FD62F385F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.CacheService.Tests.Int", "Services\IAM\IAM.CacheService.Tests.Int\IAM.CacheService.Tests.Int.csproj", "{CBE0A27C-1447-4FC2-8AEB-87FD62F385F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheService.Exceptions", "Services\IAM\CacheService.Exceptions\CacheService.Exceptions.csproj", "{C9F6A87D-4724-42B9-A198-D7E36B02A3DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.CacheService.Exceptions", "Services\IAM\IAM.CacheService.Exceptions\IAM.CacheService.Exceptions.csproj", "{C9F6A87D-4724-42B9-A198-D7E36B02A3DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Exceptions", "Services\IAM\IAM.Client.Exceptions\IAM.Client.Exceptions.csproj", "{277DF92A-467A-4DB2-BEEB-5E6CF1BACEFB}"
 EndProject
@@ -160,41 +160,41 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Model.Interfaces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Interfaces", "Services\IAM\IAM.Client.Interfaces\IAM.Client.Interfaces.csproj", "{F497A0AD-38FF-4E94-BF7F-4B86EDC12CEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller.ViewModels", "Services\IAM\Controller.ViewModels\Controller.ViewModels.csproj", "{918331D0-C7CF-4B40-B719-0D03040AFB45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Controller.ViewModels", "Services\IAM\IAM.Controller.ViewModels\IAM.Controller.ViewModels.csproj", "{918331D0-C7CF-4B40-B719-0D03040AFB45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller.ViewModels.Tests.Unit", "Services\IAM\Controller.ViewModels.Tests.Unit\Controller.ViewModels.Tests.Unit.csproj", "{18C82B59-7011-4DE6-AFD4-1F64056A0827}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Controller.ViewModels.Tests.Unit", "Services\IAM\IAM.Controller.ViewModels.Tests.Unit\IAM.Controller.ViewModels.Tests.Unit.csproj", "{18C82B59-7011-4DE6-AFD4-1F64056A0827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto.Tests.Unit", "Services\IAM\Dto.Tests.Unit\Dto.Tests.Unit.csproj", "{19797B2F-0AA4-42A9-9747-EC5074AB03BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Dto.Tests.Unit", "Services\IAM\IAM.Dto.Tests.Unit\IAM.Dto.Tests.Unit.csproj", "{19797B2F-0AA4-42A9-9747-EC5074AB03BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities.Tests.Unit", "Services\IAM\Entities.Tests.Unit\Entities.Tests.Unit.csproj", "{9CAE9E90-EDBA-463E-A210-726917620EAA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Entities.Tests.Unit", "Services\IAM\IAM.Entities.Tests.Unit\IAM.Entities.Tests.Unit.csproj", "{9CAE9E90-EDBA-463E-A210-726917620EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperService.Interfaces", "Services\IAM\MapperService.Interfaces\MapperService.Interfaces.csproj", "{84CE8ABD-B7AD-4EC0-827D-59C876840F8A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.MapperService.Interfaces", "Services\IAM\IAM.MapperService.Interfaces\IAM.MapperService.Interfaces.csproj", "{84CE8ABD-B7AD-4EC0-827D-59C876840F8A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperService.Exceptions", "Services\IAM\MapperService.Exceptions\MapperService.Exceptions.csproj", "{B362C25C-3F61-4C0B-BD77-4E9E742B3253}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.MapperService.Exceptions", "Services\IAM\IAM.MapperService.Exceptions\IAM.MapperService.Exceptions.csproj", "{B362C25C-3F61-4C0B-BD77-4E9E742B3253}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperService.Tests.Unit", "Services\IAM\MapperService.Tests.Unit\MapperService.Tests.Unit.csproj", "{E22F3683-B1B0-43C1-BB4C-F5D176C1DB75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.MapperService.Tests.Unit", "Services\IAM\IAM.MapperService.Tests.Unit\IAM.MapperService.Tests.Unit.csproj", "{E22F3683-B1B0-43C1-BB4C-F5D176C1DB75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapperService.Tests.Int", "Services\IAM\MapperService.Tests.Int\MapperService.Tests.Int.csproj", "{D76CE173-EA1B-4F20-B5CB-9E5F1E8D9420}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.MapperService.Tests.Int", "Services\IAM\IAM.MapperService.Tests.Int\IAM.MapperService.Tests.Int.csproj", "{D76CE173-EA1B-4F20-B5CB-9E5F1E8D9420}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Interfaces", "Services\IAM\Repository.Interfaces\Repository.Interfaces.csproj", "{4C67BDA1-9FD8-4085-B6E8-B7B913DBBAA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Repository.Interfaces", "Services\IAM\IAM.Repository.Interfaces\IAM.Repository.Interfaces.csproj", "{4C67BDA1-9FD8-4085-B6E8-B7B913DBBAA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Unit", "Services\IAM\Repository.Tests.Unit\Repository.Tests.Unit.csproj", "{1F0011D8-E5FF-43C5-AE5A-D222857747BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Repository.Tests.Unit", "Services\IAM\IAM.Repository.Tests.Unit\IAM.Repository.Tests.Unit.csproj", "{1F0011D8-E5FF-43C5-AE5A-D222857747BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Tests.Int", "Services\IAM\Repository.Tests.Int\Repository.Tests.Int.csproj", "{715C2CD2-1C8C-456E-AF16-6A828EE2CD42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Repository.Tests.Int", "Services\IAM\IAM.Repository.Tests.Int\IAM.Repository.Tests.Int.csproj", "{715C2CD2-1C8C-456E-AF16-6A828EE2CD42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Exceptions", "Services\IAM\Repository.Exceptions\Repository.Exceptions.csproj", "{90027AA3-5AF5-4DB6-AF78-F063D27B40E8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Repository.Exceptions", "Services\IAM\IAM.Repository.Exceptions\IAM.Repository.Exceptions.csproj", "{90027AA3-5AF5-4DB6-AF78-F063D27B40E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Exceptions", "Services\IAM\Service.Exceptions\Service.Exceptions.csproj", "{61CCE99D-C3BC-4174-839A-24D9B14C4B03}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Service.Exceptions", "Services\IAM\IAM.Service.Exceptions\IAM.Service.Exceptions.csproj", "{61CCE99D-C3BC-4174-839A-24D9B14C4B03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Interfaces", "Services\IAM\Service.Interfaces\Service.Interfaces.csproj", "{B5E85EDA-6C99-47C6-A55C-54B021D92A84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Service.Interfaces", "Services\IAM\IAM.Service.Interfaces\IAM.Service.Interfaces.csproj", "{B5E85EDA-6C99-47C6-A55C-54B021D92A84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Unit", "Services\IAM\Service.Tests.Unit\Service.Tests.Unit.csproj", "{E00F4785-F1E1-4A0A-A3D8-C80C31EF2F32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Service.Tests.Unit", "Services\IAM\IAM.Service.Tests.Unit\IAM.Service.Tests.Unit.csproj", "{E00F4785-F1E1-4A0A-A3D8-C80C31EF2F32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Tests.Int", "Services\IAM\Service.Tests.Int\Service.Tests.Int.csproj", "{7D364A92-3F83-4A75-BDAF-354AD5467485}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Service.Tests.Int", "Services\IAM\IAM.Service.Tests.Int\IAM.Service.Tests.Int.csproj", "{7D364A92-3F83-4A75-BDAF-354AD5467485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Datasets", "Services\IAM\Tests.Datasets\Tests.Datasets.csproj", "{6A17E587-F2C5-41F1-BEE0-81E84CF704C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Tests.Datasets", "Services\IAM\IAM.Tests.Datasets\IAM.Tests.Datasets.csproj", "{6A17E587-F2C5-41F1-BEE0-81E84CF704C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "Services\IAM\Tests.E2E\Tests.E2E.csproj", "{EB02B7AF-7B08-4187-B638-6DFA5864E80F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Tests.E2E", "Services\IAM\IAM.Tests.E2E\IAM.Tests.E2E.csproj", "{EB02B7AF-7B08-4187-B638-6DFA5864E80F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Client.Tests.Int", "Services\IAM\IAM.Client.Tests.Int\IAM.Client.Tests.Int.csproj", "{CD2B299B-FD3E-4C9A-8E11-517953A1F12F}"
 EndProject
