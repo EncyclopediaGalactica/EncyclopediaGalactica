@@ -6,7 +6,7 @@ using Dtos;
 
 /// <summary>
 ///     <see cref="SourceFormatNodeGetByIdRequestModel" />
-///     This is the request object for the provided SDK of the SourceFormats Service
+///     This is the request object for the provided SDK of the SourceFormats IAM.Service
 ///     to get the designated <see cref="SourceFormatNode" /> object properties
 ///     carried by a <see cref="SourceFormatNodeDto" /> data transfer object.
 /// </summary>
