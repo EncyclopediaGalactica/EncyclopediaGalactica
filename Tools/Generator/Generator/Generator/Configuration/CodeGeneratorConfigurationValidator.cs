@@ -71,6 +71,13 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
 #pragma warning restore CS8604
         });
 
+        When(p => p.DtoProjectNameSpace != null, () =>
+        {
+            RuleFor(p => p.DtoProjectNameSpace)
+                .NotEmpty()
+                .WithMessage("When Dto Project is provided it cannot be empty or whitespace.");
+        });
+
         RuleFor(p => p.DtoProjectBasePath).NotNull().NotEmpty()
             .WithMessage("Dto project base path must be provided");
 

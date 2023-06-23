@@ -537,6 +537,18 @@
       <None Update="E2E\DtoProjectName\not_letter_after_dot_v2.config.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="E2E\DtoProjectNamespace\string.empty.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\DtoProjectNamespace\spaces.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\DtoProjectNamespace\openapi.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\DtoProjectNamespace\no_namespace_provided.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

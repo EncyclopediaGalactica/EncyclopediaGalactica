@@ -28,16 +28,30 @@ In case of c-sharp the code generator considers a solution where the following p
 The generator expects the solution in a certain format, especially directory structure. This
 one is demonstrated below.
 
+### Solution level rules
+
 - Solution Name - the name of the solution and this value defines the name of the solution
   file. This value is specified like: `solution_name`.
 - Target directory - the directory where the solution is located. This value can be specified
   as absolute or relative path using the `target_directory` key.
+
+### Dto Project level configurations
+
 - Dto project in the `${target_directory}/{$solution_name}.Dto` directory
 - Dto project file in the `${target_directory}/{$solution_name}.Dto/` directory with the
   name `{$solution_name}.Dto.csproj`
+- Dto porject namespace is `${solution_base_namespace}.${dto_project_namespace}` where
+  the `${dto_project_namespace}` default value is **dto**. However, it can be overwritten by
+  providing the new value in the configuration file `dto_project_namespace`, but as a result
+  the namespace structure won't honor the directory structure
+
+### Dto Unit Test Project
+
 - Dto Unit Tests project in the `${target_directory}/{$solution_name}.Dto.Tests.Unit` directory
 - Dto Unit Tests project file in the `${target_directory}/{$solution_name}.Dto.Tests.Unit`
   directory with the name `{$solution_name}.Dto.Tests.Unit.csproj`
+
+# Configuration via json file
 
 ## $schema
 
@@ -172,4 +186,48 @@ Example for a solution project name: `Something.Project.Name32`
 | Name contains dot and the first char after is a letter but not uppercase | transform to uppercase              |
 | Name starts with lowercase character                                     | transform to uppercase              |
 | Chars after the dot(s) are lowercase                                     | transform to uppercase              |
+
+## Dto namespace
+
+The Dto Project Namespace overwrites the default `${solution_base_namespace}.{dto}` value.
+
+| Config attribute name | Mandatory or Optional |
+|-----------------------|-----------------------|
+| Dto Project Namespace | Optional              |
+
+```json
+{
+  "dto_project_namespace": "dto.project.namespace"
+}
+```
+
+### Validation
+
+Since the case is overwriting the default with the provided one we validate the provided input
+if it exists. For example, `null` input is considered as not intended to provide value.
+However, when the key is in the configuration file but its value either empty or space(s) the
+validation will throw
+
+| Input        | Validation Result |
+|--------------|-------------------|
+| null         | not throw         |
+| string.empty | throws            |
+| "{space(s)}" | throws            |
+
+### C# Specifics
+
+The rules below also assumes that when the configuration key is in the configuration file the
+intention was providing a value which overwrites the details solution level namespace
+structure.
+
+The table below will be executed when the above rules are passed.
+
+| Input                        | Transformation or Validation result                                                  |
+|------------------------------|--------------------------------------------------------------------------------------|
+| starts with dot (.)          | dot (.) will be removed and the whole validation and transformation will be replayed |
+| starts with uppercase letter | transformed to lowercase                                                             |
+| the whole input is uppercase | transformed to lowercase                                                             |
+| input contains multiple dots | no dot will be harmed                                                                |
+
+
 
