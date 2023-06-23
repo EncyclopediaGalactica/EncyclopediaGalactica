@@ -7,9 +7,9 @@ using Microsoft.EntityFrameworkCore;
 using Utils.GuardsService.Exceptions;
 
 /// <summary>
-///     IDocument Service interface.
+///     IDocument IAM.Service interface.
 ///     <remarks>
-///         The service provides Api methods to access <see cref="Document" /> objects stored in the system.
+///         The service provides IAM.Api methods to access <see cref="Document" /> objects stored in the system.
 ///     </remarks>
 /// </summary>
 public interface IDocumentService
