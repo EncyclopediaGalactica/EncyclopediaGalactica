@@ -9,18 +9,21 @@ using Xunit.Abstractions;
 
 [ExcludeFromCodeCoverage]
 [Trait("Category", "Generator")]
+[Trait("Category", "Generator-E2E")]
 public class OpenApiSpecificationPathShould : TestBase
 {
+    private readonly string _currentPath;
+
     public OpenApiSpecificationPathShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
+        _currentPath = $"{BasePath}/E2E/OpenApiYamlPath";
     }
 
     [Fact]
     public void ThrowWhenOpenApiSpecificationPathIsNotDefined()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/openapi_yaml_path/";
-        string configFilePath = $"{currentPath}/path_missing.config.json";
+        string configFilePath = $"{_currentPath}/path_missing.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -31,8 +34,7 @@ public class OpenApiSpecificationPathShould : TestBase
     public void ThrowWhenOpenApiSpecificationPathIsEmptyString()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/openapi_yaml_path/";
-        string configFilePath = $"{currentPath}/empty_string.config.json";
+        string configFilePath = $"{_currentPath}/empty_string.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -43,8 +45,7 @@ public class OpenApiSpecificationPathShould : TestBase
     public void ThrowWhenOpenApiSpecificationPathIsSpaces()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/openapi_yaml_path/";
-        string configFilePath = $"{currentPath}/spaces.config.json";
+        string configFilePath = $"{_currentPath}/spaces.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -55,8 +56,7 @@ public class OpenApiSpecificationPathShould : TestBase
     public void ThrowWhenOpenApiSpecificationPathPointsToANotExistingDirectory()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/openapi_yaml_path/";
-        string configFilePath = $"{currentPath}/directory_does_not_exist.config.json";
+        string configFilePath = $"{_currentPath}/directory_does_not_exist.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -67,8 +67,7 @@ public class OpenApiSpecificationPathShould : TestBase
     public void ThrowWhenOpenApiSpecificationPathPointsToANotExistingFile()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/openapi_yaml_path/";
-        string configFilePath = $"{currentPath}/file_does_not_exist.config.json";
+        string configFilePath = $"{_currentPath}/file_does_not_exist.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert

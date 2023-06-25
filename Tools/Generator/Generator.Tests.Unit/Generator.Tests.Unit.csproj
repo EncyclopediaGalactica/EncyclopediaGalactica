@@ -513,30 +513,6 @@
       <None Update="E2E\SolutionBaseNamespace\base_namespace_starts_with_not_a_letter.config.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
-      <None Update="E2E\DtoProjectName\project_name_is_not_defined.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\openapi.yaml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\project_name_is_empty.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\project_name_is_spaces.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\more_than_alphanum.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\starts_with_not_letter.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\not_letter_after_dot_v1.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Update="E2E\DtoProjectName\not_letter_after_dot_v2.config.json">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
       <None Update="E2E\DtoProjectNamespace\string.empty.config.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
@@ -547,6 +523,21 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
       <None Update="E2E\DtoProjectNamespace\no_namespace_provided.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\OpenApiYamlPath\directory_does_not_exist.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\OpenApiYamlPath\empty_string.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\OpenApiYamlPath\file_does_not_exist.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\OpenApiYamlPath\path_missing.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\OpenApiYamlPath\spaces.config.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
     </ItemGroup>

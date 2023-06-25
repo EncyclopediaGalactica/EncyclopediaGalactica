@@ -9,6 +9,7 @@ using Xunit.Abstractions;
 
 [ExcludeFromCodeCoverage]
 [Trait("Category","Generator")]
+[Trait("Category","Generator-E2E")]
 public class LangE2EShould : TestBase
 {
     [Fact]

@@ -9,6 +9,7 @@ using Xunit.Abstractions;
 
 [ExcludeFromCodeCoverage]
 [Trait("Category", "Generator")]
+[Trait("Category", "Generator-E2E")]
 public class SolutionNameE2EShould : TestBase
 {
     private readonly string _currentPath;
