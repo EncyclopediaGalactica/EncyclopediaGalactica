@@ -56,68 +56,6 @@ public class CodeGeneratorConfiguration
     [JsonProperty("solution_base_namespace")]
     public string? SolutionBaseNamespace { get; set; }
 
-    [JsonProperty("dto_project_name")]
-    public string? DtoProjectName { get; set; }
-
-    /// <summary>
-    ///     Sets or gets the DtoProjectBasePath property
-    ///     <remarks>
-    ///         This directory is the base directory for the whole Dto project
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_project_base_path")]
-    public string? DtoProjectBasePath { get; set; }
-
-    /// <summary>
-    ///     Sets or gets the DtoProjectAdditionalPath property
-    ///     <remarks>
-    ///         This path segment will be added to the <see cref="DtoProjectBasePath" />, so that
-    ///         for this exact generation a separate path can be defined.
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_project_additional_path")]
-    public string? DtoProjectAdditionalPath { get; set; }
-
-    /// <summary>
-    ///     Gets or sets dto project namespace
-    ///     <remarks>
-    ///         This value will be concatenated to solution base namespace
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_project_namespace")]
-    public string? DtoProjectNameSpace { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the dto test project name
-    /// </summary>
-    [JsonProperty("dto_project_test_unit_name")]
-    public string? DtoProjectTestUnitName { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the dto test project base path
-    /// </summary>
-    [JsonProperty("dto_project_test_unit_base_path")]
-    public string? DtoProjectTestUnitBasePath { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the dto test project additional path
-    ///     <remarks>
-    ///         The role of the additional path here is to define the path where the
-    ///         generated dto test files will be placed within the dto test project.
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_test_project_additional_path")]
-    public string? DtoTestProjectAdditionalPath { get; set; }
-
-    /// <summary>
-    ///     Gets or sets dto test project namespace
-    ///     <remarks>
-    ///         This value will be concatenated with solution base namespace
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_test_project_namespace")]
-    public string? DtoTestProjectNameSpace { get; set; }
-
     /// <summary>
     ///     Gets or sets skip dto preprocess value
     ///     <remarks>

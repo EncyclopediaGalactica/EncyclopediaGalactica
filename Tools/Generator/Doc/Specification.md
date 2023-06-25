@@ -229,5 +229,43 @@ The table below will be executed when the above rules are passed.
 | the whole input is uppercase | transformed to lowercase                                                             |
 | input contains multiple dots | no dot will be harmed                                                                |
 
+## Dto Project Test Unit Name
 
+```json
+{
+  "dto_project_test_unit_name": "Dto.Project.Test.Unit"
+}
+```
 
+The Dto Test Unit Project Name defines the name of the Dto Unit test project. 
+The Dto Test Unit project contains the tests against the Dtos. 
+These unit tests are generated based on the definitions in the Open Api file.
+
+### Validation
+
+| Input           | Validation Result |
+|-----------------|-------------------|
+| null            | throw             |
+| string.empty    | throw             |
+| "{space(s)}   " | throw             |
+
+### C# Specifics
+
+The generator has a theoretical inner structure for a C# project. The Dto project is located at
+the `{$TargetDirectory}/{$SolutionName}.Dto` directory.
+
+#### Validation and Transformation
+
+The table below inherits all items from the validation rules above
+
+Example for a solution project name: `Something.Project.Name32`
+
+| Input                                                                    | Transformation or Validation result |
+|--------------------------------------------------------------------------|-------------------------------------|
+| Alphanumerical characters and Dot                                        | accept                              |
+| More than Alphanumerical characters and Dot                              | throws                              |
+| Name starts **not** with a letter                                        | throw                               |
+| Name contains dot and the first char after the dot is not letter         | throw                               |
+| Name contains dot and the first char after is a letter but not uppercase | transform to uppercase              |
+| Name starts with lowercase character                                     | transform to uppercase              |
+| Chars after the dot(s) are lowercase                                     | transform to uppercase              |

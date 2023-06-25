@@ -214,11 +214,8 @@ public class CSharpGenerator : AbstractGenerator
         MarkVariablesAsPropertiesFromOpenApiSchema(DtoTestTypeInfos);
 
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTestTypeInfos);
-        GetOriginalDtoTestNamespaceTokenFromConfiguration(DtoTestTypeInfos);
 
         GetOriginalTargetPathTokenFromConfiguration(DtoTestTypeInfos);
-        GetOriginalDtoTestProjectBasePathFromConfiguration(DtoTestTypeInfos);
-        GetOriginalDtoTestProjectAdditionalPathFromConfiguration(DtoTestTypeInfos);
 
         PreProcessDtoTestMetadata();
         CopyDtoRenderDataToDtoRenderObject(DtoTestTypeInfos, _dtoTestFileInfosRender);
@@ -233,11 +230,8 @@ public class CSharpGenerator : AbstractGenerator
         MarkVariablesAsPropertiesFromOpenApiSchema(DtoTypeInfos);
 
         GetOriginalBaseNamespaceTokenFromConfiguration(DtoTypeInfos);
-        GetOriginalDtoNamespaceTokenFromConfiguration(DtoTypeInfos);
 
         GetOriginalTargetPathTokenFromConfiguration(DtoTypeInfos);
-        GetOriginalDtoProjectBasePathFromConfiguration(DtoTypeInfos);
-        GetOriginalDtoProjectAdditionalPathFromConfiguration(DtoTypeInfos);
 
         PreProcessDtoMetadata();
         CopyDtoRenderDataToDtoRenderObject(DtoTypeInfos, _dtoFileInfosRender);

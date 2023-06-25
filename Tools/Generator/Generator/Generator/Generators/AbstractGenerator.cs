@@ -153,20 +153,6 @@ public abstract class AbstractGenerator : ICodeGenerator
             GeneratorConfiguration);
     }
 
-    protected void GetOriginalDtoNamespaceTokenFromConfiguration(List<TypeInfo> fileInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoProjectNamespaceTokenFromConfigurationAndAddToTypeInfos(
-            fileInfos,
-            GeneratorConfiguration);
-    }
-
-    protected void GetOriginalDtoTestNamespaceTokenFromConfiguration(List<TypeInfo> fileInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoTestProjectNamespaceTokenFromConfigurationAndAddToTypeInfos(
-            fileInfos,
-            GeneratorConfiguration);
-    }
-
     protected void GetOriginalTargetPathTokenFromConfiguration(List<TypeInfo> fileInfos)
     {
         ConfigurationValuesManager.GetOriginalTargetDirectoryTokenFromConfiguration(
@@ -192,34 +178,6 @@ public abstract class AbstractGenerator : ICodeGenerator
     {
         ConfigurationValuesManager.GetOriginalSolutionProjectFileTypeTokenFromConfigurationAndAddToSolutionInfo(
             solutionInfo,
-            GeneratorConfiguration);
-    }
-
-    protected void GetOriginalDtoProjectBasePathFromConfiguration(List<TypeInfo> fileInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoProjectBasePathFromConfigurationAndAddToTypeInfos(
-            fileInfos,
-            GeneratorConfiguration);
-    }
-
-    protected void GetOriginalDtoTestProjectBasePathFromConfiguration(List<TypeInfo> typeInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoTestProjectBasePathFromConfigurationAndAddToTypeInfos(
-            typeInfos,
-            GeneratorConfiguration);
-    }
-
-    protected void GetOriginalDtoTestProjectAdditionalPathFromConfiguration(List<TypeInfo> typeInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoTestProjectAdditionalPathFromConfigurationAndAddToTypeInfo(
-            typeInfos,
-            GeneratorConfiguration);
-    }
-
-    protected void GetOriginalDtoProjectAdditionalPathFromConfiguration(List<TypeInfo> fileInfos)
-    {
-        ConfigurationValuesManager.GetOriginalDtoAdditionalPathFromConfigurationAndAddToTypeInfo(
-            fileInfos,
             GeneratorConfiguration);
     }
 
