@@ -14,12 +14,14 @@ public partial class CSharpProcessor
             return;
         }
 
-        foreach (ProjectInfo projectInfo in solutionInfo.ProjectInfos)
+        solutionInfo.ProjectInfos.ForEach(item =>
         {
-            projectInfo.ProjectFileWithFullPath =
-                _stringManager.ConcatDirectorySegments(
-                    projectInfo.BasePath,
-                    projectInfo.Name);
-        }
+            string baseAndName = _stringManager.ConcatDirectorySegments(
+                item.BasePath,
+                item.Name);
+            item.ProjectFileWithFullPath = _stringManager.ConcatDirectorySegments(
+                baseAndName,
+                item.SolutionProjectFileWithType);
+        });
     }
 }

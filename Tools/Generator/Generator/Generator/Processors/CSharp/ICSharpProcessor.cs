@@ -36,17 +36,10 @@ public interface ICSharpProcessor
 
     /// <summary>
     ///     Creates an absolute path for Dto generation.
-    ///     <remarks>
-    ///         The absolute path creation includes the following parameters if present:
-    ///         <list type="bullet">
-    ///             <item>base path</item>
-    ///             <item>dto path</item>
-    ///             <item>additional dto path</item>
-    ///         </list>
-    ///     </remarks>
     /// </summary>
+    /// <param name="solutionInfo">The <see cref="SolutionInfo" /> instance</param>
     /// <param name="typeInfos">List of <see cref="TypeInfo" /></param>
-    void ProcessDtoTargetPath(List<TypeInfo> typeInfos);
+    void ProcessDtoTargetPath(SolutionInfo solutionInfo, List<TypeInfo> typeInfos);
 
     /// <summary>
     ///     Creates the target path with file name value using the previously provided and processed
@@ -343,4 +336,11 @@ public interface ICSharpProcessor
     /// </summary>
     /// <param name="solutionInfo">the <see cref="SolutionInfo" /> instance</param>
     void ProcessSolutionProjectNamesWithFileType(SolutionInfo solutionInfo);
+
+    /// <summary>
+    ///     Checks if solution project file types is set up. If not it will default to the one defined in the
+    ///     structure
+    /// </summary>
+    /// <param name="solutionInfo">The <see cref="SolutionInfo" /> instance</param>
+    void ProcessSolutionProjectFileTypes(SolutionInfo solutionInfo);
 }

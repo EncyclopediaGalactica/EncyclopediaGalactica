@@ -1,10 +1,12 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Configuration;
 
+using System.Data;
 using System.Text.RegularExpressions;
 using FluentValidation;
 
 public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGeneratorConfiguration>
 {
+    private List<string> Languages = new List<string> { "csharp" };
     public CodeGeneratorConfigurationValidator()
     {
         RuleFor(p => p.OpenApiSpecificationPath)
@@ -16,6 +18,11 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
             .NotNull()
             .NotEmpty()
             .WithMessage("Lang must be defined");
+
+        When(p => !string.IsNullOrEmpty(p.Lang) && !string.IsNullOrWhiteSpace(p.Lang), () =>
+        {
+            RuleFor(p => Languages.Contains(p.Lang));
+        });
 
         RuleFor(p => p.TargetDirectory)
             .NotNull()

@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit;
 
+using FluentAssertions;
 using Xunit.Abstractions;
 
 public class TestBase
@@ -34,5 +35,23 @@ public class TestBase
         }
 
         return false;
+    }
+
+    protected void CompareFileLineByLine(string pathToReference, string generatedFile)
+    {
+        List<string> reference = File.ReadLines(pathToReference).ToList();
+        List<string> generated = File.ReadLines(generatedFile).ToList();
+        for (int i = 0; i < reference.Count(); i++)
+        {
+            if (ShouldBeIgnored(reference[i], "#TEST_IGNORE"))
+            {
+                continue;
+            }
+
+            generated[i].Should().Be(reference[i],
+                $"There is a difference in line {i}. \n" +
+                $"Reference file: {pathToReference} \n" +
+                $"Generated file: {generated}");
+        }
     }
 }

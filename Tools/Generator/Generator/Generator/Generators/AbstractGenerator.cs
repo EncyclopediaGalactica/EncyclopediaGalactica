@@ -31,7 +31,7 @@ public abstract class AbstractGenerator : ICodeGenerator
     public abstract string DtoTestTemplatePath { get; }
     public SolutionInfo SolutionInfo { get; } = new SolutionInfo();
 
-    public List<TypeInfo> DtoTypeInfos { get; } = new List<TypeInfo>();
+    //public List<TypeInfo> DtoTypeInfos { get; } = new List<TypeInfo>();
 
     public List<TypeInfo> DtoTestTypeInfos { get; } = new List<TypeInfo>();
 

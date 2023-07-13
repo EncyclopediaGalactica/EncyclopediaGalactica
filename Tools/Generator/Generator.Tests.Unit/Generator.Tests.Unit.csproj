@@ -540,6 +540,33 @@
       <None Update="E2E\OpenApiYamlPath\spaces.config.json">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="E2E\Lang\lang_is_js.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\e2e.config.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\e2e.openapi.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\e2e\TestSolutionTemplate\TestSolution.slnref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\e2e\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\e2e\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\reference\TestSolutionTemplate\TestSolution.slnref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\reference\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="E2E\Lang\reference\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

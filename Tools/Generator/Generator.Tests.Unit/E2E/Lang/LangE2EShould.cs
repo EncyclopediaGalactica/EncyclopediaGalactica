@@ -1,23 +1,29 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.Lang;
 
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
 using FluentValidation;
+using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category","Generator")]
-[Trait("Category","Generator-E2E")]
+[Trait("Category", "Generator")]
+[Trait("Category", "Generator-E2E")]
 public class LangE2EShould : TestBase
 {
+    private readonly string _currentPath;
+
+    public LangE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    {
+        _currentPath = $"{BasePath}/E2E/lang/";
+    }
+
     [Fact]
     public void ThrowExceptionWhenLangValueIsNotProvided()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/lang/";
-        string configFilePath = $"{currentPath}/missing_lang.config.json";
+        string configFilePath = $"{_currentPath}/missing_lang.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -28,8 +34,7 @@ public class LangE2EShould : TestBase
     public void ThrowExceptionWhenLangValueIsEmpty()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/lang/";
-        string configFilePath = $"{currentPath}/empty_lang.config.json";
+        string configFilePath = $"{_currentPath}/empty_lang.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
@@ -40,15 +45,47 @@ public class LangE2EShould : TestBase
     public void ThrowExceptionWhenLangValueIsSpace()
     {
         // Arrange
-        string currentPath = $"{BasePath}/E2E/lang/";
-        string configFilePath = $"{currentPath}/lang_is_space.config.json";
+        string configFilePath = $"{_currentPath}/lang_is_space.config.json";
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    public LangE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    [Fact]
+    public void ThrowExceptionWhenLangValueIsSomethingNotAccepted()
     {
+        // Arrange
+        string configFilePath = $"{_currentPath}/lang_is_space.config.json";
+        Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
+
+        // Assert
+        action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
+    }
+
+    [Fact]
+    public void GenerateE2E()
+    {
+        // Arrange
+        Dictionary<string, string> files = new Dictionary<string, string>
+        {
+            {
+                $"{_currentPath}/e2e/TestSolutionTemplate/TestSolution.Dto/PersonDto.cs",
+                $"{_currentPath}/reference/TestSolutionTemplate/TestSolution.Dto/PersonDto.cs"
+            },
+            {
+                $"{_currentPath}/e2e/TestSolutionTemplate/TestSolution.Dto/Address.cs",
+                $"{_currentPath}/reference/TestSolutionTemplate/TestSolution.Dto/AddressDto.cs"
+            },
+        };
+        string configFilePath = $"{_currentPath}/e2e.config.json";
+        Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
+
+        // Assert
+        action.Should().NotThrow();
+        foreach (KeyValuePair<string, string> file in files)
+        {
+            CompareFileLineByLine(file.Key, file.Value);
+        }
     }
 }

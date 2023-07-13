@@ -192,6 +192,7 @@ public class CSharpGenerator : AbstractGenerator
         _cSharpProcessor.ProcessSolutionNameWithFullPath(SolutionInfo);
         _cSharpProcessor.ProcessProjectStructureSlots(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNames(SolutionInfo);
+        _cSharpProcessor.ProcessSolutionProjectFileTypes(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectBasePaths(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNamesWithFileType(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectFilesWithAbsolutePath(SolutionInfo);
@@ -418,7 +419,7 @@ public class CSharpGenerator : AbstractGenerator
         _cSharpProcessor.TypeCheckInGenerationScope(DtoTypeInfos, _typesInGenerationScope);
         _cSharpProcessor.AddTypeNamesToGenerationScope(DtoTypeInfos, _typesInGenerationScope);
         _cSharpProcessor.ProcessFileName(DtoTypeInfos, DtoFileNamePostFix, CSharpFileType);
-        _cSharpProcessor.ProcessDtoTargetPath(DtoTypeInfos);
+        _cSharpProcessor.ProcessDtoTargetPath(SolutionInfo, DtoTypeInfos);
         _cSharpProcessor.ProcessPathWithFileName(DtoTypeInfos);
         _cSharpProcessor.ProcessTemplatePath(DtoTypeInfos, DtoTemplatePath);
 

@@ -11,7 +11,7 @@ public partial class CSharpProcessor
         {
             item.SolutionProjectFileWithType = _stringManager.ConcatForCSharpProjectName(
                 item.Name,
-                item.SolutionProjectFileType);
+                solutionInfo.SolutionProjectFileType);
         });
     }
 }

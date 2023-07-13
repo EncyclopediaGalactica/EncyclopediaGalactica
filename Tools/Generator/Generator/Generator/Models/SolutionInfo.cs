@@ -66,4 +66,15 @@ public class SolutionInfo
     ///     Gets or sets the solution file with extenstion value
     /// </summary>
     public string? SolutionNameWithFileExtension { get; set; }
+
+    /// <summary>
+    ///     Gets or sets the file type for the projects in the solution
+    ///     <remarks>
+    ///         The default file type for projects in a solution are the following:
+    ///         <list type="bullet">
+    ///             <item>c-sharp: csproj</item>
+    ///         </list>
+    ///     </remarks>
+    /// </summary>
+    public string? SolutionProjectFileType { get; set; }
 }
