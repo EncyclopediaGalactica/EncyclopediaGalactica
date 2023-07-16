@@ -1,0 +1,15 @@
+@startuml C4_Elements
+
+!include  https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' uncomment the following line and comment the first to use locally
+'!include C4_Context.puml
+
+title Encyclopedia Galactica system
+
+Person(egUser, "User of the system", "This user can be simple user or administrator")
+System(egSystem, "Encyclopedia Galactica system", "")
+
+Rel(egUser, egSystem, "User requests and modifies data")
+
+
+@enduml
