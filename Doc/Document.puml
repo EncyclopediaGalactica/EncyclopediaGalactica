@@ -1,0 +1,55 @@
+@startuml
+
+entity Document {
+    id
+    name
+    desc
+    StructureNode tree
+    Author author
+    Source source
+    User createdBy
+    User lastModifiedBy
+    Date lastModified
+    Date created
+}
+
+entity Author {
+    id
+    Person person
+}
+
+entity Person {
+    id
+    Name name
+    BirthDate birthDate
+    CeaseDate ceaseDate
+    BirthPlace birthPlace
+    CeasePlace ceasePlace
+}
+
+entity Source {
+    id
+    name
+    Url
+}
+
+entity StructureNode {
+    id
+    name
+    StructureNode[] nodes
+    UIElementInfo uiElementInfo
+    StructureInfo structureInfo
+}
+
+entity UIElementInfo {}
+entity StructureInfo {}
+
+Document .. StructureNode
+Document .. Author
+Document .. Source
+Author .. Person
+StructureNode .. StructureNodeType
+StructureNode .. UIElementInfo
+StructureNode .. StructureInfo
+
+@enduml
