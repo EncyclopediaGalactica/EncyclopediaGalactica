@@ -274,6 +274,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.E2E", "Services\Core\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers.ViewModels.Tests.Unit", "Services\Document\Controllers.ViewModels.Tests.Unit\Controllers.ViewModels.Tests.Unit.csproj", "{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{66D74E39-6BE1-456A-B35D-1FAB6262BE40}"
+	ProjectSection(SolutionItems) = preProject
+		Doc\Document.puml = Doc\Document.puml
+		Doc\EG-C4.puml = Doc\EG-C4.puml
+		Doc\EG-C3.puml = Doc\EG-C3.puml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
