@@ -34,11 +34,11 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj" />
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj" />
-        <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj" />
-        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj" />
+        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\Mappers\Mappers.csproj" />
+        <ProjectReference Include="..\CacheService\CacheService.csproj" />
         <ProjectReference Include="..\Repository.Interfaces\Repository.Interfaces.csproj" />
-        <ProjectReference Include="..\Document.CacheService.Interfaces\Document.CacheService.Interfaces.csproj" />
+        <ProjectReference Include="..\CacheService.Interfaces\CacheService.Interfaces.csproj" />
         <ProjectReference Include="..\Repository\Repository.csproj" />
         <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
         <ProjectReference Include="..\Service\Service.csproj" />

@@ -10,8 +10,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
-        <ProjectReference Include="..\Document.Client.Exceptions\Document.Client.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj" />
+        <ProjectReference Include="..\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj" />
+        <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
     </ItemGroup>
 
 </Project>

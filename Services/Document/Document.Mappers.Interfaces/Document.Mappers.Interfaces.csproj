@@ -10,11 +10,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj" />
+        <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj" />
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj" />
+        <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
+        <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
         <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
     </ItemGroup>
 

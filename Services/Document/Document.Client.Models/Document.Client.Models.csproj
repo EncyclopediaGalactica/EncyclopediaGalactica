@@ -9,13 +9,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj"/>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
-        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj"/>
+        <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
+        <ProjectReference Include="..\ValidatorService\ValidatorService.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     </ItemGroup>
 
 </Project>

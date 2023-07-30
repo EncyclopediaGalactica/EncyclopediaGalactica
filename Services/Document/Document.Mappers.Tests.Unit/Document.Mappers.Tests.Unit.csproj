@@ -22,9 +22,9 @@
     <ItemGroup>
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj" />
-        <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj" />
+        <ProjectReference Include="..\Mappers.Exceptions\Mappers.Exceptions.csproj" />
+        <ProjectReference Include="..\Mappers.Interfaces\Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\Mappers\Mappers.csproj" />
     </ItemGroup>
 
 </Project>
