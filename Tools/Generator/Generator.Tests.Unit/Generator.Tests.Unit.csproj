@@ -417,6 +417,24 @@
         <None Update="Dto\Generation\Reference\SolutionName.slnref">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="E2E\Lang\missing_lang.config.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="E2E\Lang\lang_is_space.config.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="E2E\Lang\lang_is_js.config.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="E2E\Lang\empty_lang.config.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="E2E\Lang\e2e.openapi.yaml">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="E2E\Lang\e2e.config.json">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

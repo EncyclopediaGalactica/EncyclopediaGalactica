@@ -104,14 +104,16 @@ public class CodeGenerator
             {
                 if (string.IsNullOrEmpty(_generatorConfigurationPath))
                 {
-                    _logger.LogError("Path to configuration file is not defined");
-                    return null;
+                    string msg = "Path to configuration file is not defined";
+                    _logger.LogError(msg);
+                    throw new GeneratorException(msg);
                 }
 
                 if (!File.Exists(_generatorConfigurationPath))
                 {
-                    _logger.LogError("Config file path is invalid: {Path}", _generatorConfigurationPath);
-                    return null;
+                    string msg = $"Config file path is invalid: {_generatorConfigurationPath}!";
+                    _logger.LogError(msg);
+                    throw new GeneratorException(msg);
                 }
 
                 _logger.LogInformation(

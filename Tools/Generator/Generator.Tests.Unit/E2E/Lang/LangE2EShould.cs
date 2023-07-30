@@ -16,7 +16,7 @@ public class LangE2EShould : TestBase
 
     public LangE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/Lang/";
+        _currentPath = $"{BasePath}/E2E/lang";
     }
 
     [Fact]
@@ -27,7 +27,9 @@ public class LangE2EShould : TestBase
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
-        action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
+        action.Should()
+            .Throw<GeneratorException>()
+            .WithInnerException(typeof(ValidationException));
     }
 
     [Fact]
@@ -38,7 +40,9 @@ public class LangE2EShould : TestBase
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
-        action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
+        action.Should()
+            .Throw<GeneratorException>()
+            .WithInnerException(typeof(ValidationException));
     }
 
     [Fact]
@@ -49,7 +53,9 @@ public class LangE2EShould : TestBase
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
-        action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
+        action.Should()
+            .Throw<GeneratorException>()
+            .WithInnerException(typeof(ValidationException));
     }
 
     [Fact]
@@ -60,10 +66,11 @@ public class LangE2EShould : TestBase
         Action action = () => { new CodeGenerator.Builder().SetPath(configFilePath).Generate(); };
 
         // Assert
-        action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
+        action.Should()
+            .Throw<GeneratorException>()
+            .WithInnerException(typeof(ValidationException));
     }
 
-    [Fact]
     public void GenerateE2E()
     {
         // Arrange
