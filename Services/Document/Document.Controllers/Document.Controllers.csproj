@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.4.0" />
+        <PackageReference Include="FluentValidation" Version="11.6.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -17,12 +17,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Api\Api.csproj" />
-        <ProjectReference Include="..\Controllers.ViewModels\Controllers.ViewModels.csproj" />
+        <ProjectReference Include="..\Document.Api\Document.Api.csproj" />
+        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj" />
+        <ProjectReference Include="..\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj" />
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
-        <ProjectReference Include="..\CacheService\CacheService.csproj" />
-        <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
-        <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj" />
+        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj" />
     </ItemGroup>
 
 </Project>

@@ -10,39 +10,50 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.4.0" />
-        <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.1" />
+        <PackageReference Include="FluentValidation" Version="11.6.0" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.9" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.9" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\Services\Document\Api\Api.csproj" />
-        <ProjectReference Include="..\..\Services\Document\CacheService.Exceptions\CacheService.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\CacheService.Interfaces\CacheService.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\CacheService\CacheService.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Controllers.ViewModels\Controllers.ViewModels.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Controllers\Controllers.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Ctx\Ctx.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Api\Document.Api.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.CacheService\Document.CacheService.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Client.Exceptions\Document.Client.Exceptions.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Client.Interfaces\Document.Client.Interfaces.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Client\Document.Client.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Controllers.ExceptionFilters\Document.Controllers.ExceptionFilters.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Controllers\Document.Controllers.csproj" />
+
         <ProjectReference Include="..\..\Services\Document\Document.Dtos\Document.Dtos.csproj" />
+
         <ProjectReference Include="..\..\Services\Document\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Mappers.Exceptions\Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Mappers.Interfaces\Mappers.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Mappers\Mappers.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Reposiory.Exceptions\Reposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Repository.Interfaces\Repository.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Repository\Repository.csproj" />
-        <ProjectReference Include="..\..\Services\Document\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\DocumentClient.Interfaces\DocumentClient.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\DocumentClient.Models\DocumentClient.Models.csproj" />
-        <ProjectReference Include="..\..\Services\Document\DocumentClient\DocumentClient.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Service.ExceptionFilters\Service.ExceptionFilters.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Service.Exceptions\Service.Exceptions.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Service.Interfaces\Service.Interfaces.csproj" />
-        <ProjectReference Include="..\..\Services\Document\Service\Service.csproj" />
-        <ProjectReference Include="..\..\Services\Document\ValidatorService\ValidatorService.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Mappers\Document.Mappers.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Repository.Interfaces\Document.Repository.Interfaces.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Repository\Document.Repository.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Service.Exceptions\Document.Service.Exceptions.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Service.Interfaces\Document.Service.Interfaces.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.Service\Document.Service.csproj" />
+
+        <ProjectReference Include="..\..\Services\Document\Document.ValidatorService\Document.ValidatorService.csproj" />
+
         <ProjectReference Include="..\..\Utils\GuardsService\GuardsService.csproj" />
     </ItemGroup>
 

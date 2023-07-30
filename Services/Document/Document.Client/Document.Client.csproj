@@ -13,15 +13,15 @@
         <ProjectReference Include="..\..\..\Client\Core.Interfaces\Core.Interfaces.csproj" />
         <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj" />
         <ProjectReference Include="..\..\..\Client\Core\Core.csproj" />
-        <ProjectReference Include="..\Api\Api.csproj" />
-        <ProjectReference Include="..\DocumentClient.Models\DocumentClient.Models.csproj" />
+        <ProjectReference Include="..\Document.Api\Document.Api.csproj" />
+        <ProjectReference Include="..\Document.Client.Exceptions\Document.Client.Exceptions.csproj" />
+        <ProjectReference Include="..\Document.Client.Interfaces\Document.Client.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj" />
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
-        <ProjectReference Include="..\DocumentClient.Exceptions\DocumentClient.Exceptions.csproj" />
-        <ProjectReference Include="..\DocumentClient.Interfaces\DocumentClient.Interfaces.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
 </Project>

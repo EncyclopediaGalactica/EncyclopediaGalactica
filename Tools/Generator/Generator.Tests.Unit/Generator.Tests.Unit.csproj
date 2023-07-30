@@ -13,14 +13,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
-        <PackageReference Include="Microsoft.Build" Version="17.5.0"/>
-        <PackageReference Include="Microsoft.OpenApi" Version="1.6.3"/>
-        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.3"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
-        <PackageReference Include="xunit" Version="2.4.2"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
+        <PackageReference Include="FluentAssertions" Version="6.11.0" />
+        <PackageReference Include="Microsoft.Build" Version="17.6.3" />
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.6" />
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.6" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="xunit" Version="2.5.0" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
@@ -420,7 +420,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Generator\Generator.csproj"/>
+        <ProjectReference Include="..\Generator\Generator.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -499,9 +499,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Dto"/>
-        <Folder Include="Dto\Generation\Reference\SolutionName.Dto.Tests.Unit\"/>
-        <Folder Include="Dto\Generation\Reference\SolutionName.Dto\"/>
+        <Folder Include="Dto" />
+        <Folder Include="Dto\Generation\Reference\SolutionName.Dto.Tests.Unit\" />
+        <Folder Include="Dto\Generation\Reference\SolutionName.Dto\" />
     </ItemGroup>
 
 </Project>

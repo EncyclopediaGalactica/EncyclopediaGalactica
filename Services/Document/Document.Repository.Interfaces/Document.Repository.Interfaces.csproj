@@ -4,21 +4,24 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces</RootNamespace>
         <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
         <AnalysisMode>All</AnalysisMode>
-        <AssemblyName>EncyclopediaGalactica.Services.Document.Ctx</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.Services.Document.Ctx</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
+        <ProjectReference Include="..\Document.Reposiory.Exceptions\Document.Reposiory.Exceptions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="11.6.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.9" />
     </ItemGroup>
 
 </Project>
