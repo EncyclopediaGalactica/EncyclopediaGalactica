@@ -1,5 +1,7 @@
 namespace IAM.Entities;
 
+using Interfaces;
+
 public class User : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowHowCreatedMeAndWhen
 {
     public long Id { get; set; }

@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.Lang;
+namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.e2e.lang;
 
 using System.Diagnostics.CodeAnalysis;
+using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
 using FluentValidation;
-using Generator;
 using Xunit;
 using Xunit.Abstractions;
 

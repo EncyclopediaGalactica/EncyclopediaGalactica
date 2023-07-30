@@ -1,4 +1,4 @@
-namespace IAM.Entities;
+namespace IAM.Entities.Interfaces;
 
 public interface IKnowHowCreatedMeAndWhen
 {
