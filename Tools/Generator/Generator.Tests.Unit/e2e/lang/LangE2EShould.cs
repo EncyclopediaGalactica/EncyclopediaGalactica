@@ -16,7 +16,7 @@ public class LangE2EShould : TestBase
 
     public LangE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/lang";
+        _currentPath = $"{BasePath}/e2e/lang";
     }
 
     [Fact]

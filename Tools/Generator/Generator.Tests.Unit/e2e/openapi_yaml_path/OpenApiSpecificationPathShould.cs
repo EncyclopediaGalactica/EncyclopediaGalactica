@@ -16,7 +16,7 @@ public class OpenApiSpecificationPathShould : TestBase
 
     public OpenApiSpecificationPathShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/OpenApiYamlPath";
+        _currentPath = $"{BasePath}/e2e/openapi_yaml_path";
     }
 
     [Fact]

@@ -123,6 +123,17 @@ The code generator based on this value will instantiate the necessary code gener
 
 If this value is not provided the code generation stops with an error message.
 
+| Available generators | lang code |
+|----------------------|-----------|
+| C#                   | c-sharp   |
+
+| Input        | Result          |
+|--------------|-----------------|
+| valid input  | Code Generation |
+| string.Empty | Error           |
+| spaces       | Error           |
+| unknown lang | Error           |
+
 ## OpenApi Specification Path
 
 ```json
