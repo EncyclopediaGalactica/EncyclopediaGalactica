@@ -2,9 +2,9 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Tests.Unit.Document
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
 using FluentAssertions;
 using FluentValidation;
+using Models.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

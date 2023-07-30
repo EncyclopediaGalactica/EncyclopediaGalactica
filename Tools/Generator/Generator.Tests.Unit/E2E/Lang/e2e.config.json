@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/EncyclopediaGalactica/RestApiSdkGenerator/main/configuration.schema.json",
+  "lang": "csharp",
+  "openapi_specification_path": "E2E/Lang/e2e.openapi.yaml",
+  "target_directory": "E2E/Lang/e2e/TestSolutionTemplate",
+  "solution_name": "TestSolution",
+  "solution_base_namespace": "TestSolution",
+  "solution_file_type": "slnref",
+  "solution_project_file_type": "csprojref"
+}

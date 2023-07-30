@@ -3,14 +3,14 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
+using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Services.Document.SourceFormatsRepository.Document;
+using Services.Document.SourceFormatsRepository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 
 [ExcludeFromCodeCoverage]
 public class BaseTest

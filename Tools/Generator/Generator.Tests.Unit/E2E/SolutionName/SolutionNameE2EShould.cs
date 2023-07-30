@@ -14,6 +14,11 @@ public class SolutionNameE2EShould : TestBase
 {
     private readonly string _currentPath;
 
+    public SolutionNameE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    {
+        _currentPath = $"{BasePath}/E2E/SolutionName";
+    }
+
     [Fact]
     public void ThrowWhenSolutionNameValueDoesNotExist()
     {
@@ -69,14 +74,15 @@ public class SolutionNameE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    public void GenerateAndFixSolutionNameWhenItHasADotAndTheCharAfterTheDotIsNotUpperCase() {}
-
-    public void GenerateWhenSolutionNameIsLowerCase() {}
-
-    public void GenerateWhenSolutionNameIsUpperCase() {}
-
-    public SolutionNameE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    public void GenerateAndFixSolutionNameWhenItHasADotAndTheCharAfterTheDotIsNotUpperCase()
     {
-        _currentPath = $"{BasePath}/E2E/SolutionName";
+    }
+
+    public void GenerateWhenSolutionNameIsLowerCase()
+    {
+    }
+
+    public void GenerateWhenSolutionNameIsUpperCase()
+    {
     }
 }

@@ -22,6 +22,52 @@ The above process generates the following codes:
 - Controller: the controllers contains the smallest possible code which is in this case just
   calling the business logic
 
+## The generator internal data structure
+
+The generator considers the following structural levels:
+
+- **solution** - this is a directory 1 level above the projects and owns all projects
+- **project** - dedicated directories for a purpose, for example Dto, Dto Tests have their own
+  directory. A project must only have a single solution as parent.
+- **directory** - plain directory on the file system. A directory must have a single project as
+  parent.
+
+The above structure is also represented by the generators internal data structure.
+
+### SolutionInfo
+
+It contains all the Solution related information such as:
+
+- original values coming from configuration file
+- values going to be used, these are the transformed original values
+- list of projects
+
+### ProjectInfo
+
+It contains all the Project related information such as:
+
+- original values from configuration file
+- values going to be used, these are basically transformed original values
+- list of types
+
+### TypeInfo
+
+It contains all the particular Type related info such as:
+
+- original values from configuration file
+- values going to be used, these are basically transformed original values
+- list of dependencies (other types, usings)
+- parents if there is any
+
+### VariableInfo
+
+It contains all the particular Variable related info such as:
+
+- original name
+- transformed name
+- dependencies which can be a framework level (List<>) or other type level and manifested in
+  using format
+
 ## c-sharp
 
 In case of c-sharp the code generator considers a solution where the following projects exist.

@@ -3,23 +3,23 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Uni
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Mappers;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
+using Document;
 using FluentAssertions;
+using Interfaces;
+using Interfaces.Document;
+using Interfaces.SourceFormatNode;
+using Mappers;
+using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Moq;
+using Services.Document.SourceFormatsService.SourceFormatNodeService;
+using SourceFormatsCacheService.SourceFormatNode;
+using SourceFormatsRepository.Interfaces;
+using SourceFormatsRepository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -66,9 +66,10 @@ public class CtorValidation_Should
         // Arrange & Act
         Action action = () =>
         {
-            ISourceFormatsService sourceFormatsService = new Services.Document.SourceFormatsService.SourceFormatsService(
-                sourceFormatNodeService,
-                documentService);
+            ISourceFormatsService sourceFormatsService =
+                new Services.Document.SourceFormatsService.SourceFormatsService(
+                    sourceFormatNodeService,
+                    documentService);
         };
 
         // Assert

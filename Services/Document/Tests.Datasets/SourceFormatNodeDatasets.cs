@@ -1,7 +1,7 @@
 ﻿namespace EncyclopediaGalactica.Services.Document.Tests.Datasets;
 
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 
 [ExcludeFromCodeCoverage]
 public static class SourceFormatNodeDatasets

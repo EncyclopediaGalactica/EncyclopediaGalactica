@@ -3,19 +3,19 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Uni
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Mappers;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
-using EncyclopediaGalactica.Utils.GuardsService;
-using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
+using Ctx;
+using Document;
+using Entities;
 using FluentAssertions;
 using FluentValidation;
+using Mappers;
+using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Moq;
+using SourceFormatsRepository.Document;
+using SourceFormatsRepository.Interfaces;
+using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

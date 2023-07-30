@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Tests.Unit.SourceFormatNodeAddChildToParentRequestModel;
 
 using System;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
 using FluentAssertions;
 using Services.Document.Tests.Datasets;
+using SourceFormatNode;
 using Xunit;
 
 public class SourceFormatNodeAddChildToParentRequestModelValidationShould

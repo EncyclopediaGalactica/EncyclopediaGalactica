@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Http.Headers;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+using Dtos;
 using FluentAssertions;
+using SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

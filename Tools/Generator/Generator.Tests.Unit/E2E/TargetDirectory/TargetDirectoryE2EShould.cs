@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.TargetDirectory;
 
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
 using FluentValidation;
+using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -13,6 +13,11 @@ using Xunit.Abstractions;
 public class TargetDirectoryE2EShould : TestBase
 {
     private readonly string _currentPath;
+
+    public TargetDirectoryE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    {
+        _currentPath = $"{BasePath}/E2E/TargetDirectory";
+    }
 
     [Fact]
     public void ThrowWhenTargetDirectoryIsNotDefined()
@@ -69,12 +74,11 @@ public class TargetDirectoryE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(GeneratorException));
     }
 
-    public void GenerateWhenTargetDirectoryIsProvidedAsRelativePath() {}
-
-    public void GenerateWhenTargetDirectoryIsProvidedAsAbsolutePath() {}
-
-    public TargetDirectoryE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    public void GenerateWhenTargetDirectoryIsProvidedAsRelativePath()
     {
-        _currentPath = $"{BasePath}/E2E/TargetDirectory";
+    }
+
+    public void GenerateWhenTargetDirectoryIsProvidedAsAbsolutePath()
+    {
     }
 }

@@ -6,12 +6,16 @@ using Xunit;
 
 {{#each Imports}}using {{this}};{{/each}}
 
-/// <summary>
-///     Test cases for {{TypeNameUnderTest}} object.
-///     <remarks>
-///         Time of generation: {{TimeOfGeneration}}
-///     </remarks>
-/// </summary>
+///
+<summary>
+    /// Test cases for {{TypeNameUnderTest}} object.
+    ///
+    <remarks>
+        /// Time of generation: {{TimeOfGeneration}}
+        ///
+    </remarks>
+    ///
+</summary>
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class {{TypeName}}
@@ -19,15 +23,20 @@ public class {{TypeName}}
 {{#each this.VariableInfos}}
     [Fact]
     public void NotChange_{{VariableName}}_Value() {
-        
-        // Arrange && Act
-        {{../TypeNameUnderTest}} {{String.Lowercase (String.Substring (../TypeNameUnderTest) 0 1)}}{{String.Substring (../TypeNameUnderTest) 1}} = new ()
-        {
-            {{VariableName}} = {{#if IsString}}"string value"{{/if}}{{#if IsInt}}100{{/if}}{{#if IsLong}}200L{{/if}}{{#if IsFloat}}2.8f{{/if}}{{#if IsDouble}}0.3e2{{/if}}{{#if IsBool}}true{{/if}} 
-        };
-    
-        // Assert
-        {{String.Lowercase (String.Substring (../TypeNameUnderTest) 0 1)}}{{String.Substring (../TypeNameUnderTest) 1}}.{{VariableName}}.Should().{{#if IsString}}Be("string value"){{/if}}{{#if IsInt}}Be(100){{/if}}{{#if IsLong}}Be(200L){{/if}}{{#if IsFloat}}Be(2.8f){{/if}}{{#if IsDouble}}Be(0.3e2){{/if}}{{#if IsBool}}BeTrue(){{/if}};
+
+    // Arrange && Act
+    {{../TypeNameUnderTest}} {{String.Lowercase (String.Substring (../TypeNameUnderTest) 0 1)}}{{String.Substring
+            (../TypeNameUnderTest) 1}} = new ()
+    {
+    {{VariableName}} = {{#if IsString}}"string value"{{/if}}{{#if IsInt}}100{{/if}}{{#if IsLong}}200L{{/if}}{{#if
+            IsFloat}}2.8f{{/if}}{{#if IsDouble}}0.3e2{{/if}}{{#if IsBool}}true{{/if}}
+    };
+
+    // Assert
+    {{String.Lowercase (String.Substring (../TypeNameUnderTest) 0 1)}}{{String.Substring (../TypeNameUnderTest)
+                                                                                         1}}.{{VariableName}}.Should().{{#if
+            IsString}}Be("string value"){{/if}}{{#if IsInt}}Be(100){{/if}}{{#if IsLong}}Be(200L){{/if}}{{#if
+            IsFloat}}Be(2.8f){{/if}}{{#if IsDouble}}Be(0.3e2){{/if}}{{#if IsBool}}BeTrue(){{/if}};
     }
     {{#unless @last}}
 

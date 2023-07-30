@@ -2,6 +2,17 @@ namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Models;
 
 using Managers.SolutionProjectManager;
 
+/// <summary>
+///     <p>ProjectInfo Type</p>
+///     <p>
+///         ProjectInfo Type contains all the information related to a directory in the solution structure.
+///     </p>
+///     <p>
+///         In the generator structure a directory is focusing on a single thing like containing Dtos, or Dto
+///         tests, etc. Every project has its own name, purpose and specific set of information and configuration value
+///         related transformations.
+///     </p>
+/// </summary>
 public class ProjectInfo
 {
     /// <summary>
@@ -67,4 +78,12 @@ public class ProjectInfo
     ///     Gets or sets the solution project file name with filetype extension value
     /// </summary>
     public string SolutionProjectFileWithType { get; set; }
+
+    /// <summary>
+    ///     Gets or sets the TypeInfo value
+    ///     <remarks>
+    ///         <p>The <see cref="TypeInfo" /> describes all the properties of a type and file itself</p>
+    ///     </remarks>
+    /// </summary>
+    public List<TypeInfo> TypeInfos { get; set; }
 }

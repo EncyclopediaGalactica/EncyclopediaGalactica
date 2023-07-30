@@ -32,10 +32,10 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj" />
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\Mappers\Mappers.csproj" />
+        <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj" />
         <ProjectReference Include="..\Tests.Datasets\Tests.Datasets.csproj" />
         <ProjectReference Include="..\Repository\Repository.csproj" />
-        <ProjectReference Include="..\CacheService\CacheService.csproj" />
+        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj" />
         <ProjectReference Include="..\Service.Exceptions\Service.Exceptions.csproj" />
         <ProjectReference Include="..\Service.Interfaces\Service.Interfaces.csproj" />
         <ProjectReference Include="..\Service\Service.csproj" />

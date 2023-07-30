@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Entities;
+using Entities;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Xunit;

@@ -9,59 +9,59 @@ paths:
   '/sourceformatnode/add':
     post:
       description: 'Creates SourceFormatNode entity'
-      responses: 
+      responses:
         201:
           description: 'Entity has been created'
-          content: 
+          content:
             'application/json':
-              schema: 
+              schema:
                 type: object
-                items: 
+                items:
                   $ref: '#/components/schemas/SourceFormatNodeAddModel'
         400:
           description: 'Entity cannot be created due to error in the posted data'
-          content: 
+          content:
             'application/json':
-              schema: 
+              schema:
                 type: object
-                items: 
+                items:
                   $ref: '#/components/schemas/ErrorModel'
-    
+  
   '/sourceformatnode/getall':
     get:
       description: 'Retrieves the list of entities in the system'
-      responses: 
+      responses:
         200:
           description: 'Returns the list of entities in the system'
-          content: 
+          content:
             'application/json':
-              schema: 
+              schema:
                 type: array
-                items: 
+                items:
                   $ref: '#/components/schemas/SourceFormatNodeModel'
-                  
+  
   '/sourceformatnode/update':
     put:
       description: 'Updates the designated entity with the data stored in the provided object'
-      responses: 
+      responses:
         200:
           description: 'The designated entity is successfully updated with the provided data'
-          content: 
+          content:
             'application/json':
-              schema: 
+              schema:
                 type: object
-                items: 
-                  $ref: 
+                items:
+                  $ref:
   '/sourceformatnode/delete':
   '/sourceformatnode/getbyid':
   'sourceformatnode/addchildtoparent':
-components: 
+components:
   schemas:
     
     ErrorModel:
       description: 'The model contains the error message and details happened in the system'
       type: object
-      properties: 
+      properties:
         message:
           type: string
           description: 'Error message'
@@ -71,7 +71,7 @@ components:
       allOf:
         - $ref: '#/components/schemas/SourceFormatNodeModel'
         - type: object
-          properties: 
+          properties:
             id:
               type: number
               maximum: 0
@@ -82,7 +82,7 @@ components:
       allOf:
         - $ref: '#/components/schemas/SourceFormatNodeModel'
         - type: object
-          properties: 
+          properties:
             id:
               type: number
               minimum: 1
@@ -90,7 +90,7 @@ components:
     SourceFormatNodeModel:
       type: object
       description: 'Describes the inner structure of a document'
-      properties: 
+      properties:
         id:
           type: number
           description: 'Unique identifier'

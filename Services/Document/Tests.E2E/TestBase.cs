@@ -6,12 +6,12 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using Client.Core;
 using Client.Core.Interfaces;
-using EncyclopediaGalactica.Host.RestApi;
-using EncyclopediaGalactica.Services.Document.Sdk;
-using EncyclopediaGalactica.Services.Document.Sdk.Document;
-using EncyclopediaGalactica.Services.Document.Sdk.Interfaces;
-using EncyclopediaGalactica.Services.Document.Sdk.SourceFormatNode;
+using Host.RestApi;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Sdk;
+using Sdk.Document;
+using Sdk.Interfaces;
+using Sdk.SourceFormatNode;
 
 public class TestBase : SourceFormatWebApplicationFactory<Program>
 {

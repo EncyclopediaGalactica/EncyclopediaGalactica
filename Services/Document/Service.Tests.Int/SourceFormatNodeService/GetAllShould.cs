@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 using FluentAssertions;
 using Xunit;
 

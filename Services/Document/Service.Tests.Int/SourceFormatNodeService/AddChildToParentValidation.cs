@@ -3,10 +3,10 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
+using Dtos;
 using FluentAssertions;
 using Services.Document.Tests.Datasets;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

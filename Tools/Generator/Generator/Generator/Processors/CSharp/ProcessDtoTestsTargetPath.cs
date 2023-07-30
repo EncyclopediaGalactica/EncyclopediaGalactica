@@ -46,6 +46,5 @@ public partial class CSharpProcessor
 
             typeInfo.AbsoluteTargetPath = builder.ToString();
         }
-        
     }
 }

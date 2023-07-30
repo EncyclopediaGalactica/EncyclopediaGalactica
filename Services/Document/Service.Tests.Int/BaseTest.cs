@@ -2,27 +2,27 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Mappers;
-using EncyclopediaGalactica.Services.Document.Mappers.Document;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
+using Entities;
 using FluentValidation;
+using Interfaces;
+using Interfaces.Document;
+using Interfaces.SourceFormatNode;
+using Mappers;
+using Mappers.Document;
+using Mappers.Interfaces;
+using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Services.Document.SourceFormatsService.Document;
+using SourceFormatsCacheService.Interfaces;
+using SourceFormatsCacheService.SourceFormatNode;
+using SourceFormatsRepository.Document;
+using SourceFormatsRepository.Interfaces;
+using SourceFormatsRepository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 
 [ExcludeFromCodeCoverage]
 public class BaseTest

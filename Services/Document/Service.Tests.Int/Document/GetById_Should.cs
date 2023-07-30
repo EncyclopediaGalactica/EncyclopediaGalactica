@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 using FluentAssertions;
 using Xunit;
 
@@ -38,10 +38,7 @@ public class GetById_Should : BaseTest
     public void Throw_InvalidOperationException_WhenNoSuchElement()
     {
         // Arrange && Act
-        Func<Task> f = async () =>
-        {
-            await Sut.DocumentService.GetByIdAsync(100).ConfigureAwait(false);
-        };
+        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(100).ConfigureAwait(false); };
 
         // Assert
         f.Should().ThrowExactlyAsync<InvalidOperationException>();

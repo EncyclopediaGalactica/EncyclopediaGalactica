@@ -3,8 +3,8 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using FluentAssertions;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -16,10 +16,7 @@ public class GetById_Validation_Should : BaseTest
     public void ThrowGuardException_WhenInputIsInvalid()
     {
         // Arrange && Act
-        Func<Task> f = async () =>
-        {
-            await Sut.DocumentService.GetByIdAsync(0).ConfigureAwait(false);
-        };
+        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(0).ConfigureAwait(false); };
 
         // Assert
         f.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

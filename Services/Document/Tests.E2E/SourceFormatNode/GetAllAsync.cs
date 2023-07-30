@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.Tests.E2E.SourceFormatNode;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+using Dtos;
 using FluentAssertions;
+using Sdk.Models.SourceFormatNode;
 using Xunit;
 
 [Trait("Category", "DocumentService")]

@@ -8,5 +8,4 @@ using Xunit;
 [Trait("Category", "DocumentService")]
 public partial class DocumentSdk_Should : TestBase
 {
-
 }

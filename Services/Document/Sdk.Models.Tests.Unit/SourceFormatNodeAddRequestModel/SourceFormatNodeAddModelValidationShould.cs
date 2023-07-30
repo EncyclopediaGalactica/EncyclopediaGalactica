@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Tests.Unit.SourceFo
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
 using FluentAssertions;
 using Services.Document.Tests.Datasets;
+using SourceFormatNode;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

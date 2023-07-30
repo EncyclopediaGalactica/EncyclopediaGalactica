@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Tests.Unit.Document
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
 using FluentAssertions;
 using FluentValidation;
+using Models.Document;
 using Services.Document.Tests.Datasets;
 using Xunit;
 

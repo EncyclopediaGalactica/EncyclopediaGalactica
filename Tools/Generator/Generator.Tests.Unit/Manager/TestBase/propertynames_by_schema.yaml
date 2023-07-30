@@ -160,7 +160,7 @@ components:
           format: int64
     onePropertyWithAllRequired:
       type: object
-      required: 
+      required:
         - id
       properties:
         id:
@@ -176,7 +176,7 @@ components:
           type: string
     twoPropertiesWithAllRequired:
       type: object
-      required: 
+      required:
         - id
         - name
       properties:

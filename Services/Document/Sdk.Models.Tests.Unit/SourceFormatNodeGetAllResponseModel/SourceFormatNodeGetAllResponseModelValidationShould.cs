@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Tests.Unit.SourceFo
 using System;
 using System.Collections.Generic;
 using System.Net;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+using Dtos;
 using FluentAssertions;
+using SourceFormatNode;
 using Xunit;
 
 public class SourceFormatNodeGetAllResponseModelValidationShould

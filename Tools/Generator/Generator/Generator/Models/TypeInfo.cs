@@ -1,20 +1,12 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Models;
 
 /// <summary>
-///     Generated File Information object
-///     <remarks>
-///         <list type="bullet">
-///             <item>The data stored in this object describes the generated file.</item>
-///             <item>
-///                 As of now only c-sharp code is generated. Despite the fact that a c-sharp
-///                 file may contain multiple classes we assume that one file one class.
-///             </item>
-///             <item>
-///                 This object is not used in code generation. It serves only the purpose of collecting the necessary
-///                 information, storing them during preprocessing
-///             </item>
-///         </list>
-///     </remarks>
+///     <p>TypeInfo Type</p>
+///     <p>The TypeInfo contains all the information related to a single type</p>
+///     <p>
+///         In the generator internal directory based structure the TypeInfo is the lowest level and it represents a file. A
+///         file in case of c-sharp is a type.
+///     </p>
 /// </summary>
 public class TypeInfo
 {

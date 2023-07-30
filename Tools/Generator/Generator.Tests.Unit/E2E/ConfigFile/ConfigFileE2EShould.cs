@@ -1,8 +1,8 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.ConfigFile;
 
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
+using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -12,6 +12,11 @@ using Xunit.Abstractions;
 public class ConfigFileE2EShould : TestBase
 {
     private readonly string _currentPath;
+
+    public ConfigFileE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    {
+        _currentPath = $"{BasePath}/E2E/ConfigFile";
+    }
 
     [Fact]
     public void ThrowWhenConfigFilePathIsNotDefined()
@@ -33,10 +38,5 @@ public class ConfigFileE2EShould : TestBase
 
         // Assert
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(GeneratorException));
-    }
-
-    public ConfigFileE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
-    {
-        _currentPath = $"{BasePath}/E2E/ConfigFile";
     }
 }

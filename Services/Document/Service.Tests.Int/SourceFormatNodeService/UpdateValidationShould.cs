@@ -3,11 +3,11 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
+using Dtos;
 using FluentAssertions;
 using FluentValidation;
 using Services.Document.Tests.Datasets;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -18,7 +18,7 @@ public class UpdateValidationShould : BaseTest
     public async Task Throw_ArgumentNullException_WhenInputIsNull()
     {
         // Act
-        Func<Task> task = async() =>
+        Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(null)
@@ -33,10 +33,10 @@ public class UpdateValidationShould : BaseTest
     public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputIdIsZero()
     {
         // Act
-        Func<Task> task = async() =>
+        Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(new SourceFormatNodeDto{Id = 0})
+                .UpdateSourceFormatNodeAsync(new SourceFormatNodeDto { Id = 0 })
                 .ConfigureAwait(false);
         };
 
@@ -55,7 +55,7 @@ public class UpdateValidationShould : BaseTest
             Id = id,
             Name = name
         };
-        Func<Task> task = async() =>
+        Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
                 .UpdateSourceFormatNodeAsync(dto)

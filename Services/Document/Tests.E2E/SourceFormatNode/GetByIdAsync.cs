@@ -1,10 +1,10 @@
 namespace EncyclopediaGalactica.Services.Document.Tests.E2E.SourceFormatNode;
 
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
+using Dtos;
 using FluentAssertions;
+using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]

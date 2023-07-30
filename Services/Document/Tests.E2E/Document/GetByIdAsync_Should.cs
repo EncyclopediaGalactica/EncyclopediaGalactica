@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.Tests.E2E.Document;
 using System;
 using System.Net;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
 using FluentAssertions;
 using FluentValidation;
+using Sdk.Models.Document;
 using Xunit;
 
 [Trait("Category", "DocumentService")]

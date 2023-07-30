@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.E2E.SolutionBaseNamespace;
 
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator;
 using FluentAssertions;
 using FluentValidation;
+using Generator;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -13,6 +13,11 @@ using Xunit.Abstractions;
 public class SolutionBaseNamespaceE2EShould : TestBase
 {
     private readonly string _currentPath;
+
+    public SolutionBaseNamespaceE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
+    {
+        _currentPath = $"{BasePath}/E2E/SolutionBaseNamespace";
+    }
 
     [Fact]
     public void ThrowWhenSolutionBaseNamespaceIsNotProvided()
@@ -61,10 +66,5 @@ public class SolutionBaseNamespaceE2EShould : TestBase
     public void GenerateAndTransformSolutionBaseNamespace()
     {
         // see specification
-    }
-
-    public SolutionBaseNamespaceE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
-    {
-        _currentPath = $"{BasePath}/E2E/SolutionBaseNamespace";
     }
 }

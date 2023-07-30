@@ -3,9 +3,9 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
+using Dtos;
 using FluentAssertions;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -32,7 +32,7 @@ public class DeleteValidationShould : BaseTest
         // Act
         Func<Task> task = async () =>
         {
-            await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto{Id = 0})
+            await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto { Id = 0 })
                 .ConfigureAwait(false);
         };
 

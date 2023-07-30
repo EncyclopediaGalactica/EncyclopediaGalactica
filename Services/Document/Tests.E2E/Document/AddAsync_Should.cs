@@ -5,9 +5,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Net;
 using System.Threading.Tasks;
 using Datasets;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
 using FluentAssertions;
 using FluentValidation;
+using Sdk.Models.Document;
 using Xunit;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]

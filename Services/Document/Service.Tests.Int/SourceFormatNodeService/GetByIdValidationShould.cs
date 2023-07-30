@@ -3,15 +3,14 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using FluentAssertions;
+using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
 [Trait("Category", "DocumentService")]
 public class GetByIdValidationShould : BaseTest
 {
-
     [Fact]
     public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenIdIsZero()
     {

@@ -19,7 +19,9 @@ public interface IDocumentService
     ///     <see cref="DocumentDto" />.
     /// </summary>
     /// <param name="dto">The input object</param>
-    /// <param name="cancellationToken"><see cref="CancellationToken"/></param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
     /// <returns>
     ///     Returns a <see cref="Task{TResult}" /> object representing the result of an asynchronous operation.
     /// </returns>
@@ -42,7 +44,9 @@ public interface IDocumentService
     ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentDto" /> object.
     /// </summary>
     /// <param name="id">The id value</param>
-    /// <param name="cancellationToken"><see cref="CancellationToken"/></param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation. It includes the
     ///     <see cref="DocumentDto" /> result.

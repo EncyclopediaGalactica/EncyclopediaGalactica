@@ -3,13 +3,13 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
+using Document;
+using Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Services.Document.SourceFormatsRepository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -19,9 +19,12 @@ public class SourceFormatsService_Should
 {
     public static IEnumerable<object[]> Throw_ArgumentNullException_WhenInjectedIsNull_Data = new List<object[]>
     {
-        new[] { null, new DocumentRepository(
-            new DbContextOptions<SourceFormatsDbContext>(),
-            new DocumentValidator()) },
+        new[]
+        {
+            null, new DocumentRepository(
+                new DbContextOptions<SourceFormatsDbContext>(),
+                new DocumentValidator())
+        },
         new[]
         {
             new SourceFormatNodeRepository(

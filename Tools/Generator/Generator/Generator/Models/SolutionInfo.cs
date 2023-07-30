@@ -2,6 +2,17 @@ namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Models;
 
 using Managers.SolutionManager;
 
+/// <summary>
+///     <p>SolutionInfo Type</p>
+///     <p>
+///         This object stores all the Solution related information used either during generation or created during
+///         generations.
+///     </p>
+///     <p>
+///         Solution is the highest level in the generator directory based data structure. Every piece of code is under a
+///         solution. In case of C# there is even a solution file.
+///     </p>
+/// </summary>
 public class SolutionInfo
 {
     /// <summary>

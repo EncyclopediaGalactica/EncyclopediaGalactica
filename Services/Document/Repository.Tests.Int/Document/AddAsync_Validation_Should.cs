@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Entities;
+using Entities;
 using FluentAssertions;
 using FluentValidation;
 using Services.Document.Tests.Datasets;
@@ -18,10 +18,7 @@ public class AddAsync_Validation_Should : BaseTest
     public void Throw_WhenInput_IsNull()
     {
         // Arrange && Act
-        Func<Task> f = async () =>
-        {
-            await Sut.Documents.AddAsync(null!);
-        };
+        Func<Task> f = async () => { await Sut.Documents.AddAsync(null!); };
     }
 
     [Theory]

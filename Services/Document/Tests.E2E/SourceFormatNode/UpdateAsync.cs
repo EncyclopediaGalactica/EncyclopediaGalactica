@@ -2,10 +2,10 @@ namespace EncyclopediaGalactica.Services.Document.Tests.E2E.SourceFormatNode;
 
 using System.Net;
 using System.Threading.Tasks;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
+using Dtos;
 using FluentAssertions;
+using Sdk.Models.SourceFormatNode;
+using SourceFormatsService.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -68,7 +68,7 @@ public partial class SourceFormatNodeSdk_Should
         // Assert
         updateResponseModel.Should().NotBeNull();
         updateResponseModel.Message
-            .Substring(1, updateResponseModel.Message.Length-2)
+            .Substring(1, updateResponseModel.Message.Length - 2)
             .Should().Be(SourceFormatsServiceResultStatuses.NoSuchEntity);
         updateResponseModel.IsOperationSuccessful.Should().BeFalse();
         updateResponseModel.Result.Should().BeNull();
