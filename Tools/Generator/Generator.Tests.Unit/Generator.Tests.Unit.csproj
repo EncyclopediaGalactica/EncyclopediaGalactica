@@ -573,6 +573,24 @@
         <None Update="e2e\target_directory\result\TestSolution\TestSolution.Dto\TestSolution.Dto.csprojref">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.slnref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.slnref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
