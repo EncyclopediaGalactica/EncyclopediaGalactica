@@ -168,7 +168,7 @@ stages:
               dotnet test ${{ variables.restapigenerator_tests_unit }}
 
       - job: install_semantic
-        dependsOn: test
+        dependsOn: test_solution
         displayName: Install Semantic
         steps:
           - script: |
