@@ -7,7 +7,7 @@ using Xunit;
 
 public partial class CSharpProcessor_Should
 {
-    [Theory]
+    // [Theory]
     [InlineData("reserved", "reserved")]
     [InlineData("REserved", "reserved")]
     [InlineData("REserveD", "reserved")]

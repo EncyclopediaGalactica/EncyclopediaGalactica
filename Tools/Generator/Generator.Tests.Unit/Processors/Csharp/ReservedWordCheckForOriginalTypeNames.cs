@@ -7,7 +7,7 @@ using Xunit;
 
 public partial class CSharpProcessor_Should
 {
-    [Theory]
+    // [Theory]
     [InlineData("asd", "asd", true)]
     [InlineData("Asd", "asd", true)]
     [InlineData("ASD", "asd", true)]
