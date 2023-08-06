@@ -166,4 +166,46 @@ stages:
               
               echo ${{ variables.print_pattern }} ${{ variables.restapigenerator_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.restapigenerator_tests_unit }}
+
+      - job: install_semantic
+        dependsOn: test_solution
+        displayName: Install Semantic
+        steps:
+          - script: |
+              echo '##vso[task.prependpath]$(HOME)/.local/bin'
+            displayName: PATH
+          - script: |
+              npm install npm
+            displayName: npm
+          - script: |
+              npm install semantic-release
+            displayName: semantic-release
+          - script: |
+              npm install @semantic-release/changelog
+            displayName: semantic-release/changelog
+          - script: |
+              npm install @semantic-release/exec
+            displayName: semantic-release/exec
+          - script: |
+              npm install @semantic-release/git
+            displayName: semantic-release/git
+          - script: |
+              npm install @semantic-release/github
+            displayName: semantic-release/github
+          - script: |
+              pip3 install --user bump2version
+            displayName: bump2version
+
+      - job: semantic_release
+        dependsOn: install_semantic
+        displayName: Semantic Release
+        steps:
+          - script: |
+              echo '##vso[task.prependpath]$(HOME)/.local/bin'
+            displayName: PATH
+          - script: |
+              npx semantic-release
+            displayName: semantic-release
+            env:
+              GH_TOKEN: $(githubToken)
     

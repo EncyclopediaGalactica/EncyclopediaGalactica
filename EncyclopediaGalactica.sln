@@ -3,9 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{43B5B312-B2BE-42F0-B981-0BDAE6499177}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
+		azure-pipelines.yml = azure-pipelines.yml
+		.bumpversion.cfg = .bumpversion.cfg
+		CHANGELOG.md = CHANGELOG.md
 		.editorconfig = .editorconfig
 		.globalconfig = .globalconfig
-		azure-pipelines.yml = azure-pipelines.yml
+		README.md = README.md
+		.releaserc = .releaserc
+		version.txt = version.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{37C84772-74FE-4A8A-8C5A-528040202EBD}"
