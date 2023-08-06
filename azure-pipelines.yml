@@ -122,7 +122,48 @@ stages:
         dependsOn: build_solution
         steps:
           - script: |
+              echo ${{ variables.print_pattern }} ${{ variables.document_cacheservice_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_cacheservice_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_cacheservice_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_cacheservice_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_models_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_client_models_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_client_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_tests_int }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_client_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_controllers_viewmodels_tests_int }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_controllers_viewmodels_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_dtos_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_dtos_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_entities_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_entities_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_mappers_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_mappers_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_repository_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_repository_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_repository_tests_int }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_repository_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_service_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_service_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_service_tests_int }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_service_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_tests_e2e }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_tests_e2e }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.restapigenerator_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.restapigenerator_tests_unit }}
     

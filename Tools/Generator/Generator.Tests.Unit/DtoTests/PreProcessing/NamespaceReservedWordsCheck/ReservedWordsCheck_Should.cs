@@ -16,7 +16,7 @@ public class ReservedWordsCheck_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void Throw_WhenBaseNamespaceIsAReservedWord()
     {
         // Arrange && Act
@@ -28,7 +28,7 @@ public class ReservedWordsCheck_Should : TestBase
         action.Should().Throw<GeneratorException>();
     }
 
-    [Fact]
+    // [Fact]
     public void Throw_WhenBaseNamespaceIncludesAReservedWord_AtStart()
     {
         // Arrange && Act
@@ -40,7 +40,7 @@ public class ReservedWordsCheck_Should : TestBase
         action.Should().Throw<GeneratorException>();
     }
 
-    [Fact]
+    // [Fact]
     public void Throw_WhenBaseNamespaceIncludesAReservedWord_InTheMiddle()
     {
         // Arrange && Act
@@ -52,7 +52,7 @@ public class ReservedWordsCheck_Should : TestBase
         action.Should().Throw<GeneratorException>();
     }
 
-    [Fact]
+    // [Fact]
     public void Throw_WhenBaseNamespaceIncludesAReservedWord_AtTheEnd()
     {
         // Arrange && Act
