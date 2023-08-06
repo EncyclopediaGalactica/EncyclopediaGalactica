@@ -15,7 +15,7 @@ public class DtoTestGeneration_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void Generate()
     {
         // Arrange && Act

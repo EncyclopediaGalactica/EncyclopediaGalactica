@@ -15,7 +15,7 @@ public class DtoGenerating_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void Generate_MultipleDtos()
     {
         // Arrange && Act

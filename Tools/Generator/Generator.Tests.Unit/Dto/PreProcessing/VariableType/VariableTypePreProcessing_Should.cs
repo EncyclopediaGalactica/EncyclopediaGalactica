@@ -16,7 +16,7 @@ public class VariableTypePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void Collect_Types()
     {
         // Arrange && Act

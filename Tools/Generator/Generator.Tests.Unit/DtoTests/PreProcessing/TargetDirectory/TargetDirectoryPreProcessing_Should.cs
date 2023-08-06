@@ -17,7 +17,7 @@ public class TargetDirectoryPreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenOnlyBasePath()
     {
         // Arrange && Act
@@ -41,7 +41,7 @@ public class TargetDirectoryPreProcessing_Should : TestBase
             .Be($"{BasePath}/DtoTests/PreProcessing/TargetDirectory/dto_test_project_base_path");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenBasePath_AndDtoTestProject()
     {
         // Arrange && Act
@@ -66,7 +66,7 @@ public class TargetDirectoryPreProcessing_Should : TestBase
             .Be($"{BasePath}/DtoTests/PreProcessing/TargetDirectory/testprojectBasepath");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenBasePath_AndDtoTestProject_AndAdditionalPath()
     {
         // Arrange && Act

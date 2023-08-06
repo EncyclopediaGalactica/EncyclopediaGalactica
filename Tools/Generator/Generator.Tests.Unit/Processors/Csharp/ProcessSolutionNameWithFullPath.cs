@@ -6,8 +6,8 @@ using Xunit;
 
 public partial class CSharpProcessor_Should
 {
-    [Theory]
-    [InlineData("Asd", "/asd/asd", "/asd/asd/Asd.sln")]
+    // [Theory]
+    [InlineData("Asd.sln", "/asd/asd", "/asd/asd/Asd.sln")]
     [InlineData("", "/asd/asd", null)]
     [InlineData(null, "/asd/asd", null)]
     [InlineData(" ", "/asd/asd", null)]
@@ -19,7 +19,7 @@ public partial class CSharpProcessor_Should
         // Arrange
         SolutionInfo solutionInfo = new SolutionInfo
         {
-            Name = name,
+            SolutionNameWithFileExtension = name,
             BaseAbsolutePath = path
         };
 

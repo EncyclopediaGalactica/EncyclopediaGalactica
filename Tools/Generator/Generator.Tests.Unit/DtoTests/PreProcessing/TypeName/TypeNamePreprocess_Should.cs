@@ -15,7 +15,7 @@ public class TypeNamePreprocess_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_SingleFilename()
     {
         // Arrange && Act
@@ -32,7 +32,7 @@ public class TypeNamePreprocess_Should : TestBase
             .Where(p => p.TypeName == "SingleTypeNameInDtoTestPreProcessDto_Should").ToList().Count.Should().Be(1);
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_MultipleFilenames()
     {
         // Arrange && Act

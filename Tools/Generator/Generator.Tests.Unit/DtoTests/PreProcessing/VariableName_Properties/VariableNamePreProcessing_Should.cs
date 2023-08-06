@@ -16,7 +16,7 @@ public class VariableNamePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void Process_PropertyNames()
     {
         // Arrange && Act

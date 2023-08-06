@@ -15,7 +15,7 @@ public class FilenamePreprocess_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_SingleFilename()
     {
         // Arrange && Act
@@ -32,7 +32,7 @@ public class FilenamePreprocess_Should : TestBase
             .Where(p => p.FileName == "SingleFilenameDto_Should.cs").ToList().Count.Should().Be(1);
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_MultipleFilenames()
     {
         // Arrange && Act

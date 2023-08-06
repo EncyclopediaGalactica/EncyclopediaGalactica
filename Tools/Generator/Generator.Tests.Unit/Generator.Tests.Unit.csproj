@@ -13,13 +13,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentAssertions" Version="6.11.0" />
-        <PackageReference Include="Microsoft.Build" Version="17.6.3" />
-        <PackageReference Include="Microsoft.OpenApi" Version="1.6.6" />
-        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.6" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="xunit" Version="2.5.0" />
+        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
+        <PackageReference Include="Microsoft.Build" Version="17.6.3"/>
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.6"/>
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.6"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
+        <PackageReference Include="xunit" Version="2.5.0"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -418,57 +418,165 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\missing_lang.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\lang_is_space.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\lang_is_js.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\empty_lang.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\e2e.openapi.yaml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\Lang\e2e.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\OpenApiYamlPath\spaces.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\OpenApiYamlPath\path_missing.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\OpenApiYamlPath\file_does_not_exist.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\OpenApiYamlPath\empty_string.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="E2E\OpenApiYamlPath\directory_does_not_exist.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\openapi_yaml_path\spaces.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\openapi_yaml_path\path_missing.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\openapi_yaml_path\file_does_not_exist.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\openapi_yaml_path\empty_string.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\openapi_yaml_path\directory_does_not_exist.config.json">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionBaseNamespace\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionBaseNamespace\base_namespace_starts_with_not_a_letter.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionBaseNamespace\base_namespace_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionBaseNamespace\base_namespace_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionBaseNamespace\base_namespace_is_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionName\solution_name_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionName\solution_name_is_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionName\solution_name_is_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionName\special_characters.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\SolutionName\starts_with_number.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\target_directory_is_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\target_directory_is_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\target_directory_does_not_exist_relative.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\target_directory_does_not_exist_absolute.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\path_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\TargetDirectory\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\path_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\target_directory_does_not_exist_absolute.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\target_directory_does_not_exist_relative.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\target_directory_is_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\target_directory_is_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\solution_name_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\solution_name_is_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\solution_name_is_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\special_characters.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_name\starts_with_number.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_base_namespace\base_namespace_is_empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_base_namespace\base_namespace_missing.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_base_namespace\base_namespace_spaces.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_base_namespace\base_namespace_starts_with_not_a_letter.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_base_namespace\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\result\TestSolution\TestSolution.slnref">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\result\TestSolution\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\target_directory\result\TestSolution\TestSolution.Dto\TestSolution.Dto.csprojref">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Generator\Generator.csproj" />
+        <ProjectReference Include="..\Generator\Generator.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
@@ -547,9 +655,9 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="Dto" />
-        <Folder Include="Dto\Generation\Reference\SolutionName.Dto.Tests.Unit\" />
-        <Folder Include="Dto\Generation\Reference\SolutionName.Dto\" />
+        <Folder Include="Dto"/>
+        <Folder Include="Dto\Generation\Reference\SolutionName.Dto.Tests.Unit\"/>
+        <Folder Include="Dto\Generation\Reference\SolutionName.Dto\"/>
     </ItemGroup>
 
 </Project>

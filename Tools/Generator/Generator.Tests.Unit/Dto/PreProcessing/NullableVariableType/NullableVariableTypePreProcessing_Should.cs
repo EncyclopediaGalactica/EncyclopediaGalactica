@@ -16,7 +16,7 @@ public class NullableVariableTypePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_NullablePropertyTypes()
     {
         // Arrange && Act

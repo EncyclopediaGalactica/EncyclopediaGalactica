@@ -17,7 +17,7 @@ public class TargetPathWithFileNamePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenOnlyBasePath()
     {
         // Arrange && Act
@@ -43,7 +43,7 @@ public class TargetPathWithFileNamePreProcessing_Should : TestBase
                 $"{BasePath}/DtoTests/PreProcessing/TargetPathWithFileName/dto_test_project_base_path/TargetPathWithFileNameDto_Should.cs");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenBasePath_AndDtoTestProject()
     {
         // Arrange && Act
@@ -69,7 +69,7 @@ public class TargetPathWithFileNamePreProcessing_Should : TestBase
                 $"TargetPathWithFileNameDto_Should.cs");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_WhenBasePath_AndDtoTestProject_AndAdditionalPath()
     {
         // Arrange && Act

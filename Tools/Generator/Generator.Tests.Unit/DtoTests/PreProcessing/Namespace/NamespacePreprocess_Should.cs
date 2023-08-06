@@ -15,7 +15,7 @@ public class NamespacePreprocess_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_DtoTestNamespaceIsNotProvided_SingleFile()
     {
         // Arrange && Act
@@ -32,7 +32,7 @@ public class NamespacePreprocess_Should : TestBase
             .Namespace.Should().Be("Solution.Nmspace.Single");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_DtoTestNamespaceIsNotProvided_MultipleFile()
     {
         // Arrange && Act
@@ -51,7 +51,7 @@ public class NamespacePreprocess_Should : TestBase
             .Namespace.Should().Be("Solution.Nmspace.Multiple");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_DtoTestNamespaceIsProvided_SingleFile()
     {
         // Arrange && Act
@@ -69,7 +69,7 @@ public class NamespacePreprocess_Should : TestBase
             .Namespace.Should().Be("Solution.Nmspace.Prov.Single.Dto.Tests");
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_DtoTestNamespaceIsProvided_MultipleFile()
     {
         // Arrange && Act

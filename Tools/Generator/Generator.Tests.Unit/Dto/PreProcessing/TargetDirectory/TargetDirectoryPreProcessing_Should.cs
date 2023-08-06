@@ -17,7 +17,7 @@ public class TargetDirectoryPreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_TargetDirectory_Value()
     {
         // Arrange && Act

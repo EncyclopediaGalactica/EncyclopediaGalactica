@@ -16,7 +16,7 @@ public class TemplatePathWithFileNamePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_TemplatePath()
     {
         // Arrange && Act

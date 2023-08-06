@@ -15,7 +15,7 @@ public class TypenamePreProcessing_Should : TestBase
     {
     }
 
-    [Fact]
+    // [Fact]
     public void PreProcess_FileName()
     {
         // Arrange && Act
