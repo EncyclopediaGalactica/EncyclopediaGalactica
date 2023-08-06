@@ -10,7 +10,7 @@ pool: 'contabo'
 
 variables:
   solutionName: 'EncyclopediaGalactica.sln'
-  document_cacheservice_tests_unit: 'Services/Document/Document.CacheService.Tests.Unit/Services/Document/Document.CacheService.Tests.Unit.csproj'
+  document_cacheservice_tests_unit: 'Services/Document/Document.CacheService.Tests.Unit/Document.CacheService.Tests.Unit.csproj'
 
 stages:
   - stage: Variables
@@ -61,5 +61,5 @@ stages:
         dependsOn: build_solution
         steps:
           - script: |
-              dotnet test $document_cacheservice_tests_unit
+              dotnet test ${{ variables.document_cacheservice_tests_unit }}
     
