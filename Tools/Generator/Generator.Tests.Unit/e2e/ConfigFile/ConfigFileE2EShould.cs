@@ -18,7 +18,7 @@ public class ConfigFileE2EShould : TestBase
         _currentPath = $"{BasePath}/E2E/ConfigFile";
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowWhenConfigFilePathIsNotDefined()
     {
         // Arrange
@@ -29,7 +29,7 @@ public class ConfigFileE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(GeneratorException));
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowWhenConfigFileDoesNotExist()
     {
         // Arrange

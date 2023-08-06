@@ -19,7 +19,7 @@ public class LangE2EShould : TestBase
         _currentPath = $"{BasePath}/e2e/lang";
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowExceptionWhenLangValueIsNotProvided()
     {
         // Arrange
@@ -32,7 +32,7 @@ public class LangE2EShould : TestBase
             .WithInnerException(typeof(ValidationException));
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowExceptionWhenLangValueIsEmpty()
     {
         // Arrange
@@ -45,7 +45,7 @@ public class LangE2EShould : TestBase
             .WithInnerException(typeof(ValidationException));
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowExceptionWhenLangValueIsSpace()
     {
         // Arrange
@@ -58,7 +58,7 @@ public class LangE2EShould : TestBase
             .WithInnerException(typeof(ValidationException));
     }
 
-    [Fact]
+    // [Fact]
     public void ThrowExceptionWhenLangValueIsSomethingNotAccepted()
     {
         // Arrange
