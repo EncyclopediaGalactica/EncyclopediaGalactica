@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService</RootNamespace>
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Document.CacheService.Exceptions\Document.CacheService.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.CacheService.Interfaces\Document.CacheService.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+    </ItemGroup>
+
+</Project>

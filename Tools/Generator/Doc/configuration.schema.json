@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/EncyclopediaGalactica/RestApiSdkGenerator/configuration.schema.json",
+  "title": "Encyclopedia Galactica Rest Api Sdk Source Code Generator Configuration file schema",
+  "description": "Encyclopedia Galactica development toolset includes a code generator. This is the schema of the configuration file for the generator.",
+  "type": "object",
+  "required": [
+    "openapi_specification_path",
+    "lang",
+    "solution_name",
+    "solution_base_path",
+    "solution_base_namespace"
+  ],
+  "properties": {
+    "lang": {
+      "description": "REQUIRED: The generated programming language. For example: cshapr",
+      "type": "string"
+    },
+    "openapi_specification_path": {
+      "description": "REQUIRED: Path to the OpenApi specification YAML",
+      "type": "string"
+    },
+    "solution_file_type": {
+      "description": "REQUIRED: file type of the solution file",
+      "type": "string"
+    },
+    "solution_name": {
+      "description": "REQUIRED: The name of the solution.",
+      "type": "string"
+    },
+    "solution_base_namespace": {
+      "description": "REQUIRED: The base namespace of the solution.",
+      "type": "string"
+    },
+    "skip_dto_preprocess": {
+      "description": "Controls whether DTO objects related data will be preprocessed. Useful in testing."
+    },
+    "skip_dto_generating": {
+      "description": "Controls whether DTO objects will be generated or not.",
+      "type": "boolean"
+    },
+    "skip_dto_test_preprocess": {
+      "description": "Controls whether Dto tests related data will be preprocessed. Useful in testing.",
+      "type": "boolean"
+    },
+    "skip_dto_test_generating": {
+      "description": "Controls whether Dto tests will be generated. Useful in testing.",
+      "type": "boolean"
+    }
+  }
+}

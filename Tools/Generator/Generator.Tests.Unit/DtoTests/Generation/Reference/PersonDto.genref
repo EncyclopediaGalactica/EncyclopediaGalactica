@@ -1,0 +1,45 @@
+namespace Test.Generation.Dto.Project;
+
+/// <summary>
+///     The PersonDto object.
+///     <remarks>
+///         Time of generation: 04/22/2023 14:26:13
+///     </remarks>
+/// </summary>
+public class PersonDto
+{
+    /// <summary>
+    ///     Gets or set the Id property's value
+    /// </summary>
+    public long Id { get; set; }
+
+    /// <summary>
+    ///     Gets or set the Name property's value
+    /// </summary>
+    public string Name { get; set; }
+
+    /// <summary>
+    ///     Gets or set the Address property's value
+    /// </summary>
+    public string? Address { get; set; }
+
+    /// <summary>
+    ///     Gets or set the HouseNumber property's value
+    /// </summary>
+    public int? HouseNumber { get; set; }
+
+    /// <summary>
+    ///     Gets or set the SocialSecurityNumber property's value
+    /// </summary>
+    public long? SocialSecurityNumber { get; set; }
+
+    /// <summary>
+    ///     Gets or set the FloatType property's value
+    /// </summary>
+    public float? FloatType { get; set; }
+
+    /// <summary>
+    ///     Gets or set the DoubleType property's value
+    /// </summary>
+    public double? DoubleType { get; set; }
+}

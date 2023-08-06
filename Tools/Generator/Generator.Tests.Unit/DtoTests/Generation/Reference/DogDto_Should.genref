@@ -1,0 +1,70 @@
+namespace Test.Generation.Dto.Project;
+
+using System.Diagnostics.CodeAnalysis;
+using FluentAssertions;
+using Xunit;
+
+using Test.Generation.Dto.Project;
+
+/// <summary>
+///     Test cases for DogDto object.
+///     <remarks>
+///         Time of generation: 04/22/2023 14:33:39 #TEST_IGNORE
+///     </remarks>
+/// </summary>
+[ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class DogDto_Should
+{
+    [Fact]
+    public void NotChange_Id_Value() {
+        
+        // Arrange && Act
+        DogDto dogDto = new ()
+        {
+            Id = 200L 
+        };
+    
+        // Assert
+        dogDto.Id.Should().Be(200L);
+    }
+
+    [Fact]
+    public void NotChange_Name_Value() {
+        
+        // Arrange && Act
+        DogDto dogDto = new ()
+        {
+            Name = "string value" 
+        };
+    
+        // Assert
+        dogDto.Name.Should().Be("string value");
+    }
+
+    [Fact]
+    public void NotChange_DogIdentificationNumber_Value() {
+        
+        // Arrange && Act
+        DogDto dogDto = new ()
+        {
+            DogIdentificationNumber = 100 
+        };
+    
+        // Assert
+        dogDto.DogIdentificationNumber.Should().Be(100);
+    }
+
+    [Fact]
+    public void NotChange_LongType_Value() {
+        
+        // Arrange && Act
+        DogDto dogDto = new ()
+        {
+            LongType = 200L 
+        };
+    
+        // Assert
+        dogDto.LongType.Should().Be(200L);
+    }
+}

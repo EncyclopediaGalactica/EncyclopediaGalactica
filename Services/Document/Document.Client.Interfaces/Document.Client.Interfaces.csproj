@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Sdk.Interfaces</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Sdk.Interfaces</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Document.Client.Exceptions\Document.Client.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj"/>
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+    </ItemGroup>
+
+</Project>

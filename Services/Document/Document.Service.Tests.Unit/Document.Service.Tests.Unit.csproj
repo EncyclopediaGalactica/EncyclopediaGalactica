@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>false</IsPackable>
+
+        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit</AssemblyName>
+
+        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit</RootNamespace>
+
+        <LangVersion>default</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
+        <PackageReference Include="Moq" Version="4.18.4"/>
+        <PackageReference Include="Moq.Analyzers" Version="0.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="xunit" Version="2.5.0"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj"/>
+        <ProjectReference Include="..\Document.CacheService.Interfaces\Document.CacheService.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj"/>
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+        <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>
+        <ProjectReference Include="..\Document.Repository.Interfaces\Document.Repository.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Repository\Document.Repository.csproj"/>
+        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Service\Document.Service.csproj"/>
+        <ProjectReference Include="..\Document.ValidatorService\Document.ValidatorService.csproj"/>
+    </ItemGroup>
+
+</Project>
