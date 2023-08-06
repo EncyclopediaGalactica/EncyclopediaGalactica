@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
     </ItemGroup>
 
 </Project>

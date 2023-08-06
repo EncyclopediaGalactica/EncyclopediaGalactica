@@ -9,18 +9,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.6.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
+        <PackageReference Include="FluentValidation" Version="11.6.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.CacheService.Exceptions\Document.CacheService.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Reposiory.Exceptions\Document.Reposiory.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj" />
+        <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.CacheService.Exceptions\Document.CacheService.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Reposiory.Exceptions\Document.Reposiory.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>

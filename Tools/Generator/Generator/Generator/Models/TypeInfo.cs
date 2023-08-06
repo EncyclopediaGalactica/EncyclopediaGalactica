@@ -4,7 +4,8 @@ namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Generator.Models;
 ///     <p>TypeInfo Type</p>
 ///     <p>The TypeInfo contains all the information related to a single type</p>
 ///     <p>
-///         In the generator internal directory based structure the TypeInfo is the lowest level and it represents a file. A
+///         In the generator internal directory based structure the TypeInfo is the lowest level and it represents a file.
+///         A
 ///         file in case of c-sharp is a type.
 ///     </p>
 /// </summary>

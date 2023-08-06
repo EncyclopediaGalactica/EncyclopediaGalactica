@@ -13,10 +13,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
-        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+        <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>

@@ -9,20 +9,20 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.6.0" />
+        <PackageReference Include="FluentValidation" Version="11.6.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <FrameworkReference Include="Microsoft.AspNetCore.App" />
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Api\Document.Api.csproj" />
-        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj" />
-        <ProjectReference Include="..\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj" />
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj" />
-        <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj" />
-        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj" />
+        <ProjectReference Include="..\Document.Api\Document.Api.csproj"/>
+        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj"/>
+        <ProjectReference Include="..\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj"/>
+        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>
