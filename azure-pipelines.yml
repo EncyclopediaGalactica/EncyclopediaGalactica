@@ -11,6 +11,10 @@ pool: 'contabo'
 variables:
   solutionName: 'EncyclopediaGalactica.sln'
   document_cacheservice_tests_unit: 'Services/Document/Document.CacheService.Tests.Unit/Document.CacheService.Tests.Unit.csproj'
+  document_cacheservice_tests_int: 'Services/Document/Document.CacheService.Tests.Int/Document.CacheService.Tests.Int.csproj'
+  document_client_models_tests_unit: 'Services/Document/Document.Client.Models.Tests.Unit/Document.Client.Models.Tests.Unit.csproj'
+  document_client_tests_unit: 'Services/Document/Document.Client.Tests.Unit/Document.Client.Models.Tests.Unit.csproj'
+  document_client_tests_int: 'Services/Document/Document.Client.Tests.Int/Document.Client.Models.Tests.Int.csproj'
 
 stages:
   - stage: Variables
@@ -41,6 +45,10 @@ stages:
         steps:
           - script: |
               dotnet test ${{ variables.document_cacheservice_tests_unit }}
+              dotnet test ${{ variables.document_cacheservice_tests_int }}
+              dotnet test ${{ variables.document_client_models_tests_unit }}
+              dotnet test ${{ variables.document_client_tests_unit }}
+              dotnet test ${{ variables.document_client_tests_int }}
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
@@ -62,4 +70,6 @@ stages:
         steps:
           - script: |
               dotnet test ${{ variables.document_cacheservice_tests_unit }}
+              dotnet test ${{ variables.document_cacheservice_tests_int }}
+              dotnet test ${{ variables.document_client_models_tests_unit }}
     

@@ -295,6 +295,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.MapperService.Interfac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Repository", "Services\Core\Core.Repository\Core.Repository.csproj", "{337391B2-2182-4BF2-8911-431E67EA5C72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Client.Models.Tests.Unit", "Services\Document\Document.Client.Models.Tests.Unit\Document.Client.Models.Tests.Unit.csproj", "{864E5855-7836-46BC-BFDE-DEC5B80D726C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -801,6 +803,10 @@ Global
 		{337391B2-2182-4BF2-8911-431E67EA5C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{337391B2-2182-4BF2-8911-431E67EA5C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{337391B2-2182-4BF2-8911-431E67EA5C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D95496D8-08A2-4AA4-A020-AF9DB150FA6B} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
@@ -934,5 +940,6 @@ Global
 		{2160127F-6C43-4F60-9CD7-F33441FC5F50} = {6EF5F13D-67C6-4059-B839-83D525EC16A5}
 		{2FE19310-2410-4569-BF25-9DCD167BA35B} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{337391B2-2182-4BF2-8911-431E67EA5C72} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
+		{864E5855-7836-46BC-BFDE-DEC5B80D726C} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal
