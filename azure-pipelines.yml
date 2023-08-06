@@ -40,7 +40,7 @@ stages:
         dependsOn: build_solution
         steps:
           - script: |
-              dotnet test ${{ document_cacheservice_tests_unit }}
+              dotnet test ${{ variables.document_cacheservice_tests_unit }}
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
