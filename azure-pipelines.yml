@@ -16,6 +16,7 @@ variables:
   document_client_tests_unit: 'Services/Document/Document.Client.Tests.Unit/Document.Client.Tests.Unit.csproj'
   document_client_tests_int: 'Services/Document/Document.Client.Tests.Int/Document.Client.Tests.Int.csproj'
   document_controllers_viewmodels_tests_int: 'Services/Document/Document.Controllers.ViewModels.Tests.Unit/Document.Controllers.ViewModels.Tests.Unit.csproj'
+  document_dtos_tests_unit: 'Services/Document/Document.Dtos.Tests.Unit/Document.Dtos.Tests.Unit.csproj'
 
 stages:
   - stage: Variables
@@ -45,12 +46,14 @@ stages:
         dependsOn: build_solution
         steps:
           - script: |
+              echo "=== " ${{ variables.document_cacheservice_tests_unit }}
               dotnet test ${{ variables.document_cacheservice_tests_unit }}
               dotnet test ${{ variables.document_cacheservice_tests_int }}
               dotnet test ${{ variables.document_client_models_tests_unit }}
               dotnet test ${{ variables.document_client_tests_unit }}
               dotnet test ${{ variables.document_client_tests_int }}
               dotnet test ${{ variables.document_controllers_viewmodels_tests_int }}
+              dotnet test ${{ variables.document_dtos_tests_unit }}
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
