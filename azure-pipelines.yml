@@ -9,7 +9,9 @@ trigger:
 pool: 'contabo'
 
 variables:
+  print_pattern: ' === '
   solutionName: 'EncyclopediaGalactica.sln'
+  # Document Service
   document_cacheservice_tests_unit: 'Services/Document/Document.CacheService.Tests.Unit/Document.CacheService.Tests.Unit.csproj'
   document_cacheservice_tests_int: 'Services/Document/Document.CacheService.Tests.Int/Document.CacheService.Tests.Int.csproj'
   document_client_models_tests_unit: 'Services/Document/Document.Client.Models.Tests.Unit/Document.Client.Models.Tests.Unit.csproj'
@@ -23,6 +25,10 @@ variables:
   document_repository_tests_int: 'Services/Document/Document.Repository.Tests.Int/Document.Repository.Tests.Int.csproj'
   document_service_tests_unit: 'Services/Document/Document.Service.Tests.Unit/Document.Service.Tests.Unit.csproj'
   document_service_tests_int: 'Services/Document/Document.Service.Tests.Int/Document.Service.Tests.Int.csproj'
+  document_tests_e2e: 'Services/Document/Document.Tests.E2E/Document.Tests.E2E.csproj'
+  
+  # Tools
+  restapigenerator_tests_unit: 'Tools/Generator/Generator.Tests.Unit/Generator.Tests.Unit.csproj'
 
 stages:
   - stage: Variables
@@ -52,20 +58,50 @@ stages:
         dependsOn: build_solution
         steps:
           - script: |
-              echo "=== " ${{ variables.document_cacheservice_tests_unit }}
+              echo ${{ variables.print_pattern }} ${{ variables.document_cacheservice_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_cacheservice_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_cacheservice_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_cacheservice_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_models_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_client_models_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_client_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_client_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_client_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_controllers_viewmodels_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_controllers_viewmodels_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_dtos_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_dtos_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_entities_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_entities_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_mappers_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_mappers_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_repository_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_repository_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_repository_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_repository_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_service_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_service_tests_unit }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_service_tests_int }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_service_tests_int }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_tests_e2e }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_tests_e2e }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.restapigenerator_tests_unit }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.restapigenerator_tests_unit }}
 
   - stage: Main_branch
     condition: and(eq(variables['System.PullRequest.SourceBranch'], ''), eq(variables['Build.SourceBranch'],'refs/heads/main'))
