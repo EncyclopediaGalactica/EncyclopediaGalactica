@@ -16,7 +16,7 @@ public class SolutionBaseNamespaceE2EShould : TestBase
 
     public SolutionBaseNamespaceE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/solution_base_namespace";
+        _currentPath = $"{BasePath}/e2e/solution_base_namespace";
     }
 
     [Fact]
