@@ -19,7 +19,7 @@ public class LangE2EShould : TestBase
         _currentPath = $"{BasePath}/e2e/lang";
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowExceptionWhenLangValueIsNotProvided()
     {
         // Arrange
