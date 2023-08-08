@@ -574,22 +574,22 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.slnref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\reference\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.slnref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.Dto.Tests.Unit\TestSolution.Dto.Tests.Unit.csprojref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\lang\e2e\TestSolutionTemplate\TestSolution.Dto\TestSolution.Dto.csprojref">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
 
@@ -669,6 +669,9 @@
         </Compile>
         <Compile Update="DtoTests\Generation\Reference\DogDto_Should.genref">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Compile>
+        <Compile Update="e2e\lang\LangE2EShould.cs">
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
         </Compile>
     </ItemGroup>
 
