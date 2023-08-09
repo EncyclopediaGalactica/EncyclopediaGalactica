@@ -264,7 +264,8 @@ public interface ICSharpProcessor
     void CheckIfSolutionFileExists(SolutionInfo solutionInfo);
 
     /// <summary>
-    ///     It takes the solution project names and their base path and creates a full path to the project files
+    ///     It takes the <see cref="SolutionInfo.SolutionNameWithFileExtension" /> values and concatenates them with the
+    ///     solution project absolute path. The result is absolute path of the solution project file.
     /// </summary>
     /// <param name="solutionInfo">The <see cref="SolutionInfo" /> instance</param>
     void ProcessSolutionProjectFilesWithAbsolutePath(SolutionInfo solutionInfo);

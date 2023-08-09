@@ -181,6 +181,8 @@ public class CSharpGenerator : AbstractGenerator
 
     private void CheckSolutionProjects()
     {
+        _cSharpProcessor.ProcessProjectStructureSlots(SolutionInfo);
+
         GetOriginalSolutionNameTokenFromConfiguration(SolutionInfo);
         GetOriginalTargetPathFromConfiguration(SolutionInfo);
         GetOriginalSolutionFileTypeTokenFromConfiguration(SolutionInfo);
@@ -190,7 +192,6 @@ public class CSharpGenerator : AbstractGenerator
         _cSharpProcessor.ProcessSolutionBasePath(SolutionInfo);
         _cSharpProcessor.ProcessSolutionNameWithWithFileType(SolutionInfo);
         _cSharpProcessor.ProcessSolutionNameWithFullPath(SolutionInfo);
-        _cSharpProcessor.ProcessProjectStructureSlots(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNames(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectBasePaths(SolutionInfo);
         _cSharpProcessor.ProcessSolutionProjectNamesWithFileType(SolutionInfo);

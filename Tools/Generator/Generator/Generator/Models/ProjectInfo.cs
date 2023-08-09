@@ -37,7 +37,7 @@ public class ProjectInfo
     ///         The full path with the project file and file extension
     ///     </remarks>
     /// </summary>
-    public string ProjectFileWithFullPath { get; set; }
+    public string ProjectFileWithAbsolutePath { get; set; }
 
     /// <summary>
     ///     Gets or sets the value of slot

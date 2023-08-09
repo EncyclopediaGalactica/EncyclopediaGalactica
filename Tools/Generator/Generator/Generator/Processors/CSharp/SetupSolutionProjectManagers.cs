@@ -11,7 +11,7 @@ public partial class CSharpProcessor
         solutionInfo.ProjectInfos.ForEach(item =>
         {
             item.SolutionProjectManager = new SolutionProjectManager.Builder()
-                .SetSolutionProjectFilePath(item.ProjectFileWithFullPath)
+                .SetSolutionProjectFilePath(item.ProjectFileWithAbsolutePath)
                 .SetSlotName(item.Slot)
                 .Build();
         });

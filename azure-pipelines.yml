@@ -10,7 +10,7 @@ pool: 'contabo'
 
 variables:
   print_pattern: ' === '
-  solutionName: 'EncyclopediaGalactica.sln'
+  solution_name: 'EncyclopediaGalactica.sln'
   # Document Service
   document_cacheservice_tests_unit: 'Services/Document/Document.CacheService.Tests.Unit/Document.CacheService.Tests.Unit.csproj'
   document_cacheservice_tests_int: 'Services/Document/Document.CacheService.Tests.Int/Document.CacheService.Tests.Int.csproj'
@@ -45,13 +45,13 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: dotnet restore ${{ variables.solution_name }}
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: dotnet build ${{ variables.solution_name }}
 
       - job: test_solution
         displayName: Test Solution
@@ -109,13 +109,13 @@ stages:
       - job: restore_solution
         displayName: Restore Solution
         steps:
-          - script: dotnet restore $solutionName
+          - script: dotnet restore ${{ variables.solution_name }}
 
       - job: build_solution
         displayName: Build Solution
         dependsOn: restore_solution
         steps:
-          - script: dotnet build $solutionName
+          - script: dotnet build ${{ variables.solution_name }}
 
       - job: test_solution
         displayName: Test Solution

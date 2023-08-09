@@ -15,7 +15,7 @@ public partial class CSharpProcessor
         }
 
         bool result = solutionInfo.ProjectInfos.All(
-            p => _fileManager.CheckIfFileExist(p.ProjectFileWithFullPath));
+            p => _fileManager.CheckIfFileExist(p.ProjectFileWithAbsolutePath));
 
         EvaluateCheckIfSolutionProjectFileExistsResult(result, solutionInfo);
     }
@@ -26,13 +26,13 @@ public partial class CSharpProcessor
         {
             solutionInfo.ProjectInfos.ForEach(p =>
             {
-                if (!_fileManager.CheckIfFileExist(p.ProjectFileWithFullPath))
+                if (!_fileManager.CheckIfFileExist(p.ProjectFileWithAbsolutePath))
                 {
                     _logger.LogError(
                         "{PATH} does not exist. Please, create it",
-                        p.ProjectFileWithFullPath);
+                        p.ProjectFileWithAbsolutePath);
                     throw new GeneratorException(
-                        $"{p.ProjectFileWithFullPath} does not exist. Please, create it!");
+                        $"{p.ProjectFileWithAbsolutePath} does not exist. Please, create it!");
                 }
             });
         }
