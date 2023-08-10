@@ -76,9 +76,9 @@ one is demonstrated below.
 
 ### Solution level rules
 
-- Solution Name - the name of the solution and this value defines the name of the solution
+- **Solution Name** - the name of the solution and this value defines the name of the solution
   file. This value is specified like: `solution_name`.
-- Target directory - the directory where the solution is located. This value can be specified
+- **Target directory** - the directory where the solution is located. This value can be specified
   as absolute or relative path using the `target_directory` key.
 
 ### Dto Project level configurations
@@ -96,6 +96,12 @@ one is demonstrated below.
 - Dto Unit Tests project in the `${target_directory}/{$solution_name}.Dto.Tests.Unit` directory
 - Dto Unit Tests project file in the `${target_directory}/{$solution_name}.Dto.Tests.Unit`
   directory with the name `{$solution_name}.Dto.Tests.Unit.csproj`
+
+# Validation process
+
+The generator applies validation in the following order:
+- input validation of the configuration values
+- target directory structure validation
 
 # Configuration via json file
 
@@ -144,8 +150,14 @@ If this value is not provided the code generation stops with an error message.
 
 The generator uses the OpenApi file to generate majority of the codebase.
 
-When this file is missing or the parameter contains invalid value the code generation stops
-with and error.
+**Input validation rules**
+
+| Input | Result |
+|----------|---------|
+| null | throw |
+| string.empty | throw |
+| whitespace | throw |
+
 
 ## Target directory
 
@@ -161,26 +173,13 @@ where from the expected directory structure will be either build up or followed.
 The directory can be defined both relative and absolute path way. The code generator can handle
 both.
 
-If the directory does not exist the generator execution stops with an error.
+**Input validation rules**
 
-## Solution Base Namespace
-
-```json
-{
-  "solution_base_namespace": "something.namespace"
-}
-```
-
-The solution level base namespace is used to build other namespaces during generation.
-
-Validation and transformation rules are the following:
-
-- "something.namespace" ==> "Something.Namespace"
-- "something." ==> "Something"
-- ".something" ==> "Something"
-- null ==> throw
-- string.emtpy ==> throw
-- "  " ==> throw
+| Input | Result |
+|----------|---------|
+| null | throw |
+| string.empty | throw |
+| whitespace | throw |
 
 ## Solution Name
 
@@ -193,13 +192,36 @@ Validation and transformation rules are the following:
 The name of the solution. The code generator will look for a file with this name with the
 configured file type.
 
-### Errors
+**Input validation rules**
+| Input | Result |
+|----------|---------|
+| null | throw |
+| string.empty | throw |
+| whitespace | throw |
+| first char is a number | throw |
+| contains special characters other than dot (.) | throws |
 
-- when there is no solution file in the defined directory
-- no solution name is defined
-- solution name is space(s)
-- solution name starts with a non letter character
-- solution name contains other than alphanumerical and dot character(s)
+## Solution Base Namespace
+
+```json
+{
+  "solution_base_namespace": "something.namespace"
+}
+```
+
+The solution level base namespace is used to build other namespaces during generation.
+
+**Validation and transformation rules**
+
+| Input | Result |
+|--------|-------|
+| "something.namespace" | "Something.Namespace" |
+| "something." | "Something" |
+| ".something" | "Something" |
+| null | throw |
+| string.emtpy | throw |
+| "  " | throw |
+
 
 ### C# specifics
 
