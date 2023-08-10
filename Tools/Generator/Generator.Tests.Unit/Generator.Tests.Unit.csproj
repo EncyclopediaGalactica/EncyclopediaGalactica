@@ -696,4 +696,8 @@
         <Folder Include="Dto\Generation\Reference\SolutionName.Dto\"/>
     </ItemGroup>
 
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="./delete_template_directories.sh"/>
+    </Target>
+
 </Project>
