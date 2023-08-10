@@ -57,6 +57,22 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     .WithMessage("Base namespace must start with a letter.");
             });
 
+        RuleFor(p => p.SolutionFileType)
+            .NotNull()
+            .WithMessage("Solution file type must be provided")
+            .DependentRules(() =>
+            {
+                RuleFor(pp => pp.SolutionFileType.Trim())
+                    .NotEmpty()
+                    .WithMessage("Solution file type must be provided")
+                    .DependentRules(() =>
+                    {
+                        RuleFor(ppp => ppp.SolutionFileType.All(char.IsLetter))
+                            .NotEqual(false)
+                            .WithMessage("Solution file type can contain only letters.");
+                    });
+            });
+
         RuleFor(p => p.DtoProjectName).NotNull().NotEmpty()
             .WithMessage("Dto project name must be provided");
 

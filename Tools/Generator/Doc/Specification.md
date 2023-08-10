@@ -78,7 +78,8 @@ one is demonstrated below.
 
 - **Solution Name** - the name of the solution and this value defines the name of the solution
   file. This value is specified like: `solution_name`.
-- **Target directory** - the directory where the solution is located. This value can be specified
+- **Target directory** - the directory where the solution is located. This value can be
+  specified
   as absolute or relative path using the `target_directory` key.
 
 ### Dto Project level configurations
@@ -100,6 +101,7 @@ one is demonstrated below.
 # Validation process
 
 The generator applies validation in the following order:
+
 - input validation of the configuration values
 - target directory structure validation
 
@@ -152,12 +154,11 @@ The generator uses the OpenApi file to generate majority of the codebase.
 
 **Input validation rules**
 
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
-
+| Input        | Result |
+|--------------|--------|
+| null         | throw  |
+| string.empty | throw  |
+| whitespace   | throw  |
 
 ## Target directory
 
@@ -175,11 +176,11 @@ both.
 
 **Input validation rules**
 
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
+| Input        | Result |
+|--------------|--------|
+| null         | throw  |
+| string.empty | throw  |
+| whitespace   | throw  |
 
 ## Solution Name
 
@@ -193,12 +194,13 @@ The name of the solution. The code generator will look for a file with this name
 configured file type.
 
 **Input validation rules**
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
-| first char is a number | throw |
+
+| Input                                          | Result |
+|------------------------------------------------|--------|
+| null                                           | throws |
+| string.empty                                   | throws |
+| whitespace                                     | throws |
+| first char is a number                         | throws |
 | contains special characters other than dot (.) | throws |
 
 ## Solution Base Namespace
@@ -213,15 +215,26 @@ The solution level base namespace is used to build other namespaces during gener
 
 **Validation and transformation rules**
 
-| Input | Result |
-|--------|-------|
+| Input                 | Result                |
+|-----------------------|-----------------------|
 | "something.namespace" | "Something.Namespace" |
-| "something." | "Something" |
-| ".something" | "Something" |
-| null | throw |
-| string.emtpy | throw |
-| "  " | throw |
+| "something."          | "Something"           |
+| ".something"          | "Something"           |
+| null                  | throw                 |
+| "  "                  | throw                 |
 
+## Solution file type
+
+The solution file type is used by the generator to build paths to the solution files.
+
+**Validation rules**
+
+| Input                          | Result |
+|--------------------------------|--------|
+| null                           | throws |
+| string.empty                   | throws |
+| "  "                           | throws |
+| contains anything than letters | throws |
 
 ### C# specifics
 
