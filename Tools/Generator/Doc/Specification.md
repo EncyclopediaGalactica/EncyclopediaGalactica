@@ -1,3 +1,28 @@
+<!-- TOC -->
+
+* [Code Generator Specification based on Configuration file](#code-generator-specification-based-on-configuration-file)
+    * [The generator internal data structure](#the-generator-internal-data-structure)
+        * [SolutionInfo](#solutioninfo)
+        * [ProjectInfo](#projectinfo)
+        * [TypeInfo](#typeinfo)
+        * [VariableInfo](#variableinfo)
+    * [c-sharp](#c-sharp)
+        * [Solution level rules](#solution-level-rules)
+        * [Dto Project level configurations](#dto-project-level-configurations)
+        * [Dto Unit Test Project](#dto-unit-test-project)
+* [Validation process](#validation-process)
+* [Configuration via json file](#configuration-via-json-file)
+    * [$schema](#schema)
+    * [lang](#lang)
+    * [OpenApi Specification Path](#openapi-specification-path)
+    * [Target directory](#target-directory)
+    * [Solution Name](#solution-name)
+    * [Solution Base Namespace](#solution-base-namespace)
+    * [Solution file type](#solution-file-type)
+        * [C# specifics](#c-specifics)
+
+<!-- TOC -->
+
 # Code Generator Specification based on Configuration file
 
 The Rest Api Client Generator follows the Api first approach where the steps looks like
