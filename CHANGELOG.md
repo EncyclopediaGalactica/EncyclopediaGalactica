@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.2.0...0.3.0) (2023-08-10)
+
+
+### Features
+
+* solution file type config value validation ([#89](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/89)) ([2bc7046](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/2bc7046a5c5c03ba258f84fb6fb044123a170fd7))
+
 # [0.2.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.1.0...0.2.0) (2023-08-10)
 
 
