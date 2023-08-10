@@ -11,18 +11,24 @@ public partial class StringManagerImpl
         if ((string.IsNullOrEmpty(s1) || string.IsNullOrWhiteSpace(s1))
             && (string.IsNullOrEmpty(s2) || string.IsNullOrWhiteSpace(s2)))
         {
+            _logger.LogInformation(
+                "{S1} and {S2} are empty or null!",
+                nameof(s1),
+                nameof(s2));
             return string.Empty;
         }
 
         if ((!string.IsNullOrEmpty(s1) || !string.IsNullOrWhiteSpace(s1))
             && (string.IsNullOrEmpty(s2) || string.IsNullOrWhiteSpace(s2)))
         {
+            _logger.LogInformation("{S2} is null or empty", nameof(s2));
             return s1;
         }
 
         if ((string.IsNullOrEmpty(s1) || string.IsNullOrWhiteSpace(s1))
             && (!string.IsNullOrEmpty(s2) || !string.IsNullOrWhiteSpace(s2)))
         {
+            _logger.LogInformation("{S1} is null or empty", nameof(s1));
             return s2;
         }
 

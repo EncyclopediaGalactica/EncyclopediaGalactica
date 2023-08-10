@@ -16,10 +16,10 @@ public class TargetDirectoryE2EShould : TestBase
 
     public TargetDirectoryE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/target_directory";
+        _currentPath = $"{BasePath}/e2e/target_directory";
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenTargetDirectoryIsNotDefined()
     {
         // Arrange
@@ -30,7 +30,7 @@ public class TargetDirectoryE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenTargetDirectoryIsEmpty()
     {
         // Arrange
@@ -41,7 +41,7 @@ public class TargetDirectoryE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenTargetDirectoryIsSpaces()
     {
         // Arrange
@@ -52,7 +52,7 @@ public class TargetDirectoryE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenTheProvidedRelativeTargetDirectoryPathDoesNotExist()
     {
         // Arrange
@@ -63,7 +63,7 @@ public class TargetDirectoryE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(GeneratorException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenTheProvidedAbsoluteTargetDirectoryPathDoesNotExist()
     {
         // Arrange

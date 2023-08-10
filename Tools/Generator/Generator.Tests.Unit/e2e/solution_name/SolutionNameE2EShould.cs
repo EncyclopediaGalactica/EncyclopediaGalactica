@@ -16,10 +16,10 @@ public class SolutionNameE2EShould : TestBase
 
     public SolutionNameE2EShould(ITestOutputHelper outputHelper) : base(outputHelper)
     {
-        _currentPath = $"{BasePath}/E2E/solution_name";
+        _currentPath = $"{BasePath}/e2e/solution_name";
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenSolutionNameValueDoesNotExist()
     {
         // Arrange
@@ -30,7 +30,7 @@ public class SolutionNameE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenSolutionNameIsEmpty()
     {
         // Arrange
@@ -41,7 +41,7 @@ public class SolutionNameE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenSolutionNameIsSpace()
     {
         // Arrange
@@ -52,7 +52,7 @@ public class SolutionNameE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenSolutionNameContainsOtherSpecialCharactersThanDot()
     {
         // Arrange
@@ -63,7 +63,7 @@ public class SolutionNameE2EShould : TestBase
         action.Should().Throw<GeneratorException>().WithInnerException(typeof(ValidationException));
     }
 
-    // [Fact]
+    [Fact]
     public void ThrowWhenSolutionNameStartsWithNumber()
     {
         // Arrange

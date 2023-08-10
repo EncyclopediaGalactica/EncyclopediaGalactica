@@ -19,11 +19,11 @@ public partial class ConfigurationValuesManager
             return;
         }
 
-        if (string.IsNullOrEmpty(generatorConfiguration.SolutionBasePath)
-            || string.IsNullOrWhiteSpace(generatorConfiguration.SolutionBasePath))
+        if (string.IsNullOrEmpty(generatorConfiguration.TargetDirectory)
+            || string.IsNullOrWhiteSpace(generatorConfiguration.TargetDirectory))
         {
             _logger.LogInformation("{Param} is empty, skipping {Operation}",
-                nameof(generatorConfiguration.SolutionBasePath),
+                nameof(generatorConfiguration.TargetDirectory),
                 nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
@@ -38,7 +38,7 @@ public partial class ConfigurationValuesManager
 
         foreach (TypeInfo fileInfo in typeInfos)
         {
-            fileInfo.OriginalTargetDirectoryToken = generatorConfiguration.SolutionBasePath;
+            fileInfo.OriginalTargetDirectoryToken = generatorConfiguration.TargetDirectory;
         }
     }
 
@@ -54,15 +54,15 @@ public partial class ConfigurationValuesManager
             return;
         }
 
-        if (string.IsNullOrEmpty(generatorConfiguration.SolutionBasePath)
-            || string.IsNullOrWhiteSpace(generatorConfiguration.SolutionBasePath))
+        if (string.IsNullOrEmpty(generatorConfiguration.TargetDirectory)
+            || string.IsNullOrWhiteSpace(generatorConfiguration.TargetDirectory))
         {
             _logger.LogInformation("{Param} is empty, skipping {Operation}",
-                nameof(generatorConfiguration.SolutionBasePath),
+                nameof(generatorConfiguration.TargetDirectory),
                 nameof(GetOriginalTargetPathBaseFromConfiguration));
             return;
         }
 
-        solutionInfo.OriginalBasePathToken = generatorConfiguration.SolutionBasePath;
+        solutionInfo.OriginalBasePathToken = generatorConfiguration.TargetDirectory;
     }
 }

@@ -131,7 +131,7 @@ public partial class ConfigurationToTypeInfoManager_Should
                 list,
                 new CodeGeneratorConfiguration
                 {
-                    SolutionBasePath = "asd"
+                    TargetDirectory = "asd"
                 });
         };
 

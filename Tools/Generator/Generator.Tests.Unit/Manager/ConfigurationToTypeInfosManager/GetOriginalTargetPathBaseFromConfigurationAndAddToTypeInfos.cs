@@ -109,7 +109,7 @@ public partial class ConfigurationToTypeInfoManager_Should
                 list,
                 new CodeGeneratorConfiguration
                 {
-                    SolutionBasePath = targetDirectoryValue!
+                    TargetDirectory = targetDirectoryValue!
                 });
         };
 
@@ -131,7 +131,7 @@ public partial class ConfigurationToTypeInfoManager_Should
                 list,
                 new CodeGeneratorConfiguration
                 {
-                    SolutionBasePath = "asd"
+                    TargetDirectory = "asd"
                 });
         };
 
@@ -148,7 +148,7 @@ public partial class ConfigurationToTypeInfoManager_Should
         // Arrange
         CodeGeneratorConfiguration configuration = new CodeGeneratorConfiguration
         {
-            SolutionBasePath = "targetpath"
+            TargetDirectory = "targetpath"
         };
 
         // Act

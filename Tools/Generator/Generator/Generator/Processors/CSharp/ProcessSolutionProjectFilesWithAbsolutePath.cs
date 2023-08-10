@@ -14,12 +14,24 @@ public partial class CSharpProcessor
             return;
         }
 
-        foreach (ProjectInfo projectInfo in solutionInfo.ProjectInfos)
+        solutionInfo.ProjectInfos.ForEach(item =>
         {
-            projectInfo.ProjectFileWithFullPath =
-                _stringManager.ConcatDirectorySegments(
-                    projectInfo.BasePath,
-                    projectInfo.Name);
-        }
+            if (string.IsNullOrEmpty(item.BasePath)
+                || string.IsNullOrWhiteSpace(item.BasePath)
+                || string.IsNullOrEmpty(item.SolutionProjectFileWithType)
+                || string.IsNullOrWhiteSpace(item.SolutionProjectFileWithType))
+            {
+                _logger.LogError(
+                    "Either {S1} or {S2} is empty or null",
+                    nameof(item.BasePath),
+                    nameof(item.SolutionProjectFileWithType));
+                throw new ArgumentException(
+                    "Either basepath or solution project file with type is null or empty.");
+            }
+
+            item.ProjectFileWithAbsolutePath = _stringManager.ConcatDirectorySegments(
+                item.BasePath,
+                item.SolutionProjectFileWithType);
+        });
     }
 }

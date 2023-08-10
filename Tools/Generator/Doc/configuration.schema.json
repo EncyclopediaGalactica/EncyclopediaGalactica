@@ -8,7 +8,7 @@
     "openapi_specification_path",
     "lang",
     "solution_name",
-    "solution_base_path",
+    "target_directory",
     "solution_base_namespace"
   ],
   "properties": {
@@ -26,6 +26,10 @@
     },
     "solution_name": {
       "description": "REQUIRED: The name of the solution.",
+      "type": "string"
+    },
+    "target_directory": {
+      "description": "REQUIRED: The directory where to the generated code will be places",
       "type": "string"
     },
     "solution_base_namespace": {
