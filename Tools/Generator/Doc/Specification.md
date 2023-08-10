@@ -1,3 +1,28 @@
+<!-- TOC -->
+
+* [Code Generator Specification based on Configuration file](#code-generator-specification-based-on-configuration-file)
+    * [The generator internal data structure](#the-generator-internal-data-structure)
+        * [SolutionInfo](#solutioninfo)
+        * [ProjectInfo](#projectinfo)
+        * [TypeInfo](#typeinfo)
+        * [VariableInfo](#variableinfo)
+    * [c-sharp](#c-sharp)
+        * [Solution level rules](#solution-level-rules)
+        * [Dto Project level configurations](#dto-project-level-configurations)
+        * [Dto Unit Test Project](#dto-unit-test-project)
+* [Validation process](#validation-process)
+* [Configuration via json file](#configuration-via-json-file)
+    * [$schema](#schema)
+    * [lang](#lang)
+    * [OpenApi Specification Path](#openapi-specification-path)
+    * [Target directory](#target-directory)
+    * [Solution Name](#solution-name)
+    * [Solution Base Namespace](#solution-base-namespace)
+    * [Solution file type](#solution-file-type)
+        * [C# specifics](#c-specifics)
+
+<!-- TOC -->
+
 # Code Generator Specification based on Configuration file
 
 The Rest Api Client Generator follows the Api first approach where the steps looks like
@@ -78,7 +103,8 @@ one is demonstrated below.
 
 - **Solution Name** - the name of the solution and this value defines the name of the solution
   file. This value is specified like: `solution_name`.
-- **Target directory** - the directory where the solution is located. This value can be specified
+- **Target directory** - the directory where the solution is located. This value can be
+  specified
   as absolute or relative path using the `target_directory` key.
 
 ### Dto Project level configurations
@@ -100,6 +126,7 @@ one is demonstrated below.
 # Validation process
 
 The generator applies validation in the following order:
+
 - input validation of the configuration values
 - target directory structure validation
 
@@ -152,12 +179,11 @@ The generator uses the OpenApi file to generate majority of the codebase.
 
 **Input validation rules**
 
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
-
+| Input        | Result |
+|--------------|--------|
+| null         | throw  |
+| string.empty | throw  |
+| whitespace   | throw  |
 
 ## Target directory
 
@@ -175,11 +201,11 @@ both.
 
 **Input validation rules**
 
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
+| Input        | Result |
+|--------------|--------|
+| null         | throw  |
+| string.empty | throw  |
+| whitespace   | throw  |
 
 ## Solution Name
 
@@ -193,12 +219,13 @@ The name of the solution. The code generator will look for a file with this name
 configured file type.
 
 **Input validation rules**
-| Input | Result |
-|----------|---------|
-| null | throw |
-| string.empty | throw |
-| whitespace | throw |
-| first char is a number | throw |
+
+| Input                                          | Result |
+|------------------------------------------------|--------|
+| null                                           | throws |
+| string.empty                                   | throws |
+| whitespace                                     | throws |
+| first char is a number                         | throws |
 | contains special characters other than dot (.) | throws |
 
 ## Solution Base Namespace
@@ -213,15 +240,26 @@ The solution level base namespace is used to build other namespaces during gener
 
 **Validation and transformation rules**
 
-| Input | Result |
-|--------|-------|
+| Input                 | Result                |
+|-----------------------|-----------------------|
 | "something.namespace" | "Something.Namespace" |
-| "something." | "Something" |
-| ".something" | "Something" |
-| null | throw |
-| string.emtpy | throw |
-| "  " | throw |
+| "something."          | "Something"           |
+| ".something"          | "Something"           |
+| null                  | throw                 |
+| "  "                  | throw                 |
 
+## Solution file type
+
+The solution file type is used by the generator to build paths to the solution files.
+
+**Validation rules**
+
+| Input                          | Result |
+|--------------------------------|--------|
+| null                           | throws |
+| string.empty                   | throws |
+| "  "                           | throws |
+| contains anything than letters | throws |
 
 ### C# specifics
 

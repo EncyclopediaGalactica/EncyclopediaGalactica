@@ -606,6 +606,21 @@
         <None Update="e2e\target_directory\result\test_solution\TestSolution.Dto\TestSolution.Dto.csprojref">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Update="e2e\solution_file_type\empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_file_type\whitespace.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_file_type\not_defined.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_file_type\not_only_letters.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\solution_file_type\openapi.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
     </ItemGroup>
 
     <ItemGroup>

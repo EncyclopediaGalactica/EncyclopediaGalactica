@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/EncyclopediaGalactica/RestApiSdkGenerator/configuration.schema.json",
+  "$id": "https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Doc/configuration.schema.json",
   "title": "Encyclopedia Galactica Rest Api Sdk Source Code Generator Configuration file schema",
   "description": "Encyclopedia Galactica development toolset includes a code generator. This is the schema of the configuration file for the generator.",
   "type": "object",
@@ -9,7 +9,8 @@
     "lang",
     "solution_name",
     "target_directory",
-    "solution_base_namespace"
+    "solution_base_namespace",
+    "solution_file_type"
   ],
   "properties": {
     "lang": {
