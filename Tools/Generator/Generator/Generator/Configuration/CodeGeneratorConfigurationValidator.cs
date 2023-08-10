@@ -6,22 +6,56 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
 {
     public CodeGeneratorConfigurationValidator()
     {
-        RuleFor(p => p.OpenApiSpecificationPath).NotNull().NotEmpty()
+        RuleFor(p => p.OpenApiSpecificationPath)
+            .NotNull()
+            .NotEmpty()
             .WithMessage("OpenApi specification path must be defined.");
-
-        RuleFor(p => p.SolutionBasePath).NotNull().NotEmpty()
-            .WithMessage("Target directory path must be specified.");
-
-        RuleFor(p => p.SolutionBaseNamespace).NotNull().NotEmpty()
-            .WithMessage("Base namespace must be defined.");
 
         RuleFor(p => p.Lang)
             .NotNull()
             .NotEmpty()
             .WithMessage("Lang must be defined");
 
-        RuleFor(p => p.SolutionName).NotNull().NotEmpty()
-            .WithMessage("Solution name must be provided");
+        RuleFor(p => p.SolutionName)
+            .NotNull()
+            .WithMessage("Solution name must be provided")
+            .DependentRules(() =>
+            {
+                RuleFor(p => p.SolutionName.Trim())
+                    .NotEmpty()
+                    .WithMessage("Solution name must be provided")
+                    .DependentRules(() =>
+                    {
+                        RuleFor(p => char.IsNumber(p.SolutionName.First()))
+                            .NotEqual(true)
+                            .WithMessage("Solution name cannot start with a number")
+                            .DependentRules(() =>
+                            {
+                                RuleFor(p => "!@#$%^&*()_-=+,/\\|'\";:?><".Any(p.SolutionName.Trim().Contains))
+                                    .NotEqual(true)
+                                    .WithMessage("Only dot (.) is the allowed special character in the solution name");
+                            });
+                    });
+            });
+
+        RuleFor(p => p.TargetDirectory)
+            .NotNull()
+            .NotEmpty()
+            .WithMessage("Target directory path must be specified.");
+
+        RuleFor(p => p.SolutionBaseNamespace)
+            .NotNull()
+            .WithMessage("Solution base namespace must not be null.")
+            .DependentRules(() =>
+            {
+                RuleFor(p => p.SolutionBaseNamespace.Trim())
+                    .NotEmpty()
+                    .WithMessage("Solution base namespace must be defined.");
+
+                RuleFor(p => p.SolutionBaseNamespace.First())
+                    .Must(char.IsLetter)
+                    .WithMessage("Base namespace must start with a letter.");
+            });
 
         RuleFor(p => p.DtoProjectName).NotNull().NotEmpty()
             .WithMessage("Dto project name must be provided");

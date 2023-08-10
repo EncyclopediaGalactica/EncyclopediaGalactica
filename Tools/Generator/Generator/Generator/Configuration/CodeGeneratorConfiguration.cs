@@ -28,8 +28,14 @@ public class CodeGeneratorConfiguration
     [JsonProperty("solution_project_file_type")]
     public string SolutionProjectFileType { get; set; }
 
-    [JsonProperty("solution_base_path")]
-    public string SolutionBasePath { get; set; }
+    /// <summary>
+    ///     Gets or set the target directory value
+    ///     <remarks>
+    ///         This is the directory where to the generated code will be placed
+    ///     </remarks>
+    /// </summary>
+    [JsonProperty("target_directory")]
+    public string TargetDirectory { get; set; }
 
     /// <summary>
     ///     Sets or gets the solution name

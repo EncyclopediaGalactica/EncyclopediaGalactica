@@ -3,7 +3,7 @@
   "lang": "csharp",
   "openapi_specification_path": "e2e/target_directory/openapi.yaml",
   "target_directory": "something/not/existing",
-  "solution_name": "solution_name",
+  "solution_name": "SolutioName",
   "solution_base_path": "e2e/target_directory/reference",
   "solution_base_namespace": "test.generation",
   "solution_file_type": "slnref",
