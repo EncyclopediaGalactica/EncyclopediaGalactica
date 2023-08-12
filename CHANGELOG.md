@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.4.0...0.5.0) (2023-08-12)
+
+
+### Features
+
+* dto project name validation ([#91](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/91)) ([5384af2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/5384af288c2c3ffb1c5313391ae37627a4bdb472))
+
 # [0.4.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.3.0...0.4.0) (2023-08-12)
 
 
