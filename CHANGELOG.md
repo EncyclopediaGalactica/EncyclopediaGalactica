@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.3.0...0.4.0) (2023-08-12)
+
+
+### Features
+
+* solution project file type input validation ([#90](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/90)) ([d672803](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d6728031fffc6a458b71d0a3ea71b8f4da5dd631))
+
 # [0.3.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.2.0...0.3.0) (2023-08-10)
 
 
