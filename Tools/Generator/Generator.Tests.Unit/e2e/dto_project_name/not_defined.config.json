@@ -2,7 +2,7 @@
   "$schema": "https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Doc/configuration.schema.json",
   "lang": "csharp",
   "openapi_specification_path": "e2e/dto_project_name/openapi.yaml",
-  "target_directory": "e2e/dto_project_name/result/",
+  "target_directory": "e2e/dto_project_name",
   "solution_name": "SolutionName",
   "solution_base_namespace": "solution.base",
   "solution_file_type": "sln",
