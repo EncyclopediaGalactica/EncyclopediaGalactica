@@ -250,7 +250,41 @@ The solution level base namespace is used to build other namespaces during gener
 
 ## Solution file type
 
+```json
+{
+  "solution_file_type": "sln"
+}
+```
+
 The solution file type is used by the generator to build paths to the solution files.
+
+| Property           | yes/no |
+|--------------------|--------|
+| Has default value? | No     |
+
+**Validation rules**
+
+| Input                          | Result |
+|--------------------------------|--------|
+| null                           | throws |
+| string.empty                   | throws |
+| "  "                           | throws |
+| contains anything than letters | throws |
+
+## Solution Project File Type
+
+```json
+{
+  "solution_project_file_type": "csproj"
+}
+```
+
+The solution project file type defines the file type for the projects in the solution. In case
+of C# it is `csproj`.
+
+| Property           | yes/no |
+|--------------------|--------|
+| Has default value? | No     |
 
 **Validation rules**
 

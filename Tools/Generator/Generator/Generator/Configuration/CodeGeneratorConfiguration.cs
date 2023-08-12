@@ -56,6 +56,12 @@ public class CodeGeneratorConfiguration
     [JsonProperty("solution_base_namespace")]
     public string SolutionBaseNamespace { get; set; }
 
+    /// <summary>
+    ///     Sets or gets the dto project name.
+    ///     <remarks>
+    ///         The dto project name will be used as raw string and will go through transformation
+    ///     </remarks>
+    /// </summary>
     [JsonProperty("dto_project_name")]
     public string DtoProjectName { get; set; }
 

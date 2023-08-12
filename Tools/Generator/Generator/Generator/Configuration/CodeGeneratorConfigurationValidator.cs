@@ -73,6 +73,22 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     });
             });
 
+        RuleFor(p => p.SolutionProjectFileType)
+            .NotNull()
+            .WithMessage("Solution project file type must be provided")
+            .DependentRules(() =>
+            {
+                RuleFor(pp => pp.SolutionProjectFileType.Trim())
+                    .NotEmpty()
+                    .WithMessage("Solution project file type must be provided")
+                    .DependentRules(() =>
+                    {
+                        RuleFor(ppp => ppp.SolutionProjectFileType.All(char.IsLetter))
+                            .NotEqual(false)
+                            .WithMessage("Solution project file type can contain only letters.");
+                    });
+            });
+
         RuleFor(p => p.DtoProjectName).NotNull().NotEmpty()
             .WithMessage("Dto project name must be provided");
 

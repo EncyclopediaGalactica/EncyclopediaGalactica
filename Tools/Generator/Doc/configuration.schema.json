@@ -10,7 +10,8 @@
     "solution_name",
     "target_directory",
     "solution_base_namespace",
-    "solution_file_type"
+    "solution_file_type",
+    "solution_project_file_type"
   ],
   "properties": {
     "lang": {
@@ -35,6 +36,10 @@
     },
     "solution_base_namespace": {
       "description": "REQUIRED: The base namespace of the solution.",
+      "type": "string"
+    },
+    "solution_project_file_type": {
+      "description": "REQUIRED: The file type of the solution projects.",
       "type": "string"
     },
     "skip_dto_preprocess": {
