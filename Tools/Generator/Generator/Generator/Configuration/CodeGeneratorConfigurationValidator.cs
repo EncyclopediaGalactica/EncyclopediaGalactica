@@ -100,11 +100,11 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     .DependentRules(() =>
                     {
                         RuleFor(ppp => char.IsLetter(ppp.DtoProjectName.First()))
-                            .Equal(false)
-                            .WithMessage("Dto project name must be a letter.");
-
-                        RuleFor(ppp => "!@#$%^&*()_-=+,/\\|'\";:?><".Any(ppp.DtoProjectName.Contains))
                             .Equal(true)
+                            .WithMessage("Dto project name must have only letters.");
+
+                        RuleFor(ppp => "!@#$%^&*()=+,/\\|'\";:?><".Any(ppp.DtoProjectName.Contains))
+                            .Equal(false)
                             .WithMessage("Dto project name cannot contain special characters other than " +
                                          "dot '.', dash '-' and underscore '_'");
 
