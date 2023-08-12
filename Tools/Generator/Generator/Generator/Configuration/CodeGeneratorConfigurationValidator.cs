@@ -89,8 +89,34 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     });
             });
 
-        RuleFor(p => p.DtoProjectName).NotNull().NotEmpty()
-            .WithMessage("Dto project name must be provided");
+        RuleFor(p => p.DtoProjectName)
+            .NotNull()
+            .WithMessage("Dto project name must be provided")
+            .DependentRules(() =>
+            {
+                RuleFor(pp => pp.DtoProjectName.Trim())
+                    .NotEmpty()
+                    .WithMessage("Dto project name must be provided")
+                    .DependentRules(() =>
+                    {
+                        RuleFor(ppp => char.IsLetter(ppp.DtoProjectName.First()))
+                            .Equal(false)
+                            .WithMessage("Dto project name must be a letter.");
+
+                        RuleFor(ppp => "!@#$%^&*()_-=+,/\\|'\";:?><".Any(ppp.DtoProjectName.Contains))
+                            .Equal(true)
+                            .WithMessage("Dto project name cannot contain special characters other than " +
+                                         "dot '.', dash '-' and underscore '_'");
+
+                        When(ppp => ppp.DtoProjectName.Contains("."), () =>
+                        {
+                            RuleFor(pppp => char.IsLetter(pppp.DtoProjectName[pppp.DtoProjectName.IndexOf(".") + 1]))
+                                .NotEqual(true)
+                                .WithMessage("When Dto project name contains a dot ('.') the following " +
+                                             "character must be a letter.");
+                        });
+                    });
+            });
 
         RuleFor(p => p.DtoProjectBasePath).NotNull().NotEmpty()
             .WithMessage("Dto project base path must be provided");

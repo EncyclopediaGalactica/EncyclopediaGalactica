@@ -295,5 +295,33 @@ of C# it is `csproj`.
 | "  "                           | throws |
 | contains anything than letters | throws |
 
+## Dto project name
+
+The Dto project name value defines the following in terms of generating code:
+
+- where the generator will look for the dto project as it will create a path based on the
+  provided name
+- where the generator will look for the dto project file as it will create a path based on the
+  provided configuration values
+
+### C# specific transformation
+
+- if a dot '.' is included in the provided name the following character will be transformed to
+  uppercase
+- the first character of the provided string will be transformed to uppercase
+- all the characters, except first character and first after a dot '.', will be transformed to
+  lowercase
+
+**Validation rules**
+
+| Input                                         | Validation result |
+|-----------------------------------------------|-------------------|
+| null                                          | throws            |
+| string.empty                                  | throws            |
+| "  "                                          | throws            |
+| special character other than '-', '_' and '.' | throws            |
+| string first character is not letter          | throws            |
+| first character after dot is not letter       | throws            |
+
 ### C# specifics
 
