@@ -111,7 +111,7 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                         When(ppp => ppp.DtoProjectName.Contains("."), () =>
                         {
                             RuleFor(pppp => char.IsLetter(pppp.DtoProjectName[pppp.DtoProjectName.IndexOf(".") + 1]))
-                                .NotEqual(true)
+                                .NotEqual(false)
                                 .WithMessage("When Dto project name contains a dot ('.') the following " +
                                              "character must be a letter.");
                         });
