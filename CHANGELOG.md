@@ -1,3 +1,10 @@
+# [0.6.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.5.0...0.6.0) (2023-08-13)
+
+
+### Features
+
+* adding documentation site ([#92](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/92)) ([9c20fd7](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/9c20fd746d3ea9f91809e16f13a823d5e78ddbc4))
+
 # [0.5.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.4.0...0.5.0) (2023-08-12)
 
 
