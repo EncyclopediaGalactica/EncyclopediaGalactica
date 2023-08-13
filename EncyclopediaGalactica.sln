@@ -302,6 +302,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Repository", "Services
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Client.Models.Tests.Unit", "Services\Document\Document.Client.Models.Tests.Unit\Document.Client.Models.Tests.Unit.csproj", "{864E5855-7836-46BC-BFDE-DEC5B80D726C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "antora", "antora", "{D4965D73-39D1-47E6-93A0-7FB51A022427}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -946,5 +948,6 @@ Global
 		{2FE19310-2410-4569-BF25-9DCD167BA35B} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{337391B2-2182-4BF2-8911-431E67EA5C72} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{D4965D73-39D1-47E6-93A0-7FB51A022427} = {66D74E39-6BE1-456A-B35D-1FAB6262BE40}
 	EndGlobalSection
 EndGlobal

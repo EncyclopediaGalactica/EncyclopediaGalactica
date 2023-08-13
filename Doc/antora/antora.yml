@@ -1,0 +1,6 @@
+name: encyclopedia-galactica-doc
+version: ~
+nav:
+  - modules/usermanual/nav.adoc
+  - modules/devx/nav.adoc
+  - modules/blog/nav.adoc
