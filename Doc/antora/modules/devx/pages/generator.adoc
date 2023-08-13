@@ -1,0 +1,3 @@
+= Generator
+
+The homebrew magic of the project

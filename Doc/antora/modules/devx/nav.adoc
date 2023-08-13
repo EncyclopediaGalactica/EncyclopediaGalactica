@@ -1,0 +1,2 @@
+.Development docs
+* xref:generator.adoc[The REST Api generator]
