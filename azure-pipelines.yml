@@ -219,6 +219,7 @@ stages:
               git add .
               git commit -m "generate doc for publish"
               git push origin gh_pages
-        env:
-          GITHUB_TOKEN: $(githubToken)
+            displayName: antora build
+            env:
+              GITHUB_TOKEN: $(githubToken)
     
