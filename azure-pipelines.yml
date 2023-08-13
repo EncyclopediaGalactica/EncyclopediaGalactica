@@ -208,4 +208,15 @@ stages:
             displayName: semantic-release
             env:
               GH_TOKEN: $(githubToken)
+
+      - job: antora
+        dependsOn: semantic_release
+        displayName: Antora doc
+        steps:
+          - script: |
+              npx antora -v
+              npx antora Doc/antora/antora-playbook.yml --to-dir docs --clean
+              git add .
+              git commit -m "generate doc for publish"
+              git push origin gh_pages
     

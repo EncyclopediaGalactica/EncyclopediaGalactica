@@ -1,7 +1,7 @@
 site:
   title: Encyclopedia Galactica System
   url: https://encyclopediagalactica.github.io
-#  start_page: encyclopedia-galactica-doc::start-page.adoc
+  start_page: encyclopedia-galactica-doc::start-page.adoc
 content:
   sources:
     - url: ./../..
