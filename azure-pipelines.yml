@@ -229,6 +229,14 @@ stages:
               git commit -m "generate doc for publish"
               echo "Fetching"
               git fetch --all
+              echo "Create gh_pages branch"
+              git branch gh_pages
+              echo "Checking out gh_pages"
+              git checkout gh_pages
+              echo "Set up upstream branch"
+              git branch --set-upstream-to=origin/gh_pages
+              echo "Merge main into gh_pages"
+              git merge main
               echo "Pushing"
               git push origin gh_pages
             displayName: antora build
