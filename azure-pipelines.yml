@@ -238,7 +238,7 @@ stages:
               echo "Pulling gh_pages"
               git pull
               echo "Reset gh_pages to its remote state"
-              git reset --hard origin/gh_pages"
+              git reset --hard origin/gh_pages
               echo "Merge main into gh_pages"
               git merge main
               echo "Pushing"
