@@ -217,11 +217,19 @@ stages:
               npx antora -v
               git config --global user.email "$(emailAddress)"
               git config --global user.name "$(userName)"
+              echo "Checkout main"
               git checkout main
+              echo "Pull main"
               git pull origin main
+              echo "Generate antora"
               npx antora Doc/antora/antora-playbook.yml --to-dir docs --clean
+              echo "Adding"
               git add .
+              echo "Committing"
               git commit -m "generate doc for publish"
+              echo "Fetching"
+              git fetch --all
+              echo "Pushing"
               git push origin gh_pages
             displayName: antora build
             env:
