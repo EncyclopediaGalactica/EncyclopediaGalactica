@@ -233,10 +233,10 @@ stages:
               git branch gh_pages
               echo "Checking out gh_pages"
               git checkout gh_pages
-              echo "Pulling gh_pages"
-              git pull
               echo "Set up upstream branch"
               git branch --set-upstream-to=origin/gh_pages
+              echo "Pulling gh_pages"
+              git pull
               echo "Reset gh_pages to its remote state"
               git reset --hard origin/gh_pages"
               echo "Merge main into gh_pages"
