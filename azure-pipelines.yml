@@ -243,7 +243,6 @@ stages:
               git merge main
               echo "Pushing"
               git push https://$(githubToken)@github.com/EncyclopediaGalactica/EncyclopediaGalactica.git
-            #              git push origin gh_pages
             displayName: antora build
             env:
               GITHUB_TOKEN: $(githubToken)
