@@ -1,3 +1,10 @@
+## [0.6.7](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.6.6...0.6.7) (2023-08-15)
+
+
+### Bug Fixes
+
+* additional fix for antora build and publish ([#99](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/99)) ([0083b3f](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0083b3f47d4755eaf0323e222c401a7a3d1bdffe))
+
 ## [0.6.6](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.6.5...0.6.6) (2023-08-15)
 
 
