@@ -215,11 +215,11 @@ stages:
         steps:
           - script: |
               npx antora -v
-              npx antora Doc/antora/antora-playbook.yml --to-dir docs --clean
               git config --global user.email "$(emailAddress)"
               git config --global user.name "$(userName)"
               git checkout main
               git pull origin main
+              npx antora Doc/antora/antora-playbook.yml --to-dir docs --clean
               git add .
               git commit -m "generate doc for publish"
               git push origin gh_pages
