@@ -218,6 +218,7 @@ stages:
               npx antora Doc/antora/antora-playbook.yml --to-dir docs --clean
               git config --global user.email "$(emailAddress)"
               git config --global user.name "$(userName)"
+              git pull --all
               git add .
               git commit -m "generate doc for publish"
               git push origin gh_pages
