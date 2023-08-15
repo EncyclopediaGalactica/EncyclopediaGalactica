@@ -212,6 +212,8 @@ stages:
       - job: antora
         dependsOn: semantic_release
         displayName: Antora doc
+        workspace:
+          clean: all
         steps:
           - script: |
               npx antora -v
@@ -242,7 +244,7 @@ stages:
               echo "Merge main into gh_pages"
               git merge main
               echo "Pushing"
-              git push https://"$(githubToken)"@github.com/$(userName)/EncyclopediaGalactica.git
+              git push https://$(githubToken)@github.com/"$(userName)"/EncyclopediaGalactica.git
             #              git push origin gh_pages
             displayName: antora build
             env:
