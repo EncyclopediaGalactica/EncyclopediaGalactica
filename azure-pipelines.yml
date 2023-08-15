@@ -212,8 +212,6 @@ stages:
       - job: antora
         dependsOn: semantic_release
         displayName: Antora doc
-        workspace:
-          clean: all
         steps:
           - script: |
               npx antora -v
