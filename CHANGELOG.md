@@ -1,3 +1,10 @@
+# [0.7.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.6.15...0.7.0) (2023-08-16)
+
+
+### Features
+
+* adding ascii doc for generator ([#109](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/109)) ([808006b](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/808006b0ae0af434ce4bfa97b220ecfd4e3fc251))
+
 ## [0.6.15](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.6.14...0.6.15) (2023-08-15)
 
 
