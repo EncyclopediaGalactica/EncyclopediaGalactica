@@ -303,6 +303,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Client.Models.Tests.Unit", "Services\Document\Document.Client.Models.Tests.Unit\Document.Client.Models.Tests.Unit.csproj", "{864E5855-7836-46BC-BFDE-DEC5B80D726C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "antora", "antora", "{D4965D73-39D1-47E6-93A0-7FB51A022427}"
+	ProjectSection(SolutionItems) = preProject
+		Doc\antora\antora-playbook.yml = Doc\antora\antora-playbook.yml
+		Doc\antora\antora.yml = Doc\antora\antora.yml
+		Doc\antora\modules\blog\nav.adoc = Doc\antora\modules\blog\nav.adoc
+		Doc\antora\modules\blog\pages\first-steps-with-generator.adoc = Doc\antora\modules\blog\pages\first-steps-with-generator.adoc
+		Doc\antora\modules\usermanual\nav.adoc = Doc\antora\modules\usermanual\nav.adoc
+		Doc\antora\modules\usermanual\pages\introduction.adoc = Doc\antora\modules\usermanual\pages\introduction.adoc
+		Doc\antora\modules\devx\nav.adoc = Doc\antora\modules\devx\nav.adoc
+		Doc\antora\modules\devx\pages\generator.adoc = Doc\antora\modules\devx\pages\generator.adoc
+		Doc\antora\modules\ROOT\pages\start-page.adoc = Doc\antora\modules\ROOT\pages\start-page.adoc
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
