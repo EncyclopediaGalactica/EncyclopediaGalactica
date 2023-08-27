@@ -1,6 +1,5 @@
 namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
 
-using Entities;
 using Interfaces.Document;
 using Mappers.Interfaces;
 using SourceFormatsRepository.Interfaces;
@@ -25,10 +24,5 @@ public partial class DocumentService : IDocumentService
         _guardsService = guardsService;
         _mappers = mappers;
         _repository = documentsRepository;
-    }
-
-    public async Task<List<Document>> GetAll(CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
     }
 }
