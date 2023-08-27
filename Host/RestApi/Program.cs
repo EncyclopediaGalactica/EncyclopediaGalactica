@@ -58,7 +58,7 @@ builder.Services.AddLogging(log =>
 
 SqliteConnection connection = new("Filename=:memory:");
 connection.Open();
-builder.Services.AddDbContext<SourceFormatsDbContext>(options =>
+builder.Services.AddDbContext<DocumentDbContext>(options =>
 {
     options.UseSqlite(connection);
     options.LogTo(m => Debug.WriteLine(m))
@@ -72,7 +72,7 @@ if (sp is null)
 using (IServiceScope scope = sp.CreateScope())
 {
     IServiceProvider scopedServices = scope.ServiceProvider;
-    SourceFormatsDbContext db = scopedServices.GetRequiredService<SourceFormatsDbContext>();
+    DocumentDbContext db = scopedServices.GetRequiredService<DocumentDbContext>();
     db.Database.EnsureCreated();
 }
 

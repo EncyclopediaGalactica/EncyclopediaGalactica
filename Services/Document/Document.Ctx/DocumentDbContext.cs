@@ -3,13 +3,13 @@ namespace EncyclopediaGalactica.Services.Document.Ctx;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 
-public class SourceFormatsDbContext : DbContext
+public class DocumentDbContext : DbContext
 {
-    public SourceFormatsDbContext(DbContextOptions options) : base(options)
+    public DocumentDbContext(DbContextOptions options) : base(options)
     {
     }
 
-    protected SourceFormatsDbContext()
+    protected DocumentDbContext()
     {
     }
 

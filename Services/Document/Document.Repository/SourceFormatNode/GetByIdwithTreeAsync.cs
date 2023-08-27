@@ -11,7 +11,7 @@ public partial class SourceFormatNodeRepository
     public async Task<List<SourceFormatNode>> GetByIdWithFlatTreeAsync(long id,
         CancellationToken cancellationToken = default)
     {
-        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions);
         await using IDbContextTransaction transaction = await ctx.Database.BeginTransactionAsync(cancellationToken)
             .ConfigureAwait(false);
         {
@@ -34,7 +34,7 @@ public partial class SourceFormatNodeRepository
 
     private async Task<List<SourceFormatNode>> GetByIdWithFlatTreeAsync(
         long id,
-        SourceFormatsDbContext ctx,
+        DocumentDbContext ctx,
         CancellationToken cancellationToken = default)
     {
         _guards.IsNotEqual(id, 0);

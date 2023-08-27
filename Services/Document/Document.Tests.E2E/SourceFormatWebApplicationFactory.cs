@@ -45,7 +45,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
         builder.ConfigureServices(services =>
         {
             ServiceDescriptor? descriptor =
-                services.SingleOrDefault(d => d.ServiceType == typeof(SourceFormatsDbContext));
+                services.SingleOrDefault(d => d.ServiceType == typeof(DocumentDbContext));
             services.Remove(descriptor!);
 
             SqliteConnection connection = new("Filename=:memory:");
@@ -59,7 +59,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
                 .AddNewtonsoftJson()
                 .AddApplicationPart(typeof(SourceFormatNodeController).Assembly)
                 .AddApplicationPart(typeof(DocumentController).Assembly);
-            services.AddDbContext<SourceFormatsDbContext>(options =>
+            services.AddDbContext<DocumentDbContext>(options =>
             {
                 options.UseSqlite(connection);
                 options.LogTo(m => Debug.WriteLine(m))
@@ -93,7 +93,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             using (IServiceScope scope = sp.CreateScope())
             {
                 IServiceProvider scopedServices = scope.ServiceProvider;
-                SourceFormatsDbContext db = scopedServices.GetRequiredService<SourceFormatsDbContext>();
+                DocumentDbContext db = scopedServices.GetRequiredService<DocumentDbContext>();
                 ILogger<SourceFormatWebApplicationFactory<TStartup>> logger = scopedServices
                     .GetRequiredService<ILogger<SourceFormatWebApplicationFactory<TStartup>>>();
 

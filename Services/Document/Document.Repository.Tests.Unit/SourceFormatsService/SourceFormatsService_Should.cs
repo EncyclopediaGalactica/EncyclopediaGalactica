@@ -22,13 +22,13 @@ public class SourceFormatsService_Should
         new[]
         {
             null, new DocumentRepository(
-                new DbContextOptions<SourceFormatsDbContext>(),
+                new DbContextOptions<DocumentDbContext>(),
                 new DocumentValidator())
         },
         new[]
         {
             new SourceFormatNodeRepository(
-                new DbContextOptions<SourceFormatsDbContext>(),
+                new DbContextOptions<DocumentDbContext>(),
                 new SourceFormatNodeValidator(),
                 new GuardsService()),
             null

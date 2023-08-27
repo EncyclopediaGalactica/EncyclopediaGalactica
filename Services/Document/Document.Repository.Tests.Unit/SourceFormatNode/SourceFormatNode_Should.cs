@@ -37,7 +37,7 @@ public class SourceFormatNode_Should
     [Fact]
     public void Throw_WhenInjectedValidatorIsNull()
     {
-        DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
+        DbContextOptions<DocumentDbContext> options = new DbContextOptionsBuilder<DocumentDbContext>()
             .Options;
         Action action = () => { new SourceFormatNodeRepository(options, null!, new GuardsService()); };
 
@@ -47,7 +47,7 @@ public class SourceFormatNode_Should
     [Fact]
     public void Throw_WhenInjectedGuardServiceIsNull()
     {
-        DbContextOptions<SourceFormatsDbContext> options = new DbContextOptionsBuilder<SourceFormatsDbContext>()
+        DbContextOptions<DocumentDbContext> options = new DbContextOptionsBuilder<DocumentDbContext>()
             .Options;
         Action action = () => { new SourceFormatNodeRepository(options, new SourceFormatNodeValidator(), null!); };
 

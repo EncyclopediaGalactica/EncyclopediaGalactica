@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 /// <inheritdoc />
 public partial class DocumentRepository : IDocumentsRepository
 {
-    private readonly DbContextOptions<SourceFormatsDbContext> _dbContextOptions;
+    private readonly DbContextOptions<DocumentDbContext> _dbContextOptions;
     private readonly IValidator<Document> _documentValidator;
 
     public DocumentRepository(
-        DbContextOptions<SourceFormatsDbContext> dbContextOptions,
+        DbContextOptions<DocumentDbContext> dbContextOptions,
         IValidator<Document> documentValidator)
     {
         ArgumentNullException.ThrowIfNull(dbContextOptions);

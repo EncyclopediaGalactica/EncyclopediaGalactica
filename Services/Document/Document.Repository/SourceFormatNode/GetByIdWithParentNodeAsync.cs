@@ -15,7 +15,7 @@ public partial class SourceFormatNodeRepository
         {
             _guards.IsNotEqual(id, 0);
 
-            await using (SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions))
+            await using (DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions))
             {
                 SourceFormatNode result = await ctx.SourceFormatNodes
                     .Include(i => i.RootNode)

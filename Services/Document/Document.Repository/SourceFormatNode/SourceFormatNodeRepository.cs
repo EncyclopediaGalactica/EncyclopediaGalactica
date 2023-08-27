@@ -9,12 +9,12 @@ using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeRepository : ISourceFormatNodeRepository
 {
-    private readonly DbContextOptions<SourceFormatsDbContext> _dbContextOptions;
+    private readonly DbContextOptions<DocumentDbContext> _dbContextOptions;
     private readonly IGuardsService _guards;
     private readonly IValidator<SourceFormatNode> _sourceFormatNodeValidator;
 
     public SourceFormatNodeRepository(
-        DbContextOptions<SourceFormatsDbContext> dbContextOptions,
+        DbContextOptions<DocumentDbContext> dbContextOptions,
         IValidator<SourceFormatNode> sourceFormatNodeValidator,
         IGuardsService guardsService)
     {
