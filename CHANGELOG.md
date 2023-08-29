@@ -1,3 +1,10 @@
+# [0.8.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.7.0...0.8.0) (2023-08-29)
+
+
+### Features
+
+* adding Graphql endpoint to Document service ([#110](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/110)) ([3bce6da](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/3bce6dac26ba6b1094e73f4fdf6e5449f0a2363e))
+
 # [0.7.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.6.15...0.7.0) (2023-08-16)
 
 
