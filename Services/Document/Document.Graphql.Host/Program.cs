@@ -89,7 +89,8 @@ builder.Services
     .AddQueryType<QueryType>()
     .AddMutationType<MutationType>()
     .RegisterService<IDocumentService>()
-    .AddType<DocumentDtoType>();
+    .AddType<DocumentDtoType>()
+    .AddType<DocumentDtoInputType>();
 
 var app = builder.Build();
 

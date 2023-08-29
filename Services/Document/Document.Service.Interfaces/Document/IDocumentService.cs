@@ -39,8 +39,8 @@ public interface IDocumentService
     Task<DocumentDto> AddAsync(DocumentDto dto, CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Adds a <see cref="Document" /> entity to the system using the provided <see cref="DocumentDto" /> instance
-    ///     parameters.
+    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentDto" /> representing the <see cref="Document" /> entities in
+    ///     the system.
     /// </summary>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
@@ -48,11 +48,6 @@ public interface IDocumentService
     /// <returns>Returns a <see cref="Task{TResult}" /> representing the result of an asynchronous operation.</returns>
     /// <exception cref="ArgumentNullException">
     ///     When input is null.
-    /// </exception>
-    /// <exception cref="ValidationException">When input is invalid</exception>
-    /// <exception cref="DbUpdateException">
-    ///     When a constraint defined by SQL schema is violated. It is mainly validation
-    ///     related problem.
     /// </exception>
     /// <exception cref="OperationCanceledException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />

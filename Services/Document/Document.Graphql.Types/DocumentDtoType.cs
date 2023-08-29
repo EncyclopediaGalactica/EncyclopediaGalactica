@@ -1,10 +1,11 @@
 namespace Document.Graphql.Types;
 
 using EncyclopediaGalactica.Services.Document.Dtos;
+using HotChocolate.Types;
 
-public class DocumentDtoInputType : InputObjectType<DocumentDto>
+public class DocumentDtoType : ObjectType<DocumentDto>
 {
-    protected override void Configure(IInputObjectTypeDescriptor<DocumentDto> descriptor)
+    protected override void Configure(IObjectTypeDescriptor<DocumentDto> descriptor)
     {
         descriptor
             .Field(f => f.Id)

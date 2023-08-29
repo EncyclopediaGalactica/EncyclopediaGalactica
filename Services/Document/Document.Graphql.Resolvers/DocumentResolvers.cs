@@ -3,6 +3,7 @@ namespace Document.Graphql.Resolvers;
 using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
 using HotChocolate.Resolvers;
+using Microsoft.Extensions.Logging;
 
 public class DocumentResolvers
 {
@@ -19,7 +20,13 @@ public class DocumentResolvers
         IDocumentService documentService)
     {
         DocumentDto newDocumentInput = resolverContext.ArgumentValue<DocumentDto>("newDocument");
-        DocumentDto result = await documentService.AddAsync(newDocumentInput);
-        return result;
+        return await documentService.AddAsync(newDocumentInput);
+    }
+
+    public async Task<IList<DocumentDto>> GetAllAsync(
+        IResolverContext resolverContext,
+        IDocumentService documentService)
+    {
+        return await documentService.GetAllAsync();
     }
 }

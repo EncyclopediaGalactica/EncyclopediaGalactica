@@ -1,5 +1,6 @@
 namespace Document.Graphql.Types;
 
+using HotChocolate.Types;
 using Resolvers;
 
 public class MutationType : ObjectType

@@ -4,6 +4,7 @@
         <TargetFramework>net7.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace>Document.Graphql</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,6 +21,8 @@
         <ProjectReference Include="..\Document.Ctx\Document.Ctx.csproj"/>
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+        <ProjectReference Include="..\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj"/>
+        <ProjectReference Include="..\Document.Graphql.Types\Document.Graphql.Types.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>

@@ -1,6 +1,7 @@
 namespace Document.Graphql.Types;
 
 using EncyclopediaGalactica.Services.Document.Dtos;
+using HotChocolate.Types;
 
 public class QueryType : ObjectType
 {

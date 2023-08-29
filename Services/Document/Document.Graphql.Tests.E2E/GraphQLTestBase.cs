@@ -1,6 +1,7 @@
 namespace Documents.Graphql.Tests.E2E;
 
 using System.Diagnostics;
+using System.Text;
 using Document.Graphql.Types;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
@@ -24,17 +25,23 @@ using EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatN
 using EncyclopediaGalactica.Services.Document.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;
 using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
+using FluentAssertions;
 using FluentValidation;
 using HotChocolate.Execution;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Xunit.Abstractions;
 
-public static class TestServices
+public class GraphQLTestBase
 {
-    static TestServices()
+    protected readonly ITestOutputHelper _testOutputHelper;
+
+    public GraphQLTestBase(ITestOutputHelper testOutputHelper)
     {
+        _testOutputHelper = testOutputHelper;
+
         SqliteConnection sqliteConnection = new("Filename=:memory:");
         sqliteConnection.Open();
         ServiceProvider = new ServiceCollection()
@@ -70,6 +77,7 @@ public static class TestServices
             .AddMutationType<MutationType>()
             .RegisterService<IDocumentService>()
             .AddType<DocumentDtoType>()
+            .AddType<DocumentDtoInputType>()
             .Services
             .AddSingleton(sp => new RequestExecutorProxy(
                 sp.GetRequiredService<IRequestExecutorResolver>(),
@@ -87,10 +95,10 @@ public static class TestServices
         RequestExecutorProxy = ServiceProvider.GetRequiredService<RequestExecutorProxy>();
     }
 
-    public static IServiceProvider ServiceProvider { get; set; }
-    public static RequestExecutorProxy RequestExecutorProxy { get; set; }
+    public IServiceProvider ServiceProvider { get; set; }
+    public RequestExecutorProxy RequestExecutorProxy { get; set; }
 
-    public static async Task<IQueryResult> ExecuteRequestAsync(
+    protected async Task<string> ExecuteRequestAsync(
         Action<IQueryRequestBuilder> configureRequest,
         CancellationToken cancellationToken = default)
     {
@@ -102,8 +110,26 @@ public static class TestServices
         var request = requestBuilder.Create();
 
         await using IExecutionResult result = await RequestExecutorProxy.ExecuteAsync(request, cancellationToken);
+        CheckResultForErrors(result.ExpectQueryResult());
+        return result.ToJson();
+    }
 
-        IQueryResult res = result.ExpectQueryResult();
-        return res;
+    protected void CheckResultForErrors(IQueryResult result)
+    {
+        if (result.Errors != null && result.Errors.Count > 0)
+        {
+            StringBuilder builder = new StringBuilder();
+            builder.Append("\n === Errors === \n");
+
+            for (int x = 0; x < result.Errors.Count; x++)
+            {
+                builder.Append($"= Error {x} = \n");
+                builder.Append($"Message: {result.Errors[x].Message} \n");
+            }
+
+            builder.Append("\n === Errors End === \n");
+
+            result.Errors.Count.Should().Be(0, builder.ToString());
+        }
     }
 }
