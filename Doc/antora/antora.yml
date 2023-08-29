@@ -3,4 +3,5 @@ version: ~
 nav:
   - modules/usermanual/nav.adoc
   - modules/devx/nav.adoc
+  - modules/document/nav.adoc
   - modules/blog/nav.adoc

@@ -26,6 +26,7 @@ variables:
   document_service_tests_unit: 'Services/Document/Document.Service.Tests.Unit/Document.Service.Tests.Unit.csproj'
   document_service_tests_int: 'Services/Document/Document.Service.Tests.Int/Document.Service.Tests.Int.csproj'
   document_tests_e2e: 'Services/Document/Document.Tests.E2E/Document.Tests.E2E.csproj'
+  document_graphql_tests_e2e: 'Services/Document/Document.Graphql.Tests.E2E/Document.Graphql.Tests.E2E.csproj'
   
   # Tools
   restapigenerator_tests_unit: 'Tools/Generator/Generator.Tests.Unit/Generator.Tests.Unit.csproj'
@@ -100,6 +101,9 @@ stages:
               echo ${{ variables.print_pattern }} ${{ variables.document_tests_e2e }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_tests_e2e }}
               
+              echo ${{ variables.print_pattern }} ${{ variables.document_graphql_tests_e2e }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_graphql_tests_e2e }}
+              
               echo ${{ variables.print_pattern }} ${{ variables.restapigenerator_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.restapigenerator_tests_unit }}
 
@@ -163,6 +167,9 @@ stages:
               
               echo ${{ variables.print_pattern }} ${{ variables.document_tests_e2e }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.document_tests_e2e }}
+              
+              echo ${{ variables.print_pattern }} ${{ variables.document_graphql_tests_e2e }} ${{ variables.print_pattern }}
+              dotnet test ${{ variables.document_graphql_tests_e2e }}
               
               echo ${{ variables.print_pattern }} ${{ variables.restapigenerator_tests_unit }} ${{ variables.print_pattern }}
               dotnet test ${{ variables.restapigenerator_tests_unit }}

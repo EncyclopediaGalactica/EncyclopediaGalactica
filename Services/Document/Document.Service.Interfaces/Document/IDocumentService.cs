@@ -38,7 +38,21 @@ public interface IDocumentService
     /// </exception>
     Task<DocumentDto> AddAsync(DocumentDto dto, CancellationToken cancellationToken = default);
 
-    Task<List<Document>> GetAll(CancellationToken cancellationToken = default);
+    /// <summary>
+    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentDto" /> representing the <see cref="Document" /> entities in
+    ///     the system.
+    /// </summary>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <returns>Returns a <see cref="Task{TResult}" /> representing the result of an asynchronous operation.</returns>
+    /// <exception cref="ArgumentNullException">
+    ///     When input is null.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When the operation is cancelled by a <see cref="CancellationToken" />
+    /// </exception>
+    Task<List<DocumentDto>> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentDto" /> object.

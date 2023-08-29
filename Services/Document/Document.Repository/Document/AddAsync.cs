@@ -19,7 +19,7 @@ public partial class DocumentRepository
 
     private async Task<Document> AddDatabaseOperationAsync(Document document, CancellationToken cancellationToken)
     {
-        await using (SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions))
+        await using (DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions))
         {
             await ctx.AddAsync(document, cancellationToken).ConfigureAwait(false);
             await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);

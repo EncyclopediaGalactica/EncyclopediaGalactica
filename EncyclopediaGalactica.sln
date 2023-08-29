@@ -315,6 +315,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "antora", "antora", "{D4965D
 		Doc\antora\modules\ROOT\pages\start-page.adoc = Doc\antora\modules\ROOT\pages\start-page.adoc
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Host", "Services\Document\Document.Graphql.Host\Document.Graphql.Host.csproj", "{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Tests.E2E", "Services\Document\Document.Graphql.Tests.E2E\Document.Graphql.Tests.E2E.csproj", "{79F22CDE-F85A-43C6-8950-1E1FD62C949E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types", "Services\Document\Document.Graphql.Types\Document.Graphql.Types.csproj", "{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Resolvers", "Services\Document\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj", "{AD6D81DE-EDE1-4570-895E-455FA4B73B74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -825,6 +833,22 @@ Global
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D95496D8-08A2-4AA4-A020-AF9DB150FA6B} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
@@ -960,5 +984,9 @@ Global
 		{337391B2-2182-4BF2-8911-431E67EA5C72} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{D4965D73-39D1-47E6-93A0-7FB51A022427} = {66D74E39-6BE1-456A-B35D-1FAB6262BE40}
+		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{79F22CDE-F85A-43C6-8950-1E1FD62C949E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{AD6D81DE-EDE1-4570-895E-455FA4B73B74} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal

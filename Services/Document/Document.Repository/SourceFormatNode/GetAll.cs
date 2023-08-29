@@ -9,7 +9,7 @@ public partial class SourceFormatNodeRepository
     /// <inheritdoc />
     public async Task<List<SourceFormatNode>> GetAllAsync(CancellationToken cancellationToken = default)
     {
-        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions);
         try
         {
             return await ctx.SourceFormatNodes.ToListAsync(cancellationToken).ConfigureAwait(false);

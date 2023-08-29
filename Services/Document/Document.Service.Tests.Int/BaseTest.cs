@@ -41,12 +41,12 @@ public class BaseTest
             sourceFormatNodeMappers,
             documentMappers);
 
-        DbContextOptions<SourceFormatsDbContext> dbContextOptions =
-            new DbContextOptionsBuilder<SourceFormatsDbContext>()
+        DbContextOptions<DocumentDbContext> dbContextOptions =
+            new DbContextOptionsBuilder<DocumentDbContext>()
                 .UseSqlite(connection).LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging()
                 .EnableDetailedErrors()
                 .Options;
-        SourceFormatsDbContext ctx = new(dbContextOptions);
+        DocumentDbContext ctx = new(dbContextOptions);
         ctx.Database.EnsureCreated();
 
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(

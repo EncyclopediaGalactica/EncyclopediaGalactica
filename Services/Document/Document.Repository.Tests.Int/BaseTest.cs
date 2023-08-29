@@ -23,12 +23,12 @@ public class BaseTest
     {
         SqliteConnection connection = new SqliteConnection("Filename=:memory:");
         connection.Open();
-        DbContextOptions<SourceFormatsDbContext> sourceFormatsDbContextOptions = new
-                DbContextOptionsBuilder<SourceFormatsDbContext>()
+        DbContextOptions<DocumentDbContext> sourceFormatsDbContextOptions = new
+                DbContextOptionsBuilder<DocumentDbContext>()
             .UseSqlite(connection)
             .LogTo(m => Debug.WriteLine(m)).EnableSensitiveDataLogging().EnableDetailedErrors()
             .Options;
-        SourceFormatsDbContext ctx = new SourceFormatsDbContext(sourceFormatsDbContextOptions);
+        DocumentDbContext ctx = new DocumentDbContext(sourceFormatsDbContextOptions);
         ctx.Database.EnsureCreated();
 
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
