@@ -1,11 +1,14 @@
 @startuml
 
 entity Document {
-    id
-    name
-    desc
+    Id
+    Name
+    Description
+    StructureNodeId
     StructureNode tree
+    AuthorId
     Author author
+    SourceId
     Source source
     User createdBy
     User lastModifiedBy
@@ -15,7 +18,8 @@ entity Document {
 
 entity Author {
     id
-    Person person
+    PersonId
+    Person
 }
 
 entity Person {
@@ -44,10 +48,10 @@ entity StructureNode {
 entity UIElementInfo {}
 entity StructureInfo {}
 
-Document .. StructureNode
-Document .. Author
-Document .. Source
-Author .. Person
+Document::StructureNodeId <-- StructureNode::id
+Document::AuthorId <-- Author::Id
+Document::SourceId <-- Source::Id
+Author::PersonId <-- Person::Id
 StructureNode .. StructureNodeType
 StructureNode .. UIElementInfo
 StructureNode .. StructureInfo

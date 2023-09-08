@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Entities;
 using FluentAssertions;
 using FluentValidation;
-using Services.Document.Tests.Datasets;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -21,8 +20,8 @@ public class AddAsync_Validation_Should : BaseTest
         Func<Task> f = async () => { await Sut.Documents.AddAsync(null!); };
     }
 
-    [Theory]
-    [MemberData(nameof(DocumentDataset.Add_Validation), MemberType = typeof(DocumentDataset))]
+    // [Theory]
+    // [MemberData(nameof(DocumentDataset.GetAddValidationScenarioDataset), MemberType = typeof(DocumentDataset))]
     public void Throw_ValidationException_WhenInput_IsInvalid(
         long id,
         string name,

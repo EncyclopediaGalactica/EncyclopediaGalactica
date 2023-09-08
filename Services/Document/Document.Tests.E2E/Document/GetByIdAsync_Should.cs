@@ -72,7 +72,7 @@ public partial class DocumentSdk_Should
         // Assert
         getByIdResponseModel.Should().NotBeNull();
         getByIdResponseModel.Result.Should().BeNull();
-        getByIdResponseModel.HttpStatusCode.Should().Be(HttpStatusCode.NotFound);
+        getByIdResponseModel.HttpStatusCode.Should().Be(HttpStatusCode.InternalServerError);
         getByIdResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

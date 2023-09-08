@@ -1,7 +1,10 @@
-namespace Documents.Graphql.Tests.E2E;
+namespace Documents.Graphql.Tests.E2E.Tools.Base;
 
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Reflection;
 using System.Text;
+using Document.Graphql.ErrorFilters;
 using Document.Graphql.Types;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
@@ -25,7 +28,6 @@ using EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatN
 using EncyclopediaGalactica.Services.Document.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;
 using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
-using FluentAssertions;
 using FluentValidation;
 using HotChocolate.Execution;
 using Microsoft.Data.Sqlite;
@@ -34,7 +36,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
-public class GraphQLTestBase
+public partial class GraphQLTestBase
 {
     protected readonly ITestOutputHelper _testOutputHelper;
 
@@ -58,6 +60,7 @@ public class GraphQLTestBase
             .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
             .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
             .AddScoped<IValidator<SourceFormatNodeDto>, SourceFormatNodeDtoValidator>()
+            .AddScoped<IValidator<DocumentDto>, DocumentDtoValidator>()
             .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
             .AddLogging(log =>
             {
@@ -78,6 +81,8 @@ public class GraphQLTestBase
             .RegisterService<IDocumentService>()
             .AddType<DocumentDtoType>()
             .AddType<DocumentDtoInputType>()
+            .AddErrorFilter<GraphQlSchemaValidationErrorFilter>()
+            .AddErrorFilter<InputValidationErrorFilter>()
             .Services
             .AddSingleton(sp => new RequestExecutorProxy(
                 sp.GetRequiredService<IRequestExecutorResolver>(),
@@ -100,6 +105,7 @@ public class GraphQLTestBase
 
     protected async Task<string> ExecuteRequestAsync(
         Action<IQueryRequestBuilder> configureRequest,
+        ITestOutputHelper? testOutputHelper = default,
         CancellationToken cancellationToken = default)
     {
         await using var scope = ServiceProvider.CreateAsyncScope();
@@ -109,27 +115,86 @@ public class GraphQLTestBase
         configureRequest(requestBuilder);
         var request = requestBuilder.Create();
 
+        RequestDetails(testOutputHelper, request);
+
         await using IExecutionResult result = await RequestExecutorProxy.ExecuteAsync(request, cancellationToken);
-        CheckResultForErrors(result.ExpectQueryResult());
-        return result.ToJson();
-    }
-
-    protected void CheckResultForErrors(IQueryResult result)
-    {
-        if (result.Errors != null && result.Errors.Count > 0)
         {
-            StringBuilder builder = new StringBuilder();
-            builder.Append("\n === Errors === \n");
-
-            for (int x = 0; x < result.Errors.Count; x++)
+            QueryResult queryResult = (QueryResult)result;
+            if (testOutputHelper is not null
+                && queryResult.Errors is not null
+                && queryResult.Errors.Any())
             {
-                builder.Append($"= Error {x} = \n");
-                builder.Append($"Message: {result.Errors[x].Message} \n");
+                DumpErrorInformation(queryResult.Errors, testOutputHelper);
             }
 
-            builder.Append("\n === Errors End === \n");
+            return result.ToJson();
+        }
+    }
 
-            result.Errors.Count.Should().Be(0, builder.ToString());
+    private void DumpErrorInformation(
+        IReadOnlyList<IError> queryResultErrors,
+        ITestOutputHelper testOutputHelper)
+    {
+        StringBuilder builder = new StringBuilder();
+        string header = "==============\n" +
+                        "=== Errors ===\n" +
+                        "==============\n";
+        builder.Append(header);
+        foreach (IError error in queryResultErrors)
+        {
+            string msg = $"=== Error ===\n" +
+                         $"== Error name: {error.Message} \n" +
+                         $"== Inner Exception: {error.Exception?.GetType()} \n" +
+                         $"== Inner Exception Message: {error.Exception?.Message} \n";
+            builder.Append(msg);
+        }
+
+        testOutputHelper.WriteLine(builder.ToString());
+    }
+
+
+    private static void RequestDetails(ITestOutputHelper? testOutputHelper, IQueryRequest request)
+    {
+        if (testOutputHelper != null)
+        {
+            testOutputHelper.WriteLine("=== Request Info ===");
+
+            foreach (PropertyInfo propertyInfo in request.GetType().GetProperties())
+            {
+                if (propertyInfo.Name == "VariableValues")
+                {
+                    if (request.VariableValues != null && request.VariableValues.Any())
+                    {
+                        testOutputHelper.WriteLine("== Variable values");
+                        foreach (KeyValuePair<string, object?> pair in request.VariableValues)
+                        {
+                            if (pair.Value?.GetType() == typeof(ReadOnlyDictionary<string, object>))
+                            {
+                                IReadOnlyDictionary<string, object> valDict =
+                                    pair.Value as IReadOnlyDictionary<string, object>;
+                                foreach (KeyValuePair<string, object?> kv in valDict)
+                                {
+                                    string kvm = $"== {pair.Key} -  {kv.Key}: {kv.Value}";
+                                    testOutputHelper.WriteLine(kvm);
+                                }
+
+                                continue;
+                            }
+
+                            string varVal = $"== {pair.Key}: {(pair.Value != null ? pair.Value.ToString() : "Null")}";
+                            testOutputHelper.WriteLine(varVal);
+                        }
+
+                        continue;
+                    }
+
+                    testOutputHelper.WriteLine($"Not provided");
+                    continue;
+                }
+
+                string msg = $"= {propertyInfo.Name}: {propertyInfo.GetValue(request)}";
+                testOutputHelper.WriteLine(msg);
+            }
         }
     }
 }

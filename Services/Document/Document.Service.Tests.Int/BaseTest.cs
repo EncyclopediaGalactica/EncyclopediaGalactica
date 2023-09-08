@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using Ctx;
+using Dtos;
 using Entities;
 using FluentValidation;
 using Interfaces;
@@ -65,12 +66,14 @@ public class BaseTest
                 logger);
 
         IValidator<Entities.Document> documentValidator = new DocumentValidator();
+        IValidator<DocumentDto> documentDtoValidator = new DocumentDtoValidator();
         IDocumentsRepository documentsRepository = new DocumentRepository(
             dbContextOptions, documentValidator);
         IDocumentService documentService = new DocumentService(
             new GuardsService(),
             mappers,
-            documentsRepository);
+            documentsRepository,
+            new DocumentDtoValidator());
 
         Sut = new SourceFormatsService(
             sourceFormatNodeService,

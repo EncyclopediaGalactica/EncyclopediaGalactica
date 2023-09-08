@@ -52,7 +52,8 @@ builder.Services
 builder.Services
     .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
     .AddScoped<IValidator<SourceFormatNodeDto>, SourceFormatNodeDtoValidator>()
-    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>();
+    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
+    .AddScoped<IValidator<DocumentDto>, DocumentDtoValidator>();
 
 // database
 SqliteConnection connection = new("Filename=:memory:");

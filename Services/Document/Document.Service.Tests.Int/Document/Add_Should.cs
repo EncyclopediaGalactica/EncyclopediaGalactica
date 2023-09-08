@@ -4,8 +4,8 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Dtos;
+using Exceptions;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -34,7 +34,7 @@ public class Add_Should : BaseTest
         };
 
         // Assert
-        await f.Should().ThrowExactlyAsync<DbUpdateException>().ConfigureAwait(false);
+        await f.Should().ThrowExactlyAsync<InvalidInputToDocumentServiceException>().ConfigureAwait(false);
     }
 
     [Fact]
