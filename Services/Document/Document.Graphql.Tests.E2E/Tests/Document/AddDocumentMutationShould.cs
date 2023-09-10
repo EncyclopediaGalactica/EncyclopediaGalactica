@@ -70,6 +70,8 @@ public class AddDocumentMutationShould : GraphQLTestBase
             Path = "addDocument",
             QueryResultString = result
         }.Build<DocumentDto>();
+
+        // Assert
         r.Should().BeOfType<DocumentDto>();
         r.Id.Should().BeGreaterThan(0);
     }

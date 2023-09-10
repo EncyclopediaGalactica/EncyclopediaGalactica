@@ -1,7 +1,7 @@
 namespace Document.Graphql.Types;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
 using HotChocolate.Types;
+using Resolvers;
 
 public class QueryType : ObjectType
 {
@@ -12,16 +12,9 @@ public class QueryType : ObjectType
             .Description("Queries to get data from the system.");
 
         descriptor
-            .Field("document")
+            .Field("getDocuments")
             .Description("Document entity")
             .Type<ListType<DocumentDtoType>>()
-            .Resolve(r =>
-            {
-                return new List<DocumentDto>
-                {
-                    new DocumentDto { Id = 1, Name = "one", Description = "one d" },
-                    new DocumentDto { Id = 2, Name = "two", Description = "two d" },
-                };
-            });
+            .ResolveWith<DocumentResolvers>(res => res.GetAllAsync(default, default));
     }
 }

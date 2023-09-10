@@ -30,4 +30,17 @@ public class DocumentMappers : IDocumentMappers
             Uri = document?.Uri
         };
     }
+
+    /// <inheritdoc />
+    public List<DocumentDto> MapDocumentsToDocumentDtos(List<Document> l)
+    {
+        List<DocumentDto> resultList = new List<DocumentDto>();
+        if (!l.Any()) return resultList;
+        foreach (Document item in l)
+        {
+            resultList.Add(MapDocumentToDocumentDto(item));
+        }
+
+        return resultList;
+    }
 }

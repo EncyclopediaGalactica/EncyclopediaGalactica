@@ -24,6 +24,18 @@ public class DocumentResolvers
         return await documentService.AddAsync(newDocumentInput);
     }
 
+    /// <summary>
+    ///     Returns a list of <see cref="DocumentDto" /> representing <see cref="Document" /> entities of the system.
+    /// </summary>
+    /// <param name="resolverContext">
+    ///     <see cref="IResolverContext" />
+    /// </param>
+    /// <param name="documentService">
+    ///     <see cref="IDocumentService" />
+    /// </param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation.
+    /// </returns>
     public async Task<IList<DocumentDto>> GetAllAsync(
         IResolverContext resolverContext,
         IDocumentService documentService)
@@ -44,8 +56,9 @@ public class DocumentResolvers
     /// <param name="documentService">
     ///     <see cref="IDocumentService" />
     /// </param>
-    /// <returns></returns>
-    /// <exception cref="NotImplementedException"></exception>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation.
+    /// </returns>
     public async Task<DocumentDto> UpdateDocumentAsync(
         IResolverContext resolverContext,
         IDocumentService documentService)
