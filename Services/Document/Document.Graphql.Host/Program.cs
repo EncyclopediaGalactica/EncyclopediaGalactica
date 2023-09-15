@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using Document.Graphql.Types;
+using Document.Graphql.Types.Document;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.Entities;
@@ -87,8 +87,8 @@ builder.Services.AddLogging(log =>
 // graphql related settings
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<QueryType>()
-    .AddMutationType<MutationType>()
+    .AddQueryType<GetDocumentsQuery>()
+    .AddMutationType<UpdateDocumentMutation>()
     .RegisterService<IDocumentService>()
     .AddType<DocumentDtoType>()
     .AddType<DocumentDtoInputType>();

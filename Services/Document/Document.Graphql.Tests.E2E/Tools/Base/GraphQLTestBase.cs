@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using Document.Graphql.ErrorFilters;
 using Document.Graphql.Types;
+using Document.Graphql.Types.Document;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.Entities;
@@ -76,13 +77,18 @@ public partial class GraphQLTestBase
                     .EnableDetailedErrors();
             })
             .AddGraphQLServer()
-            .AddQueryType<QueryType>()
-            .AddMutationType<MutationType>()
+            .AddQueryType<Query>()
+            .AddTypeExtension<GetDocumentsQuery>()
+            .AddMutationType<Mutation>()
+            .AddTypeExtension<AddDocumentMutation>()
+            .AddTypeExtension<DeleteDocumentMutation>()
+            .AddTypeExtension<UpdateDocumentMutation>()
             .RegisterService<IDocumentService>()
             .AddType<DocumentDtoType>()
             .AddType<DocumentDtoInputType>()
             .AddErrorFilter<GraphQlSchemaValidationErrorFilter>()
             .AddErrorFilter<InputValidationErrorFilter>()
+            .AddErrorFilter<NoSuchItemErrorFilter>()
             .Services
             .AddSingleton(sp => new RequestExecutorProxy(
                 sp.GetRequiredService<IRequestExecutorResolver>(),
@@ -113,7 +119,7 @@ public partial class GraphQLTestBase
         var requestBuilder = new QueryRequestBuilder();
         requestBuilder.SetServices(scope.ServiceProvider);
         configureRequest(requestBuilder);
-        var request = requestBuilder.Create();
+        IQueryRequest request = requestBuilder.Create();
 
         RequestDetails(testOutputHelper, request);
 

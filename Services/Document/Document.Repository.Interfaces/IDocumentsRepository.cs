@@ -1,6 +1,8 @@
 namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
 
 using Entities;
+using Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 public interface IDocumentsRepository
 {
@@ -22,4 +24,25 @@ public interface IDocumentsRepository
         long documentId,
         Document documentWithNewValues,
         CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Deletes the designated <see cref="Document" /> entity.
+    /// </summary>
+    /// <param name="documentId">Unique identifier of the <see cref="Document" /> entity to be deleted.</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
+    /// <exception cref="DocumentNotFoundException">
+    ///     When input is null.
+    /// </exception>
+    /// <exception cref="DbUpdateException">
+    ///     Error happened while saving into the database
+    /// </exception>
+    /// <exception cref="DbUpdateConcurrencyException">
+    ///     Concurrency violation happened while saving into the database.
+    /// </exception>
+    /// <exception cref="OperationCanceledException">
+    ///     When operation is cancelled using <see cref="CancellationToken" />
+    /// </exception>
+    Task DeleteAsync(long documentId, CancellationToken cancellationToken = default);
 }

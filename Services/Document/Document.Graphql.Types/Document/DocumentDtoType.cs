@@ -1,4 +1,4 @@
-namespace Document.Graphql.Types;
+namespace Document.Graphql.Types.Document;
 
 using EncyclopediaGalactica.Services.Document.Dtos;
 using HotChocolate.Types;

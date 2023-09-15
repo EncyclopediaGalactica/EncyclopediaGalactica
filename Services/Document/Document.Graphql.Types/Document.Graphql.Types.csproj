@@ -15,4 +15,5 @@
         <ProjectReference Include="..\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj"/>
     </ItemGroup>
 
+
 </Project>
