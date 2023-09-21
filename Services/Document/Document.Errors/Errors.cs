@@ -1,4 +1,4 @@
-﻿namespace Document.Errors;
+﻿namespace EncyclopediaGalactica.Services.Document.Errors;
 
 public struct Errors
 {

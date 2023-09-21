@@ -1,4 +1,4 @@
-namespace Document.Graphql.ErrorFilters;
+namespace EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters;
 
 using HotChocolate;
 

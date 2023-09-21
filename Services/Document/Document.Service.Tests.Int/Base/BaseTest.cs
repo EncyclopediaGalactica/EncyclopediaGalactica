@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int;
+namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Base;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -26,7 +26,7 @@ using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
-public class BaseTest
+public partial class BaseTest
 {
     protected readonly ISourceFormatsService Sut;
 

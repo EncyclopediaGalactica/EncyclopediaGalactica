@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using Xunit;

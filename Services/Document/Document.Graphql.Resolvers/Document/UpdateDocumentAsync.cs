@@ -1,9 +1,9 @@
-namespace Document.Graphql.Resolvers.Document;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Resolvers.Document;
 
 using Arguments;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
+using Dtos;
 using HotChocolate.Resolvers;
+using SourceFormatsService.Interfaces.Document;
 
 public partial class DocumentResolvers
 {

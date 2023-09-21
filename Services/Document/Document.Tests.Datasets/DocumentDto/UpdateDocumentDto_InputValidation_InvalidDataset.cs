@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.Document;
+namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
 using Dtos;
 
-public class UpdateDocumentInputValidationInvalidDataset : IEnumerable<object[]>
+public class UpdateDocumentDto_InputValidation_InvalidDataset : IEnumerable<object[]>
 {
     public IEnumerator<object[]> GetEnumerator()
     {

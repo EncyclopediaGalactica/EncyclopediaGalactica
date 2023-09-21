@@ -1,7 +1,6 @@
-using Errors = Document.Errors.Errors;
-
 namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
 
+using Errors;
 using Exceptions;
 using Microsoft.EntityFrameworkCore;
 using SourceFormatsRepository.Exceptions;

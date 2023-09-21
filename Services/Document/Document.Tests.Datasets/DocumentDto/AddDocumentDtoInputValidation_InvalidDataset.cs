@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.Document;
+namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
@@ -6,18 +6,8 @@ using Dtos;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-public class AddDocumentInputValidationInvalidDataset : IEnumerable<object[]>
+public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]>
 {
-    public IEnumerable<object[]> GetAddValidationScenarioDataset = new List<object[]>
-    {
-        new object[] { 1, "name", "desc", new Uri("https://asd.com") },
-        new object[] { 0, string.Empty, "desc", new Uri("https://asd.com") },
-        new object[] { 0, null, "desc", new Uri("https://asd.com") },
-        new object[] { 0, "na", "desc", new Uri("https://asd.com") },
-        new object[] { 0, "   ", "desc", new Uri("https://asd.com") },
-        new object[] { 0, "name", string.Empty, new Uri("https://asd.com") },
-    };
-
     public IEnumerator<object[]> GetEnumerator()
     {
         yield return new object[]

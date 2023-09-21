@@ -1,4 +1,4 @@
-namespace Document.Graphql.Resolvers.Document;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Resolvers.Document;
 
 using Microsoft.Extensions.Logging;
 

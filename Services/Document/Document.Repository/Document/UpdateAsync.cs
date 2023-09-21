@@ -15,7 +15,7 @@ public partial class DocumentRepository
     {
         await using (DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions))
         {
-            Document? toBeModified = await ctx.Documents.FindAsync(documentWithNewValues.Id);
+            Document? toBeModified = await ctx.Documents.FindAsync(documentId);
             CheckIfDocumentBeenFoundOrThrow(toBeModified!, documentId);
 #pragma warning disable CS8604 // Possible null reference argument.
             ModifyDocumentValues(toBeModified, documentWithNewValues);

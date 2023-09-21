@@ -1,11 +1,17 @@
-namespace Documents.Graphql.Tests.E2E.Tests.Document;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
+using System.Diagnostics.CodeAnalysis;
+using Dtos;
 using FluentAssertions;
 using Tools;
 using Tools.Base;
 using Xunit.Abstractions;
 
+[ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
+[Trait("Category", "GraphQL")]
+[Trait("Category", "E2E")]
 public class GetDocumentsQueryShould : GraphQLTestBase
 {
     public GetDocumentsQueryShould(ITestOutputHelper testOutputHelper) : base(testOutputHelper)

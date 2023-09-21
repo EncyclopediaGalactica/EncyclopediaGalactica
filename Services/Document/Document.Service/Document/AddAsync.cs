@@ -1,9 +1,8 @@
-using Errors = Document.Errors.Errors;
-
 namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
 
 using Dtos;
 using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -16,8 +15,6 @@ public partial class DocumentService
     {
         try
         {
-            _guardsService.NotNull(dtoInput);
-
             return await AddBusinessLogicAsync(dtoInput, cancellationToken);
         }
         catch (Exception e) when (e is ArgumentNullException
@@ -44,6 +41,7 @@ public partial class DocumentService
 
     private async Task<DocumentDto> AddBusinessLogicAsync(DocumentDto dtoInput, CancellationToken cancellationToken)
     {
+        _guardsService.NotNull(dtoInput);
         await ValidationDocumentInputForAdding(dtoInput);
         Document document = _mappers.DocumentMappers.MapDocumentDtoToDocument(dtoInput);
         Document result = await _repository.AddAsync(document, cancellationToken).ConfigureAwait(false);

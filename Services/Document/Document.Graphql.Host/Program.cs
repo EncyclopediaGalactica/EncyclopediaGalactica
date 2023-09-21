@@ -1,8 +1,8 @@
 using System.Diagnostics;
-using Document.Graphql.Types.Document;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.Entities;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
 using EncyclopediaGalactica.Services.Document.Mappers;
 using EncyclopediaGalactica.Services.Document.Mappers.Document;
 using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;

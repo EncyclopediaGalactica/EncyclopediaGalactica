@@ -1,16 +1,21 @@
-using ArgumentNames = Document.Graphql.Arguments.ArgumentNames;
-using Errors = Document.Errors.Errors;
-
-namespace Documents.Graphql.Tests.E2E.Tests.Document;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Document;
 
 using System.Collections.ObjectModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Tests.Datasets.Document;
+using Arguments;
+using Dtos;
+using Errors;
 using FluentAssertions;
+using Services.Document.Tests.Datasets.DocumentDto;
 using Tools.Base;
 using Xunit.Abstractions;
 
+[ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+[Trait("Category", "DocumentService")]
+[Trait("Category", "GraphQL")]
+[Trait("Category", "E2E")]
 public class UpdateDocumentMutationShould : GraphQLTestBase
 {
     public UpdateDocumentMutationShould(ITestOutputHelper testOutputHelper) : base(testOutputHelper)
@@ -18,7 +23,7 @@ public class UpdateDocumentMutationShould : GraphQLTestBase
     }
 
     [Theory]
-    [ClassData(typeof(UpdateDocumentInputValidationInvalidDataset))]
+    [ClassData(typeof(UpdateDocumentDto_InputValidation_InvalidDataset))]
     public async Task InputValidation_InvalidValues(DocumentDto dto)
     {
         // Arrange

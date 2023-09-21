@@ -1,4 +1,4 @@
-namespace Documents.Graphql.Tests.E2E.Tools;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tools;
 
 using HotChocolate.Execution;
 using Newtonsoft.Json;

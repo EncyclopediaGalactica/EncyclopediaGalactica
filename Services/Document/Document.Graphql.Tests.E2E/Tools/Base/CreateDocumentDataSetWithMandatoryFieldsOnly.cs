@@ -1,8 +1,8 @@
-namespace Documents.Graphql.Tests.E2E.Tools.Base;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tools.Base;
 
 using System.Collections.ObjectModel;
 using Bogus;
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 using FluentAssertions;
 
 public partial class GraphQLTestBase

@@ -1,4 +1,4 @@
-namespace Document.Graphql.Arguments;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments;
 
 public struct ArgumentNames
 {

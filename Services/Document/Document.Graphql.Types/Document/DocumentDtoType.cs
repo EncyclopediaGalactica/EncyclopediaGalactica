@@ -1,6 +1,6 @@
-namespace Document.Graphql.Types.Document;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 using HotChocolate.Types;
 
 public class DocumentDtoType : ObjectType<DocumentDto>

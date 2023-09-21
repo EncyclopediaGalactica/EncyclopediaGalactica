@@ -1,9 +1,8 @@
-using Errors = Document.Errors.Errors;
-
 namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
 
 using Dtos;
 using Entities;
+using Errors;
 using Exceptions;
 using Utils.GuardsService.Exceptions;
 
