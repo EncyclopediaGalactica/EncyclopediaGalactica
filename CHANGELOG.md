@@ -1,3 +1,10 @@
+## [0.9.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.0...0.9.1) (2023-09-23)
+
+
+### Bug Fixes
+
+* **generator:** Dto Project Namespace value validation for negative cases  ([#113](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/113)) ([725ae00](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/725ae00b3d2c6e799162ca501bf46c9024a63401))
+
 # [0.9.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.8.0...0.9.0) (2023-09-23)
 
 
