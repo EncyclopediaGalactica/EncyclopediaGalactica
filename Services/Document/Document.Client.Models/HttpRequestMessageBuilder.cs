@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models;
 
 using System.Net.Http.Headers;
 using System.Net.Mime;

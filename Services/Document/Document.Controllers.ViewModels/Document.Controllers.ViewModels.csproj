@@ -5,8 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
 
-        <AssemblyName>EncyclopediaGalactica.SourceFormats.Services.Document.ViewModels</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.SourceFormats.Services.Document.ViewModels</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Controllers.ViewModels</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Controllers.ViewModels</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

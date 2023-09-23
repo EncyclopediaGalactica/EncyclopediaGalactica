@@ -1,7 +1,7 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using Dtos;
-using Entities;
+using EncyclopediaGalactica.Services.Document.Dtos;
+using EncyclopediaGalactica.Services.Document.Entities;
 
 public partial class DocumentService
 {

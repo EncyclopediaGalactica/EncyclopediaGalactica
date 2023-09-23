@@ -1,7 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Base;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Base;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using CacheService.Interfaces;
+using CacheService.SourceFormatNode;
 using Ctx;
 using Dtos;
 using Entities;
@@ -16,12 +18,11 @@ using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Services.Document.SourceFormatsService.Document;
-using SourceFormatsCacheService.Interfaces;
-using SourceFormatsCacheService.SourceFormatNode;
-using SourceFormatsRepository.Document;
-using SourceFormatsRepository.Interfaces;
-using SourceFormatsRepository.SourceFormatNode;
+using Repository.Document;
+using Repository.Interfaces;
+using Repository.SourceFormatNode;
+using Service.Document;
+using Service.SourceFormatNodeService;
 using Utils.GuardsService;
 using ValidatorService;
 
@@ -53,11 +54,11 @@ public partial class BaseTest
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             dbContextOptions, nodeValidator, new GuardsService());
         ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
-        ILogger<Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService> logger =
-            new Logger<Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService>(
+        ILogger<SourceFormatNodeService> logger =
+            new Logger<SourceFormatNodeService>(
                 new LoggerFactory());
         ISourceFormatNodeService sourceFormatNodeService =
-            new Services.Document.SourceFormatsService.SourceFormatNodeService.SourceFormatNodeService(
+            new SourceFormatNodeService(
                 validator,
                 new GuardsService(),
                 mappers,

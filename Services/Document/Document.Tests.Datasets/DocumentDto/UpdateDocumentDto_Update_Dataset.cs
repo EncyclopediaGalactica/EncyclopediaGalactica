@@ -1,8 +1,11 @@
 namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using Dtos;
 
+[ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
 {
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

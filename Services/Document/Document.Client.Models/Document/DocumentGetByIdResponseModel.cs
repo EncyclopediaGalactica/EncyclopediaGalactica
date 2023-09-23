@@ -1,8 +1,8 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.Document;
 
 using System.Net;
-using Client.Core.Model.Interfaces;
 using Dtos;
+using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
 public class DocumentGetByIdResponseModel : IHttpResponseModel<DocumentDto>
 {

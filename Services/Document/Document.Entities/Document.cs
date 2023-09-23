@@ -23,12 +23,12 @@ public class Document
     /// <summary>
     ///     Gets or sets the Name value.
     /// </summary>
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     /// <summary>
     ///     Gets or sets the Description value
     /// </summary>
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     /// <summary>
     ///     Gets or sets the Uri value

@@ -5,7 +5,6 @@ using System.Diagnostics.CodeAnalysis;
 using Dtos;
 using Errors;
 using FluentAssertions;
-using Services.Document.Tests.Datasets.Document;
 using Services.Document.Tests.Datasets.DocumentDto;
 using Tools;
 using Tools.Base;
@@ -49,7 +48,7 @@ public class AddDocumentMutationShould : GraphQLTestBase
     }
 
     [Theory]
-    [ClassData(typeof(AddDocumentValidDataForMandatoryFields))]
+    [ClassData(typeof(AddDocumentDto_Add_ValidDataForMandatoryFields))]
     public async Task MandatoryFields(DocumentDto input)
     {
         // Arrange

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit.SourceFormatsService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Unit.SourceFormatsService;
 
 using System.Diagnostics.CodeAnalysis;
 using Xunit;

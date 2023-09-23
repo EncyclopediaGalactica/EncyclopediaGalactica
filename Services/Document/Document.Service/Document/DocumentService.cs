@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
 using Dtos;
 using FluentValidation;
 using Interfaces.Document;
 using Mappers.Interfaces;
-using SourceFormatsRepository.Interfaces;
+using Repository.Interfaces;
 using Utils.GuardsService.Interfaces;
 
 /// <inheritdoc />

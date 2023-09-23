@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Base;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Base;
 
 using System.Collections.Generic;
 using System.Threading.Tasks;

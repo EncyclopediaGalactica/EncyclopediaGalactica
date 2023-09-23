@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -17,11 +17,7 @@ public class DeleteValidationShould : BaseTest
     public async Task Throw_ArgumentNullException_WhenInputIsNull()
     {
         // Act
-        Func<Task> task = async () =>
-        {
-            await Sut.SourceFormatNode.DeleteAsync(null!)
-                .ConfigureAwait(false);
-        };
+        Func<Task> task = async () => { await Sut.SourceFormatNode.DeleteAsync(null!); };
 
         // Assert
         await task.Should().ThrowExactlyAsync<ArgumentNullException>();
@@ -31,11 +27,7 @@ public class DeleteValidationShould : BaseTest
     public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputDtoIdIsZero()
     {
         // Act
-        Func<Task> task = async () =>
-        {
-            await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto { Id = 0 })
-                .ConfigureAwait(false);
-        };
+        Func<Task> task = async () => { await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto { Id = 0 }); };
 
         // Assert
         await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
 using Errors;
 using Exceptions;
 using Microsoft.EntityFrameworkCore;
-using SourceFormatsRepository.Exceptions;
+using Repository.Exceptions;
 using Utils.GuardsService.Exceptions;
 
 public partial class DocumentService

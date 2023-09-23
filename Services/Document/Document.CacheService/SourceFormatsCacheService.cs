@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsCacheService;
+namespace EncyclopediaGalactica.Services.Document.CacheService;
 
 using Interfaces;
 

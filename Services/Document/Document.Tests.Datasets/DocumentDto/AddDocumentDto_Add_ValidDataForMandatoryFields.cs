@@ -1,9 +1,12 @@
-namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.Document;
+namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
+using System.Diagnostics.CodeAnalysis;
 using Dtos;
 
-public class AddDocumentValidDataForMandatoryFields : IEnumerable<object[]>
+[ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
+public class AddDocumentDto_Add_ValidDataForMandatoryFields : IEnumerable<object[]>
 {
     public IEnumerator<object[]> GetEnumerator()
     {

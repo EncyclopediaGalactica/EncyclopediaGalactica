@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -20,8 +20,8 @@ public class Delete_Should : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(1);
 
         // Act
-        await Sut.DocumentService.DeleteAsync(recorded[0]).ConfigureAwait(false);
-        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync().ConfigureAwait(false);
+        await Sut.DocumentService.DeleteAsync(recorded[0]);
+        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);

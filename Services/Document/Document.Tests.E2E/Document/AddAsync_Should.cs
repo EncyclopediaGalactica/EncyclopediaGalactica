@@ -6,7 +6,7 @@ using System.Net;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FluentValidation;
-using Sdk.Models.Document;
+using Sdk.Client.Models.Document;
 using Xunit;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -28,7 +28,7 @@ public partial class DocumentSdk_Should
             .Build();
 
         // Act
-        DocumentAddResponseModel result = await SourceFormatsSdk.DocumentsSdk.AddAsync(model).ConfigureAwait(false);
+        DocumentAddResponseModel result = await SourceFormatsSdk.DocumentsSdk.AddAsync(model);
 
         // Assert
         result.Result.Should().NotBeNull();
@@ -50,7 +50,7 @@ public partial class DocumentSdk_Should
             .SetUri(new Uri("https://bla.com"))
             .Build();
 
-        DocumentAddResponseModel result = await SourceFormatsSdk.DocumentsSdk.AddAsync(model).ConfigureAwait(false);
+        DocumentAddResponseModel result = await SourceFormatsSdk.DocumentsSdk.AddAsync(model);
 
         DocumentAddRequestModel model2 = new DocumentAddRequestModel.Builder()
             .SetName("name")
@@ -59,7 +59,7 @@ public partial class DocumentSdk_Should
             .Build();
 
         // Act
-        DocumentAddResponseModel result2 = await SourceFormatsSdk.DocumentsSdk.AddAsync(model2).ConfigureAwait(false);
+        DocumentAddResponseModel result2 = await SourceFormatsSdk.DocumentsSdk.AddAsync(model2);
 
         // Assert
         result2.Result.Should().BeNull();

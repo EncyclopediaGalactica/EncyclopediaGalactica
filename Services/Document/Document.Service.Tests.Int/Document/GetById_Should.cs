@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -23,10 +23,10 @@ public class GetById_Should : BaseTest
         {
             Name = name,
             Description = desc
-        }).ConfigureAwait(false);
+        });
 
         // Act
-        DocumentDto result = await Sut.DocumentService.GetByIdAsync(data.Id).ConfigureAwait(false);
+        DocumentDto result = await Sut.DocumentService.GetByIdAsync(data.Id);
 
         // Assert
         result.Should().NotBeNull();
@@ -39,7 +39,7 @@ public class GetById_Should : BaseTest
     public void Throw_InvalidOperationException_WhenNoSuchElement()
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(100).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(100); };
 
         // Assert
         f.Should().ThrowExactlyAsync<InvalidOperationException>();

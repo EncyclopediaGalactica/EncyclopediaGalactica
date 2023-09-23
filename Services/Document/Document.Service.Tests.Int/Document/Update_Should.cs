@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -22,7 +22,7 @@ public class Update_Should : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(1);
 
         // Act
-        DocumentDto result = await Sut.DocumentService.UpdateAsync(recorded[0], inputDto).ConfigureAwait(false);
+        DocumentDto result = await Sut.DocumentService.UpdateAsync(recorded[0], inputDto);
 
         // Assert
         result.Id.Should().Be(recorded[0]);

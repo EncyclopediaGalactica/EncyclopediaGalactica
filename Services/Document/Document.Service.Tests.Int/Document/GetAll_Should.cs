@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public class GetAll_Should : BaseTest
     public async Task ReturnEmptyList_WhenNoItemInTheDatabase()
     {
         // Act
-        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync().ConfigureAwait(false);
+        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);
@@ -30,7 +30,7 @@ public class GetAll_Should : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(3);
 
         // Act
-        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync().ConfigureAwait(false);
+        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(3);

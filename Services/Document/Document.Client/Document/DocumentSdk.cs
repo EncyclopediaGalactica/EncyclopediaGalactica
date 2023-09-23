@@ -1,6 +1,6 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Document;
 
-using Client.Core.Interfaces;
+using EncyclopediaGalactica.Client.Core.Interfaces;
 using Interfaces;
 
 /// <inheritdoc />

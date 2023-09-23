@@ -1,14 +1,14 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using Dtos;
-using Entities;
-using Errors;
+using EncyclopediaGalactica.Services.Document.Dtos;
+using EncyclopediaGalactica.Services.Document.Entities;
+using EncyclopediaGalactica.Services.Document.Errors;
+using EncyclopediaGalactica.Services.Document.Repository.Exceptions;
+using EncyclopediaGalactica.Services.Document.ValidatorService;
+using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using SourceFormatsRepository.Exceptions;
-using Utils.GuardsService.Exceptions;
-using ValidatorService;
 
 public partial class DocumentService
 {

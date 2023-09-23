@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Xunit;
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class AddAsync_Should : BaseTest
 {
     [Fact]

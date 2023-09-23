@@ -3,8 +3,8 @@ namespace EncyclopediaGalactica.Services.Document.Tests.E2E.SourceFormatNode;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
+using Sdk.Client.Models.SourceFormatNode;
+using Service.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -18,14 +18,14 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("asd")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel).ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         // Act
         SourceFormatNodeGetByIdRequestModel getByIdRequestModel = new SourceFormatNodeGetByIdRequestModel.Builder()
             .SetId(addResponseModel.Result.Id)
             .Build();
         SourceFormatNodeGetByIdResponseModel getByIdResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetByIdAsync(getByIdRequestModel).ConfigureAwait(false);
+            .GetByIdAsync(getByIdRequestModel);
 
         // Assert
         getByIdResponseModel.Should().NotBeNull();
@@ -42,7 +42,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetId(100)
             .Build();
         SourceFormatNodeGetByIdResponseModel getByIdResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetByIdAsync(getByIdRequestModel).ConfigureAwait(false);
+            .GetByIdAsync(getByIdRequestModel);
 
         // Assert
         getByIdResponseModel.Should().NotBeNull();

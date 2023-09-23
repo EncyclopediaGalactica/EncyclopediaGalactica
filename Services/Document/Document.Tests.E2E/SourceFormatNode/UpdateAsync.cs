@@ -4,8 +4,8 @@ using System.Net;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
+using Sdk.Client.Models.SourceFormatNode;
+using Service.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -20,8 +20,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("asd")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel)
-            .ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         // Act
         SourceFormatNodeUpdateRequestModel updateRequestModel = new SourceFormatNodeUpdateRequestModel.Builder()
@@ -29,8 +28,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName(updatedName)
             .Build();
         SourceFormatNodeUpdateResponseModel updateResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .UpdateAsync(updateRequestModel)
-            .ConfigureAwait(false);
+            .UpdateAsync(updateRequestModel);
 
         // Assert
         updateResponseModel.Should().NotBeNull();
@@ -50,8 +48,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("bbsd")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel)
-            .ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         // Act
         addResponseModel.Should().NotBeNull();
@@ -62,8 +59,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName(updatedName)
             .Build();
         SourceFormatNodeUpdateResponseModel updateResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .UpdateAsync(updateRequestModel)
-            .ConfigureAwait(false);
+            .UpdateAsync(updateRequestModel);
 
         // Assert
         updateResponseModel.Should().NotBeNull();
@@ -83,15 +79,13 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("asd")
             .Build();
         SourceFormatNodeAddResponseModel baseResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(baseRequestModel)
-            .ConfigureAwait(false);
+            .AddAsync(baseRequestModel);
 
         SourceFormatNodeAddRequestModel addRequestModel = new SourceFormatNodeAddRequestModel.Builder()
             .SetName("asdff")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel)
-            .ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         // Act
         SourceFormatNodeUpdateRequestModel updateRequestModel = new SourceFormatNodeUpdateRequestModel.Builder()
@@ -99,8 +93,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName(updatedName)
             .Build();
         SourceFormatNodeUpdateResponseModel updateResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .UpdateAsync(updateRequestModel)
-            .ConfigureAwait(false);
+            .UpdateAsync(updateRequestModel);
 
         // Assert
         updateResponseModel.Should().NotBeNull();

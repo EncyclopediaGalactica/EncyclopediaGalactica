@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.Service.Interfaces;
 
 public static class SourceFormatsServiceResultStatuses
 {

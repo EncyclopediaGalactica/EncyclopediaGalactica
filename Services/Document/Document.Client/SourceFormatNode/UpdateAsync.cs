@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.SourceFormatNode;
 
 using Api;
 using Dtos;

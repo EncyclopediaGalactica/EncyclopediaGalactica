@@ -1,22 +1,22 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Unit.DocumentService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService;
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using Ctx;
 using Document;
-using Dtos;
-using Entities;
+using EncyclopediaGalactica.Services.Document.Ctx;
+using EncyclopediaGalactica.Services.Document.Dtos;
+using EncyclopediaGalactica.Services.Document.Entities;
+using EncyclopediaGalactica.Services.Document.Mappers;
+using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
+using EncyclopediaGalactica.Services.Document.Repository.Document;
+using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
+using EncyclopediaGalactica.Utils.GuardsService;
+using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
 using FluentAssertions;
 using FluentValidation;
-using Mappers;
-using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
-using SourceFormatsRepository.Document;
-using SourceFormatsRepository.Interfaces;
-using Utils.GuardsService;
-using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]

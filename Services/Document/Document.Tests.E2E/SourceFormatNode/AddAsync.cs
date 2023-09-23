@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Datasets;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models;
-using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
+using Sdk.Client.Models;
+using Sdk.Client.Models.SourceFormatNode;
+using Service.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -40,8 +40,7 @@ public partial class SourceFormatNodeSdk_Should
             .Build();
 
         // Act
-        SourceFormatNodeAddResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode.AddAsync(requestModel)
-            .ConfigureAwait(false);
+        SourceFormatNodeAddResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode.AddAsync(requestModel);
 
         // Assert
         responseModel.Should().NotBeNull();
@@ -61,13 +60,11 @@ public partial class SourceFormatNodeSdk_Should
             .SetName(name)
             .Build();
         SourceFormatNodeAddResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(requestModel)
-            .ConfigureAwait(false);
+            .AddAsync(requestModel);
 
         // Act
         SourceFormatNodeAddResponseModel responseModel2 = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(requestModel)
-            .ConfigureAwait(false);
+            .AddAsync(requestModel);
 
         // Assert
         responseModel2.Should().NotBeNull();

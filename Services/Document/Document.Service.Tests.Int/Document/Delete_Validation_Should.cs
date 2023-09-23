@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -17,7 +17,7 @@ public class Delete_Validation_Should : BaseTest
     public async Task Throw_WhenInputIsInvalid()
     {
         // Act
-        Func<Task> f = async () => { await Sut.DocumentService.DeleteAsync(0).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.DocumentService.DeleteAsync(0); };
 
         // Assert
         await f.Should().ThrowAsync<InvalidInputToDocumentServiceException>();
@@ -27,7 +27,7 @@ public class Delete_Validation_Should : BaseTest
     public async Task Throw_NoSuchDocument()
     {
         // Act
-        Func<Task> f = async () => { await Sut.DocumentService.DeleteAsync(100).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.DocumentService.DeleteAsync(100); };
 
         // Assert
         await f.Should().ThrowAsync<NoSuchItemDocumentServiceException>();

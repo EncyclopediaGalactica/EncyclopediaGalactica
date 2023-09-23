@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Datasets;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models;
-using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
+using Sdk.Client.Models;
+using Sdk.Client.Models.SourceFormatNode;
+using Service.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -16,7 +16,7 @@ public partial class SourceFormatNodeSdk_Should
     [Theory]
     [MemberData(nameof(SourceFormatNodeDatasets.SDKModels_AddChildToParent_InputValidation_Dataset),
         MemberType = typeof(SourceFormatNodeDatasets))]
-    public async Task Throw_WhenTheUserTtriesToBuildRequestModel_BasedOnInvalidInput(
+    public void Throw_WhenTheUserTtriesToBuildRequestModel_BasedOnInvalidInput(
         long childId,
         long parentId)
     {
@@ -41,13 +41,13 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("root")
             .Build();
         SourceFormatNodeAddResponseModel rootNodeResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(rootNodeAddRequestModel).ConfigureAwait(false);
+            .AddAsync(rootNodeAddRequestModel);
 
         SourceFormatNodeAddRequestModel parentNodeAddRequestModel = new SourceFormatNodeAddRequestModel.Builder()
             .SetName("parent")
             .Build();
         SourceFormatNodeAddResponseModel parentNodeResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(parentNodeAddRequestModel).ConfigureAwait(false);
+            .AddAsync(parentNodeAddRequestModel);
         SourceFormatNodeAddChildToParentRequestModel addParentToRootNodeRequestModel = new
                 SourceFormatNodeAddChildToParentRequestModel.Builder()
             .SetChildrenNodeId(parentNodeResponseModel.Result!.Id)
@@ -60,7 +60,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("child")
             .Build();
         SourceFormatNodeAddResponseModel childResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(childRequestModel).ConfigureAwait(false);
+            .AddAsync(childRequestModel);
 
         // Act
         SourceFormatNodeAddChildToParentRequestModel addChildToParentResponseModel = new
@@ -69,7 +69,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetParentNodeId(addParentToRootNodeResponseModel.Result!.Id)
             .Build();
         SourceFormatNodeAddChildToParentResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddChildToParentAsync(addChildToParentResponseModel).ConfigureAwait(false);
+            .AddChildToParentAsync(addChildToParentResponseModel);
 
         // Assert
         responseModel.Should().NotBeNull();

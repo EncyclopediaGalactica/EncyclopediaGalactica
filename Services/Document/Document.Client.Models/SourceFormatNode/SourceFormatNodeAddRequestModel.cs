@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
-using Client.Core.Model.Interfaces;
 using Dtos;
+using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 using ValidatorService;
 

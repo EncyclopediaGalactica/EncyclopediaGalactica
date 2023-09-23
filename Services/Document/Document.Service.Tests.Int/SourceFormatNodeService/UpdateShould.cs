@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
@@ -21,7 +21,7 @@ public class UpdateShould : BaseTest
             Name = "asd"
         };
         SourceFormatNodeDto addResponseModel = await Sut.SourceFormatNode
-            .AddAsync(dto).ConfigureAwait(false);
+            .AddAsync(dto);
         string updatedName = "asdasd";
         SourceFormatNodeDto updateTemplate = new()
         {
@@ -31,8 +31,7 @@ public class UpdateShould : BaseTest
 
         // Act
         SourceFormatNodeDto updateResponseModel = await Sut.SourceFormatNode
-            .UpdateSourceFormatNodeAsync(updateTemplate)
-            .ConfigureAwait(false);
+            .UpdateSourceFormatNodeAsync(updateTemplate);
 
         // Assert
         updateResponseModel.Should().NotBeNull();
@@ -54,7 +53,7 @@ public class UpdateShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(updateTemplate).ConfigureAwait(false);
+                .UpdateSourceFormatNodeAsync(updateTemplate);
         };
 
         // Assert

@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Resolvers.Document;
 using Arguments;
 using Dtos;
 using HotChocolate.Resolvers;
-using SourceFormatsService.Interfaces.Document;
+using Service.Interfaces.Document;
 
 public partial class DocumentResolvers
 {

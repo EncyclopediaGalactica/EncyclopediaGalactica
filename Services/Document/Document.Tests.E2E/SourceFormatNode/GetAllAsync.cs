@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models.SourceFormatNode;
+using Sdk.Client.Models.SourceFormatNode;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -19,14 +19,14 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("add")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel).ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         SourceFormatNodeGetAllRequestModel requestModel = new SourceFormatNodeGetAllRequestModel.Builder()
             .Build();
 
         // Act
         SourceFormatNodeGetAllResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetAllAsync(requestModel).ConfigureAwait(false);
+            .GetAllAsync(requestModel);
 
         // Assert
         responseModel.Should().NotBeNull();
@@ -46,20 +46,20 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("add1")
             .Build();
         SourceFormatNodeAddResponseModel add1ResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(add1RequestModel).ConfigureAwait(false);
+            .AddAsync(add1RequestModel);
 
         SourceFormatNodeAddRequestModel add2RequestModel = new SourceFormatNodeAddRequestModel.Builder()
             .SetName("add2")
             .Build();
         SourceFormatNodeAddResponseModel add2ResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(add2RequestModel).ConfigureAwait(false);
+            .AddAsync(add2RequestModel);
 
         SourceFormatNodeGetAllRequestModel requestModel = new SourceFormatNodeGetAllRequestModel.Builder()
             .Build();
 
         // Act
         SourceFormatNodeGetAllResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetAllAsync(requestModel).ConfigureAwait(false);
+            .GetAllAsync(requestModel);
 
         // Assert
         responseModel.Should().NotBeNull();
@@ -81,7 +81,7 @@ public partial class SourceFormatNodeSdk_Should
 
         // Act
         SourceFormatNodeGetAllResponseModel responseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetAllAsync(requestModel).ConfigureAwait(false);
+            .GetAllAsync(requestModel);
 
         // Assert
         responseModel.Should().NotBeNull();

@@ -1,9 +1,11 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Document;
 
 using Ctx;
 using Entities;
 using Exceptions;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using ValidatorService;
 
 public partial class DocumentRepository
 {
@@ -13,9 +15,10 @@ public partial class DocumentRepository
         Document documentWithNewValues,
         CancellationToken cancellationToken = default)
     {
+        await ValidateUpdateAsyncInputAsync(documentWithNewValues, cancellationToken);
         await using (DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions))
         {
-            Document? toBeModified = await ctx.Documents.FindAsync(documentId);
+            Document? toBeModified = await ctx.Documents.FindAsync(documentId, cancellationToken).ConfigureAwait(false);
             CheckIfDocumentBeenFoundOrThrow(toBeModified!, documentId);
 #pragma warning disable CS8604 // Possible null reference argument.
             ModifyDocumentValues(toBeModified, documentWithNewValues);
@@ -26,9 +29,23 @@ public partial class DocumentRepository
         }
     }
 
+    private async Task ValidateUpdateAsyncInputAsync(
+        Document documentWithNewValues,
+        CancellationToken cancellationToken)
+    {
+        await _documentValidator.ValidateAsync(
+                documentWithNewValues,
+                o =>
+                {
+                    o.ThrowOnFailures();
+                    o.IncludeRuleSets(Operations.Update);
+                },
+                cancellationToken)
+            .ConfigureAwait(false);
+    }
+
     private void ModifyDocumentValues(Document toBeModified, Document documentWithNewValues)
     {
-        // The input is already validated, so there is no reason to validate them again
         if (toBeModified.Name != documentWithNewValues.Name)
         {
             toBeModified.Name = documentWithNewValues.Name;
