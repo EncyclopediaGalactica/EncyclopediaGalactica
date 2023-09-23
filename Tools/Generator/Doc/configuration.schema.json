@@ -11,7 +11,8 @@
     "target_directory",
     "solution_base_namespace",
     "solution_file_type",
-    "solution_project_file_type"
+    "solution_project_file_type",
+    "dto_project_name"
   ],
   "properties": {
     "lang": {
@@ -40,6 +41,10 @@
     },
     "solution_project_file_type": {
       "description": "REQUIRED: The file type of the solution projects.",
+      "type": "string"
+    },
+    "dto_project_name": {
+      "description": "REQUIRED: The name of the DTO project",
       "type": "string"
     },
     "skip_dto_preprocess": {
