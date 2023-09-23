@@ -118,6 +118,32 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     });
             });
 
+        RuleFor(p => p.DtoProjectNameSpace)
+            .NotNull()
+            .WithMessage("Dto Namespace value must be provided")
+            .DependentRules(() =>
+            {
+                RuleFor(p => p.DtoProjectNameSpace)
+                    .NotEmpty()
+                    .WithMessage("Dto Project Namespace must not be empty")
+                    .DependentRules(() =>
+                    {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                        RuleFor(p => p.DtoProjectNameSpace.Trim().Length)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                            .GreaterThanOrEqualTo(1)
+                            .WithMessage("Dto Project Name must not consists only of space characters.")
+                            .DependentRules(() =>
+                            {
+#pragma warning disable CS8604 // Possible null reference argument.
+                                RuleFor(p => p.DtoProjectNameSpace.All(char.IsLetter))
+#pragma warning restore CS8604 // Possible null reference argument.
+                                    .Equal(true)
+                                    .WithMessage("Dto Project Namespace must contains only letters");
+                            });
+                    });
+            });
+
         RuleFor(p => p.DtoProjectBasePath).NotNull().NotEmpty()
             .WithMessage("Dto project base path must be provided");
 

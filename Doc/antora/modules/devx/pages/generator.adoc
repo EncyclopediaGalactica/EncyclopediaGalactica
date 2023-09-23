@@ -122,7 +122,8 @@ It contains all the particular related variable information like:
 
 - the Dto project is placed in the `${target_directory}/${dto_project_name}.Dto` directory
 - the Dto project file is placed in the `${target_directory}/${dto_project_name}.Dto` directory with the name of `${dto_project_name}.Dto.${solution_project_file_type}`, e.g. in case of C# it is `.csproj`
-- the Dto project has namespace value which is generated from the solution base namespace value using the following rule `${solution_base_namespace}.${dto_project_namespace}`, but its default value is `Dto`
+- the Dto project namespace value has to be provided by the configuration file.
+The provided value will be used like folows: `${solution_base_namespace}.${dto_project_namespace}`
 
 ==== Dto Test project level rules
 
@@ -431,6 +432,14 @@ The Dto project name value defines the following in terms of generating code:
 
 - where the generator will look for the Dto project as it will create a path based on the provided name
 
+.Providing "Dto project name" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_name": "DtoProjectName"
+}
+----
+
 .Input validation rules and result
 |===
 |Input|Validation result
@@ -463,4 +472,40 @@ The Dto project name value defines the following in terms of generating code:
 
 |csharp
 |Dto.Project.Name
+|===
+
+=== Dto Project Namespace
+
+The Dto Project Namespace defines the namespace of the DTO classes in the Dto project.
+
+.Providing "Dto project name" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_namespace": "DtoNamespace"
+}
+----
+
+.Input validation rules and results
+|===
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|`   ` (whitespace)
+|throws
+
+|Includes other than letters characters
+|throws
+
+|First character is not uppercase
+|First letter is transformed to uppercase
+
 |===
