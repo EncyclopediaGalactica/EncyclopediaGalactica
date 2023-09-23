@@ -1,3 +1,10 @@
+# [0.9.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.8.0...0.9.0) (2023-09-23)
+
+
+### Features
+
+* Document CRUD Graphql endpoint ([#112](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/112)) ([0157228](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0157228717fc1b7f1f74969d8cf3256728936a40))
+
 # [0.8.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.7.0...0.8.0) (2023-08-29)
 
 
