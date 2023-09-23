@@ -15,11 +15,11 @@
     <ItemGroup>
         <PackageReference Include="FluentAssertions" Version="6.12.0"/>
         <PackageReference Include="Microsoft.Build" Version="17.7.2"/>
-        <PackageReference Include="Microsoft.OpenApi" Version="1.6.8" />
-        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.8" />
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.8"/>
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.8"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2"/>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
-        <PackageReference Include="xunit" Version="2.5.1" />
+        <PackageReference Include="xunit" Version="2.5.1"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -658,6 +658,21 @@
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
         <None Update="e2e\dto_project_name\number_right_after_the_dot.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\dto_project_namespace\whitespace.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\dto_project_namespace\not_defined.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\dto_project_namespace\empty.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\dto_project_namespace\includes_alphanumeric.config.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="e2e\dto_project_namespace\openapi.yaml">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
     </ItemGroup>
