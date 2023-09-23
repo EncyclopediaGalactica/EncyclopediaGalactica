@@ -1,3 +1,10 @@
+## [0.9.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.1...0.9.2) (2023-09-23)
+
+
+### Bug Fixes
+
+* adding dto_project_namespace value to configuration schema ([#114](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/114)) ([b46d5e5](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/b46d5e530f186c1a8a64ec5ab9a86cb6a7c4803d))
+
 ## [0.9.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.0...0.9.1) (2023-09-23)
 
 
