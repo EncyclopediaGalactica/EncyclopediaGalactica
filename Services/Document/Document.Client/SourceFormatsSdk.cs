@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client;
 
 using Interfaces;
 

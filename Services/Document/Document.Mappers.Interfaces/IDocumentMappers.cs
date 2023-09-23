@@ -26,4 +26,11 @@ public interface IDocumentMappers
     ///     <see cref="DocumentDto" />
     /// </returns>
     DocumentDto MapDocumentToDocumentDto(Document document);
+
+    /// <summary>
+    ///     Maps <see cref="List{T}" /> of <see cref="Document" /> to <see cref="List{T}" /> of <see cref="DocumentDto" />.
+    /// </summary>
+    /// <param name="l"><see cref="List{T}" /> of <see cref="Document" /></param>
+    /// <returns>List of <see cref="DocumentDto" />s.</returns>
+    List<DocumentDto> MapDocumentsToDocumentDtos(List<Document> l);
 }

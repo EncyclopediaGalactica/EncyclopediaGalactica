@@ -1,16 +1,12 @@
-namespace Document.Graphql.Types;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
 
 using HotChocolate.Types;
-using Resolvers;
+using Resolvers.Document;
 
-public class MutationType : ObjectType
+public class AddDocumentMutation : ObjectTypeExtension<Mutation>
 {
-    protected override void Configure(IObjectTypeDescriptor descriptor)
+    protected override void Configure(IObjectTypeDescriptor<Mutation> descriptor)
     {
-        descriptor
-            .Name(OperationTypeNames.Mutation)
-            .Description("Mutation types to record data in the system");
-
         descriptor
             .Field("addDocument")
             .Type<NonNullType<DocumentDtoType>>()

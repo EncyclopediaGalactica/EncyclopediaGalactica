@@ -1,13 +1,13 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters;
+namespace EncyclopediaGalactica.Services.Document.Controllers.ExceptionFilters;
 
 using System.Net;
-using Interfaces;
+using CacheService.Exceptions;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
-using SourceFormatsCacheService.Exceptions;
-using SourceFormatsRepository.Exceptions;
+using Repository.Exceptions;
+using Service.Interfaces;
 
 public class InternalServerErrorExceptionsFilter : IActionFilter
 {

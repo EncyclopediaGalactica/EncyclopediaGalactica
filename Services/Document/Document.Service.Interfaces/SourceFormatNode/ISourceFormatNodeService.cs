@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode;
 
 using Dtos;
 using Entities;
 using Exceptions;
 using FluentValidation;
-using Sdk.Models.SourceFormatNode;
+using Sdk.Client.Models.SourceFormatNode;
 
 public interface ISourceFormatNodeService
 {

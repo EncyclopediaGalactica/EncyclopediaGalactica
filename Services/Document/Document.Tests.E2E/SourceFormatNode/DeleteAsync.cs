@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Dtos;
 using FluentAssertions;
-using Sdk.Models;
-using Sdk.Models.SourceFormatNode;
-using SourceFormatsService.Interfaces;
+using Sdk.Client.Models;
+using Sdk.Client.Models.SourceFormatNode;
+using Service.Interfaces;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -35,15 +35,14 @@ public partial class SourceFormatNodeSdk_Should
             .SetName("asd")
             .Build();
         SourceFormatNodeAddResponseModel addResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .AddAsync(addRequestModel)
-            .ConfigureAwait(false);
+            .AddAsync(addRequestModel);
 
         // Act
         SourceFormatNodeDeleteRequestModel deleteRequestModel = new SourceFormatNodeDeleteRequestModel.Builder()
             .SetId(addResponseModel.Result.Id)
             .Build();
         SourceFormatNodeDeleteResponseModel deleteResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .DeleteAsync(deleteRequestModel).ConfigureAwait(false);
+            .DeleteAsync(deleteRequestModel);
 
         // Assert
         deleteResponseModel.Should().NotBeNull();
@@ -53,7 +52,7 @@ public partial class SourceFormatNodeSdk_Should
         SourceFormatNodeGetAllRequestModel getAllRequestModel = new SourceFormatNodeGetAllRequestModel.Builder()
             .Build();
         SourceFormatNodeGetAllResponseModel getAllResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .GetAllAsync(getAllRequestModel).ConfigureAwait(false);
+            .GetAllAsync(getAllRequestModel);
         getAllResponseModel.Should().NotBeNull();
         getAllResponseModel.Result.Should().NotBeNull();
         getAllResponseModel.Result.Should().BeOfType<List<SourceFormatNodeDto>>();
@@ -68,7 +67,7 @@ public partial class SourceFormatNodeSdk_Should
             .SetId(100)
             .Build();
         SourceFormatNodeDeleteResponseModel deleteResponseModel = await SourceFormatsSdk.SourceFormatNode
-            .DeleteAsync(deleteRequestModel).ConfigureAwait(false);
+            .DeleteAsync(deleteRequestModel);
 
         // Assert
         deleteResponseModel.Should().NotBeNull();

@@ -1,6 +1,6 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.SourceFormatNode;
 
-using Client.Core.Interfaces;
+using EncyclopediaGalactica.Client.Core.Interfaces;
 using Interfaces;
 
 public partial class SourceFormatNodeSdk : ISourceFormatNodeSdk

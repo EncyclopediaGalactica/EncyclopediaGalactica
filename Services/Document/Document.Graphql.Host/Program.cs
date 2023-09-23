@@ -1,24 +1,24 @@
 using System.Diagnostics;
-using Document.Graphql.Types;
+using EncyclopediaGalactica.Services.Document.CacheService.Interfaces;
+using EncyclopediaGalactica.Services.Document.CacheService.SourceFormatNode;
 using EncyclopediaGalactica.Services.Document.Ctx;
 using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.Entities;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
 using EncyclopediaGalactica.Services.Document.Mappers;
 using EncyclopediaGalactica.Services.Document.Mappers.Document;
 using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
 using EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
+using EncyclopediaGalactica.Services.Document.Repository;
+using EncyclopediaGalactica.Services.Document.Repository.Document;
+using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
+using EncyclopediaGalactica.Services.Document.Repository.SourceFormatNode;
+using EncyclopediaGalactica.Services.Document.Service;
+using EncyclopediaGalactica.Services.Document.Service.Document;
+using EncyclopediaGalactica.Services.Document.Service.Interfaces;
+using EncyclopediaGalactica.Services.Document.Service.Interfaces.Document;
+using EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode;
+using EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 using EncyclopediaGalactica.Services.Document.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;
 using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
@@ -52,7 +52,8 @@ builder.Services
 builder.Services
     .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
     .AddScoped<IValidator<SourceFormatNodeDto>, SourceFormatNodeDtoValidator>()
-    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>();
+    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
+    .AddScoped<IValidator<DocumentDto>, DocumentDtoValidator>();
 
 // database
 SqliteConnection connection = new("Filename=:memory:");
@@ -86,8 +87,8 @@ builder.Services.AddLogging(log =>
 // graphql related settings
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<QueryType>()
-    .AddMutationType<MutationType>()
+    .AddQueryType<GetDocumentsQuery>()
+    .AddMutationType<UpdateDocumentMutation>()
     .RegisterService<IDocumentService>()
     .AddType<DocumentDtoType>()
     .AddType<DocumentDtoInputType>();

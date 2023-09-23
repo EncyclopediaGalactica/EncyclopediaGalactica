@@ -8,10 +8,10 @@ using Client.Core;
 using Client.Core.Interfaces;
 using Host.RestApi;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Sdk;
-using Sdk.Document;
-using Sdk.Interfaces;
-using Sdk.SourceFormatNode;
+using Sdk.Client;
+using Sdk.Client.Document;
+using Sdk.Client.Interfaces;
+using Sdk.Client.SourceFormatNode;
 
 public class TestBase : SourceFormatWebApplicationFactory<Program>
 {

@@ -1,15 +1,18 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.SourceFormatNode;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class GetByIdWithFlatTreeShould : BaseTest
 {
     [Fact]

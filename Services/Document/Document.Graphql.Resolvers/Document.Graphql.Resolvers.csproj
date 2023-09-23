@@ -1,12 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Graphql.Resolvers</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Graphql.Resolvers</RootNamespace>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Document.Graphql.Arguments\Document.Graphql.Arguments.csproj"/>
         <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
     </ItemGroup>
 
@@ -14,5 +17,6 @@
         <PackageReference Include="HotChocolate.Types" Version="13.5.1"/>
         <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0"/>
     </ItemGroup>
+
 
 </Project>

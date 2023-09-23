@@ -1,6 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Graphql.Types</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Graphql.Types</RootNamespace>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -14,5 +16,6 @@
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
         <ProjectReference Include="..\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj"/>
     </ItemGroup>
+
 
 </Project>

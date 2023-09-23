@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Document;
 
 using Ctx;
 using Entities;
@@ -21,11 +21,5 @@ public partial class DocumentRepository : IDocumentsRepository
 
         _dbContextOptions = dbContextOptions;
         _documentValidator = documentValidator;
-    }
-
-    /// <inheritdoc />
-    public async Task<List<Document>> GetAllAsync(CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
     }
 }

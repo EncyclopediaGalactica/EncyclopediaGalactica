@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Document;
 
 using Api;
 using Dtos;

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Unit.SourceFormatsService;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatsService;
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using Ctx;
 using Document;
 using Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Services.Document.SourceFormatsRepository.SourceFormatNode;
+using Repository.SourceFormatNode;
 using Utils.GuardsService;
 using ValidatorService;
 using Xunit;

@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Exceptions</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Exceptions</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.CacheService.Exceptions</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.CacheService.Exceptions</RootNamespace>
     </PropertyGroup>
 
 </Project>

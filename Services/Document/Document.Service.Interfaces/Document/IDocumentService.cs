@@ -1,10 +1,8 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Interfaces.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.Document;
 
 using Dtos;
 using Entities;
-using FluentValidation;
-using Microsoft.EntityFrameworkCore;
-using Utils.GuardsService.Exceptions;
+using Exceptions;
 
 /// <summary>
 ///     IDocument IAM.Service interface.
@@ -18,25 +16,23 @@ public interface IDocumentService
     ///     Adds a <see cref="Document" /> object to the system with the values represented by the provided
     ///     <see cref="DocumentDto" />.
     /// </summary>
-    /// <param name="dto">The input object</param>
+    /// <param name="dtoInput">The input object</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
     /// <returns>
     ///     Returns a <see cref="Task{TResult}" /> object representing the result of an asynchronous operation.
     /// </returns>
-    /// <exception cref="ArgumentNullException">
-    ///     When input is null.
+    /// <exception cref="InvalidInputToDocumentServiceException">
+    ///     When invalid input is provided to the service
     /// </exception>
-    /// <exception cref="ValidationException">When input is invalid</exception>
-    /// <exception cref="DbUpdateException">
-    ///     When a constraint defined by SQL schema is violated. It is mainly validation
-    ///     related problem.
+    /// <exception cref="DocumentServiceOperationCancelledException">
+    ///     When the operation cancelled by <see cref="CancellationToken" />.
     /// </exception>
-    /// <exception cref="OperationCanceledException">
-    ///     When the operation is cancelled by a <see cref="CancellationToken" />
+    /// <exception cref="UnknownErrorDocumentServiceException">
+    ///     When any other error happens.
     /// </exception>
-    Task<DocumentDto> AddAsync(DocumentDto dto, CancellationToken cancellationToken = default);
+    Task<DocumentDto> AddAsync(DocumentDto dtoInput, CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Returns a <see cref="List{T}" /> of <see cref="DocumentDto" /> representing the <see cref="Document" /> entities in
@@ -49,8 +45,11 @@ public interface IDocumentService
     /// <exception cref="ArgumentNullException">
     ///     When input is null.
     /// </exception>
-    /// <exception cref="OperationCanceledException">
+    /// <exception cref="DocumentServiceOperationCancelledException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />
+    /// </exception>
+    /// <exception cref="UnknownErrorDocumentServiceException">
+    ///     In case of any other errors
     /// </exception>
     Task<List<DocumentDto>> GetAllAsync(CancellationToken cancellationToken = default);
 
@@ -65,11 +64,60 @@ public interface IDocumentService
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation. It includes the
     ///     <see cref="DocumentDto" /> result.
     /// </returns>
-    /// <exception cref="ArgumentNullException">When the input is null</exception>
-    /// <exception cref="GuardsServiceValueShouldNotBeEqualToException">When the input is invalid</exception>
-    /// <exception cref="InvalidOperationException">When there is no such item</exception>
-    /// <exception cref="OperationCanceledException">
+    /// <exception cref="InvalidInputToDocumentServiceException">
+    ///     Invalid input provided to the service
+    /// </exception>
+    /// <exception cref="DocumentServiceOperationCancelledException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />.
     /// </exception>
+    /// <exception cref="NoSuchItemDocumentServiceException">
+    ///     When there is no such item in the system based on, probably, entity id.
+    /// </exception>
+    /// <exception cref="UnknownErrorDocumentServiceException">
+    ///     In case of any other errors
+    /// </exception>
     Task<DocumentDto> GetByIdAsync(long id, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    ///     Modifies the designated <see cref="Document" /> entity in the system based on the provided
+    ///     <see cref="DocumentDto" /> instance.
+    /// </summary>
+    /// <param name="documentId">The id of entity to be modified</param>
+    /// <param name="modifiedDto">The provided changes</param>
+    /// <returns>
+    ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation.
+    ///     It included the <see cref="DocumentDto" /> result.
+    /// </returns>
+    /// <exception cref="InvalidInputToDocumentServiceException">
+    ///     Invalid input provided to the service
+    /// </exception>
+    /// <exception cref="DocumentServiceOperationCancelledException">
+    ///     When the operation is cancelled by a <see cref="CancellationToken" />.
+    /// </exception>
+    /// <exception cref="NoSuchItemDocumentServiceException">
+    ///     When there is no such item in the system based on, probably, entity id.
+    /// </exception>
+    /// <exception cref="UnknownErrorDocumentServiceException">
+    ///     In case of any other errors
+    /// </exception>
+    Task<DocumentDto> UpdateAsync(long documentId, DocumentDto modifiedDto);
+
+    /// <summary>
+    ///     Deletes the designated <see cref="Document" /> entity.
+    /// </summary>
+    /// <param name="documentId">The unique identifier of the <see cref="Document" /> entity to be deleted.</param>
+    /// <param name="cancellationToken"><see cref="CancellationToken" />.</param>
+    /// <exception cref="InvalidInputToDocumentServiceException">
+    ///     Invalid input provided to the service
+    /// </exception>
+    /// <exception cref="DocumentServiceOperationCancelledException">
+    ///     When the operation is cancelled by a <see cref="CancellationToken" />.
+    /// </exception>
+    /// <exception cref="NoSuchItemDocumentServiceException">
+    ///     When there is no such entity in the system based on its unique identifier.
+    /// </exception>
+    /// <exception cref="UnknownErrorDocumentServiceException">
+    ///     In case of any other errors.
+    /// </exception>
+    Task DeleteAsync(long documentId, CancellationToken cancellationToken = default);
 }

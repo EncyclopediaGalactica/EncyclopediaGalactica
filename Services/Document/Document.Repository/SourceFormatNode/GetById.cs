@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.SourceFormatNode;
 
 using Ctx;
 using Entities;

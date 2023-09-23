@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -7,13 +7,13 @@ using Ctx;
 using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Services.Document.SourceFormatsRepository.Document;
-using Services.Document.SourceFormatsRepository.SourceFormatNode;
+using Repository.Document;
+using Repository.SourceFormatNode;
 using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
-public class BaseTest
+public partial class BaseTest
 {
 #pragma warning disable CA1051
     protected readonly ISourceFormatsRepository Sut;

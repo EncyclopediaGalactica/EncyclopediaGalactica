@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Document;
 
 using Ctx;
 using Entities;
@@ -10,10 +10,8 @@ public partial class DocumentRepository
     {
         await using DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions);
         Document? result = await ctx.Documents.FindAsync(id, cancellationToken).ConfigureAwait(false);
-
         if (result is null)
             throw new InvalidOperationException("No such entity.");
-
         return result;
     }
 }

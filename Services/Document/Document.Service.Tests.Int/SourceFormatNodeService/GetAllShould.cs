@@ -1,9 +1,10 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using Xunit;
@@ -23,13 +24,11 @@ public class GetAllShould : BaseTest
         };
 
         await Sut.SourceFormatNode
-            .AddAsync(dto)
-            .ConfigureAwait(false);
+            .AddAsync(dto);
 
         // Act
         List<SourceFormatNodeDto> result = await Sut.SourceFormatNode
-            .GetAllAsync()
-            .ConfigureAwait(false);
+            .GetAllAsync();
 
         // Assert
         result.Should().NotBeNull();
@@ -42,8 +41,7 @@ public class GetAllShould : BaseTest
     public async Task ReturnsResponseModel_EmptyList_WhenThereAreNoEntitiesInTheDb()
     {
         // Act
-        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode.GetAllAsync()
-            .ConfigureAwait(false);
+        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode.GetAllAsync();
 
         // Assert
         result.Should().NotBeNull();

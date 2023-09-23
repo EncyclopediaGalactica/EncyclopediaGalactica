@@ -1,11 +1,12 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
+using Exceptions;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -24,17 +25,16 @@ public class Add_Should : BaseTest
             Description = "desc"
         };
 
-        DocumentDto firstResult = await Sut.DocumentService.AddAsync(first).ConfigureAwait(false);
+        DocumentDto firstResult = await Sut.DocumentService.AddAsync(first);
 
         // Act
         Func<Task> f = async () =>
         {
-            await Sut.DocumentService.AddAsync(new DocumentDto { Name = name, Description = "desc" })
-                .ConfigureAwait(false);
+            await Sut.DocumentService.AddAsync(new DocumentDto { Name = name, Description = "desc" });
         };
 
         // Assert
-        await f.Should().ThrowExactlyAsync<DbUpdateException>().ConfigureAwait(false);
+        await f.Should().ThrowExactlyAsync<InvalidInputToDocumentServiceException>();
     }
 
     [Fact]
@@ -48,7 +48,7 @@ public class Add_Should : BaseTest
         };
 
         // Act
-        DocumentDto result = await Sut.DocumentService.AddAsync(first).ConfigureAwait(false);
+        DocumentDto result = await Sut.DocumentService.AddAsync(first);
 
         // Assert
         result.Id.Should().BeGreaterThan(0);

@@ -1,6 +1,6 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Interfaces;
 
-using Dtos;
+using EncyclopediaGalactica.Services.Document.Dtos;
 using Exceptions;
 using Models.SourceFormatNode;
 

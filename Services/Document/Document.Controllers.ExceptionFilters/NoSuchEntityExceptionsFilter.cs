@@ -1,9 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters;
+namespace EncyclopediaGalactica.Services.Document.Controllers.ExceptionFilters;
 
 using System.Net;
-using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Service.Interfaces;
 
 public class NoSuchEntityExceptionsFilter : IActionFilter
 {

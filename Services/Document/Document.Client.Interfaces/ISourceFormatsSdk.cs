@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Interfaces;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Interfaces;
 
 /// <summary>
 ///     The ISourceFormatsSdk interface.

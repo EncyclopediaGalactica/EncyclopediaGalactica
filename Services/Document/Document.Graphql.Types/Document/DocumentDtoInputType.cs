@@ -1,6 +1,6 @@
-namespace Document.Graphql.Types;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Dtos;
 using HotChocolate.Types;
 
 public class DocumentDtoInputType : InputObjectType<DocumentDto>
@@ -10,12 +10,12 @@ public class DocumentDtoInputType : InputObjectType<DocumentDto>
         descriptor
             .Field(f => f.Id)
             .Description("Unique identifier of the entity")
-            .Type<IdType>();
+            .Type<NonNullType<FloatType>>();
 
         descriptor
             .Field(f => f.Name)
             .Description("Name of the entity")
-            .Type<StringType>();
+            .Type<NonNullType<StringType>>();
 
         descriptor
             .Field(f => f.Description)

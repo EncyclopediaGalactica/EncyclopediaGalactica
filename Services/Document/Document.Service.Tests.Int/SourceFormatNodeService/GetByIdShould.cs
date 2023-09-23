@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using Xunit;
@@ -16,12 +17,11 @@ public class GetByIdShould : BaseTest
     {
         // Arrange
         SourceFormatNodeDto node = new SourceFormatNodeDto { Name = "asdasd" };
-        SourceFormatNodeDto entity = await Sut.SourceFormatNode.AddAsync(node)
-            .ConfigureAwait(false);
+        SourceFormatNodeDto entity = await Sut.SourceFormatNode.AddAsync(node);
 
         // Act
         SourceFormatNodeDto result = await Sut.SourceFormatNode
-            .GetByIdAsync(entity.Id).ConfigureAwait(false);
+            .GetByIdAsync(entity.Id);
 
         // Assert
         result.Should().NotBeNull();
@@ -33,7 +33,7 @@ public class GetByIdShould : BaseTest
     public async Task Throw_InvalidOperationException_WhenNoSuchEntity()
     {
         // Act
-        Func<Task> task = async () => { await Sut.SourceFormatNode.GetByIdAsync(100).ConfigureAwait(false); };
+        Func<Task> task = async () => { await Sut.SourceFormatNode.GetByIdAsync(100); };
 
         // Assert
         await task.Should().ThrowExactlyAsync<InvalidOperationException>();

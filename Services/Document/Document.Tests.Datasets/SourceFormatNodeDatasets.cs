@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using Dtos;
 
 [ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 public static class SourceFormatNodeDatasets
 {
     public static IEnumerable<object?[]> AddValidationDataSet => new List<object?[]>

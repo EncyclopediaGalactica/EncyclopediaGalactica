@@ -5,7 +5,7 @@ using Dtos;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SourceFormats.Services.Document.ViewModels;
+using ViewModels;
 
 public partial class SourceFormatNodeController
 {
