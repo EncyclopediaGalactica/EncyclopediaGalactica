@@ -436,7 +436,7 @@ The Dto project name value defines the following in terms of generating code:
 [source,json]
 ----
 {
-  "dto_project_name": "csproj"
+  "dto_project_name": "DtoProjectName"
 }
 ----
 
@@ -482,7 +482,7 @@ The Dto Project Namespace defines the namespace of the DTO classes in the Dto pr
 [source,json]
 ----
 {
-  "dto_project_namespace": "Dto"
+  "dto_project_namespace": "DtoNamespace"
 }
 ----
 
