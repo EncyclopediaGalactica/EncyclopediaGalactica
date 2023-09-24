@@ -18,12 +18,12 @@ public class GetByIdWithChildrenShould : BaseTest
     {
         // Arrange
         (int childAmount, long childId, long parentId, long rootNodeId) prep =
-            await PrepareSourceFormatNodeRepoWith_OneParentAnd_OneChild()
-                .ConfigureAwait(false);
+                await PrepareSourceFormatNodeRepoWith_OneParentAnd_OneChild()
+            ;
 
         // Act
         SourceFormatNode res =
-            await Sut.SourceFormatNodes.GetByIdWithChildrenAsync(prep.parentId).ConfigureAwait(false);
+            await Sut.SourceFormatNodes.GetByIdWithChildrenAsync(prep.parentId);
 
         // Assert
         res.ChildrenSourceFormatNodes.Should().NotBeNull();
@@ -35,10 +35,10 @@ public class GetByIdWithChildrenShould : BaseTest
     public async Task ReturnNullWhenNoResult()
     {
         // Arrange
-        SourceFormatNode rep = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd")).ConfigureAwait(false);
+        SourceFormatNode rep = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("asd"));
 
         // Act
-        SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdWithChildrenAsync(rep.Id).ConfigureAwait(false);
+        SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdWithChildrenAsync(rep.Id);
 
         // Assert
         result.Should().NotBeNull();

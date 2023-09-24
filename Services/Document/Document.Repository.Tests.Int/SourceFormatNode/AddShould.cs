@@ -22,7 +22,7 @@ public class AddShould : BaseTest
         node.Name = "name";
 
         // Act
-        SourceFormatNode res = await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
+        SourceFormatNode res = await Sut.SourceFormatNodes.AddAsync(node);
 
         // Assert
         res.Name.Should().Be(node.Name);
@@ -32,11 +32,11 @@ public class AddShould : BaseTest
     public async Task Throw_WhenInputIsNull()
     {
         // Arrange & Act
-        Func<Task> task = async () => { await Sut.SourceFormatNodes.AddAsync(null!).ConfigureAwait(false); };
+        Func<Task> task = async () => { await Sut.SourceFormatNodes.AddAsync(null!); };
 
         // Assert
         await task.Should()
-            .ThrowExactlyAsync<ArgumentNullException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<ArgumentNullException>()
+            ;
     }
 }

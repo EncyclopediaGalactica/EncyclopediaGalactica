@@ -22,10 +22,10 @@ public class GetAllAsync_Should : BaseTest
     public async Task ReturnAll(int amount)
     {
         // Arrange
-        await CreateDocumentEntities(amount).ConfigureAwait(false);
+        await CreateDocumentEntities(amount);
 
         // Act
-        List<Document> result = await Sut.Documents.GetAllAsync().ConfigureAwait(false);
+        List<Document> result = await Sut.Documents.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(amount);

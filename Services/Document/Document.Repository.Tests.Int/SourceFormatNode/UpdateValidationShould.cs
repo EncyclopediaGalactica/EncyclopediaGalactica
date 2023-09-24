@@ -32,12 +32,12 @@ public class UpdateValidationShould : BaseTest
         node.Name = name;
 
         // Act
-        Func<Task> action = async () => { await Sut.SourceFormatNodes.UpdateAsync(node).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.UpdateAsync(node); };
 
         // Assert
         action.Should()
             .ThrowExactlyAsync<SourceFormatNodeRepositoryException>()
             .WithInnerExceptionExactly<SourceFormatNodeRepositoryException, ValidationException>()
-            .ConfigureAwait(false);
+            ;
     }
 }

@@ -18,10 +18,7 @@ public class GetByIdWithParentNodeAsyncValidation : BaseTest
     public void Throw_WhenInputIsInvalid()
     {
         // Act
-        Func<Task> action = async () =>
-        {
-            await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(0).ConfigureAwait(false);
-        };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(0); };
 
         // Assert
         action.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

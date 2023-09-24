@@ -28,7 +28,7 @@ public class AddAsync_Validation_Should : BaseTest
     public void Throw_ValidationException_WhenInput_IsInvalid(Document input)
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.Documents.AddAsync(input).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.Documents.AddAsync(input); };
 
         // Assert
         f.Should().ThrowExactlyAsync<ValidationException>();
