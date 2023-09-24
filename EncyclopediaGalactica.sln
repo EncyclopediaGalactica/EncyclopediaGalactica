@@ -273,8 +273,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Tests.E2E", "Services\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Controllers.ViewModels.Tests.Unit", "Services\Document\Document.Controllers.ViewModels.Tests.Unit\Document.Controllers.ViewModels.Tests.Unit.csproj", "{69EFE5E9-7DB1-4F80-AD93-F0A07DC546F1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Doc", "Doc", "{66D74E39-6BE1-456A-B35D-1FAB6262BE40}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{D9E1FB80-CB57-4EB8-8E00-4447EDB34EB4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generator", "Generator", "{6EF5F13D-67C6-4059-B839-83D525EC16A5}"
@@ -296,19 +294,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Repository", "Services\Core\Core.Repository\Core.Repository.csproj", "{337391B2-2182-4BF2-8911-431E67EA5C72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Client.Models.Tests.Unit", "Services\Document\Document.Client.Models.Tests.Unit\Document.Client.Models.Tests.Unit.csproj", "{864E5855-7836-46BC-BFDE-DEC5B80D726C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "antora", "antora", "{D4965D73-39D1-47E6-93A0-7FB51A022427}"
-	ProjectSection(SolutionItems) = preProject
-		Doc\antora\antora-playbook.yml = Doc\antora\antora-playbook.yml
-		Doc\antora\antora.yml = Doc\antora\antora.yml
-		Doc\antora\modules\blog\nav.adoc = Doc\antora\modules\blog\nav.adoc
-		Doc\antora\modules\blog\pages\first-steps-with-generator.adoc = Doc\antora\modules\blog\pages\first-steps-with-generator.adoc
-		Doc\antora\modules\usermanual\nav.adoc = Doc\antora\modules\usermanual\nav.adoc
-		Doc\antora\modules\usermanual\pages\introduction.adoc = Doc\antora\modules\usermanual\pages\introduction.adoc
-		Doc\antora\modules\devx\nav.adoc = Doc\antora\modules\devx\nav.adoc
-		Doc\antora\modules\devx\pages\generator.adoc = Doc\antora\modules\devx\pages\generator.adoc
-		Doc\antora\modules\ROOT\pages\start-page.adoc = Doc\antora\modules\ROOT\pages\start-page.adoc
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Host", "Services\Document\Document.Graphql.Host\Document.Graphql.Host.csproj", "{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}"
 EndProject
@@ -996,7 +981,6 @@ Global
 		{2FE19310-2410-4569-BF25-9DCD167BA35B} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{337391B2-2182-4BF2-8911-431E67EA5C72} = {1FA852EC-6427-48C7-847E-F18ABA040A84}
 		{864E5855-7836-46BC-BFDE-DEC5B80D726C} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{D4965D73-39D1-47E6-93A0-7FB51A022427} = {66D74E39-6BE1-456A-B35D-1FAB6262BE40}
 		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
