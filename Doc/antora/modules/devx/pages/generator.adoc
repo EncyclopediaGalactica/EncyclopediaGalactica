@@ -120,8 +120,8 @@ It contains all the particular related variable information like:
 
 ==== Dto Project level rules
 
-- the Dto project is placed in the `${target_directory}/${dto_project_name}.Dto` directory
-- the Dto project file is placed in the `${target_directory}/${dto_project_name}.Dto` directory with the name of `${dto_project_name}.Dto.${solution_project_file_type}`, e.g. in case of C# it is `.csproj`
+- the Dto project is placed in the `${target_directory}/${dto_project_name}` directory
+- the Dto project file is placed in the `${target_directory}/${dto_project_name}` directory with the name of `${dto_project_name}.${solution_project_file_type}`, e.g. in case of C# it is `.csproj`
 - the Dto project namespace value has to be provided by the configuration file.
 The provided value will be used like folows: `${solution_base_namespace}.${dto_project_namespace}`
 
@@ -507,5 +507,43 @@ The Dto Project Namespace defines the namespace of the DTO classes in the Dto pr
 
 |First character is not uppercase
 |First letter is transformed to uppercase
+
+|===
+
+=== Dto Project Path
+
+The Dto Project Path defines a relative path from the `${TargetDirectory}`.
+This value has to be relative and cannot step backwards, e.g. cannot have value like `./..`
+
+.Providing "Dto Project Path" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_path": "DtoProject/PathValue"
+}
+----
+
+.Input validation rules and results
+|===
+
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|Includes other than alphanumeric
+|throws
+
+|Starts with lowercase letter
+|Will be transformed to uppercase
+
+|Starts with `./` value
+| throws
 
 |===

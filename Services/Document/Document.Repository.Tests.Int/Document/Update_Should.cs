@@ -25,11 +25,11 @@ public class Update_Should : BaseTest
         {
             await Sut.Documents.UpdateAsync(
                 100,
-                new Document { Id = 100, Name = "asd", Description = "asd" }).ConfigureAwait(false);
+                new Document { Id = 100, Name = "asd", Description = "asd" });
         };
 
         // Assert
-        await f.Should().ThrowAsync<DocumentNotFoundException>().ConfigureAwait(false);
+        await f.Should().ThrowAsync<DocumentNotFoundException>();
     }
 
     [Theory]
@@ -37,10 +37,10 @@ public class Update_Should : BaseTest
     public async Task Update_Entity(Document input)
     {
         // Arrange
-        List<long> recorded = await CreateDocumentEntities(1).ConfigureAwait(false);
+        List<long> recorded = await CreateDocumentEntities(1);
 
         // Act
-        Document result = await Sut.Documents.UpdateAsync(recorded[0], input).ConfigureAwait(false);
+        Document result = await Sut.Documents.UpdateAsync(recorded[0], input);
 
         // Assert
         result.Id.Should().Be(recorded[0]);

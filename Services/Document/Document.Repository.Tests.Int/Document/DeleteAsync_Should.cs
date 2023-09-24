@@ -20,10 +20,10 @@ public class DeleteAsync_Should : BaseTest
     public async Task Throw_WhenDocumentNotFound()
     {
         // Act
-        Func<Task> f = async () => { await Sut.Documents.DeleteAsync(100).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.Documents.DeleteAsync(100); };
 
         // Assert
-        await f.Should().ThrowAsync<DocumentNotFoundException>().ConfigureAwait(false);
+        await f.Should().ThrowAsync<DocumentNotFoundException>();
     }
 
     [Fact]
@@ -33,10 +33,10 @@ public class DeleteAsync_Should : BaseTest
         List<long> recorded = await CreateDocumentEntities(1);
 
         // Act
-        await Sut.Documents.DeleteAsync(recorded[0]).ConfigureAwait(false);
+        await Sut.Documents.DeleteAsync(recorded[0]);
 
         // Assert
-        List<Document> documents = await Sut.Documents.GetAllAsync().ConfigureAwait(false);
+        List<Document> documents = await Sut.Documents.GetAllAsync();
         documents.Count.Should().Be(0);
     }
 }

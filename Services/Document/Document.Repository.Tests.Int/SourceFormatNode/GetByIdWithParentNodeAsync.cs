@@ -18,10 +18,7 @@ public class GetByIdWithParentNodeAsync : BaseTest
     public void Throw_WhenNoSuchElement()
     {
         // Act
-        Func<Task> action = async () =>
-        {
-            await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(10).ConfigureAwait(false);
-        };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(10); };
 
         // Assert
         action.Should().ThrowExactlyAsync<InvalidOperationException>();
@@ -32,11 +29,11 @@ public class GetByIdWithParentNodeAsync : BaseTest
     {
         // Arrange
         SourceFormatNode node = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode("name"))
-            .ConfigureAwait(false);
+            ;
 
         //Act
         SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(node.Id)
-            .ConfigureAwait(false);
+            ;
 
         // Assert
         result.Id.Should().Be(node.Id);
@@ -53,18 +50,18 @@ public class GetByIdWithParentNodeAsync : BaseTest
             {
                 Name = "root"
             })
-            .ConfigureAwait(false);
+            ;
         SourceFormatNode childNode = await Sut.SourceFormatNodes.AddAsync(new SourceFormatNode
             {
                 Name = "childNode"
             })
-            .ConfigureAwait(false);
+            ;
         SourceFormatNode s = await Sut.SourceFormatNodes.AddChildNodeAsync(childNode.Id, rootNode.Id, rootNode.Id)
-            .ConfigureAwait(false);
+            ;
 
         // Act
         SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdWithRootNodeAsync(childNode.Id)
-            .ConfigureAwait(false);
+            ;
 
         // Assert
         result.Id.Should().Be(childNode.Id);

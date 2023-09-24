@@ -71,13 +71,13 @@ public class CodeGeneratorConfiguration
     ///         This directory is the base directory for the whole Dto project
     ///     </remarks>
     /// </summary>
-    [JsonProperty("dto_project_base_path")]
-    public string? DtoProjectBasePath { get; set; }
+    [JsonProperty("dto_project_path")]
+    public string? DtoProjectPath { get; set; }
 
     /// <summary>
     ///     Sets or gets the DtoProjectAdditionalPath property
     ///     <remarks>
-    ///         This path segment will be added to the <see cref="DtoProjectBasePath" />, so that
+    ///         This path segment will be added to the <see cref="DtoProjectPath" />, so that
     ///         for this exact generation a separate path can be defined.
     ///     </remarks>
     /// </summary>

@@ -11,9 +11,9 @@ public partial class ConfigurationToTypeInfoManager_Should
         GetOriginalDtoProjectBasePathAndAddToTypeInfos_WhenPathValueIsNullEmptyOrWhitespaceData =
             new List<object[]>
             {
-                new[] { new CodeGeneratorConfiguration { DtoProjectBasePath = null } },
-                new[] { new CodeGeneratorConfiguration { DtoProjectBasePath = "" } },
-                new[] { new CodeGeneratorConfiguration { DtoProjectBasePath = " " } },
+                new[] { new CodeGeneratorConfiguration { DtoProjectPath = null } },
+                new[] { new CodeGeneratorConfiguration { DtoProjectPath = "" } },
+                new[] { new CodeGeneratorConfiguration { DtoProjectPath = " " } },
             };
 
     public static IEnumerable<object[]> GetOriginalDtoProjectBasePathAndAddToTypeInfos_MultipleTypeInfoData =
@@ -116,7 +116,7 @@ public partial class ConfigurationToTypeInfoManager_Should
         // Arrange
         CodeGeneratorConfiguration configuration = new CodeGeneratorConfiguration
         {
-            DtoProjectBasePath = "path"
+            DtoProjectPath = "path"
         };
 
         // Act

@@ -22,14 +22,11 @@ public class AddChildNodeValidationShould : BaseTest
     public async Task ThrowWhenInputIsInvalid(long childId, long parentId)
     {
         // act
-        Func<Task> action = async () =>
-        {
-            await Sut.SourceFormatNodes.AddChildNodeAsync(childId, parentId, parentId).ConfigureAwait(false);
-        };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.AddChildNodeAsync(childId, parentId, parentId); };
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
+            ;
     }
 }

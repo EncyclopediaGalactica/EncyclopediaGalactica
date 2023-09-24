@@ -19,14 +19,14 @@ public class GetByIdShould : BaseTest
         // Arrange
         SourceFormatNode node1 = new SourceFormatNode();
         node1.Name = "asd";
-        SourceFormatNode node1Result = await Sut.SourceFormatNodes.AddAsync(node1).ConfigureAwait(false);
+        SourceFormatNode node1Result = await Sut.SourceFormatNodes.AddAsync(node1);
 
         SourceFormatNode node2 = new SourceFormatNode();
         node2.Name = "adfsdfsdfsdfs";
-        SourceFormatNode node2Result = await Sut.SourceFormatNodes.AddAsync(node2).ConfigureAwait(false);
+        SourceFormatNode node2Result = await Sut.SourceFormatNodes.AddAsync(node2);
 
         // Act
-        SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdAsync(node2Result.Id).ConfigureAwait(false);
+        SourceFormatNode result = await Sut.SourceFormatNodes.GetByIdAsync(node2Result.Id);
 
         // Assert
         result.Id.Should().Be(node2.Id);

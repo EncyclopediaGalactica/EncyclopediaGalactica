@@ -18,23 +18,23 @@ public class GetByIdValidationShould : BaseTest
     public async Task Throw_WhenIdIsZero()
     {
         // Act
-        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(0).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(0); };
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
+            ;
     }
 
     [Fact]
     public async Task Throw_WhenNoSuchEntity()
     {
         // Act
-        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(100).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(100); };
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<InvalidOperationException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<InvalidOperationException>()
+            ;
     }
 }

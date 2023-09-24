@@ -17,11 +17,11 @@ public partial class ConfigurationValuesManager
             return;
         }
 
-        if (string.IsNullOrEmpty(generatorConfiguration.DtoProjectBasePath)
-            || string.IsNullOrWhiteSpace(generatorConfiguration.DtoProjectBasePath))
+        if (string.IsNullOrEmpty(generatorConfiguration.DtoProjectPath)
+            || string.IsNullOrWhiteSpace(generatorConfiguration.DtoProjectPath))
         {
             _logger.LogInformation("{DtoProjectAdditionalPath} is null, empty or whitespace, skipping",
-                nameof(generatorConfiguration.DtoProjectBasePath));
+                nameof(generatorConfiguration.DtoProjectPath));
             return;
         }
 
@@ -35,7 +35,7 @@ public partial class ConfigurationValuesManager
 
         foreach (TypeInfo fileInfo in typeInfos)
         {
-            fileInfo.OriginalDtoProjectBasePathToken = generatorConfiguration.DtoProjectBasePath;
+            fileInfo.OriginalDtoProjectBasePathToken = generatorConfiguration.DtoProjectPath;
         }
     }
 }
