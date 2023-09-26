@@ -1,3 +1,10 @@
+## [0.9.4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.3...0.9.4) (2023-09-26)
+
+
+### Bug Fixes
+
+* removing Azure DevOps file ([#117](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/117)) ([851a431](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/851a431758b3720633f5ccbd5313940331360e7f))
+
 ## [0.9.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.2...0.9.3) (2023-09-26)
 
 
