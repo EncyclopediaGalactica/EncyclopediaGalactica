@@ -1,0 +1,79 @@
+name: Main Branch Build
+run-name: Main Branch Build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "============="
+          echo "=== Debug ==="
+          echo "============="
+          echo "github ref: " ${{ vars.GITHUB_REF }}
+          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
+          echo "event name: " ${{ github.event_name }}
+          
+  main_branch:
+    name: Main Branch Build and Release
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+      issues: write
+      pull-requests: write
+    
+    steps:
+      - uses: actions/checkout@v3
+        
+      - name: Setting up Dotnet with ${{ var.DOTNET_VERSION }} version
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+          
+      - name: Restore
+        run: |
+          dotnet restore
+          
+      - name: Build
+        run: |
+          dotnet build --configuration Release --no-restore
+          
+      - name: Test
+        run: |
+          dotnet test --no-restore --verbosity normal
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          
+      - name: Install Semantic Dependencies
+        run: |
+          npm install npm
+          npm install semantic-release
+          npm install @semantic-release/changelog
+          npm install @semantic-release/exec
+          npm install @semantic-release/git
+          npm install @semantic-release/github
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+          
+      - name: Debug Info Python tools
+        run: |
+          pip3 --version
+          pip3 install --user bump2version
+          
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
+        run: |
+          npx semantic-release

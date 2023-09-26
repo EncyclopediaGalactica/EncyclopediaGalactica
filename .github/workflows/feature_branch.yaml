@@ -1,0 +1,45 @@
+name: Feature Branch Build
+run-name: Feature Branch Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "============="
+          echo "=== Debug ==="
+          echo "============="
+          echo "github ref: " ${{ vars.GITHUB_REF }}
+          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
+          echo "event name: " ${{ github.event_name }}
+          
+  feature_branch:
+    name: Feature Branch Build
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+        
+      - name: Setting up Dotnet with ${{ var.DOTNET_VERSION }} version
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+          
+      - name: Restore
+        run: |
+          dotnet restore
+          
+      - name: Build
+        run: |
+          dotnet build --configuration Release --no-restore
+          
+      - name: Test
+        run: |
+          dotnet test --no-restore --verbosity normal
