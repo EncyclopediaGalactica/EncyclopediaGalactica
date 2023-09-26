@@ -27,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         
-      - name: Setting up Dotnet with ${{ var.DOTNET_VERSION }} version
+      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ vars.DOTNET_VERSION }}
