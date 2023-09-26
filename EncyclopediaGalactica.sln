@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{43B5B312-B2BE-42F0-B981-0BDAE6499177}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		azure-pipelines.yml = azure-pipelines.yml
+		blob = blob
 		.bumpversion.cfg = .bumpversion.cfg
 		CHANGELOG.md = CHANGELOG.md
 		.editorconfig = .editorconfig
