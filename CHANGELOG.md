@@ -1,3 +1,11 @@
+## [0.9.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.2...0.9.3) (2023-09-26)
+
+
+### Bug Fixes
+
+* dto_project_path parameter validation ([#115](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/115)) ([4452a39](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/4452a3975a2f5c730892208e24500f0633ab8657))
+* introducing github workflow for builds ([#116](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/116)) ([968e7fb](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/968e7fb5f7ff62546419a66f434bbbadc71c1c47))
+
 ## [0.9.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.1...0.9.2) (2023-09-23)
 
 
