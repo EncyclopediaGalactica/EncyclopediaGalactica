@@ -14,7 +14,8 @@
     "solution_project_file_type",
     "dto_project_name",
     "dto_project_namespace",
-    "dto_project_path"
+    "dto_project_path",
+    "dto_project_file_type"
   ],
   "properties": {
     "lang": {
@@ -55,6 +56,10 @@
     },
     "dto_project_path": {
       "description": "REQUIRED: Relative path from target_directory defining where the Dto Project is located.",
+      "type": "string"
+    },
+    "dto_project_file_type": {
+      "description": "REQUIRED: Dto project file type",
       "type": "string"
     },
     "skip_dto_preprocess": {

@@ -163,5 +163,22 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     .WithMessage("Dto Project Path cannot be only whitespaces!");
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             });
+
+        RuleFor(p => p.DtoProjectFiletype)
+            .NotNull()
+            .WithMessage("Dto project file type must be provided!")
+            .NotEmpty()
+            .WithMessage("Dto project file type must not be empty!")
+            .DependentRules(() =>
+            {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                RuleFor(p => p.DtoProjectFiletype.Trim().Length).GreaterThanOrEqualTo(1)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                    .WithMessage("Dto project file type must not be empty spaces only");
+#pragma warning disable CS8604 // Possible null reference argument.
+                RuleFor(p => p.DtoProjectFiletype.All(char.IsLetterOrDigit)).Equal(true)
+#pragma warning restore CS8604 // Possible null reference argument.
+                    .WithMessage("Dto project file type must contain only letters and numbers");
+            });
     }
 }
