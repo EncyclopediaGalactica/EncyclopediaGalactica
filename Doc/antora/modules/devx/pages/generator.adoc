@@ -547,3 +547,38 @@ This value has to be relative and cannot step backwards, e.g. cannot have value 
 | throws
 
 |===
+
+=== Dto Project Filetype
+
+The Dto project file type defines the project file type.
+The generator looks for the type.
+The other use of this parameter is during testing.
+
+.Providing "Dto Project File Type" configuration value via json configuration
+[source, json]
+----
+{
+  "dto_project_file_type": "sln"
+}
+----
+
+.Input validation rules and results
+|===
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|Includes other than alphanumeric letters
+|throws
+
+|Includes upper case letters
+|Will be transformed to lower case
+
+|===

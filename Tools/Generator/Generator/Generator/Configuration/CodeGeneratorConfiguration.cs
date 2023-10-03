@@ -75,6 +75,24 @@ public class CodeGeneratorConfiguration
     public string? DtoProjectPath { get; set; }
 
     /// <summary>
+    ///     Gets or sets dto project namespace
+    ///     <remarks>
+    ///         This value will be concatenated to solution base namespace
+    ///     </remarks>
+    /// </summary>
+    [JsonProperty("dto_project_namespace")]
+    public string? DtoProjectNameSpace { get; set; }
+
+    /// <summary>
+    ///     Gets or sets Dto Project File Type value
+    ///     <remarks>
+    ///         It defines what filetype the generator is looking for.
+    ///     </remarks>
+    /// </summary>
+    [JsonProperty("dto_project_file_type")]
+    public string? DtoProjectFiletype { get; set; }
+
+    /// <summary>
     ///     Sets or gets the DtoProjectAdditionalPath property
     ///     <remarks>
     ///         This path segment will be added to the <see cref="DtoProjectPath" />, so that
@@ -83,15 +101,6 @@ public class CodeGeneratorConfiguration
     /// </summary>
     [JsonProperty("dto_project_additional_path")]
     public string? DtoProjectAdditionalPath { get; set; }
-
-    /// <summary>
-    ///     Gets or sets dto project namespace
-    ///     <remarks>
-    ///         This value will be concatenated to solution base namespace
-    ///     </remarks>
-    /// </summary>
-    [JsonProperty("dto_project_namespace")]
-    public string? DtoProjectNameSpace { get; set; }
 
     /// <summary>
     ///     Gets or sets the dto test project name
