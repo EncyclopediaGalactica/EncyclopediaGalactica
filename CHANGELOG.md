@@ -1,3 +1,10 @@
+# [0.10.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.4...0.10.0) (2023-10-03)
+
+
+### Features
+
+* validation of Dto Project File Type parameter ([#118](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/118)) ([4915de7](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/4915de7f86b4e10c3c0329c0c5cefab824fc8724))
+
 ## [0.9.4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.9.3...0.9.4) (2023-09-26)
 
 
