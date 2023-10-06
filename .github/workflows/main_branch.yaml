@@ -103,6 +103,7 @@ jobs:
         run: |
           git config user.email "${{ secrets.EG_EMAIL_ADDRESS }}"
           git config user.name "${{ secrets.EG_NAME }}"
+          git add .
           git commit -m "Generated doc"
           git checkout gh_pages
           git branch --set-upstream-to=origin/gh_pages
