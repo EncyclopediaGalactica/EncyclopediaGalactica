@@ -107,6 +107,6 @@ jobs:
           git commit -m "Generated doc"
           git checkout gh_pages
           git branch --set-upstream-to=origin/gh_pages
-          git merge main
+          git merge --strategy=theirs main
           git push
           
