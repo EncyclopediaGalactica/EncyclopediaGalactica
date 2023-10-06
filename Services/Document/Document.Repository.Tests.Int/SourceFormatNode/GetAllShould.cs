@@ -1,15 +1,18 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.SourceFormatNode;
 
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class GetAll : BaseTest
 {
     private Random _random = new Random();
@@ -27,11 +30,11 @@ public class GetAll : BaseTest
 #pragma warning disable CA5394
             node.Name = "tmp" + _random.Next(1, 1000000000);
 #pragma warning restore CA5394
-            await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
+            await Sut.SourceFormatNodes.AddAsync(node);
         }
 
         // Act
-        ICollection<SourceFormatNode> result = await Sut.SourceFormatNodes.GetAllAsync().ConfigureAwait(false);
+        ICollection<SourceFormatNode> result = await Sut.SourceFormatNodes.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(counter);

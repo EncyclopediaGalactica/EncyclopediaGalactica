@@ -1,12 +1,13 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using FluentValidation;
-using Services.Document.Tests.Datasets;
+using Services.Document.Tests.Datasets.DocumentDto;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -22,24 +23,11 @@ public class Add_Validation_Should : BaseTest
     }
 
     [Theory]
-    [MemberData(nameof(DocumentDataset.Add_Validation), MemberType = typeof(DocumentDataset))]
-    public void Throw_ValidationException_WhenInput_IsInvalid(
-        long id,
-        string name,
-        string desc,
-        Uri uri)
+    [ClassData(typeof(AddDocumentDtoInputValidation_InvalidDataset))]
+    public void Throw_ValidationException_WhenInput_IsInvalid(DocumentDto inputDto)
     {
         // Arrange && Act
-        Func<Task> f = async () =>
-        {
-            await Sut.DocumentService.AddAsync(new DocumentDto
-            {
-                Id = id,
-                Name = name,
-                Description = desc,
-                Uri = uri
-            });
-        };
+        Func<Task> f = async () => { await Sut.DocumentService.AddAsync(inputDto); };
 
         // Assert
         f.Should().ThrowExactlyAsync<ValidationException>();

@@ -1,7 +1,8 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using Xunit;
@@ -23,7 +24,7 @@ public class AddShould : BaseTest
         // Act
         SourceFormatNodeDto result = await Sut
             .SourceFormatNode
-            .AddAsync(dto).ConfigureAwait(false);
+            .AddAsync(dto);
 
         // Assert
         result.Should().NotBeNull();

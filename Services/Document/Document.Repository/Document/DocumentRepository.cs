@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Document;
 
 using Ctx;
 using Entities;
@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore;
 /// <inheritdoc />
 public partial class DocumentRepository : IDocumentsRepository
 {
-    private readonly DbContextOptions<SourceFormatsDbContext> _dbContextOptions;
+    private readonly DbContextOptions<DocumentDbContext> _dbContextOptions;
     private readonly IValidator<Document> _documentValidator;
 
     public DocumentRepository(
-        DbContextOptions<SourceFormatsDbContext> dbContextOptions,
+        DbContextOptions<DocumentDbContext> dbContextOptions,
         IValidator<Document> documentValidator)
     {
         ArgumentNullException.ThrowIfNull(dbContextOptions);
@@ -21,11 +21,5 @@ public partial class DocumentRepository : IDocumentsRepository
 
         _dbContextOptions = dbContextOptions;
         _documentValidator = documentValidator;
-    }
-
-    /// <inheritdoc />
-    public async Task<List<Document>> GetAllAsync(CancellationToken cancellationToken = default)
-    {
-        throw new NotImplementedException();
     }
 }

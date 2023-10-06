@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using FluentAssertions;
 using Utils.GuardsService.Exceptions;
 using Xunit;
@@ -15,11 +16,7 @@ public class GetByIdValidationShould : BaseTest
     public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenIdIsZero()
     {
         // Act
-        Func<Task> task = async () =>
-        {
-            await Sut.SourceFormatNode.GetByIdAsync(0)
-                .ConfigureAwait(false);
-        };
+        Func<Task> task = async () => { await Sut.SourceFormatNode.GetByIdAsync(0); };
 
         // Assert
         await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

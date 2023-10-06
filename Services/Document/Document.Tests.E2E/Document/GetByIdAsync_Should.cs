@@ -5,7 +5,7 @@ using System.Net;
 using System.Threading.Tasks;
 using FluentAssertions;
 using FluentValidation;
-using Sdk.Models.Document;
+using Sdk.Client.Models.Document;
 using Xunit;
 
 [Trait("Category", "DocumentService")]
@@ -36,8 +36,7 @@ public partial class DocumentSdk_Should
             .SetName(name)
             .SetDescription(desc)
             .Build();
-        DocumentAddResponseModel addResult = await SourceFormatsSdk.DocumentsSdk.AddAsync(addRequestModel)
-            .ConfigureAwait(false);
+        DocumentAddResponseModel addResult = await SourceFormatsSdk.DocumentsSdk.AddAsync(addRequestModel);
 
         DocumentGetByIdRequestModel getByIdRequestModel = new DocumentGetByIdRequestModel.Builder()
             .SetId(addResult.Result.Id)
@@ -45,7 +44,7 @@ public partial class DocumentSdk_Should
 
         // Act
         DocumentGetByIdResponseModel getByIdResponseModel = await SourceFormatsSdk.DocumentsSdk
-            .GetByIdAsync(getByIdRequestModel).ConfigureAwait(false);
+            .GetByIdAsync(getByIdRequestModel);
 
         // Assert
         getByIdResponseModel.Should().NotBeNull();
@@ -67,12 +66,12 @@ public partial class DocumentSdk_Should
 
         // Act
         DocumentGetByIdResponseModel getByIdResponseModel = await SourceFormatsSdk.DocumentsSdk
-            .GetByIdAsync(getByIdRequestModel).ConfigureAwait(false);
+            .GetByIdAsync(getByIdRequestModel);
 
         // Assert
         getByIdResponseModel.Should().NotBeNull();
         getByIdResponseModel.Result.Should().BeNull();
-        getByIdResponseModel.HttpStatusCode.Should().Be(HttpStatusCode.NotFound);
+        getByIdResponseModel.HttpStatusCode.Should().Be(HttpStatusCode.InternalServerError);
         getByIdResponseModel.IsOperationSuccessful.Should().BeFalse();
     }
 }

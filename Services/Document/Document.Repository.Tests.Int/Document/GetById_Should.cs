@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Xunit;
@@ -10,6 +11,7 @@ using Xunit;
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class GetById_Should : BaseTest
 {
     [Fact]
@@ -22,10 +24,10 @@ public class GetById_Should : BaseTest
         {
             Name = name,
             Description = desc
-        }).ConfigureAwait(false);
+        });
 
         // Act
-        Document result = await Sut.Documents.GetByIdAsync(data.Id).ConfigureAwait(false);
+        Document result = await Sut.Documents.GetByIdAsync(data.Id);
 
         // Assert
         result.Should().NotBeNull();
@@ -38,7 +40,7 @@ public class GetById_Should : BaseTest
     public void Throw_InvalidOperationException_WhenNoSuchEntity()
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.Documents.GetByIdAsync(100).ConfigureAwait(false); };
+        Func<Task> f = async () => { await Sut.Documents.GetByIdAsync(100); };
 
         // Assert
         f.Should().ThrowExactlyAsync<InvalidOperationException>();

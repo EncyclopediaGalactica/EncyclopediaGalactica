@@ -1,14 +1,17 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class UpdateShould : BaseTest
 {
     [Theory]
@@ -18,14 +21,14 @@ public class UpdateShould : BaseTest
         // Arrange
         SourceFormatNode node = new SourceFormatNode();
         node.Name = "original name";
-        SourceFormatNode persistedNode = await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
+        SourceFormatNode persistedNode = await Sut.SourceFormatNodes.AddAsync(node);
 
         SourceFormatNode updatedValues = new SourceFormatNode();
         updatedValues.Name = newName;
         updatedValues.Id = persistedNode.Id;
 
         // Act
-        SourceFormatNode result = await Sut.SourceFormatNodes.UpdateAsync(updatedValues).ConfigureAwait(false);
+        SourceFormatNode result = await Sut.SourceFormatNodes.UpdateAsync(updatedValues);
 
         // Assert
         result.Id.Should().Be(persistedNode.Id);
@@ -41,11 +44,11 @@ public class UpdateShould : BaseTest
         node.Name = "something";
 
         // Act
-        Func<Task> action = async () => { await Sut.SourceFormatNodes.UpdateAsync(node).ConfigureAwait(false); };
+        Func<Task> action = async () => { await Sut.SourceFormatNodes.UpdateAsync(node); };
 
         // Assert
         await action.Should()
-            .ThrowExactlyAsync<InvalidOperationException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<InvalidOperationException>()
+            ;
     }
 }

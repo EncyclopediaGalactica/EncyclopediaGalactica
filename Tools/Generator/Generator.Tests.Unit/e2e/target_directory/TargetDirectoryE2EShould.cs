@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.e2e.TargetDirectory;
+namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.e2e.target_directory;
 
 using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;

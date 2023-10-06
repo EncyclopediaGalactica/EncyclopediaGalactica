@@ -1,17 +1,19 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.Document;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using FluentValidation;
-using Services.Document.Tests.Datasets;
+using Services.Document.Tests.Datasets.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class AddAsync_Validation_Should : BaseTest
 {
     [Fact]
@@ -22,24 +24,11 @@ public class AddAsync_Validation_Should : BaseTest
     }
 
     [Theory]
-    [MemberData(nameof(DocumentDataset.Add_Validation), MemberType = typeof(DocumentDataset))]
-    public void Throw_ValidationException_WhenInput_IsInvalid(
-        long id,
-        string name,
-        string desc,
-        Uri uri)
+    [ClassData(typeof(Add_Validation_InvalidDataset))]
+    public void Throw_ValidationException_WhenInput_IsInvalid(Document input)
     {
         // Arrange && Act
-        Func<Task> f = async () =>
-        {
-            await Sut.Documents.AddAsync(new Document
-            {
-                Id = id,
-                Name = name,
-                Description = desc,
-                Uri = uri
-            });
-        };
+        Func<Task> f = async () => { await Sut.Documents.AddAsync(input); };
 
         // Assert
         f.Should().ThrowExactlyAsync<ValidationException>();

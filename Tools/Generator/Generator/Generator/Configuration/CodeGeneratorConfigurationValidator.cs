@@ -118,29 +118,67 @@ public class CodeGeneratorConfigurationValidator : AbstractValidator<CodeGenerat
                     });
             });
 
-        RuleFor(p => p.DtoProjectBasePath).NotNull().NotEmpty()
-            .WithMessage("Dto project base path must be provided");
-
-        RuleFor(p => p.DtoProjectTestUnitName).NotNull().NotEmpty()
-            .WithMessage("Dto test project name must be provided");
-
-        RuleFor(p => p.DtoProjectTestUnitBasePath).NotNull().NotEmpty()
-            .WithMessage("Dto test project base path is required");
-
-        When(p => string.IsNullOrEmpty(p.DtoProjectBasePath) == false
-                  && string.IsNullOrWhiteSpace(p.DtoProjectBasePath) == false,
-            () =>
+        RuleFor(p => p.DtoProjectNameSpace)
+            .NotNull()
+            .WithMessage("Dto Namespace value must be provided")
+            .DependentRules(() =>
             {
-                RuleFor(p => p.DtoProjectBasePath[0].ToString() != "/").Equal(true)
-                    .WithMessage("Dto project base path url must not be absolute path. It has to be relative path.");
+                RuleFor(p => p.DtoProjectNameSpace)
+                    .NotEmpty()
+                    .WithMessage("Dto Project Namespace must not be empty")
+                    .DependentRules(() =>
+                    {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                        RuleFor(p => p.DtoProjectNameSpace.Trim().Length)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                            .GreaterThanOrEqualTo(1)
+                            .WithMessage("Dto Project Name must not consists only of space characters.")
+                            .DependentRules(() =>
+                            {
+#pragma warning disable CS8604 // Possible null reference argument.
+                                RuleFor(p => p.DtoProjectNameSpace.All(char.IsLetter))
+#pragma warning restore CS8604 // Possible null reference argument.
+                                    .Equal(true)
+                                    .WithMessage("Dto Project Namespace must contains only letters");
+                            });
+                    });
             });
 
-        When(p => string.IsNullOrEmpty(p.DtoProjectAdditionalPath) == false
-                  && string.IsNullOrWhiteSpace(p.DtoProjectAdditionalPath) == false,
-            () =>
+        RuleFor(p => p.DtoProjectPath)
+            .NotNull()
+            .NotEmpty()
+            .WithMessage("Dto project base path must be provided")
+            .DependentRules(() =>
             {
-                RuleFor(p => p.DtoProjectAdditionalPath[0].ToString() != "/").Equal(true)
-                    .WithMessage("Dto project additional path must not be absolute path. It must be relative path.");
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                RuleFor(p => p.DtoProjectPath[0].ToString() != "/").Equal(true)
+                    .WithMessage("Dto project base path url must not be absolute path. It has to be relative path.");
+#pragma warning disable CS8604 // Possible null reference argument.
+                RuleFor(p => p.DtoProjectPath.All(char.IsLetterOrDigit)).Equal(true)
+#pragma warning restore CS8604 // Possible null reference argument.
+                    .WithMessage("Dto Project Path can contain only alphanumeric characters.");
+                RuleFor(p => p.DtoProjectPath.StartsWith("./")).NotEqual(true)
+                    .WithMessage("Dto Project Path cannot start with ./ value.");
+                RuleFor(p => p.DtoProjectPath.Trim().Length).GreaterThanOrEqualTo(1)
+                    .WithMessage("Dto Project Path cannot be only whitespaces!");
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+            });
+
+        RuleFor(p => p.DtoProjectFiletype)
+            .NotNull()
+            .WithMessage("Dto project file type must be provided!")
+            .NotEmpty()
+            .WithMessage("Dto project file type must not be empty!")
+            .DependentRules(() =>
+            {
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+                RuleFor(p => p.DtoProjectFiletype.Trim().Length).GreaterThanOrEqualTo(1)
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+                    .WithMessage("Dto project file type must not be empty spaces only");
+#pragma warning disable CS8604 // Possible null reference argument.
+                RuleFor(p => p.DtoProjectFiletype.All(char.IsLetterOrDigit)).Equal(true)
+#pragma warning restore CS8604 // Possible null reference argument.
+                    .WithMessage("Dto project file type must contain only letters and numbers");
             });
     }
 }

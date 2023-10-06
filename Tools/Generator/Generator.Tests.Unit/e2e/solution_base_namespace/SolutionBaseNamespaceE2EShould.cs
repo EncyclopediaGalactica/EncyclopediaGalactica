@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.e2e.SolutionBaseNamespace;
+namespace EncyclopediaGalactica.RestApiSdkGenerator.Generator.Tests.Unit.e2e.solution_base_namespace;
 
 using System.Diagnostics.CodeAnalysis;
 using FluentAssertions;

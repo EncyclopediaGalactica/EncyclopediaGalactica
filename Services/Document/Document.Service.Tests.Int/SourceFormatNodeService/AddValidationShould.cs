@@ -1,8 +1,9 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.Tests.Int.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormatNodeService;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Dtos;
 using FluentAssertions;
 using FluentValidation;
@@ -21,8 +22,7 @@ public class AddValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddAsync(null!)
-                .ConfigureAwait(false);
+                .AddAsync(null!);
         };
 
         // Assert
@@ -39,8 +39,7 @@ public class AddValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddAsync(dto)
-                .ConfigureAwait(false);
+                .AddAsync(dto);
         };
 
         // Assert
@@ -58,14 +57,14 @@ public class AddValidationShould : BaseTest
         };
         await Sut
             .SourceFormatNode
-            .AddAsync(dto).ConfigureAwait(false);
+            .AddAsync(dto);
 
         // Act
         Func<Task> task = async () =>
         {
             await Sut
                 .SourceFormatNode
-                .AddAsync(dto).ConfigureAwait(false);
+                .AddAsync(dto);
         };
 
         // Assert

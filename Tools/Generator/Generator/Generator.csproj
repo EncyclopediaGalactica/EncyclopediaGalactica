@@ -21,16 +21,16 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
-        <PackageReference Include="FluentValidation" Version="11.6.0"/>
+        <PackageReference Include="FluentAssertions" Version="6.12.0"/>
+        <PackageReference Include="FluentValidation" Version="11.7.1"/>
         <PackageReference Include="Handlebars.Net" Version="2.1.4"/>
-        <PackageReference Include="Handlebars.Net.Helpers" Version="2.4.0"/>
-        <PackageReference Include="Microsoft.Build" Version="17.6.3"/>
+        <PackageReference Include="Handlebars.Net.Helpers" Version="2.4.1"/>
+        <PackageReference Include="Microsoft.Build" Version="17.7.2"/>
         <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="7.0.0"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0"/>
-        <PackageReference Include="Microsoft.OpenApi" Version="1.6.6"/>
-        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.6"/>
+        <PackageReference Include="Microsoft.OpenApi" Version="1.6.8" />
+        <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.8" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3"/>
         <PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1"/>
     </ItemGroup>

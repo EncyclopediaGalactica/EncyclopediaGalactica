@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.SourceFormatNode;
 
 using Ctx;
 using Entities;
@@ -14,7 +14,7 @@ public partial class SourceFormatNodeRepository
         SourceFormatNode node,
         CancellationToken cancellationToken = default)
     {
-        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions);
         await using (IDbContextTransaction transaction = await ctx.Database
                          .BeginTransactionAsync(cancellationToken).ConfigureAwait(false))
         {

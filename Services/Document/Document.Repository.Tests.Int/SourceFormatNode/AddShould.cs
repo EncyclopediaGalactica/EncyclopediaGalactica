@@ -1,14 +1,17 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.SourceFormatNode;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
+[SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class AddShould : BaseTest
 {
     [Fact]
@@ -19,7 +22,7 @@ public class AddShould : BaseTest
         node.Name = "name";
 
         // Act
-        SourceFormatNode res = await Sut.SourceFormatNodes.AddAsync(node).ConfigureAwait(false);
+        SourceFormatNode res = await Sut.SourceFormatNodes.AddAsync(node);
 
         // Assert
         res.Name.Should().Be(node.Name);
@@ -29,11 +32,11 @@ public class AddShould : BaseTest
     public async Task Throw_WhenInputIsNull()
     {
         // Arrange & Act
-        Func<Task> task = async () => { await Sut.SourceFormatNodes.AddAsync(null!).ConfigureAwait(false); };
+        Func<Task> task = async () => { await Sut.SourceFormatNodes.AddAsync(null!); };
 
         // Assert
         await task.Should()
-            .ThrowExactlyAsync<ArgumentNullException>()
-            .ConfigureAwait(false);
+                .ThrowExactlyAsync<ArgumentNullException>()
+            ;
     }
 }

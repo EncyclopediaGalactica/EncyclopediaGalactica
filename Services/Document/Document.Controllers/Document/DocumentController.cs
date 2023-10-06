@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Controllers.Document;
 
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using SourceFormatsService.Interfaces;
+using Service.Interfaces;
 
 [ApiController]
 [Route("api/sourceformats/[controller]")]

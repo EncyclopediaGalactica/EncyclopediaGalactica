@@ -4,8 +4,8 @@
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Tests.Int</AssemblyName>
-        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Tests.Int</RootNamespace>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.CacheService.Tests.Int</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.CacheService.Tests.Int</RootNamespace>
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 

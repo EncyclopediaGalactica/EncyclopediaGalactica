@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters</RootNamespace>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="HotChocolate.Types" Version="13.5.1"/>
+    </ItemGroup>
+
+
+    <ItemGroup>
+        <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
+        <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj"/>
+    </ItemGroup>
+
+</Project>

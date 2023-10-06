@@ -6,17 +6,17 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Tests.Unit</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.CacheService.Tests.Unit</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsCacheService.Tests.Unit</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.CacheService.Tests.Unit</RootNamespace>
 
         <LangVersion>default</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
-        <PackageReference Include="xunit" Version="2.5.0"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2"/>
+        <PackageReference Include="xunit" Version="2.5.1"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

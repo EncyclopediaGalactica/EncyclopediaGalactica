@@ -1,0 +1,3 @@
+.Document module
+* Domain model
+** xref:document:entities/document-type.adoc[Document Entity]

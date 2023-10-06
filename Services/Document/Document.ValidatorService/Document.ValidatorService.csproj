@@ -13,12 +13,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.6.0"/>
+        <PackageReference Include="FluentValidation" Version="11.7.1"/>
     </ItemGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+        <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
     </ItemGroup>
 
 </Project>

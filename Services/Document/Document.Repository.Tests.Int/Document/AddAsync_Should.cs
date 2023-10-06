@@ -1,16 +1,20 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Int.Document;
+// ReSharper disable All
+
+namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Document;
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
+using Base;
 using Entities;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
+// [SuppressMessage("ReSharper", "InconsistentNaming")]
 [Trait("Category", "DocumentService")]
+[Trait("Category", "Repository")]
 public class AddAsync_Should : BaseTest
 {
     [Fact]
@@ -24,17 +28,17 @@ public class AddAsync_Should : BaseTest
             Description = "desc"
         };
 
-        Document firstResult = await Sut.Documents.AddAsync(first).ConfigureAwait(false);
+        Document firstResult = await Sut.Documents.AddAsync(first);
 
         // Act
         Func<Task> f = async () =>
         {
             await Sut.Documents.AddAsync(new Document { Name = name, Description = "desc" })
-                .ConfigureAwait(false);
+                ;
         };
 
         // Assert
-        await f.Should().ThrowExactlyAsync<DbUpdateException>().ConfigureAwait(false);
+        await f.Should().ThrowExactlyAsync<DbUpdateException>();
     }
 
     [Fact]
@@ -48,7 +52,7 @@ public class AddAsync_Should : BaseTest
         };
 
         // Act
-        Document result = await Sut.Documents.AddAsync(first).ConfigureAwait(false);
+        Document result = await Sut.Documents.AddAsync(first);
 
         // Assert
         result.Id.Should().BeGreaterThan(0);

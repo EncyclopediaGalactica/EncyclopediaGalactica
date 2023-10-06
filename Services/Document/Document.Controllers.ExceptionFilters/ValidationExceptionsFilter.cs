@@ -1,11 +1,11 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.ExceptionFilters;
+namespace EncyclopediaGalactica.Services.Document.Controllers.ExceptionFilters;
 
 using System.Net;
 using FluentValidation;
-using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
+using Service.Interfaces;
 using Utils.GuardsService.Exceptions;
 
 public class ValidationExceptionsFilter : IActionFilter

@@ -1,8 +1,8 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net;
-using Client.Core.Model.Interfaces;
-using Dtos;
+using EncyclopediaGalactica.Client.Core.Model.Interfaces;
+using EncyclopediaGalactica.Services.Document.Dtos;
 
 /// <summary>
 ///     <see cref="SourceFormatNodeDeleteResponseModel" /> which is used for carrying

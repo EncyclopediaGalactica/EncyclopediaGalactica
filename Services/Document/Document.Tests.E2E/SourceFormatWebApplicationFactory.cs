@@ -4,7 +4,11 @@ using System;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using CacheService;
+using CacheService.Interfaces;
+using CacheService.SourceFormatNode;
 using Controllers.Document;
+using Controllers.ExceptionFilters;
 using Controllers.SourceFormatNode;
 using Ctx;
 using FluentValidation.AspNetCore;
@@ -18,20 +22,16 @@ using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using SourceFormatsCacheService;
-using SourceFormatsCacheService.Interfaces;
-using SourceFormatsCacheService.SourceFormatNode;
-using SourceFormatsRepository;
-using SourceFormatsRepository.Document;
-using SourceFormatsRepository.Interfaces;
-using SourceFormatsRepository.SourceFormatNode;
-using SourceFormatsService;
-using SourceFormatsService.Document;
-using SourceFormatsService.ExceptionFilters;
-using SourceFormatsService.Interfaces;
-using SourceFormatsService.Interfaces.Document;
-using SourceFormatsService.Interfaces.SourceFormatNode;
-using SourceFormatsService.SourceFormatNodeService;
+using Repository;
+using Repository.Document;
+using Repository.Interfaces;
+using Repository.SourceFormatNode;
+using Service;
+using Service.Document;
+using Service.Interfaces;
+using Service.Interfaces.Document;
+using Service.Interfaces.SourceFormatNode;
+using Service.SourceFormatNodeService;
 using Utils.GuardsService;
 using Utils.GuardsService.Interfaces;
 using ValidatorService;
@@ -45,7 +45,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
         builder.ConfigureServices(services =>
         {
             ServiceDescriptor? descriptor =
-                services.SingleOrDefault(d => d.ServiceType == typeof(SourceFormatsDbContext));
+                services.SingleOrDefault(d => d.ServiceType == typeof(DocumentDbContext));
             services.Remove(descriptor!);
 
             SqliteConnection connection = new("Filename=:memory:");
@@ -59,7 +59,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
                 .AddNewtonsoftJson()
                 .AddApplicationPart(typeof(SourceFormatNodeController).Assembly)
                 .AddApplicationPart(typeof(DocumentController).Assembly);
-            services.AddDbContext<SourceFormatsDbContext>(options =>
+            services.AddDbContext<DocumentDbContext>(options =>
             {
                 options.UseSqlite(connection);
                 options.LogTo(m => Debug.WriteLine(m))
@@ -93,7 +93,7 @@ public class SourceFormatWebApplicationFactory<TStartup> : WebApplicationFactory
             using (IServiceScope scope = sp.CreateScope())
             {
                 IServiceProvider scopedServices = scope.ServiceProvider;
-                SourceFormatsDbContext db = scopedServices.GetRequiredService<SourceFormatsDbContext>();
+                DocumentDbContext db = scopedServices.GetRequiredService<DocumentDbContext>();
                 ILogger<SourceFormatWebApplicationFactory<TStartup>> logger = scopedServices
                     .GetRequiredService<ILogger<SourceFormatWebApplicationFactory<TStartup>>>();
 

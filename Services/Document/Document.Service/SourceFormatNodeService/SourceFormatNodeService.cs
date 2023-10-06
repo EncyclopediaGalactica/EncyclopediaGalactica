@@ -1,13 +1,13 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsService.SourceFormatNodeService;
+namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
+using CacheService.Interfaces;
 using Dtos;
 using Entities;
 using FluentValidation;
 using Interfaces.SourceFormatNode;
 using Mappers.Interfaces;
 using Microsoft.Extensions.Logging;
-using SourceFormatsCacheService.Interfaces;
-using SourceFormatsRepository.Interfaces;
+using Repository.Interfaces;
 using Utils.GuardsService.Interfaces;
 
 public partial class SourceFormatNodeService : ISourceFormatNodeService

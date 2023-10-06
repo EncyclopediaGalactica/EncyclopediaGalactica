@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.SourceFormatsRepository.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Repository.SourceFormatNode;
 
 using Ctx;
 using Entities;
@@ -8,7 +8,7 @@ public partial class SourceFormatNodeRepository
     /// <inheritdoc />
     public async Task<SourceFormatNode> GetByIdAsync(long id)
     {
-        await using SourceFormatsDbContext ctx = new SourceFormatsDbContext(_dbContextOptions);
+        await using DocumentDbContext ctx = new DocumentDbContext(_dbContextOptions);
         try
         {
             _guards.IsNotEqual(id, 0);

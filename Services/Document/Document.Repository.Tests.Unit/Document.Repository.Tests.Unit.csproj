@@ -6,16 +6,16 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Unit</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Repository.Tests.Unit</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.Services.Document.SourceFormatsRepository.Tests.Unit</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Repository.Tests.Unit</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentAssertions" Version="6.11.0"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3"/>
-        <PackageReference Include="xunit" Version="2.5.0"/>
-        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
+        <PackageReference Include="FluentAssertions" Version="6.12.0"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2"/>
+        <PackageReference Include="xunit" Version="2.5.1"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.5.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>

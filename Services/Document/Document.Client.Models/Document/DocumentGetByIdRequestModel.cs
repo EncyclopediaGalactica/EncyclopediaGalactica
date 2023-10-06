@@ -1,8 +1,8 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.Document;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.Document;
 
 using System.Net.Http.Headers;
-using Client.Core.Model.Interfaces;
-using Dtos;
+using EncyclopediaGalactica.Client.Core.Model.Interfaces;
+using EncyclopediaGalactica.Services.Document.Dtos;
 using FluentValidation;
 
 public class DocumentGetByIdRequestModel : IRequestModel<DocumentDto>

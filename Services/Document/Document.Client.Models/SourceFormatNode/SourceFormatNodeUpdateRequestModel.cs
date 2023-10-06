@@ -1,10 +1,10 @@
-namespace EncyclopediaGalactica.Services.Document.Sdk.Models.SourceFormatNode;
+namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net.Http.Headers;
-using Client.Core.Model.Interfaces;
-using Dtos;
+using EncyclopediaGalactica.Client.Core.Model.Interfaces;
+using EncyclopediaGalactica.Services.Document.Dtos;
+using EncyclopediaGalactica.Services.Document.ValidatorService;
 using FluentValidation;
-using ValidatorService;
 
 public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNodeDto>
 {
