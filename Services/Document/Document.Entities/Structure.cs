@@ -31,7 +31,12 @@ public class Structure
     public Structure Parent { get; set; }
 
     /// <summary>
-    ///     Gets or set the Children value.
+    ///     Gets or sets the Children value.
     /// </summary>
     public IEnumerable<Structure> Children { get; set; }
+
+    /// <summary>
+    ///     Gets or sets the Parent Id value.
+    /// </summary>
+    public long ParentId { get; set; }
 }
