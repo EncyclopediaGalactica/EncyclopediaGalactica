@@ -1,3 +1,10 @@
+## [0.10.6](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.5...0.10.6) (2023-10-07)
+
+
+### Bug Fixes
+
+* documentation site link fix ([#124](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/124)) ([e8fd56f](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/e8fd56f9aa79558c8fa3897ddc1ceba80d6e1844))
+
 ## [0.10.5](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.4...0.10.5) (2023-10-06)
 
 
