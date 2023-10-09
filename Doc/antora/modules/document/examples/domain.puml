@@ -1,5 +1,7 @@
 @startuml
 
+!include asd.puml
+
 entity Document {
     Id
     Name

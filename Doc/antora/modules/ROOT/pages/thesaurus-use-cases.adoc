@@ -1,0 +1,11 @@
+= Thesaurus use cases
+
+== Create Thesaurus
+
+== Edit Thesaurus
+
+== Share Thesaurus
+
+== Publish Thesaurus
+
+== Delete Thesaurus

@@ -1,0 +1,9 @@
+= User Groups use cases
+
+== Create User Groups
+
+== Add Users to User Groups
+
+== Remove Users from User Groups
+
+== Delete User Groups

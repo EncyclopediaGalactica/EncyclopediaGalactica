@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Configuration of the REST Api generator :: Encyclopedia Galactica</title>
+    <link rel="canonical" href="https://encyclopediagalactica.github.io/EncyclopediaGalactica/encyclopedia-galactica-doc/devx/generator.html">
+    <meta name="generator" content="Antora 3.1.4">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://encyclopediagalactica.github.io/EncyclopediaGalactica">Encyclopedia Galactica</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="encyclopedia-galactica-doc" data-version="">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">encyclopedia-galactica-doc</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Use cases</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../document-use-cases.html">Document</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../user-groups-use-cases.html">User groups</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../organization-use-cases.html">Organizations</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../ingress-use-cases.html">Ingress</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../data-source-use-cases.html">Data Source</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../thesaurus-use-cases.html">Thesaurus</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">User manual</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../usermanual/introduction.html">Introduction</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">DevTools docs</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="generator.html">The REST Api generator</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Document module</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../document/start-page.html">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Domain model</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../document/entities/document-entity.html">Document Entity</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../document/entities/structure-entity.html">Structure Entity</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Development blog</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../blog/first-steps-with-generator.html">First steps with the generator</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">encyclopedia-galactica-doc</span>
+    <span class="version">default</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">encyclopedia-galactica-doc</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">default</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">encyclopedia-galactica-doc</a></li>
+    <li>DevTools docs</li>
+    <li><a href="generator.html">The REST Api generator</a></li>
+  </ul>
+</nav>
+<div class="edit-this-page"><a href="file:///Users/andrascsanyi/DEV/github.com/EncyclopediaGalactica/EncyclopediaGalactica/Doc/antora/modules/devx/pages/generator.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Configuration of the REST Api generator</h1>
+<div class="sect1">
+<h2 id="_the_workflow"><a class="anchor" href="#_the_workflow"></a>The workflow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The REST Api code generator follows the api first (or specification first) approach.
+It means that the api description needed to be generated first and majority of the code is generated from that.</p>
+</div>
+<div class="paragraph">
+<p>The steps of the process are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>define the Rest Api</p>
+</li>
+<li>
+<p>run the code generator</p>
+</li>
+<li>
+<p>test the results</p>
+</li>
+<li>
+<p>make a decision if further changes are needed</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The corner stones of the process are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>the generator itself,</p>
+</li>
+<li>
+<p>the generator configuration file</p>
+</li>
+<li>
+<p>the Open Api specification in yaml format</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The above steps generate the following code:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Data Transfers Objects</strong>: it represents the contract of the Api</p>
+</li>
+<li>
+<p><strong>Data Transfer Object Tests</strong>: these tests checking if any logic got into the DTOs</p>
+</li>
+<li>
+<p><strong>Controller</strong>: the controllers contain the smallest possible code meaning they call the business logic</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_internal_structure_of_the_generator"><a class="anchor" href="#_the_internal_structure_of_the_generator"></a>The internal structure of the generator</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The generator considers the following structural levels</p>
+</div>
+<div class="sect2">
+<h3 id="_solution"><a class="anchor" href="#_solution"></a>Solution</h3>
+<div class="paragraph">
+<p>This is the main directory including all the stuff, but mainly two things:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>all projects where 1 project is 1 directory</p>
+</li>
+<li>
+<p>solution file</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_project"><a class="anchor" href="#_project"></a>Project</h3>
+<div class="paragraph">
+<p>A dedicated directory for a purpose like DTOs or DTO tests.
+A project must have a single solution parent</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_directory"><a class="anchor" href="#_directory"></a>Directory</h3>
+<div class="paragraph">
+<p>A directory must be placed under a <strong>project</strong> and it is not dedicated to a purpose, rather it contains stuff</p>
+</div>
+<div class="paragraph">
+<p>The above structure is also represented in the generators inner structure and looks like the following:</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_solutioninfo"><a class="anchor" href="#_solutioninfo"></a><a href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/SolutionInfo.cs">SolutionInfo</a></h3>
+<div class="paragraph">
+<p>It contains all the solution related information like:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>solution name</p>
+</li>
+<li>
+<p>solution path</p>
+</li>
+<li>
+<p>solution file</p>
+</li>
+<li>
+<p>solution file type</p>
+</li>
+<li>
+<p>list of projects</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The values are acquired from the configuration file and goes through validation and transformation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_projectinfo"><a class="anchor" href="#_projectinfo"></a><a href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/ProjectInfo.cs">ProjectInfo</a></h3>
+<div class="paragraph">
+<p>It contains all the project related information like:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>project name</p>
+</li>
+<li>
+<p>project path</p>
+</li>
+<li>
+<p>project file type</p>
+</li>
+<li>
+<p>types in the project</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Values are acquired from configuration file and going through validation.
+Other values are generated based on the available information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_typeinfo"><a class="anchor" href="#_typeinfo"></a><a href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/TypeInfo.cs">TypeInfo</a></h3>
+<div class="paragraph">
+<p>It contains all the information of the particular type such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>type name</p>
+</li>
+<li>
+<p>type original name</p>
+</li>
+<li>
+<p>variables in the type which can be field, property or method variable</p>
+</li>
+<li>
+<p>dependencies which can be framework or type level dependency</p>
+</li>
+<li>
+<p>parent if there is any</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The generator is mainly for generating C# code which defines the terminology.
+Type in this context means <code>class</code> in C# language.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_variableinfo"><a class="anchor" href="#_variableinfo"></a><a href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/VariableInfo.cs">VariableInfo</a></h3>
+<div class="paragraph">
+<p>It contains all the particular related variable information like:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>variable name</p>
+</li>
+<li>
+<p>variable type which can be property, field or method variable</p>
+</li>
+<li>
+<p>dependencies, which can be framework level, like <code>List&lt;&gt;</code> or other type</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_namespace_level_rules"><a class="anchor" href="#_namespace_level_rules"></a>Namespace level rules</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Namespace structure when default values are used and solution base namespace is "solution.base"</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Project</th>
+<th class="tableblock halign-left valign-top">Namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dto project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Solution.Base.Dto</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dto.Tests project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>SolutionBase.Dto.Tests</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_directory_level_rules"><a class="anchor" href="#_directory_level_rules"></a>Directory level rules</h3>
+<div class="sect3">
+<h4 id="_solution_level_rules"><a class="anchor" href="#_solution_level_rules"></a>Solution level rules</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>the solution main directory is the <code>${target_directory}</code></p>
+</li>
+<li>
+<p>the solution file is placed in the <code>${target_directory}</code> with the name of <code>${solution_name}.${solution_file_type}</code> which is in the case of C# is <code>.sln</code></p>
+</li>
+<li>
+<p>the solution has a base namespace value which has to be provided via configuration file</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dto_project_level_rules"><a class="anchor" href="#_dto_project_level_rules"></a>Dto Project level rules</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>the Dto project is placed in the <code>${target_directory}/${dto_project_name}</code> directory</p>
+</li>
+<li>
+<p>the Dto project file is placed in the <code>${target_directory}/${dto_project_name}</code> directory with the name of <code>${dto_project_name}.${solution_project_file_type}</code>, e.g. in case of C# it is <code>.csproj</code></p>
+</li>
+<li>
+<p>the Dto project namespace value has to be provided by the configuration file.
+The provided value will be used like folows: <code>${solution_base_namespace}.${dto_project_namespace}</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_dto_test_project_level_rules"><a class="anchor" href="#_dto_test_project_level_rules"></a>Dto Test project level rules</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>the Dto Test project is placed in the <code>${target_directory}/${dto_project_name}.Dto.Test</code> directory</p>
+</li>
+<li>
+<p>the Dto Test project file is placed in the <code>${target_directory}/${dto_project_name}.Dto.Test</code> directory with the name of <code>${dto_project_name}.Dto.Test.${solution_project_file_type}</code>, e.g. in case of C# it is <code>.csproj</code></p>
+</li>
+<li>
+<p>the Dto Test project has namespace value which is generated from the solution base namespace value using the following rule <code>${solution_base_namespace}.${dto_project_namespace}.Test</code>, but its default value is <code>Dto</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_input_validation"><a class="anchor" href="#_input_validation"></a>Input validation</h3>
+<div class="paragraph">
+<p>The generator applies validation in the following order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>input validation of the configuration values from the configuration file</p>
+</li>
+<li>
+<p>target directory structure validation</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_configuration_via_configuration_file"><a class="anchor" href="#_configuration_via_configuration_file"></a>Configuration via configuration file</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_schema"><a class="anchor" href="#_schema"></a>Schema</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "$schema": "https://something.com/schema.json"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It defines the schema information for the configuration file.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lang"><a class="anchor" href="#_lang"></a>Lang</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="title">Json file "Lang" value configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "lang": "csharp"
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It defines the target language.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Input validation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Available languages and their configuration value</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Configuration value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-sharp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>csharp</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_open_api_specification_path"><a class="anchor" href="#_open_api_specification_path"></a>Open Api specification path</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The path must points to the Open Api file in yaml format which will be used for generating source code.</p>
+</div>
+<div class="listingblock">
+<div class="title">Json file "Open Api Specification Path" value configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "openapi_specification_path": "absolute or relative path to the Open Api file in yaml format"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Input validation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The generator uses <code>FluentValidation</code> for input value validation.
+This process does not include checking if the provided path points to an existing place on the disk or not.
+This will be checked later in the process.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_target_directory"><a class="anchor" href="#_target_directory"></a>Target directory</h3>
+<div class="paragraph">
+<p>The place on the disk where all the generated code will be placed.
+The directory must exist.
+The directory path can be both absolute or relative.</p>
+</div>
+<div class="listingblock">
+<div class="title">Json file "target directory" value configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "target_directory": "absolute or relative path to the target directory"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Input validation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_solution_name"><a class="anchor" href="#_solution_name"></a>Solution Name</h3>
+<div class="paragraph">
+<p>The name of the solution.
+The generator will look for this file.
+The provided configuration value will go through transformation if needed.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Format of different languages</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C-sharp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solution.Name</p></td>
+</tr>
+</tbody>
+</table>
+<div class="listingblock">
+<div class="title">Providing "Solution Name" configuration value in the json file</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "solution_name": "Solution.Name"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. Input validation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First char is any other than letter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contains special character other than dot (.)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_solution_base_namespace"><a class="anchor" href="#_solution_base_namespace"></a>Solution Base Namespace</h3>
+<div class="paragraph">
+<p>The solution base namespace is the starting point to generate the namespaces for the projects.</p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Solution Base Namespace" value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "solution_base_namespace": "Something.Namespace"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Input validation and transformation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation and/or transformation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">something.namespace</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Something.Namespace</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">something.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Something</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">.something</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Something</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_solution_file_type"><a class="anchor" href="#_solution_file_type"></a>Solution File Type</h3>
+<div class="paragraph">
+<p>The solution file type is an input for the generator to build paths.
+The provided value will be validated and if necessary will also be transformed.</p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Solution file type" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "solution_file_type": "sln"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Solution file type default values</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C#</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sln</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Input validation and transformation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation or transformation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contains anything than letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.sln</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sln</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uppercase letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lowercase letters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_solution_project_file_type"><a class="anchor" href="#_solution_project_file_type"></a>Solution Project File Type</h3>
+<div class="paragraph">
+<p>The solution project file type is an input for the generator to build paths.
+The provided value will be validated and if necessary will also be transformed.</p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Solution project file type" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "solution_project_file_type": "csproj"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. Solution file type default values</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">C#</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>csproj</code></p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. Input validation and transformation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation or transformation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contains anything than letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>.csproj</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>csproj</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">uppercase letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lowercase letters</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dto_project_name"><a class="anchor" href="#_dto_project_name"></a>Dto project name</h3>
+<div class="paragraph">
+<p>The Dto project name value defines the following in terms of generating code:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>where the generator will look for the Dto project as it will create a path based on the provided name</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Dto project name" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "dto_project_name": "DtoProjectName"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. Input validation rules and result</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`  ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Special character other than '-', '_' and '.'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First character is not letter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First character after the dot is not letter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 14. Language specific transformation rules</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Language</th>
+<th class="tableblock halign-left valign-top">Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">csharp</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dto.Project.Name</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dto_project_namespace"><a class="anchor" href="#_dto_project_namespace"></a>Dto Project Namespace</h3>
+<div class="paragraph">
+<p>The Dto Project Namespace defines the namespace of the DTO classes in the Dto project.</p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Dto project name" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "dto_project_namespace": "DtoNamespace"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 15. Input validation rules and results</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">`   ` (whitespace)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes other than letters characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First character is not uppercase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First letter is transformed to uppercase</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dto_project_path"><a class="anchor" href="#_dto_project_path"></a>Dto Project Path</h3>
+<div class="paragraph">
+<p>The Dto Project Path defines a relative path from the <code>${TargetDirectory}</code>.
+This value has to be relative and cannot step backwards, e.g. cannot have value like <code>./..</code></p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Dto Project Path" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "dto_project_path": "DtoProject/PathValue"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 16. Input validation rules and results</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validation result</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes other than alphanumeric</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts with lowercase letter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Will be transformed to uppercase</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Starts with <code>./</code> value</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_dto_project_filetype"><a class="anchor" href="#_dto_project_filetype"></a>Dto Project Filetype</h3>
+<div class="paragraph">
+<p>The Dto project file type defines the project file type.
+The generator looks for the type.
+The other use of this parameter is during testing.</p>
+</div>
+<div class="listingblock">
+<div class="title">Providing "Dto Project File Type" configuration value via json configuration</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+  "dto_project_file_type": "sln"
+}</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 17. Input validation rules and results</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Validation result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code generation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>null</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>string.empty</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes other than alphanumeric letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throws</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Includes upper case letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Will be transformed to lower case</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script id="site-script" src="../../_/js/site.js" data-ui-root-path="../../_"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

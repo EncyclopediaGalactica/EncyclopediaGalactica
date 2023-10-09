@@ -1,9 +1,0 @@
-= Main page
-
-The goal of the Encyclopedia Galactica project is to provide a system where:
-
-- documents can be uploaded
-- document content can be managed in a versioned way
-- connections between documents (a piece of document) and document content (e.g. a paragraph or sentence in the document) can be defined with a qualifier (extends, related, parent, child, etc)
-- a rich user interface for editing and reading
-- documents can be published
