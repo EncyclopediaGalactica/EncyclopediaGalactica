@@ -16,6 +16,7 @@ public class DocumentDbContext : DbContext
 
     public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
     public DbSet<Document> Documents => Set<Document>();
+    public DbSet<Structure> Structures => Set<Structure>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
