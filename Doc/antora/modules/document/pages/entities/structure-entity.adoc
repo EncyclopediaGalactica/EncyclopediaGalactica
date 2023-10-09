@@ -1,0 +1,22 @@
+= Structure
+
+Structure describes the Document's structure.
+Structure is a skeleton only.
+It makes possible that the information (mainly text) and the input related rules can be attached to a structural element.
+As it was described at the link:document-type.adoc#_description[Document entity] two types of information is stored in a Document: the information itself and information related to create (input) the information.
+These entities in the system are separate entities from Structure, but Structure provides the skeleton.
+The skeleton in this case is a graph (tree) where the Structure entity have nodes and the information can be attached to nodes.
+
+We want to know the following details:
+
+== Id
+
+Every Structure Node has its own unique identifier.
+
+== Parent
+
+Every Structure Node knows who is its parent.
+
+== Children
+
+Every Structure Node knows who are its children.

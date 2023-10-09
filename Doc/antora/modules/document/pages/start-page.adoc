@@ -1,0 +1,10 @@
+= Document
+
+The Document module is responsible for managing all documents related functionalities within the system.
+It provides rich user interface and internal functionalities for this.
+
+.Domain model of Document module
+[plantuml]
+----
+include::example$domain.puml[]
+----

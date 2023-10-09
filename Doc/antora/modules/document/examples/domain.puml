@@ -1,11 +1,13 @@
 @startuml
 
+!include asd.puml
+
 entity Document {
     Id
     Name
     Description
-    StructureNodeId
-    StructureNode tree
+    StructureId
+    Structure tree
     AuthorId
     Author author
     SourceId
@@ -37,10 +39,10 @@ entity Source {
     Url
 }
 
-entity StructureNode {
+entity Structure {
     id
     name
-    StructureNode[] nodes
+    Structure[] nodes
     UIElementInfo uiElementInfo
     StructureInfo structureInfo
 }
@@ -48,12 +50,12 @@ entity StructureNode {
 entity UIElementInfo {}
 entity StructureInfo {}
 
-Document::StructureNodeId <-- StructureNode::id
+Document::StructureId <-- Structure::id
 Document::AuthorId <-- Author::Id
 Document::SourceId <-- Source::Id
 Author::PersonId <-- Person::Id
-StructureNode .. StructureNodeType
-StructureNode .. UIElementInfo
-StructureNode .. StructureInfo
+Structure .. StructureNodeType
+Structure .. UIElementInfo
+Structure .. StructureInfo
 
 @enduml
