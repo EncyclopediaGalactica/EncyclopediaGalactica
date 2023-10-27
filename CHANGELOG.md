@@ -1,3 +1,15 @@
+# [0.11.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.6...0.11.0) (2023-10-27)
+
+
+### Bug Fixes
+
+* adding the missing README.md file ([#129](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/129)) ([49e5783](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/49e578344921af8ce29e097bffaf133f0f47607b))
+
+
+### Features
+
+* moving from dotnet to java ([#128](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/128)) ([7153a6e](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/7153a6eae19f699839ae516d2d8de63f016486b4))
+
 ## [0.10.6](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.5...0.10.6) (2023-10-07)
 
 ### Bug Fixes
