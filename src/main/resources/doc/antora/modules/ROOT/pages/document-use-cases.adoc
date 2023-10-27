@@ -1,0 +1,25 @@
+= Document Use Cases
+
+=== Editing Document
+
+Every user has at least a Document.
+A Document is, at least, a blank sheet for the user.
+The user is the owner of this page.
+The user can enter any text to this page, it is like a text process.
+Mediums like picture or link can be added to this page.
+
+The link can be two types.
+First is the usual hyperlink which can point to other docs.
+The other type of the link is a link with qualifier.
+The qualifier is a type of metadata provides further information about what is the relation between the source and the linked section.
+
+=== Sharing Document
+
+This page can be shared with other Users, User Groups and Organizations.
+The share can be View Only, Commenter or Editor.
+Sharing can be removed.
+
+=== Publishing Document
+
+The Document can be published, meaning it is displayed in the space of the User for the public.
+The Document can be unpublished, meaning it will be unavailable for the public.
