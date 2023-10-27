@@ -17,29 +17,22 @@ jobs:
           echo "=== Debug ==="
           echo "============="
           echo "github ref: " ${{ vars.GITHUB_REF }}
-          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
-          
+  
   feature_branch:
     name: Feature Branch Build
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v3
-        
-      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
-        uses: actions/setup-dotnet@v3
+
+      - name: Setting up JDK
+        uses: actions/setup-java@v3
         with:
-          dotnet-version: ${{ vars.DOTNET_VERSION }}
-          
-      - name: Restore
+          distribution: 'zulu'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: mvn clean package
         run: |
-          dotnet restore
-          
-      - name: Build
-        run: |
-          dotnet build --configuration Release --no-restore
-          
-      - name: Test
-        run: |
-          dotnet test --no-restore --verbosity normal
+          mvn clean package

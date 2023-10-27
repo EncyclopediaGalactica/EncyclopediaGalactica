@@ -1,0 +1,584 @@
+= Configuration of the REST Api generator
+:source-highlighter:coderay
+
+== The workflow
+
+The REST Api code generator follows the api first (or specification first) approach.
+It means that the api description needed to be generated first and majority of the code is generated from that.
+
+The steps of the process are:
+
+- define the Rest Api
+- run the code generator
+- test the results
+- make a decision if further changes are needed
+
+The corner stones of the process are:
+
+- the generator itself,
+- the generator configuration file
+- the Open Api specification in yaml format
+
+The above steps generate the following code:
+
+- *Data Transfers Objects*: it represents the contract of the Api
+- *Data Transfer Object Tests*: these tests checking if any logic got into the DTOs
+- *Controller*: the controllers contain the smallest possible code meaning they call the business logic
+
+== The internal structure of the generator
+
+The generator considers the following structural levels
+
+=== Solution
+
+This is the main directory including all the stuff, but mainly two things:
+
+- all projects where 1 project is 1 directory
+- solution file
+
+=== Project
+
+A dedicated directory for a purpose like DTOs or DTO tests.
+A project must have a single solution parent
+
+=== Directory
+
+A directory must be placed under a *project* and it is not dedicated to a purpose, rather it contains stuff
+
+The above structure is also represented in the generators inner structure and looks like the following:
+
+=== https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/SolutionInfo.cs[SolutionInfo]
+
+It contains all the solution related information like:
+
+- solution name
+- solution path
+- solution file
+- solution file type
+- list of projects
+
+The values are acquired from the configuration file and goes through validation and transformation.
+
+=== https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/ProjectInfo.cs[ProjectInfo]
+
+It contains all the project related information like:
+
+- project name
+- project path
+- project file type
+- types in the project
+
+Values are acquired from configuration file and going through validation.
+Other values are generated based on the available information.
+
+=== https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/TypeInfo.cs[TypeInfo]
+
+It contains all the information of the particular type such as:
+
+- type name
+- type original name
+- variables in the type which can be field, property or method variable
+- dependencies which can be framework or type level dependency
+- parent if there is any
+
+[NOTE]
+====
+The generator is mainly for generating C# code which defines the terminology.
+Type in this context means `class` in C# language.
+====
+
+=== https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/main/Tools/Generator/Generator/Generator/Models/VariableInfo.cs[VariableInfo]
+
+It contains all the particular related variable information like:
+
+- variable name
+- variable type which can be property, field or method variable
+- dependencies, which can be framework level, like `List<>` or other type
+
+=== Namespace level rules
+
+.Namespace structure when default values are used and solution base namespace is "solution.base"
+|===
+|Project|Namespace
+
+| Dto project
+| `Solution.Base.Dto`
+
+| Dto.Tests project
+| `SolutionBase.Dto.Tests`
+
+
+|===
+
+=== Directory level rules
+
+==== Solution level rules
+
+- the solution main directory is the `${target_directory}`
+- the solution file is placed in the `${target_directory}` with the name of `${solution_name}.${solution_file_type}` which is in the case of C# is `.sln`
+- the solution has a base namespace value which has to be provided via configuration file
+
+==== Dto Project level rules
+
+- the Dto project is placed in the `${target_directory}/${dto_project_name}` directory
+- the Dto project file is placed in the `${target_directory}/${dto_project_name}` directory with the name of `${dto_project_name}.${solution_project_file_type}`, e.g. in case of C# it is `.csproj`
+- the Dto project namespace value has to be provided by the configuration file.
+The provided value will be used like folows: `${solution_base_namespace}.${dto_project_namespace}`
+
+==== Dto Test project level rules
+
+- the Dto Test project is placed in the `${target_directory}/${dto_project_name}.Dto.Test` directory
+- the Dto Test project file is placed in the `${target_directory}/${dto_project_name}.Dto.Test` directory with the name of `${dto_project_name}.Dto.Test.${solution_project_file_type}`, e.g. in case of C# it is `.csproj`
+- the Dto Test project has namespace value which is generated from the solution base namespace value using the following rule `${solution_base_namespace}.${dto_project_namespace}.Test`, but its default value is `Dto`
+
+=== Input validation
+
+The generator applies validation in the following order:
+
+- input validation of the configuration values from the configuration file
+- target directory structure validation
+
+== Configuration via configuration file
+
+== Schema
+
+.Json configuration
+[source,json]
+----
+{
+  "$schema": "https://something.com/schema.json"
+}
+----
+
+It defines the schema information for the configuration file.
+
+== Lang
+
+.Json file "Lang" value configuration
+[source,json]
+----
+{
+  "lang": "csharp"
+}
+----
+
+It defines the target language.
+
+.Input validation rules
+|===
+|Input |Validation result
+
+| valid input
+| code generation
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+|===
+
+.Available languages and their configuration value
+|===
+|Language|Configuration value
+
+| C-sharp
+| `csharp`
+
+|===
+
+== Open Api specification path
+
+The path must points to the Open Api file in yaml format which will be used for generating source code.
+
+.Json file "Open Api Specification Path" value configuration
+[source,json]
+----
+{
+  "openapi_specification_path": "absolute or relative path to the Open Api file in yaml format"
+}
+----
+
+.Input validation rules
+|===
+|Input|Validation result
+
+| Valid input
+| Code generation
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+|===
+
+[NOTE]
+====
+The generator uses `FluentValidation` for input value validation.
+This process does not include checking if the provided path points to an existing place on the disk or not.
+This will be checked later in the process.
+====
+
+=== Target directory
+
+The place on the disk where all the generated code will be placed.
+The directory must exist.
+The directory path can be both absolute or relative.
+
+.Json file "target directory" value configuration
+[source,json]
+----
+{
+  "target_directory": "absolute or relative path to the target directory" 
+}
+----
+
+.Input validation rules
+|===
+|Input|Validation result
+
+| Valid input
+| Code generation
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+|===
+
+=== Solution Name
+
+The name of the solution.
+The generator will look for this file.
+The provided configuration value will go through transformation if needed.
+
+.Format of different languages
+|===
+|Language|Format
+
+|C-sharp
+|Solution.Name
+|===
+
+.Providing "Solution Name" configuration value in the json file
+[source,json]
+----
+{
+  "solution_name": "Solution.Name"
+}
+----
+
+.Input validation rules
+|===
+|Input|Validation result
+
+| Valid input
+| Code generation
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+| First char is any other than letter
+| throws
+
+|Contains special character other than dot (.)
+| throws
+|===
+
+=== Solution Base Namespace
+
+The solution base namespace is the starting point to generate the namespaces for the projects.
+
+.Providing "Solution Base Namespace" value via json configuration
+[source,json]
+----
+{
+  "solution_base_namespace": "Something.Namespace"
+}
+----
+
+.Input validation and transformation rules
+|===
+|Input|Validation and/or transformation result
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+|something.namespace
+|`Something.Namespace`
+
+|something.
+|`Something`
+
+|.something
+|`Something`
+|===
+
+=== Solution File Type
+
+The solution file type is an input for the generator to build paths.
+The provided value will be validated and if necessary will also be transformed.
+
+.Providing "Solution file type" configuration value via json configuration
+[source,json]
+----
+{
+  "solution_file_type": "sln"
+}
+----
+
+.Solution file type default values
+|===
+|Language|Default value
+
+|C#
+|`sln`
+|===
+
+.Input validation and transformation rules
+|===
+|Input |Validation or transformation result
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+|contains anything than letters
+|throws
+
+|`.sln`
+|`sln`
+
+|uppercase letters
+|lowercase letters
+|===
+
+=== Solution Project File Type
+
+The solution project file type is an input for the generator to build paths.
+The provided value will be validated and if necessary will also be transformed.
+
+.Providing "Solution project file type" configuration value via json configuration
+[source,json]
+----
+{
+  "solution_project_file_type": "csproj"
+}
+----
+
+.Solution file type default values
+|===
+|Language|Default value
+
+|C#
+|`csproj`
+|===
+
+.Input validation and transformation rules
+|===
+|Input |Validation or transformation result
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+|contains anything than letters
+|throws
+
+|`.csproj`
+|`csproj`
+
+|uppercase letters
+|lowercase letters
+|===
+
+=== Dto project name
+
+The Dto project name value defines the following in terms of generating code:
+
+- where the generator will look for the Dto project as it will create a path based on the provided name
+
+.Providing "Dto project name" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_name": "DtoProjectName"
+}
+----
+
+.Input validation rules and result
+|===
+|Input|Validation result
+
+| Valid input
+| Code generation
+
+| `null`
+| throws
+
+| `string.empty`
+| throws
+
+| `  ` (whitespace)
+| throws
+
+|Special character other than '-', '_' and '.'
+|throws
+
+|First character is not letter
+|throws
+
+|First character after the dot is not letter
+|throws
+|===
+
+.Language specific transformation rules
+|===
+|Language|Format
+
+|csharp
+|Dto.Project.Name
+|===
+
+=== Dto Project Namespace
+
+The Dto Project Namespace defines the namespace of the DTO classes in the Dto project.
+
+.Providing "Dto project name" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_namespace": "DtoNamespace"
+}
+----
+
+.Input validation rules and results
+|===
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|`   ` (whitespace)
+|throws
+
+|Includes other than letters characters
+|throws
+
+|First character is not uppercase
+|First letter is transformed to uppercase
+
+|===
+
+=== Dto Project Path
+
+The Dto Project Path defines a relative path from the `${TargetDirectory}`.
+This value has to be relative and cannot step backwards, e.g. cannot have value like `./..`
+
+.Providing "Dto Project Path" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_path": "DtoProject/PathValue"
+}
+----
+
+.Input validation rules and results
+|===
+
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|Includes other than alphanumeric
+|throws
+
+|Starts with lowercase letter
+|Will be transformed to uppercase
+
+|Starts with `./` value
+| throws
+
+|===
+
+=== Dto Project Filetype
+
+The Dto project file type defines the project file type.
+The generator looks for the type.
+The other use of this parameter is during testing.
+
+.Providing "Dto Project File Type" configuration value via json configuration
+[source,json]
+----
+{
+  "dto_project_file_type": "sln"
+}
+----
+
+.Input validation rules and results
+|===
+|Input|Validation result
+
+|Valid input
+|Code generation
+
+|`null`
+|throws
+
+|`string.empty`
+|throws
+
+|Includes other than alphanumeric letters
+|throws
+
+|Includes upper case letters
+|Will be transformed to lower case
+
+|===

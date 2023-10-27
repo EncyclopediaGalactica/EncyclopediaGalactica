@@ -1,0 +1,4 @@
+extend type Query {
+    getDocuments: String
+    getDocumentById: String
+}
