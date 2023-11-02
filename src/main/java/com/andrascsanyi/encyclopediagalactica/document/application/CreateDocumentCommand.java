@@ -7,9 +7,10 @@ import com.andrascsanyi.encyclopediagalactica.document.application.exceptions.Un
 import com.andrascsanyi.encyclopediagalactica.document.application.exceptions.ValueAlreadyExistsException;
 import com.andrascsanyi.encyclopediagalactica.document.contracts.DocumentInput;
 import com.andrascsanyi.encyclopediagalactica.document.contracts.DocumentResult;
+import com.andrascsanyi.encyclopediagalactica.document.entities.Document;
 
 /**
- * Creates {@link com.encyclopediagalactica.document.entities.Document} entity in the system.
+ * Creates {@link Document} entity in the system.
  */
 public interface CreateDocumentCommand {
 

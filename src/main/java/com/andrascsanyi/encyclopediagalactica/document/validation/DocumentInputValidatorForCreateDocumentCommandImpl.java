@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DocumentInputValidatorForCreateDocumentCommandImpl
-    extends com.encyclopediagalactica.common.validator.ValidatorBase<DocumentInput>
+    extends com.andrascsanyi.encyclopediagalactica.common.validator.ValidatorBase<DocumentInput>
     implements DocumentInputValidatorForCreateDocumentCommand<DocumentInput> {
 
     @Override

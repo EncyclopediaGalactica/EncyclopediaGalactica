@@ -8,10 +8,7 @@ public class ObjectGuardsImpl implements ObjectGuards {
 
     @Override
     public boolean isNotNull(Object o) {
-        if (o != null) {
-            return true;
-        }
-        return false;
+        return o != null;
     }
 
     @Override

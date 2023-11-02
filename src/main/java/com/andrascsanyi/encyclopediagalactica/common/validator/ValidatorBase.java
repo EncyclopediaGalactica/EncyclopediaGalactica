@@ -1,6 +1,6 @@
-package com.encyclopediagalactica.common.validator;
+package com.andrascsanyi.encyclopediagalactica.common.validator;
 
-import com.encyclopediagalactica.common.validator.exceptions.ValidationException;
+import com.andrascsanyi.encyclopediagalactica.common.validator.exceptions.ValidationException;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
