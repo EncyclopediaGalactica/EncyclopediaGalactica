@@ -1,6 +1,7 @@
 package com.andrascsanyi.encyclopediagalactica.document.validation;
 
-import com.encyclopediagalactica.common.validator.BaseValidator;
+
+import com.andrascsanyi.encyclopediagalactica.common.validator.BaseValidator;
 
 /**
  * {@inheritDoc}

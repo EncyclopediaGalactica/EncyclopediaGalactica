@@ -29,9 +29,7 @@ public class GetModulesScenarioShouldTests {
     public void return_allItems(List<ModuleInput> input, List<ModuleOutput> expected) {
 
         // Arrange
-        input.forEach(item -> {
-            addModuleScenario.addModule(item);
-        });
+        input.forEach(item -> addModuleScenario.addModule(item));
 
         // Act
         List<ModuleOutput> result = getModulesScenario.getModules();

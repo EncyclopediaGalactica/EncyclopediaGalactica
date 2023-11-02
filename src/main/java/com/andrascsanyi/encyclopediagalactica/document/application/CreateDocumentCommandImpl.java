@@ -2,6 +2,7 @@ package com.andrascsanyi.encyclopediagalactica.document.application;
 
 import com.andrascsanyi.encyclopediagalactica.common.guard.Guards;
 import com.andrascsanyi.encyclopediagalactica.common.guard.exceptions.ObjectIsNullException;
+import com.andrascsanyi.encyclopediagalactica.common.validator.exceptions.ValidationException;
 import com.andrascsanyi.encyclopediagalactica.document.application.exceptions.InputValidationException;
 import com.andrascsanyi.encyclopediagalactica.document.application.exceptions.UnknownErrorException;
 import com.andrascsanyi.encyclopediagalactica.document.contracts.DocumentInput;
@@ -10,7 +11,6 @@ import com.andrascsanyi.encyclopediagalactica.document.entities.Document;
 import com.andrascsanyi.encyclopediagalactica.document.infra.mappers.DocumentMapper;
 import com.andrascsanyi.encyclopediagalactica.document.infra.repositories.DocumentRepository;
 import com.andrascsanyi.encyclopediagalactica.document.validation.DocumentInputValidatorForCreateDocumentCommand;
-import io.micrometer.core.instrument.config.validate.ValidationException;
 import lombok.NonNull;
 import org.springframework.stereotype.Service;
 

@@ -3,6 +3,8 @@ package com.andrascsanyi.encyclopediagalactica.iam.specification.application;
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleInput;
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleOutput;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.params.provider.Arguments;
@@ -14,14 +16,14 @@ public class GetModulesScenarioShouldTestsDataSet implements ArgumentsProvider {
     public Stream<? extends Arguments> provideArguments(ExtensionContext context) throws Exception {
         return Stream.of(
             Arguments.of(
-                Arrays.asList(),
-                Arrays.asList()
+                List.of(),
+                List.of()
             ),
             Arguments.of(
-                Arrays.asList(
+                Collections.singletonList(
                     ModuleInput.builder().name("111").description("111").build()
                 ),
-                Arrays.asList(
+                Collections.singletonList(
                     ModuleOutput.builder().name("111").description("111").build()
                 )
             ),

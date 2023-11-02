@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class AddModuleScenarioValidatorImpl
-    extends com.encyclopediagalactica.common.validator.ValidatorBase<ModuleInput>
+    extends com.andrascsanyi.encyclopediagalactica.common.validator.ValidatorBase<ModuleInput>
     implements AddModuleScenarioValidator {
 
     @Override

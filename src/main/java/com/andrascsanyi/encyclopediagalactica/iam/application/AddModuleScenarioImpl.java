@@ -43,7 +43,7 @@ public class AddModuleScenarioImpl implements AddModuleScenario {
         try {
             return addModuleBusinessLogic(dto);
         } catch (ObjectIsNullException |
-                 com.encyclopediagalactica.common.validator.exceptions.ValidationException |
+                 com.andrascsanyi.encyclopediagalactica.common.validator.exceptions.ValidationException |
                  IllegalArgumentException e) {
             String message = "Input validation error";
             logger.error(message, e);
