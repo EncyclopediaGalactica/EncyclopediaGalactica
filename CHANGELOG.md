@@ -1,3 +1,10 @@
+# [0.12.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.11.0...0.12.0) (2023-11-02)
+
+
+### Features
+
+* AddModule and GetModules scenario ([#130](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/130)) ([5e13dac](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/5e13dac9f6fc997d585125797f270dbb2c117c76))
+
 # [0.11.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.6...0.11.0) (2023-10-27)
 
 
