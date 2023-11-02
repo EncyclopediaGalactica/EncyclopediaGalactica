@@ -7,7 +7,7 @@ import java.util.List;
  * Get Modules interface. It provides method to get the {@link Module} objects represented by
  * {@link ModuleOutput}
  */
-public interface GetModules {
+public interface GetModulesScenario {
 
     /**
      * Returns the list of {@link ModuleOutput} representing {@link Module} objects in the system.

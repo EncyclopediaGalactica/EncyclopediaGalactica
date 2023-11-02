@@ -1,4 +1,4 @@
-package com.andrascsanyi.encyclopediagalactica.iam.infra.mappers;
+package com.andrascsanyi.encyclopediagalactica.iam.infra.mappers.datasets;
 
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleOutput;
 import com.andrascsanyi.encyclopediagalactica.iam.entities.Module;

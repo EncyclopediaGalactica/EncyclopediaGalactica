@@ -11,12 +11,12 @@ import lombok.NonNull;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GetModulesImpl implements GetModules {
+public class GetModulesScenarioImpl implements GetModulesScenario {
 
     private final ModuleRepository moduleRepository;
     private final ModuleMappers moduleMappers;
 
-    public GetModulesImpl(
+    public GetModulesScenarioImpl(
         @NonNull ModuleRepository moduleRepository,
         @NonNull ModuleMappers moduleMappers) {
         this.moduleRepository = moduleRepository;

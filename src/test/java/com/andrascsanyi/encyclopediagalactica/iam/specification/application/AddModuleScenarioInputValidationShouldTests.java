@@ -1,7 +1,8 @@
-package com.andrascsanyi.encyclopediagalactica.iam.application;
+package com.andrascsanyi.encyclopediagalactica.iam.specification.application;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import com.andrascsanyi.encyclopediagalactica.iam.application.AddModuleScenario;
 import com.andrascsanyi.encyclopediagalactica.iam.application.exceptions.InputValidationException;
 import com.andrascsanyi.encyclopediagalactica.iam.application.exceptions.ValueAlreadyExistsException;
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleInput;

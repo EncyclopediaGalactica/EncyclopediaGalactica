@@ -1,7 +1,8 @@
-package com.andrascsanyi.encyclopediagalactica.iam.application;
+package com.andrascsanyi.encyclopediagalactica.iam.specification.application;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.andrascsanyi.encyclopediagalactica.iam.application.AddModuleScenario;
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleInput;
 import com.andrascsanyi.encyclopediagalactica.iam.contracts.ModuleOutput;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,7 @@ import org.springframework.test.annotation.DirtiesContext.ClassMode;
 
 @SpringBootTest
 @DirtiesContext(classMode = ClassMode.AFTER_EACH_TEST_METHOD)
-public class AddModuleShouldTests {
+public class AddModuleScenarioShouldTests {
 
     @Autowired
     private AddModuleScenario addModuleScenario;
