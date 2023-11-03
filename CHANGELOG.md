@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.12.0...0.13.0) (2023-11-03)
+
+
+### Features
+
+* **IAM:** display modules in the right-top dropdown ([#131](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/131)) ([0c89dd9](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0c89dd9ad01c2ef802bf86cc3398cf962cca8c58))
+
 # [0.12.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.11.0...0.12.0) (2023-11-02)
 
 
