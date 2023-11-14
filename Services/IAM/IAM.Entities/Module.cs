@@ -3,7 +3,7 @@ namespace IAM.Entities;
 using Interfaces;
 
 /// <summary>
-///     Module entity
+///     Module entity.
 ///     <para>
 ///         A Module is a set of functionalities of the system. In case of IAM it means available functionalities.
 ///     </para>
