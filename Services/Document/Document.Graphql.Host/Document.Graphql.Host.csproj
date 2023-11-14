@@ -3,18 +3,18 @@
     <PropertyGroup>
         <AssemblyName>EncyclopediaGalactica.Services.Document.Graphql.Host</AssemblyName>
         <RootNamespace>EncyclopediaGalactica.Services.Document.Graphql.Host</RootNamespace>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.7.1"/>
-        <PackageReference Include="HotChocolate.AspNetCore" Version="13.5.1"/>
+        <PackageReference Include="FluentValidation" Version="11.8.0"/>
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.7.0"/>
         <PackageReference Include="HotChocolate.Server" Version="10.5.5"/>
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="7.0.0"/>
-        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="7.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
     </ItemGroup>
 
     <ItemGroup>
