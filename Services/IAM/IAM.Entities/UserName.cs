@@ -2,7 +2,7 @@ namespace IAM.Entities;
 
 using Interfaces;
 
-public class UserName : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowHowCreatedMeAndWhen
+public class UserName : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowWhoCreatedMeAndWhen
 {
     public string FirstName { get; set; }
     public string MiddleName { get; set; }
