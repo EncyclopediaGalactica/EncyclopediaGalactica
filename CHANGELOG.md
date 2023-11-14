@@ -1,3 +1,15 @@
+# [0.11.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.6...0.11.0) (2023-11-14)
+
+
+### Bug Fixes
+
+* **IAM:** syntax issue ([#138](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/138)) ([2687c18](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/2687c1861d5f2f4e6d433e5f41f524b60003bb6f))
+
+
+### Features
+
+* **IAM:** adding Module entity  ([#137](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/137)) ([d21875a](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d21875a841a0ead50ce19c8d3be8a7dd073622b3))
+
 ## [0.10.6](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.5...0.10.6) (2023-10-07)
 
 
