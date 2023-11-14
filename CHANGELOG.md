@@ -1,3 +1,10 @@
+# [0.12.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.11.0...0.12.0) (2023-11-14)
+
+
+### Features
+
+* upgrade to dotnet-8 ([#139](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/139)) ([c3c6c43](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/c3c6c43034ae44910034cd5f3cbc9bf94833b598))
+
 # [0.11.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.10.6...0.11.0) (2023-11-14)
 
 
