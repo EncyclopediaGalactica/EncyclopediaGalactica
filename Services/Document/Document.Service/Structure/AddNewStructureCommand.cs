@@ -55,7 +55,7 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         ValidateProvidedInput(parentId, structureDto);
         Structure structure = _structureMappers.MapStructureDtoToStructure(structureDto);
         ValidateStructureEntity(structure);
-        Structure newStructure = _structureRepository.AddNewAsync(structure).ConfigureAwait(false);
+        Structure newStructure = await _structureRepository.AddNewAsync(structure).ConfigureAwait(false);
         StructureDto resultDto = _structureMappers.MapStructureToStructureDto(newStructure);
         return resultDto;
     }

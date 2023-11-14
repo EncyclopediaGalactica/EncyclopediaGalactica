@@ -2,7 +2,7 @@ namespace IAM.Entities;
 
 using Interfaces;
 
-public class User : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowHowCreatedMeAndWhen
+public class User : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowWhoCreatedMeAndWhen
 {
     public UserName UserName { get; set; }
     public long Id { get; set; }
