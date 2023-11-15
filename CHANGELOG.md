@@ -1,3 +1,10 @@
+## [0.12.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.12.0...0.12.1) (2023-11-15)
+
+
+### Bug Fixes
+
+* try out Jekyll ([#140](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/140)) ([81224d3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/81224d3adbd187040e6aa40d58d9618c7afceaa6))
+
 # [0.12.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.11.0...0.12.0) (2023-11-14)
 
 
