@@ -1,3 +1,10 @@
+## [0.13.4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.3...0.13.4) (2023-11-16)
+
+
+### Bug Fixes
+
+* **docs:** fixing permissions ([#148](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/148)) ([142b414](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/142b41439ffe21d533618a07abbc50c83ce7f7a5))
+
 ## [0.13.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.2...0.13.3) (2023-11-16)
 
 
