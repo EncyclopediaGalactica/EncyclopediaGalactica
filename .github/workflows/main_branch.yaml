@@ -21,7 +21,7 @@ jobs:
           echo "event name: " ${{ github.event_name }}
           
   main_branch:
-    name: Main Branch Build and Release
+    name: Main Branch Build
     runs-on: ubuntu-latest
     needs: debug
     permissions: 
