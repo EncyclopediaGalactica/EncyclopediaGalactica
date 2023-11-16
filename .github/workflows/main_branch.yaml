@@ -85,7 +85,7 @@ jobs:
           
       - run: dotnet tool update -g docfx
       
-      - run: docfx Docs/docfx.json
+      - run: docfx Docs/docfx.json --output Docs/_site
       
       - name: Setup pages
         uses: actions/configure-pages@v3
