@@ -1,0 +1,36 @@
+name: Publishing documentation
+run-name: Publishing documentation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-docs:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Dotnet setup
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+      - run: dotnet tool update -g docfx
+      - run: docfx Docs/docfx.json
+      - name: Setup pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: 'Docs/_site'
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
