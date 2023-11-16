@@ -1,3 +1,10 @@
+## [0.13.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.0...0.13.1) (2023-11-16)
+
+
+### Bug Fixes
+
+* **Docs:** fixing path ([#143](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/143)) ([d3aeade](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d3aeadeceb82fb18b926495eb0d2b065032899fd))
+
 # [0.13.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.12.1...0.13.0) (2023-11-16)
 
 
