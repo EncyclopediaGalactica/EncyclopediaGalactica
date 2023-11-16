@@ -367,3 +367,6 @@ FodyWeavers.xsd
 
 # Jetbrains Rider
 .idea/
+
+# generated docs
+Docs/_site
