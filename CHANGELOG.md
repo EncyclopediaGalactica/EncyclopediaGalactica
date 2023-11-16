@@ -1,3 +1,10 @@
+# [0.13.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.12.1...0.13.0) (2023-11-16)
+
+
+### Features
+
+* docfx ([#142](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/142)) ([e11e80c](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/e11e80c6ee32b4a027f6a7bb803537aeb22a0395))
+
 ## [0.12.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.12.0...0.12.1) (2023-11-15)
 
 
