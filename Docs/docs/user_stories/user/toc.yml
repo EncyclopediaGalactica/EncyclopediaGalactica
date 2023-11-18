@@ -1,0 +1,6 @@
+- name: Introduction
+  href: introduction.md
+- name: Browsing
+  href: browsing.md
+- name: Manage documents
+  href: manage_documents.md

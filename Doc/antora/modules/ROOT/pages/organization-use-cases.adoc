@@ -1,9 +1,0 @@
-= Organization use cases
-
-== Create Organization
-
-== Add Users to Organization
-
-== Remove Users from Organization
-
-== Delete Organization

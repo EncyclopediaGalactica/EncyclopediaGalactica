@@ -2,10 +2,11 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+The purpose of Encyclopedia Galactica system is storing all data on the world.
+Not only storing it, but providing also services and solutions to be able to understand it.
+It means organizing it, maintaining it, finding connections between piece of information and so on.
+Basically, what a library does.
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+The other main purpose of the system is being an archive of collective information.
 
-## Quick Start Notes:
-
-1. Add images to the *images* folder if the file is referencing an image.
+The name comes from the Asimov's Foundation novels.

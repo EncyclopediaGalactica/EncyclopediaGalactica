@@ -1,7 +1,0 @@
-= Ingress use cases
-
-== Create Ingress
-
-== Modify Ingress
-
-== Delete Ingress

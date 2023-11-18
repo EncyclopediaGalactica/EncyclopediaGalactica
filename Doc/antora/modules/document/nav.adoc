@@ -1,5 +1,0 @@
-.Document module
-* xref:start-page.adoc[Introduction]
-* Domain model
-** xref:document:entities/document-entity.adoc[Document Entity]
-** xref:document:entities/structure-entity.adoc[Structure Entity]
