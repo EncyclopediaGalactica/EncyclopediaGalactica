@@ -1,7 +1,0 @@
-.Use cases
-* xref:document-use-cases.adoc[Document]
-* xref:user-groups-use-cases.adoc[User groups]
-* xref:organization-use-cases.adoc[Organizations]
-* xref:ingress-use-cases.adoc[Ingress]
-* xref:data-source-use-cases.adoc[Data Source]
-* xref:thesaurus-use-cases.adoc[Thesaurus]

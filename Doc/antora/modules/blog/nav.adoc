@@ -1,2 +1,0 @@
-.Development blog
-* xref:first-steps-with-generator.adoc[First steps with the generator]

@@ -1,2 +1,4 @@
 - name: Document module
   href: document.md
+- name: Document entity
+  href: entity.md
