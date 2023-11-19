@@ -3,20 +3,20 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentSer
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Contracts.Input;
+using Ctx;
 using Document;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Mappers;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.Repository.Document;
-using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
-using EncyclopediaGalactica.Utils.GuardsService;
-using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
+using Entities;
 using FluentAssertions;
 using FluentValidation;
+using Mappers;
+using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
+using Repository.Document;
+using Repository.Interfaces;
+using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -35,7 +35,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentGraphqlInput>>()
         },
         new object[]
         {
@@ -44,7 +44,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentGraphqlInput>>()
         },
         new object[]
         {
@@ -53,7 +53,7 @@ public class DocumentService_Should
                 Substitute.For<ISourceFormatNodeMappers>(),
                 Substitute.For<IDocumentMappers>()),
             null,
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentGraphqlInput>>()
         },
         new object[]
         {
@@ -74,7 +74,7 @@ public class DocumentService_Should
         IGuardsService guardsService,
         ISourceFormatMappers mappers,
         IDocumentsRepository documentsRepository,
-        IValidator<DocumentDto> documentDtoValidator)
+        IValidator<DocumentGraphqlInput> documentDtoValidator)
     {
         // Arrange && Act
         Action action = () =>

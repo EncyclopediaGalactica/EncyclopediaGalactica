@@ -1,23 +1,23 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Errors;
-using EncyclopediaGalactica.Services.Document.Repository.Exceptions;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
+using Contracts.Input;
+using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Repository.Exceptions;
+using Utils.GuardsService.Exceptions;
+using ValidatorService;
 
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<DocumentDto> UpdateAsync(long documentId, DocumentDto modifiedDto)
+    public async Task<DocumentGraphqlInput> UpdateAsync(long documentId, DocumentGraphqlInput modifiedGraphqlInput)
     {
         try
         {
-            return await UpdateBusinessLogicAsync(documentId, modifiedDto);
+            return await UpdateBusinessLogicAsync(documentId, modifiedGraphqlInput);
         }
         catch (Exception e) when (e is GuardsServiceValueShouldNotBeEqualToException
                                       or GuardsServiceValueShouldNoBeNullException
@@ -49,23 +49,25 @@ public partial class DocumentService
         }
     }
 
-    private async Task<DocumentDto> UpdateBusinessLogicAsync(long documentId, DocumentDto modifiedDto)
+    private async Task<DocumentGraphqlInput> UpdateBusinessLogicAsync(long documentId,
+        DocumentGraphqlInput modifiedGraphqlInput)
     {
         _guardsService.IsNotEqual(documentId, 0);
-        _guardsService.NotNull(modifiedDto);
+        _guardsService.NotNull(modifiedGraphqlInput);
 
-        await ValidateUpdateAsyncInput(modifiedDto).ConfigureAwait(false);
-        Document mappedDocument = _mappers.DocumentMappers.MapDocumentDtoToDocument(modifiedDto);
+        await ValidateUpdateAsyncInput(modifiedGraphqlInput).ConfigureAwait(false);
+        Document mappedDocument = _mappers.DocumentMappers.MapDocumentDtoToDocument(modifiedGraphqlInput);
         Document updateDocument = await _repository.UpdateAsync(
             documentId,
             mappedDocument).ConfigureAwait(false);
-        DocumentDto updatedAndMappedDocumentDto = _mappers.DocumentMappers.MapDocumentToDocumentDto(updateDocument);
-        return updatedAndMappedDocumentDto;
+        DocumentGraphqlInput updatedAndMappedDocumentGraphqlInput =
+            _mappers.DocumentMappers.MapDocumentToDocumentDto(updateDocument);
+        return updatedAndMappedDocumentGraphqlInput;
     }
 
-    private async Task ValidateUpdateAsyncInput(DocumentDto modifiedDto)
+    private async Task ValidateUpdateAsyncInput(DocumentGraphqlInput modifiedGraphqlInput)
     {
-        await _documentDtoValidator.ValidateAsync(modifiedDto, o =>
+        await _documentDtoValidator.ValidateAsync(modifiedGraphqlInput, o =>
         {
             o.IncludeRuleSets(DocumentDtoValidator.Scenarios.Update.ToString());
             o.ThrowOnFailures();

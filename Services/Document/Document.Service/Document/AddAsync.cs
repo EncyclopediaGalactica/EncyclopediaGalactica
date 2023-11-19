@@ -1,21 +1,22 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Errors;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
+using Contracts.Input;
+using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using ValidatorService;
 
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<DocumentDto> AddAsync(DocumentDto dtoInput, CancellationToken cancellationToken = default)
+    public async Task<DocumentGraphqlInput> AddAsync(DocumentGraphqlInput graphqlInputGraphqlInput,
+        CancellationToken cancellationToken = default)
     {
         try
         {
-            return await AddBusinessLogicAsync(dtoInput, cancellationToken);
+            return await AddBusinessLogicAsync(graphqlInputGraphqlInput, cancellationToken);
         }
         catch (Exception e) when (e is ArgumentNullException
                                       or ValidationException
@@ -39,19 +40,20 @@ public partial class DocumentService
         }
     }
 
-    private async Task<DocumentDto> AddBusinessLogicAsync(DocumentDto dtoInput, CancellationToken cancellationToken)
+    private async Task<DocumentGraphqlInput> AddBusinessLogicAsync(DocumentGraphqlInput graphqlInputGraphqlInput,
+        CancellationToken cancellationToken)
     {
-        _guardsService.NotNull(dtoInput);
-        await ValidationDocumentInputForAdding(dtoInput);
-        Document document = _mappers.DocumentMappers.MapDocumentDtoToDocument(dtoInput);
+        _guardsService.NotNull(graphqlInputGraphqlInput);
+        await ValidationDocumentInputForAdding(graphqlInputGraphqlInput);
+        Document document = _mappers.DocumentMappers.MapDocumentDtoToDocument(graphqlInputGraphqlInput);
         Document result = await _repository.AddAsync(document, cancellationToken).ConfigureAwait(false);
-        DocumentDto resultDto = _mappers.DocumentMappers.MapDocumentToDocumentDto(result);
-        return resultDto;
+        DocumentGraphqlInput resultGraphqlInput = _mappers.DocumentMappers.MapDocumentToDocumentDto(result);
+        return resultGraphqlInput;
     }
 
-    private async Task ValidationDocumentInputForAdding(DocumentDto dtoInput)
+    private async Task ValidationDocumentInputForAdding(DocumentGraphqlInput graphqlInputGraphqlInput)
     {
-        await _documentDtoValidator.ValidateAsync(dtoInput, options =>
+        await _documentDtoValidator.ValidateAsync(graphqlInputGraphqlInput, options =>
         {
             options.IncludeRuleSets(DocumentDtoValidator.Scenarios.AddNew.ToString());
             options.ThrowOnFailures();

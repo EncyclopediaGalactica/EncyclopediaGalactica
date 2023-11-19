@@ -1,17 +1,17 @@
 namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
-using Dtos;
+using Contracts.Input;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
     public async Task DeleteAsync(
-        SourceFormatNodeDto dto,
+        SourceFormatNodeInputContract inputContract,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(dto);
-        _guards.IsNotEqual(dto.Id, 0);
+        ArgumentNullException.ThrowIfNull(inputContract);
+        _guards.IsNotEqual(inputContract.Id, 0);
 
-        await _sourceFormatNodeRepository.DeleteAsync(dto.Id, cancellationToken).ConfigureAwait(false);
+        await _sourceFormatNodeRepository.DeleteAsync(inputContract.Id, cancellationToken).ConfigureAwait(false);
     }
 }

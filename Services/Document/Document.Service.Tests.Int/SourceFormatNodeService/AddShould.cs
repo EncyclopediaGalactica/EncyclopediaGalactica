@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.SourceFormat
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -16,15 +16,15 @@ public class AddShould : BaseTest
     {
         // Arrange
         string name = "asd";
-        SourceFormatNodeDto dto = new()
+        SourceFormatNodeInputContract inputContract = new()
         {
             Name = name
         };
 
         // Act
-        SourceFormatNodeDto result = await Sut
+        SourceFormatNodeInputContract result = await Sut
             .SourceFormatNode
-            .AddAsync(dto);
+            .AddAsync(inputContract);
 
         // Assert
         result.Should().NotBeNull();

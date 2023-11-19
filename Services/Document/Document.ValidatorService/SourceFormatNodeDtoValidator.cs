@@ -1,9 +1,9 @@
 namespace EncyclopediaGalactica.Services.Document.ValidatorService;
 
-using Dtos;
+using Contracts.Input;
 using FluentValidation;
 
-public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeDto>
+public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeInputContract>
 {
     public const string Add = "Add";
     public const string Update = "Update";

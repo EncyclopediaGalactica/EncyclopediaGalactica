@@ -1,7 +1,7 @@
 ﻿namespace EncyclopediaGalactica.Services.Document.Tests.Datasets;
 
 using System.Diagnostics.CodeAnalysis;
-using Dtos;
+using Contracts.Input;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -41,8 +41,8 @@ public static class SourceFormatNodeDatasets
         new List<object[]?>
         {
             new object?[] { null, null },
-            new object?[] { new SourceFormatNodeDto(), null },
-            new object?[] { null, new SourceFormatNodeDto() },
+            new object?[] { new SourceFormatNodeInputContract(), null },
+            new object?[] { null, new SourceFormatNodeInputContract() },
         };
 
     public static IEnumerable<object[]?> Service_AddChildToParentAsync_InvalidInput_Dataset =>
@@ -50,18 +50,18 @@ public static class SourceFormatNodeDatasets
         {
             new object?[]
             {
-                new SourceFormatNodeDto { Id = 0 },
-                new SourceFormatNodeDto { Id = 100 }
+                new SourceFormatNodeInputContract { Id = 0 },
+                new SourceFormatNodeInputContract { Id = 100 }
             },
             new object?[]
             {
-                new SourceFormatNodeDto { Id = 100 },
-                new SourceFormatNodeDto { Id = 0 }
+                new SourceFormatNodeInputContract { Id = 100 },
+                new SourceFormatNodeInputContract { Id = 0 }
             },
             new object?[]
             {
-                new SourceFormatNodeDto { Id = 100 },
-                new SourceFormatNodeDto { Id = 100 }
+                new SourceFormatNodeInputContract { Id = 100 },
+                new SourceFormatNodeInputContract { Id = 100 }
             }
         };
 

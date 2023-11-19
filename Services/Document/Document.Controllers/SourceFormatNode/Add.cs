@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
 using System.Net.Mime;
-using Dtos;
+using Contracts.Input;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,8 +15,8 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(typeof(SourceFormatNodeSingleResultViewModel), StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<SourceFormatNodeDto>> AddAsync(
-        [FromBody] SourceFormatNodeDto? dto)
+    public async Task<ActionResult<SourceFormatNodeInputContract>> AddAsync(
+        [FromBody] SourceFormatNodeInputContract? dto)
     {
         if (dto is null)
             _logger.LogInformation("{RequestModel} is null", nameof(dto));

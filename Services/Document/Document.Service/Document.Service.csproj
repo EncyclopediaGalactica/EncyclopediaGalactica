@@ -13,9 +13,7 @@
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj"/>
         <ProjectReference Include="..\..\..\Utils\GuardsService.Interfaces\GuardsService.Interfaces.csproj"/>
         <ProjectReference Include="..\..\..\Utils\GuardsService\GuardsService.csproj"/>
-        <ProjectReference Include="..\Document.CacheService.Exceptions\Document.CacheService.Exceptions.csproj"/>
-        <ProjectReference Include="..\Document.CacheService.Interfaces\Document.CacheService.Interfaces.csproj"/>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
         <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
@@ -27,7 +25,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
     </ItemGroup>
 
 </Project>

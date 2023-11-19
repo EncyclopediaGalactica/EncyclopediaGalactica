@@ -1,13 +1,13 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.Document;
 
 using System.Net.Http.Headers;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
-using EncyclopediaGalactica.Services.Document.Dtos;
 using FluentValidation;
 
-public class DocumentGetByIdRequestModel : IRequestModel<DocumentDto>
+public class DocumentGetByIdRequestModel : IRequestModel<DocumentGraphqlInput>
 {
-    public DocumentDto? Payload { get; private init; }
+    public DocumentGraphqlInput? Payload { get; private init; }
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
 
     public class Builder
@@ -36,7 +36,7 @@ public class DocumentGetByIdRequestModel : IRequestModel<DocumentDto>
 
             return new DocumentGetByIdRequestModel
             {
-                Payload = new DocumentDto { Id = Id },
+                Payload = new DocumentGraphqlInput { Id = Id },
                 AcceptHeaders = _acceptHeaders
             };
         }

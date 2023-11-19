@@ -2,10 +2,10 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormat
 
 using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
-using Dtos;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNodeDto>
+public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNodeInputContract>
 {
     /// <summary>
     ///     Creates a new instance
@@ -19,7 +19,7 @@ public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNode
     ///     we wish to create.
     /// </summary>
     [JsonPropertyName("payload")]
-    public SourceFormatNodeDto? Payload { get; init; }
+    public SourceFormatNodeInputContract? Payload { get; init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; init; }
         = new List<MediaTypeWithQualityHeaderValue>();
@@ -80,14 +80,14 @@ public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNode
                         $"{Id} cannot be null or zero.");
                 }
 
-                SourceFormatNodeDto dto = new SourceFormatNodeDto
+                SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
                 {
                     Id = Id
                 };
 
                 SourceFormatNodeDeleteRequestModel model = new SourceFormatNodeDeleteRequestModel
                 {
-                    Payload = dto,
+                    Payload = inputContract,
                     AcceptHeaders = AcceptHeaders
                 };
                 return model;

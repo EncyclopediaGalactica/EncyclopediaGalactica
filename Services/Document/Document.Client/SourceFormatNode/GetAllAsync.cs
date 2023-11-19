@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.SourceFormatNode;
 
 using Api;
-using Dtos;
+using Contracts.Input;
 using Exceptions;
 using Models;
 using Models.SourceFormatNode;
@@ -19,8 +19,8 @@ public partial class SourceFormatNodeSdk
 
             string uri = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.GetAll;
 
-            HttpRequestMessageBuilder<List<SourceFormatNodeDto>> httpRequestMessageBuilder =
-                new HttpRequestMessageBuilder<List<SourceFormatNodeDto>>();
+            HttpRequestMessageBuilder<List<SourceFormatNodeInputContract>> httpRequestMessageBuilder =
+                new HttpRequestMessageBuilder<List<SourceFormatNodeInputContract>>();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetUri(uri)
                 .SetHttpMethod(HttpMethod.Get)
@@ -28,7 +28,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeGetAllResponseModel result = await _sdkCore
-                .SendAsync<SourceFormatNodeGetAllResponseModel, List<SourceFormatNodeDto>>(
+                .SendAsync<SourceFormatNodeGetAllResponseModel, List<SourceFormatNodeInputContract>>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

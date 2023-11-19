@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.Document;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 using Exceptions;
 
@@ -10,13 +10,13 @@ using Exceptions;
 ///         The service provides IAM.Api methods to access <see cref="Document" /> objects stored in the system.
 ///     </remarks>
 /// </summary>
-public interface IDocumentService
+public partial interface IDocumentService
 {
     /// <summary>
     ///     Adds a <see cref="Document" /> object to the system with the values represented by the provided
-    ///     <see cref="DocumentDto" />.
+    ///     <see cref="DocumentGraphqlInput" />.
     /// </summary>
-    /// <param name="dtoInput">The input object</param>
+    /// <param name="graphqlInputGraphqlInput">The input object</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -32,10 +32,12 @@ public interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     When any other error happens.
     /// </exception>
-    Task<DocumentDto> AddAsync(DocumentDto dtoInput, CancellationToken cancellationToken = default);
+    Task<DocumentGraphqlInput> AddAsync(DocumentGraphqlInput graphqlInputGraphqlInput,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentDto" /> representing the <see cref="Document" /> entities in
+    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentGraphqlInput" /> representing the <see cref="Document" />
+    ///     entities in
     ///     the system.
     /// </summary>
     /// <param name="cancellationToken">
@@ -51,10 +53,11 @@ public interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<List<DocumentDto>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<List<DocumentGraphqlInput>> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentDto" /> object.
+    ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentGraphqlInput" />
+    ///     object.
     /// </summary>
     /// <param name="id">The id value</param>
     /// <param name="cancellationToken">
@@ -62,7 +65,7 @@ public interface IDocumentService
     /// </param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation. It includes the
-    ///     <see cref="DocumentDto" /> result.
+    ///     <see cref="DocumentGraphqlInput" /> result.
     /// </returns>
     /// <exception cref="InvalidInputToDocumentServiceException">
     ///     Invalid input provided to the service
@@ -76,17 +79,17 @@ public interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<DocumentDto> GetByIdAsync(long id, CancellationToken cancellationToken = default);
+    Task<DocumentGraphqlInput> GetByIdAsync(long id, CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Modifies the designated <see cref="Document" /> entity in the system based on the provided
-    ///     <see cref="DocumentDto" /> instance.
+    ///     <see cref="DocumentGraphqlInput" /> instance.
     /// </summary>
     /// <param name="documentId">The id of entity to be modified</param>
-    /// <param name="modifiedDto">The provided changes</param>
+    /// <param name="modifiedGraphqlInput">The provided changes</param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation.
-    ///     It included the <see cref="DocumentDto" /> result.
+    ///     It included the <see cref="DocumentGraphqlInput" /> result.
     /// </returns>
     /// <exception cref="InvalidInputToDocumentServiceException">
     ///     Invalid input provided to the service
@@ -100,7 +103,7 @@ public interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<DocumentDto> UpdateAsync(long documentId, DocumentDto modifiedDto);
+    Task<DocumentGraphqlInput> UpdateAsync(long documentId, DocumentGraphqlInput modifiedGraphqlInput);
 
     /// <summary>
     ///     Deletes the designated <see cref="Document" /> entity.

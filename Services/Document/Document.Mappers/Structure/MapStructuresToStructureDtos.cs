@@ -1,14 +1,14 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Structure;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 
 public partial class StructureMappers
 {
     /// <inheritdoc />
-    public List<StructureDto> MapStructuresToStructureDtos(List<Structure> structures)
+    public List<StructureInputContract> MapStructuresToStructureDtos(List<Structure> structures)
     {
-        List<StructureDto> result = new List<StructureDto>();
+        List<StructureInputContract> result = new List<StructureInputContract>();
         if (structures.Any())
         {
             foreach (Structure structure in structures)

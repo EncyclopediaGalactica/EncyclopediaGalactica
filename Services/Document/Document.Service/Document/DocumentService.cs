@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using Dtos;
+using Contracts.Input;
 using FluentValidation;
 using Interfaces.Document;
 using Mappers.Interfaces;
@@ -10,7 +10,7 @@ using Utils.GuardsService.Interfaces;
 /// <inheritdoc />
 public partial class DocumentService : IDocumentService
 {
-    private readonly IValidator<DocumentDto> _documentDtoValidator;
+    private readonly IValidator<DocumentGraphqlInput> _documentDtoValidator;
     private readonly IGuardsService _guardsService;
     private readonly ISourceFormatMappers _mappers;
     private readonly IDocumentsRepository _repository;
@@ -19,7 +19,7 @@ public partial class DocumentService : IDocumentService
         IGuardsService guardsService,
         ISourceFormatMappers mappers,
         IDocumentsRepository documentsRepository,
-        IValidator<DocumentDto> documentDtoValidator)
+        IValidator<DocumentGraphqlInput> documentDtoValidator)
     {
         ArgumentNullException.ThrowIfNull(guardsService);
         ArgumentNullException.ThrowIfNull(mappers);

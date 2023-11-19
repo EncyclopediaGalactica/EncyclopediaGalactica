@@ -1,8 +1,8 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit;
 
 using System.Diagnostics.CodeAnalysis;
+using Contracts.Input;
 using Document;
-using Dtos;
 using Entities;
 using FluentAssertions;
 using SourceFormatNode;
@@ -33,20 +33,20 @@ public class SourceFormatNodeMappers_Should
         };
 
         // Act
-        SourceFormatNodeDto dto = _mappers.SourceFormatNodeMappers
+        SourceFormatNodeInputContract inputContract = _mappers.SourceFormatNodeMappers
             .MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(node);
 
         // Assert
-        dto.Id.Should().Be(node.Id);
-        dto.Name.Should().Be(node.Name);
-        dto.IsRootNode.Should().Be(node.IsRootNode);
+        inputContract.Id.Should().Be(node.Id);
+        inputContract.Name.Should().Be(node.Name);
+        inputContract.IsRootNode.Should().Be(node.IsRootNode);
     }
 
     [Fact]
     public void SingleDtoToEntity()
     {
         // Arrange
-        SourceFormatNodeDto dto = new SourceFormatNodeDto
+        SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
         {
             Id = 100,
             Name = "name",
@@ -54,11 +54,12 @@ public class SourceFormatNodeMappers_Should
         };
 
         // Act
-        SourceFormatNode node = _mappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(dto);
+        SourceFormatNode node =
+            _mappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(inputContract);
 
         // Assert
-        node.Id.Should().Be(dto.Id);
-        node.Name.Should().Be(dto.Name);
-        node.IsRootNode.Should().Be(dto.IsRootNode);
+        node.Id.Should().Be(inputContract.Id);
+        node.Name.Should().Be(inputContract.Name);
+        node.IsRootNode.Should().Be(inputContract.IsRootNode);
     }
 }

@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -16,11 +16,11 @@ public class GetByIdShould : BaseTest
     public async Task Return_TheDesignatedEntity()
     {
         // Arrange
-        SourceFormatNodeDto node = new SourceFormatNodeDto { Name = "asdasd" };
-        SourceFormatNodeDto entity = await Sut.SourceFormatNode.AddAsync(node);
+        SourceFormatNodeInputContract node = new SourceFormatNodeInputContract { Name = "asdasd" };
+        SourceFormatNodeInputContract entity = await Sut.SourceFormatNode.AddAsync(node);
 
         // Act
-        SourceFormatNodeDto result = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract result = await Sut.SourceFormatNode
             .GetByIdAsync(entity.Id);
 
         // Assert

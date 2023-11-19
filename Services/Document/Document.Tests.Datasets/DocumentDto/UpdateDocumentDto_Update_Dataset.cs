@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
-using Dtos;
+using Contracts.Input;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -14,7 +14,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
     {
         yield return new object[]
         {
-            new DocumentDto
+            new DocumentGraphqlInput
             {
                 Id = 100,
                 Name = "only the name changes",
@@ -23,7 +23,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
         };
         yield return new object[]
         {
-            new DocumentDto
+            new DocumentGraphqlInput
             {
                 Id = 100,
                 Name = "_default_",
@@ -32,7 +32,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
         };
         yield return new object[]
         {
-            new DocumentDto
+            new DocumentGraphqlInput
             {
                 Id = 100,
                 Name = "both changes",

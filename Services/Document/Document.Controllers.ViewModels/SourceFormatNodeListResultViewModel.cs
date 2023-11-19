@@ -1,10 +1,10 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.ViewModels;
 
-using Dtos;
+using Contracts.Input;
 
 public class SourceFormatNodeListResultViewModel
 {
     public bool IsOperationSuccessful { get; set; }
-    public List<SourceFormatNodeDto>? Result { get; set; }
+    public List<SourceFormatNodeInputContract>? Result { get; set; }
     public string? Message { get; set; }
 }

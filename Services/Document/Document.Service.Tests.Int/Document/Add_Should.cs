@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using Exceptions;
 using FluentAssertions;
 using Xunit;
@@ -19,18 +19,18 @@ public class Add_Should : BaseTest
     {
         // Arrange
         string name = "name";
-        DocumentDto first = new DocumentDto
+        DocumentGraphqlInput first = new DocumentGraphqlInput
         {
             Name = name,
             Description = "desc"
         };
 
-        DocumentDto firstResult = await Sut.DocumentService.AddAsync(first);
+        DocumentGraphqlInput firstResult = await Sut.DocumentService.AddAsync(first);
 
         // Act
         Func<Task> f = async () =>
         {
-            await Sut.DocumentService.AddAsync(new DocumentDto { Name = name, Description = "desc" });
+            await Sut.DocumentService.AddAsync(new DocumentGraphqlInput { Name = name, Description = "desc" });
         };
 
         // Assert
@@ -41,14 +41,14 @@ public class Add_Should : BaseTest
     public async Task Add_Entity_AndReturnTheNewOne()
     {
         // Arrange
-        DocumentDto first = new DocumentDto
+        DocumentGraphqlInput first = new DocumentGraphqlInput
         {
             Name = "name",
             Description = "desc"
         };
 
         // Act
-        DocumentDto result = await Sut.DocumentService.AddAsync(first);
+        DocumentGraphqlInput result = await Sut.DocumentService.AddAsync(first);
 
         // Assert
         result.Id.Should().BeGreaterThan(0);

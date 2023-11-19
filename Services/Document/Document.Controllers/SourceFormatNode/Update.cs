@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
-using Dtos;
+using Contracts.Input;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -9,12 +9,12 @@ public partial class SourceFormatNodeController
 {
     [HttpPut]
     [Route("update")]
-    [ProducesResponseType(typeof(SourceFormatNodeDto), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(SourceFormatNodeInputContract), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<SourceFormatNodeDto>> Update(
-        [FromBody] SourceFormatNodeDto? dto)
+    public async Task<ActionResult<SourceFormatNodeInputContract>> Update(
+        [FromBody] SourceFormatNodeInputContract? dto)
     {
         if (dto is null)
             _logger.LogWarning("{Dto} is null ", dto);

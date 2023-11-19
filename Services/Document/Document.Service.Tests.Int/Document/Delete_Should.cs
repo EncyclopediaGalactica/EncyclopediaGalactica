@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -21,7 +21,7 @@ public class Delete_Should : BaseTest
 
         // Act
         await Sut.DocumentService.DeleteAsync(recorded[0]);
-        List<DocumentDto> result = await Sut.DocumentService.GetAllAsync();
+        List<DocumentGraphqlInput> result = await Sut.DocumentService.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);

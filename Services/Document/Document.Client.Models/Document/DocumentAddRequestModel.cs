@@ -1,15 +1,15 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.Document;
 
 using System.Net.Http.Headers;
-using Dtos;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 using ValidatorService;
 
-public class DocumentAddRequestModel : IRequestModel<DocumentDto>
+public class DocumentAddRequestModel : IRequestModel<DocumentGraphqlInput>
 {
     /// <inheritdoc />
-    public DocumentDto? Payload { get; private init; }
+    public DocumentGraphqlInput? Payload { get; private init; }
 
     /// <inheritdoc />
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
@@ -47,15 +47,15 @@ public class DocumentAddRequestModel : IRequestModel<DocumentDto>
 
         public DocumentAddRequestModel Build()
         {
-            DocumentDto dto = new DocumentDto
+            DocumentGraphqlInput graphqlInput = new DocumentGraphqlInput
             {
                 Name = _name,
                 Description = _desc,
                 Uri = _uri
             };
 
-            IValidator<DocumentDto> validator = new InlineValidator<DocumentDto>();
-            validator.Validate(dto, o =>
+            IValidator<DocumentGraphqlInput> validator = new InlineValidator<DocumentGraphqlInput>();
+            validator.Validate(graphqlInput, o =>
             {
                 o.IncludeRuleSets(Operations.Add);
                 o.ThrowOnFailures();
@@ -63,7 +63,7 @@ public class DocumentAddRequestModel : IRequestModel<DocumentDto>
 
             return new DocumentAddRequestModel
             {
-                Payload = dto,
+                Payload = graphqlInput,
                 AcceptHeaders = _acceptHeaders
             };
         }

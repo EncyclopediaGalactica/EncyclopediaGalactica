@@ -18,9 +18,8 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Document.Api\Document.Api.csproj"/>
-        <ProjectReference Include="..\Document.CacheService\Document.CacheService.csproj"/>
         <ProjectReference Include="..\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj"/>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
     </ItemGroup>

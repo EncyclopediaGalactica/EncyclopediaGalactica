@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
@@ -35,11 +35,11 @@ public class AddValidationShould : BaseTest
         string name)
     {
         // Act
-        SourceFormatNodeDto dto = new() { Name = name };
+        SourceFormatNodeInputContract inputContract = new() { Name = name };
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddAsync(dto);
+                .AddAsync(inputContract);
         };
 
         // Assert
@@ -51,20 +51,20 @@ public class AddValidationShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeDto dto = new()
+        SourceFormatNodeInputContract inputContract = new()
         {
             Name = name
         };
         await Sut
             .SourceFormatNode
-            .AddAsync(dto);
+            .AddAsync(inputContract);
 
         // Act
         Func<Task> task = async () =>
         {
             await Sut
                 .SourceFormatNode
-                .AddAsync(dto);
+                .AddAsync(inputContract);
         };
 
         // Assert

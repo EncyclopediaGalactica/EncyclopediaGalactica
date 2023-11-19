@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -19,14 +19,14 @@ public class GetById_Should : BaseTest
         // Arrange
         string name = "name";
         string desc = "desc";
-        DocumentDto data = await Sut.DocumentService.AddAsync(new DocumentDto
+        DocumentGraphqlInput data = await Sut.DocumentService.AddAsync(new DocumentGraphqlInput
         {
             Name = name,
             Description = desc
         });
 
         // Act
-        DocumentDto result = await Sut.DocumentService.GetByIdAsync(data.Id);
+        DocumentGraphqlInput result = await Sut.DocumentService.GetByIdAsync(data.Id);
 
         // Assert
         result.Should().NotBeNull();

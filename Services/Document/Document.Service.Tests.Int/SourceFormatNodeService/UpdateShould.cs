@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -16,21 +16,21 @@ public class UpdateShould : BaseTest
     public async Task ReturnsResponseModel_SuccessCode_AndUpdatedEntity()
     {
         // Arrange
-        SourceFormatNodeDto dto = new()
+        SourceFormatNodeInputContract inputContract = new()
         {
             Name = "asd"
         };
-        SourceFormatNodeDto addResponseModel = await Sut.SourceFormatNode
-            .AddAsync(dto);
+        SourceFormatNodeInputContract addResponseModel = await Sut.SourceFormatNode
+            .AddAsync(inputContract);
         string updatedName = "asdasd";
-        SourceFormatNodeDto updateTemplate = new()
+        SourceFormatNodeInputContract updateTemplate = new()
         {
             Id = addResponseModel.Id,
             Name = updatedName
         };
 
         // Act
-        SourceFormatNodeDto updateResponseModel = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract updateResponseModel = await Sut.SourceFormatNode
             .UpdateSourceFormatNodeAsync(updateTemplate);
 
         // Assert
@@ -43,7 +43,7 @@ public class UpdateShould : BaseTest
     public async Task Throw_InvalidOperationException_WhenNoSuchEntityToBeUpdated()
     {
         // Arrange
-        SourceFormatNodeDto updateTemplate = new()
+        SourceFormatNodeInputContract updateTemplate = new()
         {
             Id = 204,
             Name = "asdasd"

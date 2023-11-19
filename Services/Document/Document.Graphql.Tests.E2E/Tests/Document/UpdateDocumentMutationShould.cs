@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using Arguments;
-using Dtos;
+using Contracts.Input;
 using Errors;
 using FluentAssertions;
 using Services.Document.Tests.Datasets.DocumentDto;
@@ -24,17 +24,17 @@ public class UpdateDocumentMutationShould : GraphQLTestBase
 
     [Theory]
     [ClassData(typeof(UpdateDocumentDto_InputValidation_InvalidDataset))]
-    public async Task InputValidation_InvalidValues(DocumentDto dto)
+    public async Task InputValidation_InvalidValues(DocumentGraphqlInput graphqlInput)
     {
         // Arrange
         List<long> documentId = await CreateDocumentDataSetWithMandatoryFieldsOnly(1);
         // dto.Id = documentId[0];
 
         Dictionary<string, object?> values = new Dictionary<string, object?>();
-        foreach (PropertyInfo propertyInfo in dto.GetType().GetProperties())
+        foreach (PropertyInfo propertyInfo in graphqlInput.GetType().GetProperties())
         {
             string propName = $"{char.ToLower(propertyInfo.Name.ToCharArray()[0])}{propertyInfo.Name.Substring(1)}";
-            values.Add(propName, propertyInfo.GetValue(dto));
+            values.Add(propName, propertyInfo.GetValue(graphqlInput));
         }
 
         // Act
@@ -47,7 +47,7 @@ public class UpdateDocumentMutationShould : GraphQLTestBase
                            }
                        }
                        """);
-            q.AddVariableValue(ArgumentNames.Document.DocumentId, dto.Id);
+            q.AddVariableValue(ArgumentNames.Document.DocumentId, graphqlInput.Id);
             q.AddVariableValue(ArgumentNames.Document.UpdatedDocument,
                 new ReadOnlyDictionary<string, object?>(values));
         }, _testOutputHelper);

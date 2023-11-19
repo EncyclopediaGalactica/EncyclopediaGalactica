@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Document;
 
 using Api;
-using Dtos;
+using Contracts.Input;
 using Models;
 using Models.Document;
 
@@ -19,7 +19,8 @@ public partial class DocumentSdk
                      + SourceFormats.Document.GetById
                      + $"/{requestModel.Payload.Id}";
 
-        HttpRequestMessageBuilder<DocumentDto> builder = new HttpRequestMessageBuilder<DocumentDto>();
+        HttpRequestMessageBuilder<DocumentGraphqlInput> builder =
+            new HttpRequestMessageBuilder<DocumentGraphqlInput>();
         HttpRequestMessage httpRequestMessage = builder
             .SetContent(requestModel.Payload)
             .SetAcceptHeaders(requestModel.AcceptHeaders)
@@ -27,7 +28,8 @@ public partial class DocumentSdk
             .SetUri(uri)
             .Build();
 
-        DocumentGetByIdResponseModel resultModel = await _sdkCore.SendAsync<DocumentGetByIdResponseModel, DocumentDto>(
+        DocumentGetByIdResponseModel resultModel = await _sdkCore
+            .SendAsync<DocumentGetByIdResponseModel, DocumentGraphqlInput>(
                 httpRequestMessage,
                 cancellationToken)
             .ConfigureAwait(false);

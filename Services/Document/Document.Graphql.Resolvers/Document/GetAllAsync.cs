@@ -1,13 +1,14 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Resolvers.Document;
 
-using Dtos;
+using Contracts.Input;
 using HotChocolate.Resolvers;
 using Service.Interfaces.Document;
 
 public partial class DocumentResolvers
 {
     /// <summary>
-    ///     Returns a list of <see cref="DocumentDto" /> representing <see cref="resolverContext" /> entities of the system.
+    ///     Returns a list of <see cref="DocumentGraphqlInput" /> representing <see cref="resolverContext" /> entities of the
+    ///     system.
     /// </summary>
     /// <param name="resolverContext">
     ///     <see cref="documentService" />
@@ -18,7 +19,7 @@ public partial class DocumentResolvers
     /// <returns>
     ///     Returns <see cref="Document" /> representing result of asynchronous operation.
     /// </returns>
-    public async Task<IList<DocumentDto>> GetAllAsync(
+    public async Task<IList<DocumentGraphqlInput>> GetAllAsync(
         IResolverContext resolverContext,
         IDocumentService documentService)
     {

@@ -4,10 +4,8 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
-using CacheService.Interfaces;
-using CacheService.SourceFormatNode;
+using Contracts.Input;
 using Ctx;
-using Dtos;
 using Entities;
 using ErrorFilters;
 using FluentValidation;
@@ -30,8 +28,10 @@ using Service.Interfaces;
 using Service.Interfaces.Document;
 using Service.Interfaces.SourceFormatNode;
 using Service.SourceFormatNodeService;
-using Types;
-using Types.Document;
+using Types.Mutations;
+using Types.Output;
+using Types.Queries;
+using Types.RootTypes;
 using Utils.GuardsService;
 using Utils.GuardsService.Interfaces;
 using ValidatorService;
@@ -55,13 +55,12 @@ public partial class GraphQLTestBase
             .AddScoped<ISourceFormatNodeService, SourceFormatNodeService>()
             .AddScoped<ISourceFormatNodeRepository, SourceFormatNodeRepository>()
             .AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>()
-            .AddScoped<ISourceFormatNodeCacheService, SourceFormatNodeCacheService>()
             .AddScoped<ISourceFormatsService, SourceFormatsService>()
             .AddScoped<ISourceFormatsRepository, SourceFormatsRepository>()
             .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
             .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
-            .AddScoped<IValidator<SourceFormatNodeDto>, SourceFormatNodeDtoValidator>()
-            .AddScoped<IValidator<DocumentDto>, DocumentDtoValidator>()
+            .AddScoped<IValidator<SourceFormatNodeInputContract>, SourceFormatNodeDtoValidator>()
+            .AddScoped<IValidator<Contracts.Input.DocumentGraphqlInput>, DocumentDtoValidator>()
             .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
             .AddLogging(log =>
             {
@@ -84,8 +83,8 @@ public partial class GraphQLTestBase
             .AddTypeExtension<DeleteDocumentMutation>()
             .AddTypeExtension<UpdateDocumentMutation>()
             .RegisterService<IDocumentService>()
-            .AddType<DocumentDtoType>()
-            .AddType<DocumentDtoInputType>()
+            .AddType<DocumentGraphqlOutput>()
+            .AddType<Types.Input.DocumentGraphqlInputType>()
             .AddErrorFilter<GraphQlSchemaValidationErrorFilter>()
             .AddErrorFilter<InputValidationErrorFilter>()
             .AddErrorFilter<NoSuchItemErrorFilter>()

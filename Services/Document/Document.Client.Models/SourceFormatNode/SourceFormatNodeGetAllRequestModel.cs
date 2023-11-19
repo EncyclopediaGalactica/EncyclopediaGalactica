@@ -1,12 +1,12 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net.Http.Headers;
-using Dtos;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeGetAllRequestModel : IRequestModel<List<SourceFormatNodeDto>>
+public class SourceFormatNodeGetAllRequestModel : IRequestModel<List<SourceFormatNodeInputContract>>
 {
-    public List<SourceFormatNodeDto>? Payload { get; private init; }
+    public List<SourceFormatNodeInputContract>? Payload { get; private init; }
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
 
     public class Builder

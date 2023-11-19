@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -16,27 +16,27 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIsAlreadyInTheTree_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto rootNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("rootnode"));
-        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("parent"));
-        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("child"));
+        SourceFormatNodeInputContract rootNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("rootnode"));
+        SourceFormatNodeInputContract parentNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("parent"));
+        SourceFormatNodeInputContract childNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("child"));
 
-        SourceFormatNodeDto addParentToRoot = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract addParentToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(parentNode, rootNode);
 
         // Act
-        SourceFormatNodeDto addChildToParent = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract addChildToParent = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode);
 
         // Assert
-        addChildToParent.Should().BeOfType<SourceFormatNodeDto>();
+        addChildToParent.Should().BeOfType<SourceFormatNodeInputContract>();
         addChildToParent.Should().NotBeNull();
         addChildToParent.Id.Should().BeGreaterThan(0);
         addChildToParent.Name.Should().Be("child");
 
-        SourceFormatNodeDto childNodeDetails = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract childNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(childNode.Id);
         childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
         childNodeDetails.RootNodeId.Should().Be(rootNode.Id);
@@ -47,28 +47,28 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIdRootNode_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto rootNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("rootnode"));
-        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("parent"));
-        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("child"));
-        SourceFormatNodeDto childNode2 = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("child2"));
-        SourceFormatNodeDto addParentToRoot = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract rootNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("rootnode"));
+        SourceFormatNodeInputContract parentNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("parent"));
+        SourceFormatNodeInputContract childNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("child"));
+        SourceFormatNodeInputContract childNode2 = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("child2"));
+        SourceFormatNodeInputContract addParentToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(parentNode, rootNode);
-        SourceFormatNodeDto addChildToParent = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract addChildToParent = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode);
 
         // Act
-        SourceFormatNodeDto addChild2ToRoot = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract addChild2ToRoot = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode2, rootNode);
 
         // Assert
-        addChild2ToRoot.Should().BeOfType<SourceFormatNodeDto>();
+        addChild2ToRoot.Should().BeOfType<SourceFormatNodeInputContract>();
         addChild2ToRoot.Should().NotBeNull();
 
-        SourceFormatNodeDto child2 = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract child2 = await Sut.SourceFormatNode
             .GetByIdAsync(childNode2.Id);
         child2.Should().NotBeNull();
         child2.ParentNodeId.Should().Be(rootNode.Id);
@@ -78,26 +78,26 @@ public class AddChildToParentShould : BaseTest
     public async Task AddChildToParent_WhenParentIsNotRootButShouldBe_AndReturnResponseModelWithChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("parent"));
-        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("child"));
+        SourceFormatNodeInputContract parentNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("parent"));
+        SourceFormatNodeInputContract childNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("child"));
 
         // Act
-        SourceFormatNodeDto childNodeAdded = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract childNodeAdded = await Sut.SourceFormatNode
             .AddChildToParentAsync(childNode, parentNode);
 
         // Assert
         childNodeAdded.Should().NotBeNull();
-        childNodeAdded.Should().BeOfType<SourceFormatNodeDto>();
+        childNodeAdded.Should().BeOfType<SourceFormatNodeInputContract>();
         childNodeAdded.Id.Should().Be(childNode.Id);
         childNodeAdded.Name!.Should().Be(childNode.Name);
 
-        SourceFormatNodeDto childNodeDetails = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract childNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(childNode.Id);
         childNodeDetails.ParentNodeId.Should().Be(parentNode.Id);
 
-        SourceFormatNodeDto parentNodeDetails = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract parentNodeDetails = await Sut.SourceFormatNode
             .GetByIdAsync(parentNode.Id);
         parentNodeDetails.IsRootNode.Should().Be(1);
     }
@@ -106,14 +106,14 @@ public class AddChildToParentShould : BaseTest
     public async Task Throw_InvalidOperationException_WhenNoSuchChildEntity()
     {
         // Arrange
-        SourceFormatNodeDto parentNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("parent"));
+        SourceFormatNodeInputContract parentNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("parent"));
 
         // Act
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddChildToParentAsync(new SourceFormatNodeDto { Id = 100 }, parentNode);
+                .AddChildToParentAsync(new SourceFormatNodeInputContract { Id = 100 }, parentNode);
         };
 
         // Assert
@@ -124,14 +124,14 @@ public class AddChildToParentShould : BaseTest
     public async Task Throw_InvalidOperationException_When_NoSuchParentEntity()
     {
         // Arrange
-        SourceFormatNodeDto childNode = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("parent"));
+        SourceFormatNodeInputContract childNode = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("parent"));
 
         // Act
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddChildToParentAsync(childNode, new SourceFormatNodeDto { Id = 100 });
+                .AddChildToParentAsync(childNode, new SourceFormatNodeInputContract { Id = 100 });
         };
 
         // Assert

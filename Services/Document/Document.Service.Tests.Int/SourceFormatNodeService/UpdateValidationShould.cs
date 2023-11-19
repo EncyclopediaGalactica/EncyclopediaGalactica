@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using FluentValidation;
 using Services.Document.Tests.Datasets;
@@ -36,7 +36,7 @@ public class UpdateValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(new SourceFormatNodeDto { Id = 0 });
+                .UpdateSourceFormatNodeAsync(new SourceFormatNodeInputContract { Id = 0 });
         };
 
         // Assert
@@ -49,7 +49,7 @@ public class UpdateValidationShould : BaseTest
     public async Task Throw_ValidationError_WhenInputIsInvalid(int id, string name)
     {
         // Act
-        SourceFormatNodeDto dto = new()
+        SourceFormatNodeInputContract inputContract = new()
         {
             Id = id,
             Name = name
@@ -57,7 +57,7 @@ public class UpdateValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(dto);
+                .UpdateSourceFormatNodeAsync(inputContract);
         };
 
         // Assert

@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
 using System.Net.Mime;
-using Dtos;
+using Contracts.Input;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -18,7 +18,7 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task DeleteAsync(
-        [FromBody] SourceFormatNodeDto? dto)
+        [FromBody] SourceFormatNodeInputContract? dto)
     {
         if (dto is null)
             _logger.LogInformation("{RequestModel} is null", nameof(dto));

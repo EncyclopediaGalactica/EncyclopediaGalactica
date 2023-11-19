@@ -1,8 +1,8 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit;
 
 using System.Diagnostics.CodeAnalysis;
+using Contracts.Input;
 using Document;
-using Dtos;
 using Entities;
 using FluentAssertions;
 using Interfaces;
@@ -33,7 +33,7 @@ public class DocumentMappers_Should
         };
 
         // Act
-        DocumentDto result = _sut.MapDocumentToDocumentDto(document);
+        DocumentGraphqlInput result = _sut.MapDocumentToDocumentDto(document);
 
         // Assert
         result.Id.Should().Be(id);
@@ -58,7 +58,7 @@ public class DocumentMappers_Should
         };
 
         // Act
-        DocumentDto result = _sut.MapDocumentToDocumentDto(document);
+        DocumentGraphqlInput result = _sut.MapDocumentToDocumentDto(document);
 
         // Assert
         result.Id.Should().Be(id);

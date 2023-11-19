@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
-using CacheService.Interfaces;
-using Dtos;
+using Contracts.Input;
 using Entities;
 using FluentValidation;
 using Interfaces.SourceFormatNode;
@@ -17,40 +16,36 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     private readonly IGuardsService _guards;
     private readonly ILogger _logger;
     private readonly ISourceFormatMappers _sourceFormatMappers;
-    private readonly ISourceFormatNodeCacheService _sourceFormatNodeCacheService;
-    private readonly IValidator<SourceFormatNodeDto> _sourceFormatNodeDtoValidator;
+    private readonly IValidator<SourceFormatNodeInputContract> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
 
     public SourceFormatNodeService(
-        IValidator<SourceFormatNodeDto> sourceFormatNodeDtoValidator,
+        IValidator<SourceFormatNodeInputContract> sourceFormatNodeDtoValidator,
         IGuardsService guardsService,
         ISourceFormatMappers sourceFormatMappers,
         ISourceFormatNodeRepository sourceFormatNodeRepository,
-        ISourceFormatNodeCacheService sourceFormatNodeCacheService,
         ILogger<SourceFormatNodeService> logger)
     {
         ArgumentNullException.ThrowIfNull(sourceFormatNodeDtoValidator);
         ArgumentNullException.ThrowIfNull(guardsService);
         ArgumentNullException.ThrowIfNull(sourceFormatMappers);
         ArgumentNullException.ThrowIfNull(sourceFormatNodeRepository);
-        ArgumentNullException.ThrowIfNull(sourceFormatNodeCacheService);
         ArgumentNullException.ThrowIfNull(logger);
 
         _sourceFormatNodeDtoValidator = sourceFormatNodeDtoValidator;
         _guards = guardsService;
         _sourceFormatMappers = sourceFormatMappers;
         _sourceFormatNodeRepository = sourceFormatNodeRepository;
-        _sourceFormatNodeCacheService = sourceFormatNodeCacheService;
         _logger = logger;
     }
 
-    public async Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithChildrenAsync(long id,
+    public async Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithChildrenAsync(long id,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<SourceFormatNodeDto> GetSourceFormatNodeByIdWithNodeTreeAsync(long id,
+    public async Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithNodeTreeAsync(long id,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

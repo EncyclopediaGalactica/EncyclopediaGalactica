@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 
 using System.Net.Mime;
-using Dtos;
+using Contracts.Input;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,8 +16,8 @@ public partial class SourceFormatNodeController
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<SourceFormatNodeDto>> AddChildToParentAsync(
-        [FromBody] SourceFormatNodeDto? dto)
+    public async Task<ActionResult<SourceFormatNodeInputContract>> AddChildToParentAsync(
+        [FromBody] SourceFormatNodeInputContract? dto)
     {
         if (dto is null)
             _logger.LogInformation("{RequestModel} is null", nameof(dto));
@@ -25,8 +25,8 @@ public partial class SourceFormatNodeController
         return await _sourceFormatsService
             .SourceFormatNode
             .AddChildToParentAsync(
-                new SourceFormatNodeDto { Id = dto!.Id },
-                new SourceFormatNodeDto { Id = (long)dto.ParentNodeId! })
+                new SourceFormatNodeInputContract { Id = dto!.Id },
+                new SourceFormatNodeInputContract { Id = (long)dto.ParentNodeId! })
             .ConfigureAwait(false);
     }
 }

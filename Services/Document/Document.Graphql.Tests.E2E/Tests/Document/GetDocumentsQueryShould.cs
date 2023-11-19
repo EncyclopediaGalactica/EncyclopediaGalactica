@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Document;
 
 using System.Diagnostics.CodeAnalysis;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Tools;
 using Tools.Base;
@@ -37,14 +37,14 @@ public class GetDocumentsQueryShould : GraphQLTestBase
         string requestResult = await ExecuteRequestAsync(
             query => query.SetQuery(queryString),
             _testOutputHelper);
-        List<DocumentDto> result = new OperationResultBuilder()
+        List<DocumentGraphqlInput> result = new OperationResultBuilder()
         {
             Path = "getDocuments",
             QueryResultString = requestResult
-        }.Build<List<DocumentDto>>();
+        }.Build<List<DocumentGraphqlInput>>();
 
         // Assert
-        result.Should().BeOfType<List<DocumentDto>>();
+        result.Should().BeOfType<List<DocumentGraphqlInput>>();
         result.Count.Should().Be(amount);
     }
 }

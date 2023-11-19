@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
@@ -17,15 +17,15 @@ public class DeleteShould : BaseTest
     public async Task DeleteItem()
     {
         // Arrange
-        SourceFormatNodeDto nodeResult = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("asd"));
+        SourceFormatNodeInputContract nodeResult = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("asd"));
 
         // Act
-        SourceFormatNodeDto dto = new SourceFormatNodeDto { Id = nodeResult.Id };
-        await Sut.SourceFormatNode.DeleteAsync(dto);
+        SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract { Id = nodeResult.Id };
+        await Sut.SourceFormatNode.DeleteAsync(inputContract);
 
         // Assert
-        List<SourceFormatNodeDto> list =
+        List<SourceFormatNodeInputContract> list =
             await Sut.SourceFormatNode.GetAllAsync();
         list.Count.Should().Be(0);
     }
@@ -34,14 +34,14 @@ public class DeleteShould : BaseTest
     public async Task DeleteItemWithItsChildren()
     {
         // Arrange
-        SourceFormatNodeDto otherOne = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("other"));
+        SourceFormatNodeInputContract otherOne = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("other"));
 
-        SourceFormatNodeDto rootNodeDto = new SourceFormatNodeDto();
-        rootNodeDto.Name = "root";
-        rootNodeDto.IsRootNode = 1;
-        SourceFormatNodeDto rootNodeResult =
-            await Sut.SourceFormatNode.AddAsync(rootNodeDto);
+        SourceFormatNodeInputContract rootNodeInputContract = new SourceFormatNodeInputContract();
+        rootNodeInputContract.Name = "root";
+        rootNodeInputContract.IsRootNode = 1;
+        SourceFormatNodeInputContract rootNodeResult =
+            await Sut.SourceFormatNode.AddAsync(rootNodeInputContract);
 
         // SourceFormatNode rootOfTheTree = new SourceFormatNode();
         // rootOfTheTree.Id = rootNodeDto.Id;
@@ -51,68 +51,68 @@ public class DeleteShould : BaseTest
         // await _sourceFormatsService.SourceFormatNodes.UpdateAsync(rootOfTheTree).ConfigureAwait(false);
 
         // first level
-        SourceFormatNodeDto firstFirst = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("first_first"));
-        SourceFormatNodeDto firstFirstResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract firstFirst = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("first_first"));
+        SourceFormatNodeInputContract firstFirstResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(firstFirst, rootNodeResult);
 
-        SourceFormatNodeDto firstSecond = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("first_second"));
-        SourceFormatNodeDto firstSecondResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract firstSecond = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("first_second"));
+        SourceFormatNodeInputContract firstSecondResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(firstSecond, rootNodeResult);
 
-        SourceFormatNodeDto firstThird = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("first_third"));
-        SourceFormatNodeDto firstThirdResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract firstThird = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("first_third"));
+        SourceFormatNodeInputContract firstThirdResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(firstThird, rootNodeResult);
 
         // second level - one - parent: first_first
-        SourceFormatNodeDto secondOneOne =
-            await Sut.SourceFormatNode.AddAsync(new SourceFormatNodeDto("secondOne_one"));
-        SourceFormatNodeDto secondOneOneResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondOneOne =
+            await Sut.SourceFormatNode.AddAsync(new SourceFormatNodeInputContract("secondOne_one"));
+        SourceFormatNodeInputContract secondOneOneResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondOneOne, firstFirst);
-        SourceFormatNodeDto secondOneTwo = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondOne_two"));
-        SourceFormatNodeDto secondOneTwoResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondOneTwo = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondOne_two"));
+        SourceFormatNodeInputContract secondOneTwoResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondOneTwo, firstFirst);
-        SourceFormatNodeDto secondOneThree = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondOne_three"));
-        SourceFormatNodeDto secondOneThreeResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondOneThree = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondOne_three"));
+        SourceFormatNodeInputContract secondOneThreeResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondOneThree, firstFirst);
 
         // second level - two - parent: first_second
-        SourceFormatNodeDto secondTwoOne = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondTwo_one"));
-        SourceFormatNodeDto secondTwoOneResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondTwoOne = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondTwo_one"));
+        SourceFormatNodeInputContract secondTwoOneResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondTwoOne, firstSecond);
-        SourceFormatNodeDto secondTwoTwo = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondTwo_two"));
-        SourceFormatNodeDto secondTwoTwoResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondTwoTwo = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondTwo_two"));
+        SourceFormatNodeInputContract secondTwoTwoResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondTwoTwo, firstSecond);
-        SourceFormatNodeDto secondTwoThree = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondTwo_three"));
-        SourceFormatNodeDto secondTwoThreeResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondTwoThree = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondTwo_three"));
+        SourceFormatNodeInputContract secondTwoThreeResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondTwoThree, firstSecond);
 
         // second level - three - parent: first_third
-        SourceFormatNodeDto secondThreeOne = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondThree_one"));
-        SourceFormatNodeDto secondThreeOneResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondThreeOne = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondThree_one"));
+        SourceFormatNodeInputContract secondThreeOneResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondThreeOne, firstThird);
-        SourceFormatNodeDto secondThreeTwo = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondThree_two"));
-        SourceFormatNodeDto secondThreeTwoResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondThreeTwo = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondThree_two"));
+        SourceFormatNodeInputContract secondThreeTwoResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondThreeTwo, firstThird);
-        SourceFormatNodeDto secondThreeThree = await Sut.SourceFormatNode
-            .AddAsync(new SourceFormatNodeDto("secondThree_three"));
-        SourceFormatNodeDto secondThreeThreeResult = await Sut.SourceFormatNode
+        SourceFormatNodeInputContract secondThreeThree = await Sut.SourceFormatNode
+            .AddAsync(new SourceFormatNodeInputContract("secondThree_three"));
+        SourceFormatNodeInputContract secondThreeThreeResult = await Sut.SourceFormatNode
             .AddChildToParentAsync(secondThreeThree, firstThird);
 
         // Act
         await Sut.SourceFormatNode.DeleteAsync(rootNodeResult);
 
         // Assert
-        List<SourceFormatNodeDto> list = await Sut.SourceFormatNode.GetAllAsync();
+        List<SourceFormatNodeInputContract> list = await Sut.SourceFormatNode.GetAllAsync();
         list.Count.Should().Be(1);
     }
 
@@ -120,7 +120,10 @@ public class DeleteShould : BaseTest
     public async Task Throw_InvalidOperationException_WhenNoSuchEntity()
     {
         // Act
-        Func<Task> task = async () => { await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto { Id = 100 }); };
+        Func<Task> task = async () =>
+        {
+            await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeInputContract { Id = 100 });
+        };
 
         // Assert
         await task.Should().ThrowExactlyAsync<InvalidOperationException>();

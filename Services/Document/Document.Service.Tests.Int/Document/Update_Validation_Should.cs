@@ -4,7 +4,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using Exceptions;
 using FluentAssertions;
 using Services.Document.Tests.Datasets.DocumentDto;
@@ -17,10 +17,13 @@ public class Update_Validation_Should : BaseTest
 {
     [Theory]
     [ClassData(typeof(UpdateDocumentDto_InputValidation_InvalidDataset))]
-    public async Task Throw_WhenInputIsInvalid(DocumentDto inputDto)
+    public async Task Throw_WhenInputIsInvalid(DocumentGraphqlInput graphqlInputGraphqlInput)
     {
         // Arrange & Act
-        Func<Task> f = async () => { await Sut.DocumentService.UpdateAsync(inputDto.Id, inputDto); };
+        Func<Task> f = async () =>
+        {
+            await Sut.DocumentService.UpdateAsync(graphqlInputGraphqlInput.Id, graphqlInputGraphqlInput);
+        };
 
         // Assert
         await f.Should().ThrowExactlyAsync<InvalidInputToDocumentServiceException>();

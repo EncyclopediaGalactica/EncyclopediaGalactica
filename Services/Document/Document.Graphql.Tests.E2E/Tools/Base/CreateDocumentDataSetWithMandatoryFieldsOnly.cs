@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tools.Base;
 
 using System.Collections.ObjectModel;
 using Bogus;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 
 public partial class GraphQLTestBase
@@ -12,7 +12,7 @@ public partial class GraphQLTestBase
         List<long> resultIds = new List<long>();
         for (int i = 0; i < amount; i++)
         {
-            DocumentDto data = new Faker<DocumentDto>()
+            DocumentGraphqlInput data = new Faker<DocumentGraphqlInput>()
                 .RuleFor(dto => dto.Name, faker => faker.Name.FirstName())
                 .RuleFor(dto => dto.Description, faker => faker.Name.FullName())
                 .Generate();
@@ -24,9 +24,9 @@ public partial class GraphQLTestBase
                                     """;
             Dictionary<string, object?> payload = new Dictionary<string, object?>
             {
-                { nameof(DocumentDto.Id).ToLower(), data.Id },
-                { nameof(DocumentDto.Name).ToLower(), data.Name },
-                { nameof(DocumentDto.Description).ToLower(), data.Description }
+                { nameof(DocumentGraphqlInput.Id).ToLower(), data.Id },
+                { nameof(DocumentGraphqlInput.Name).ToLower(), data.Name },
+                { nameof(DocumentGraphqlInput.Description).ToLower(), data.Description }
             };
 
             string result = await ExecuteRequestAsync(query =>
@@ -34,11 +34,11 @@ public partial class GraphQLTestBase
                 query.SetQuery(mutationString);
                 query.AddVariableValue("input", new ReadOnlyDictionary<string, object?>(payload));
             });
-            DocumentDto r = new OperationResultBuilder
+            DocumentGraphqlInput r = new OperationResultBuilder
             {
                 Path = "addDocument",
                 QueryResultString = result
-            }.Build<DocumentDto>();
+            }.Build<DocumentGraphqlInput>();
             r.Id.Should().BeGreaterOrEqualTo(1);
             resultIds.Add(r.Id);
         }

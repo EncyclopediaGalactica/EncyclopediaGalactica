@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Controllers.ExceptionFilters;
 
 using System.Net;
-using CacheService.Exceptions;
 using Mappers.Exceptions.SourceFormatNode;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -18,7 +17,6 @@ public class InternalServerErrorExceptionsFilter : IActionFilter
     public void OnActionExecuted(ActionExecutedContext context)
     {
         if (context.Exception is SourceFormatNodeMapperException
-            or SourceFormatsCacheServiceException
             or SourceFormatNodeRepositoryException
             or DbUpdateConcurrencyException)
         {

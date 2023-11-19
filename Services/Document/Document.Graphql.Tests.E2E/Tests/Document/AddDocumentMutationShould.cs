@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Docume
 
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
-using Dtos;
+using Contracts.Input;
 using Errors;
 using FluentAssertions;
 using Services.Document.Tests.Datasets.DocumentDto;
@@ -23,19 +23,19 @@ public class AddDocumentMutationShould : GraphQLTestBase
 
     [Theory]
     [ClassData(typeof(AddDocumentDtoInputValidation_InvalidDataset))]
-    public async Task InputValidation_InvalidInput(DocumentDto input)
+    public async Task InputValidation_InvalidInput(DocumentGraphqlInput graphqlInput)
     {
         // Arrange
         string mutationString = """
-                                            mutation asd($input: DocumentDtoInput!) {
+                                            mutation asd($input: DocumentGraphqlInput!) {
                                                 addDocument(newDocument: $input) { id name description }
                                             }
                                 """;
         Dictionary<string, object?> payload = new Dictionary<string, object?>
         {
-            { nameof(DocumentDto.Id).ToLower(), input.Id },
-            { nameof(DocumentDto.Name).ToLower(), input.Name },
-            { nameof(DocumentDto.Description).ToLower(), input.Description }
+            { nameof(DocumentGraphqlInput.Id).ToLower(), graphqlInput.Id },
+            { nameof(DocumentGraphqlInput.Name).ToLower(), graphqlInput.Name },
+            { nameof(DocumentGraphqlInput.Description).ToLower(), graphqlInput.Description }
         };
 
         // Act
@@ -49,19 +49,19 @@ public class AddDocumentMutationShould : GraphQLTestBase
 
     [Theory]
     [ClassData(typeof(AddDocumentDto_Add_ValidDataForMandatoryFields))]
-    public async Task MandatoryFields(DocumentDto input)
+    public async Task MandatoryFields(DocumentGraphqlInput graphqlInput)
     {
         // Arrange
         string mutationString = """
-                                mutation asd($input: DocumentDtoInput!) {
+                                mutation asd($input: DocumentGraphqlInput!) {
                                     addDocument(newDocument: $input) { id name description }
                                 }
                                 """;
         Dictionary<string, object?> payload = new Dictionary<string, object?>
         {
-            { nameof(DocumentDto.Id).ToLower(), input.Id },
-            { nameof(DocumentDto.Name).ToLower(), input.Name },
-            { nameof(DocumentDto.Description).ToLower(), input.Description },
+            { nameof(DocumentGraphqlInput.Id).ToLower(), graphqlInput.Id },
+            { nameof(DocumentGraphqlInput.Name).ToLower(), graphqlInput.Name },
+            { nameof(DocumentGraphqlInput.Description).ToLower(), graphqlInput.Description },
         };
 
         // Act
@@ -70,14 +70,14 @@ public class AddDocumentMutationShould : GraphQLTestBase
             query.SetQuery(mutationString);
             query.AddVariableValue("input", new ReadOnlyDictionary<string, object?>(payload));
         }, _testOutputHelper);
-        DocumentDto r = new OperationResultBuilder
+        DocumentGraphqlInput r = new OperationResultBuilder
         {
             Path = "addDocument",
             QueryResultString = result
-        }.Build<DocumentDto>();
+        }.Build<DocumentGraphqlInput>();
 
         // Assert
-        r.Should().BeOfType<DocumentDto>();
+        r.Should().BeOfType<DocumentGraphqlInput>();
         r.Id.Should().BeGreaterThan(0);
     }
 }

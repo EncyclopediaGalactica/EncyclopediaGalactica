@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Docume
 
 using System.Diagnostics.CodeAnalysis;
 using Arguments;
-using Dtos;
+using Contracts.Input;
 using Errors;
 using FluentAssertions;
 using Tools;
@@ -83,11 +83,11 @@ public class DeleteDocumentMutationShould : GraphQLTestBase
                 }
                 """);
         }, _testOutputHelper);
-        List<DocumentDto> resultList = new OperationResultBuilder()
+        List<DocumentGraphqlInput> resultList = new OperationResultBuilder()
         {
             Path = "getDocuments",
             QueryResultString = result
-        }.Build<List<DocumentDto>>();
+        }.Build<List<DocumentGraphqlInput>>();
 
         resultList.Count.Should().Be(0);
     }

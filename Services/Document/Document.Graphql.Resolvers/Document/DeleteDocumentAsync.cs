@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Resolvers.Document;
 
 using Arguments;
-using Dtos;
+using Contracts.Input;
 using HotChocolate.Resolvers;
 using Service.Interfaces.Document;
 
@@ -16,12 +16,12 @@ public partial class DocumentResolvers
     /// <param name="documentService">
     ///     <see cref="IDocumentService" />
     /// </param>
-    public async Task<DocumentDto> DeleteDocumentAsync(
+    public async Task<DocumentGraphqlInput> DeleteDocumentAsync(
         IResolverContext resolverContext,
         IDocumentService documentService)
     {
         long documentId = resolverContext.ArgumentValue<long>(ArgumentNames.Document.DocumentId);
         await documentService.DeleteAsync(documentId).ConfigureAwait(false);
-        return new DocumentDto { Id = documentId };
+        return new DocumentGraphqlInput { Id = documentId };
     }
 }
