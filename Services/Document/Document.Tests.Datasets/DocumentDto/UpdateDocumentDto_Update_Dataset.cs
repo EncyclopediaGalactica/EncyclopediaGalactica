@@ -14,7 +14,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
     {
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 100,
                 Name = "only the name changes",
@@ -23,7 +23,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 100,
                 Name = "_default_",
@@ -32,7 +32,7 @@ public class UpdateDocumentDto_Update_Dataset : IEnumerable<object[]>
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 100,
                 Name = "both changes",

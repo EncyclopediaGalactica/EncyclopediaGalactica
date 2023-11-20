@@ -20,11 +20,9 @@ using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class DocumentService_Should
+public class DocumentServiceShould
 {
-    public static IEnumerable<object[]> ThrowArgumentNullException_WhenInjected_IsNull_Data = new List<object[]>
+    public static IEnumerable<object[]> ThrowArgumentNullExceptionWhenInjectedIsNullData = new List<object[]>
     {
         new object[]
         {
@@ -35,7 +33,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentGraphqlInput>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -44,7 +42,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentGraphqlInput>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -53,7 +51,7 @@ public class DocumentService_Should
                 Substitute.For<ISourceFormatNodeMappers>(),
                 Substitute.For<IDocumentMappers>()),
             null,
-            Substitute.For<IValidator<DocumentGraphqlInput>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -69,12 +67,12 @@ public class DocumentService_Should
     };
 
     [Theory]
-    [MemberData(nameof(ThrowArgumentNullException_WhenInjected_IsNull_Data))]
+    [MemberData(nameof(ThrowArgumentNullExceptionWhenInjectedIsNullData))]
     public void ThrowArgumentNullException_WhenInjected_IsNull(
         IGuardsService guardsService,
         ISourceFormatMappers mappers,
         IDocumentsRepository documentsRepository,
-        IValidator<DocumentGraphqlInput> documentDtoValidator)
+        IValidator<DocumentInput> documentDtoValidator)
     {
         // Arrange && Act
         Action action = () =>

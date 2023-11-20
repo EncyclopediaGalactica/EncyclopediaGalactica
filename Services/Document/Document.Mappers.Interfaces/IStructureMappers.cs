@@ -6,38 +6,38 @@ using Entities;
 /// <summary>
 ///     IStructure mappers
 ///     <remarks>
-///         Interface for mapping between <see cref="Structure" /> and <see cref="StructureInputContract" />.
+///         Interface for mapping between <see cref="Structure" /> and <see cref="StructureInput" />.
 ///     </remarks>
 /// </summary>
 public interface IStructureMappers
 {
     /// <summary>
-    ///     Maps <see cref="StructureInputContract" /> object to <see cref="Structure" />.
+    ///     Maps <see cref="StructureInput" /> object to <see cref="Structure" />.
     /// </summary>
-    /// <param name="structureInputContract">
-    ///     <see cref="StructureInputContract" />
+    /// <param name="structureInput">
+    ///     <see cref="StructureInput" />
     /// </param>
     /// <returns>Mapped <see cref="Structure" /> object.</returns>
-    Structure MapStructureDtoToStructure(StructureInputContract structureInputContract);
+    Structure MapStructureDtoToStructure(StructureInput structureInput);
 
     /// <summary>
-    ///     Maps <see cref="StructureInputContract" /> objects to <see cref="Structure" /> objects.
+    ///     Maps <see cref="StructureInput" /> objects to <see cref="Structure" /> objects.
     /// </summary>
-    /// <param name="structureDtos">List of <see cref="StructureInputContract" />s.</param>
+    /// <param name="structureDtos">List of <see cref="StructureInput" />s.</param>
     /// <returns>List of <see cref="Structure" /> objects.</returns>
-    List<Structure> MapStructureDtosToStructures(List<StructureInputContract> structureDtos);
+    List<Structure> MapStructureDtosToStructures(List<StructureInput> structureDtos);
 
     /// <summary>
-    ///     Maps <see cref="Structure" /> object to <see cref="StructureInputContract" /> object.
+    ///     Maps <see cref="Structure" /> object to <see cref="StructureInput" /> object.
     /// </summary>
     /// <param name="s"><see cref="Structure" />.</param>
-    /// <returns>Mapped <see cref="StructureInputContract" /> object.</returns>
-    StructureInputContract MapStructureToStructureDto(Structure s);
+    /// <returns>Mapped <see cref="StructureInput" /> object.</returns>
+    StructureInput MapStructureToStructureDto(Structure s);
 
     /// <summary>
-    ///     Maps list of <see cref="Structure" /> objects to list of <see cref="StructureInputContract" /> objects.
+    ///     Maps list of <see cref="Structure" /> objects to list of <see cref="StructureInput" /> objects.
     /// </summary>
     /// <param name="structures">List of <see cref="Structure" /> objects.</param>
-    /// <returns>List of mapped <see cref="StructureInputContract" /> objects.</returns>
-    List<StructureInputContract> MapStructuresToStructureDtos(List<Structure> structures);
+    /// <returns>List of mapped <see cref="StructureInput" /> objects.</returns>
+    List<StructureInput> MapStructuresToStructureDtos(List<Structure> structures);
 }

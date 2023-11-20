@@ -9,24 +9,24 @@ using ValidatorService;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeInputContract> AddAsync(
-        SourceFormatNodeInputContract inputContract,
+    public async Task<SourceFormatNodeInput> AddAsync(
+        SourceFormatNodeInput input,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(inputContract);
-        await ValidateInputDataForAddingAsync(inputContract).ConfigureAwait(false);
-        SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(inputContract);
+        ArgumentNullException.ThrowIfNull(input);
+        await ValidateInputDataForAddingAsync(input).ConfigureAwait(false);
+        SourceFormatNode sourceFormatNode = MapSourceFormatNodeDtoToSourceFormatNode(input);
         SourceFormatNode result = await PersistSourceFormatNodeAsync(sourceFormatNode, cancellationToken)
             .ConfigureAwait(false);
         //await AppendToSourceFormatNodesCachedList(result, SourceFormatNodesListKey);
-        SourceFormatNodeInputContract mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
+        SourceFormatNodeInput mappedResult = MapSourceFormatNodeToSourceFormatNodeDto(result);
 
         _logger.LogInformation("{Method} is executed successfully", nameof(AddAsync));
 
         return mappedResult;
     }
 
-    private SourceFormatNodeInputContract MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)
+    private SourceFormatNodeInput MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode node)
     {
         return _sourceFormatMappers
             .SourceFormatNodeMappers
@@ -44,14 +44,14 @@ public partial class SourceFormatNodeService
         return result;
     }
 
-    private SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeInputContract inputContract)
+    private SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeInput input)
     {
-        return _sourceFormatMappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(inputContract);
+        return _sourceFormatMappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(input);
     }
 
-    private async Task ValidateInputDataForAddingAsync(SourceFormatNodeInputContract inputContract)
+    private async Task ValidateInputDataForAddingAsync(SourceFormatNodeInput input)
     {
-        await _sourceFormatNodeDtoValidator.ValidateAsync(inputContract, o =>
+        await _sourceFormatNodeDtoValidator.ValidateAsync(input, o =>
         {
             o.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
             o.ThrowOnFailures();

@@ -33,14 +33,14 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         _structureRepository = structureRepository;
     }
 
-    public async Task<StructureInputContract> AddNewAsync(
+    public async Task<StructureInput> AddNewAsync(
         long parentId,
-        StructureInputContract structureInputContract,
+        StructureInput structureInput,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            return await AddNewBusinessLogicAsync(parentId, structureInputContract)
+            return await AddNewBusinessLogicAsync(parentId, structureInput)
                 .ConfigureAwait(false);
         }
         catch (Exception e)
@@ -50,15 +50,15 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         }
     }
 
-    private async Task<StructureInputContract> AddNewBusinessLogicAsync(long parentId,
-        StructureInputContract structureInputContract)
+    private async Task<StructureInput> AddNewBusinessLogicAsync(long parentId,
+        StructureInput structureInput)
     {
-        ValidateProvidedInput(parentId, structureInputContract);
-        Structure structure = _structureMappers.MapStructureDtoToStructure(structureInputContract);
+        ValidateProvidedInput(parentId, structureInput);
+        Structure structure = _structureMappers.MapStructureDtoToStructure(structureInput);
         ValidateStructureEntity(structure);
         Structure newStructure = await _structureRepository.AddNewAsync(structure).ConfigureAwait(false);
-        StructureInputContract resultInputContract = _structureMappers.MapStructureToStructureDto(newStructure);
-        return resultInputContract;
+        StructureInput resultInput = _structureMappers.MapStructureToStructureDto(newStructure);
+        return resultInput;
     }
 
     private void ValidateStructureEntity(Structure structure)
@@ -70,10 +70,10 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         });
     }
 
-    private void ValidateProvidedInput(long parentId, StructureInputContract structureInputContract)
+    private void ValidateProvidedInput(long parentId, StructureInput structureInput)
     {
         _guardService.IsNotEqual(parentId, 0);
-        _guardService.NotNull(structureInputContract);
-        _guardService.IsNotEqual(parentId, structureInputContract.Id);
+        _guardService.NotNull(structureInput);
+        _guardService.IsNotEqual(parentId, structureInput.Id);
     }
 }

@@ -12,7 +12,7 @@ using ValidatorService;
 ///     It provides a Builder to collect all necessary data to do so. However, the builder does not represent
 ///     validation for the collected data.
 /// </summary>
-public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Creates a new instance.
@@ -26,7 +26,7 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInp
     ///     we wish to create.
     /// </summary>
     [JsonPropertyName("payload")]
-    public SourceFormatNodeInputContract? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; } =
         new List<MediaTypeWithQualityHeaderValue>();
@@ -55,13 +55,13 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInp
         {
             try
             {
-                SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
+                SourceFormatNodeInput input = new SourceFormatNodeInput
                 {
                     Name = Name
                 };
 
                 SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
-                validator.Validate(inputContract, options =>
+                validator.Validate(input, options =>
                 {
                     options.ThrowOnFailures();
                     options.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
@@ -69,7 +69,7 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInp
 
                 SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel
                 {
-                    Payload = inputContract,
+                    Payload = input,
                     AcceptHeaders = AcceptHeaders
                 };
                 return requestModel;

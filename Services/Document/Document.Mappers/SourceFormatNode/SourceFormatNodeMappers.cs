@@ -8,24 +8,24 @@ using Interfaces;
 public class SourceFormatNodeMappers : ISourceFormatNodeMappers
 {
     /// <inheritdoc />
-    public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeInputContract inputContract)
+    public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeInput input)
     {
-        ArgumentNullException.ThrowIfNull(inputContract);
+        ArgumentNullException.ThrowIfNull(input);
 
         SourceFormatNode result = new SourceFormatNode();
-        result.Id = inputContract.Id;
-        result.Name = inputContract.Name;
-        result.IsRootNode = inputContract.IsRootNode;
+        result.Id = input.Id;
+        result.Name = input.Name;
+        result.IsRootNode = input.IsRootNode;
 
         return result;
     }
 
     /// <inheritdoc />
-    public SourceFormatNodeInputContract MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node)
+    public SourceFormatNodeInput MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node)
     {
         ArgumentNullException.ThrowIfNull(node);
 
-        SourceFormatNodeInputContract result = new SourceFormatNodeInputContract();
+        SourceFormatNodeInput result = new SourceFormatNodeInput();
         result.Id = node.Id;
         result.Name = node.Name;
         result.IsRootNode = node.IsRootNode;
@@ -34,15 +34,15 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     }
 
     /// <inheritdoc />
-    public List<SourceFormatNodeInputContract> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
+    public List<SourceFormatNodeInput> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
         List<SourceFormatNode> sourceFormatNodes)
     {
         ArgumentNullException.ThrowIfNull(sourceFormatNodes);
 
-        List<SourceFormatNodeInputContract> result = new List<SourceFormatNodeInputContract>();
+        List<SourceFormatNodeInput> result = new List<SourceFormatNodeInput>();
         foreach (SourceFormatNode sourceFormatNode in sourceFormatNodes)
         {
-            SourceFormatNodeInputContract
+            SourceFormatNodeInput
                 elem = MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(sourceFormatNode);
             result.Add(elem);
         }
@@ -51,17 +51,17 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     }
 
     /// <inheritdoc />
-    public SourceFormatNodeInputContract MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode)
+    public SourceFormatNodeInput MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode)
     {
         ArgumentNullException.ThrowIfNull(sourceFormatNode);
 
-        SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract();
-        inputContract.Id = sourceFormatNode.Id;
-        inputContract.Name = sourceFormatNode.Name;
-        inputContract.IsRootNode = sourceFormatNode.IsRootNode;
-        inputContract.RootNodeId = sourceFormatNode.RootNodeId;
-        inputContract.ParentNodeId = sourceFormatNode.ParentNodeId;
+        SourceFormatNodeInput input = new SourceFormatNodeInput();
+        input.Id = sourceFormatNode.Id;
+        input.Name = sourceFormatNode.Name;
+        input.IsRootNode = sourceFormatNode.IsRootNode;
+        input.RootNodeId = sourceFormatNode.RootNodeId;
+        input.ParentNodeId = sourceFormatNode.ParentNodeId;
 
-        return inputContract;
+        return input;
     }
 }

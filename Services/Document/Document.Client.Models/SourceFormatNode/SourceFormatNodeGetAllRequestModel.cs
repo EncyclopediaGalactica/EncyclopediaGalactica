@@ -4,9 +4,9 @@ using System.Net.Http.Headers;
 using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeGetAllRequestModel : IRequestModel<List<SourceFormatNodeInputContract>>
+public class SourceFormatNodeGetAllRequestModel : IRequestModel<List<SourceFormatNodeInput>>
 {
-    public List<SourceFormatNodeInputContract>? Payload { get; private init; }
+    public List<SourceFormatNodeInput>? Payload { get; private init; }
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
 
     public class Builder

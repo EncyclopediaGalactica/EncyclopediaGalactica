@@ -6,9 +6,9 @@ using Entities;
 public partial class StructureMappers
 {
     /// <inheritdoc />
-    public StructureInputContract MapStructureToStructureDto(Structure s)
+    public StructureInput MapStructureToStructureDto(Structure s)
     {
-        return new StructureInputContract
+        return new StructureInput
         {
             Id = s.Id,
             ParentId = s.ParentId,

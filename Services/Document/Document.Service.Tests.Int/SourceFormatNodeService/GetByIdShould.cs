@@ -9,18 +9,17 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class GetByIdShould : BaseTest
 {
     [Fact]
     public async Task Return_TheDesignatedEntity()
     {
         // Arrange
-        SourceFormatNodeInputContract node = new SourceFormatNodeInputContract { Name = "asdasd" };
-        SourceFormatNodeInputContract entity = await Sut.SourceFormatNode.AddAsync(node);
+        SourceFormatNodeInput node = new SourceFormatNodeInput { Name = "asdasd" };
+        SourceFormatNodeInput entity = await Sut.SourceFormatNode.AddAsync(node);
 
         // Act
-        SourceFormatNodeInputContract result = await Sut.SourceFormatNode
+        SourceFormatNodeInput result = await Sut.SourceFormatNode
             .GetByIdAsync(entity.Id);
 
         // Assert

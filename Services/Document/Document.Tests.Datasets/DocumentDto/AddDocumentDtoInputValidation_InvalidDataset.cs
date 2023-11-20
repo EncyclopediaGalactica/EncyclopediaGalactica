@@ -12,7 +12,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
     {
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 1,
                 Name = "name",
@@ -21,7 +21,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = string.Empty,
@@ -30,7 +30,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = null,
@@ -39,7 +39,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = "na",
@@ -48,7 +48,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = "na ",
@@ -57,7 +57,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = "   ",
@@ -66,7 +66,7 @@ public class AddDocumentDtoInputValidation_InvalidDataset : IEnumerable<object[]
         };
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Id = 0,
                 Name = "name",

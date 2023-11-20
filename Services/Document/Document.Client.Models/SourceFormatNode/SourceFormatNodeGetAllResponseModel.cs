@@ -4,9 +4,9 @@ using System.Net;
 using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<SourceFormatNodeInputContract>>
+public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<SourceFormatNodeInput>>
 {
-    public List<SourceFormatNodeInputContract>? Result { get; set; }
+    public List<SourceFormatNodeInput>? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
     public string? Message { get; set; }
     public HttpStatusCode HttpStatusCode { get; set; }
@@ -16,9 +16,9 @@ public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<Sourc
         private HttpStatusCode? _httpStatusCode;
         private bool _isOperationSuccessful;
         private string? _message;
-        private List<SourceFormatNodeInputContract>? _result;
+        private List<SourceFormatNodeInput>? _result;
 
-        public Builder SetResult(List<SourceFormatNodeInputContract> dto)
+        public Builder SetResult(List<SourceFormatNodeInput> dto)
         {
             _result = dto;
             return this;

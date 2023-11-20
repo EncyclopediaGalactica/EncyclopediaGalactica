@@ -20,7 +20,7 @@ public partial class SourceFormatNodeSdk
 
             const string url = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.Update;
 
-            HttpRequestMessage requestMessage = new HttpRequestMessageBuilder<SourceFormatNodeInputContract>()
+            HttpRequestMessage requestMessage = new HttpRequestMessageBuilder<SourceFormatNodeInput>()
                 .SetUri(url)
                 .SetHttpMethod(HttpMethod.Put)
                 .SetContent(updateRequestModel.Payload)
@@ -28,7 +28,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeUpdateResponseModel response = await _sdkCore
-                .SendAsync<SourceFormatNodeUpdateResponseModel, SourceFormatNodeInputContract>(requestMessage,
+                .SendAsync<SourceFormatNodeUpdateResponseModel, SourceFormatNodeInput>(requestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);
 

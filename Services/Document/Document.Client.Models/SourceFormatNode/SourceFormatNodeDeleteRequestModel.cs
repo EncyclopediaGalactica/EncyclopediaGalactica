@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Creates a new instance
@@ -19,7 +19,7 @@ public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNode
     ///     we wish to create.
     /// </summary>
     [JsonPropertyName("payload")]
-    public SourceFormatNodeInputContract? Payload { get; init; }
+    public SourceFormatNodeInput? Payload { get; init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; init; }
         = new List<MediaTypeWithQualityHeaderValue>();
@@ -80,14 +80,14 @@ public class SourceFormatNodeDeleteRequestModel : IRequestModel<SourceFormatNode
                         $"{Id} cannot be null or zero.");
                 }
 
-                SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
+                SourceFormatNodeInput input = new SourceFormatNodeInput
                 {
                     Id = Id
                 };
 
                 SourceFormatNodeDeleteRequestModel model = new SourceFormatNodeDeleteRequestModel
                 {
-                    Payload = inputContract,
+                    Payload = input,
                     AcceptHeaders = AcceptHeaders
                 };
                 return model;

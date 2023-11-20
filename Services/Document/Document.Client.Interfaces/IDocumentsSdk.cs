@@ -14,7 +14,7 @@ public interface IDocumentsSdk
 {
     /// <summary>
     ///     Adds a new <see cref="Document" /> to the system where the properties of the new entity will be
-    ///     based on the provided <see cref="DocumentGraphqlInput" /> object's properties.
+    ///     based on the provided <see cref="DocumentInput" /> object's properties.
     /// </summary>
     /// <param name="model">the provided dto object</param>
     /// <param name="cancellationToken">
@@ -33,7 +33,7 @@ public interface IDocumentsSdk
         CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns the data of the designated <see cref="Document" /> entity mapped to a <see cref="DocumentGraphqlInput" />
+    ///     Returns the data of the designated <see cref="Document" /> entity mapped to a <see cref="DocumentInput" />
     ///     object.
     ///     <remarks>
     ///         If there is no entity with the Id provided then it returns an error message.

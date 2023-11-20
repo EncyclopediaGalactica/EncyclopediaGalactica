@@ -4,14 +4,12 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Contracts.Input;
+using Contracts.Output;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class Delete_Should : BaseTest
+public class DeleteShould : BaseTest
 {
     [Fact]
     public async Task DeleteEntity()
@@ -21,7 +19,7 @@ public class Delete_Should : BaseTest
 
         // Act
         await Sut.DocumentService.DeleteAsync(recorded[0]);
-        List<DocumentGraphqlInput> result = await Sut.DocumentService.GetAllAsync();
+        List<DocumentResult> result = await Sut.DocumentService.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);

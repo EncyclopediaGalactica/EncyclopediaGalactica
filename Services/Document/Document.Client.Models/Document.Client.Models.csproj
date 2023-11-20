@@ -9,7 +9,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.ValidatorService\Document.ValidatorService.csproj"/>
     </ItemGroup>

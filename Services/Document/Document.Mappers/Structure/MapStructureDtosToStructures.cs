@@ -6,12 +6,12 @@ using Entities;
 public partial class StructureMappers
 {
     /// <inheritdoc />
-    public List<Structure> MapStructureDtosToStructures(List<StructureInputContract> structureDtos)
+    public List<Structure> MapStructureDtosToStructures(List<StructureInput> structureDtos)
     {
         List<Structure> result = new List<Structure>();
         if (structureDtos.Any())
         {
-            foreach (StructureInputContract structureDto in structureDtos)
+            foreach (StructureInput structureDto in structureDtos)
             {
                 result.Add(MapStructureDtoToStructure(structureDto));
             }

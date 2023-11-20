@@ -19,8 +19,8 @@ public partial class SourceFormatNodeSdk
 
             string uri = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.GetAll;
 
-            HttpRequestMessageBuilder<List<SourceFormatNodeInputContract>> httpRequestMessageBuilder =
-                new HttpRequestMessageBuilder<List<SourceFormatNodeInputContract>>();
+            HttpRequestMessageBuilder<List<SourceFormatNodeInput>> httpRequestMessageBuilder =
+                new HttpRequestMessageBuilder<List<SourceFormatNodeInput>>();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetUri(uri)
                 .SetHttpMethod(HttpMethod.Get)
@@ -28,7 +28,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeGetAllResponseModel result = await _sdkCore
-                .SendAsync<SourceFormatNodeGetAllResponseModel, List<SourceFormatNodeInputContract>>(
+                .SendAsync<SourceFormatNodeGetAllResponseModel, List<SourceFormatNodeInput>>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

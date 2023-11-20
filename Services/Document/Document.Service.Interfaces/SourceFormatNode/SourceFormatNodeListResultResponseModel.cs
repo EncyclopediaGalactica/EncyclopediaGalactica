@@ -3,6 +3,6 @@ namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceForma
 using Contracts.Input;
 
 public class
-    SourceFormatNodeListResultResponseModel : SourceFormatNodeResponseModel<List<SourceFormatNodeInputContract>>
+    SourceFormatNodeListResultResponseModel : SourceFormatNodeResponseModel<List<SourceFormatNodeInput>>
 {
 }

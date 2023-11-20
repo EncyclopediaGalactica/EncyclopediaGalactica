@@ -12,9 +12,9 @@ public class AddDocumentMutation : ObjectTypeExtension<Mutation>
     {
         descriptor
             .Field("addDocument")
-            .Type<NonNullType<DocumentGraphqlOutput>>()
+            .Type<NonNullType<DocumentOutput>>()
             .Description("Recording new documents in the system")
-            .Argument("newDocument", arg => arg.Type<NonNullType<DocumentGraphqlInputType>>())
+            .Argument("newDocument", arg => arg.Type<NonNullType<DocumentInputType>>())
             .ResolveWith<DocumentResolvers>(documentResolvers => documentResolvers.AddAsync(default, default));
     }
 }

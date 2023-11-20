@@ -6,12 +6,12 @@ public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
     public async Task DeleteAsync(
-        SourceFormatNodeInputContract inputContract,
+        SourceFormatNodeInput input,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(inputContract);
-        _guards.IsNotEqual(inputContract.Id, 0);
+        ArgumentNullException.ThrowIfNull(input);
+        _guards.IsNotEqual(input.Id, 0);
 
-        await _sourceFormatNodeRepository.DeleteAsync(inputContract.Id, cancellationToken).ConfigureAwait(false);
+        await _sourceFormatNodeRepository.DeleteAsync(input.Id, cancellationToken).ConfigureAwait(false);
     }
 }

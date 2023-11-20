@@ -63,7 +63,7 @@ public partial class BaseTest
                 logger);
 
         IValidator<Entities.Document> documentValidator = new DocumentValidator();
-        IValidator<DocumentGraphqlInput> documentDtoValidator = new DocumentDtoValidator();
+        IValidator<DocumentInput> documentDtoValidator = new DocumentDtoValidator();
         IDocumentsRepository documentsRepository = new DocumentRepository(
             dbContextOptions, documentValidator);
         IDocumentService documentService = new DocumentService(

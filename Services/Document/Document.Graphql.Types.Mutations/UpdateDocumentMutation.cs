@@ -13,10 +13,10 @@ public class UpdateDocumentMutation : ObjectTypeExtension<Mutation>
     {
         descriptor
             .Field("updateDocument")
-            .Type<NonNullType<DocumentGraphqlOutput>>()
+            .Type<NonNullType<DocumentOutput>>()
             .Description("Updates a document of the system")
-            .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<FloatType>>())
-            .Argument(ArgumentNames.Document.UpdatedDocument, arg => arg.Type<NonNullType<DocumentGraphqlInputType>>())
+            .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<LongType>>())
+            .Argument(ArgumentNames.Document.UpdatedDocument, arg => arg.Type<NonNullType<DocumentInputType>>())
             .ResolveWith<DocumentResolvers>(res => res.UpdateDocumentAsync(default, default));
     }
 }

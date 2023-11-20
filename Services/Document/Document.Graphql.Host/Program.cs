@@ -51,9 +51,9 @@ builder.Services
 // registered validators
 builder.Services
     .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
-    .AddScoped<IValidator<SourceFormatNodeInputContract>, SourceFormatNodeDtoValidator>()
+    .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
     .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
-    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentGraphqlInput>,
+    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput>,
         DocumentDtoValidator>();
 
 // database
@@ -97,8 +97,8 @@ builder.Services
     .AddTypeExtension<DeleteDocumentMutation>()
     .AddTypeExtension<UpdateDocumentMutation>()
     .RegisterService<IDocumentService>()
-    .AddType<DocumentGraphqlOutput>()
-    .AddType<EncyclopediaGalactica.Services.Document.Graphql.Types.Input.DocumentGraphqlInputType>();
+    .AddType<DocumentOutput>()
+    .AddType<EncyclopediaGalactica.Services.Document.Graphql.Types.Input.DocumentInputType>();
 
 var app = builder.Build();
 

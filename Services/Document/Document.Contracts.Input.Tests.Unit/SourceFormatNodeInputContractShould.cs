@@ -4,7 +4,6 @@ using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
-[Trait("Category", "DocumentService")]
 public class SourceFormatNodeInputContractShould
 {
     [Fact]
@@ -18,7 +17,7 @@ public class SourceFormatNodeInputContractShould
         long rootNodeId = 300;
 
         // Act
-        SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
+        SourceFormatNodeInput input = new SourceFormatNodeInput
         {
             Id = id,
             Name = name,
@@ -28,10 +27,10 @@ public class SourceFormatNodeInputContractShould
         };
 
         // Assert
-        inputContract.Id.Should().Be(id);
-        inputContract.Name.Should().Be(name);
-        inputContract.IsRootNode.Should().Be(isRootNode);
-        inputContract.ParentNodeId.Should().Be(parentNodeId);
-        inputContract.RootNodeId.Should().Be(rootNodeId);
+        input.Id.Should().Be(id);
+        input.Name.Should().Be(name);
+        input.IsRootNode.Should().Be(isRootNode);
+        input.ParentNodeId.Should().Be(parentNodeId);
+        input.RootNodeId.Should().Be(rootNodeId);
     }
 }

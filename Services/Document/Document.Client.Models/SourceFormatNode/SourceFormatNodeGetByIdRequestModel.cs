@@ -8,16 +8,16 @@ using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 ///     <see cref="SourceFormatNodeGetByIdRequestModel" />
 ///     This is the request object for the provided SDK of the SourceFormats IAM.Service
 ///     to get the designated <see cref="SourceFormatNode" /> object properties
-///     carried by a <see cref="SourceFormatNodeInputContract" /> data transfer object.
+///     carried by a <see cref="SourceFormatNodeInput" /> data transfer object.
 /// </summary>
-public class SourceFormatNodeGetByIdRequestModel : IRequestModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeGetByIdRequestModel : IRequestModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Gets or sets the Payload
-    ///     This <see cref="SourceFormatNodeInputContract" /> object Id fields marks the
+    ///     This <see cref="SourceFormatNodeInput" /> object Id fields marks the
     ///     object we are looking up in the database
     /// </summary>
-    public SourceFormatNodeInputContract? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     /// <summary>
     ///     Gets or sets AcceptHeaders
@@ -68,7 +68,7 @@ public class SourceFormatNodeGetByIdRequestModel : IRequestModel<SourceFormatNod
 
             SourceFormatNodeGetByIdRequestModel model = new SourceFormatNodeGetByIdRequestModel
             {
-                Payload = new SourceFormatNodeInputContract { Id = _id },
+                Payload = new SourceFormatNodeInput { Id = _id },
                 AcceptHeaders = _acceptHeaders
             };
             return model;

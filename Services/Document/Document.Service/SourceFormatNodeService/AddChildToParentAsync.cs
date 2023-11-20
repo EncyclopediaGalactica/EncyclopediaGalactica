@@ -6,24 +6,24 @@ using Entities;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeInputContract> AddChildToParentAsync(
-        SourceFormatNodeInputContract childInputContract,
-        SourceFormatNodeInputContract parentInputContract,
+    public async Task<SourceFormatNodeInput> AddChildToParentAsync(
+        SourceFormatNodeInput childInput,
+        SourceFormatNodeInput parentInput,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(childInputContract);
-        ArgumentNullException.ThrowIfNull(parentInputContract);
-        _guards.IsNotEqual(childInputContract.Id, 0);
-        _guards.IsNotEqual(parentInputContract.Id, 0);
-        _guards.IsNotEqual(parentInputContract.Id, childInputContract.Id);
+        ArgumentNullException.ThrowIfNull(childInput);
+        ArgumentNullException.ThrowIfNull(parentInput);
+        _guards.IsNotEqual(childInput.Id, 0);
+        _guards.IsNotEqual(parentInput.Id, 0);
+        _guards.IsNotEqual(parentInput.Id, childInput.Id);
 
         SourceFormatNode rootNode = await _sourceFormatNodeRepository.GetByIdWithRootNodeAsync(
-                parentInputContract.Id,
+                parentInput.Id,
                 cancellationToken)
             .ConfigureAwait(false);
         SourceFormatNode resultNode = await _sourceFormatNodeRepository.AddChildNodeAsync(
-                childInputContract.Id,
-                parentInputContract.Id,
+                childInput.Id,
+                parentInput.Id,
                 rootNode.Id,
                 cancellationToken)
             .ConfigureAwait(false);

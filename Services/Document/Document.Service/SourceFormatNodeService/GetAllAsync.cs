@@ -6,7 +6,7 @@ using Entities;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<List<SourceFormatNodeInputContract>> GetAllAsync(
+    public async Task<List<SourceFormatNodeInput>> GetAllAsync(
         CancellationToken cancellationToken = default)
     {
         List<SourceFormatNode> sourceFormatNodes = await _sourceFormatNodeRepository

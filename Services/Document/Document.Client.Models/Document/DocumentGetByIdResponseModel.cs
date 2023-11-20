@@ -4,9 +4,9 @@ using System.Net;
 using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class DocumentGetByIdResponseModel : IHttpResponseModel<DocumentGraphqlInput>
+public class DocumentGetByIdResponseModel : IHttpResponseModel<DocumentInput>
 {
-    public DocumentGraphqlInput? Result { get; set; }
+    public DocumentInput? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
     public string Message { get; set; }
     public HttpStatusCode HttpStatusCode { get; set; }

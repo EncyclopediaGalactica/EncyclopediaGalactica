@@ -11,10 +11,7 @@ using Services.Document.Tests.Datasets.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class AddAsync_Validation_Should : BaseTest
+public class AddAsyncValidationShould : BaseTest
 {
     [Fact]
     public void Throw_WhenInput_IsNull()

@@ -4,15 +4,14 @@ using Contracts.Input;
 using Entities;
 using Exceptions;
 using FluentValidation;
-using Sdk.Client.Models.SourceFormatNode;
 
 public interface ISourceFormatNodeService
 {
     /// <summary>
     ///     Creates a new <see cref="SourceFormatNode" /> in the system based on the data stored
-    ///     in the provided input <see cref="SourceFormatNodeInputContract" />.
+    ///     in the provided input <see cref="SourceFormatNodeInput" />.
     /// </summary>
-    /// <param name="inputContract"><see cref="SourceFormatNodeInputContract" /> contains the details of the new entity.</param>
+    /// <param name="input"><see cref="SourceFormatNodeInput" /> contains the details of the new entity.</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -39,16 +38,16 @@ public interface ISourceFormatNodeService
     /// <exception cref="Microsoft.EntityFrameworkCore.DbUpdateException">
     ///     When a constraint is violated. It is mainly related to validation.
     /// </exception>
-    Task<SourceFormatNodeInputContract> AddAsync(
-        SourceFormatNodeInputContract inputContract,
+    Task<SourceFormatNodeInput> AddAsync(
+        SourceFormatNodeInput input,
         CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Adds the given <see cref="SourceFormatNode" /> to another <see cref="SourceFormatNode" />
     ///     as child.
     /// </summary>
-    /// <param name="childInputContract">The child</param>
-    /// <param name="parentInputContract">The parent</param>
+    /// <param name="childInput">The child</param>
+    /// <param name="parentInput">The parent</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -73,8 +72,8 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
-    Task<SourceFormatNodeInputContract> AddChildToParentAsync(SourceFormatNodeInputContract childInputContract,
-        SourceFormatNodeInputContract parentInputContract,
+    Task<SourceFormatNodeInput> AddChildToParentAsync(SourceFormatNodeInput childInput,
+        SourceFormatNodeInput parentInput,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -108,14 +107,14 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
-    Task<SourceFormatNodeInputContract> GetByIdAsync(long id,
+    Task<SourceFormatNodeInput> GetByIdAsync(long id,
         CancellationToken cancellationToken = default);
 
-    Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithChildrenAsync(
+    Task<SourceFormatNodeInput> GetSourceFormatNodeByIdWithChildrenAsync(
         long id,
         CancellationToken cancellationToken = default);
 
-    Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithNodeTreeAsync(
+    Task<SourceFormatNodeInput> GetSourceFormatNodeByIdWithNodeTreeAsync(
         long id,
         CancellationToken cancellationToken = default);
 
@@ -151,7 +150,7 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
-    Task<SourceFormatNodeInputContract> UpdateSourceFormatNodeAsync(SourceFormatNodeInputContract? dto,
+    Task<SourceFormatNodeInput> UpdateSourceFormatNodeAsync(SourceFormatNodeInput? dto,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -159,7 +158,7 @@ public interface ISourceFormatNodeService
     ///     If the <see cref="SourceFormatNode" /> has children nodes then those will be deleted too.
     ///     The system does not allow that a <see cref="SourceFormatNode" /> is attached to multiple parents.
     /// </summary>
-    /// <param name="inputContract">The entity should be deleted</param>
+    /// <param name="input">The entity should be deleted</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -183,7 +182,7 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
-    Task DeleteAsync(SourceFormatNodeInputContract inputContract,
+    Task DeleteAsync(SourceFormatNodeInput input,
         CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -214,5 +213,5 @@ public interface ISourceFormatNodeService
     /// <exception cref="OperationCanceledException">
     ///     When operation is cancelled by a cancellation token.
     /// </exception>
-    Task<List<SourceFormatNodeInputContract>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<List<SourceFormatNodeInput>> GetAllAsync(CancellationToken cancellationToken = default);
 }

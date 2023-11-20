@@ -9,10 +9,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class GetAllAsync_Should : BaseTest
+public class GetAllAsyncShould : BaseTest
 {
     [Theory]
     [InlineData(0)]

@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.ValidatorService;
 using Contracts.Input;
 using FluentValidation;
 
-public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeInputContract>
+public class SourceFormatNodeDtoValidator : AbstractValidator<SourceFormatNodeInput>
 {
     public const string Add = "Add";
     public const string Update = "Update";

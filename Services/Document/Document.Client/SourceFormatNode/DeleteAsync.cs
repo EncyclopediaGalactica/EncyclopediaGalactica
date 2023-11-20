@@ -20,7 +20,7 @@ public partial class SourceFormatNodeSdk
 
             const string url = SourceFormats.SourceFormatNode.Route + SourceFormats.SourceFormatNode.Delete;
 
-            HttpRequestMessageBuilder<SourceFormatNodeInputContract?> httpRequestMessageBuilder = new();
+            HttpRequestMessageBuilder<SourceFormatNodeInput?> httpRequestMessageBuilder = new();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetContent(deleteRequestModel.Payload)
                 .SetUri(url)
@@ -29,7 +29,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeDeleteResponseModel responseModel = await _sdkCore
-                .SendAsync<SourceFormatNodeDeleteResponseModel, SourceFormatNodeInputContract>(
+                .SendAsync<SourceFormatNodeDeleteResponseModel, SourceFormatNodeInput>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

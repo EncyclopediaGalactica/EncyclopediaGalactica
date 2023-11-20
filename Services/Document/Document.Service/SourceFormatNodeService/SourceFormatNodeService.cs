@@ -16,11 +16,11 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
     private readonly IGuardsService _guards;
     private readonly ILogger _logger;
     private readonly ISourceFormatMappers _sourceFormatMappers;
-    private readonly IValidator<SourceFormatNodeInputContract> _sourceFormatNodeDtoValidator;
+    private readonly IValidator<SourceFormatNodeInput> _sourceFormatNodeDtoValidator;
     private readonly ISourceFormatNodeRepository _sourceFormatNodeRepository;
 
     public SourceFormatNodeService(
-        IValidator<SourceFormatNodeInputContract> sourceFormatNodeDtoValidator,
+        IValidator<SourceFormatNodeInput> sourceFormatNodeDtoValidator,
         IGuardsService guardsService,
         ISourceFormatMappers sourceFormatMappers,
         ISourceFormatNodeRepository sourceFormatNodeRepository,
@@ -39,13 +39,13 @@ public partial class SourceFormatNodeService : ISourceFormatNodeService
         _logger = logger;
     }
 
-    public async Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithChildrenAsync(long id,
+    public async Task<SourceFormatNodeInput> GetSourceFormatNodeByIdWithChildrenAsync(long id,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<SourceFormatNodeInputContract> GetSourceFormatNodeByIdWithNodeTreeAsync(long id,
+    public async Task<SourceFormatNodeInput> GetSourceFormatNodeByIdWithNodeTreeAsync(long id,
         CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();

@@ -12,9 +12,9 @@ public class DeleteDocumentMutation : ObjectTypeExtension<Mutation>
     {
         descriptor
             .Field("deleteDocument")
-            .Type<NonNullType<DocumentGraphqlOutput>>()
+            .Type<NonNullType<DocumentOutput>>()
             .Description("Delete the designated Document.")
-            .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<FloatType>>())
+            .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<LongType>>())
             .ResolveWith<DocumentResolvers>(res => res.DeleteDocumentAsync(default, default));
     }
 }

@@ -20,7 +20,7 @@ public partial class DocumentSdk
 
             const string url = SourceFormats.Document.Route + SourceFormats.Document.Add;
 
-            HttpRequestMessageBuilder<DocumentGraphqlInput> httpRequestMessageBuilder = new();
+            HttpRequestMessageBuilder<DocumentInput> httpRequestMessageBuilder = new();
             HttpRequestMessage httpRequestMessage = httpRequestMessageBuilder
                 .SetContent(model.Payload)
                 .SetUri(url)
@@ -29,7 +29,7 @@ public partial class DocumentSdk
                 .Build();
 
             DocumentAddResponseModel responseModel = await _sdkCore
-                .SendAsync<DocumentAddResponseModel, DocumentGraphqlInput>(
+                .SendAsync<DocumentAddResponseModel, DocumentInput>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

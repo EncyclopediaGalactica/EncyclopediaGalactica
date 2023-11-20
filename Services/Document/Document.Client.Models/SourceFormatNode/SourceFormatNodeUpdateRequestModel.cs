@@ -6,9 +6,9 @@ using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 using ValidatorService;
 
-public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNodeInput>
 {
-    public SourceFormatNodeInputContract? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; } = new();
 
@@ -38,14 +38,14 @@ public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNode
 
         public SourceFormatNodeUpdateRequestModel Build()
         {
-            SourceFormatNodeInputContract inputContract = new()
+            SourceFormatNodeInput input = new()
             {
                 Id = _id,
                 Name = _name
             };
 
             SourceFormatNodeDtoValidator validator = new();
-            validator.Validate(inputContract, options =>
+            validator.Validate(input, options =>
             {
                 options.IncludeRuleSets(SourceFormatNodeDtoValidator.Update);
                 options.ThrowOnFailures();
@@ -53,7 +53,7 @@ public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNode
 
             SourceFormatNodeUpdateRequestModel requestModel = new()
             {
-                Payload = inputContract,
+                Payload = input,
                 AcceptHeaders = _acceptHeaders
             };
 

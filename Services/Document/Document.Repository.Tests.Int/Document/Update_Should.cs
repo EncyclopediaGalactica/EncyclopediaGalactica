@@ -12,10 +12,7 @@ using Services.Document.Tests.Datasets.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class Update_Should : BaseTest
+public class UpdateShould : BaseTest
 {
     [Fact]
     public async Task Throw_WhenNoSuchEntity()

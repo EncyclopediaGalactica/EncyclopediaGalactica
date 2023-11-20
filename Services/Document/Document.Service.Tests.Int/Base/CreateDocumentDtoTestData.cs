@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Base;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Contracts.Input;
+using Contracts.Output;
 
 public partial class BaseTest
 {
@@ -11,8 +12,8 @@ public partial class BaseTest
         List<long> result = new List<long>();
         for (int i = 0; i < amount; i++)
         {
-            DocumentGraphqlInput res = await Sut.DocumentService.AddAsync(
-                    new DocumentGraphqlInput
+            DocumentResult res = await Sut.DocumentService.AddAsync(
+                    new DocumentInput
                     {
                         Name = $"_default_{i}",
                         Description = $"_default_{i}"

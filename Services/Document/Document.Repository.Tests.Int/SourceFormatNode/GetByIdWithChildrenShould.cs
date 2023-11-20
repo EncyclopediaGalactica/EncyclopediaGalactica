@@ -8,9 +8,6 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
 public class GetByIdWithChildrenShould : BaseTest
 {
     [Fact]

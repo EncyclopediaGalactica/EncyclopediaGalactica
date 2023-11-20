@@ -5,9 +5,9 @@ using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 
-public class DocumentGetByIdRequestModel : IRequestModel<DocumentGraphqlInput>
+public class DocumentGetByIdRequestModel : IRequestModel<DocumentInput>
 {
-    public DocumentGraphqlInput? Payload { get; private init; }
+    public DocumentInput? Payload { get; private init; }
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
 
     public class Builder
@@ -36,7 +36,7 @@ public class DocumentGetByIdRequestModel : IRequestModel<DocumentGraphqlInput>
 
             return new DocumentGetByIdRequestModel
             {
-                Payload = new DocumentGraphqlInput { Id = Id },
+                Payload = new DocumentInput { Id = Id },
                 AcceptHeaders = _acceptHeaders
             };
         }

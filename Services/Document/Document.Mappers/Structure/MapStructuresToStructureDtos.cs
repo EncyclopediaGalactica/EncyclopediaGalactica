@@ -6,9 +6,9 @@ using Entities;
 public partial class StructureMappers
 {
     /// <inheritdoc />
-    public List<StructureInputContract> MapStructuresToStructureDtos(List<Structure> structures)
+    public List<StructureInput> MapStructuresToStructureDtos(List<Structure> structures)
     {
-        List<StructureInputContract> result = new List<StructureInputContract>();
+        List<StructureInput> result = new List<StructureInput>();
         if (structures.Any())
         {
             foreach (Structure structure in structures)

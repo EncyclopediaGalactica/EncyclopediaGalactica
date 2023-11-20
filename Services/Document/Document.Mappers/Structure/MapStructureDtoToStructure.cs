@@ -6,13 +6,13 @@ using Entities;
 public partial class StructureMappers
 {
     /// <inheritdoc />
-    public Structure MapStructureDtoToStructure(StructureInputContract structureInputContract)
+    public Structure MapStructureDtoToStructure(StructureInput structureInput)
     {
         return new Structure
         {
-            Id = structureInputContract.Id,
-            ParentId = structureInputContract.ParentId,
-            Children = MapStructureDtosToStructures(structureInputContract.Children)
+            Id = structureInput.Id,
+            ParentId = structureInput.ParentId,
+            Children = MapStructureDtosToStructures(structureInput.Children)
         };
     }
 }

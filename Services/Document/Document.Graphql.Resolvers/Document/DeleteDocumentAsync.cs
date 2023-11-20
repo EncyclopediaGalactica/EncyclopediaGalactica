@@ -16,12 +16,12 @@ public partial class DocumentResolvers
     /// <param name="documentService">
     ///     <see cref="IDocumentService" />
     /// </param>
-    public async Task<DocumentGraphqlInput> DeleteDocumentAsync(
+    public async Task<DocumentInput> DeleteDocumentAsync(
         IResolverContext resolverContext,
         IDocumentService documentService)
     {
         long documentId = resolverContext.ArgumentValue<long>(ArgumentNames.Document.DocumentId);
         await documentService.DeleteAsync(documentId).ConfigureAwait(false);
-        return new DocumentGraphqlInput { Id = documentId };
+        return new DocumentInput { Id = documentId };
     }
 }

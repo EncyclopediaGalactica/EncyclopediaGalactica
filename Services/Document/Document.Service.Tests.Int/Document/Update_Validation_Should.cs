@@ -11,19 +11,14 @@ using Services.Document.Tests.Datasets.DocumentDto;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class Update_Validation_Should : BaseTest
+public class UpdateValidationShould : BaseTest
 {
     [Theory]
     [ClassData(typeof(UpdateDocumentDto_InputValidation_InvalidDataset))]
-    public async Task Throw_WhenInputIsInvalid(DocumentGraphqlInput graphqlInputGraphqlInput)
+    public async Task Throw_WhenInputIsInvalid(DocumentInput inputInput)
     {
         // Arrange & Act
-        Func<Task> f = async () =>
-        {
-            await Sut.DocumentService.UpdateAsync(graphqlInputGraphqlInput.Id, graphqlInputGraphqlInput);
-        };
+        Func<Task> f = async () => { await Sut.DocumentService.UpdateAsync(inputInput.Id, inputInput); };
 
         // Assert
         await f.Should().ThrowExactlyAsync<InvalidInputToDocumentServiceException>();

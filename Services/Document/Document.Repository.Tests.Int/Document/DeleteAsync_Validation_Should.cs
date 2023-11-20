@@ -9,10 +9,7 @@ using FluentValidation;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class DeleteAsync_Validation_Should : BaseTest
+public class DeleteAsyncValidationShould : BaseTest
 {
     [Fact]
     public async Task Throw_WhenInputIsInvalid()

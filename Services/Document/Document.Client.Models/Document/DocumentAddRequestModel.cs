@@ -6,10 +6,10 @@ using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 using ValidatorService;
 
-public class DocumentAddRequestModel : IRequestModel<DocumentGraphqlInput>
+public class DocumentAddRequestModel : IRequestModel<DocumentInput>
 {
     /// <inheritdoc />
-    public DocumentGraphqlInput? Payload { get; private init; }
+    public DocumentInput? Payload { get; private init; }
 
     /// <inheritdoc />
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; }
@@ -47,15 +47,15 @@ public class DocumentAddRequestModel : IRequestModel<DocumentGraphqlInput>
 
         public DocumentAddRequestModel Build()
         {
-            DocumentGraphqlInput graphqlInput = new DocumentGraphqlInput
+            DocumentInput input = new DocumentInput
             {
                 Name = _name,
                 Description = _desc,
                 Uri = _uri
             };
 
-            IValidator<DocumentGraphqlInput> validator = new InlineValidator<DocumentGraphqlInput>();
-            validator.Validate(graphqlInput, o =>
+            IValidator<DocumentInput> validator = new InlineValidator<DocumentInput>();
+            validator.Validate(input, o =>
             {
                 o.IncludeRuleSets(Operations.Add);
                 o.ThrowOnFailures();
@@ -63,7 +63,7 @@ public class DocumentAddRequestModel : IRequestModel<DocumentGraphqlInput>
 
             return new DocumentAddRequestModel
             {
-                Payload = graphqlInput,
+                Payload = input,
                 AcceptHeaders = _acceptHeaders
             };
         }

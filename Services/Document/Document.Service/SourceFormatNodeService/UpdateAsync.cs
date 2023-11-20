@@ -8,8 +8,8 @@ using ValidatorService;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeInputContract> UpdateSourceFormatNodeAsync(
-        SourceFormatNodeInputContract? dto,
+    public async Task<SourceFormatNodeInput> UpdateSourceFormatNodeAsync(
+        SourceFormatNodeInput? dto,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(dto);
@@ -22,9 +22,9 @@ public partial class SourceFormatNodeService
         return MapSourceFormatNodeToSourceFormatNodeDto(updated);
     }
 
-    private async Task ValidateInputDataForUpdateAsync(SourceFormatNodeInputContract inputInputContract)
+    private async Task ValidateInputDataForUpdateAsync(SourceFormatNodeInput inputInput)
     {
-        await _sourceFormatNodeDtoValidator.ValidateAsync(inputInputContract, options =>
+        await _sourceFormatNodeDtoValidator.ValidateAsync(inputInput, options =>
         {
             options.IncludeRuleSets(SourceFormatNodeDtoValidator.Update);
             options.ThrowOnFailures();

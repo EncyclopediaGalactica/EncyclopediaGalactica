@@ -9,12 +9,12 @@ using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 ///     execution result related information to the client side.
 ///     It is used only in the provided SDK.
 /// </summary>
-public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Sets or gets the operation result.
     /// </summary>
-    public SourceFormatNodeInputContract? Result { get; set; }
+    public SourceFormatNodeInput? Result { get; set; }
 
     /// <summary>
     ///     Sets or gets whether the operation was successful
@@ -36,18 +36,18 @@ public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceForm
         private HttpStatusCode? _httpStatusCode;
         private bool _isOperationSuccessful;
         private string? _message;
-        private SourceFormatNodeInputContract? _result;
+        private SourceFormatNodeInput? _result;
 
         /// <summary>
         ///     Sets the result value.
         /// </summary>
-        /// <param name="inputContract">The result <see cref="SourceFormatNodeInputContract" /></param>
+        /// <param name="input">The result <see cref="SourceFormatNodeInput" /></param>
         /// <returns>
-        ///     Returns the instance of <see cref="SourceFormatNodeInputContract" />
+        ///     Returns the instance of <see cref="SourceFormatNodeInput" />
         /// </returns>
-        public Builder SetResult(SourceFormatNodeInputContract inputContract)
+        public Builder SetResult(SourceFormatNodeInput input)
         {
-            _result = inputContract;
+            _result = input;
             return this;
         }
 
@@ -55,7 +55,7 @@ public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceForm
         ///     Sets the operation execution to success
         /// </summary>
         /// <returns>
-        ///     Returns the instance of <see cref="SourceFormatNodeInputContract" />
+        ///     Returns the instance of <see cref="SourceFormatNodeInput" />
         /// </returns>
         public Builder SetOperationSuccessful()
         {
@@ -67,7 +67,7 @@ public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceForm
         ///     Sets the operation execution to failure
         /// </summary>
         /// <returns>
-        ///     Returns the instance of <see cref="SourceFormatNodeInputContract" />
+        ///     Returns the instance of <see cref="SourceFormatNodeInput" />
         /// </returns>
         public Builder SetOperationFailed()
         {
@@ -80,7 +80,7 @@ public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceForm
         /// </summary>
         /// <param name="statusCode">The HTTP status code</param>
         /// <returns>
-        ///     Returns the instance of <see cref="SourceFormatNodeInputContract" />
+        ///     Returns the instance of <see cref="SourceFormatNodeInput" />
         /// </returns>
         public Builder SetHttpStatusCode(HttpStatusCode statusCode)
         {
@@ -93,7 +93,7 @@ public class SourceFormatNodeDeleteResponseModel : IHttpResponseModel<SourceForm
         /// </summary>
         /// <param name="message">The message</param>
         /// <returns>
-        ///     Returns the instance of <see cref="SourceFormatNodeInputContract" />
+        ///     Returns the instance of <see cref="SourceFormatNodeInput" />
         /// </returns>
         public Builder SetMessage(string message)
         {

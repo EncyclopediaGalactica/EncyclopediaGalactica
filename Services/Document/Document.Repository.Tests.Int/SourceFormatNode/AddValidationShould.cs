@@ -10,9 +10,6 @@ using FluentValidation;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
 public class AddValidationShould : BaseTest
 {
     [Theory]

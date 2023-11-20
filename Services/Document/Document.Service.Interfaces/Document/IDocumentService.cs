@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.Document;
 
 using Contracts.Input;
+using Contracts.Output;
 using Entities;
 using Exceptions;
 
@@ -14,9 +15,9 @@ public partial interface IDocumentService
 {
     /// <summary>
     ///     Adds a <see cref="Document" /> object to the system with the values represented by the provided
-    ///     <see cref="DocumentGraphqlInput" />.
+    ///     <see cref="DocumentInput" />.
     /// </summary>
-    /// <param name="graphqlInputGraphqlInput">The input object</param>
+    /// <param name="inputInput">The input object</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
@@ -32,11 +33,11 @@ public partial interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     When any other error happens.
     /// </exception>
-    Task<DocumentGraphqlInput> AddAsync(DocumentGraphqlInput graphqlInputGraphqlInput,
+    Task<DocumentResult> AddAsync(DocumentInput inputInput,
         CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentGraphqlInput" /> representing the <see cref="Document" />
+    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentInput" /> representing the <see cref="Document" />
     ///     entities in
     ///     the system.
     /// </summary>
@@ -53,10 +54,10 @@ public partial interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<List<DocumentGraphqlInput>> GetAllAsync(CancellationToken cancellationToken = default);
+    Task<List<DocumentResult>> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
-    ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentGraphqlInput" />
+    ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentInput" />
     ///     object.
     /// </summary>
     /// <param name="id">The id value</param>
@@ -65,7 +66,7 @@ public partial interface IDocumentService
     /// </param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation. It includes the
-    ///     <see cref="DocumentGraphqlInput" /> result.
+    ///     <see cref="DocumentInput" /> result.
     /// </returns>
     /// <exception cref="InvalidInputToDocumentServiceException">
     ///     Invalid input provided to the service
@@ -79,17 +80,17 @@ public partial interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<DocumentGraphqlInput> GetByIdAsync(long id, CancellationToken cancellationToken = default);
+    Task<DocumentResult> GetByIdAsync(long id, CancellationToken cancellationToken = default);
 
     /// <summary>
     ///     Modifies the designated <see cref="Document" /> entity in the system based on the provided
-    ///     <see cref="DocumentGraphqlInput" /> instance.
+    ///     <see cref="DocumentInput" /> instance.
     /// </summary>
     /// <param name="documentId">The id of entity to be modified</param>
-    /// <param name="modifiedGraphqlInput">The provided changes</param>
+    /// <param name="modifiedInput">The provided changes</param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation.
-    ///     It included the <see cref="DocumentGraphqlInput" /> result.
+    ///     It included the <see cref="DocumentInput" /> result.
     /// </returns>
     /// <exception cref="InvalidInputToDocumentServiceException">
     ///     Invalid input provided to the service
@@ -103,7 +104,7 @@ public partial interface IDocumentService
     /// <exception cref="UnknownErrorDocumentServiceException">
     ///     In case of any other errors
     /// </exception>
-    Task<DocumentGraphqlInput> UpdateAsync(long documentId, DocumentGraphqlInput modifiedGraphqlInput);
+    Task<DocumentResult> UpdateAsync(long documentId, DocumentInput modifiedInput);
 
     /// <summary>
     ///     Deletes the designated <see cref="Document" /> entity.

@@ -41,8 +41,8 @@ public static class SourceFormatNodeDatasets
         new List<object[]?>
         {
             new object?[] { null, null },
-            new object?[] { new SourceFormatNodeInputContract(), null },
-            new object?[] { null, new SourceFormatNodeInputContract() },
+            new object?[] { new SourceFormatNodeInput(), null },
+            new object?[] { null, new SourceFormatNodeInput() },
         };
 
     public static IEnumerable<object[]?> Service_AddChildToParentAsync_InvalidInput_Dataset =>
@@ -50,18 +50,18 @@ public static class SourceFormatNodeDatasets
         {
             new object?[]
             {
-                new SourceFormatNodeInputContract { Id = 0 },
-                new SourceFormatNodeInputContract { Id = 100 }
+                new SourceFormatNodeInput { Id = 0 },
+                new SourceFormatNodeInput { Id = 100 }
             },
             new object?[]
             {
-                new SourceFormatNodeInputContract { Id = 100 },
-                new SourceFormatNodeInputContract { Id = 0 }
+                new SourceFormatNodeInput { Id = 100 },
+                new SourceFormatNodeInput { Id = 0 }
             },
             new object?[]
             {
-                new SourceFormatNodeInputContract { Id = 100 },
-                new SourceFormatNodeInputContract { Id = 100 }
+                new SourceFormatNodeInput { Id = 100 },
+                new SourceFormatNodeInput { Id = 100 }
             }
         };
 

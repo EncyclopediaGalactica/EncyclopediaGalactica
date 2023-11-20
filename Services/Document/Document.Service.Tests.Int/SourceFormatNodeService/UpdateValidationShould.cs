@@ -12,7 +12,6 @@ using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class UpdateValidationShould : BaseTest
 {
     [Fact]
@@ -36,7 +35,7 @@ public class UpdateValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(new SourceFormatNodeInputContract { Id = 0 });
+                .UpdateSourceFormatNodeAsync(new SourceFormatNodeInput { Id = 0 });
         };
 
         // Assert
@@ -49,7 +48,7 @@ public class UpdateValidationShould : BaseTest
     public async Task Throw_ValidationError_WhenInputIsInvalid(int id, string name)
     {
         // Act
-        SourceFormatNodeInputContract inputContract = new()
+        SourceFormatNodeInput input = new()
         {
             Id = id,
             Name = name
@@ -57,7 +56,7 @@ public class UpdateValidationShould : BaseTest
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .UpdateSourceFormatNodeAsync(inputContract);
+                .UpdateSourceFormatNodeAsync(input);
         };
 
         // Assert

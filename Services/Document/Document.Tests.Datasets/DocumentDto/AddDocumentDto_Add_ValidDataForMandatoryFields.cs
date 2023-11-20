@@ -12,7 +12,7 @@ public class AddDocumentDto_Add_ValidDataForMandatoryFields : IEnumerable<object
     {
         yield return new object[]
         {
-            new DocumentGraphqlInput
+            new DocumentInput
             {
                 Name = "name",
                 Description = "description"

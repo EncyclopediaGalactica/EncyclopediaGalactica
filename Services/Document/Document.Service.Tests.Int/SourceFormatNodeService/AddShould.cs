@@ -8,7 +8,6 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class AddShould : BaseTest
 {
     [Fact]
@@ -16,15 +15,15 @@ public class AddShould : BaseTest
     {
         // Arrange
         string name = "asd";
-        SourceFormatNodeInputContract inputContract = new()
+        SourceFormatNodeInput input = new()
         {
             Name = name
         };
 
         // Act
-        SourceFormatNodeInputContract result = await Sut
+        SourceFormatNodeInput result = await Sut
             .SourceFormatNode
-            .AddAsync(inputContract);
+            .AddAsync(input);
 
         // Assert
         result.Should().NotBeNull();

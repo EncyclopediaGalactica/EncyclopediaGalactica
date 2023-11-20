@@ -6,7 +6,6 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
 public class SourceFormatNodeProperties_Should
 {
     [Fact]

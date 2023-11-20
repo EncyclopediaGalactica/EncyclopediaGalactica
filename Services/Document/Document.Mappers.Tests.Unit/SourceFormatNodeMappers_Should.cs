@@ -10,7 +10,6 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
 public class SourceFormatNodeMappers_Should
 {
     private readonly SourceFormatMappers _mappers;
@@ -33,20 +32,20 @@ public class SourceFormatNodeMappers_Should
         };
 
         // Act
-        SourceFormatNodeInputContract inputContract = _mappers.SourceFormatNodeMappers
+        SourceFormatNodeInput input = _mappers.SourceFormatNodeMappers
             .MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(node);
 
         // Assert
-        inputContract.Id.Should().Be(node.Id);
-        inputContract.Name.Should().Be(node.Name);
-        inputContract.IsRootNode.Should().Be(node.IsRootNode);
+        input.Id.Should().Be(node.Id);
+        input.Name.Should().Be(node.Name);
+        input.IsRootNode.Should().Be(node.IsRootNode);
     }
 
     [Fact]
     public void SingleDtoToEntity()
     {
         // Arrange
-        SourceFormatNodeInputContract inputContract = new SourceFormatNodeInputContract
+        SourceFormatNodeInput input = new SourceFormatNodeInput
         {
             Id = 100,
             Name = "name",
@@ -55,11 +54,11 @@ public class SourceFormatNodeMappers_Should
 
         // Act
         SourceFormatNode node =
-            _mappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(inputContract);
+            _mappers.SourceFormatNodeMappers.MapSourceFormatNodeDtoToSourceFormatNode(input);
 
         // Assert
-        node.Id.Should().Be(inputContract.Id);
-        node.Name.Should().Be(inputContract.Name);
-        node.IsRootNode.Should().Be(inputContract.IsRootNode);
+        node.Id.Should().Be(input.Id);
+        node.Name.Should().Be(input.Name);
+        node.IsRootNode.Should().Be(input.IsRootNode);
     }
 }

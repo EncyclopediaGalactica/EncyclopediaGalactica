@@ -13,11 +13,9 @@ using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class SourceFormatsService_Should
+public class SourceFormatsServiceShould
 {
-    public static IEnumerable<object[]> Throw_ArgumentNullException_WhenInjectedIsNull_Data = new List<object[]>
+    public static IEnumerable<object[]> ThrowArgumentNullExceptionWhenInjectedIsNullData = new List<object[]>
     {
         new[]
         {
@@ -37,7 +35,7 @@ public class SourceFormatsService_Should
     };
 
     [Theory]
-    [MemberData(nameof(Throw_ArgumentNullException_WhenInjectedIsNull_Data))]
+    [MemberData(nameof(ThrowArgumentNullExceptionWhenInjectedIsNullData))]
     public void Throw_ArgumentNullException_WhenInjectedIsNull(
         ISourceFormatNodeRepository sourceFormatNodeRepository,
         IDocumentsRepository documentsRepository)

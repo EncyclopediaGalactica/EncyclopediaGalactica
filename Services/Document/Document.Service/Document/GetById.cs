@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using Contracts.Input;
+using Contracts.Output;
 using Entities;
 using Errors;
 using Exceptions;
@@ -9,7 +9,7 @@ using Utils.GuardsService.Exceptions;
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<DocumentGraphqlInput> GetByIdAsync(
+    public async Task<DocumentResult> GetByIdAsync(
         long id,
         CancellationToken cancellationToken = default)
     {
@@ -45,10 +45,10 @@ public partial class DocumentService
         }
     }
 
-    private async Task<DocumentGraphqlInput> GetByIdBusinessLogicAsync(long id, CancellationToken cancellationToken)
+    private async Task<DocumentResult> GetByIdBusinessLogicAsync(long id, CancellationToken cancellationToken)
     {
         Document result = await _repository.GetByIdAsync(id, cancellationToken).ConfigureAwait(false);
-        DocumentGraphqlInput graphqlInput = _mappers.DocumentMappers.MapDocumentToDocumentDto(result);
-        return graphqlInput;
+        DocumentResult input = _mappers.DocumentMappers.MapDocumentToDocumentResult(result);
+        return input;
     }
 }

@@ -28,12 +28,6 @@
 
         <ProjectReference Include="..\..\Services\Document\Document.Client\Document.Client.csproj"/>
 
-        <ProjectReference Include="..\..\Services\Document\Document.Controllers.ExceptionFilters\Document.Controllers.ExceptionFilters.csproj"/>
-
-        <ProjectReference Include="..\..\Services\Document\Document.Controllers.ViewModels\Document.Controllers.ViewModels.csproj"/>
-
-        <ProjectReference Include="..\..\Services\Document\Document.Controllers\Document.Controllers.csproj"/>
-
         <ProjectReference Include="..\..\Services\Document\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
 
         <ProjectReference Include="..\..\Services\Document\Document.Entities\Document.Entities.csproj"/>

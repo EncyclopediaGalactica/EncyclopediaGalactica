@@ -6,7 +6,7 @@ using Entities;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeInputContract> GetByIdAsync(
+    public async Task<SourceFormatNodeInput> GetByIdAsync(
         long id,
         CancellationToken cancellationToken = default)
     {

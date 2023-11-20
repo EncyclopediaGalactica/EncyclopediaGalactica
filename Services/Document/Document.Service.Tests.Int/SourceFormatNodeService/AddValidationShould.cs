@@ -12,7 +12,6 @@ using Services.Document.Tests.Datasets;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class AddValidationShould : BaseTest
 {
     [Fact]
@@ -35,11 +34,11 @@ public class AddValidationShould : BaseTest
         string name)
     {
         // Act
-        SourceFormatNodeInputContract inputContract = new() { Name = name };
+        SourceFormatNodeInput input = new() { Name = name };
         Func<Task> task = async () =>
         {
             await Sut.SourceFormatNode
-                .AddAsync(inputContract);
+                .AddAsync(input);
         };
 
         // Assert
@@ -51,20 +50,20 @@ public class AddValidationShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeInputContract inputContract = new()
+        SourceFormatNodeInput input = new()
         {
             Name = name
         };
         await Sut
             .SourceFormatNode
-            .AddAsync(inputContract);
+            .AddAsync(input);
 
         // Act
         Func<Task> task = async () =>
         {
             await Sut
                 .SourceFormatNode
-                .AddAsync(inputContract);
+                .AddAsync(input);
         };
 
         // Assert

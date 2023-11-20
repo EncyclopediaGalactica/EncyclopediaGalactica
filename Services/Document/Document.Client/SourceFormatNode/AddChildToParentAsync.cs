@@ -29,7 +29,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeAddChildToParentResponseModel responseModel = await _sdkCore
-                .SendAsync<SourceFormatNodeAddChildToParentResponseModel, SourceFormatNodeInputContract>(
+                .SendAsync<SourceFormatNodeAddChildToParentResponseModel, SourceFormatNodeInput>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

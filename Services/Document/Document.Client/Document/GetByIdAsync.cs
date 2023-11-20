@@ -19,8 +19,8 @@ public partial class DocumentSdk
                      + SourceFormats.Document.GetById
                      + $"/{requestModel.Payload.Id}";
 
-        HttpRequestMessageBuilder<DocumentGraphqlInput> builder =
-            new HttpRequestMessageBuilder<DocumentGraphqlInput>();
+        HttpRequestMessageBuilder<DocumentInput> builder =
+            new HttpRequestMessageBuilder<DocumentInput>();
         HttpRequestMessage httpRequestMessage = builder
             .SetContent(requestModel.Payload)
             .SetAcceptHeaders(requestModel.AcceptHeaders)
@@ -29,7 +29,7 @@ public partial class DocumentSdk
             .Build();
 
         DocumentGetByIdResponseModel resultModel = await _sdkCore
-            .SendAsync<DocumentGetByIdResponseModel, DocumentGraphqlInput>(
+            .SendAsync<DocumentGetByIdResponseModel, DocumentInput>(
                 httpRequestMessage,
                 cancellationToken)
             .ConfigureAwait(false);

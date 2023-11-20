@@ -1,37 +1,39 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
 
 using Contracts.Input;
+using Contracts.Output;
 using Entities;
 
 /// <summary>
 ///     The IDocumentMapper interface
 ///     <remarks>
-///         It provides methods to map <see cref="Document" /> to <see cref="DocumentGraphqlInput" /> and back
+///         It provides methods to map between <see cref="Document" />, <see cref="DocumentResult" /> and
+///         <see cref="DocumentInput" />.
 ///     </remarks>
 /// </summary>
 public interface IDocumentMappers
 {
     /// <summary>
-    ///     Maps <see cref="DocumentGraphqlInput" /> to <see cref="Document" />
+    ///     Maps <see cref="DocumentInput" /> to <see cref="Document" />
     /// </summary>
-    /// <param name="graphqlInput">the input dto</param>
+    /// <param name="input">the input dto</param>
     /// <returns><see cref="Document" /> object</returns>
-    Document MapDocumentDtoToDocument(DocumentGraphqlInput graphqlInput);
+    Document MapDocumentInputToDocument(DocumentInput input);
 
     /// <summary>
-    ///     Maps <see cref="Document" /> to <see cref="DocumentGraphqlInput" />
+    ///     Maps <see cref="Document" /> to <see cref="DocumentResult" />
     /// </summary>
     /// <param name="document">the input document</param>
     /// <returns>
-    ///     <see cref="DocumentGraphqlInput" />
+    ///     <see cref="DocumentInput" />
     /// </returns>
-    DocumentGraphqlInput MapDocumentToDocumentDto(Document document);
+    DocumentResult MapDocumentToDocumentResult(Document document);
 
     /// <summary>
     ///     Maps <see cref="List{T}" /> of <see cref="Document" /> to <see cref="List{T}" /> of
-    ///     <see cref="DocumentGraphqlInput" />.
+    ///     <see cref="DocumentResult" />.
     /// </summary>
     /// <param name="l"><see cref="List{T}" /> of <see cref="Document" /></param>
-    /// <returns>List of <see cref="DocumentGraphqlInput" />s.</returns>
-    List<DocumentGraphqlInput> MapDocumentsToDocumentDtos(List<Document> l);
+    /// <returns>List of <see cref="DocumentResult" />s.</returns>
+    List<DocumentResult> MapDocumentsToDocumentResults(List<Document> l);
 }

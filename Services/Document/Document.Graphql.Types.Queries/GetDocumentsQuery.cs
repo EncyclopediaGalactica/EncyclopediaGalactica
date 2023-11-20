@@ -12,7 +12,7 @@ public class GetDocumentsQuery : ObjectTypeExtension<Query>
         descriptor
             .Field("getDocuments")
             .Description("Document entity")
-            .Type<ListType<DocumentGraphqlOutput>>()
+            .Type<ListType<DocumentOutput>>()
             .ResolveWith<DocumentResolvers>(res => res.GetAllAsync(default, default));
     }
 }

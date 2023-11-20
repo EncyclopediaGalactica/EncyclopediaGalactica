@@ -8,14 +8,14 @@ using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 ///     <see cref="SourceFormatNodeAddChildToParentRequestModel" /> is part of the provided SDK,
 ///     and makes possible to execute the operation where a <see cref="SourceFormatNode" /> is added
 ///     to another <see cref="SourceFormatNode" /> as child. The data is sent to the endpoint using
-///     <see cref="SourceFormatNodeInputContract" /> types.
+///     <see cref="SourceFormatNodeInput" /> types.
 /// </summary>
-public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<SourceFormatNodeInputContract>
+public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Gets Payload
     /// </summary>
-    public SourceFormatNodeInputContract? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     /// <summary>
     ///     Gets AcceptHeaders
@@ -27,7 +27,7 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
         private List<MediaTypeWithQualityHeaderValue> _acceptHeaders = new List<MediaTypeWithQualityHeaderValue>();
         private long _childrenNodeId;
         private long _parentNodeId;
-        private SourceFormatNodeInputContract _payload;
+        private SourceFormatNodeInput _payload;
 
         public Builder SetChildrenNodeId(long id)
         {
@@ -54,7 +54,7 @@ public class SourceFormatNodeAddChildToParentRequestModel : IRequestModel<Source
                 throw new SdkModelsException("Id cannot be zero.");
             }
 
-            SourceFormatNodeInputContract payload = new SourceFormatNodeInputContract
+            SourceFormatNodeInput payload = new SourceFormatNodeInput
             {
                 Id = _childrenNodeId,
                 ParentNodeId = _parentNodeId,

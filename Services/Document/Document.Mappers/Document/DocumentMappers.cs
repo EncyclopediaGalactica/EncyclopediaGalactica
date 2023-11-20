@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Document;
 
 using Contracts.Input;
+using Contracts.Output;
 using Entities;
 using Interfaces;
 
@@ -8,39 +9,40 @@ using Interfaces;
 public class DocumentMappers : IDocumentMappers
 {
     /// <inheritdoc />
-    public Document MapDocumentDtoToDocument(DocumentGraphqlInput graphqlInput)
+    public Document MapDocumentInputToDocument(DocumentInput input)
     {
         return new Document
         {
-            Id = graphqlInput.Id,
-            Name = graphqlInput.Name,
-            Description = graphqlInput.Description,
-            Uri = graphqlInput?.Uri
+            Id = input.Id,
+            Name = input.Name,
+            Description = input.Description,
+            Uri = input?.Uri
         };
     }
 
     /// <inheritdoc />
-    public DocumentGraphqlInput MapDocumentToDocumentDto(Document document)
+    public List<DocumentResult> MapDocumentsToDocumentResults(List<Document> l)
     {
-        return new DocumentGraphqlInput
+        List<DocumentResult> resultList = new List<DocumentResult>();
+        if (!l.Any()) return resultList;
+
+        foreach (Document item in l)
+        {
+            resultList.Add(MapDocumentToDocumentResult(item));
+        }
+
+        return resultList;
+    }
+
+    /// <inheritdoc />
+    public DocumentResult MapDocumentToDocumentResult(Document document)
+    {
+        return new DocumentResult
         {
             Id = document.Id,
             Name = document.Name,
             Description = document.Description,
             Uri = document?.Uri
         };
-    }
-
-    /// <inheritdoc />
-    public List<DocumentGraphqlInput> MapDocumentsToDocumentDtos(List<Document> l)
-    {
-        List<DocumentGraphqlInput> resultList = new List<DocumentGraphqlInput>();
-        if (!l.Any()) return resultList;
-        foreach (Document item in l)
-        {
-            resultList.Add(MapDocumentToDocumentDto(item));
-        }
-
-        return resultList;
     }
 }
