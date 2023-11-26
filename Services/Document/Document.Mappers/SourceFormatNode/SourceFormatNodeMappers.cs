@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 using Interfaces;
 
@@ -8,24 +8,24 @@ using Interfaces;
 public class SourceFormatNodeMappers : ISourceFormatNodeMappers
 {
     /// <inheritdoc />
-    public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeDto dto)
+    public SourceFormatNode MapSourceFormatNodeDtoToSourceFormatNode(SourceFormatNodeInput input)
     {
-        ArgumentNullException.ThrowIfNull(dto);
+        ArgumentNullException.ThrowIfNull(input);
 
         SourceFormatNode result = new SourceFormatNode();
-        result.Id = dto.Id;
-        result.Name = dto.Name;
-        result.IsRootNode = dto.IsRootNode;
+        result.Id = input.Id;
+        result.Name = input.Name;
+        result.IsRootNode = input.IsRootNode;
 
         return result;
     }
 
     /// <inheritdoc />
-    public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node)
+    public SourceFormatNodeInput MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(SourceFormatNode node)
     {
         ArgumentNullException.ThrowIfNull(node);
 
-        SourceFormatNodeDto result = new SourceFormatNodeDto();
+        SourceFormatNodeInput result = new SourceFormatNodeInput();
         result.Id = node.Id;
         result.Name = node.Name;
         result.IsRootNode = node.IsRootNode;
@@ -34,15 +34,16 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     }
 
     /// <inheritdoc />
-    public List<SourceFormatNodeDto> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
+    public List<SourceFormatNodeInput> MapSourceFormatNodesToSourceFormatNodeDtosInFlatFashion(
         List<SourceFormatNode> sourceFormatNodes)
     {
         ArgumentNullException.ThrowIfNull(sourceFormatNodes);
 
-        List<SourceFormatNodeDto> result = new List<SourceFormatNodeDto>();
+        List<SourceFormatNodeInput> result = new List<SourceFormatNodeInput>();
         foreach (SourceFormatNode sourceFormatNode in sourceFormatNodes)
         {
-            SourceFormatNodeDto elem = MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(sourceFormatNode);
+            SourceFormatNodeInput
+                elem = MapSourceFormatNodeToSourceFormatNodeDtoInFlatFashion(sourceFormatNode);
             result.Add(elem);
         }
 
@@ -50,17 +51,17 @@ public class SourceFormatNodeMappers : ISourceFormatNodeMappers
     }
 
     /// <inheritdoc />
-    public SourceFormatNodeDto MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode)
+    public SourceFormatNodeInput MapSourceFormatNodeToSourceFormatNodeDto(SourceFormatNode sourceFormatNode)
     {
         ArgumentNullException.ThrowIfNull(sourceFormatNode);
 
-        SourceFormatNodeDto dto = new SourceFormatNodeDto();
-        dto.Id = sourceFormatNode.Id;
-        dto.Name = sourceFormatNode.Name;
-        dto.IsRootNode = sourceFormatNode.IsRootNode;
-        dto.RootNodeId = sourceFormatNode.RootNodeId;
-        dto.ParentNodeId = sourceFormatNode.ParentNodeId;
+        SourceFormatNodeInput input = new SourceFormatNodeInput();
+        input.Id = sourceFormatNode.Id;
+        input.Name = sourceFormatNode.Name;
+        input.IsRootNode = sourceFormatNode.IsRootNode;
+        input.RootNodeId = sourceFormatNode.RootNodeId;
+        input.ParentNodeId = sourceFormatNode.ParentNodeId;
 
-        return dto;
+        return input;
     }
 }

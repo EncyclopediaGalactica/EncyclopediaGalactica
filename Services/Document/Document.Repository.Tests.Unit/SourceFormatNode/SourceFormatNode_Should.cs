@@ -2,18 +2,16 @@ namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFo
 
 using System;
 using System.Diagnostics.CodeAnalysis;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Repository.SourceFormatNode;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
+using Ctx;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Repository.SourceFormatNode;
+using Utils.GuardsService;
+using ValidatorService;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class SourceFormatNode_Should
+public class SourceFormatNodeShould
 {
     [Fact]
     public void Throw_WhenInjectedServicesAreNull()

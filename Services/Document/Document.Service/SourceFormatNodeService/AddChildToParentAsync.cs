@@ -1,29 +1,29 @@
 namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
+using Contracts.Input;
+using Entities;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeDto> AddChildToParentAsync(
-        SourceFormatNodeDto childDto,
-        SourceFormatNodeDto parentDto,
+    public async Task<SourceFormatNodeInput> AddChildToParentAsync(
+        SourceFormatNodeInput childInput,
+        SourceFormatNodeInput parentInput,
         CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(childDto);
-        ArgumentNullException.ThrowIfNull(parentDto);
-        _guards.IsNotEqual(childDto.Id, 0);
-        _guards.IsNotEqual(parentDto.Id, 0);
-        _guards.IsNotEqual(parentDto.Id, childDto.Id);
+        ArgumentNullException.ThrowIfNull(childInput);
+        ArgumentNullException.ThrowIfNull(parentInput);
+        _guards.IsNotEqual(childInput.Id, 0);
+        _guards.IsNotEqual(parentInput.Id, 0);
+        _guards.IsNotEqual(parentInput.Id, childInput.Id);
 
         SourceFormatNode rootNode = await _sourceFormatNodeRepository.GetByIdWithRootNodeAsync(
-                parentDto.Id,
+                parentInput.Id,
                 cancellationToken)
             .ConfigureAwait(false);
         SourceFormatNode resultNode = await _sourceFormatNodeRepository.AddChildNodeAsync(
-                childDto.Id,
-                parentDto.Id,
+                childInput.Id,
+                parentInput.Id,
                 rootNode.Id,
                 cancellationToken)
             .ConfigureAwait(false);

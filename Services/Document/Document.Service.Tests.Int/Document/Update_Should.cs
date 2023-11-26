@@ -4,29 +4,28 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
+using Contracts.Output;
 using FluentAssertions;
 using Services.Document.Tests.Datasets.DocumentDto;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class Update_Should : BaseTest
+public class UpdateShould : BaseTest
 {
     [Theory]
     [ClassData(typeof(UpdateDocumentDto_Update_Dataset))]
-    public async Task Update(DocumentDto inputDto)
+    public async Task Update(DocumentInput inputInput)
     {
         // Arrange
         List<long> recorded = await CreateDocumentDtoTestData(1);
 
         // Act
-        DocumentDto result = await Sut.DocumentService.UpdateAsync(recorded[0], inputDto);
+        DocumentResult result = await Sut.DocumentService.UpdateAsync(recorded[0], inputInput);
 
         // Assert
         result.Id.Should().Be(recorded[0]);
-        result.Name.Should().Be(inputDto.Name);
-        result.Description.Should().Be(inputDto.Description);
+        result.Name.Should().Be(inputInput.Name);
+        result.Description.Should().Be(inputInput.Description);
     }
 }

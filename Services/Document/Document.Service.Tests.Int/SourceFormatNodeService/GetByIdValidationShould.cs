@@ -9,7 +9,6 @@ using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class GetByIdValidationShould : BaseTest
 {
     [Fact]

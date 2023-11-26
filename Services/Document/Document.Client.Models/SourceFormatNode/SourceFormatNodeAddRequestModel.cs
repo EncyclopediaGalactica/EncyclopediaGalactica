@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormat
 
 using System.Net.Http.Headers;
 using System.Text.Json.Serialization;
-using Dtos;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 using FluentValidation;
 using ValidatorService;
@@ -12,7 +12,7 @@ using ValidatorService;
 ///     It provides a Builder to collect all necessary data to do so. However, the builder does not represent
 ///     validation for the collected data.
 /// </summary>
-public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto>
+public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeInput>
 {
     /// <summary>
     ///     Creates a new instance.
@@ -26,7 +26,7 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
     ///     we wish to create.
     /// </summary>
     [JsonPropertyName("payload")]
-    public SourceFormatNodeDto? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; } =
         new List<MediaTypeWithQualityHeaderValue>();
@@ -55,13 +55,13 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
         {
             try
             {
-                SourceFormatNodeDto dto = new SourceFormatNodeDto
+                SourceFormatNodeInput input = new SourceFormatNodeInput
                 {
                     Name = Name
                 };
 
                 SourceFormatNodeDtoValidator validator = new SourceFormatNodeDtoValidator();
-                validator.Validate(dto, options =>
+                validator.Validate(input, options =>
                 {
                     options.ThrowOnFailures();
                     options.IncludeRuleSets(SourceFormatNodeDtoValidator.Add);
@@ -69,7 +69,7 @@ public class SourceFormatNodeAddRequestModel : IRequestModel<SourceFormatNodeDto
 
                 SourceFormatNodeAddRequestModel requestModel = new SourceFormatNodeAddRequestModel
                 {
-                    Payload = dto,
+                    Payload = input,
                     AcceptHeaders = AcceptHeaders
                 };
                 return requestModel;

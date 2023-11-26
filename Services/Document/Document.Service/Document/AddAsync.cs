@@ -1,21 +1,23 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Errors;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
+using Contracts.Input;
+using Contracts.Output;
+using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using ValidatorService;
 
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<DocumentDto> AddAsync(DocumentDto dtoInput, CancellationToken cancellationToken = default)
+    public async Task<DocumentResult> AddAsync(DocumentInput inputInput,
+        CancellationToken cancellationToken = default)
     {
         try
         {
-            return await AddBusinessLogicAsync(dtoInput, cancellationToken);
+            return await AddBusinessLogicAsync(inputInput, cancellationToken);
         }
         catch (Exception e) when (e is ArgumentNullException
                                       or ValidationException
@@ -39,19 +41,20 @@ public partial class DocumentService
         }
     }
 
-    private async Task<DocumentDto> AddBusinessLogicAsync(DocumentDto dtoInput, CancellationToken cancellationToken)
+    private async Task<DocumentResult> AddBusinessLogicAsync(DocumentInput inputInput,
+        CancellationToken cancellationToken)
     {
-        _guardsService.NotNull(dtoInput);
-        await ValidationDocumentInputForAdding(dtoInput);
-        Document document = _mappers.DocumentMappers.MapDocumentDtoToDocument(dtoInput);
+        _guardsService.NotNull(inputInput);
+        await ValidationDocumentInputForAdding(inputInput);
+        Document document = _mappers.DocumentMappers.MapDocumentInputToDocument(inputInput);
         Document result = await _repository.AddAsync(document, cancellationToken).ConfigureAwait(false);
-        DocumentDto resultDto = _mappers.DocumentMappers.MapDocumentToDocumentDto(result);
-        return resultDto;
+        DocumentResult resultInput = _mappers.DocumentMappers.MapDocumentToDocumentResult(result);
+        return resultInput;
     }
 
-    private async Task ValidationDocumentInputForAdding(DocumentDto dtoInput)
+    private async Task ValidationDocumentInputForAdding(DocumentInput inputInput)
     {
-        await _documentDtoValidator.ValidateAsync(dtoInput, options =>
+        await _documentDtoValidator.ValidateAsync(inputInput, options =>
         {
             options.IncludeRuleSets(DocumentDtoValidator.Scenarios.AddNew.ToString());
             options.ThrowOnFailures();

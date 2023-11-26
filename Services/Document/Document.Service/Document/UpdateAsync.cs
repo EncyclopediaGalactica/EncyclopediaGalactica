@@ -1,23 +1,24 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Errors;
-using EncyclopediaGalactica.Services.Document.Repository.Exceptions;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService.Exceptions;
+using Contracts.Input;
+using Contracts.Output;
+using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Repository.Exceptions;
+using Utils.GuardsService.Exceptions;
+using ValidatorService;
 
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<DocumentDto> UpdateAsync(long documentId, DocumentDto modifiedDto)
+    public async Task<DocumentResult> UpdateAsync(long documentId, DocumentInput modifiedInput)
     {
         try
         {
-            return await UpdateBusinessLogicAsync(documentId, modifiedDto);
+            return await UpdateBusinessLogicAsync(documentId, modifiedInput);
         }
         catch (Exception e) when (e is GuardsServiceValueShouldNotBeEqualToException
                                       or GuardsServiceValueShouldNoBeNullException
@@ -49,23 +50,25 @@ public partial class DocumentService
         }
     }
 
-    private async Task<DocumentDto> UpdateBusinessLogicAsync(long documentId, DocumentDto modifiedDto)
+    private async Task<DocumentResult> UpdateBusinessLogicAsync(long documentId,
+        DocumentInput modifiedInput)
     {
         _guardsService.IsNotEqual(documentId, 0);
-        _guardsService.NotNull(modifiedDto);
+        _guardsService.NotNull(modifiedInput);
 
-        await ValidateUpdateAsyncInput(modifiedDto).ConfigureAwait(false);
-        Document mappedDocument = _mappers.DocumentMappers.MapDocumentDtoToDocument(modifiedDto);
+        await ValidateUpdateAsyncInput(modifiedInput).ConfigureAwait(false);
+        Document mappedDocument = _mappers.DocumentMappers.MapDocumentInputToDocument(modifiedInput);
         Document updateDocument = await _repository.UpdateAsync(
             documentId,
             mappedDocument).ConfigureAwait(false);
-        DocumentDto updatedAndMappedDocumentDto = _mappers.DocumentMappers.MapDocumentToDocumentDto(updateDocument);
-        return updatedAndMappedDocumentDto;
+        DocumentResult updatedAndMappedDocumentInput =
+            _mappers.DocumentMappers.MapDocumentToDocumentResult(updateDocument);
+        return updatedAndMappedDocumentInput;
     }
 
-    private async Task ValidateUpdateAsyncInput(DocumentDto modifiedDto)
+    private async Task ValidateUpdateAsyncInput(DocumentInput modifiedInput)
     {
-        await _documentDtoValidator.ValidateAsync(modifiedDto, o =>
+        await _documentDtoValidator.ValidateAsync(modifiedInput, o =>
         {
             o.IncludeRuleSets(DocumentDtoValidator.Scenarios.Update.ToString());
             o.ThrowOnFailures();

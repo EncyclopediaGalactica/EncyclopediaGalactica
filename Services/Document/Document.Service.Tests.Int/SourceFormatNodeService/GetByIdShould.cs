@@ -4,23 +4,22 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class GetByIdShould : BaseTest
 {
     [Fact]
     public async Task Return_TheDesignatedEntity()
     {
         // Arrange
-        SourceFormatNodeDto node = new SourceFormatNodeDto { Name = "asdasd" };
-        SourceFormatNodeDto entity = await Sut.SourceFormatNode.AddAsync(node);
+        SourceFormatNodeInput node = new SourceFormatNodeInput { Name = "asdasd" };
+        SourceFormatNodeInput entity = await Sut.SourceFormatNode.AddAsync(node);
 
         // Act
-        SourceFormatNodeDto result = await Sut.SourceFormatNode
+        SourceFormatNodeInput result = await Sut.SourceFormatNode
             .GetByIdAsync(entity.Id);
 
         // Assert

@@ -9,8 +9,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
+        <ProjectReference Include="..\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj"/>
     </ItemGroup>
 
 

@@ -5,12 +5,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class GetAllShould : BaseTest
 {
     [Fact]
@@ -18,22 +17,22 @@ public class GetAllShould : BaseTest
     {
         // Arrange
         string name = "asdasd";
-        SourceFormatNodeDto dto = new()
+        SourceFormatNodeInput input = new()
         {
             Name = name
         };
 
         await Sut.SourceFormatNode
-            .AddAsync(dto);
+            .AddAsync(input);
 
         // Act
-        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode
+        List<SourceFormatNodeInput> result = await Sut.SourceFormatNode
             .GetAllAsync();
 
         // Assert
         result.Should().NotBeNull();
         result.Count.Should().BeGreaterThan(0);
-        SourceFormatNodeDto elem = result.ElementAt(0);
+        SourceFormatNodeInput elem = result.ElementAt(0);
         elem.Name.Should().Be(name);
     }
 
@@ -41,7 +40,7 @@ public class GetAllShould : BaseTest
     public async Task ReturnsResponseModel_EmptyList_WhenThereAreNoEntitiesInTheDb()
     {
         // Act
-        List<SourceFormatNodeDto> result = await Sut.SourceFormatNode.GetAllAsync();
+        List<SourceFormatNodeInput> result = await Sut.SourceFormatNode.GetAllAsync();
 
         // Assert
         result.Should().NotBeNull();

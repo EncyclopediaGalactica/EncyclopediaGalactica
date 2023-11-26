@@ -7,7 +7,6 @@ using Xunit;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
 public class DocumentProperties_Should
 {
     [Fact]

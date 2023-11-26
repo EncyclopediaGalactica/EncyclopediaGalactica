@@ -4,13 +4,12 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
 using FluentAssertions;
 using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[Trait("Category", "DocumentService")]
 public class DeleteValidationShould : BaseTest
 {
     [Fact]
@@ -27,7 +26,7 @@ public class DeleteValidationShould : BaseTest
     public async Task Throw_GuardsServiceValueShouldNotBeEqualToException_WhenInputDtoIdIsZero()
     {
         // Act
-        Func<Task> task = async () => { await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeDto { Id = 0 }); };
+        Func<Task> task = async () => { await Sut.SourceFormatNode.DeleteAsync(new SourceFormatNodeInput { Id = 0 }); };
 
         // Assert
         await task.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Interfaces;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
+using Contracts.Input;
 using Exceptions;
 using Models.SourceFormatNode;
 
@@ -49,7 +49,7 @@ public interface ISourceFormatNodeSdk
     ///     Sends an <see cref="SourceFormatNodeUpdateRequestModel" /> to the Encyclopedia Galactica Source Format endpoint
     ///     via PUT Http Method.
     ///     As a result the system is going to update the defined (by the id) entity with the provided properties.
-    ///     The request includes a <see cref="SourceFormatNodeDto" /> describing changes.
+    ///     The request includes a <see cref="SourceFormatNodeInput" /> describing changes.
     /// </summary>
     /// <param name="updateRequestModel">The model marking which entity should be updated and the desired state after change</param>
     /// <param name="cancellationToken">

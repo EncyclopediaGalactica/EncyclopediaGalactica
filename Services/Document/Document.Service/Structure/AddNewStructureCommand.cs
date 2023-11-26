@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Structure;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 using FluentValidation;
 using Interfaces.Structure;
@@ -33,14 +33,14 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         _structureRepository = structureRepository;
     }
 
-    public async Task<StructureDto> AddNewAsync(
+    public async Task<StructureInput> AddNewAsync(
         long parentId,
-        StructureDto structureDto,
+        StructureInput structureInput,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            return await AddNewBusinessLogicAsync(parentId, structureDto)
+            return await AddNewBusinessLogicAsync(parentId, structureInput)
                 .ConfigureAwait(false);
         }
         catch (Exception e)
@@ -50,14 +50,15 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         }
     }
 
-    private async Task<StructureDto> AddNewBusinessLogicAsync(long parentId, StructureDto structureDto)
+    private async Task<StructureInput> AddNewBusinessLogicAsync(long parentId,
+        StructureInput structureInput)
     {
-        ValidateProvidedInput(parentId, structureDto);
-        Structure structure = _structureMappers.MapStructureDtoToStructure(structureDto);
+        ValidateProvidedInput(parentId, structureInput);
+        Structure structure = _structureMappers.MapStructureDtoToStructure(structureInput);
         ValidateStructureEntity(structure);
         Structure newStructure = await _structureRepository.AddNewAsync(structure).ConfigureAwait(false);
-        StructureDto resultDto = _structureMappers.MapStructureToStructureDto(newStructure);
-        return resultDto;
+        StructureInput resultInput = _structureMappers.MapStructureToStructureDto(newStructure);
+        return resultInput;
     }
 
     private void ValidateStructureEntity(Structure structure)
@@ -69,10 +70,10 @@ public class AddNewStructureCommand : IAddNewStructureCommand
         });
     }
 
-    private void ValidateProvidedInput(long parentId, StructureDto structureDto)
+    private void ValidateProvidedInput(long parentId, StructureInput structureInput)
     {
         _guardService.IsNotEqual(parentId, 0);
-        _guardService.NotNull(structureDto);
-        _guardService.IsNotEqual(parentId, structureDto.Id);
+        _guardService.NotNull(structureInput);
+        _guardService.IsNotEqual(parentId, structureInput.Id);
     }
 }

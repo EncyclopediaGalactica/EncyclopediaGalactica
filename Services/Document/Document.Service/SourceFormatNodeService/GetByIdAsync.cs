@@ -1,12 +1,12 @@
 namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeDto> GetByIdAsync(
+    public async Task<SourceFormatNodeInput> GetByIdAsync(
         long id,
         CancellationToken cancellationToken = default)
     {

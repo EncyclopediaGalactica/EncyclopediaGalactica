@@ -1,12 +1,12 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Document;
 
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
+using Contracts.Output;
+using Entities;
 
 public partial class DocumentService
 {
     /// <inheritdoc />
-    public async Task<List<DocumentDto>> GetAllAsync(CancellationToken cancellationToken = default)
+    public async Task<List<DocumentResult>> GetAllAsync(CancellationToken cancellationToken = default)
     {
         try
         {
@@ -19,10 +19,10 @@ public partial class DocumentService
         }
     }
 
-    private async Task<List<DocumentDto>> GetAllBusinessLogicAsync()
+    private async Task<List<DocumentResult>> GetAllBusinessLogicAsync()
     {
         List<Document> result = await _repository.GetAllAsync().ConfigureAwait(false);
-        List<DocumentDto> mappedResult = _mappers.DocumentMappers.MapDocumentsToDocumentDtos(result);
+        List<DocumentResult> mappedResult = _mappers.DocumentMappers.MapDocumentsToDocumentResults(result);
         return mappedResult;
     }
 }

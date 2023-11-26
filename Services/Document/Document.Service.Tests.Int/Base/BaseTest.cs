@@ -2,10 +2,8 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Int.Base;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using CacheService.Interfaces;
-using CacheService.SourceFormatNode;
+using Contracts.Input;
 using Ctx;
-using Dtos;
 using Entities;
 using FluentValidation;
 using Interfaces;
@@ -53,7 +51,6 @@ public partial class BaseTest
 
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             dbContextOptions, nodeValidator, new GuardsService());
-        ISourceFormatNodeCacheService sourceFormatNodeCacheService = new SourceFormatNodeCacheService();
         ILogger<SourceFormatNodeService> logger =
             new Logger<SourceFormatNodeService>(
                 new LoggerFactory());
@@ -63,11 +60,10 @@ public partial class BaseTest
                 new GuardsService(),
                 mappers,
                 sourceFormatNodeRepository,
-                sourceFormatNodeCacheService,
                 logger);
 
         IValidator<Entities.Document> documentValidator = new DocumentValidator();
-        IValidator<DocumentDto> documentDtoValidator = new DocumentDtoValidator();
+        IValidator<DocumentInput> documentDtoValidator = new DocumentDtoValidator();
         IDocumentsRepository documentsRepository = new DocumentRepository(
             dbContextOptions, documentValidator);
         IDocumentService documentService = new DocumentService(

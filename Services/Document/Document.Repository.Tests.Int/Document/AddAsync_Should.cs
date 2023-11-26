@@ -12,10 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-// [SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class AddAsync_Should : BaseTest
+public class AddAsyncShould : BaseTest
 {
     [Fact]
     public async Task Throw_DbUpdateException_WhenNameUniqueConstraint_IsViolated()

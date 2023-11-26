@@ -11,7 +11,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Document.Client.Exceptions\Document.Client.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj"/>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
     </ItemGroup>
 
 </Project>

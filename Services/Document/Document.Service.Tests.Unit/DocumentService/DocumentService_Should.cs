@@ -3,28 +3,26 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentSer
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using Contracts.Input;
+using Ctx;
 using Document;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Mappers;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.Repository.Document;
-using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
-using EncyclopediaGalactica.Utils.GuardsService;
-using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
+using Entities;
 using FluentAssertions;
 using FluentValidation;
+using Mappers;
+using Mappers.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using NSubstitute;
+using Repository.Document;
+using Repository.Interfaces;
+using Utils.GuardsService;
+using Utils.GuardsService.Interfaces;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class DocumentService_Should
+public class DocumentServiceShould
 {
-    public static IEnumerable<object[]> ThrowArgumentNullException_WhenInjected_IsNull_Data = new List<object[]>
+    public static IEnumerable<object[]> ThrowArgumentNullExceptionWhenInjectedIsNullData = new List<object[]>
     {
         new object[]
         {
@@ -35,7 +33,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -44,7 +42,7 @@ public class DocumentService_Should
             new DocumentRepository(
                 new DbContextOptions<DocumentDbContext>(),
                 Substitute.For<IValidator<Document>>()),
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -53,7 +51,7 @@ public class DocumentService_Should
                 Substitute.For<ISourceFormatNodeMappers>(),
                 Substitute.For<IDocumentMappers>()),
             null,
-            Substitute.For<IValidator<DocumentDto>>()
+            Substitute.For<IValidator<DocumentInput>>()
         },
         new object[]
         {
@@ -69,12 +67,12 @@ public class DocumentService_Should
     };
 
     [Theory]
-    [MemberData(nameof(ThrowArgumentNullException_WhenInjected_IsNull_Data))]
+    [MemberData(nameof(ThrowArgumentNullExceptionWhenInjectedIsNullData))]
     public void ThrowArgumentNullException_WhenInjected_IsNull(
         IGuardsService guardsService,
         ISourceFormatMappers mappers,
         IDocumentsRepository documentsRepository,
-        IValidator<DocumentDto> documentDtoValidator)
+        IValidator<DocumentInput> documentDtoValidator)
     {
         // Arrange && Act
         Action action = () =>

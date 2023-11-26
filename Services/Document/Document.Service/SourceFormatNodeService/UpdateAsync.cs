@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService;
 
-using Dtos;
+using Contracts.Input;
 using Entities;
 using FluentValidation;
 using ValidatorService;
@@ -8,8 +8,8 @@ using ValidatorService;
 public partial class SourceFormatNodeService
 {
     /// <inheritdoc />
-    public async Task<SourceFormatNodeDto> UpdateSourceFormatNodeAsync(
-        SourceFormatNodeDto? dto,
+    public async Task<SourceFormatNodeInput> UpdateSourceFormatNodeAsync(
+        SourceFormatNodeInput? dto,
         CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(dto);
@@ -22,9 +22,9 @@ public partial class SourceFormatNodeService
         return MapSourceFormatNodeToSourceFormatNodeDto(updated);
     }
 
-    private async Task ValidateInputDataForUpdateAsync(SourceFormatNodeDto inputDto)
+    private async Task ValidateInputDataForUpdateAsync(SourceFormatNodeInput inputInput)
     {
-        await _sourceFormatNodeDtoValidator.ValidateAsync(inputDto, options =>
+        await _sourceFormatNodeDtoValidator.ValidateAsync(inputInput, options =>
         {
             options.IncludeRuleSets(SourceFormatNodeDtoValidator.Update);
             options.ThrowOnFailures();

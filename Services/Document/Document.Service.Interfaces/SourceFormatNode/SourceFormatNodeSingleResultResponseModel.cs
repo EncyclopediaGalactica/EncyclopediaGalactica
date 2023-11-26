@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode;
 
-using Dtos;
+using Contracts.Input;
 
-public class SourceFormatNodeSingleResultResponseModel : SourceFormatNodeResponseModel<SourceFormatNodeDto>
+public class SourceFormatNodeSingleResultResponseModel : SourceFormatNodeResponseModel<SourceFormatNodeInput>
 {
 }

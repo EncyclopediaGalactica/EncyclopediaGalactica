@@ -11,10 +11,7 @@ using Services.Document.Tests.Datasets.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class Update_Validation_Should : BaseTest
+public class UpdateValidationShould : BaseTest
 {
     [Theory]
     [ClassData(typeof(Update_Validation_InvalidDataset))]

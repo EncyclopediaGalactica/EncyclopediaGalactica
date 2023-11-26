@@ -1,7 +1,4 @@
 using System.Diagnostics;
-using EncyclopediaGalactica.Services.Document.CacheService;
-using EncyclopediaGalactica.Services.Document.CacheService.Interfaces;
-using EncyclopediaGalactica.Services.Document.CacheService.SourceFormatNode;
 using EncyclopediaGalactica.Services.Document.Controllers.ExceptionFilters;
 using EncyclopediaGalactica.Services.Document.Controllers.SourceFormatNode;
 using EncyclopediaGalactica.Services.Document.Ctx;
@@ -42,8 +39,6 @@ builder.Services.AddScoped<ISourceFormatMappers, SourceFormatMappers>();
 builder.Services.AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>();
 builder.Services.AddScoped<ISourceFormatNodeRepository, SourceFormatNodeRepository>();
 builder.Services.AddScoped<ISourceFormatsRepository, SourceFormatsRepository>();
-builder.Services.AddScoped<ISourceFormatsCacheService, SourceFormatsCacheService>();
-builder.Services.AddScoped<ISourceFormatNodeCacheService, SourceFormatNodeCacheService>();
 builder.Services.AddScoped<IGuardsService, GuardsService>();
 builder.Services.AddScoped<ISourceFormatNodeService, SourceFormatNodeService>();
 builder.Services.AddScoped<ISourceFormatsService, SourceFormatsService>();

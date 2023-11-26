@@ -1,14 +1,14 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net.Http.Headers;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
-using EncyclopediaGalactica.Services.Document.Dtos;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
 using FluentValidation;
+using ValidatorService;
 
-public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNodeDto>
+public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNodeInput>
 {
-    public SourceFormatNodeDto? Payload { get; private init; }
+    public SourceFormatNodeInput? Payload { get; private init; }
 
     public List<MediaTypeWithQualityHeaderValue> AcceptHeaders { get; private init; } = new();
 
@@ -38,14 +38,14 @@ public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNode
 
         public SourceFormatNodeUpdateRequestModel Build()
         {
-            SourceFormatNodeDto dto = new()
+            SourceFormatNodeInput input = new()
             {
                 Id = _id,
                 Name = _name
             };
 
             SourceFormatNodeDtoValidator validator = new();
-            validator.Validate(dto, options =>
+            validator.Validate(input, options =>
             {
                 options.IncludeRuleSets(SourceFormatNodeDtoValidator.Update);
                 options.ThrowOnFailures();
@@ -53,7 +53,7 @@ public class SourceFormatNodeUpdateRequestModel : IRequestModel<SourceFormatNode
 
             SourceFormatNodeUpdateRequestModel requestModel = new()
             {
-                Payload = dto,
+                Payload = input,
                 AcceptHeaders = _acceptHeaders
             };
 

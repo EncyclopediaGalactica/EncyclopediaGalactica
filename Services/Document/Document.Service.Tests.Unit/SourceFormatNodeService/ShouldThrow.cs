@@ -3,7 +3,6 @@ namespace EncyclopediaGalactica.Services.Document.Service.Tests.Unit.SourceForma
 using System.Threading.Tasks;
 using Xunit;
 
-[Trait("Category", "DocumentService")]
 public class ShouldThrow
 {
     [Fact]

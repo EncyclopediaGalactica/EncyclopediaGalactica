@@ -1,12 +1,12 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.Models.SourceFormatNode;
 
 using System.Net;
-using Dtos;
+using Contracts.Input;
 using EncyclopediaGalactica.Client.Core.Model.Interfaces;
 
-public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<SourceFormatNodeDto>>
+public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<SourceFormatNodeInput>>
 {
-    public List<SourceFormatNodeDto>? Result { get; set; }
+    public List<SourceFormatNodeInput>? Result { get; set; }
     public bool IsOperationSuccessful { get; set; }
     public string? Message { get; set; }
     public HttpStatusCode HttpStatusCode { get; set; }
@@ -16,9 +16,9 @@ public class SourceFormatNodeGetAllResponseModel : IHttpResponseModel<List<Sourc
         private HttpStatusCode? _httpStatusCode;
         private bool _isOperationSuccessful;
         private string? _message;
-        private List<SourceFormatNodeDto>? _result;
+        private List<SourceFormatNodeInput>? _result;
 
-        public Builder SetResult(List<SourceFormatNodeDto> dto)
+        public Builder SetResult(List<SourceFormatNodeInput> dto)
         {
             _result = dto;
             return this;

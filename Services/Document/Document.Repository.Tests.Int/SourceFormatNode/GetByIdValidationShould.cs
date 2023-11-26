@@ -9,9 +9,6 @@ using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
 public class GetByIdValidationShould : BaseTest
 {
     [Fact]
@@ -21,9 +18,7 @@ public class GetByIdValidationShould : BaseTest
         Func<Task> action = async () => { await Sut.SourceFormatNodes.GetByIdAsync(0); };
 
         // Assert
-        await action.Should()
-                .ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>()
-            ;
+        await action.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();
     }
 
     [Fact]

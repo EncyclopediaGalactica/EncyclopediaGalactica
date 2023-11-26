@@ -10,12 +10,13 @@
 
     <ItemGroup>
         <ProjectReference Include="..\Document.Graphql.Arguments\Document.Graphql.Arguments.csproj"/>
+        <ProjectReference Include="..\Document.Graphql.Types.Input\Document.Graphql.Types.Input.csproj"/>
         <ProjectReference Include="..\Document.Service.Interfaces\Document.Service.Interfaces.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="HotChocolate.Types" Version="13.7.0"/>
-        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0"/>
     </ItemGroup>
 
 

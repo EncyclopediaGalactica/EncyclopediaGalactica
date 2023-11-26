@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Sdk.Client.SourceFormatNode;
 
 using Api;
-using Dtos;
+using Contracts.Input;
 using Exceptions;
 using Models;
 using Models.SourceFormatNode;
@@ -29,7 +29,7 @@ public partial class SourceFormatNodeSdk
                 .Build();
 
             SourceFormatNodeAddChildToParentResponseModel responseModel = await _sdkCore
-                .SendAsync<SourceFormatNodeAddChildToParentResponseModel, SourceFormatNodeDto>(
+                .SendAsync<SourceFormatNodeAddChildToParentResponseModel, SourceFormatNodeInput>(
                     httpRequestMessage,
                     cancellationToken)
                 .ConfigureAwait(false);

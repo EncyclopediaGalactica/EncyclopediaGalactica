@@ -4,33 +4,32 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Base;
-using Dtos;
+using Contracts.Input;
+using Contracts.Output;
 using Exceptions;
 using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class Add_Should : BaseTest
+public class AddShould : BaseTest
 {
     [Fact]
     public async Task Throw_DbUpdateException_WhenNameUniqueConstraint_IsViolated()
     {
         // Arrange
         string name = "name";
-        DocumentDto first = new DocumentDto
+        DocumentInput first = new DocumentInput
         {
             Name = name,
             Description = "desc"
         };
 
-        DocumentDto firstResult = await Sut.DocumentService.AddAsync(first);
+        DocumentResult firstResult = await Sut.DocumentService.AddAsync(first);
 
         // Act
         Func<Task> f = async () =>
         {
-            await Sut.DocumentService.AddAsync(new DocumentDto { Name = name, Description = "desc" });
+            await Sut.DocumentService.AddAsync(new DocumentInput { Name = name, Description = "desc" });
         };
 
         // Assert
@@ -41,14 +40,14 @@ public class Add_Should : BaseTest
     public async Task Add_Entity_AndReturnTheNewOne()
     {
         // Arrange
-        DocumentDto first = new DocumentDto
+        DocumentInput first = new DocumentInput
         {
             Name = "name",
             Description = "desc"
         };
 
         // Act
-        DocumentDto result = await Sut.DocumentService.AddAsync(first);
+        DocumentResult result = await Sut.DocumentService.AddAsync(first);
 
         // Assert
         result.Id.Should().BeGreaterThan(0);

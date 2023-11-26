@@ -13,7 +13,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>

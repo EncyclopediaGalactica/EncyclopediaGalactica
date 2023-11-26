@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Mappers.Document;
 
-using Dtos;
+using Contracts.Input;
+using Contracts.Output;
 using Entities;
 using Interfaces;
 
@@ -8,39 +9,40 @@ using Interfaces;
 public class DocumentMappers : IDocumentMappers
 {
     /// <inheritdoc />
-    public Document MapDocumentDtoToDocument(DocumentDto dto)
+    public Document MapDocumentInputToDocument(DocumentInput input)
     {
         return new Document
         {
-            Id = dto.Id,
-            Name = dto.Name,
-            Description = dto.Description,
-            Uri = dto?.Uri
+            Id = input.Id,
+            Name = input.Name,
+            Description = input.Description,
+            Uri = input?.Uri
         };
     }
 
     /// <inheritdoc />
-    public DocumentDto MapDocumentToDocumentDto(Document document)
+    public List<DocumentResult> MapDocumentsToDocumentResults(List<Document> l)
     {
-        return new DocumentDto
+        List<DocumentResult> resultList = new List<DocumentResult>();
+        if (!l.Any()) return resultList;
+
+        foreach (Document item in l)
+        {
+            resultList.Add(MapDocumentToDocumentResult(item));
+        }
+
+        return resultList;
+    }
+
+    /// <inheritdoc />
+    public DocumentResult MapDocumentToDocumentResult(Document document)
+    {
+        return new DocumentResult
         {
             Id = document.Id,
             Name = document.Name,
             Description = document.Description,
             Uri = document?.Uri
         };
-    }
-
-    /// <inheritdoc />
-    public List<DocumentDto> MapDocumentsToDocumentDtos(List<Document> l)
-    {
-        List<DocumentDto> resultList = new List<DocumentDto>();
-        if (!l.Any()) return resultList;
-        foreach (Document item in l)
-        {
-            resultList.Add(MapDocumentToDocumentDto(item));
-        }
-
-        return resultList;
     }
 }

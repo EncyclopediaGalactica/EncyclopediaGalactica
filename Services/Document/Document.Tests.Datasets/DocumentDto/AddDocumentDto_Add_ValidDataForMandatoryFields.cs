@@ -2,7 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto;
 
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
-using Dtos;
+using Contracts.Input;
 
 [ExcludeFromCodeCoverage]
 [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -12,7 +12,7 @@ public class AddDocumentDto_Add_ValidDataForMandatoryFields : IEnumerable<object
     {
         yield return new object[]
         {
-            new DocumentDto
+            new DocumentInput
             {
                 Name = "name",
                 Description = "description"

@@ -11,10 +11,7 @@ using FluentAssertions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-[Trait("Category", "Repository")]
-public class DeleteAsync_Should : BaseTest
+public class DeleteAsyncShould : BaseTest
 {
     [Fact]
     public async Task Throw_WhenDocumentNotFound()

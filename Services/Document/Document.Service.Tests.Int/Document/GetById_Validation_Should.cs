@@ -9,9 +9,7 @@ using Utils.GuardsService.Exceptions;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
-[SuppressMessage("ReSharper", "InconsistentNaming")]
-[Trait("Category", "DocumentService")]
-public class GetById_Validation_Should : BaseTest
+public class GetByIdValidationShould : BaseTest
 {
     [Fact]
     public void ThrowGuardException_WhenInputIsInvalid()

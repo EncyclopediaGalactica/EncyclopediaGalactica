@@ -1,10 +1,11 @@
 using System.Diagnostics;
-using EncyclopediaGalactica.Services.Document.CacheService.Interfaces;
-using EncyclopediaGalactica.Services.Document.CacheService.SourceFormatNode;
+using EncyclopediaGalactica.Services.Document.Contracts.Input;
 using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Dtos;
 using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Graphql.Types.Document;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.Output;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.Queries;
+using EncyclopediaGalactica.Services.Document.Graphql.Types.RootTypes;
 using EncyclopediaGalactica.Services.Document.Mappers;
 using EncyclopediaGalactica.Services.Document.Mappers.Document;
 using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
@@ -39,8 +40,7 @@ builder.Services
 builder.Services
     .AddScoped<ISourceFormatNodeService, SourceFormatNodeService>()
     .AddScoped<ISourceFormatNodeRepository, SourceFormatNodeRepository>()
-    .AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>()
-    .AddScoped<ISourceFormatNodeCacheService, SourceFormatNodeCacheService>();
+    .AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>();
 
 // registered SourceFormatServices
 builder.Services
@@ -51,9 +51,10 @@ builder.Services
 // registered validators
 builder.Services
     .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
-    .AddScoped<IValidator<SourceFormatNodeDto>, SourceFormatNodeDtoValidator>()
+    .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
     .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
-    .AddScoped<IValidator<DocumentDto>, DocumentDtoValidator>();
+    .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput>,
+        DocumentDtoValidator>();
 
 // database
 SqliteConnection connection = new("Filename=:memory:");
@@ -87,11 +88,17 @@ builder.Services.AddLogging(log =>
 // graphql related settings
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<GetDocumentsQuery>()
-    .AddMutationType<UpdateDocumentMutation>()
+    // queries
+    .AddQueryType<Query>()
+    .AddTypeExtension<GetDocumentsQuery>()
+    // mutations
+    .AddMutationType<Mutation>()
+    .AddTypeExtension<AddDocumentMutation>()
+    .AddTypeExtension<DeleteDocumentMutation>()
+    .AddTypeExtension<UpdateDocumentMutation>()
     .RegisterService<IDocumentService>()
-    .AddType<DocumentDtoType>()
-    .AddType<DocumentDtoInputType>();
+    .AddType<DocumentOutput>()
+    .AddType<EncyclopediaGalactica.Services.Document.Graphql.Types.Input.DocumentInputType>();
 
 var app = builder.Build();
 

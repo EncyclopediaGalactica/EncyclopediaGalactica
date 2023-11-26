@@ -9,15 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Client\Core.Exceptions\Core.Exceptions.csproj"/>
-        <ProjectReference Include="..\..\..\Client\Core.Interfaces\Core.Interfaces.csproj"/>
-        <ProjectReference Include="..\..\..\Client\Core.Model.Interfaces\Core.Model.Interfaces.csproj"/>
-        <ProjectReference Include="..\..\..\Client\Core\Core.csproj"/>
         <ProjectReference Include="..\Document.Api\Document.Api.csproj"/>
         <ProjectReference Include="..\Document.Client.Exceptions\Document.Client.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Client.Interfaces\Document.Client.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Client.Models\Document.Client.Models.csproj"/>
-        <ProjectReference Include="..\Document.Dtos\Document.Dtos.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
