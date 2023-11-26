@@ -1,3 +1,10 @@
+# [0.14.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.5...0.14.0) (2023-11-26)
+
+
+### Features
+
+* significant rework ([#150](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/150)) ([67b70c4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/67b70c4ece9d14ca6dfe32b0b5427e0114c21985))
+
 ## [0.13.5](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.4...0.13.5) (2023-11-18)
 
 
