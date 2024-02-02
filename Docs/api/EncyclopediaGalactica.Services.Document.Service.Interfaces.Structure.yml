@@ -1,0 +1,78 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  id: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+references:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.html
+  name: IAddNewStructureNode
+  nameWithType: IAddNewStructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+    name: Structure
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+    name: Structure
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.html

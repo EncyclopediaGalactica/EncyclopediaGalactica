@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.StructureNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.StructureNode
+  id: EncyclopediaGalactica.Services.Document.Service.StructureNode
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.StructureNode.AddNewStructureNode
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Service.StructureNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.StructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.StructureNode
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service
+references:
+- uid: EncyclopediaGalactica.Services.Document.Service.StructureNode.AddNewStructureNode
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.StructureNode.AddNewStructureNode
+  href: EncyclopediaGalactica.Services.Document.Service.StructureNode.AddNewStructureNode.html
+  name: AddNewStructureNode
+  nameWithType: AddNewStructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.StructureNode.AddNewStructureNode

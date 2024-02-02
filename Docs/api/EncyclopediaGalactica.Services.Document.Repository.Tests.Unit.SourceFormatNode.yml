@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  id: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  children:
+  - EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode.SourceFormatNodeShould
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Repository.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode.SourceFormatNodeShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode.SourceFormatNodeShould
+  href: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode.SourceFormatNodeShould.html
+  name: SourceFormatNodeShould
+  nameWithType: SourceFormatNodeShould
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Tests.Unit.SourceFormatNode.SourceFormatNodeShould

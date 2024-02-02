@@ -1,0 +1,485 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  id: IStructureMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure(EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput})
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto(EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode})
+  langs:
+  - csharp
+  - vb
+  name: IStructureMappers
+  nameWithType: IStructureMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  type: Interface
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IStructureMappers
+    path: ../Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+    startLine: 11
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  summary: >-
+    IStructure mappers
+
+    <remarks>
+        Interface for mapping between <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> and <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref>.
+    </remarks>
+  example: []
+  syntax:
+    content: public interface IStructureMappers
+    content.vb: Public Interface IStructureMappers
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure(EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure(EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  id: MapStructureDtoToStructure(EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  langs:
+  - csharp
+  - vb
+  name: MapStructureDtoToStructure(StructureInput)
+  nameWithType: IStructureMappers.MapStructureDtoToStructure(StructureInput)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure(EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapStructureDtoToStructure
+    path: ../Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+    startLine: 20
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  summary: Maps <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> object to <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: StructureNode MapStructureDtoToStructure(StructureInput structureInput)
+    parameters:
+    - id: structureInput
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+      description: <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+      description: Mapped <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> object.
+    content.vb: Function MapStructureDtoToStructure(structureInput As StructureInput) As StructureNode
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure*
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput})
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput})
+  id: MapStructureDtosToStructures(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput})
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  langs:
+  - csharp
+  - vb
+  name: MapStructureDtosToStructures(List<StructureInput>)
+  nameWithType: IStructureMappers.MapStructureDtosToStructures(List<StructureInput>)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures(System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput>)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapStructureDtosToStructures
+    path: ../Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+    startLine: 27
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  summary: Maps <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> objects to <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> objects.
+  example: []
+  syntax:
+    content: List<StructureNode> MapStructureDtosToStructures(List<StructureInput> structureDtos)
+    parameters:
+    - id: structureDtos
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+      description: List of <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref>s.
+    return:
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode}
+      description: List of <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> objects.
+    content.vb: Function MapStructureDtosToStructures(structureDtos As List(Of StructureInput)) As List(Of StructureNode)
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures*
+  nameWithType.vb: IStructureMappers.MapStructureDtosToStructures(List(Of StructureInput))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures(System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput))
+  name.vb: MapStructureDtosToStructures(List(Of StructureInput))
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto(EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto(EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  id: MapStructureToStructureDto(EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  langs:
+  - csharp
+  - vb
+  name: MapStructureToStructureDto(StructureNode)
+  nameWithType: IStructureMappers.MapStructureToStructureDto(StructureNode)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto(EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapStructureToStructureDto
+    path: ../Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+    startLine: 34
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  summary: Maps <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> object to <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> object.
+  example: []
+  syntax:
+    content: StructureInput MapStructureToStructureDto(StructureNode s)
+    parameters:
+    - id: s
+      type: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+      description: <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+      description: Mapped <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> object.
+    content.vb: Function MapStructureToStructureDto(s As StructureNode) As StructureInput
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto*
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode})
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode})
+  id: MapStructuresToStructureDtos(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode})
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  langs:
+  - csharp
+  - vb
+  name: MapStructuresToStructureDtos(List<StructureNode>)
+  nameWithType: IStructureMappers.MapStructuresToStructureDtos(List<StructureNode>)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos(System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Entities.StructureNode>)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapStructuresToStructureDtos
+    path: ../Domains/Document/Document.Mappers.Interfaces/IStructureMappers.cs
+    startLine: 41
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  summary: Maps list of <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> objects to list of <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> objects.
+  example: []
+  syntax:
+    content: List<StructureInput> MapStructuresToStructureDtos(List<StructureNode> structures)
+    parameters:
+    - id: structures
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode}
+      description: List of <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> objects.
+    return:
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+      description: List of mapped <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> objects.
+    content.vb: Function MapStructuresToStructureDtos(structures As List(Of StructureNode)) As List(Of StructureInput)
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos*
+  nameWithType.vb: IStructureMappers.MapStructuresToStructureDtos(List(Of StructureNode))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos(System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Entities.StructureNode))
+  name.vb: MapStructuresToStructureDtos(List(Of StructureNode))
+references:
+- uid: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.StructureNode
+  parent: EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.Services.Document.Entities.StructureNode.html
+  name: StructureNode
+  nameWithType: StructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  name: StructureInput
+  nameWithType: StructureInput
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html
+- uid: EncyclopediaGalactica.Services.Document.Entities
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Entities
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities
+  fullName: EncyclopediaGalactica.Services.Document.Entities
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Input
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Input
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IStructureMappers_MapStructureDtoToStructure_EncyclopediaGalactica_Services_Document_Contracts_Input_StructureInput_
+  name: MapStructureDtoToStructure
+  nameWithType: IStructureMappers.MapStructureDtoToStructure
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtoToStructure
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IStructureMappers_MapStructureDtosToStructures_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Contracts_Input_StructureInput__
+  name: MapStructureDtosToStructures
+  nameWithType: IStructureMappers.MapStructureDtosToStructures
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureDtosToStructures
+- uid: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+  commentId: T:System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<StructureInput>
+  nameWithType: List<StructureInput>
+  fullName: System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput>
+  nameWithType.vb: List(Of StructureInput)
+  fullName.vb: System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  name.vb: List(Of StructureInput)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+    name: StructureInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+    name: StructureInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  - name: )
+- uid: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode}
+  commentId: T:System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.StructureNode}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<StructureNode>
+  nameWithType: List<StructureNode>
+  fullName: System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Entities.StructureNode>
+  nameWithType.vb: List(Of StructureNode)
+  fullName.vb: System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Entities.StructureNode)
+  name.vb: List(Of StructureNode)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+    name: StructureNode
+    href: EncyclopediaGalactica.Services.Document.Entities.StructureNode.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+    name: StructureNode
+    href: EncyclopediaGalactica.Services.Document.Entities.StructureNode.html
+  - name: )
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IStructureMappers_MapStructureToStructureDto_EncyclopediaGalactica_Services_Document_Entities_StructureNode_
+  name: MapStructureToStructureDto
+  nameWithType: IStructureMappers.MapStructureToStructureDto
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructureToStructureDto
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IStructureMappers_MapStructuresToStructureDtos_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Entities_StructureNode__
+  name: MapStructuresToStructureDtos
+  nameWithType: IStructureMappers.MapStructuresToStructureDtos
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.MapStructuresToStructureDtos

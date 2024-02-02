@@ -1,0 +1,653 @@
+### YamlMime:ManagedReference
+items:
+- uid: IAM.Entities.User
+  commentId: T:IAM.Entities.User
+  id: User
+  parent: IAM.Entities
+  children:
+  - IAM.Entities.User.Created
+  - IAM.Entities.User.CreatedBy
+  - IAM.Entities.User.Id
+  - IAM.Entities.User.LastModified
+  - IAM.Entities.User.LastModifiedBy
+  - IAM.Entities.User.UserName
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: User
+  fullName: IAM.Entities.User
+  type: Class
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: User
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 4
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  syntax:
+    content: 'public class User : IHaveId, IKnowWhoModifiedMeAndWhen, IKnowWhoCreatedMeAndWhen'
+    content.vb: Public Class User Implements IHaveId, IKnowWhoModifiedMeAndWhen, IKnowWhoCreatedMeAndWhen
+  inheritance:
+  - System.Object
+  implements:
+  - IAM.Entities.Interfaces.IHaveId
+  - IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  - IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: IAM.Entities.User.UserName
+  commentId: P:IAM.Entities.User.UserName
+  id: UserName
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: UserName
+  nameWithType: User.UserName
+  fullName: IAM.Entities.User.UserName
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UserName
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 6
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  syntax:
+    content: public UserName UserName { get; set; }
+    parameters: []
+    return:
+      type: IAM.Entities.UserName
+    content.vb: Public Property UserName As UserName
+  overload: IAM.Entities.User.UserName*
+- uid: IAM.Entities.User.Id
+  commentId: P:IAM.Entities.User.Id
+  id: Id
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: User.Id
+  fullName: IAM.Entities.User.Id
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Id
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 7
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  summary: Id property for domain entity.
+  example: []
+  syntax:
+    content: public long Id { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property Id As Long
+  overload: IAM.Entities.User.Id*
+  implements:
+  - IAM.Entities.Interfaces.IHaveId.Id
+- uid: IAM.Entities.User.Created
+  commentId: P:IAM.Entities.User.Created
+  id: Created
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: Created
+  nameWithType: User.Created
+  fullName: IAM.Entities.User.Created
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Created
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 8
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  summary: Property containing the creation date.
+  example: []
+  syntax:
+    content: public DateTime Created { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property Created As Date
+  overload: IAM.Entities.User.Created*
+  implements:
+  - IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.Created
+- uid: IAM.Entities.User.CreatedBy
+  commentId: P:IAM.Entities.User.CreatedBy
+  id: CreatedBy
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: CreatedBy
+  nameWithType: User.CreatedBy
+  fullName: IAM.Entities.User.CreatedBy
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: CreatedBy
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 9
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  summary: Property containing unique identifier of a user who created the entity.
+  example: []
+  syntax:
+    content: public long CreatedBy { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property CreatedBy As Long
+  overload: IAM.Entities.User.CreatedBy*
+  implements:
+  - IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.CreatedBy
+- uid: IAM.Entities.User.LastModified
+  commentId: P:IAM.Entities.User.LastModified
+  id: LastModified
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: LastModified
+  nameWithType: User.LastModified
+  fullName: IAM.Entities.User.LastModified
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: LastModified
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 10
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  summary: Field containing the last modification date of the entity.
+  example: []
+  syntax:
+    content: public DateTime LastModified { get; set; }
+    parameters: []
+    return:
+      type: System.DateTime
+    content.vb: Public Property LastModified As Date
+  overload: IAM.Entities.User.LastModified*
+  implements:
+  - IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModified
+- uid: IAM.Entities.User.LastModifiedBy
+  commentId: P:IAM.Entities.User.LastModifiedBy
+  id: LastModifiedBy
+  parent: IAM.Entities.User
+  langs:
+  - csharp
+  - vb
+  name: LastModifiedBy
+  nameWithType: User.LastModifiedBy
+  fullName: IAM.Entities.User.LastModifiedBy
+  type: Property
+  source:
+    remote:
+      path: Domains/IAM/IAM.Entities/User.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: LastModifiedBy
+    path: ../Domains/IAM/IAM.Entities/User.cs
+    startLine: 11
+  assemblies:
+  - IAM.Entities
+  namespace: IAM.Entities
+  summary: Property containing the unique identifier of the user modified the entity last time.
+  example: []
+  syntax:
+    content: public long LastModifiedBy { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property LastModifiedBy As Long
+  overload: IAM.Entities.User.LastModifiedBy*
+  implements:
+  - IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModifiedBy
+references:
+- uid: IAM.Entities
+  commentId: N:IAM.Entities
+  href: IAM.html
+  name: IAM.Entities
+  nameWithType: IAM.Entities
+  fullName: IAM.Entities
+  spec.csharp:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+  spec.vb:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: IAM.Entities.Interfaces.IHaveId
+  commentId: T:IAM.Entities.Interfaces.IHaveId
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IHaveId.html
+  name: IHaveId
+  nameWithType: IHaveId
+  fullName: IAM.Entities.Interfaces.IHaveId
+- uid: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  commentId: T:IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.html
+  name: IKnowWhoModifiedMeAndWhen
+  nameWithType: IKnowWhoModifiedMeAndWhen
+  fullName: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+- uid: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  commentId: T:IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.html
+  name: IKnowWhoCreatedMeAndWhen
+  nameWithType: IKnowWhoCreatedMeAndWhen
+  fullName: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: IAM.Entities.Interfaces
+  commentId: N:IAM.Entities.Interfaces
+  href: IAM.html
+  name: IAM.Entities.Interfaces
+  nameWithType: IAM.Entities.Interfaces
+  fullName: IAM.Entities.Interfaces
+  spec.csharp:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+  - name: .
+  - uid: IAM.Entities.Interfaces
+    name: Interfaces
+    href: IAM.Entities.Interfaces.html
+  spec.vb:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+  - name: .
+  - uid: IAM.Entities.Interfaces
+    name: Interfaces
+    href: IAM.Entities.Interfaces.html
+- uid: IAM.Entities.User.UserName*
+  commentId: Overload:IAM.Entities.User.UserName
+  href: IAM.Entities.User.html#IAM_Entities_User_UserName
+  name: UserName
+  nameWithType: User.UserName
+  fullName: IAM.Entities.User.UserName
+- uid: IAM.Entities.UserName
+  commentId: T:IAM.Entities.UserName
+  parent: IAM.Entities
+  href: IAM.Entities.UserName.html
+  name: UserName
+  nameWithType: UserName
+  fullName: IAM.Entities.UserName
+- uid: IAM.Entities.User.Id*
+  commentId: Overload:IAM.Entities.User.Id
+  href: IAM.Entities.User.html#IAM_Entities_User_Id
+  name: Id
+  nameWithType: User.Id
+  fullName: IAM.Entities.User.Id
+- uid: IAM.Entities.Interfaces.IHaveId.Id
+  commentId: P:IAM.Entities.Interfaces.IHaveId.Id
+  parent: IAM.Entities.Interfaces.IHaveId
+  href: IAM.Entities.Interfaces.IHaveId.html#IAM_Entities_Interfaces_IHaveId_Id
+  name: Id
+  nameWithType: IHaveId.Id
+  fullName: IAM.Entities.Interfaces.IHaveId.Id
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: IAM.Entities.User.Created*
+  commentId: Overload:IAM.Entities.User.Created
+  href: IAM.Entities.User.html#IAM_Entities_User_Created
+  name: Created
+  nameWithType: User.Created
+  fullName: IAM.Entities.User.Created
+- uid: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.Created
+  commentId: P:IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.Created
+  parent: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  href: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.html#IAM_Entities_Interfaces_IKnowWhoCreatedMeAndWhen_Created
+  name: Created
+  nameWithType: IKnowWhoCreatedMeAndWhen.Created
+  fullName: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.Created
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.datetime
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+  nameWithType.vb: Date
+  fullName.vb: Date
+  name.vb: Date
+- uid: IAM.Entities.User.CreatedBy*
+  commentId: Overload:IAM.Entities.User.CreatedBy
+  href: IAM.Entities.User.html#IAM_Entities_User_CreatedBy
+  name: CreatedBy
+  nameWithType: User.CreatedBy
+  fullName: IAM.Entities.User.CreatedBy
+- uid: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.CreatedBy
+  commentId: P:IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.CreatedBy
+  parent: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  href: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.html#IAM_Entities_Interfaces_IKnowWhoCreatedMeAndWhen_CreatedBy
+  name: CreatedBy
+  nameWithType: IKnowWhoCreatedMeAndWhen.CreatedBy
+  fullName: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.CreatedBy
+- uid: IAM.Entities.User.LastModified*
+  commentId: Overload:IAM.Entities.User.LastModified
+  href: IAM.Entities.User.html#IAM_Entities_User_LastModified
+  name: LastModified
+  nameWithType: User.LastModified
+  fullName: IAM.Entities.User.LastModified
+- uid: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModified
+  commentId: P:IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModified
+  parent: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  href: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.html#IAM_Entities_Interfaces_IKnowWhoModifiedMeAndWhen_LastModified
+  name: LastModified
+  nameWithType: IKnowWhoModifiedMeAndWhen.LastModified
+  fullName: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModified
+- uid: IAM.Entities.User.LastModifiedBy*
+  commentId: Overload:IAM.Entities.User.LastModifiedBy
+  href: IAM.Entities.User.html#IAM_Entities_User_LastModifiedBy
+  name: LastModifiedBy
+  nameWithType: User.LastModifiedBy
+  fullName: IAM.Entities.User.LastModifiedBy
+- uid: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModifiedBy
+  commentId: P:IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModifiedBy
+  parent: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  href: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.html#IAM_Entities_Interfaces_IKnowWhoModifiedMeAndWhen_LastModifiedBy
+  name: LastModifiedBy
+  nameWithType: IKnowWhoModifiedMeAndWhen.LastModifiedBy
+  fullName: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.LastModifiedBy

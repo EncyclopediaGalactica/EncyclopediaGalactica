@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  commentId: N:EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  id: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  children:
+  - EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.DocumentEntityConfiguration
+  - EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.SourceFormatNodeEntityConfiguration
+  - EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.StructureEntityConfiguration
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  nameWithType: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  fullName: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Ctx
+references:
+- uid: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.DocumentEntityConfiguration
+  commentId: T:EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.DocumentEntityConfiguration
+  href: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.DocumentEntityConfiguration.html
+  name: DocumentEntityConfiguration
+  nameWithType: DocumentEntityConfiguration
+  fullName: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.DocumentEntityConfiguration
+- uid: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.SourceFormatNodeEntityConfiguration
+  commentId: T:EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.SourceFormatNodeEntityConfiguration
+  href: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.SourceFormatNodeEntityConfiguration.html
+  name: SourceFormatNodeEntityConfiguration
+  nameWithType: SourceFormatNodeEntityConfiguration
+  fullName: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.SourceFormatNodeEntityConfiguration
+- uid: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.StructureEntityConfiguration
+  commentId: T:EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.StructureEntityConfiguration
+  href: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.StructureEntityConfiguration.html
+  name: StructureEntityConfiguration
+  nameWithType: StructureEntityConfiguration
+  fullName: EncyclopediaGalactica.Services.Document.Ctx.EntityConfigurations.StructureEntityConfiguration

@@ -1,0 +1,386 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  id: IAddNewStructureNode
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IAddNewStructureNode
+  nameWithType: IAddNewStructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  type: Interface
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Structure/IAddNewStructureNode.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IAddNewStructureNode
+    path: ../Domains/Document/Document.Service.Interfaces/Structure/IAddNewStructureNode.cs
+    startLine: 5
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  syntax:
+    content: public interface IAddNewStructureNode
+    content.vb: Public Interface IAddNewStructureNode
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput,System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput,System.Threading.CancellationToken)
+  id: AddAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput,System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(long, StructureInput, CancellationToken)
+  nameWithType: IAddNewStructureNode.AddAsync(long, StructureInput, CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync(long, EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Structure/IAddNewStructureNode.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: AddAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Structure/IAddNewStructureNode.cs
+    startLine: 19
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  summary: >-
+    Adds a new <xref href="EncyclopediaGalactica.Services.Document.Entities.StructureNode" data-throw-if-not-resolved="false"></xref> to the system based on the provided information in the
+
+    <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: Task<StructureInput> AddAsync(long parentId, StructureInput structureInput, CancellationToken cancellationToken = default)
+    parameters:
+    - id: parentId
+      type: System.Int64
+      description: Id of the parent <xref href="EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure" data-throw-if-not-resolved="false"></xref>
+    - id: structureInput
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+      description: The <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput" data-throw-if-not-resolved="false"></xref> providing details
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+      description: <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> representing result of asynchronous operation.
+    content.vb: Function AddAsync(parentId As Long, structureInput As StructureInput, cancellationToken As CancellationToken = Nothing) As Task(Of StructureInput)
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync*
+  nameWithType.vb: IAddNewStructureNode.AddAsync(Long, StructureInput, CancellationToken)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync(Long, EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput, System.Threading.CancellationToken)
+  name.vb: AddAsync(Long, StructureInput, CancellationToken)
+references:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+    name: Structure
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure
+    name: Structure
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.html
+- uid: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.StructureNode
+  parent: EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.Services.Document.Entities.StructureNode.html
+  name: StructureNode
+  nameWithType: StructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Entities.StructureNode
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  name: StructureInput
+  nameWithType: StructureInput
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Structure_IAddNewStructureNode_AddAsync_System_Int64_EncyclopediaGalactica_Services_Document_Contracts_Input_StructureInput_System_Threading_CancellationToken_
+  name: AddAsync
+  nameWithType: IAddNewStructureNode.AddAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure.IAddNewStructureNode.AddAsync
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+  commentId: T:System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<StructureInput>
+  nameWithType: Task<StructureInput>
+  fullName: System.Threading.Tasks.Task<EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput>
+  nameWithType.vb: Task(Of StructureInput)
+  fullName.vb: System.Threading.Tasks.Task(Of EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput)
+  name.vb: Task(Of StructureInput)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+    name: StructureInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput
+    name: StructureInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.StructureInput.html
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Entities
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Entities
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities
+  fullName: EncyclopediaGalactica.Services.Document.Entities
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Input
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Input
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

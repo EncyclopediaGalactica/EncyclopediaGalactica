@@ -1,0 +1,762 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  id: IDocumentService
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput,System.Threading.CancellationToken)
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync(System.Int64,System.Threading.CancellationToken)
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync(System.Threading.CancellationToken)
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync(System.Int64,System.Threading.CancellationToken)
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  langs:
+  - csharp
+  - vb
+  name: IDocumentService
+  nameWithType: IDocumentService
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  type: Interface
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IDocumentService
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 13
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: >-
+    IDocument IAM.Service interface.
+
+    <remarks>
+        The service provides IAM.Api methods to access <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> objects stored in the system.
+    </remarks>
+  example: []
+  syntax:
+    content: public interface IDocumentService
+    content.vb: Public Interface IDocumentService
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput,System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput,System.Threading.CancellationToken)
+  id: AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput,System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  langs:
+  - csharp
+  - vb
+  name: AddAsync(DocumentInput, CancellationToken)
+  nameWithType: IDocumentService.AddAsync(DocumentInput, CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: AddAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 35
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: >-
+    Adds a <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> object to the system with the values represented by the provided
+
+    <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: Task<DocumentResult> AddAsync(DocumentInput inputInput, CancellationToken cancellationToken = default)
+    parameters:
+    - id: inputInput
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+      description: The input object
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+      description: Returns a <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> object representing the result of an asynchronous operation.
+    content.vb: Function AddAsync(inputInput As DocumentInput, cancellationToken As CancellationToken = Nothing) As Task(Of DocumentResult)
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync*
+  exceptions:
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    description: When invalid input is provided to the service
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    description: When the operation cancelled by <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    description: When any other error happens.
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync(System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync(System.Threading.CancellationToken)
+  id: GetAllAsync(System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  langs:
+  - csharp
+  - vb
+  name: GetAllAsync(CancellationToken)
+  nameWithType: IDocumentService.GetAllAsync(CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync(System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: GetAllAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 56
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: >-
+    Returns a <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> of <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref> representing the <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref>
+
+    entities in
+
+    the system.
+  example: []
+  syntax:
+    content: Task<List<DocumentResult>> GetAllAsync(CancellationToken cancellationToken = default)
+    parameters:
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Threading.Tasks.Task{System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}}
+      description: Returns a <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> representing the result of an asynchronous operation.
+    content.vb: Function GetAllAsync(cancellationToken As CancellationToken = Nothing) As Task(Of List(Of DocumentResult))
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: When input is null.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    description: When the operation is cancelled by a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    description: In case of any other errors
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync(System.Int64,System.Threading.CancellationToken)
+  id: GetByIdAsync(System.Int64,System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  langs:
+  - csharp
+  - vb
+  name: GetByIdAsync(long, CancellationToken)
+  nameWithType: IDocumentService.GetByIdAsync(long, CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync(long, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: GetByIdAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 82
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: >-
+    Returns with the indicated <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref>'s values mapped to a <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref>
+
+    object.
+  example: []
+  syntax:
+    content: Task<DocumentResult> GetByIdAsync(long id, CancellationToken cancellationToken = default)
+    parameters:
+    - id: id
+      type: System.Int64
+      description: The id value
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+      description: >-
+        Returns <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> representing result of an asynchronous operation. It includes the
+
+        <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref> result.
+    content.vb: Function GetByIdAsync(id As Long, cancellationToken As CancellationToken = Nothing) As Task(Of DocumentResult)
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync*
+  exceptions:
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    description: Invalid input provided to the service
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    description: When the operation is cancelled by a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    description: When there is no such item in the system based on, probably, entity id.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    description: In case of any other errors
+  nameWithType.vb: IDocumentService.GetByIdAsync(Long, CancellationToken)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync(Long, System.Threading.CancellationToken)
+  name.vb: GetByIdAsync(Long, CancellationToken)
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  id: UpdateAsync(System.Int64,EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  langs:
+  - csharp
+  - vb
+  name: UpdateAsync(long, DocumentInput)
+  nameWithType: IDocumentService.UpdateAsync(long, DocumentInput)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync(long, EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UpdateAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 106
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: >-
+    Modifies the designated <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> entity in the system based on the provided
+
+    <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref> instance.
+  example: []
+  syntax:
+    content: Task<DocumentResult> UpdateAsync(long documentId, DocumentInput modifiedInput)
+    parameters:
+    - id: documentId
+      type: System.Int64
+      description: The id of entity to be modified
+    - id: modifiedInput
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+      description: The provided changes
+    return:
+      type: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+      description: >-
+        Returns <xref href="System.Threading.Tasks.Task%601" data-throw-if-not-resolved="false"></xref> representing result of an asynchronous operation.
+
+        It included the <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref> result.
+    content.vb: Function UpdateAsync(documentId As Long, modifiedInput As DocumentInput) As Task(Of DocumentResult)
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync*
+  exceptions:
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    description: Invalid input provided to the service
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    description: When the operation is cancelled by a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    description: When there is no such item in the system based on, probably, entity id.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    description: In case of any other errors
+  nameWithType.vb: IDocumentService.UpdateAsync(Long, DocumentInput)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync(Long, EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  name.vb: UpdateAsync(Long, DocumentInput)
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync(System.Int64,System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync(System.Int64,System.Threading.CancellationToken)
+  id: DeleteAsync(System.Int64,System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService
+  langs:
+  - csharp
+  - vb
+  name: DeleteAsync(long, CancellationToken)
+  nameWithType: IDocumentService.DeleteAsync(long, CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync(long, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: DeleteAsync
+    path: ../Domains/Document/Document.Service.Interfaces/Document/IDocumentService.cs
+    startLine: 125
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+  namespace: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  summary: Deletes the designated <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> entity.
+  example: []
+  syntax:
+    content: Task DeleteAsync(long documentId, CancellationToken cancellationToken = default)
+    parameters:
+    - id: documentId
+      type: System.Int64
+      description: The unique identifier of the <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> entity to be deleted.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Function DeleteAsync(documentId As Long, cancellationToken As CancellationToken = Nothing) As Task
+  overload: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync*
+  exceptions:
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+    description: Invalid input provided to the service
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+    description: When the operation is cancelled by a <xref href="System.Threading.CancellationToken" data-throw-if-not-resolved="false"></xref>.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+    description: When there is no such entity in the system based on its unique identifier.
+  - type: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+    description: In case of any other errors.
+  nameWithType.vb: IDocumentService.DeleteAsync(Long, CancellationToken)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync(Long, System.Threading.CancellationToken)
+  name.vb: DeleteAsync(Long, CancellationToken)
+references:
+- uid: EncyclopediaGalactica.Services.Document.Entities.Document
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.Document
+  parent: EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  name: Document
+  nameWithType: Document
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Document
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.html
+- uid: EncyclopediaGalactica.Services.Document.Entities
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Entities
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities
+  fullName: EncyclopediaGalactica.Services.Document.Entities
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput.html
+  name: DocumentInput
+  nameWithType: DocumentInput
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+  href: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException.html
+  name: InvalidInputToDocumentServiceException
+  nameWithType: InvalidInputToDocumentServiceException
+  fullName: EncyclopediaGalactica.Services.Document.Service.Exceptions.InvalidInputToDocumentServiceException
+- uid: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+  href: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException.html
+  name: DocumentServiceOperationCancelledException
+  nameWithType: DocumentServiceOperationCancelledException
+  fullName: EncyclopediaGalactica.Services.Document.Service.Exceptions.DocumentServiceOperationCancelledException
+- uid: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+  href: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException.html
+  name: UnknownErrorDocumentServiceException
+  nameWithType: UnknownErrorDocumentServiceException
+  fullName: EncyclopediaGalactica.Services.Document.Service.Exceptions.UnknownErrorDocumentServiceException
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Document_IDocumentService_AddAsync_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_System_Threading_CancellationToken_
+  name: AddAsync
+  nameWithType: IDocumentService.AddAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.AddAsync
+- uid: System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  commentId: T:System.Threading.Tasks.Task{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<DocumentResult>
+  nameWithType: Task<DocumentResult>
+  fullName: System.Threading.Tasks.Task<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>
+  nameWithType.vb: Task(Of DocumentResult)
+  fullName.vb: System.Threading.Tasks.Task(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult)
+  name.vb: Task(Of DocumentResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Input
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Input
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.argumentnullexception
+  name: ArgumentNullException
+  nameWithType: ArgumentNullException
+  fullName: System.ArgumentNullException
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Document_IDocumentService_GetAllAsync_System_Threading_CancellationToken_
+  name: GetAllAsync
+  nameWithType: IDocumentService.GetAllAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetAllAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<List<DocumentResult>>
+  nameWithType: Task<List<DocumentResult>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>>
+  nameWithType.vb: Task(Of List(Of DocumentResult))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult))
+  name.vb: Task(Of List(Of DocumentResult))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: <
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  - name: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+  href: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException.html
+  name: NoSuchItemDocumentServiceException
+  nameWithType: NoSuchItemDocumentServiceException
+  fullName: EncyclopediaGalactica.Services.Document.Service.Exceptions.NoSuchItemDocumentServiceException
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Document_IDocumentService_GetByIdAsync_System_Int64_System_Threading_CancellationToken_
+  name: GetByIdAsync
+  nameWithType: IDocumentService.GetByIdAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.GetByIdAsync
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Document_IDocumentService_UpdateAsync_System_Int64_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  name: UpdateAsync
+  nameWithType: IDocumentService.UpdateAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.UpdateAsync
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.html#EncyclopediaGalactica_Services_Document_Service_Interfaces_Document_IDocumentService_DeleteAsync_System_Int64_System_Threading_CancellationToken_
+  name: DeleteAsync
+  nameWithType: IDocumentService.DeleteAsync
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.Document.IDocumentService.DeleteAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task

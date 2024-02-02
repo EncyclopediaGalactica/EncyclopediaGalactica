@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  id: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService.Ctor
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  fullName: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService.Ctor
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService.Ctor
+  href: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService.Ctor.html
+  name: Ctor
+  nameWithType: Ctor
+  fullName: EncyclopediaGalactica.Services.Document.Service.Tests.Unit.DocumentService.Ctor

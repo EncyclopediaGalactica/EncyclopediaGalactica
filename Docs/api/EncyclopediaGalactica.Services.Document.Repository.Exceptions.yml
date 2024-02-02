@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  commentId: N:EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  id: EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  children:
+  - EncyclopediaGalactica.Services.Document.Repository.Exceptions.DocumentNotFoundException
+  - EncyclopediaGalactica.Services.Document.Repository.Exceptions.SourceFormatNodeRepositoryException
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  nameWithType: EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Exceptions
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Repository.Exceptions
+references:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Exceptions.DocumentNotFoundException
+  commentId: T:EncyclopediaGalactica.Services.Document.Repository.Exceptions.DocumentNotFoundException
+  href: EncyclopediaGalactica.Services.Document.Repository.Exceptions.DocumentNotFoundException.html
+  name: DocumentNotFoundException
+  nameWithType: DocumentNotFoundException
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Exceptions.DocumentNotFoundException
+- uid: EncyclopediaGalactica.Services.Document.Repository.Exceptions.SourceFormatNodeRepositoryException
+  commentId: T:EncyclopediaGalactica.Services.Document.Repository.Exceptions.SourceFormatNodeRepositoryException
+  href: EncyclopediaGalactica.Services.Document.Repository.Exceptions.SourceFormatNodeRepositoryException.html
+  name: SourceFormatNodeRepositoryException
+  nameWithType: SourceFormatNodeRepositoryException
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Exceptions.SourceFormatNodeRepositoryException

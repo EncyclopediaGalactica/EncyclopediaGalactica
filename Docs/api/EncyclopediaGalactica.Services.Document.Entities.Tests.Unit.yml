@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  id: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  children:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.DocumentPropertiesShould
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.DocumentPropertiesShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.DocumentPropertiesShould
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.DocumentPropertiesShould.html
+  name: DocumentPropertiesShould
+  nameWithType: DocumentPropertiesShould
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.DocumentPropertiesShould
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html
+  name: SourceFormatNodePropertiesShould
+  nameWithType: SourceFormatNodePropertiesShould
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould

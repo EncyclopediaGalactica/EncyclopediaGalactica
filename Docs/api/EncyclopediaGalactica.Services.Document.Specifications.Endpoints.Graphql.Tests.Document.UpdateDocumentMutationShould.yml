@@ -1,0 +1,772 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  id: UpdateDocumentMutationShould
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  children:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  langs:
+  - csharp
+  - vb
+  name: UpdateDocumentMutationShould
+  nameWithType: UpdateDocumentMutationShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  type: Class
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UpdateDocumentMutationShould
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+    startLine: 13
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  syntax:
+    content: 'public class UpdateDocumentMutationShould : GraphQLTestBase'
+    content.vb: Public Class UpdateDocumentMutationShould Inherits GraphQLTestBase
+  inheritance:
+  - System.Object
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  inheritedMembers:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(System.Int64)
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase._testOutputHelper
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ServiceProvider
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.RequestExecutorProxy
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action{HotChocolate.Execution.IQueryRequestBuilder},Xunit.Abstractions.ITestOutputHelper,System.Threading.CancellationToken)
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor(Xunit.Abstractions.ITestOutputHelper)
+  id: '#ctor(Xunit.Abstractions.ITestOutputHelper)'
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  langs:
+  - csharp
+  - vb
+  name: UpdateDocumentMutationShould(ITestOutputHelper)
+  nameWithType: UpdateDocumentMutationShould.UpdateDocumentMutationShould(ITestOutputHelper)
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.UpdateDocumentMutationShould(Xunit.Abstractions.ITestOutputHelper)
+  type: Constructor
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: .ctor
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+    startLine: 16
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  syntax:
+    content: public UpdateDocumentMutationShould(ITestOutputHelper testOutputHelper)
+    parameters:
+    - id: testOutputHelper
+      type: Xunit.Abstractions.ITestOutputHelper
+    content.vb: Public Sub New(testOutputHelper As ITestOutputHelper)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor*
+  nameWithType.vb: UpdateDocumentMutationShould.New(ITestOutputHelper)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.New(Xunit.Abstractions.ITestOutputHelper)
+  name.vb: New(ITestOutputHelper)
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  id: InputValidation_InvalidValues(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  langs:
+  - csharp
+  - vb
+  name: InputValidation_InvalidValues(DocumentInput)
+  nameWithType: UpdateDocumentMutationShould.InputValidation_InvalidValues(DocumentInput)
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: InputValidation_InvalidValues
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tests/Document/UpdateDocumentMutationShould.cs
+    startLine: 20
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  syntax:
+    content: >-
+      [Theory]
+
+      [ClassData(typeof(UpdateDocumentDto_InputValidation_InvalidDataset))]
+
+      public Task InputValidation_InvalidValues(DocumentInput input)
+    parameters:
+    - id: input
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: >-
+      <Theory>
+
+      <ClassData(GetType(UpdateDocumentDto_InputValidation_InvalidDataset))>
+
+      Public Function InputValidation_InvalidValues(input As DocumentInput) As Task
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues*
+  attributes:
+  - type: Xunit.TheoryAttribute
+    ctor: Xunit.TheoryAttribute.#ctor
+    arguments: []
+  - type: Xunit.ClassDataAttribute
+    ctor: Xunit.ClassDataAttribute.#ctor(System.Type)
+    arguments:
+    - type: System.Type
+      value: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset
+references:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  commentId: N:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  nameWithType: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html
+  name: GraphQLTestBase
+  nameWithType: GraphQLTestBase
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(System.Int64)
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(System.Int64)
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  isExternal: true
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_CreateDocumentDataSetWithMandatoryFieldsOnly_System_Int64_
+  name: CreateDocumentDataSetWithMandatoryFieldsOnly(long)
+  nameWithType: GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(long)
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(long)
+  nameWithType.vb: GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(Long)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(Long)
+  name.vb: CreateDocumentDataSetWithMandatoryFieldsOnly(Long)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(System.Int64)
+    name: CreateDocumentDataSetWithMandatoryFieldsOnly
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_CreateDocumentDataSetWithMandatoryFieldsOnly_System_Int64_
+  - name: (
+  - uid: System.Int64
+    name: long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: )
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.CreateDocumentDataSetWithMandatoryFieldsOnly(System.Int64)
+    name: CreateDocumentDataSetWithMandatoryFieldsOnly
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_CreateDocumentDataSetWithMandatoryFieldsOnly_System_Int64_
+  - name: (
+  - uid: System.Int64
+    name: Long
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase._testOutputHelper
+  commentId: F:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase._testOutputHelper
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase__testOutputHelper
+  name: _testOutputHelper
+  nameWithType: GraphQLTestBase._testOutputHelper
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase._testOutputHelper
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ServiceProvider
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ServiceProvider
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_ServiceProvider
+  name: ServiceProvider
+  nameWithType: GraphQLTestBase.ServiceProvider
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ServiceProvider
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.RequestExecutorProxy
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.RequestExecutorProxy
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_RequestExecutorProxy
+  name: RequestExecutorProxy
+  nameWithType: GraphQLTestBase.RequestExecutorProxy
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.RequestExecutorProxy
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action{HotChocolate.Execution.IQueryRequestBuilder},Xunit.Abstractions.ITestOutputHelper,System.Threading.CancellationToken)
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action{HotChocolate.Execution.IQueryRequestBuilder},Xunit.Abstractions.ITestOutputHelper,System.Threading.CancellationToken)
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase
+  isExternal: true
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_ExecuteRequestAsync_System_Action_HotChocolate_Execution_IQueryRequestBuilder__Xunit_Abstractions_ITestOutputHelper_System_Threading_CancellationToken_
+  name: ExecuteRequestAsync(Action<IQueryRequestBuilder>, ITestOutputHelper, CancellationToken)
+  nameWithType: GraphQLTestBase.ExecuteRequestAsync(Action<IQueryRequestBuilder>, ITestOutputHelper, CancellationToken)
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action<HotChocolate.Execution.IQueryRequestBuilder>, Xunit.Abstractions.ITestOutputHelper, System.Threading.CancellationToken)
+  nameWithType.vb: GraphQLTestBase.ExecuteRequestAsync(Action(Of IQueryRequestBuilder), ITestOutputHelper, CancellationToken)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action(Of HotChocolate.Execution.IQueryRequestBuilder), Xunit.Abstractions.ITestOutputHelper, System.Threading.CancellationToken)
+  name.vb: ExecuteRequestAsync(Action(Of IQueryRequestBuilder), ITestOutputHelper, CancellationToken)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action{HotChocolate.Execution.IQueryRequestBuilder},Xunit.Abstractions.ITestOutputHelper,System.Threading.CancellationToken)
+    name: ExecuteRequestAsync
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_ExecuteRequestAsync_System_Action_HotChocolate_Execution_IQueryRequestBuilder__Xunit_Abstractions_ITestOutputHelper_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: HotChocolate.Execution.IQueryRequestBuilder
+    name: IQueryRequestBuilder
+    isExternal: true
+  - name: '>'
+  - name: ','
+  - name: " "
+  - uid: Xunit.Abstractions.ITestOutputHelper
+    name: ITestOutputHelper
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.ExecuteRequestAsync(System.Action{HotChocolate.Execution.IQueryRequestBuilder},Xunit.Abstractions.ITestOutputHelper,System.Threading.CancellationToken)
+    name: ExecuteRequestAsync
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.GraphQLTestBase.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_Base_GraphQLTestBase_ExecuteRequestAsync_System_Action_HotChocolate_Execution_IQueryRequestBuilder__Xunit_Abstractions_ITestOutputHelper_System_Threading_CancellationToken_
+  - name: (
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: HotChocolate.Execution.IQueryRequestBuilder
+    name: IQueryRequestBuilder
+    isExternal: true
+  - name: )
+  - name: ','
+  - name: " "
+  - uid: Xunit.Abstractions.ITestOutputHelper
+    name: ITestOutputHelper
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  commentId: N:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  nameWithType: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+    name: Tools
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+    name: Base
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+    name: Tools
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base
+    name: Base
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.Base.html
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.#ctor
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tests_Document_UpdateDocumentMutationShould__ctor_Xunit_Abstractions_ITestOutputHelper_
+  name: UpdateDocumentMutationShould
+  nameWithType: UpdateDocumentMutationShould.UpdateDocumentMutationShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.UpdateDocumentMutationShould
+  nameWithType.vb: UpdateDocumentMutationShould.New
+  fullName.vb: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.New
+  name.vb: New
+- uid: Xunit.Abstractions.ITestOutputHelper
+  commentId: T:Xunit.Abstractions.ITestOutputHelper
+  parent: Xunit.Abstractions
+  isExternal: true
+  name: ITestOutputHelper
+  nameWithType: ITestOutputHelper
+  fullName: Xunit.Abstractions.ITestOutputHelper
+- uid: Xunit.Abstractions
+  commentId: N:Xunit.Abstractions
+  isExternal: true
+  name: Xunit.Abstractions
+  nameWithType: Xunit.Abstractions
+  fullName: Xunit.Abstractions
+  spec.csharp:
+  - uid: Xunit
+    name: Xunit
+    isExternal: true
+  - name: .
+  - uid: Xunit.Abstractions
+    name: Abstractions
+    isExternal: true
+  spec.vb:
+  - uid: Xunit
+    name: Xunit
+    isExternal: true
+  - name: .
+  - uid: Xunit.Abstractions
+    name: Abstractions
+    isExternal: true
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tests_Document_UpdateDocumentMutationShould_InputValidation_InvalidValues_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  name: InputValidation_InvalidValues
+  nameWithType: UpdateDocumentMutationShould.InputValidation_InvalidValues
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.InputValidation_InvalidValues
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput.html
+  name: DocumentInput
+  nameWithType: DocumentInput
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Input
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Input
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks

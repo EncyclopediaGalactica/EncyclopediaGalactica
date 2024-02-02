@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  id: EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  children:
+  - EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNew
+  - EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNewInputValidation
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.StructureNode
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications
+references:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNew
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNew
+  href: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNew.html
+  name: AddNew
+  nameWithType: AddNew
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNew
+- uid: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNewInputValidation
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNewInputValidation
+  href: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNewInputValidation.html
+  name: AddNewInputValidation
+  nameWithType: AddNewInputValidation
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.StructureNode.AddNewInputValidation

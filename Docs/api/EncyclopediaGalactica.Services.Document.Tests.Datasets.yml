@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  commentId: N:EncyclopediaGalactica.Services.Document.Tests.Datasets
+  id: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  children:
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets.SourceFormatNodeDatasets
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  nameWithType: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets
+references:
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.SourceFormatNodeDatasets
+  commentId: T:EncyclopediaGalactica.Services.Document.Tests.Datasets.SourceFormatNodeDatasets
+  parent: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  href: EncyclopediaGalactica.Services.Document.Tests.Datasets.SourceFormatNodeDatasets.html
+  name: SourceFormatNodeDatasets
+  nameWithType: SourceFormatNodeDatasets
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.SourceFormatNodeDatasets
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  commentId: N:EncyclopediaGalactica.Services.Document.Tests.Datasets
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  nameWithType: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+    name: Datasets
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+    name: Datasets
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.html

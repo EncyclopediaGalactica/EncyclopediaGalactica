@@ -1,0 +1,63 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  commentId: N:EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  id: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  children:
+  - EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter`1
+  - EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.GraphQlSchemaValidationErrorFilter
+  - EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.InputValidationErrorFilter
+  - EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.NoSuchItemErrorFilter
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  nameWithType: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters
+references:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter`1
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter`1
+  href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter-1.html
+  name: CustomErrorFilter<TException>
+  nameWithType: CustomErrorFilter<TException>
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter<TException>
+  nameWithType.vb: CustomErrorFilter(Of TException)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter(Of TException)
+  name.vb: CustomErrorFilter(Of TException)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter`1
+    name: CustomErrorFilter
+    href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter-1.html
+  - name: <
+  - name: TException
+  - name: '>'
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter`1
+    name: CustomErrorFilter
+    href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.CustomErrorFilter-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TException
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.GraphQlSchemaValidationErrorFilter
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.GraphQlSchemaValidationErrorFilter
+  href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.GraphQlSchemaValidationErrorFilter.html
+  name: GraphQlSchemaValidationErrorFilter
+  nameWithType: GraphQlSchemaValidationErrorFilter
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.GraphQlSchemaValidationErrorFilter
+- uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.InputValidationErrorFilter
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.InputValidationErrorFilter
+  href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.InputValidationErrorFilter.html
+  name: InputValidationErrorFilter
+  nameWithType: InputValidationErrorFilter
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.InputValidationErrorFilter
+- uid: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.NoSuchItemErrorFilter
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.NoSuchItemErrorFilter
+  href: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.NoSuchItemErrorFilter.html
+  name: NoSuchItemErrorFilter
+  nameWithType: NoSuchItemErrorFilter
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.ErrorFilters.NoSuchItemErrorFilter

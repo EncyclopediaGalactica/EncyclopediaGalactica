@@ -1,0 +1,2379 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput
+  id: DocumentOutput
+  parent: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  children:
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  langs:
+  - csharp
+  - vb
+  name: DocumentOutput
+  nameWithType: DocumentOutput
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput
+  type: Class
+  source:
+    remote:
+      path: Domains/Document/Document.Graphql.Types.Output/DocumentOutput.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: DocumentOutput
+    path: ../Domains/Document/Document.Graphql.Types.Output/DocumentOutput.cs
+    startLine: 5
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  namespace: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  syntax:
+    content: 'public class DocumentOutput : ObjectType<DocumentResult>, ITypeSystemObject, IHasScope, IHasTypeIdentity, IObjectType, IComplexOutputType, INamedOutputType, INamedType, IHasName, IHasDescription, IHasSyntaxNode, IHasReadOnlyContextData, IOutputType, IType, ITypeSystemMember, IHasRuntimeType, IHasDirectives'
+    content.vb: Public Class DocumentOutput Inherits ObjectType(Of DocumentResult) Implements ITypeSystemObject, IHasScope, IHasTypeIdentity, IObjectType, IComplexOutputType, INamedOutputType, INamedType, IHasName, IHasDescription, IHasSyntaxNode, IHasReadOnlyContextData, IOutputType, IType, ITypeSystemMember, IHasRuntimeType, IHasDirectives
+  inheritance:
+  - System.Object
+  - HotChocolate.Types.TypeSystemObjectBase
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  - HotChocolate.Types.ObjectType
+  - HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  implements:
+  - HotChocolate.Types.ITypeSystemObject
+  - HotChocolate.Types.IHasScope
+  - HotChocolate.Types.IHasTypeIdentity
+  - HotChocolate.Types.IObjectType
+  - HotChocolate.Types.IComplexOutputType
+  - HotChocolate.Types.INamedOutputType
+  - HotChocolate.Types.INamedType
+  - HotChocolate.Types.IHasName
+  - HotChocolate.Types.IHasDescription
+  - HotChocolate.Types.IHasSyntaxNode
+  - HotChocolate.IHasReadOnlyContextData
+  - HotChocolate.Types.IOutputType
+  - HotChocolate.Types.IType
+  - HotChocolate.Types.ITypeSystemMember
+  - HotChocolate.Types.IHasRuntimeType
+  - HotChocolate.Types.IHasDirectives
+  inheritedMembers:
+  - HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  - HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  - HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  - HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  - HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  - HotChocolate.Types.ObjectType.IsImplementing(System.String)
+  - HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+  - HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+  - HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  - HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  - HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  - HotChocolate.Types.ObjectType.Kind
+  - HotChocolate.Types.ObjectType.SyntaxNode
+  - HotChocolate.Types.ObjectType.Implements
+  - HotChocolate.Types.ObjectType.Fields
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.IsAssignableFrom(HotChocolate.Types.INamedType)
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.SetTypeIdentity(System.Type)
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Directives
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.RuntimeType
+  - HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.TypeIdentity
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.AssertMutable
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.ContextData
+  - HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Definition
+  - HotChocolate.Types.TypeSystemObjectBase.MarkInitialized
+  - HotChocolate.Types.TypeSystemObjectBase.MarkNamed
+  - HotChocolate.Types.TypeSystemObjectBase.MarkCompleted
+  - HotChocolate.Types.TypeSystemObjectBase.MarkFinalized
+  - HotChocolate.Types.TypeSystemObjectBase.Scope
+  - HotChocolate.Types.TypeSystemObjectBase.Name
+  - HotChocolate.Types.TypeSystemObjectBase.Description
+  - HotChocolate.Types.TypeSystemObjectBase.IsInitialized
+  - HotChocolate.Types.TypeSystemObjectBase.IsNamed
+  - HotChocolate.Types.TypeSystemObjectBase.IsCompleted
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  commentId: M:EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  id: Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  parent: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput
+  langs:
+  - csharp
+  - vb
+  name: Configure(IObjectTypeDescriptor<DocumentResult>)
+  nameWithType: DocumentOutput.Configure(IObjectTypeDescriptor<DocumentResult>)
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure(HotChocolate.Types.IObjectTypeDescriptor<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Graphql.Types.Output/DocumentOutput.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Configure
+    path: ../Domains/Document/Document.Graphql.Types.Output/DocumentOutput.cs
+    startLine: 7
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  namespace: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  summary: Override this to configure the type.
+  example: []
+  syntax:
+    content: protected override void Configure(IObjectTypeDescriptor<DocumentResult> descriptor)
+    parameters:
+    - id: descriptor
+      type: HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+      description: The descriptor allows to configure the interface type.
+    content.vb: Protected Overrides Sub Configure(descriptor As IObjectTypeDescriptor(Of DocumentResult))
+  overridden: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  overload: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure*
+  nameWithType.vb: DocumentOutput.Configure(IObjectTypeDescriptor(Of DocumentResult))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure(HotChocolate.Types.IObjectTypeDescriptor(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult))
+  name.vb: Configure(IObjectTypeDescriptor(Of DocumentResult))
+references:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  commentId: N:EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  nameWithType: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Types
+    name: Types
+    href: EncyclopediaGalactica.Services.Document.Graphql.Types.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Types
+    name: Types
+    href: EncyclopediaGalactica.Services.Document.Graphql.Types.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: HotChocolate.Types.TypeSystemObjectBase
+  commentId: T:HotChocolate.Types.TypeSystemObjectBase
+  parent: HotChocolate.Types
+  isExternal: true
+  name: TypeSystemObjectBase
+  nameWithType: TypeSystemObjectBase
+  fullName: HotChocolate.Types.TypeSystemObjectBase
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  commentId: T:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  parent: HotChocolate.Types
+  definition: HotChocolate.Types.TypeSystemObjectBase`1
+  name: TypeSystemObjectBase<ObjectTypeDefinition>
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  name.vb: TypeSystemObjectBase(Of ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1
+    name: TypeSystemObjectBase
+    isExternal: true
+  - name: <
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1
+    name: TypeSystemObjectBase
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  commentId: T:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  parent: HotChocolate.Types
+  definition: HotChocolate.Types.NamedTypeBase`1
+  name: NamedTypeBase<ObjectTypeDefinition>
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  name.vb: NamedTypeBase(Of ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase`1
+    name: NamedTypeBase
+    isExternal: true
+  - name: <
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase`1
+    name: NamedTypeBase
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType
+  commentId: T:HotChocolate.Types.ObjectType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: ObjectType
+  nameWithType: ObjectType
+  fullName: HotChocolate.Types.ObjectType
+- uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  commentId: T:HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  parent: HotChocolate.Types
+  definition: HotChocolate.Types.ObjectType`1
+  href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  name: ObjectType<DocumentResult>
+  nameWithType: ObjectType<DocumentResult>
+  fullName: HotChocolate.Types.ObjectType<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>
+  nameWithType.vb: ObjectType(Of DocumentResult)
+  fullName.vb: HotChocolate.Types.ObjectType(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult)
+  name.vb: ObjectType(Of DocumentResult)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType`1
+    name: ObjectType
+    isExternal: true
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType`1
+    name: ObjectType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+- uid: HotChocolate.Types.ITypeSystemObject
+  commentId: T:HotChocolate.Types.ITypeSystemObject
+  parent: HotChocolate.Types
+  isExternal: true
+  name: ITypeSystemObject
+  nameWithType: ITypeSystemObject
+  fullName: HotChocolate.Types.ITypeSystemObject
+- uid: HotChocolate.Types.IHasScope
+  commentId: T:HotChocolate.Types.IHasScope
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasScope
+  nameWithType: IHasScope
+  fullName: HotChocolate.Types.IHasScope
+- uid: HotChocolate.Types.IHasTypeIdentity
+  commentId: T:HotChocolate.Types.IHasTypeIdentity
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasTypeIdentity
+  nameWithType: IHasTypeIdentity
+  fullName: HotChocolate.Types.IHasTypeIdentity
+- uid: HotChocolate.Types.IObjectType
+  commentId: T:HotChocolate.Types.IObjectType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IObjectType
+  nameWithType: IObjectType
+  fullName: HotChocolate.Types.IObjectType
+- uid: HotChocolate.Types.IComplexOutputType
+  commentId: T:HotChocolate.Types.IComplexOutputType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IComplexOutputType
+  nameWithType: IComplexOutputType
+  fullName: HotChocolate.Types.IComplexOutputType
+- uid: HotChocolate.Types.INamedOutputType
+  commentId: T:HotChocolate.Types.INamedOutputType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: INamedOutputType
+  nameWithType: INamedOutputType
+  fullName: HotChocolate.Types.INamedOutputType
+- uid: HotChocolate.Types.INamedType
+  commentId: T:HotChocolate.Types.INamedType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: INamedType
+  nameWithType: INamedType
+  fullName: HotChocolate.Types.INamedType
+- uid: HotChocolate.Types.IHasName
+  commentId: T:HotChocolate.Types.IHasName
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasName
+  nameWithType: IHasName
+  fullName: HotChocolate.Types.IHasName
+- uid: HotChocolate.Types.IHasDescription
+  commentId: T:HotChocolate.Types.IHasDescription
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasDescription
+  nameWithType: IHasDescription
+  fullName: HotChocolate.Types.IHasDescription
+- uid: HotChocolate.Types.IHasSyntaxNode
+  commentId: T:HotChocolate.Types.IHasSyntaxNode
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasSyntaxNode
+  nameWithType: IHasSyntaxNode
+  fullName: HotChocolate.Types.IHasSyntaxNode
+- uid: HotChocolate.IHasReadOnlyContextData
+  commentId: T:HotChocolate.IHasReadOnlyContextData
+  parent: HotChocolate
+  isExternal: true
+  name: IHasReadOnlyContextData
+  nameWithType: IHasReadOnlyContextData
+  fullName: HotChocolate.IHasReadOnlyContextData
+- uid: HotChocolate.Types.IOutputType
+  commentId: T:HotChocolate.Types.IOutputType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IOutputType
+  nameWithType: IOutputType
+  fullName: HotChocolate.Types.IOutputType
+- uid: HotChocolate.Types.IType
+  commentId: T:HotChocolate.Types.IType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IType
+  nameWithType: IType
+  fullName: HotChocolate.Types.IType
+- uid: HotChocolate.Types.ITypeSystemMember
+  commentId: T:HotChocolate.Types.ITypeSystemMember
+  parent: HotChocolate.Types
+  isExternal: true
+  name: ITypeSystemMember
+  nameWithType: ITypeSystemMember
+  fullName: HotChocolate.Types.ITypeSystemMember
+- uid: HotChocolate.Types.IHasRuntimeType
+  commentId: T:HotChocolate.Types.IHasRuntimeType
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasRuntimeType
+  nameWithType: IHasRuntimeType
+  fullName: HotChocolate.Types.IHasRuntimeType
+- uid: HotChocolate.Types.IHasDirectives
+  commentId: T:HotChocolate.Types.IHasDirectives
+  parent: HotChocolate.Types
+  isExternal: true
+  name: IHasDirectives
+  nameWithType: IHasDirectives
+  fullName: HotChocolate.Types.IHasDirectives
+- uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  commentId: M:HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  parent: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  definition: HotChocolate.Types.ObjectType`1.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  name: CreateDefinition(ITypeDiscoveryContext)
+  nameWithType: ObjectType<DocumentResult>.CreateDefinition(ITypeDiscoveryContext)
+  fullName: HotChocolate.Types.ObjectType<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  nameWithType.vb: ObjectType(Of DocumentResult).CreateDefinition(ITypeDiscoveryContext)
+  fullName.vb: HotChocolate.Types.ObjectType(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult).CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: CreateDefinition
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: CreateDefinition
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  commentId: M:HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  parent: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  definition: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  name: Configure(IObjectTypeDescriptor)
+  nameWithType: ObjectType<DocumentResult>.Configure(IObjectTypeDescriptor)
+  fullName: HotChocolate.Types.ObjectType<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  nameWithType.vb: ObjectType(Of DocumentResult).Configure(IObjectTypeDescriptor)
+  fullName.vb: HotChocolate.Types.ObjectType(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult).Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  commentId: M:HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: CreateUnsafe(ObjectTypeDefinition)
+  nameWithType: ObjectType.CreateUnsafe(ObjectTypeDefinition)
+  fullName: HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: CreateUnsafe
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.CreateUnsafe(HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: CreateUnsafe
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  commentId: M:HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: IsInstanceOfType(IResolverContext, object)
+  nameWithType: ObjectType.IsInstanceOfType(IResolverContext, object)
+  fullName: HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext, object)
+  nameWithType.vb: ObjectType.IsInstanceOfType(IResolverContext, Object)
+  fullName.vb: HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext, Object)
+  name.vb: IsInstanceOfType(IResolverContext, Object)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+    name: IsInstanceOfType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Resolvers.IResolverContext
+    name: IResolverContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.IsInstanceOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+    name: IsInstanceOfType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Resolvers.IResolverContext
+    name: IResolverContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  commentId: M:HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: IsOfType(IResolverContext, object)
+  nameWithType: ObjectType.IsOfType(IResolverContext, object)
+  fullName: HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext, object)
+  nameWithType.vb: ObjectType.IsOfType(IResolverContext, Object)
+  fullName.vb: HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext, Object)
+  name.vb: IsOfType(IResolverContext, Object)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+    name: IsOfType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Resolvers.IResolverContext
+    name: IResolverContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.IsOfType(HotChocolate.Resolvers.IResolverContext,System.Object)
+    name: IsOfType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Resolvers.IResolverContext
+    name: IResolverContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: HotChocolate.Types.ObjectType.IsImplementing(System.String)
+  commentId: M:HotChocolate.Types.ObjectType.IsImplementing(System.String)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: IsImplementing(string)
+  nameWithType: ObjectType.IsImplementing(string)
+  fullName: HotChocolate.Types.ObjectType.IsImplementing(string)
+  nameWithType.vb: ObjectType.IsImplementing(String)
+  fullName.vb: HotChocolate.Types.ObjectType.IsImplementing(String)
+  name.vb: IsImplementing(String)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(System.String)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(System.String)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: )
+- uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+  commentId: M:HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: IsImplementing(InterfaceType)
+  nameWithType: ObjectType.IsImplementing(InterfaceType)
+  fullName: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.InterfaceType
+    name: InterfaceType
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.InterfaceType)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.InterfaceType
+    name: InterfaceType
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+  commentId: M:HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: IsImplementing(IInterfaceType)
+  nameWithType: ObjectType.IsImplementing(IInterfaceType)
+  fullName: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IInterfaceType
+    name: IInterfaceType
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.IsImplementing(HotChocolate.Types.IInterfaceType)
+    name: IsImplementing
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IInterfaceType
+    name: IInterfaceType
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  commentId: M:HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: OnRegisterDependencies(ITypeDiscoveryContext, ObjectTypeDefinition)
+  nameWithType: ObjectType.OnRegisterDependencies(ITypeDiscoveryContext, ObjectTypeDefinition)
+  fullName: HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.OnRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  commentId: M:HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: OnCompleteType(ITypeCompletionContext, ObjectTypeDefinition)
+  nameWithType: ObjectType.OnCompleteType(ITypeCompletionContext, ObjectTypeDefinition)
+  fullName: HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.OnCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  commentId: M:HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: OnCompleteFields(ITypeCompletionContext, ObjectTypeDefinition)
+  nameWithType: ObjectType.OnCompleteFields(ITypeCompletionContext, ObjectTypeDefinition)
+  fullName: HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteFields
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType.OnCompleteFields(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteFields
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType.Kind
+  commentId: P:HotChocolate.Types.ObjectType.Kind
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: Kind
+  nameWithType: ObjectType.Kind
+  fullName: HotChocolate.Types.ObjectType.Kind
+- uid: HotChocolate.Types.ObjectType.SyntaxNode
+  commentId: P:HotChocolate.Types.ObjectType.SyntaxNode
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: SyntaxNode
+  nameWithType: ObjectType.SyntaxNode
+  fullName: HotChocolate.Types.ObjectType.SyntaxNode
+- uid: HotChocolate.Types.ObjectType.Implements
+  commentId: P:HotChocolate.Types.ObjectType.Implements
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: Implements
+  nameWithType: ObjectType.Implements
+  fullName: HotChocolate.Types.ObjectType.Implements
+- uid: HotChocolate.Types.ObjectType.Fields
+  commentId: P:HotChocolate.Types.ObjectType.Fields
+  parent: HotChocolate.Types.ObjectType
+  isExternal: true
+  name: Fields
+  nameWithType: ObjectType.Fields
+  fullName: HotChocolate.Types.ObjectType.Fields
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.IsAssignableFrom(HotChocolate.Types.INamedType)
+  commentId: M:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.IsAssignableFrom(HotChocolate.Types.INamedType)
+  parent: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.NamedTypeBase`1.IsAssignableFrom(HotChocolate.Types.INamedType)
+  name: IsAssignableFrom(INamedType)
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>.IsAssignableFrom(INamedType)
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.IsAssignableFrom(HotChocolate.Types.INamedType)
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition).IsAssignableFrom(INamedType)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).IsAssignableFrom(HotChocolate.Types.INamedType)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.IsAssignableFrom(HotChocolate.Types.INamedType)
+    name: IsAssignableFrom
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.INamedType
+    name: INamedType
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.IsAssignableFrom(HotChocolate.Types.INamedType)
+    name: IsAssignableFrom
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.INamedType
+    name: INamedType
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.SetTypeIdentity(System.Type)
+  commentId: M:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.SetTypeIdentity(System.Type)
+  parent: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.NamedTypeBase`1.SetTypeIdentity(System.Type)
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: SetTypeIdentity(Type)
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>.SetTypeIdentity(Type)
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.SetTypeIdentity(System.Type)
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition).SetTypeIdentity(Type)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).SetTypeIdentity(System.Type)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.SetTypeIdentity(System.Type)
+    name: SetTypeIdentity
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.SetTypeIdentity(System.Type)
+    name: SetTypeIdentity
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Directives
+  commentId: P:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Directives
+  parent: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.NamedTypeBase`1.Directives
+  name: Directives
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>.Directives
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.Directives
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition).Directives
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).Directives
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.RuntimeType
+  commentId: P:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.RuntimeType
+  parent: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.NamedTypeBase`1.RuntimeType
+  name: RuntimeType
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>.RuntimeType
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.RuntimeType
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition).RuntimeType
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).RuntimeType
+- uid: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.TypeIdentity
+  commentId: P:HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.TypeIdentity
+  parent: HotChocolate.Types.NamedTypeBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.NamedTypeBase`1.TypeIdentity
+  name: TypeIdentity
+  nameWithType: NamedTypeBase<ObjectTypeDefinition>.TypeIdentity
+  fullName: HotChocolate.Types.NamedTypeBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.TypeIdentity
+  nameWithType.vb: NamedTypeBase(Of ObjectTypeDefinition).TypeIdentity
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).TypeIdentity
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,`0)
+  name: OnCompleteName(ITypeCompletionContext, ObjectTypeDefinition)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnCompleteName(ITypeCompletionContext, ObjectTypeDefinition)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnCompleteName(ITypeCompletionContext, ObjectTypeDefinition)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition)
+    name: OnCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition
+    name: ObjectTypeDefinition
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  name: OnBeforeInitialize(ITypeDiscoveryContext)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnBeforeInitialize(ITypeDiscoveryContext)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnBeforeInitialize(ITypeDiscoveryContext)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: OnBeforeInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: OnBeforeInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  name: OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnValidateType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeSystemObjectContext
+    name: ITypeSystemObjectContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnValidateType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeSystemObjectContext
+    name: ITypeSystemObjectContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.AssertMutable
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.AssertMutable
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.AssertMutable
+  name: AssertMutable()
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.AssertMutable()
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.AssertMutable()
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).AssertMutable()
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).AssertMutable()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.AssertMutable
+    name: AssertMutable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.AssertMutable
+    name: AssertMutable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.ContextData
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.ContextData
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.ContextData
+  name: ContextData
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.ContextData
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.ContextData
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).ContextData
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).ContextData
+- uid: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Definition
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}.Definition
+  parent: HotChocolate.Types.TypeSystemObjectBase{HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition}
+  definition: HotChocolate.Types.TypeSystemObjectBase`1.Definition
+  name: Definition
+  nameWithType: TypeSystemObjectBase<ObjectTypeDefinition>.Definition
+  fullName: HotChocolate.Types.TypeSystemObjectBase<HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition>.Definition
+  nameWithType.vb: TypeSystemObjectBase(Of ObjectTypeDefinition).Definition
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of HotChocolate.Types.Descriptors.Definitions.ObjectTypeDefinition).Definition
+- uid: HotChocolate.Types.TypeSystemObjectBase.MarkInitialized
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase.MarkInitialized
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: MarkInitialized()
+  nameWithType: TypeSystemObjectBase.MarkInitialized()
+  fullName: HotChocolate.Types.TypeSystemObjectBase.MarkInitialized()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkInitialized
+    name: MarkInitialized
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkInitialized
+    name: MarkInitialized
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase.MarkNamed
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase.MarkNamed
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: MarkNamed()
+  nameWithType: TypeSystemObjectBase.MarkNamed()
+  fullName: HotChocolate.Types.TypeSystemObjectBase.MarkNamed()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkNamed
+    name: MarkNamed
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkNamed
+    name: MarkNamed
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase.MarkCompleted
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase.MarkCompleted
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: MarkCompleted()
+  nameWithType: TypeSystemObjectBase.MarkCompleted()
+  fullName: HotChocolate.Types.TypeSystemObjectBase.MarkCompleted()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkCompleted
+    name: MarkCompleted
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkCompleted
+    name: MarkCompleted
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase.MarkFinalized
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase.MarkFinalized
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: MarkFinalized()
+  nameWithType: TypeSystemObjectBase.MarkFinalized()
+  fullName: HotChocolate.Types.TypeSystemObjectBase.MarkFinalized()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkFinalized
+    name: MarkFinalized
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase.MarkFinalized
+    name: MarkFinalized
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase.Scope
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.Scope
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: Scope
+  nameWithType: TypeSystemObjectBase.Scope
+  fullName: HotChocolate.Types.TypeSystemObjectBase.Scope
+- uid: HotChocolate.Types.TypeSystemObjectBase.Name
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.Name
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: Name
+  nameWithType: TypeSystemObjectBase.Name
+  fullName: HotChocolate.Types.TypeSystemObjectBase.Name
+- uid: HotChocolate.Types.TypeSystemObjectBase.Description
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.Description
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: Description
+  nameWithType: TypeSystemObjectBase.Description
+  fullName: HotChocolate.Types.TypeSystemObjectBase.Description
+- uid: HotChocolate.Types.TypeSystemObjectBase.IsInitialized
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.IsInitialized
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: IsInitialized
+  nameWithType: TypeSystemObjectBase.IsInitialized
+  fullName: HotChocolate.Types.TypeSystemObjectBase.IsInitialized
+- uid: HotChocolate.Types.TypeSystemObjectBase.IsNamed
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.IsNamed
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: IsNamed
+  nameWithType: TypeSystemObjectBase.IsNamed
+  fullName: HotChocolate.Types.TypeSystemObjectBase.IsNamed
+- uid: HotChocolate.Types.TypeSystemObjectBase.IsCompleted
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase.IsCompleted
+  parent: HotChocolate.Types.TypeSystemObjectBase
+  isExternal: true
+  name: IsCompleted
+  nameWithType: TypeSystemObjectBase.IsCompleted
+  fullName: HotChocolate.Types.TypeSystemObjectBase.IsCompleted
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: HotChocolate.Types
+  commentId: N:HotChocolate.Types
+  isExternal: true
+  name: HotChocolate.Types
+  nameWithType: HotChocolate.Types
+  fullName: HotChocolate.Types
+  spec.csharp:
+  - uid: HotChocolate
+    name: HotChocolate
+    isExternal: true
+  - name: .
+  - uid: HotChocolate.Types
+    name: Types
+    isExternal: true
+  spec.vb:
+  - uid: HotChocolate
+    name: HotChocolate
+    isExternal: true
+  - name: .
+  - uid: HotChocolate.Types
+    name: Types
+    isExternal: true
+- uid: HotChocolate.Types.TypeSystemObjectBase`1
+  commentId: T:HotChocolate.Types.TypeSystemObjectBase`1
+  isExternal: true
+  name: TypeSystemObjectBase<TDefinition>
+  nameWithType: TypeSystemObjectBase<TDefinition>
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition)
+  name.vb: TypeSystemObjectBase(Of TDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1
+    name: TypeSystemObjectBase
+    isExternal: true
+  - name: <
+  - name: TDefinition
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1
+    name: TypeSystemObjectBase
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDefinition
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase`1
+  commentId: T:HotChocolate.Types.NamedTypeBase`1
+  isExternal: true
+  name: NamedTypeBase<TDefinition>
+  nameWithType: NamedTypeBase<TDefinition>
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>
+  nameWithType.vb: NamedTypeBase(Of TDefinition)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition)
+  name.vb: NamedTypeBase(Of TDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase`1
+    name: NamedTypeBase
+    isExternal: true
+  - name: <
+  - name: TDefinition
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase`1
+    name: NamedTypeBase
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TDefinition
+  - name: )
+- uid: HotChocolate.Types.ObjectType`1
+  commentId: T:HotChocolate.Types.ObjectType`1
+  isExternal: true
+  name: ObjectType<T>
+  nameWithType: ObjectType<T>
+  fullName: HotChocolate.Types.ObjectType<T>
+  nameWithType.vb: ObjectType(Of T)
+  fullName.vb: HotChocolate.Types.ObjectType(Of T)
+  name.vb: ObjectType(Of T)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType`1
+    name: ObjectType
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType`1
+    name: ObjectType
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: HotChocolate
+  commentId: N:HotChocolate
+  isExternal: true
+  name: HotChocolate
+  nameWithType: HotChocolate
+  fullName: HotChocolate
+- uid: HotChocolate.Types.ObjectType`1.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  commentId: M:HotChocolate.Types.ObjectType`1.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  isExternal: true
+  name: CreateDefinition(ITypeDiscoveryContext)
+  nameWithType: ObjectType<T>.CreateDefinition(ITypeDiscoveryContext)
+  fullName: HotChocolate.Types.ObjectType<T>.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  nameWithType.vb: ObjectType(Of T).CreateDefinition(ITypeDiscoveryContext)
+  fullName.vb: HotChocolate.Types.ObjectType(Of T).CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType`1.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: CreateDefinition
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType`1.CreateDefinition(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: CreateDefinition
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  commentId: M:HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  isExternal: true
+  name: Configure(IObjectTypeDescriptor)
+  nameWithType: ObjectType<T>.Configure(IObjectTypeDescriptor)
+  fullName: HotChocolate.Types.ObjectType<T>.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  nameWithType.vb: ObjectType(Of T).Configure(IObjectTypeDescriptor)
+  fullName.vb: HotChocolate.Types.ObjectType(Of T).Configure(HotChocolate.Types.IObjectTypeDescriptor)
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor)
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase`1.IsAssignableFrom(HotChocolate.Types.INamedType)
+  commentId: M:HotChocolate.Types.NamedTypeBase`1.IsAssignableFrom(HotChocolate.Types.INamedType)
+  isExternal: true
+  name: IsAssignableFrom(INamedType)
+  nameWithType: NamedTypeBase<TDefinition>.IsAssignableFrom(INamedType)
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>.IsAssignableFrom(HotChocolate.Types.INamedType)
+  nameWithType.vb: NamedTypeBase(Of TDefinition).IsAssignableFrom(INamedType)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition).IsAssignableFrom(HotChocolate.Types.INamedType)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase`1.IsAssignableFrom(HotChocolate.Types.INamedType)
+    name: IsAssignableFrom
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.INamedType
+    name: INamedType
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase`1.IsAssignableFrom(HotChocolate.Types.INamedType)
+    name: IsAssignableFrom
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.INamedType
+    name: INamedType
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase`1.SetTypeIdentity(System.Type)
+  commentId: M:HotChocolate.Types.NamedTypeBase`1.SetTypeIdentity(System.Type)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
+  name: SetTypeIdentity(Type)
+  nameWithType: NamedTypeBase<TDefinition>.SetTypeIdentity(Type)
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>.SetTypeIdentity(System.Type)
+  nameWithType.vb: NamedTypeBase(Of TDefinition).SetTypeIdentity(Type)
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition).SetTypeIdentity(System.Type)
+  spec.csharp:
+  - uid: HotChocolate.Types.NamedTypeBase`1.SetTypeIdentity(System.Type)
+    name: SetTypeIdentity
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.NamedTypeBase`1.SetTypeIdentity(System.Type)
+    name: SetTypeIdentity
+    isExternal: true
+  - name: (
+  - uid: System.Type
+    name: Type
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: )
+- uid: HotChocolate.Types.NamedTypeBase`1.Directives
+  commentId: P:HotChocolate.Types.NamedTypeBase`1.Directives
+  isExternal: true
+  name: Directives
+  nameWithType: NamedTypeBase<TDefinition>.Directives
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>.Directives
+  nameWithType.vb: NamedTypeBase(Of TDefinition).Directives
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition).Directives
+- uid: HotChocolate.Types.NamedTypeBase`1.RuntimeType
+  commentId: P:HotChocolate.Types.NamedTypeBase`1.RuntimeType
+  isExternal: true
+  name: RuntimeType
+  nameWithType: NamedTypeBase<TDefinition>.RuntimeType
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>.RuntimeType
+  nameWithType.vb: NamedTypeBase(Of TDefinition).RuntimeType
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition).RuntimeType
+- uid: HotChocolate.Types.NamedTypeBase`1.TypeIdentity
+  commentId: P:HotChocolate.Types.NamedTypeBase`1.TypeIdentity
+  isExternal: true
+  name: TypeIdentity
+  nameWithType: NamedTypeBase<TDefinition>.TypeIdentity
+  fullName: HotChocolate.Types.NamedTypeBase<TDefinition>.TypeIdentity
+  nameWithType.vb: NamedTypeBase(Of TDefinition).TypeIdentity
+  fullName.vb: HotChocolate.Types.NamedTypeBase(Of TDefinition).TypeIdentity
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,`0)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,`0)
+  isExternal: true
+  name: OnCompleteName(ITypeCompletionContext, TDefinition)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnCompleteName(ITypeCompletionContext, TDefinition)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext, TDefinition)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnCompleteName(ITypeCompletionContext, TDefinition)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext, TDefinition)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,`0)
+    name: OnCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: TDefinition
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnCompleteName(HotChocolate.Configuration.ITypeCompletionContext,`0)
+    name: OnCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - name: TDefinition
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  isExternal: true
+  name: OnBeforeInitialize(ITypeDiscoveryContext)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnBeforeInitialize(ITypeDiscoveryContext)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnBeforeInitialize(ITypeDiscoveryContext)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: OnBeforeInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeInitialize(HotChocolate.Configuration.ITypeDiscoveryContext)
+    name: OnBeforeInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnAfterInitialize(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterInitialize(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterInitialize
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnBeforeRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnAfterRegisterDependencies(ITypeDiscoveryContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterRegisterDependencies(HotChocolate.Configuration.ITypeDiscoveryContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterRegisterDependencies
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeDiscoveryContext
+    name: ITypeDiscoveryContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnBeforeCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnAfterCompleteName(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteName(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteName
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnBeforeCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnBeforeCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnBeforeCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnAfterCompleteType(ITypeCompletionContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnAfterCompleteType(HotChocolate.Configuration.ITypeCompletionContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnAfterCompleteType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeCompletionContext
+    name: ITypeCompletionContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  isExternal: true
+  name: OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  nameWithType: TypeSystemObjectBase<TDefinition>.OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).OnValidateType(ITypeSystemObjectContext, DefinitionBase)
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext, HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnValidateType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeSystemObjectContext
+    name: ITypeSystemObjectContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.OnValidateType(HotChocolate.Configuration.ITypeSystemObjectContext,HotChocolate.Types.Descriptors.Definitions.DefinitionBase)
+    name: OnValidateType
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Configuration.ITypeSystemObjectContext
+    name: ITypeSystemObjectContext
+    isExternal: true
+  - name: ','
+  - name: " "
+  - uid: HotChocolate.Types.Descriptors.Definitions.DefinitionBase
+    name: DefinitionBase
+    isExternal: true
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.AssertMutable
+  commentId: M:HotChocolate.Types.TypeSystemObjectBase`1.AssertMutable
+  isExternal: true
+  name: AssertMutable()
+  nameWithType: TypeSystemObjectBase<TDefinition>.AssertMutable()
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.AssertMutable()
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).AssertMutable()
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).AssertMutable()
+  spec.csharp:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.AssertMutable
+    name: AssertMutable
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.TypeSystemObjectBase`1.AssertMutable
+    name: AssertMutable
+    isExternal: true
+  - name: (
+  - name: )
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.ContextData
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase`1.ContextData
+  isExternal: true
+  name: ContextData
+  nameWithType: TypeSystemObjectBase<TDefinition>.ContextData
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.ContextData
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).ContextData
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).ContextData
+- uid: HotChocolate.Types.TypeSystemObjectBase`1.Definition
+  commentId: P:HotChocolate.Types.TypeSystemObjectBase`1.Definition
+  isExternal: true
+  name: Definition
+  nameWithType: TypeSystemObjectBase<TDefinition>.Definition
+  fullName: HotChocolate.Types.TypeSystemObjectBase<TDefinition>.Definition
+  nameWithType.vb: TypeSystemObjectBase(Of TDefinition).Definition
+  fullName.vb: HotChocolate.Types.TypeSystemObjectBase(Of TDefinition).Definition
+- uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  commentId: M:HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+  parent: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  definition: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor{`0})
+  href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  name: Configure(IObjectTypeDescriptor<DocumentResult>)
+  nameWithType: ObjectType<DocumentResult>.Configure(IObjectTypeDescriptor<DocumentResult>)
+  fullName: HotChocolate.Types.ObjectType<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>.Configure(HotChocolate.Types.IObjectTypeDescriptor<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>)
+  nameWithType.vb: ObjectType(Of DocumentResult).Configure(IObjectTypeDescriptor(Of DocumentResult))
+  fullName.vb: HotChocolate.Types.ObjectType(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult).Configure(HotChocolate.Types.IObjectTypeDescriptor(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult))
+  name.vb: Configure(IObjectTypeDescriptor(Of DocumentResult))
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}.Configure(HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult})
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure
+  href: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.html#EncyclopediaGalactica_Services_Document_Graphql_Types_Output_DocumentOutput_Configure_HotChocolate_Types_IObjectTypeDescriptor_EncyclopediaGalactica_Services_Document_Contracts_Output_DocumentResult__
+  name: Configure
+  nameWithType: DocumentOutput.Configure
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Output.DocumentOutput.Configure
+- uid: HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  commentId: T:HotChocolate.Types.IObjectTypeDescriptor{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  parent: HotChocolate.Types
+  definition: HotChocolate.Types.IObjectTypeDescriptor`1
+  href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  name: IObjectTypeDescriptor<DocumentResult>
+  nameWithType: IObjectTypeDescriptor<DocumentResult>
+  fullName: HotChocolate.Types.IObjectTypeDescriptor<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>
+  nameWithType.vb: IObjectTypeDescriptor(Of DocumentResult)
+  fullName.vb: HotChocolate.Types.IObjectTypeDescriptor(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult)
+  name.vb: IObjectTypeDescriptor(Of DocumentResult)
+  spec.csharp:
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+- uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor{`0})
+  commentId: M:HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor{`0})
+  isExternal: true
+  name: Configure(IObjectTypeDescriptor<T>)
+  nameWithType: ObjectType<T>.Configure(IObjectTypeDescriptor<T>)
+  fullName: HotChocolate.Types.ObjectType<T>.Configure(HotChocolate.Types.IObjectTypeDescriptor<T>)
+  nameWithType.vb: ObjectType(Of T).Configure(IObjectTypeDescriptor(Of T))
+  fullName.vb: HotChocolate.Types.ObjectType(Of T).Configure(HotChocolate.Types.IObjectTypeDescriptor(Of T))
+  name.vb: Configure(IObjectTypeDescriptor(Of T))
+  spec.csharp:
+  - uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor{`0})
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: <
+  - name: T
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Types.ObjectType`1.Configure(HotChocolate.Types.IObjectTypeDescriptor{`0})
+    name: Configure
+    isExternal: true
+  - name: (
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+  - name: )
+- uid: HotChocolate.Types.IObjectTypeDescriptor`1
+  commentId: T:HotChocolate.Types.IObjectTypeDescriptor`1
+  isExternal: true
+  name: IObjectTypeDescriptor<TRuntimeType>
+  nameWithType: IObjectTypeDescriptor<TRuntimeType>
+  fullName: HotChocolate.Types.IObjectTypeDescriptor<TRuntimeType>
+  nameWithType.vb: IObjectTypeDescriptor(Of TRuntimeType)
+  fullName.vb: HotChocolate.Types.IObjectTypeDescriptor(Of TRuntimeType)
+  name.vb: IObjectTypeDescriptor(Of TRuntimeType)
+  spec.csharp:
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: <
+  - name: TRuntimeType
+  - name: '>'
+  spec.vb:
+  - uid: HotChocolate.Types.IObjectTypeDescriptor`1
+    name: IObjectTypeDescriptor
+    isExternal: true
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TRuntimeType
+  - name: )

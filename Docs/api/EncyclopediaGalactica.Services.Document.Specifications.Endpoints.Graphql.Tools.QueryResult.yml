@@ -1,0 +1,1543 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  id: QueryResult
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  children:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary
+  langs:
+  - csharp
+  - vb
+  name: QueryResult
+  nameWithType: QueryResult
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  type: Class
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: QueryResult
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 5
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  syntax:
+    content: 'public class QueryResult : IQueryResult, IExecutionResult, IAsyncDisposable'
+    content.vb: Public Class QueryResult Implements IQueryResult, IExecutionResult, IAsyncDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - HotChocolate.Execution.IQueryResult
+  - HotChocolate.Execution.IExecutionResult
+  - System.IAsyncDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync
+  id: DisposeAsync
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: DisposeAsync()
+  nameWithType: QueryResult.DisposeAsync()
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: DisposeAsync
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 7
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources asynchronously.
+  example: []
+  syntax:
+    content: public ValueTask DisposeAsync()
+    return:
+      type: System.Threading.Tasks.ValueTask
+      description: A task that represents the asynchronous dispose operation.
+    content.vb: Public Function DisposeAsync() As ValueTask
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync*
+  implements:
+  - System.IAsyncDisposable.DisposeAsync
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  id: RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: RegisterForCleanup(Func<ValueTask>)
+  nameWithType: QueryResult.RegisterForCleanup(Func<ValueTask>)
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup(System.Func<System.Threading.Tasks.ValueTask>)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: RegisterForCleanup
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 12
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Registers a cleanup task for execution resources bound to this execution result.
+  example: []
+  syntax:
+    content: public void RegisterForCleanup(Func<ValueTask> clean)
+    parameters:
+    - id: clean
+      type: System.Func{System.Threading.Tasks.ValueTask}
+      description: A cleanup task that will be executed when this result is disposed.
+    content.vb: Public Sub RegisterForCleanup(clean As Func(Of ValueTask))
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup*
+  implements:
+  - HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  nameWithType.vb: QueryResult.RegisterForCleanup(Func(Of ValueTask))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup(System.Func(Of System.Threading.Tasks.ValueTask))
+  name.vb: RegisterForCleanup(Func(Of ValueTask))
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+  id: Kind
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Kind
+  nameWithType: QueryResult.Kind
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Kind
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 17
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Gets the result kind.
+  example: []
+  syntax:
+    content: public ExecutionResultKind Kind { get; }
+    parameters: []
+    return:
+      type: HotChocolate.Execution.ExecutionResultKind
+    content.vb: Public ReadOnly Property Kind As ExecutionResultKind
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind*
+  implements:
+  - HotChocolate.Execution.IExecutionResult.Kind
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+  id: ContextData
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: ContextData
+  nameWithType: QueryResult.ContextData
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: ContextData
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 18
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: >-
+    Gets the result context data which represent additional
+
+    properties that are NOT written to the transport.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, object?>? ContextData { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+    content.vb: Public ReadOnly Property ContextData As IReadOnlyDictionary(Of String, Object)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData*
+  implements:
+  - HotChocolate.Execution.IExecutionResult.ContextData
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary
+  commentId: M:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary
+  id: ToDictionary
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: ToDictionary()
+  nameWithType: QueryResult.ToDictionary()
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: ToDictionary
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 20
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Serializes this GraphQL result into a dictionary.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, object?> ToDictionary()
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+    content.vb: Public Function ToDictionary() As IReadOnlyDictionary(Of String, Object)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary*
+  implements:
+  - HotChocolate.Execution.IQueryResult.ToDictionary
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+  id: Label
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Label
+  nameWithType: QueryResult.Label
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Label
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 25
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: >-
+    A string that was passed to the label argument of the @defer or @stream
+
+    directive that corresponds to this results.
+  example: []
+  syntax:
+    content: public string? Label { get; }
+    parameters: []
+    return:
+      type: System.String
+      description: ''
+    content.vb: Public ReadOnly Property Label As String
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Label
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+  id: Path
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Path
+  nameWithType: QueryResult.Path
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Path
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 26
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: " A path to the insertion point that informs the client how to patch a\nsubsequent delta payload into the original payload."
+  example: []
+  syntax:
+    content: public Path? Path { get; }
+    parameters: []
+    return:
+      type: HotChocolate.Path
+      description: ''
+    content.vb: Public ReadOnly Property Path As Path
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Path
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+  id: Data
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: QueryResult.Data
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Data
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 28
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: The data that is being delivered.
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("data")]
+
+      public IReadOnlyDictionary<string, object?>? Data { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+      description: ''
+    content.vb: >-
+      <JsonProperty("data")>
+
+      Public Property Data As IReadOnlyDictionary(Of String, Object)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Data
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: data
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+  id: Items
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Items
+  nameWithType: QueryResult.Items
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Items
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 31
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: >-
+    The `items` entry in a stream payload is a list of results from the execution of
+
+    the associated @stream directive. This output will be a list of the same type of
+
+    the field with the associated `@stream` directive. If `items` is set to `null`,
+
+    it indicates that an error has caused a `null` to bubble up to a field higher
+
+    than the list field with the associated `@stream` directive.
+  example: []
+  syntax:
+    content: public IReadOnlyList<object?>? Items { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.Object}
+    content.vb: Public ReadOnly Property Items As IReadOnlyList(Of Object)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Items
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+  id: Errors
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: QueryResult.Errors
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Errors
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 32
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Gets the GraphQL errors of the result.
+  example: []
+  syntax:
+    content: public IReadOnlyList<IError>? Errors { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{HotChocolate.IError}
+    content.vb: Public ReadOnly Property Errors As IReadOnlyList(Of IError)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Errors
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+  id: Extensions
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Extensions
+  nameWithType: QueryResult.Extensions
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Extensions
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 33
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: >-
+    Gets the additional information that are passed along
+
+    with the result and will be serialized for transport.
+  example: []
+  syntax:
+    content: public IReadOnlyDictionary<string, object?>? Extensions { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+    content.vb: Public ReadOnly Property Extensions As IReadOnlyDictionary(Of String, Object)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Extensions
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+  id: Incremental
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: Incremental
+  nameWithType: QueryResult.Incremental
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Incremental
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 34
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: Gets the incremental patches provided with this result.
+  example: []
+  syntax:
+    content: public IReadOnlyList<IQueryResult>? Incremental { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{HotChocolate.Execution.IQueryResult}
+    content.vb: Public ReadOnly Property Incremental As IReadOnlyList(Of IQueryResult)
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental*
+  implements:
+  - HotChocolate.Execution.IQueryResult.Incremental
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+  commentId: P:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+  id: HasNext
+  parent: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult
+  langs:
+  - csharp
+  - vb
+  name: HasNext
+  nameWithType: QueryResult.HasNext
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+  type: Property
+  source:
+    remote:
+      path: Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: HasNext
+    path: ../Domains/Document/Document.Specifications.Endpoints.Graphql/Tools/QueryResult.cs
+    startLine: 35
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+  namespace: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  summary: >-
+    A boolean that is present and <code>true</code> when there are more payloads
+
+    that will be sent for this operation. The last payload in a multi payload response
+
+    should return HasNext: <code>false</code>.
+
+    HasNext is null for single-payload responses to preserve backwards compatibility.
+  example: []
+  syntax:
+    content: public bool? HasNext { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Boolean}
+      description: ''
+    content.vb: Public ReadOnly Property HasNext As Boolean?
+  overload: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext*
+  implements:
+  - HotChocolate.Execution.IQueryResult.HasNext
+references:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  commentId: N:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  nameWithType: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+    name: Tools
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications
+    name: Specifications
+    href: EncyclopediaGalactica.Services.Document.Specifications.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints
+    name: Endpoints
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools
+    name: Tools
+    href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: HotChocolate.Execution.IQueryResult
+  commentId: T:HotChocolate.Execution.IQueryResult
+  parent: HotChocolate.Execution
+  isExternal: true
+  name: IQueryResult
+  nameWithType: IQueryResult
+  fullName: HotChocolate.Execution.IQueryResult
+- uid: HotChocolate.Execution.IExecutionResult
+  commentId: T:HotChocolate.Execution.IExecutionResult
+  parent: HotChocolate.Execution
+  isExternal: true
+  name: IExecutionResult
+  nameWithType: IExecutionResult
+  fullName: HotChocolate.Execution.IExecutionResult
+- uid: System.IAsyncDisposable
+  commentId: T:System.IAsyncDisposable
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable
+  name: IAsyncDisposable
+  nameWithType: IAsyncDisposable
+  fullName: System.IAsyncDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: HotChocolate.Execution
+  commentId: N:HotChocolate.Execution
+  isExternal: true
+  name: HotChocolate.Execution
+  nameWithType: HotChocolate.Execution
+  fullName: HotChocolate.Execution
+  spec.csharp:
+  - uid: HotChocolate
+    name: HotChocolate
+    isExternal: true
+  - name: .
+  - uid: HotChocolate.Execution
+    name: Execution
+    isExternal: true
+  spec.vb:
+  - uid: HotChocolate
+    name: HotChocolate
+    isExternal: true
+  - name: .
+  - uid: HotChocolate.Execution
+    name: Execution
+    isExternal: true
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_DisposeAsync
+  name: DisposeAsync
+  nameWithType: QueryResult.DisposeAsync
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.DisposeAsync
+- uid: System.IAsyncDisposable.DisposeAsync
+  commentId: M:System.IAsyncDisposable.DisposeAsync
+  parent: System.IAsyncDisposable
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  name: DisposeAsync()
+  nameWithType: IAsyncDisposable.DisposeAsync()
+  fullName: System.IAsyncDisposable.DisposeAsync()
+  spec.csharp:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.IAsyncDisposable.DisposeAsync
+    name: DisposeAsync
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iasyncdisposable.disposeasync
+  - name: (
+  - name: )
+- uid: System.Threading.Tasks.ValueTask
+  commentId: T:System.Threading.Tasks.ValueTask
+  parent: System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  name: ValueTask
+  nameWithType: ValueTask
+  fullName: System.Threading.Tasks.ValueTask
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_RegisterForCleanup_System_Func_System_Threading_Tasks_ValueTask__
+  name: RegisterForCleanup
+  nameWithType: QueryResult.RegisterForCleanup
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.RegisterForCleanup
+- uid: HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  commentId: M:HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+  parent: HotChocolate.Execution.IExecutionResult
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: RegisterForCleanup(Func<ValueTask>)
+  nameWithType: IExecutionResult.RegisterForCleanup(Func<ValueTask>)
+  fullName: HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func<System.Threading.Tasks.ValueTask>)
+  nameWithType.vb: IExecutionResult.RegisterForCleanup(Func(Of ValueTask))
+  fullName.vb: HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func(Of System.Threading.Tasks.ValueTask))
+  name.vb: RegisterForCleanup(Func(Of ValueTask))
+  spec.csharp:
+  - uid: HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+    name: RegisterForCleanup
+    isExternal: true
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.ValueTask
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Execution.IExecutionResult.RegisterForCleanup(System.Func{System.Threading.Tasks.ValueTask})
+    name: RegisterForCleanup
+    isExternal: true
+  - name: (
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.ValueTask
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  - name: )
+  - name: )
+- uid: System.Func{System.Threading.Tasks.ValueTask}
+  commentId: T:System.Func{System.Threading.Tasks.ValueTask}
+  parent: System
+  definition: System.Func`1
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<ValueTask>
+  nameWithType: Func<ValueTask>
+  fullName: System.Func<System.Threading.Tasks.ValueTask>
+  nameWithType.vb: Func(Of ValueTask)
+  fullName.vb: System.Func(Of System.Threading.Tasks.ValueTask)
+  name.vb: Func(Of ValueTask)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - uid: System.Threading.Tasks.ValueTask
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Threading.Tasks.ValueTask
+    name: ValueTask
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask
+  - name: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-1
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: <
+  - name: TResult
+  - name: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TResult
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Kind
+  name: Kind
+  nameWithType: QueryResult.Kind
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Kind
+- uid: HotChocolate.Execution.IExecutionResult.Kind
+  commentId: P:HotChocolate.Execution.IExecutionResult.Kind
+  parent: HotChocolate.Execution.IExecutionResult
+  isExternal: true
+  name: Kind
+  nameWithType: IExecutionResult.Kind
+  fullName: HotChocolate.Execution.IExecutionResult.Kind
+- uid: HotChocolate.Execution.ExecutionResultKind
+  commentId: T:HotChocolate.Execution.ExecutionResultKind
+  parent: HotChocolate.Execution
+  isExternal: true
+  name: ExecutionResultKind
+  nameWithType: ExecutionResultKind
+  fullName: HotChocolate.Execution.ExecutionResultKind
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_ContextData
+  name: ContextData
+  nameWithType: QueryResult.ContextData
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ContextData
+- uid: HotChocolate.Execution.IExecutionResult.ContextData
+  commentId: P:HotChocolate.Execution.IExecutionResult.ContextData
+  parent: HotChocolate.Execution.IExecutionResult
+  isExternal: true
+  name: ContextData
+  nameWithType: IExecutionResult.ContextData
+  fullName: HotChocolate.Execution.IExecutionResult.ContextData
+- uid: System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary{System.String,System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyDictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<string, object>
+  nameWithType: IReadOnlyDictionary<string, object>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<string, object>
+  nameWithType.vb: IReadOnlyDictionary(Of String, Object)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of String, Object)
+  name.vb: IReadOnlyDictionary(Of String, Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - uid: System.String
+    name: string
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.String
+    name: String
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyDictionary`2
+  commentId: T:System.Collections.Generic.IReadOnlyDictionary`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  name: IReadOnlyDictionary<TKey, TValue>
+  nameWithType: IReadOnlyDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IReadOnlyDictionary<TKey, TValue>
+  nameWithType.vb: IReadOnlyDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IReadOnlyDictionary(Of TKey, TValue)
+  name.vb: IReadOnlyDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: <
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyDictionary`2
+    name: IReadOnlyDictionary
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlydictionary-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: TKey
+  - name: ','
+  - name: " "
+  - name: TValue
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_ToDictionary
+  name: ToDictionary
+  nameWithType: QueryResult.ToDictionary
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.ToDictionary
+- uid: HotChocolate.Execution.IQueryResult.ToDictionary
+  commentId: M:HotChocolate.Execution.IQueryResult.ToDictionary
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: ToDictionary()
+  nameWithType: IQueryResult.ToDictionary()
+  fullName: HotChocolate.Execution.IQueryResult.ToDictionary()
+  spec.csharp:
+  - uid: HotChocolate.Execution.IQueryResult.ToDictionary
+    name: ToDictionary
+    isExternal: true
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: HotChocolate.Execution.IQueryResult.ToDictionary
+    name: ToDictionary
+    isExternal: true
+  - name: (
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Label
+  name: Label
+  nameWithType: QueryResult.Label
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Label
+- uid: HotChocolate.Execution.IQueryResult.Label
+  commentId: P:HotChocolate.Execution.IQueryResult.Label
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Label
+  nameWithType: IQueryResult.Label
+  fullName: HotChocolate.Execution.IQueryResult.Label
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Path
+  name: Path
+  nameWithType: QueryResult.Path
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Path
+- uid: HotChocolate.Execution.IQueryResult.Path
+  commentId: P:HotChocolate.Execution.IQueryResult.Path
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Path
+  nameWithType: IQueryResult.Path
+  fullName: HotChocolate.Execution.IQueryResult.Path
+- uid: HotChocolate.Path
+  commentId: T:HotChocolate.Path
+  parent: HotChocolate
+  isExternal: true
+  name: Path
+  nameWithType: Path
+  fullName: HotChocolate.Path
+- uid: HotChocolate
+  commentId: N:HotChocolate
+  isExternal: true
+  name: HotChocolate
+  nameWithType: HotChocolate
+  fullName: HotChocolate
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Data
+  name: Data
+  nameWithType: QueryResult.Data
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Data
+- uid: HotChocolate.Execution.IQueryResult.Data
+  commentId: P:HotChocolate.Execution.IQueryResult.Data
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Data
+  nameWithType: IQueryResult.Data
+  fullName: HotChocolate.Execution.IQueryResult.Data
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Items
+  name: Items
+  nameWithType: QueryResult.Items
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Items
+- uid: HotChocolate.Execution.IQueryResult.Items
+  commentId: P:HotChocolate.Execution.IQueryResult.Items
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Items
+  nameWithType: IQueryResult.Items
+  fullName: HotChocolate.Execution.IQueryResult.Items
+- uid: System.Collections.Generic.IReadOnlyList{System.Object}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<object>
+  nameWithType: IReadOnlyList<object>
+  fullName: System.Collections.Generic.IReadOnlyList<object>
+  nameWithType.vb: IReadOnlyList(Of Object)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Object)
+  name.vb: IReadOnlyList(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Errors
+  name: Errors
+  nameWithType: QueryResult.Errors
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Errors
+- uid: HotChocolate.Execution.IQueryResult.Errors
+  commentId: P:HotChocolate.Execution.IQueryResult.Errors
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Errors
+  nameWithType: IQueryResult.Errors
+  fullName: HotChocolate.Execution.IQueryResult.Errors
+- uid: System.Collections.Generic.IReadOnlyList{HotChocolate.IError}
+  commentId: T:System.Collections.Generic.IReadOnlyList{HotChocolate.IError}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<IError>
+  nameWithType: IReadOnlyList<IError>
+  fullName: System.Collections.Generic.IReadOnlyList<HotChocolate.IError>
+  nameWithType.vb: IReadOnlyList(Of IError)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of HotChocolate.IError)
+  name.vb: IReadOnlyList(Of IError)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: HotChocolate.IError
+    name: IError
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: HotChocolate.IError
+    name: IError
+    isExternal: true
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Extensions
+  name: Extensions
+  nameWithType: QueryResult.Extensions
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Extensions
+- uid: HotChocolate.Execution.IQueryResult.Extensions
+  commentId: P:HotChocolate.Execution.IQueryResult.Extensions
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Extensions
+  nameWithType: IQueryResult.Extensions
+  fullName: HotChocolate.Execution.IQueryResult.Extensions
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_Incremental
+  name: Incremental
+  nameWithType: QueryResult.Incremental
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.Incremental
+- uid: HotChocolate.Execution.IQueryResult.Incremental
+  commentId: P:HotChocolate.Execution.IQueryResult.Incremental
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: Incremental
+  nameWithType: IQueryResult.Incremental
+  fullName: HotChocolate.Execution.IQueryResult.Incremental
+- uid: System.Collections.Generic.IReadOnlyList{HotChocolate.Execution.IQueryResult}
+  commentId: T:System.Collections.Generic.IReadOnlyList{HotChocolate.Execution.IQueryResult}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<IQueryResult>
+  nameWithType: IReadOnlyList<IQueryResult>
+  fullName: System.Collections.Generic.IReadOnlyList<HotChocolate.Execution.IQueryResult>
+  nameWithType.vb: IReadOnlyList(Of IQueryResult)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of HotChocolate.Execution.IQueryResult)
+  name.vb: IReadOnlyList(Of IQueryResult)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: HotChocolate.Execution.IQueryResult
+    name: IQueryResult
+    isExternal: true
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: HotChocolate.Execution.IQueryResult
+    name: IQueryResult
+    isExternal: true
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.html#EncyclopediaGalactica_Services_Document_Specifications_Endpoints_Graphql_Tools_QueryResult_HasNext
+  name: HasNext
+  nameWithType: QueryResult.HasNext
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tools.QueryResult.HasNext
+- uid: HotChocolate.Execution.IQueryResult.HasNext
+  commentId: P:HotChocolate.Execution.IQueryResult.HasNext
+  parent: HotChocolate.Execution.IQueryResult
+  isExternal: true
+  name: HasNext
+  nameWithType: IQueryResult.HasNext
+  fullName: HotChocolate.Execution.IQueryResult.HasNext
+- uid: System.Nullable{System.Boolean}
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
+  definition: System.Nullable`1
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
+  spec.csharp:
+  - uid: System.Boolean
+    name: bool
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+  spec.vb:
+  - uid: System.Boolean
+    name: Boolean
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )

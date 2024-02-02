@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  commentId: N:EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  id: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  children:
+  - EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit.SourceFormatNodeInputContractShould
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  nameWithType: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  fullName: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit.SourceFormatNodeInputContractShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit.SourceFormatNodeInputContractShould
+  href: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit.SourceFormatNodeInputContractShould.html
+  name: SourceFormatNodeInputContractShould
+  nameWithType: SourceFormatNodeInputContractShould
+  fullName: EncyclopediaGalactica.Services.Document.Dtos.Tests.Unit.SourceFormatNodeInputContractShould

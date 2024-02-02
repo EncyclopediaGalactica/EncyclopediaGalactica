@@ -1,0 +1,37 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  commentId: N:EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  id: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  children:
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.AddDocumentMutation
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.DeleteDocumentMutation
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.UpdateDocumentMutation
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  nameWithType: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations
+references:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.AddDocumentMutation
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.AddDocumentMutation
+  href: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.AddDocumentMutation.html
+  name: AddDocumentMutation
+  nameWithType: AddDocumentMutation
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.AddDocumentMutation
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.DeleteDocumentMutation
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.DeleteDocumentMutation
+  href: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.DeleteDocumentMutation.html
+  name: DeleteDocumentMutation
+  nameWithType: DeleteDocumentMutation
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.DeleteDocumentMutation
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.UpdateDocumentMutation
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.UpdateDocumentMutation
+  href: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.UpdateDocumentMutation.html
+  name: UpdateDocumentMutation
+  nameWithType: UpdateDocumentMutation
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Types.Mutations.Document.UpdateDocumentMutation

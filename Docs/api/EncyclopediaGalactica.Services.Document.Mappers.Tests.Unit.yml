@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  id: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.SourceFormatNodeMappers_Should
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.SourceFormatNodeMappers_Should
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.SourceFormatNodeMappers_Should
+  href: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.SourceFormatNodeMappers_Should.html
+  name: SourceFormatNodeMappers_Should
+  nameWithType: SourceFormatNodeMappers_Should
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.SourceFormatNodeMappers_Should

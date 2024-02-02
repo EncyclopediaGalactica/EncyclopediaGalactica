@@ -1,0 +1,102 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  commentId: N:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  id: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  children:
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDtoInputValidation_InvalidDataset
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDto_Add_ValidDataForMandatoryFields
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_Update_Dataset
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  nameWithType: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Tests.Datasets
+references:
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDtoInputValidation_InvalidDataset
+  commentId: T:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDtoInputValidation_InvalidDataset
+  parent: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDtoInputValidation_InvalidDataset.html
+  name: AddDocumentDtoInputValidation_InvalidDataset
+  nameWithType: AddDocumentDtoInputValidation_InvalidDataset
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDtoInputValidation_InvalidDataset
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDto_Add_ValidDataForMandatoryFields
+  commentId: T:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDto_Add_ValidDataForMandatoryFields
+  parent: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDto_Add_ValidDataForMandatoryFields.html
+  name: AddDocumentDto_Add_ValidDataForMandatoryFields
+  nameWithType: AddDocumentDto_Add_ValidDataForMandatoryFields
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.AddDocumentDto_Add_ValidDataForMandatoryFields
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset
+  commentId: T:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset
+  parent: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset.html
+  name: UpdateDocumentDto_InputValidation_InvalidDataset
+  nameWithType: UpdateDocumentDto_InputValidation_InvalidDataset
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_InputValidation_InvalidDataset
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_Update_Dataset
+  commentId: T:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_Update_Dataset
+  parent: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_Update_Dataset.html
+  name: UpdateDocumentDto_Update_Dataset
+  nameWithType: UpdateDocumentDto_Update_Dataset
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.UpdateDocumentDto_Update_Dataset
+- uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  commentId: N:EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  nameWithType: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  fullName: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+    name: Datasets
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+    name: DocumentDto
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets
+    name: Datasets
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto
+    name: DocumentDto
+    href: EncyclopediaGalactica.Services.Document.Tests.Datasets.DocumentDto.html

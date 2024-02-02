@@ -1,0 +1,9 @@
+type Query {
+    getDocuments: [Document]
+    getDocument(id: ID): Document
+}
+
+type Mutation {
+    createDocument(documentInput: DocumentInput!): Document
+    modifyDocument(documentId: ID, documentEntity: DocumentInput!): Document
+}

@@ -1,0 +1,94 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  id: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatNodeMappers
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+references:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html
+  name: IDocumentMappers
+  nameWithType: IDocumentMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers.html
+  name: ISourceFormatMappers
+  nameWithType: ISourceFormatMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatNodeMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatNodeMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatNodeMappers.html
+  name: ISourceFormatNodeMappers
+  nameWithType: ISourceFormatNodeMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatNodeMappers
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers.html
+  name: IStructureMappers
+  nameWithType: IStructureMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IStructureMappers
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html

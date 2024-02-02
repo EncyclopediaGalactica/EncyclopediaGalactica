@@ -1,0 +1,803 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  id: SourceFormatNodePropertiesShould
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  children:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+  langs:
+  - csharp
+  - vb
+  name: SourceFormatNodePropertiesShould
+  nameWithType: SourceFormatNodePropertiesShould
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  type: Class
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: SourceFormatNodePropertiesShould
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 6
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: public class SourceFormatNodePropertiesShould
+    content.vb: Public Class SourceFormatNodePropertiesShould
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange
+  id: IdWontChange
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: IdWontChange()
+  nameWithType: SourceFormatNodePropertiesShould.IdWontChange()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IdWontChange
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 9
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void IdWontChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub IdWontChange()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+  id: IdDefaultValueIsZero
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: IdDefaultValueIsZero()
+  nameWithType: SourceFormatNodePropertiesShould.IdDefaultValueIsZero()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IdDefaultValueIsZero
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 19
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void IdDefaultValueIsZero()
+    content.vb: >-
+      <Fact>
+
+      Public Sub IdDefaultValueIsZero()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange
+  id: NameWontChange
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: NameWontChange()
+  nameWithType: SourceFormatNodePropertiesShould.NameWontChange()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: NameWontChange
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 26
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void NameWontChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub NameWontChange()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+  id: NameDefaultValueIsNull
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: NameDefaultValueIsNull()
+  nameWithType: SourceFormatNodePropertiesShould.NameDefaultValueIsNull()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: NameDefaultValueIsNull
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 36
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void NameDefaultValueIsNull()
+    content.vb: >-
+      <Fact>
+
+      Public Sub NameDefaultValueIsNull()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+  id: IsRootNodeDefaultValueIsZero
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: IsRootNodeDefaultValueIsZero()
+  nameWithType: SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IsRootNodeDefaultValueIsZero
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 43
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void IsRootNodeDefaultValueIsZero()
+    content.vb: >-
+      <Fact>
+
+      Public Sub IsRootNodeDefaultValueIsZero()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+  id: IsRootNodeValueDoesntChange
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: IsRootNodeValueDoesntChange()
+  nameWithType: SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: IsRootNodeValueDoesntChange
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 50
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void IsRootNodeValueDoesntChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub IsRootNodeValueDoesntChange()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+  id: ParentNodeIdDefaultValueIsNull
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: ParentNodeIdDefaultValueIsNull()
+  nameWithType: SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: ParentNodeIdDefaultValueIsNull
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 60
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void ParentNodeIdDefaultValueIsNull()
+    content.vb: >-
+      <Fact>
+
+      Public Sub ParentNodeIdDefaultValueIsNull()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+  id: ParentNodeIdValueDoesntChange
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: ParentNodeIdValueDoesntChange()
+  nameWithType: SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: ParentNodeIdValueDoesntChange
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 67
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void ParentNodeIdValueDoesntChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub ParentNodeIdValueDoesntChange()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+  id: RootNodeIdDefaultIsNull
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: RootNodeIdDefaultIsNull()
+  nameWithType: SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: RootNodeIdDefaultIsNull
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 77
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void RootNodeIdDefaultIsNull()
+    content.vb: >-
+      <Fact>
+
+      Public Sub RootNodeIdDefaultIsNull()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+  id: RootNodeIdValueDoesntChange
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: RootNodeIdValueDoesntChange()
+  nameWithType: SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: RootNodeIdValueDoesntChange
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 84
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void RootNodeIdValueDoesntChange()
+    content.vb: >-
+      <Fact>
+
+      Public Sub RootNodeIdValueDoesntChange()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault
+  commentId: M:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault
+  id: ChildrenSourceFormatNodesListIsEmptyByDefault
+  parent: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould
+  langs:
+  - csharp
+  - vb
+  name: ChildrenSourceFormatNodesListIsEmptyByDefault()
+  nameWithType: SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault()
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault()
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: ChildrenSourceFormatNodesListIsEmptyByDefault
+    path: ../Domains/Document/Document.Entities.Tests.Unit/SourceFormatNodePropertiesShould.cs
+    startLine: 94
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  namespace: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  syntax:
+    content: >-
+      [Fact]
+
+      public void ChildrenSourceFormatNodesListIsEmptyByDefault()
+    content.vb: >-
+      <Fact>
+
+      Public Sub ChildrenSourceFormatNodesListIsEmptyByDefault()
+  overload: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault*
+  attributes:
+  - type: Xunit.FactAttribute
+    ctor: Xunit.FactAttribute.#ctor
+    arguments: []
+references:
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Entities.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+    name: Unit
+    href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Entities.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit
+    name: Unit
+    href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_IdWontChange
+  name: IdWontChange
+  nameWithType: SourceFormatNodePropertiesShould.IdWontChange
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdWontChange
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_IdDefaultValueIsZero
+  name: IdDefaultValueIsZero
+  nameWithType: SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IdDefaultValueIsZero
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_NameWontChange
+  name: NameWontChange
+  nameWithType: SourceFormatNodePropertiesShould.NameWontChange
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameWontChange
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_NameDefaultValueIsNull
+  name: NameDefaultValueIsNull
+  nameWithType: SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.NameDefaultValueIsNull
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_IsRootNodeDefaultValueIsZero
+  name: IsRootNodeDefaultValueIsZero
+  nameWithType: SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeDefaultValueIsZero
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_IsRootNodeValueDoesntChange
+  name: IsRootNodeValueDoesntChange
+  nameWithType: SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.IsRootNodeValueDoesntChange
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_ParentNodeIdDefaultValueIsNull
+  name: ParentNodeIdDefaultValueIsNull
+  nameWithType: SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdDefaultValueIsNull
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_ParentNodeIdValueDoesntChange
+  name: ParentNodeIdValueDoesntChange
+  nameWithType: SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ParentNodeIdValueDoesntChange
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_RootNodeIdDefaultIsNull
+  name: RootNodeIdDefaultIsNull
+  nameWithType: SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdDefaultIsNull
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_RootNodeIdValueDoesntChange
+  name: RootNodeIdValueDoesntChange
+  nameWithType: SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.RootNodeIdValueDoesntChange
+- uid: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault
+  href: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.html#EncyclopediaGalactica_Services_Document_Entities_Tests_Unit_SourceFormatNodePropertiesShould_ChildrenSourceFormatNodesListIsEmptyByDefault
+  name: ChildrenSourceFormatNodesListIsEmptyByDefault
+  nameWithType: SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Tests.Unit.SourceFormatNodePropertiesShould.ChildrenSourceFormatNodesListIsEmptyByDefault

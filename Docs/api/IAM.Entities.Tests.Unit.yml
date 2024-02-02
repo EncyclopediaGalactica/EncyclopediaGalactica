@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: IAM.Entities.Tests.Unit
+  commentId: N:IAM.Entities.Tests.Unit
+  id: IAM.Entities.Tests.Unit
+  children:
+  - IAM.Entities.Tests.Unit.ModuleShould
+  langs:
+  - csharp
+  - vb
+  name: IAM.Entities.Tests.Unit
+  nameWithType: IAM.Entities.Tests.Unit
+  fullName: IAM.Entities.Tests.Unit
+  type: Namespace
+  assemblies:
+  - IAM.Entities.Tests.Unit
+references:
+- uid: IAM.Entities.Tests.Unit.ModuleShould
+  commentId: T:IAM.Entities.Tests.Unit.ModuleShould
+  href: IAM.Entities.Tests.Unit.ModuleShould.html
+  name: ModuleShould
+  nameWithType: ModuleShould
+  fullName: IAM.Entities.Tests.Unit.ModuleShould

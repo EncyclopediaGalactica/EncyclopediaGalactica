@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Output
+  id: EncyclopediaGalactica.Services.Document.Contracts.Output
+  children:
+  - EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Contracts.Output
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Output
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Output
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Contracts.Output
+references:
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Output
+  href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  name: DocumentResult
+  nameWithType: DocumentResult
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Output
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Output
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Output
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Output
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.html

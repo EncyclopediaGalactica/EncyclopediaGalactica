@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  commentId: N:EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  id: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  children:
+  - EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.BaseTest
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  nameWithType: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Repository.Tests.Int
+references:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.BaseTest
+  commentId: T:EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.BaseTest
+  parent: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  href: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.BaseTest.html
+  name: BaseTest
+  nameWithType: BaseTest
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.BaseTest
+- uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  commentId: N:EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  nameWithType: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository
+    name: Repository
+    href: EncyclopediaGalactica.Services.Document.Repository.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int
+    name: Int
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+    name: Base
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository
+    name: Repository
+    href: EncyclopediaGalactica.Services.Document.Repository.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests
+    name: Tests
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int
+    name: Int
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base
+    name: Base
+    href: EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base.html

@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class SourceFormatNodeService
+ | Encyclopedia Galactica </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class SourceFormatNodeService
+ | Encyclopedia Galactica ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.json">
+      <meta name="docfx:tocrel" content="toc.json">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/new/document_gql_endpoint/apiSpec/new?filename=EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService.md&amp;value=---%0Auid%3A%20EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="Encyclopedia Galactica">
+            Encyclopedia Galactica
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService">
+
+
+
+  <h1 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService" class="text-break">
+    Class SourceFormatNodeService
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/UpdateAsync.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="EncyclopediaGalactica.html">EncyclopediaGalactica</a>.<a class="xref" href="EncyclopediaGalactica.Services.html">Services</a>.<a class="xref" href="EncyclopediaGalactica.Services.Document.html">Document</a>.<a class="xref" href="EncyclopediaGalactica.Services.Document.Service.html">Service</a>.<a class="xref" href="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.html">SourceFormatNodeService</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>EncyclopediaGalactica.Services.Document.Service.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class SourceFormatNodeService : ISourceFormatNodeService</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">SourceFormatNodeService</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService.html">ISourceFormatNodeService</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService__ctor_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.#ctor*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService__ctor_FluentValidation_IValidator_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput__EncyclopediaGalactica_Utils_GuardsService_Interfaces_IGuardsService_EncyclopediaGalactica_Services_Document_Mappers_Interfaces_ISourceFormatMappers_EncyclopediaGalactica_Services_Document_Repository_Interfaces_ISourceFormatNodeRepository_Microsoft_Extensions_Logging_ILogger_EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService__" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.#ctor(FluentValidation.IValidator{EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput},EncyclopediaGalactica.Utils.GuardsService.Interfaces.IGuardsService,EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers,EncyclopediaGalactica.Services.Document.Repository.Interfaces.ISourceFormatNodeRepository,Microsoft.Extensions.Logging.ILogger{EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService})">
+  SourceFormatNodeService(IValidator&lt;SourceFormatNodeInput&gt;, IGuardsService, ISourceFormatMappers, ISourceFormatNodeRepository, ILogger&lt;SourceFormatNodeService&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/SourceFormatNodeService.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SourceFormatNodeService(IValidator&lt;SourceFormatNodeInput&gt; sourceFormatNodeDtoValidator, IGuardsService guardsService, ISourceFormatMappers sourceFormatMappers, ISourceFormatNodeRepository sourceFormatNodeRepository, ILogger&lt;SourceFormatNodeService&gt; logger)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>sourceFormatNodeDtoValidator</code> <span class="xref">IValidator</span>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd></dd>
+    <dt><code>guardsService</code> <span class="xref">IGuardsService</span></dt>
+    <dd></dd>
+    <dt><code>sourceFormatMappers</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Mappers.Interfaces.ISourceFormatMappers.html">ISourceFormatMappers</a></dt>
+    <dd></dd>
+    <dt><code>sourceFormatNodeRepository</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Repository.Interfaces.ISourceFormatNodeRepository.html">ISourceFormatNodeRepository</a></dt>
+    <dd></dd>
+    <dt><code>logger</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.extensions.logging.ilogger-1">ILogger</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.html">SourceFormatNodeService</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_AddAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.AddAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_AddAsync_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.AddAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput,System.Threading.CancellationToken)">
+  AddAsync(SourceFormatNodeInput, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/AddAsync.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a> in the system based on the data stored
+in the provided input <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; AddAsync(SourceFormatNodeInput input, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a></dt>
+    <dd><p><a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a> contains the details of the new entity.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing asynchronous operation. Which includes
+a SourceFormatNodeAddResponseModel object as result.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateexception">DbUpdateException</a></dt>
+    <dd><p>When a constraint is violated. It is mainly related to validation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_AddChildToParentAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.AddChildToParentAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_AddChildToParentAsync_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.AddChildToParentAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput,EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput,System.Threading.CancellationToken)">
+  AddChildToParentAsync(SourceFormatNodeInput, SourceFormatNodeInput, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/AddChildToParentAsync.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds the given <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a> to another <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>
+as child.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; AddChildToParentAsync(SourceFormatNodeInput childInput, SourceFormatNodeInput parentInput, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>childInput</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a></dt>
+    <dd><p>The child</p>
+</dd>
+    <dt><code>parentInput</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a></dt>
+    <dd><p>The parent</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing result of asynchronous operation, which includes
+a <a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel.html">SourceFormatNodeSingleResultResponseModel</a> which provides details about
+is the operation was successful and returns with the child <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_DeleteAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.DeleteAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_DeleteAsync_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.DeleteAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput,System.Threading.CancellationToken)">
+  DeleteAsync(SourceFormatNodeInput, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/DeleteAsync.cs/#L8"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deletes the marked <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>.
+If the <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a> has children nodes then those will be deleted too.
+The system does not allow that a <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a> is attached to multiple parents.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task DeleteAsync(SourceFormatNodeInput input, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>input</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a></dt>
+    <dd><p>The entity should be deleted</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>Returns a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing asynchronous result which
+includes a <a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel.html">SourceFormatNodeSingleResultResponseModel</a> indicating the result of the operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetAllAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetAllAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetAllAsync_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetAllAsync(System.Threading.CancellationToken)">
+  GetAllAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/GetAllAsync.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Requests all of <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>s from the system.
+The returned nodes do not have their navigation properties populated. It is a flat list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;List&lt;SourceFormatNodeInput&gt;&gt; GetAllAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;&gt;</dt>
+    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing result of asynchronous operation which includes
+the result. The result type is SourceFormatNodeGetAllResponseModel which includes
+information of execution and result.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetByIdAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetByIdAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetByIdAsync_System_Int64_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetByIdAsync(System.Int64,System.Threading.CancellationToken)">
+  GetByIdAsync(long, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/GetByIdAsync.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the details of the designated <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>
+object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; GetByIdAsync(long id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>Unique identifier of the object</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing result of asynchronous operation.
+It also includes a <a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel.html">SourceFormatNodeSingleResultResponseModel</a> where
+the properties provide additional information about the result of the operation and
+the result of the operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodeByIdWithChildrenAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodeByIdWithChildrenAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodeByIdWithChildrenAsync_System_Int64_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodeByIdWithChildrenAsync(System.Int64,System.Threading.CancellationToken)">
+  GetSourceFormatNodeByIdWithChildrenAsync(long, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/SourceFormatNodeService.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; GetSourceFormatNodeByIdWithChildrenAsync(long id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodeByIdWithNodeTreeAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodeByIdWithNodeTreeAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodeByIdWithNodeTreeAsync_System_Int64_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodeByIdWithNodeTreeAsync(System.Int64,System.Threading.CancellationToken)">
+  GetSourceFormatNodeByIdWithNodeTreeAsync(long, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/SourceFormatNodeService.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; GetSourceFormatNodeByIdWithNodeTreeAsync(long id, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodesAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodesAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_GetSourceFormatNodesAsync_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.GetSourceFormatNodesAsync(System.Threading.CancellationToken)">
+  GetSourceFormatNodesAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/SourceFormatNodeService.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;ICollection&lt;SourceFormatNode&gt;&gt; GetSourceFormatNodesAsync(CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a>&gt;&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_UpdateSourceFormatNodeAsync_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.UpdateSourceFormatNodeAsync*"></a>
+
+  <h3 id="EncyclopediaGalactica_Services_Document_Service_SourceFormatNodeService_SourceFormatNodeService_UpdateSourceFormatNodeAsync_EncyclopediaGalactica_Services_Document_Contracts_Input_SourceFormatNodeInput_System_Threading_CancellationToken_" data-uid="EncyclopediaGalactica.Services.Document.Service.SourceFormatNodeService.SourceFormatNodeService.UpdateSourceFormatNodeAsync(EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput,System.Threading.CancellationToken)">
+  UpdateSourceFormatNodeAsync(SourceFormatNodeInput?, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/UpdateAsync.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates the defined <a class="xref" href="EncyclopediaGalactica.Services.Document.Entities.SourceFormatNode.html">SourceFormatNode</a> entity in the system.
+The entity properties will be overwritten by the provided object's properties.
+The entity going to be overwritten is defined by the input object Id property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;SourceFormatNodeInput&gt; UpdateSourceFormatNodeAsync(SourceFormatNodeInput? dto, CancellationToken cancellationToken = default)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>dto</code> <a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a></dt>
+    <dd><p>The object defines which entity properties will be overwritten by this object properties</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="EncyclopediaGalactica.Services.Document.Contracts.Input.SourceFormatNodeInput.html">SourceFormatNodeInput</a>&gt;</dt>
+    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task&lt;TResult&gt;</a> representing asynchronous operation where the Result is
+SourceFormatNodeUpdateResponseModel providing the result of the operation and the
+updated entity with its new values.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>Whenever internal error happens which
+doesn't include input validation.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>When null input happens</p>
+</dd>
+    <dt><span class="xref">ValidationException</span></dt>
+    <dd><p>When validation related exception happens.</p>
+</dd>
+    <dt><a class="xref" href="EncyclopediaGalactica.Services.Document.Service.Exceptions.SourceFormatNodeServiceException.html">SourceFormatNodeServiceException</a></dt>
+    <dd><p>When included service has internal server error.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a></dt>
+    <dd><p>When operation is cancelled by a cancellation token.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/blob/document_gql_endpoint/Domains/Document/Document.Service/SourceFormatNodeService/UpdateAsync.cs/#L8" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

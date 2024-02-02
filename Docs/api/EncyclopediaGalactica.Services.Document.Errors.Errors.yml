@@ -1,0 +1,442 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors
+  commentId: T:EncyclopediaGalactica.Services.Document.Errors.Errors
+  id: Errors
+  parent: EncyclopediaGalactica.Services.Document.Errors
+  children:
+  - EncyclopediaGalactica.Services.Document.Errors.Errors.InvalidInput
+  - EncyclopediaGalactica.Services.Document.Errors.Errors.NoSuchItem
+  - EncyclopediaGalactica.Services.Document.Errors.Errors.OperationCancelled
+  - EncyclopediaGalactica.Services.Document.Errors.Errors.UnexpectedError
+  - EncyclopediaGalactica.Services.Document.Errors.Errors.UniqueIdentifierCannotBeZero
+  langs:
+  - csharp
+  - vb
+  name: Errors
+  nameWithType: Errors
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors
+  type: Struct
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Errors
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 2
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public struct Errors
+    content.vb: Public Structure Errors
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors.InvalidInput
+  commentId: F:EncyclopediaGalactica.Services.Document.Errors.Errors.InvalidInput
+  id: InvalidInput
+  parent: EncyclopediaGalactica.Services.Document.Errors.Errors
+  langs:
+  - csharp
+  - vb
+  name: InvalidInput
+  nameWithType: Errors.InvalidInput
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors.InvalidInput
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: InvalidInput
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 4
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public const string InvalidInput = "Invalid input!"
+    return:
+      type: System.String
+    content.vb: Public Const InvalidInput As String = "Invalid input!"
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors.OperationCancelled
+  commentId: F:EncyclopediaGalactica.Services.Document.Errors.Errors.OperationCancelled
+  id: OperationCancelled
+  parent: EncyclopediaGalactica.Services.Document.Errors.Errors
+  langs:
+  - csharp
+  - vb
+  name: OperationCancelled
+  nameWithType: Errors.OperationCancelled
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors.OperationCancelled
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: OperationCancelled
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 5
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public const string OperationCancelled = "The operation has been cancelled!"
+    return:
+      type: System.String
+    content.vb: Public Const OperationCancelled As String = "The operation has been cancelled!"
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors.UnexpectedError
+  commentId: F:EncyclopediaGalactica.Services.Document.Errors.Errors.UnexpectedError
+  id: UnexpectedError
+  parent: EncyclopediaGalactica.Services.Document.Errors.Errors
+  langs:
+  - csharp
+  - vb
+  name: UnexpectedError
+  nameWithType: Errors.UnexpectedError
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors.UnexpectedError
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UnexpectedError
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 6
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public const string UnexpectedError = "Unexpected error happened!"
+    return:
+      type: System.String
+    content.vb: Public Const UnexpectedError As String = "Unexpected error happened!"
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors.NoSuchItem
+  commentId: F:EncyclopediaGalactica.Services.Document.Errors.Errors.NoSuchItem
+  id: NoSuchItem
+  parent: EncyclopediaGalactica.Services.Document.Errors.Errors
+  langs:
+  - csharp
+  - vb
+  name: NoSuchItem
+  nameWithType: Errors.NoSuchItem
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors.NoSuchItem
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: NoSuchItem
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 7
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public const string NoSuchItem = "No such item!"
+    return:
+      type: System.String
+    content.vb: Public Const NoSuchItem As String = "No such item!"
+- uid: EncyclopediaGalactica.Services.Document.Errors.Errors.UniqueIdentifierCannotBeZero
+  commentId: F:EncyclopediaGalactica.Services.Document.Errors.Errors.UniqueIdentifierCannotBeZero
+  id: UniqueIdentifierCannotBeZero
+  parent: EncyclopediaGalactica.Services.Document.Errors.Errors
+  langs:
+  - csharp
+  - vb
+  name: UniqueIdentifierCannotBeZero
+  nameWithType: Errors.UniqueIdentifierCannotBeZero
+  fullName: EncyclopediaGalactica.Services.Document.Errors.Errors.UniqueIdentifierCannotBeZero
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Errors/Errors.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UniqueIdentifierCannotBeZero
+    path: ../Domains/Document/Document.Errors/Errors.cs
+    startLine: 8
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Errors
+  namespace: EncyclopediaGalactica.Services.Document.Errors
+  syntax:
+    content: public const string UniqueIdentifierCannotBeZero = "Unique identifier cannot be zero!"
+    return:
+      type: System.String
+    content.vb: Public Const UniqueIdentifierCannotBeZero As String = "Unique identifier cannot be zero!"
+references:
+- uid: EncyclopediaGalactica.Services.Document.Errors
+  commentId: N:EncyclopediaGalactica.Services.Document.Errors
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Errors
+  nameWithType: EncyclopediaGalactica.Services.Document.Errors
+  fullName: EncyclopediaGalactica.Services.Document.Errors
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Errors
+    name: Errors
+    href: EncyclopediaGalactica.Services.Document.Errors.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Errors
+    name: Errors
+    href: EncyclopediaGalactica.Services.Document.Errors.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

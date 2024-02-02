@@ -1,0 +1,30 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  id: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentInputToDocumentResultMappersShould
+  - EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentToDocumentResultMappersShould
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit
+references:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentInputToDocumentResultMappersShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentInputToDocumentResultMappersShould
+  href: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentInputToDocumentResultMappersShould.html
+  name: DocumentInputToDocumentResultMappersShould
+  nameWithType: DocumentInputToDocumentResultMappersShould
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentInputToDocumentResultMappersShould
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentToDocumentResultMappersShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentToDocumentResultMappersShould
+  href: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentToDocumentResultMappersShould.html
+  name: DocumentToDocumentResultMappersShould
+  nameWithType: DocumentToDocumentResultMappersShould
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Tests.Unit.DocumentMapper.DocumentToDocumentResultMappersShould

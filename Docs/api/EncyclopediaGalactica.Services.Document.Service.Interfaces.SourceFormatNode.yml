@@ -1,0 +1,118 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  id: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  children:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeListResultResponseModel
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel`1
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Service.Interfaces
+references:
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService
+  parent: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService.html
+  name: ISourceFormatNodeService
+  nameWithType: ISourceFormatNodeService
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.ISourceFormatNodeService
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeListResultResponseModel
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeListResultResponseModel
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeListResultResponseModel.html
+  name: SourceFormatNodeListResultResponseModel
+  nameWithType: SourceFormatNodeListResultResponseModel
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeListResultResponseModel
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel`1
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel`1
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel-1.html
+  name: SourceFormatNodeResponseModel<T>
+  nameWithType: SourceFormatNodeResponseModel<T>
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel<T>
+  nameWithType.vb: SourceFormatNodeResponseModel(Of T)
+  fullName.vb: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel(Of T)
+  name.vb: SourceFormatNodeResponseModel(Of T)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel`1
+    name: SourceFormatNodeResponseModel
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel-1.html
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel`1
+    name: SourceFormatNodeResponseModel
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeResponseModel-1.html
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel
+  commentId: T:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel
+  href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel.html
+  name: SourceFormatNodeSingleResultResponseModel
+  nameWithType: SourceFormatNodeSingleResultResponseModel
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.SourceFormatNodeSingleResultResponseModel
+- uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  fullName: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+    name: SourceFormatNode
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service
+    name: Service
+    href: EncyclopediaGalactica.Services.Document.Service.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode
+    name: SourceFormatNode
+    href: EncyclopediaGalactica.Services.Document.Service.Interfaces.SourceFormatNode.html

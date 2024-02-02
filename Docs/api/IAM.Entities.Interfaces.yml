@@ -1,0 +1,70 @@
+### YamlMime:ManagedReference
+items:
+- uid: IAM.Entities.Interfaces
+  commentId: N:IAM.Entities.Interfaces
+  id: IAM.Entities.Interfaces
+  children:
+  - IAM.Entities.Interfaces.IHaveId
+  - IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  - IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  langs:
+  - csharp
+  - vb
+  name: IAM.Entities.Interfaces
+  nameWithType: IAM.Entities.Interfaces
+  fullName: IAM.Entities.Interfaces
+  type: Namespace
+  assemblies:
+  - IAM.Entities
+references:
+- uid: IAM.Entities.Interfaces.IHaveId
+  commentId: T:IAM.Entities.Interfaces.IHaveId
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IHaveId.html
+  name: IHaveId
+  nameWithType: IHaveId
+  fullName: IAM.Entities.Interfaces.IHaveId
+- uid: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  commentId: T:IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen.html
+  name: IKnowWhoCreatedMeAndWhen
+  nameWithType: IKnowWhoCreatedMeAndWhen
+  fullName: IAM.Entities.Interfaces.IKnowWhoCreatedMeAndWhen
+- uid: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  commentId: T:IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+  parent: IAM.Entities.Interfaces
+  href: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen.html
+  name: IKnowWhoModifiedMeAndWhen
+  nameWithType: IKnowWhoModifiedMeAndWhen
+  fullName: IAM.Entities.Interfaces.IKnowWhoModifiedMeAndWhen
+- uid: IAM.Entities.Interfaces
+  commentId: N:IAM.Entities.Interfaces
+  href: IAM.html
+  name: IAM.Entities.Interfaces
+  nameWithType: IAM.Entities.Interfaces
+  fullName: IAM.Entities.Interfaces
+  spec.csharp:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+  - name: .
+  - uid: IAM.Entities.Interfaces
+    name: Interfaces
+    href: IAM.Entities.Interfaces.html
+  spec.vb:
+  - uid: IAM
+    name: IAM
+    href: IAM.html
+  - name: .
+  - uid: IAM.Entities
+    name: Entities
+    href: IAM.Entities.html
+  - name: .
+  - uid: IAM.Entities.Interfaces
+    name: Interfaces
+    href: IAM.Entities.Interfaces.html

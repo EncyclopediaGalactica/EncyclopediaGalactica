@@ -1,0 +1,44 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  commentId: N:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  id: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  children:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.AddDocumentMutationShould
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.DeleteDocumentMutationShould
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.GetDocumentsQueryShould
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  nameWithType: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql
+references:
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.AddDocumentMutationShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.AddDocumentMutationShould
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.AddDocumentMutationShould.html
+  name: AddDocumentMutationShould
+  nameWithType: AddDocumentMutationShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.AddDocumentMutationShould
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.DeleteDocumentMutationShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.DeleteDocumentMutationShould
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.DeleteDocumentMutationShould.html
+  name: DeleteDocumentMutationShould
+  nameWithType: DeleteDocumentMutationShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.DeleteDocumentMutationShould
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.GetDocumentsQueryShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.GetDocumentsQueryShould
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.GetDocumentsQueryShould.html
+  name: GetDocumentsQueryShould
+  nameWithType: GetDocumentsQueryShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.GetDocumentsQueryShould
+- uid: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  commentId: T:EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould
+  href: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould.html
+  name: UpdateDocumentMutationShould
+  nameWithType: UpdateDocumentMutationShould
+  fullName: EncyclopediaGalactica.Services.Document.Specifications.Endpoints.Graphql.Tests.Document.UpdateDocumentMutationShould

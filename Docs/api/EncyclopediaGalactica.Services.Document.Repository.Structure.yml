@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Structure
+  commentId: N:EncyclopediaGalactica.Services.Document.Repository.Structure
+  id: EncyclopediaGalactica.Services.Document.Repository.Structure
+  children:
+  - EncyclopediaGalactica.Services.Document.Repository.Structure.StructureRepository
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Repository.Structure
+  nameWithType: EncyclopediaGalactica.Services.Document.Repository.Structure
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Structure
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Repository
+references:
+- uid: EncyclopediaGalactica.Services.Document.Repository.Structure.StructureRepository
+  commentId: T:EncyclopediaGalactica.Services.Document.Repository.Structure.StructureRepository
+  href: EncyclopediaGalactica.Services.Document.Repository.Structure.StructureRepository.html
+  name: StructureRepository
+  nameWithType: StructureRepository
+  fullName: EncyclopediaGalactica.Services.Document.Repository.Structure.StructureRepository

@@ -1,0 +1,366 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document
+  commentId: T:EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document
+  id: ArgumentNames.Document
+  parent: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  children:
+  - EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.DocumentId
+  - EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.UpdatedDocument
+  langs:
+  - csharp
+  - vb
+  name: ArgumentNames.Document
+  nameWithType: ArgumentNames.Document
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document
+  type: Struct
+  source:
+    remote:
+      path: Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: Document
+    path: ../Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+    startLine: 4
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  namespace: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  syntax:
+    content: public struct ArgumentNames.Document
+    content.vb: Public Structure ArgumentNames.Document
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.DocumentId
+  commentId: F:EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.DocumentId
+  id: DocumentId
+  parent: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document
+  langs:
+  - csharp
+  - vb
+  name: DocumentId
+  nameWithType: ArgumentNames.Document.DocumentId
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.DocumentId
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: DocumentId
+    path: ../Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+    startLine: 6
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  namespace: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  syntax:
+    content: public const string DocumentId = "documentId"
+    return:
+      type: System.String
+    content.vb: Public Const DocumentId As String = "documentId"
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.UpdatedDocument
+  commentId: F:EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.UpdatedDocument
+  id: UpdatedDocument
+  parent: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document
+  langs:
+  - csharp
+  - vb
+  name: UpdatedDocument
+  nameWithType: ArgumentNames.Document.UpdatedDocument
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Arguments.ArgumentNames.Document.UpdatedDocument
+  type: Field
+  source:
+    remote:
+      path: Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: UpdatedDocument
+    path: ../Domains/Document/Document.Graphql.Arguments/ArgumentNames.cs
+    startLine: 7
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  namespace: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  syntax:
+    content: public const string UpdatedDocument = "updatedDocument"
+    return:
+      type: System.String
+    content.vb: Public Const UpdatedDocument As String = "updatedDocument"
+references:
+- uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  commentId: N:EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  nameWithType: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  fullName: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+    name: Arguments
+    href: EncyclopediaGalactica.Services.Document.Graphql.Arguments.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql
+    name: Graphql
+    href: EncyclopediaGalactica.Services.Document.Graphql.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Graphql.Arguments
+    name: Arguments
+    href: EncyclopediaGalactica.Services.Document.Graphql.Arguments.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

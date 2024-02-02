@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  id: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode.SourceFormatNodeMappers
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers
+references:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode.SourceFormatNodeMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode.SourceFormatNodeMappers
+  href: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode.SourceFormatNodeMappers.html
+  name: SourceFormatNodeMappers
+  nameWithType: SourceFormatNodeMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.SourceFormatNode.SourceFormatNodeMappers

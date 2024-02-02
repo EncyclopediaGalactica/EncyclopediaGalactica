@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Ctx
+  commentId: N:EncyclopediaGalactica.Services.Document.Ctx
+  id: EncyclopediaGalactica.Services.Document.Ctx
+  children:
+  - EncyclopediaGalactica.Services.Document.Ctx.DocumentDbContext
+  langs:
+  - csharp
+  - vb
+  name: EncyclopediaGalactica.Services.Document.Ctx
+  nameWithType: EncyclopediaGalactica.Services.Document.Ctx
+  fullName: EncyclopediaGalactica.Services.Document.Ctx
+  type: Namespace
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Ctx
+references:
+- uid: EncyclopediaGalactica.Services.Document.Ctx.DocumentDbContext
+  commentId: T:EncyclopediaGalactica.Services.Document.Ctx.DocumentDbContext
+  href: EncyclopediaGalactica.Services.Document.Ctx.DocumentDbContext.html
+  name: DocumentDbContext
+  nameWithType: DocumentDbContext
+  fullName: EncyclopediaGalactica.Services.Document.Ctx.DocumentDbContext

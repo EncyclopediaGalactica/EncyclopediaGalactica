@@ -1,0 +1,892 @@
+### YamlMime:ManagedReference
+items:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  id: DocumentMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Document
+  children:
+  - EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  - EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  - EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  langs:
+  - csharp
+  - vb
+  name: DocumentMappers
+  nameWithType: DocumentMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  type: Class
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: DocumentMappers
+    path: ../Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+    startLine: 8
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Document
+  summary: Supports all classes in the .NET class hierarchy and provides low-level services to derived classes. This is the ultimate base class of all .NET classes; it is the root of the type hierarchy.
+  example: []
+  syntax:
+    content: 'public class DocumentMappers : IDocumentMappers'
+    content.vb: Public Class DocumentMappers Implements IDocumentMappers
+  inheritance:
+  - System.Object
+  implements:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  id: MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  langs:
+  - csharp
+  - vb
+  name: MapDocumentInputToDocument(DocumentInput)
+  nameWithType: DocumentMappers.MapDocumentInputToDocument(DocumentInput)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapDocumentInputToDocument
+    path: ../Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+    startLine: 11
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Document
+  summary: Maps <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref> to <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public Document MapDocumentInputToDocument(DocumentInput input)
+    parameters:
+    - id: input
+      type: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+      description: the input dto
+    return:
+      type: EncyclopediaGalactica.Services.Document.Entities.Document
+      description: <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> object
+    content.vb: Public Function MapDocumentInputToDocument(input As DocumentInput) As Document
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument*
+  implements:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  id: MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  langs:
+  - csharp
+  - vb
+  name: MapDocumentsToDocumentResults(List<Document>)
+  nameWithType: DocumentMappers.MapDocumentsToDocumentResults(List<Document>)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Entities.Document>)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapDocumentsToDocumentResults
+    path: ../Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+    startLine: 23
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Document
+  summary: >-
+    Maps <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> of <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> to <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> of
+
+    <xref href="EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult" data-throw-if-not-resolved="false"></xref>.
+  example: []
+  syntax:
+    content: public List<DocumentResult> MapDocumentsToDocumentResults(List<Document> l)
+    parameters:
+    - id: l
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document}
+      description: <xref href="System.Collections.Generic.List%601" data-throw-if-not-resolved="false"></xref> of <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref>
+    return:
+      type: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+      description: List of <xref href="EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult" data-throw-if-not-resolved="false"></xref>s.
+    content.vb: Public Function MapDocumentsToDocumentResults(l As List(Of Document)) As List(Of DocumentResult)
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults*
+  implements:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  nameWithType.vb: DocumentMappers.MapDocumentsToDocumentResults(List(Of Document))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Entities.Document))
+  name.vb: MapDocumentsToDocumentResults(List(Of Document))
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  id: MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers
+  langs:
+  - csharp
+  - vb
+  name: MapDocumentToDocumentResult(Document)
+  nameWithType: DocumentMappers.MapDocumentToDocumentResult(Document)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  type: Method
+  source:
+    remote:
+      path: Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+      branch: document_gql_endpoint
+      repo: git@github.com:EncyclopediaGalactica/EncyclopediaGalactica.git
+    id: MapDocumentToDocumentResult
+    path: ../Domains/Document/Document.Mappers/Document/DocumentMappers.cs
+    startLine: 37
+  assemblies:
+  - EncyclopediaGalactica.Services.Document.Mappers
+  namespace: EncyclopediaGalactica.Services.Document.Mappers.Document
+  summary: Maps <xref href="EncyclopediaGalactica.Services.Document.Entities.Document" data-throw-if-not-resolved="false"></xref> to <xref href="EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult" data-throw-if-not-resolved="false"></xref>
+  example: []
+  syntax:
+    content: public DocumentResult MapDocumentToDocumentResult(Document document)
+    parameters:
+    - id: document
+      type: EncyclopediaGalactica.Services.Document.Entities.Document
+      description: the input document
+    return:
+      type: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+      description: <xref href="EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput" data-throw-if-not-resolved="false"></xref>
+    content.vb: Public Function MapDocumentToDocumentResult(document As Document) As DocumentResult
+  overload: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult*
+  implements:
+  - EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+references:
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Document
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Mappers.Document
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Document
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Mappers.Document.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Mappers.Document.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  commentId: T:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html
+  name: IDocumentMappers
+  nameWithType: IDocumentMappers
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  commentId: N:EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  nameWithType: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers
+    name: Mappers
+    href: EncyclopediaGalactica.Services.Document.Mappers.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces
+    name: Interfaces
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.html
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput.html
+  name: DocumentInput
+  nameWithType: DocumentInput
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+- uid: EncyclopediaGalactica.Services.Document.Entities.Document
+  commentId: T:EncyclopediaGalactica.Services.Document.Entities.Document
+  parent: EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  name: Document
+  nameWithType: Document
+  fullName: EncyclopediaGalactica.Services.Document.Entities.Document
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument
+  href: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Document_DocumentMappers_MapDocumentInputToDocument_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  name: MapDocumentInputToDocument
+  nameWithType: DocumentMappers.MapDocumentInputToDocument
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentInputToDocument
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentInputToDocument_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  name: MapDocumentInputToDocument(DocumentInput)
+  nameWithType: IDocumentMappers.MapDocumentInputToDocument(DocumentInput)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+    name: MapDocumentInputToDocument
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentInputToDocument_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  - name: (
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+    name: DocumentInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput.html
+  - name: )
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentInputToDocument(EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput)
+    name: MapDocumentInputToDocument
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentInputToDocument_EncyclopediaGalactica_Services_Document_Contracts_Input_DocumentInput_
+  - name: (
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput
+    name: DocumentInput
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput.html
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Input
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Input
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Input
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Input
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Input
+    name: Input
+    href: EncyclopediaGalactica.Services.Document.Contracts.Input.html
+- uid: EncyclopediaGalactica.Services.Document.Entities
+  commentId: N:EncyclopediaGalactica.Services.Document.Entities
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Entities
+  nameWithType: EncyclopediaGalactica.Services.Document.Entities
+  fullName: EncyclopediaGalactica.Services.Document.Entities
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Entities
+    name: Entities
+    href: EncyclopediaGalactica.Services.Document.Entities.html
+- uid: System.Collections.Generic.List`1
+  commentId: T:System.Collections.Generic.List`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<T>
+  nameWithType: List<T>
+  fullName: System.Collections.Generic.List<T>
+  nameWithType.vb: List(Of T)
+  fullName.vb: System.Collections.Generic.List(Of T)
+  name.vb: List(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+  commentId: T:EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+  parent: EncyclopediaGalactica.Services.Document.Contracts.Output
+  href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  name: DocumentResult
+  nameWithType: DocumentResult
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults
+  href: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Document_DocumentMappers_MapDocumentsToDocumentResults_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Entities_Document__
+  name: MapDocumentsToDocumentResults
+  nameWithType: DocumentMappers.MapDocumentsToDocumentResults
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentsToDocumentResults
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  isExternal: true
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentsToDocumentResults_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Entities_Document__
+  name: MapDocumentsToDocumentResults(List<Document>)
+  nameWithType: IDocumentMappers.MapDocumentsToDocumentResults(List<Document>)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Entities.Document>)
+  nameWithType.vb: IDocumentMappers.MapDocumentsToDocumentResults(List(Of Document))
+  fullName.vb: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Entities.Document))
+  name.vb: MapDocumentsToDocumentResults(List(Of Document))
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+    name: MapDocumentsToDocumentResults
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentsToDocumentResults_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Entities_Document__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: '>'
+  - name: )
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentsToDocumentResults(System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document})
+    name: MapDocumentsToDocumentResults
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentsToDocumentResults_System_Collections_Generic_List_EncyclopediaGalactica_Services_Document_Entities_Document__
+  - name: (
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: )
+  - name: )
+- uid: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document}
+  commentId: T:System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Entities.Document}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<Document>
+  nameWithType: List<Document>
+  fullName: System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Entities.Document>
+  nameWithType.vb: List(Of Document)
+  fullName.vb: System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Entities.Document)
+  name.vb: List(Of Document)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: )
+- uid: System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  commentId: T:System.Collections.Generic.List{EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.List`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<DocumentResult>
+  nameWithType: List<DocumentResult>
+  fullName: System.Collections.Generic.List<EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult>
+  nameWithType.vb: List(Of DocumentResult)
+  fullName.vb: System.Collections.Generic.List(Of EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult)
+  name.vb: List(Of DocumentResult)
+  spec.csharp:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: <
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.List`1
+    name: List
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult
+    name: DocumentResult
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.DocumentResult.html
+  - name: )
+- uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+  commentId: N:EncyclopediaGalactica.Services.Document.Contracts.Output
+  href: EncyclopediaGalactica.html
+  name: EncyclopediaGalactica.Services.Document.Contracts.Output
+  nameWithType: EncyclopediaGalactica.Services.Document.Contracts.Output
+  fullName: EncyclopediaGalactica.Services.Document.Contracts.Output
+  spec.csharp:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.html
+  spec.vb:
+  - uid: EncyclopediaGalactica
+    name: EncyclopediaGalactica
+    href: EncyclopediaGalactica.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services
+    name: Services
+    href: EncyclopediaGalactica.Services.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts
+    name: Contracts
+    href: EncyclopediaGalactica.Services.Document.Contracts.html
+  - name: .
+  - uid: EncyclopediaGalactica.Services.Document.Contracts.Output
+    name: Output
+    href: EncyclopediaGalactica.Services.Document.Contracts.Output.html
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult*
+  commentId: Overload:EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult
+  href: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Document_DocumentMappers_MapDocumentToDocumentResult_EncyclopediaGalactica_Services_Document_Entities_Document_
+  name: MapDocumentToDocumentResult
+  nameWithType: DocumentMappers.MapDocumentToDocumentResult
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Document.DocumentMappers.MapDocumentToDocumentResult
+- uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  commentId: M:EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  parent: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers
+  href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentToDocumentResult_EncyclopediaGalactica_Services_Document_Entities_Document_
+  name: MapDocumentToDocumentResult(Document)
+  nameWithType: IDocumentMappers.MapDocumentToDocumentResult(Document)
+  fullName: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+  spec.csharp:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+    name: MapDocumentToDocumentResult
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentToDocumentResult_EncyclopediaGalactica_Services_Document_Entities_Document_
+  - name: (
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: )
+  spec.vb:
+  - uid: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.MapDocumentToDocumentResult(EncyclopediaGalactica.Services.Document.Entities.Document)
+    name: MapDocumentToDocumentResult
+    href: EncyclopediaGalactica.Services.Document.Mappers.Interfaces.IDocumentMappers.html#EncyclopediaGalactica_Services_Document_Mappers_Interfaces_IDocumentMappers_MapDocumentToDocumentResult_EncyclopediaGalactica_Services_Document_Entities_Document_
+  - name: (
+  - uid: EncyclopediaGalactica.Services.Document.Entities.Document
+    name: Document
+    href: EncyclopediaGalactica.Services.Document.Entities.Document.html
+  - name: )
