@@ -1,0 +1,3 @@
+type DocumentNode {
+  id: ID!
+}

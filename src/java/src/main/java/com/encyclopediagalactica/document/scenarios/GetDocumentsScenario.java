@@ -1,14 +1,15 @@
 package com.encyclopediagalactica.document.scenarios;
 
-import com.encyclopediagalactica.document.entities.DocumentEntity;
+import com.encyclopediagalactica.api.graphql.Document;
 
 import java.util.List;
 
 public interface GetDocumentsScenario {
+
     /**
-     * Returns the list of {@link DocumentEntity} entities.
+     * Returns the list of {@link Document} entities.
      *
-     * @return list of {@link DocumentEntity} entities
+     * @return list of {@link Document} entities
      */
-    List<DocumentEntity> getDocuments();
+    List<Document> getAll();
 }
