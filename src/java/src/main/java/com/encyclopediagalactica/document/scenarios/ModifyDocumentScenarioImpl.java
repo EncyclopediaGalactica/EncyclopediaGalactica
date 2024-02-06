@@ -6,6 +6,7 @@ import com.encyclopediagalactica.document.infra.repositories.DocumentNotFoundExc
 import com.encyclopediagalactica.document.infra.repositories.DocumentRepository;
 import com.encyclopediagalactica.document.infra.validation.ModifyDocumentScenarioValidation;
 import com.encyclopediagalactica.document.model.DocumentEntity;
+import com.encyclopediagalactica.utils.StringPropertyUtils;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ValidationException;
 import jakarta.validation.Validator;
@@ -24,17 +25,23 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
     @Autowired
     private DocumentRepository documentRepository;
 
+    @Autowired
+    private StringPropertyUtils stringPropertyUtils;
+
     @Override
     public Document modify(Document input) {
         try {
             DocumentEntity toBeModified = checkIfExist(input);
             DocumentEntity mappedInput =
                     DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(input);
+            stringPropertyUtils.stripStringProperties(mappedInput);
             validate(mappedInput);
             DocumentEntity result = overrideAndSave(toBeModified, mappedInput);
             return DocumentEntityMapper.INSTANCE.mapDocumentEntityToDocument(result);
         } catch (Exception e) {
-            throw new ModifyDocumentScenarioException(e.getMessage(), e);
+            throw new ModifyDocumentScenarioException(
+                    "Modifying document process failed."
+                    , e);
         }
     }
 
@@ -44,7 +51,7 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
             original.setName(modifications.getName());
         }
 
-        if (Objects.equals(original.getDesc(), modifications.getDesc())) {
+        if (!Objects.equals(original.getDesc(), modifications.getDesc())) {
             original.setDesc(modifications.getDesc());
         }
 
