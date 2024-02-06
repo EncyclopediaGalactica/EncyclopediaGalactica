@@ -1,3 +1,10 @@
+## [0.15.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.15.0...0.15.1) (2024-02-06)
+
+
+### Bug Fixes
+
+* **cucumber:** cucumber tests are executed ([#152](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/152)) ([46911b1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/46911b1dd64ec6a1bb1fc794857693a6635644ad))
+
 # [0.15.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.14.0...0.15.0) (2024-02-06)
 
 
