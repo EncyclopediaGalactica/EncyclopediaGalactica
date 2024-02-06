@@ -1,1 +1,6 @@
-/target/
+target/
+.classpath
+.factorypath
+.project
+.idea
+.settings

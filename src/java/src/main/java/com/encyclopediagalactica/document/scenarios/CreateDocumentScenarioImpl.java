@@ -42,7 +42,7 @@ public class CreateDocumentScenarioImpl implements CreateDocumentScenario {
                 validator.validate(documentEntity, CreateDocumentScenarioValidation.class);
         if (!errors.isEmpty()) {
             StringBuilder builder = new StringBuilder();
-            errors.stream().map(item -> builder.append(item.getMessage()));
+            errors.forEach(item -> builder.append(item.getMessage()));
             throw new ValidationException(builder.toString());
         }
     }

@@ -6,12 +6,12 @@ import com.encyclopediagalactica.document.infra.repositories.DocumentNotFoundExc
 import com.encyclopediagalactica.document.infra.repositories.DocumentRepository;
 import com.encyclopediagalactica.document.infra.validation.ModifyDocumentScenarioValidation;
 import com.encyclopediagalactica.document.model.DocumentEntity;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ValidationException;
+import jakarta.validation.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ValidationException;
-import javax.validation.Validator;
 import java.util.Objects;
 import java.util.Set;
 

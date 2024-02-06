@@ -1,4 +1,4 @@
-package com.encyclopediagalactica;
+package com.encyclopediagalactica.ctx;
 
 public interface ScenarioContext {
 
@@ -9,7 +9,7 @@ public interface ScenarioContext {
      * If the storage already has a value under the provided key the value will be overwritten.
      * </p>
      *
-     * @param key the key under which the value will be stored
+     * @param key   the key under which the value will be stored
      * @param value the value
      */
     public void add(String key, Object value);

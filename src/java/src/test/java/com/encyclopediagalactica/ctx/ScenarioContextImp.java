@@ -1,11 +1,13 @@
-package com.encyclopediagalactica;
+package com.encyclopediagalactica.ctx;
 
+import io.cucumber.spring.ScenarioScope;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@ScenarioScope
 public class ScenarioContextImp implements ScenarioContext {
 
     private Map<String, Object> storage = new HashMap<>();
