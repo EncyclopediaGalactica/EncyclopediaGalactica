@@ -4,6 +4,7 @@ import com.encyclopediagalactica.api.graphql.Document;
 import com.encyclopediagalactica.ctx.ScenarioContext;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 import com.encyclopediagalactica.document.scenarios.CreateDocumentScenario;
+import com.encyclopediagalactica.document.scenarios.DeleteDocumentScenario;
 import com.encyclopediagalactica.document.scenarios.GetDocumentsScenario;
 import com.encyclopediagalactica.document.scenarios.ModifyDocumentScenario;
 import com.encyclopediagalactica.utils.DocumentTestUtilsImp;
@@ -31,6 +32,9 @@ public class DocumentStepDefinitions {
 
     @Autowired
     private ModifyDocumentScenario modifyDocumentScenario;
+
+    @Autowired
+    private DeleteDocumentScenario deleteDocumentScenario;
 
     @Autowired
     private DocumentTestUtilsImp documentTestUtilsImp;
@@ -160,6 +164,36 @@ public class DocumentStepDefinitions {
         try {
             result = modifyDocumentScenario.modify(document);
             scenarioContext.add(DOCUMENT_WORKING_COPY, result);
+        } catch (Exception e) {
+            scenarioContext.add(OPERATION_EXCEPTION, e);
+        }
+    }
+
+    @When("the Document with id {int} is deleted")
+    public void theDocumentWithIdIsDeleted(int id) {
+        try {
+            deleteDocumentScenario.delete(Long.valueOf(id));
+        } catch (Exception e) {
+            scenarioContext.add(OPERATION_EXCEPTION, e);
+        }
+    }
+
+    @Then("{string} message is returned")
+    public void deletingDocumentProcessFailedMessageIsReturned(String msg) {
+        Exception exception = (Exception) scenarioContext.get(OPERATION_EXCEPTION);
+        assertThat(exception.getMessage()).isEqualTo(msg);
+    }
+
+    @Then("the api returns no error")
+    public void theApiReturnsNoError() {
+        assertThat(scenarioContext.containsKey(OPERATION_EXCEPTION)).isFalse();
+    }
+
+    @When("the Document is deleted")
+    public void theDocumentIsDeleted() {
+        Document document = (Document) scenarioContext.get(DOCUMENT_WORKING_COPY);
+        try {
+            deleteDocumentScenario.delete(Long.parseLong(document.getId()));
         } catch (Exception e) {
             scenarioContext.add(OPERATION_EXCEPTION, e);
         }

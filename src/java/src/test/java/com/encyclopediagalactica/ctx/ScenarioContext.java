@@ -22,5 +22,13 @@ public interface ScenarioContext {
      * @return {@link Object} value
      */
     public Object get(String key);
+
+    /**
+     * Checks if the provided key exists.
+     *
+     * @param key the searched key
+     * @return {@link Boolean}
+     */
+    Boolean containsKey(String key);
 }
 
