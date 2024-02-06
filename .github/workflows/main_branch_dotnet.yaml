@@ -1,5 +1,5 @@
-name: Main Branch Build
-run-name: Main Branch Build
+name: Dotnet Main Branch Build
+run-name: Dotnet Main Branch Build
 
 on:
   push:

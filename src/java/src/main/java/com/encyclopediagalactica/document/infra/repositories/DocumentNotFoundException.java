@@ -1,4 +1,4 @@
-package com.encyclopediagalactica.document.repositories;
+package com.encyclopediagalactica.document.infra.repositories;
 
 public class DocumentNotFoundException extends RuntimeException {
     public DocumentNotFoundException() {

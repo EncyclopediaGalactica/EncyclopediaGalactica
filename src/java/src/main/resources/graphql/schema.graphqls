@@ -1,9 +1,32 @@
+"""
+Query Api of the Encyclopedia Galactica system.
+The operations below are to retrieve data or system related information.
+"""
 type Query {
-    getDocuments: [Document]
+    """
+    Returns a list of Document objects.
+    """
+    getDocuments: [Document!]!
+
+    """
+    Returns the designated object.
+    """
     getDocument(id: ID): Document
 }
 
+"""
+Mutation (modifications) Api of the Encyclopedia Galactica system.
+The operations below are for making changes in the data the system stores.
+"""
 type Mutation {
+
+    """
+    Creates a Document Entity in the system based on the provided details.
+    """
     createDocument(documentInput: DocumentInput!): Document
-    modifyDocument(documentId: ID, documentEntity: DocumentInput!): Document
+
+    """
+    Modifies the designated Document Entity in the system based on the provided details.
+    """
+    modifyDocument(document: DocumentInput!): Document
 }
