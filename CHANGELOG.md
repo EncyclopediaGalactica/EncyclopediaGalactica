@@ -1,3 +1,10 @@
+# [0.16.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.15.1...0.16.0) (2024-02-06)
+
+
+### Features
+
+* **Document domain:** CRUD operations for Document ([#153](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/153)) ([03fe57e](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/03fe57e670a55259e67356615eae8cc153739952))
+
 ## [0.15.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.15.0...0.15.1) (2024-02-06)
 
 
