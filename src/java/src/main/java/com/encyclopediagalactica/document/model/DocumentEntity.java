@@ -7,13 +7,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.Range;
 
 @Getter
 @Setter
@@ -27,15 +29,18 @@ public class DocumentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    @Range(min = 0L, max = 0L, groups = {CreateDocumentScenarioValidation.class},
-            message = "Id must be zero when creating new object.")
-    private long id;
+    @Max(value = 0, groups = {CreateDocumentScenarioValidation.class})
+    private Long id;
 
     @Column(name = "name")
-    @Length(min = 3, max = 255, groups = {CreateDocumentScenarioValidation.class})
+    @NotNull(groups = {CreateDocumentScenarioValidation.class})
+    @NotEmpty(groups = {CreateDocumentScenarioValidation.class})
+    @Size(min = 3, max = 255, groups = {CreateDocumentScenarioValidation.class})
     private String name;
 
     @Column(name = "desc")
-    @Length(min = 3, max = 255, groups = {CreateDocumentScenarioValidation.class})
+    @NotNull(groups = {CreateDocumentScenarioValidation.class})
+    @NotEmpty(groups = {CreateDocumentScenarioValidation.class})
+    @Size(min = 3, max = 255, groups = {CreateDocumentScenarioValidation.class})
     private String desc;
 }

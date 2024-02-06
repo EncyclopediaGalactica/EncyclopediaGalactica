@@ -27,6 +27,7 @@ public class CreateDocumentScenarioImpl implements CreateDocumentScenario {
         try {
             DocumentEntity documentEntity =
                     DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(document);
+            stripStringProperties(documentEntity);
             validate(documentEntity);
             DocumentEntity savedEntity = documentRepository.save(documentEntity);
             return DocumentEntityMapper.INSTANCE.mapDocumentEntityToDocument(savedEntity);
@@ -35,6 +36,11 @@ public class CreateDocumentScenarioImpl implements CreateDocumentScenario {
             throw new CreateDocumentScenarioException("Create scenarios process failed.",
                     exception);
         }
+    }
+
+    private void stripStringProperties(DocumentEntity documentEntity) {
+        documentEntity.setName(documentEntity.getName().strip());
+        documentEntity.setDesc(documentEntity.getDesc().strip());
     }
 
     private void validate(DocumentEntity documentEntity) {
