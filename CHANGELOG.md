@@ -1,3 +1,10 @@
+# [0.15.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.14.0...0.15.0) (2024-02-06)
+
+
+### Features
+
+* merge java and dotnet codebases ([#151](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/151)) ([866f122](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/866f122a1fbeadc3fa0e6d9e811dfc1550653ec6))
+
 # [0.14.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.13.5...0.14.0) (2023-11-26)
 
 
