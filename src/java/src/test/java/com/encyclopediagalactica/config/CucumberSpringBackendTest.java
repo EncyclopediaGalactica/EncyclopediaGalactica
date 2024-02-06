@@ -9,7 +9,7 @@ import org.springframework.test.annotation.DirtiesContext;
 @Suite
 @CucumberContextConfiguration
 @SelectClasspathResource("features")
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext
 public class CucumberSpringBackendTest {
 }

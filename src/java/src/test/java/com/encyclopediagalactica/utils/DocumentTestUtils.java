@@ -1,4 +1,4 @@
-package com.encyclopediagalactica.document;
+package com.encyclopediagalactica.utils;
 
 import com.encyclopediagalactica.api.graphql.Document;
 import com.encyclopediagalactica.document.model.DocumentEntity;

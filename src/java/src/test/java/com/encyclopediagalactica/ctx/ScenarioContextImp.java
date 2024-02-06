@@ -24,4 +24,9 @@ public class ScenarioContextImp implements ScenarioContext {
         }
         return storage.get(key);
     }
+
+    @Override
+    public Boolean containsKey(String key) {
+        return storage.containsKey(key);
+    }
 }

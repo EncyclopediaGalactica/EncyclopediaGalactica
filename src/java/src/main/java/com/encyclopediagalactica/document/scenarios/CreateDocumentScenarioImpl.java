@@ -5,6 +5,7 @@ import com.encyclopediagalactica.document.infra.mappers.DocumentEntityMapper;
 import com.encyclopediagalactica.document.infra.repositories.DocumentRepository;
 import com.encyclopediagalactica.document.infra.validation.CreateDocumentScenarioValidation;
 import com.encyclopediagalactica.document.model.DocumentEntity;
+import com.encyclopediagalactica.utils.StringPropertyUtils;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ValidationException;
 import jakarta.validation.Validator;
@@ -22,17 +23,22 @@ public class CreateDocumentScenarioImpl implements CreateDocumentScenario {
     @Autowired
     private DocumentRepository documentRepository;
 
+    @Autowired
+    private StringPropertyUtils stringPropertyUtils;
+
     @Override
     public Document create(Document document) {
         try {
             DocumentEntity documentEntity =
                     DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(document);
+            stringPropertyUtils.stripStringProperties(documentEntity);
             validate(documentEntity);
             DocumentEntity savedEntity = documentRepository.save(documentEntity);
             return DocumentEntityMapper.INSTANCE.mapDocumentEntityToDocument(savedEntity);
 
         } catch (Exception exception) {
-            throw new CreateDocumentScenarioException("Create scenarios process failed.",
+            throw new CreateDocumentScenarioException(
+                    "Create scenarios process failed.",
                     exception);
         }
     }
