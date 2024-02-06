@@ -28,7 +28,8 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
     public Document modify(Document input) {
         try {
             DocumentEntity toBeModified = checkIfExist(input);
-            DocumentEntity mappedInput = DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(input);
+            DocumentEntity mappedInput =
+                    DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(input);
             validate(mappedInput);
             DocumentEntity result = overrideAndSave(toBeModified, mappedInput);
             return DocumentEntityMapper.INSTANCE.mapDocumentEntityToDocument(result);
@@ -52,8 +53,8 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
     }
 
     private void validate(DocumentEntity documentEntity) {
-        Set<ConstraintViolation<DocumentEntity>> result = validator
-                .validate(documentEntity, ModifyDocumentScenarioValidation.class);
+        Set<ConstraintViolation<DocumentEntity>> result =
+                validator.validate(documentEntity, ModifyDocumentScenarioValidation.class);
         if (!result.isEmpty()) {
             StringBuilder builder = new StringBuilder();
             result.stream().map(i -> builder.append(i.getMessage()).append(" "));
@@ -63,10 +64,8 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
     }
 
     private DocumentEntity checkIfExist(Document document) {
-        return documentRepository
-                .findById(Long.parseLong(document.getId()))
-                .orElseThrow(() -> new DocumentNotFoundException(
-                        String.format("Document Entity with id: %s has not been found.", document.getId())
-                ));
+        return documentRepository.findById(Long.parseLong(document.getId()))
+                .orElseThrow(() -> new DocumentNotFoundException(String.format(
+                        "Document Entity with id: %s has not been found.", document.getId())));
     }
 }

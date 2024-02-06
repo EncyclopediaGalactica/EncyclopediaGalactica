@@ -1,5 +1,5 @@
-name: Main Branch build
-run-name: Main Branch build
+name: JDK Main Branch build
+run-name: JDK Main Branch build
 
 on:
   push:
@@ -44,11 +44,11 @@ jobs:
 
       - name: Build
         run: |
-          mvn clean compile
+          mvn clean compile -f src/java/pom.xml
 
       - name: Test
         run: |
-          mvn package
+          mvn package -f src/java/pom.xml
           
       - name: Setup Node.js
         uses: actions/setup-node@v3
