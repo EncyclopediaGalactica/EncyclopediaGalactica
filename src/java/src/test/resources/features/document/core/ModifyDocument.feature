@@ -9,9 +9,10 @@ Feature: Modify Document
     And the name is 'name'
     And the description is 'description'
     And the Document is created
-    And the name is change to '<name>'
-    And the description is change to '<description>'
-    When the Document is saved
+    And the newly created Document modification starts
+    And the name is changed to '<name>'
+    And the description is changed to '<description>'
+    When the Document is modified
     Then '<error>' message returned
 
     Examples:
@@ -30,9 +31,10 @@ Feature: Modify Document
     And the name is 'name'
     And the description is 'description'
     And the Document is created
-    And the name is change to 'name2'
-    And the description is change to 'description2'
-    When the Document is saved
+    And the newly created Document modification starts
+    And the name is changed to 'name2'
+    And the description is changed to 'description2'
+    When the Document is modified
     Then the api returns the newly created Document
     And the name value is 'name2'
     And the description value is 'description2'

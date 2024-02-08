@@ -1,6 +1,7 @@
 package com.encyclopediagalactica.document.infra.mappers;
 
 import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;
@@ -19,6 +20,9 @@ public interface DocumentEntityMapper {
 
     @Mappings({})
     Document mapDocumentEntityToDocument(DocumentEntity savedEntity);
+
+    @Mappings({})
+    DocumentEntity mapDocumentInputToDocumentEntity(DocumentInput documentInput);
 
     default List<Document> mapDocumentEntitiesToDocuments(List<DocumentEntity> documentEntities) {
 

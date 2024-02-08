@@ -1,6 +1,6 @@
 package com.encyclopediagalactica.utils;
 
-import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 import org.springframework.stereotype.Service;
 
@@ -22,11 +22,11 @@ public class DocumentTestUtilsImp implements DocumentTestUtils {
     }
 
     @Override
-    public Iterable<Document> createDocuments(int amount, Boolean isIdZero) {
-        List<Document> result = new ArrayList<>();
+    public Iterable<DocumentInput> createDocuments(int amount, Boolean isIdZero) {
+        List<DocumentInput> result = new ArrayList<>();
 
         for (int i = 0; i < amount; i++) {
-            Document.Builder builder = Document.builder();
+            DocumentInput.Builder builder = DocumentInput.builder();
             if (!isIdZero) {
                 builder.setId("100" + i);
             }

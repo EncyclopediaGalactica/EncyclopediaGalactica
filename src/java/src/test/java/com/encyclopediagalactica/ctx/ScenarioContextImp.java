@@ -29,4 +29,14 @@ public class ScenarioContextImp implements ScenarioContext {
     public Boolean containsKey(String key) {
         return storage.containsKey(key);
     }
+
+    @Override
+    public void remove(String key) {
+        storage.remove(key);
+    }
+
+    @Override
+    public void clear() {
+        storage.clear();
+    }
 }

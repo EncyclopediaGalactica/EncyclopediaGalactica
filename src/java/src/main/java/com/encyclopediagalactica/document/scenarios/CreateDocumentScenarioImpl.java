@@ -1,6 +1,7 @@
 package com.encyclopediagalactica.document.scenarios;
 
 import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.document.infra.mappers.DocumentEntityMapper;
 import com.encyclopediagalactica.document.infra.repositories.DocumentRepository;
 import com.encyclopediagalactica.document.infra.validation.CreateDocumentScenarioValidation;
@@ -27,10 +28,10 @@ public class CreateDocumentScenarioImpl implements CreateDocumentScenario {
     private StringPropertyUtils stringPropertyUtils;
 
     @Override
-    public Document create(Document document) {
+    public Document create(DocumentInput documentInput) {
         try {
             DocumentEntity documentEntity =
-                    DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(document);
+                    DocumentEntityMapper.INSTANCE.mapDocumentInputToDocumentEntity(documentInput);
             stringPropertyUtils.stripStringProperties(documentEntity);
             validate(documentEntity);
             DocumentEntity savedEntity = documentRepository.save(documentEntity);
