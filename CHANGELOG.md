@@ -1,3 +1,10 @@
+## [0.16.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.0...0.16.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* **document:** test and type fixes ([#154](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/154)) ([44856d1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/44856d1de1dd3e1650287f0a0d4311cf9b677b5b))
+
 # [0.16.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.15.1...0.16.0) (2024-02-06)
 
 
