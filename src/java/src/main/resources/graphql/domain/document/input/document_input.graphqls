@@ -1,5 +1,5 @@
 input DocumentInput {
-    id: Float
+    id: ID!
     name: String
     desc: String
 }

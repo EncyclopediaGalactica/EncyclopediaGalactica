@@ -30,5 +30,17 @@ public interface ScenarioContext {
      * @return {@link Boolean}
      */
     Boolean containsKey(String key);
+
+    /**
+     * Removes the value of the provided key.
+     *
+     * @param key the key
+     */
+    void remove(String key);
+
+    /**
+     * Clears the scenarioContext.
+     */
+    void clear();
 }
 

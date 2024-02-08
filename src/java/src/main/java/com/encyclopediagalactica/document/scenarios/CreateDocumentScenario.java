@@ -1,6 +1,7 @@
 package com.encyclopediagalactica.document.scenarios;
 
 import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 
 public interface CreateDocumentScenario {
@@ -10,5 +11,5 @@ public interface CreateDocumentScenario {
      * @param document the provided input object
      * @return {@link Document} representing the newly created {@link Document} entity
      */
-    Document create(Document document);
+    Document create(DocumentInput document);
 }

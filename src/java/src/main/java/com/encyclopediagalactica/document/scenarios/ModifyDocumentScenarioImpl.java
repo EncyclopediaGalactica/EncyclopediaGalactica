@@ -1,6 +1,7 @@
 package com.encyclopediagalactica.document.scenarios;
 
 import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.document.infra.mappers.DocumentEntityMapper;
 import com.encyclopediagalactica.document.infra.repositories.DocumentNotFoundException;
 import com.encyclopediagalactica.document.infra.repositories.DocumentRepository;
@@ -29,11 +30,11 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
     private StringPropertyUtils stringPropertyUtils;
 
     @Override
-    public Document modify(Document input) {
+    public Document modify(DocumentInput documentInput) {
         try {
-            DocumentEntity toBeModified = checkIfExist(input);
+            DocumentEntity toBeModified = checkIfExist(documentInput);
             DocumentEntity mappedInput =
-                    DocumentEntityMapper.INSTANCE.mapDocumentToDocumentEntity(input);
+                    DocumentEntityMapper.INSTANCE.mapDocumentInputToDocumentEntity(documentInput);
             stringPropertyUtils.stripStringProperties(mappedInput);
             validate(mappedInput);
             DocumentEntity result = overrideAndSave(toBeModified, mappedInput);
@@ -70,9 +71,9 @@ public class ModifyDocumentScenarioImpl implements ModifyDocumentScenario {
 
     }
 
-    private DocumentEntity checkIfExist(Document document) {
-        return documentRepository.findById(Long.parseLong(document.getId()))
+    private DocumentEntity checkIfExist(DocumentInput documentInput) {
+        return documentRepository.findById(Long.parseLong(documentInput.getId()))
                 .orElseThrow(() -> new DocumentNotFoundException(String.format(
-                        "Document Entity with id: %s has not been found.", document.getId())));
+                        "Document Entity with id: %s has not been found.", documentInput.getId())));
     }
 }
