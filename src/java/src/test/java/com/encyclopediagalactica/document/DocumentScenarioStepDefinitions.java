@@ -22,12 +22,11 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-public class DocumentStepDefinitions {
+public class DocumentScenarioStepDefinitions {
 
     private static final String OPERATION_EXCEPTION = "operationException";
     private final static String OPERATION_RESULT_DOCUMENT_LIST = "operationResultDocumentList";
     private static final String OPERATION_RESULT_DOCUMENT = "operationResultDocument";
-    private static final String DOCUMENT_INPUT = "documentInput";
     private final static String DOCUMENT_INPUT_BUILDER = "documentInputBuilder";
     @Autowired
     private GetDocumentsScenario getDocumentsScenario;
