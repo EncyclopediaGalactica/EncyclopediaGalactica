@@ -1,3 +1,11 @@
+## [0.16.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.1...0.16.2) (2024-03-02)
+
+
+### Bug Fixes
+
+* builds for dotnet and java - dotnet side ([#155](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/155)) ([d7a4f72](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d7a4f729c0b0b5c9681a03752289e32d92a43210))
+* Dotnet build ([#156](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/156)) ([eafe3c5](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/eafe3c572e773d845544345360639164cb3aadf5))
+
 ## [0.16.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.0...0.16.1) (2024-02-08)
 
 
