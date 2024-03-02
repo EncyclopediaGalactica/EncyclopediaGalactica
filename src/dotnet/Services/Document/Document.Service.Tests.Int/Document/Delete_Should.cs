@@ -19,7 +19,7 @@ public class DeleteShould : BaseTest
 
         // Act
         await Sut.DocumentService.DeleteAsync(recorded[0]);
-        List<DocumentResult> result = await Sut.DocumentService.GetAllAsync();
+        List<DocumentResult> result = await GetAllDocumentsScenario.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);

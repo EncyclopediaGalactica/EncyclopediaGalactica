@@ -12,9 +12,9 @@ public partial class DocumentResolvers
     ///     system.
     /// </summary>
     /// <param name="resolverContext">
-    ///     <see cref="documentService" />
+    ///     <see cref="getAllDocumentsScenario" />
     /// </param>
-    /// <param name="documentService">
+    /// <param name="getAllDocumentsScenario">
     ///     <see cref="Task{TResult}" />
     /// </param>
     /// <returns>
@@ -22,8 +22,8 @@ public partial class DocumentResolvers
     /// </returns>
     public async Task<IList<DocumentResult>> GetAllAsync(
         IResolverContext resolverContext,
-        IDocumentService documentService)
+        IGetAllDocumentsScenario getAllDocumentsScenario)
     {
-        return await documentService.GetAllAsync();
+        return await getAllDocumentsScenario.GetAllAsync();
     }
 }

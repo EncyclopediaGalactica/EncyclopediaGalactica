@@ -18,7 +18,7 @@ public class GetByIdShould : BaseTest
         // Arrange
         string name = "name";
         string desc = "desc";
-        DocumentResult data = await addDocumentScenario.AddAsync(new DocumentInput
+        DocumentResult data = await AddDocumentScenario.AddAsync(new DocumentInput
         {
             Name = name,
             Description = desc

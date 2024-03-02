@@ -50,6 +50,8 @@ public partial class GraphQLTestBase
         sqliteConnection.Open();
         ServiceProvider = new ServiceCollection()
             .AddScoped<IDocumentService, DocumentService>()
+            .AddScoped<IAddDocumentScenario, AddDocumentScenario>()
+            .AddScoped<IGetAllDocumentsScenario, GetAllDocumentsScenario>()
             .AddScoped<IDocumentsRepository, DocumentRepository>()
             .AddScoped<IDocumentMappers, DocumentMappers>()
             .AddScoped<IGuardsService, GuardsService>()

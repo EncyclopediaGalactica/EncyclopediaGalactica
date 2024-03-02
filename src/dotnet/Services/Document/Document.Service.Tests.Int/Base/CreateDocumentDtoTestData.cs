@@ -12,7 +12,7 @@ public partial class BaseTest
         List<long> result = new List<long>();
         for (int i = 0; i < amount; i++)
         {
-            DocumentResult res = await addDocumentScenario.AddAsync(
+            DocumentResult res = await AddDocumentScenario.AddAsync(
                     new DocumentInput
                     {
                         Name = $"_default_{i}",

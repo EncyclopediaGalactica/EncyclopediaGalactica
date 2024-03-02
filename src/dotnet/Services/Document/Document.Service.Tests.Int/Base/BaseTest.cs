@@ -28,7 +28,8 @@ using ValidatorService;
 public partial class BaseTest
 {
     protected readonly ISourceFormatsService Sut;
-    protected readonly AddDocumentScenario addDocumentScenario;
+    protected readonly IAddDocumentScenario AddDocumentScenario;
+    protected readonly IGetAllDocumentsScenario GetAllDocumentsScenario;
 
     public BaseTest()
     {
@@ -73,11 +74,13 @@ public partial class BaseTest
             documentsRepository,
             new DocumentInputValidator());
         
-        addDocumentScenario = new AddDocumentScenario(
+        AddDocumentScenario = new AddDocumentScenario(
             new GuardsService(),
             mappers,
             documentsRepository,
             new DocumentInputValidator());
+
+        GetAllDocumentsScenario = new GetAllDocumentsScenario(mappers, documentsRepository);
 
         Sut = new SourceFormatsService(
             sourceFormatNodeService,

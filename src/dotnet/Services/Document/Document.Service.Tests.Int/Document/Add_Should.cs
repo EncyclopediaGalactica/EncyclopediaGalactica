@@ -24,12 +24,12 @@ public class AddShould : BaseTest
             Description = "desc"
         };
 
-        DocumentResult firstResult = await addDocumentScenario.AddAsync(first);
+        DocumentResult firstResult = await AddDocumentScenario.AddAsync(first);
 
         // Act
         Func<Task> f = async () =>
         {
-            await addDocumentScenario.AddAsync(new DocumentInput { Name = name, Description = "desc" });
+            await AddDocumentScenario.AddAsync(new DocumentInput { Name = name, Description = "desc" });
         };
 
         // Assert
@@ -47,7 +47,7 @@ public class AddShould : BaseTest
         };
 
         // Act
-        DocumentResult result = await addDocumentScenario.AddAsync(first);
+        DocumentResult result = await AddDocumentScenario.AddAsync(first);
 
         // Assert
         result.Id.Should().BeGreaterThan(0);

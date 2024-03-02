@@ -14,26 +14,6 @@ using Exceptions;
 public partial interface IDocumentService
 {
     /// <summary>
-    ///     Returns a <see cref="List{T}" /> of <see cref="DocumentInput" /> representing the <see cref="Document" />
-    ///     entities in
-    ///     the system.
-    /// </summary>
-    /// <param name="cancellationToken">
-    ///     <see cref="CancellationToken" />
-    /// </param>
-    /// <returns>Returns a <see cref="Task{TResult}" /> representing the result of an asynchronous operation.</returns>
-    /// <exception cref="ArgumentNullException">
-    ///     When input is null.
-    /// </exception>
-    /// <exception cref="DocumentServiceOperationCancelledException">
-    ///     When the operation is cancelled by a <see cref="CancellationToken" />
-    /// </exception>
-    /// <exception cref="UnknownErrorDocumentServiceException">
-    ///     In case of any other errors
-    /// </exception>
-    Task<List<DocumentResult>> GetAllAsync(CancellationToken cancellationToken = default);
-
-    /// <summary>
     ///     Returns with the indicated <see cref="Document" />'s values mapped to a <see cref="DocumentInput" />
     ///     object.
     /// </summary>

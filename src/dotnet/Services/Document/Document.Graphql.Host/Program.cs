@@ -33,6 +33,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services
     .AddScoped<IDocumentService, DocumentService>()
     .AddScoped<IAddDocumentScenario, AddDocumentScenario>()
+    .AddScoped<IGetAllDocumentsScenario, GetAllDocumentsScenario>()
     .AddScoped<IDocumentsRepository, DocumentRepository>()
     .AddScoped<IDocumentMappers, DocumentMappers>()
     .AddScoped<IGuardsService, GuardsService>();
