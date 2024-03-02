@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Contracts.Output\Document.Contracts.Output.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Output.Graphql\Document.Contracts.Output.Graphql.csproj" />
         <ProjectReference Include="..\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj"/>
     </ItemGroup>
 

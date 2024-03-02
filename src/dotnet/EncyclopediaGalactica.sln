@@ -136,7 +136,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Arguments"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Errors", "Services\Document\Document.Errors\Document.Errors.csproj", "{93339F64-D864-4FA7-8543-2EE89DF34864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Output", "Services\Document\Document.Contracts.Output\Document.Contracts.Output.csproj", "{B9E19CCB-6F26-44D3-8981-73674A895B17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Output.Graphql", "Services\Document\Document.Contracts.Output.Graphql\Document.Contracts.Output.Graphql.csproj", "{B9E19CCB-6F26-44D3-8981-73674A895B17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.Queries", "Services\Document\Document.Graphql.Types.Queries\Document.Graphql.Types.Queries.csproj", "{C0B58985-C5D1-4E90-BB24-982BE3A22270}"
 EndProject
