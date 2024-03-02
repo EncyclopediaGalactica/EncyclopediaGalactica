@@ -46,15 +46,15 @@ jobs:
           
       - name: Restore
         run: |
-          dotnet restore
+          dotnet restore src/dotnet/EncyclopediaGalactica.sln
           
       - name: Build
         run: |
-          dotnet build --configuration Release --no-restore
+          dotnet build --configuration Release --no-restore src/dotnet/EncyclopediaGalactica.sln
           
       - name: Test
         run: |
-          dotnet test --no-restore --verbosity normal
+          dotnet test --no-restore --verbosity normal src/dotnet/EncyclopediaGalactica.sln
           
       - name: Setup Node.js
         uses: actions/setup-node@v3
