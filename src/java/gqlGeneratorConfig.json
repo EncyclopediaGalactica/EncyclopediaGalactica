@@ -1,0 +1,6 @@
+{
+  "packageName": "com.encyclopediagalactica.api.graphql",
+  "apiInterfaceStrategy": "DO_NOT_GENERATE",
+  "addGeneratedAnnotation": true,
+  "generatedAnnotation": "jakarta.annotation.Generated"
+}

@@ -1,7 +1,7 @@
 package com.encyclopediagalactica.document.infra.mappers;
 
-import com.encyclopediagalactica.api.graphql.Document;
 import com.encyclopediagalactica.api.graphql.DocumentInput;
+import com.encyclopediagalactica.api.graphql.DocumentResult;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mappings;
@@ -12,22 +12,20 @@ import java.util.stream.Collectors;
 
 @Mapper
 public interface DocumentEntityMapper {
-
+    
     DocumentEntityMapper INSTANCE = Mappers.getMapper(DocumentEntityMapper.class);
-
+    
     @Mappings({})
-    DocumentEntity mapDocumentToDocumentEntity(Document document);
-
+    DocumentEntity mapDocumentInputToDocumentEntity(DocumentInput document);
+    
     @Mappings({})
-    Document mapDocumentEntityToDocument(DocumentEntity savedEntity);
-
-    @Mappings({})
-    DocumentEntity mapDocumentInputToDocumentEntity(DocumentInput documentInput);
-
-    default List<Document> mapDocumentEntitiesToDocuments(List<DocumentEntity> documentEntities) {
-
+    DocumentResult mapDocumentEntityToDocument(DocumentEntity savedEntity);
+    
+    default List<DocumentResult> mapDocumentEntitiesToDocumentResults
+        (List<DocumentEntity> documentEntities) {
+        
         return documentEntities.stream()
-                .map(this::mapDocumentEntityToDocument)
-                .collect(Collectors.toList());
+            .map(this::mapDocumentEntityToDocument)
+            .collect(Collectors.toList());
     }
 }

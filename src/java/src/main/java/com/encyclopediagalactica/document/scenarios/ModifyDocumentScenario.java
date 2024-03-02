@@ -1,17 +1,17 @@
 package com.encyclopediagalactica.document.scenarios;
 
-import com.encyclopediagalactica.api.graphql.Document;
 import com.encyclopediagalactica.api.graphql.DocumentInput;
+import com.encyclopediagalactica.api.graphql.DocumentResult;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 
 public interface ModifyDocumentScenario {
-
+    
     /**
-     * Updates the designated {@link DocumentEntity} with the data provided by the {@link Document}
+     * Updates the designated {@link DocumentEntity} with the data provided by the {@link DocumentInput}
      * object.
      *
      * @param modifications the modifications
-     * @return {@link Document} object including the changes
+     * @return {@link DocumentResult} object including the changes
      */
-    Document modify(DocumentInput modifications);
+    DocumentResult modify(DocumentInput modifications);
 }

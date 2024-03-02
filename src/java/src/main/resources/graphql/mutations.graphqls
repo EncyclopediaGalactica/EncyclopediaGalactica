@@ -1,0 +1,16 @@
+"""
+Mutation (modifications) Api of the Encyclopedia Galactica system.
+The operations below are for making changes in the data the system stores.
+"""
+type Mutation {
+
+    """
+    Creates a Document Entity in the system based on the provided details.
+    """
+    createDocument(documentInput: DocumentInput!): DocumentResult
+
+    """
+    Modifies the designated Document Entity in the system based on the provided details.
+    """
+    modifyDocument(document: DocumentInput!): DocumentResult
+}
