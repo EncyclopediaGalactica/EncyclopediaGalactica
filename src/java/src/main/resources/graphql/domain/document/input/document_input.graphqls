@@ -1,5 +1,20 @@
+"""
+Document input entity for sending data to the system via GraphQL.
+"""
 input DocumentInput {
+
+    """
+    Unique identifier.
+    """
     id: ID!
+
+    """
+    Name of the entity.
+    """
     name: String
+
+    """
+    Description of the entity.
+    """
     desc: String
 }

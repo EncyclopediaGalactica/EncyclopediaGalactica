@@ -1,13 +1,14 @@
 package com.encyclopediagalactica.document.scenarios;
 
-import com.encyclopediagalactica.api.graphql.Document;
+import com.encyclopediagalactica.api.graphql.DocumentResult;
+import com.encyclopediagalactica.document.model.DocumentEntity;
 
 public interface GetDocumentByIdScenario {
     /**
-     * Returns the designated {@link Document} entity.
+     * Returns the designated {@link DocumentEntity} entity represented by a {@link DocumentResult}
      *
-     * @param id identifier of the {@link Document} entity
-     * @return instance of {@link Document} entity
+     * @param id identifier of the requested {@link DocumentEntity} entity
+     * @return instance of {@link DocumentResult} entity
      */
-    Document getById(Long id);
+    DocumentResult getById(Long id);
 }
