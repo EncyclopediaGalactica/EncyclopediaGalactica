@@ -1,3 +1,10 @@
+## [0.17.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.0...0.17.1) (2024-03-02)
+
+
+### Bug Fixes
+
+* **java:** cache ([#160](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/160)) ([945f9e2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/945f9e2a58ed4b2a2b2ccaa8b225204631dcb507))
+
 # [0.17.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.3...0.17.0) (2024-03-02)
 
 
