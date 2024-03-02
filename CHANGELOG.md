@@ -1,3 +1,15 @@
+# [0.17.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.3...0.17.0) (2024-03-02)
+
+
+### Bug Fixes
+
+* **java:** gql fixes ([#159](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/159)) ([218dd81](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/218dd8124789a0341666d361a351998b3192add6))
+
+
+### Features
+
+* Create dependabot.yml ([#158](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/158)) ([59d6b43](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/59d6b4337888494294dc2e97ed67ce041f87bfc2))
+
 ## [0.16.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.2...0.16.3) (2024-03-02)
 
 
