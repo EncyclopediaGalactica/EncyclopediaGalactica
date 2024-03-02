@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.ValidatorService;
 using Contracts.Input;
 using FluentValidation;
 
-public class DocumentDtoValidator : AbstractValidator<DocumentInput>
+public class DocumentInputValidator : AbstractValidator<DocumentInput>
 {
     public enum Scenarios
     {
@@ -11,7 +11,7 @@ public class DocumentDtoValidator : AbstractValidator<DocumentInput>
         Update
     }
 
-    public DocumentDtoValidator()
+    public DocumentInputValidator()
     {
         RuleSet(Scenarios.AddNew.ToString(), () =>
         {

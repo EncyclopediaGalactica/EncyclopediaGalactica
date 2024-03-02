@@ -9,10 +9,9 @@ public partial class DocumentResolvers
 {
     public async Task<DocumentResult> AddAsync(
         IResolverContext resolverContext,
-        IDocumentService documentService)
+        IAddDocumentScenario addDocumentScenario)
     {
-        DocumentInput newDocumentInputType =
-            resolverContext.ArgumentValue<DocumentInput>("newDocument");
-        return await documentService.AddAsync(newDocumentInputType);
+        DocumentInput newDocumentInputType = resolverContext.ArgumentValue<DocumentInput>("newDocument");
+        return await addDocumentScenario.AddAsync(newDocumentInputType);
     }
 }

@@ -32,6 +32,7 @@ var builder = WebApplication.CreateBuilder(args);
 // registered Document services
 builder.Services
     .AddScoped<IDocumentService, DocumentService>()
+    .AddScoped<IAddDocumentScenario, AddDocumentScenario>()
     .AddScoped<IDocumentsRepository, DocumentRepository>()
     .AddScoped<IDocumentMappers, DocumentMappers>()
     .AddScoped<IGuardsService, GuardsService>();
@@ -54,7 +55,7 @@ builder.Services
     .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
     .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
     .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Contracts.Input.DocumentInput>,
-        DocumentDtoValidator>();
+        DocumentInputValidator>();
 
 // database
 SqliteConnection connection = new("Filename=:memory:");

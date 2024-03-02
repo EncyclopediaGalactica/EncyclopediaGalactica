@@ -61,7 +61,7 @@ public partial class GraphQLTestBase
             .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
             .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
             .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
-            .AddScoped<IValidator<Contracts.Input.DocumentInput>, DocumentDtoValidator>()
+            .AddScoped<IValidator<Contracts.Input.DocumentInput>, DocumentInputValidator>()
             .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
             .AddLogging(log =>
             {

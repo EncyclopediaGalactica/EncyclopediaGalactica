@@ -70,7 +70,7 @@ public partial class DocumentService
     {
         await _documentDtoValidator.ValidateAsync(modifiedInput, o =>
         {
-            o.IncludeRuleSets(DocumentDtoValidator.Scenarios.Update.ToString());
+            o.IncludeRuleSets(DocumentInputValidator.Scenarios.Update.ToString());
             o.ThrowOnFailures();
         });
     }

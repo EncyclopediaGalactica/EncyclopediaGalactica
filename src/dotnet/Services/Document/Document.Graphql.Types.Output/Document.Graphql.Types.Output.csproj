@@ -9,11 +9,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="HotChocolate.Types" Version="13.7.0"/>
+        <PackageReference Include="HotChocolate.Types" Version="13.9.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Contracts.Output.Graphql\Document.Contracts.Output.Graphql.csproj" />
+        <ProjectReference Include="..\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj" />
         <ProjectReference Include="..\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj"/>
     </ItemGroup>
 

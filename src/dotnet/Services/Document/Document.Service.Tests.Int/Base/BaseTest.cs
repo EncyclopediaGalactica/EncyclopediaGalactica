@@ -28,6 +28,7 @@ using ValidatorService;
 public partial class BaseTest
 {
     protected readonly ISourceFormatsService Sut;
+    protected readonly AddDocumentScenario addDocumentScenario;
 
     public BaseTest()
     {
@@ -63,14 +64,20 @@ public partial class BaseTest
                 logger);
 
         IValidator<Entities.Document> documentValidator = new DocumentValidator();
-        IValidator<DocumentInput> documentDtoValidator = new DocumentDtoValidator();
+        IValidator<DocumentInput> documentDtoValidator = new DocumentInputValidator();
         IDocumentsRepository documentsRepository = new DocumentRepository(
             dbContextOptions, documentValidator);
         IDocumentService documentService = new DocumentService(
             new GuardsService(),
             mappers,
             documentsRepository,
-            new DocumentDtoValidator());
+            new DocumentInputValidator());
+        
+        addDocumentScenario = new AddDocumentScenario(
+            new GuardsService(),
+            mappers,
+            documentsRepository,
+            new DocumentInputValidator());
 
         Sut = new SourceFormatsService(
             sourceFormatNodeService,

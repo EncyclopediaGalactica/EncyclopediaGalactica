@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="HotChocolate.Types" Version="13.7.0"/>
+        <PackageReference Include="HotChocolate.Types" Version="13.9.0" />
     </ItemGroup>
 
 
