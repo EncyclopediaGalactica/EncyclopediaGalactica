@@ -13,8 +13,8 @@ public class SourceFormatNodeInputContractShould
         long id = 100;
         string name = "name";
         int isRootNode = 1;
-        long parentNodeId = 200;
-        long rootNodeId = 300;
+        long parentNodeId = 300;
+        long rootNodeId = 400;
 
         // Act
         SourceFormatNodeInput input = new SourceFormatNodeInput
