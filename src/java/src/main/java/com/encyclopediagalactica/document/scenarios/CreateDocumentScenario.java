@@ -4,6 +4,9 @@ import com.encyclopediagalactica.api.graphql.DocumentInput;
 import com.encyclopediagalactica.api.graphql.DocumentResult;
 import com.encyclopediagalactica.document.model.DocumentEntity;
 
+/**
+ * Methods for Create Documents scenario.
+ */
 public interface CreateDocumentScenario {
     /**
      * Creates a {@link DocumentEntity} based on the provided {@link DocumentInput} object.
