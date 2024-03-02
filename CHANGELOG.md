@@ -1,3 +1,10 @@
+## [0.16.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.2...0.16.3) (2024-03-02)
+
+
+### Bug Fixes
+
+* Java build ([#157](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/157)) ([6b429de](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/6b429deb1a45ee41d1d415a75c64b69ac1b837c1))
+
 ## [0.16.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.16.1...0.16.2) (2024-03-02)
 
 
