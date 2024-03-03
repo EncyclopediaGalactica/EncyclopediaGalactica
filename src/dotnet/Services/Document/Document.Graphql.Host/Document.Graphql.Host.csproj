@@ -21,13 +21,7 @@
         <ProjectReference Include="..\Document.Ctx\Document.Ctx.csproj"/>
         <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.ErrorFilters\Document.Graphql.ErrorFilters.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Input\Document.Graphql.Types.Input.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Mutations\Document.Graphql.Types.Mutations.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Output\Document.Graphql.Types.Output.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Queries\Document.Graphql.Types.Queries.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj"/>
+        <ProjectReference Include="..\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj" />
         <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>

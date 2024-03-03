@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Base;
 using Contracts.Output;
 using FluentAssertions;
+using Service.Document;
 using Xunit;
 
 [ExcludeFromCodeCoverage]
@@ -18,7 +19,7 @@ public class DeleteShould : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(1);
 
         // Act
-        await Sut.DocumentService.DeleteAsync(recorded[0]);
+        await DeleteDocumentScenario.DeleteAsync(recorded[0]);
         List<DocumentResult> result = await GetAllDocumentsScenario.GetAllAsync();
 
         // Assert

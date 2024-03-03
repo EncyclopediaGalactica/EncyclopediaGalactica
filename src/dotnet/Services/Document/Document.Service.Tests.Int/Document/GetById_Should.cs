@@ -25,7 +25,7 @@ public class GetByIdShould : BaseTest
         });
 
         // Act
-        DocumentResult result = await Sut.DocumentService.GetByIdAsync(data.Id);
+        DocumentResult result = await GetDocumentByIdScenario.GetByIdAsync(data.Id);
 
         // Assert
         result.Should().NotBeNull();
@@ -38,7 +38,7 @@ public class GetByIdShould : BaseTest
     public void Throw_InvalidOperationException_WhenNoSuchElement()
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(100); };
+        Func<Task> f = async () => { await GetDocumentByIdScenario.GetByIdAsync(100); };
 
         // Assert
         f.Should().ThrowExactlyAsync<InvalidOperationException>();

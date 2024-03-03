@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Tests.E2E.Tests.Docume
 
 using System.Diagnostics.CodeAnalysis;
 using Arguments;
+using Arguments.Arguments;
 using Contracts.Input;
 using Errors;
 using FluentAssertions;

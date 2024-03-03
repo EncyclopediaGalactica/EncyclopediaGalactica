@@ -6,30 +6,28 @@ using Contracts.Input;
 using Ctx;
 using Entities;
 using FluentValidation;
-using Interfaces;
 using Interfaces.Document;
-using Interfaces.SourceFormatNode;
 using Mappers;
 using Mappers.Document;
 using Mappers.Interfaces;
 using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Repository.Document;
 using Repository.Interfaces;
 using Repository.SourceFormatNode;
 using Service.Document;
-using Service.SourceFormatNodeService;
 using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
 public partial class BaseTest
 {
-    protected readonly ISourceFormatsService Sut;
     protected readonly IAddDocumentScenario AddDocumentScenario;
+    protected readonly IDeleteDocumentScenario DeleteDocumentScenario;
     protected readonly IGetAllDocumentsScenario GetAllDocumentsScenario;
+    protected readonly IGetDocumentByIdScenario GetDocumentByIdScenario;
+    protected readonly IUpdateDocumentScenario UpdateDocumentScenario;
 
     public BaseTest()
     {
@@ -53,27 +51,17 @@ public partial class BaseTest
 
         ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
             dbContextOptions, nodeValidator, new GuardsService());
-        ILogger<SourceFormatNodeService> logger =
-            new Logger<SourceFormatNodeService>(
-                new LoggerFactory());
-        ISourceFormatNodeService sourceFormatNodeService =
-            new SourceFormatNodeService(
-                validator,
-                new GuardsService(),
-                mappers,
-                sourceFormatNodeRepository,
-                logger);
 
         IValidator<Entities.Document> documentValidator = new DocumentValidator();
         IValidator<DocumentInput> documentDtoValidator = new DocumentInputValidator();
         IDocumentsRepository documentsRepository = new DocumentRepository(
             dbContextOptions, documentValidator);
-        IDocumentService documentService = new DocumentService(
+        DeleteDocumentScenario = new DeleteDocumentScenario(
             new GuardsService(),
             mappers,
             documentsRepository,
             new DocumentInputValidator());
-        
+
         AddDocumentScenario = new AddDocumentScenario(
             new GuardsService(),
             mappers,
@@ -81,9 +69,8 @@ public partial class BaseTest
             new DocumentInputValidator());
 
         GetAllDocumentsScenario = new GetAllDocumentsScenario(mappers, documentsRepository);
-
-        Sut = new SourceFormatsService(
-            sourceFormatNodeService,
-            documentService);
+        GetDocumentByIdScenario = new GetDocumentByIdScenario(mappers, documentsRepository, new GuardsService());
+        UpdateDocumentScenario = new UpdateDocumentScenario(new GuardsService(), mappers, documentsRepository,
+            new DocumentInputValidator());
     }
 }

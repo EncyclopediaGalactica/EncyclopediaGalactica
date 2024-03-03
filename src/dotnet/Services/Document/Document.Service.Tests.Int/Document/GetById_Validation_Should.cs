@@ -15,7 +15,7 @@ public class GetByIdValidationShould : BaseTest
     public void ThrowGuardException_WhenInputIsInvalid()
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.DocumentService.GetByIdAsync(0); };
+        Func<Task> f = async () => { await GetDocumentByIdScenario.GetByIdAsync(0); };
 
         // Assert
         f.Should().ThrowExactlyAsync<GuardsServiceValueShouldNotBeEqualToException>();

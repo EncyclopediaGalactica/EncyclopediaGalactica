@@ -25,7 +25,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Graphql.ErrorFilters\Document.Graphql.ErrorFilters.csproj"/>
         <ProjectReference Include="..\Document.Graphql.Host\Document.Graphql.Host.csproj"/>
         <ProjectReference Include="..\Document.Tests.Datasets\Document.Tests.Datasets.csproj"/>
     </ItemGroup>
