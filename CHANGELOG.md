@@ -1,3 +1,11 @@
+## [0.17.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.2...0.17.3) (2024-03-03)
+
+
+### Bug Fixes
+
+* **infra:** semantic versioning ([#169](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/169)) ([61e1fd6](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/61e1fd6bd80a18043e6a894fd5f02689832882bc))
+* **infra:** separate documentation, nuget/maven bumps and code builds ([#168](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/168)) ([5c0f0e2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/5c0f0e28df2c7c650250a37bec84ac237335dcf0))
+
 ## [0.17.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.1...0.17.2) (2024-03-03)
 
 
