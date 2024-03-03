@@ -4,12 +4,15 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Reflection;
 using System.Text;
+using Arguments.ErrorFilters;
+using Arguments.Types.Input;
+using Arguments.Types.Mutations;
+using Arguments.Types.Queries;
+using Arguments.Types.Result;
 using Contracts.Input;
 using Ctx;
 using Entities;
-using ErrorFilters;
 using FluentValidation;
-using HotChocolate;
 using HotChocolate.Execution;
 using Mappers;
 using Mappers.Document;
@@ -23,16 +26,8 @@ using Repository;
 using Repository.Document;
 using Repository.Interfaces;
 using Repository.SourceFormatNode;
-using Service;
 using Service.Document;
-using Service.Interfaces;
 using Service.Interfaces.Document;
-using Service.Interfaces.SourceFormatNode;
-using Service.SourceFormatNodeService;
-using Types.Mutations;
-using Types.Output;
-using Types.Queries;
-using Types.RootTypes;
 using Utils.GuardsService;
 using Utils.GuardsService.Interfaces;
 using ValidatorService;
@@ -49,19 +44,21 @@ public partial class GraphQLTestBase
         SqliteConnection sqliteConnection = new("Filename=:memory:");
         sqliteConnection.Open();
         ServiceProvider = new ServiceCollection()
-            .AddScoped<IDocumentService, DocumentService>()
+            .AddScoped<IDeleteDocumentScenario, DeleteDocumentScenario>()
+            .AddScoped<IAddDocumentScenario, AddDocumentScenario>()
+            .AddScoped<IGetAllDocumentsScenario, GetAllDocumentsScenario>()
+            .AddScoped<IGetDocumentByIdScenario, GetDocumentByIdScenario>()
+            .AddScoped<IUpdateDocumentScenario, UpdateDocumentScenario>()
             .AddScoped<IDocumentsRepository, DocumentRepository>()
             .AddScoped<IDocumentMappers, DocumentMappers>()
             .AddScoped<IGuardsService, GuardsService>()
-            .AddScoped<ISourceFormatNodeService, SourceFormatNodeService>()
             .AddScoped<ISourceFormatNodeRepository, SourceFormatNodeRepository>()
             .AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>()
-            .AddScoped<ISourceFormatsService, SourceFormatsService>()
             .AddScoped<ISourceFormatsRepository, SourceFormatsRepository>()
             .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
             .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
             .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
-            .AddScoped<IValidator<Contracts.Input.DocumentInput>, DocumentDtoValidator>()
+            .AddScoped<IValidator<Contracts.Input.DocumentInput>, DocumentInputValidator>()
             .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
             .AddLogging(log =>
             {
@@ -83,9 +80,13 @@ public partial class GraphQLTestBase
             .AddTypeExtension<AddDocumentMutation>()
             .AddTypeExtension<DeleteDocumentMutation>()
             .AddTypeExtension<UpdateDocumentMutation>()
-            .RegisterService<IDocumentService>()
+            .RegisterService<IDeleteDocumentScenario>()
+            .RegisterService<IAddDocumentScenario>()
+            .RegisterService<IGetAllDocumentsScenario>()
+            .RegisterService<IGetDocumentByIdScenario>()
+            .RegisterService<IUpdateDocumentScenario>()
             .AddType<DocumentOutput>()
-            .AddType<Types.Input.DocumentInputType>()
+            .AddType<DocumentInputType>()
             .AddErrorFilter<GraphQlSchemaValidationErrorFilter>()
             .AddErrorFilter<InputValidationErrorFilter>()
             .AddErrorFilter<NoSuchItemErrorFilter>()

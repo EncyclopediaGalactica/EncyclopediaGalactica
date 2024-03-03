@@ -35,4 +35,5 @@ public class QueryResult : IQueryResult
     public IReadOnlyDictionary<string, object?>? Extensions { get; }
     public IReadOnlyList<IQueryResult>? Incremental { get; }
     public bool? HasNext { get; }
+    public bool IsDataSet { get; }
 }

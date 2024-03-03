@@ -12,15 +12,18 @@
     <ItemGroup>
         <ProjectReference Include="..\..\..\Utils\GuardsService.Exceptions\GuardsService.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
+        <ProjectReference Include="..\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj" />
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Input\Document.Graphql.Types.Input.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Output\Document.Graphql.Types.Output.csproj"/>
         <ProjectReference Include="..\Document.Service.Exceptions\Document.Service.Exceptions.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.8.0"/>
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0"/>
+        <PackageReference Include="FluentValidation" Version="11.9.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Document\IAddDocumentAsyncScenario.cs" />
     </ItemGroup>
 
 </Project>

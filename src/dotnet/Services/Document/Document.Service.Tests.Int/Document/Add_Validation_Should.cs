@@ -16,7 +16,7 @@ public class AddValidationShould : BaseTest
     public void Throw_WhenInput_IsNull_DocumentInput()
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.DocumentService.AddAsync(null!); };
+        Func<Task> f = async () => { await AddDocumentScenario.AddAsync(null!); };
     }
 
     [Theory]
@@ -25,7 +25,7 @@ public class AddValidationShould : BaseTest
         Contracts.Input.DocumentInput inputInput)
     {
         // Arrange && Act
-        Func<Task> f = async () => { await Sut.DocumentService.AddAsync(inputInput); };
+        Func<Task> f = async () => { await AddDocumentScenario.AddAsync(inputInput); };
 
         // Assert
         f.Should().ThrowExactlyAsync<ValidationException>();

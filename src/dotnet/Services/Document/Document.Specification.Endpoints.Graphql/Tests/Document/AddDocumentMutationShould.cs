@@ -23,7 +23,7 @@ public class AddDocumentMutationShould : GraphQLTestBase
     {
         // Arrange
         string mutationString = """
-                                            mutation asd($input: DocumentInput!) {
+                                            mutation test_query($input: DocumentInput!) {
                                                 addDocument(newDocument: $input) { id name description }
                                             }
                                 """;

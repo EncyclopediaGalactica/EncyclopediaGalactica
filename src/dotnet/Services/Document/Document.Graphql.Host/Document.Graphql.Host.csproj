@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.8.0"/>
-        <PackageReference Include="HotChocolate.AspNetCore" Version="13.7.0"/>
+        <PackageReference Include="FluentValidation" Version="11.9.0" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0" />
         <PackageReference Include="HotChocolate.Server" Version="10.5.5"/>
         <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Configuration" Version="8.0.0"/>
@@ -21,13 +21,7 @@
         <ProjectReference Include="..\Document.Ctx\Document.Ctx.csproj"/>
         <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.ErrorFilters\Document.Graphql.ErrorFilters.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Input\Document.Graphql.Types.Input.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Mutations\Document.Graphql.Types.Mutations.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Output\Document.Graphql.Types.Output.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.Queries\Document.Graphql.Types.Queries.csproj"/>
-        <ProjectReference Include="..\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj"/>
+        <ProjectReference Include="..\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj" />
         <ProjectReference Include="..\Document.Mappers.Exceptions\Document.Mappers.Exceptions.csproj"/>
         <ProjectReference Include="..\Document.Mappers.Interfaces\Document.Mappers.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>

@@ -21,7 +21,7 @@ public class UpdateShould : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(1);
 
         // Act
-        DocumentResult result = await Sut.DocumentService.UpdateAsync(recorded[0], inputInput);
+        DocumentResult result = await UpdateDocumentScenario.UpdateAsync(recorded[0], inputInput);
 
         // Assert
         result.Id.Should().Be(recorded[0]);

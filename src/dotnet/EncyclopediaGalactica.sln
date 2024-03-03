@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Ctx", "Services\Do
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Input.Graphql", "Services\Document\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj", "{95BAC05B-6AFD-4D4E-A259-4E94ED3E6D86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Input.Tests.Unit", "Services\Document\Document.Contracts.Input.Tests.Unit\Document.Contracts.Input.Tests.Unit.csproj", "{039609EF-6706-4A49-8DFB-0683AC9C75E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Input.Graphql.Tests.Unit", "Services\Document\Document.Contracts.Input.Graphql.Tests.Unit\Document.Contracts.Input.Graphql.Tests.Unit.csproj", "{039609EF-6706-4A49-8DFB-0683AC9C75E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Entities", "Services\Document\Document.Entities\Document.Entities.csproj", "{64A70BA8-D88C-434F-ACB2-328A19D78E33}"
 EndProject
@@ -126,27 +126,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Host", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Specification.Endpoints.Graphql", "Services\Document\Document.Specification.Endpoints.Graphql\Document.Specification.Endpoints.Graphql.csproj", "{79F22CDE-F85A-43C6-8950-1E1FD62C949E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.RootTypes", "Services\Document\Document.Graphql.Types.RootTypes\Document.Graphql.Types.RootTypes.csproj", "{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Resolvers", "Services\Document\Document.Graphql.Resolvers\Document.Graphql.Resolvers.csproj", "{AD6D81DE-EDE1-4570-895E-455FA4B73B74}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.ErrorFilters", "Services\Document\Document.Graphql.ErrorFilters\Document.Graphql.ErrorFilters.csproj", "{06C6F0B4-C569-4DC9-895E-A6D9EEA55038}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Arguments", "Services\Document\Document.Graphql.Arguments\Document.Graphql.Arguments.csproj", "{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Infrastructure.Graphql", "Services\Document\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj", "{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Errors", "Services\Document\Document.Errors\Document.Errors.csproj", "{93339F64-D864-4FA7-8543-2EE89DF34864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Output.Graphql", "Services\Document\Document.Contracts.Output.Graphql\Document.Contracts.Output.Graphql.csproj", "{B9E19CCB-6F26-44D3-8981-73674A895B17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Result.Graphql", "Services\Document\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj", "{B9E19CCB-6F26-44D3-8981-73674A895B17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.Queries", "Services\Document\Document.Graphql.Types.Queries\Document.Graphql.Types.Queries.csproj", "{C0B58985-C5D1-4E90-BB24-982BE3A22270}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.Mutations", "Services\Document\Document.Graphql.Types.Mutations\Document.Graphql.Types.Mutations.csproj", "{723C0B9D-CE8F-4034-95A8-6918D3688145}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.Input", "Services\Document\Document.Graphql.Types.Input\Document.Graphql.Types.Input.csproj", "{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Types.Output", "Services\Document\Document.Graphql.Types.Output\Document.Graphql.Types.Output.csproj", "{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Result.Graphql.Tests.Unit", "Services\Document\Document.Contracts.Result.Graphql.Tests.Unit\Document.Contracts.Result.Graphql.Tests.Unit.csproj", "{F0D8F19B-D5A0-4381-8150-CB6BCD421162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Result.Graphql.Tests.Unit", "Services\Document\Document.Contracts.Result.Graphql.Tests.Unit\Document.Contracts.Result.Graphql.Tests.Unit.csproj", "{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -366,18 +352,6 @@ Global
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AD6D81DE-EDE1-4570-895E-455FA4B73B74}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06C6F0B4-C569-4DC9-895E-A6D9EEA55038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06C6F0B4-C569-4DC9-895E-A6D9EEA55038}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06C6F0B4-C569-4DC9-895E-A6D9EEA55038}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06C6F0B4-C569-4DC9-895E-A6D9EEA55038}.Release|Any CPU.Build.0 = Release|Any CPU
 		{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -390,26 +364,10 @@ Global
 		{B9E19CCB-6F26-44D3-8981-73674A895B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9E19CCB-6F26-44D3-8981-73674A895B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9E19CCB-6F26-44D3-8981-73674A895B17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0B58985-C5D1-4E90-BB24-982BE3A22270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0B58985-C5D1-4E90-BB24-982BE3A22270}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0B58985-C5D1-4E90-BB24-982BE3A22270}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0B58985-C5D1-4E90-BB24-982BE3A22270}.Release|Any CPU.Build.0 = Release|Any CPU
-		{723C0B9D-CE8F-4034-95A8-6918D3688145}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{723C0B9D-CE8F-4034-95A8-6918D3688145}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{723C0B9D-CE8F-4034-95A8-6918D3688145}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{723C0B9D-CE8F-4034-95A8-6918D3688145}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F0D8F19B-D5A0-4381-8150-CB6BCD421162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F0D8F19B-D5A0-4381-8150-CB6BCD421162}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F0D8F19B-D5A0-4381-8150-CB6BCD421162}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F0D8F19B-D5A0-4381-8150-CB6BCD421162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D95496D8-08A2-4AA4-A020-AF9DB150FA6B} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
@@ -467,16 +425,9 @@ Global
 		{EB02B7AF-7B08-4187-B638-6DFA5864E80F} = {64582B23-FEE0-4315-B14F-A319A05BDBE5}
 		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{7AFC8AE2-F630-4A3F-8C5C-0CCC80E3E8F2} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{AD6D81DE-EDE1-4570-895E-455FA4B73B74} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{06C6F0B4-C569-4DC9-895E-A6D9EEA55038} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{577B73B8-0CFA-4766-9D84-8B940FFBC4B7} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{93339F64-D864-4FA7-8543-2EE89DF34864} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{B9E19CCB-6F26-44D3-8981-73674A895B17} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{C0B58985-C5D1-4E90-BB24-982BE3A22270} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{723C0B9D-CE8F-4034-95A8-6918D3688145} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{11775D8D-4EB4-4FCE-9D01-B4BD4A82D988} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{A16BF857-2EB7-4BC5-A00E-17F8DEF9F01F} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
-		{F0D8F19B-D5A0-4381-8150-CB6BCD421162} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 	EndGlobalSection
 EndGlobal

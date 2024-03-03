@@ -18,7 +18,7 @@ public class UpdateValidationShould : BaseTest
     public async Task Throw_WhenInputIsInvalid(DocumentInput inputInput)
     {
         // Arrange & Act
-        Func<Task> f = async () => { await Sut.DocumentService.UpdateAsync(inputInput.Id, inputInput); };
+        Func<Task> f = async () => { await UpdateDocumentScenario.UpdateAsync(inputInput.Id, inputInput); };
 
         // Assert
         await f.Should().ThrowExactlyAsync<InvalidInputToDocumentServiceException>();

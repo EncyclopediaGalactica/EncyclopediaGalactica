@@ -18,7 +18,7 @@ public partial class GraphQLTestBase
                 .Generate();
 
             string mutationString = """
-                                                mutation asd($input: DocumentInput!) {
+                                                mutation test_data_creation($input: DocumentInput!) {
                                                     addDocument(newDocument: $input) { id name description }
                                                 }
                                     """;

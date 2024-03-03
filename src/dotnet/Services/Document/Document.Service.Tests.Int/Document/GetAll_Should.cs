@@ -15,7 +15,7 @@ public class GetAllShould : BaseTest
     public async Task ReturnEmptyList_WhenNoItemInTheDatabase()
     {
         // Act
-        List<DocumentResult> result = await Sut.DocumentService.GetAllAsync();
+        List<DocumentResult> result = await GetAllDocumentsScenario.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(0);
@@ -28,7 +28,7 @@ public class GetAllShould : BaseTest
         List<long> recorded = await CreateDocumentDtoTestData(3);
 
         // Act
-        List<DocumentResult> result = await Sut.DocumentService.GetAllAsync();
+        List<DocumentResult> result = await GetAllDocumentsScenario.GetAllAsync();
 
         // Assert
         result.Count.Should().Be(3);
