@@ -1,12 +1,12 @@
-name: Dotnet Main Branch Build
-run-name: Dotnet Main Branch Build
+name: Publish Documentation
+run-name: Publish Documentation
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'src/dotnet/**'
+      - 'Docs/**'
 
 jobs:
   
@@ -21,7 +21,7 @@ jobs:
           echo "github ref: " ${{ vars.GITHUB_REF }}
           echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
-          
+  
   main_branch:
     name: Main Branch Build
     runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    permissions: 
+    permissions:
       contents: write
       issues: write
       pull-requests: write
@@ -38,20 +38,25 @@ jobs:
     
     steps:
       - uses: actions/checkout@v3
-        
-      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
-        uses: actions/setup-dotnet@v3
+
+      - run: dotnet tool update -g docfx
+
+      - run: docfx Docs/docfx.json --output Docs/_site
+
+      - name: Setup pages
+        uses: actions/configure-pages@v3
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         with:
-          dotnet-version: ${{ vars.DOTNET_VERSION }}
+          path: 'Docs/_site'
+
+      - name: Deploy to Github Pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
+        id: deployment
+        uses: actions/deploy-pages@v2
           
-      - name: Restore
-        run: |
-          dotnet restore src/dotnet/EncyclopediaGalactica.sln
-          
-      - name: Build
-        run: |
-          dotnet build --configuration Release --no-restore src/dotnet/EncyclopediaGalactica.sln
-          
-      - name: Test
-        run: |
-          dotnet test --no-restore --verbosity normal src/dotnet/EncyclopediaGalactica.sln
+      
