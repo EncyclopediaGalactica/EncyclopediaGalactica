@@ -1,3 +1,10 @@
+## [0.17.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.1...0.17.2) (2024-03-03)
+
+
+### Bug Fixes
+
+* **dotnet:** cleaning up dotnet and nuget upgrade ([#161](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/161)) ([cd5645f](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/cd5645fa256c75e0d344a7079412d934246957d9))
+
 ## [0.17.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.0...0.17.1) (2024-03-02)
 
 
