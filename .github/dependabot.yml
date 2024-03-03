@@ -5,7 +5,11 @@
 
 version: 2
 updates:
-  - package-ecosystem: "Maven" # See documentation for possible values
+  - package-ecosystem: "maven" # See documentation for possible values
     directory: "/src/java" # Location of package manifests
     schedule:
+      interval: "daily"
+  - package-ecosystem: "nuget"
+    directory: "/src/dotnet"
+    schedule: 
       interval: "daily"
