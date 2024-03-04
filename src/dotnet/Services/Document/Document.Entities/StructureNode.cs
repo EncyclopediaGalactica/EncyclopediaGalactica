@@ -13,30 +13,10 @@ namespace EncyclopediaGalactica.Services.Document.Entities;
 ///         </p>
 ///     </remarks>
 /// </summary>
-public class Structure
+public class StructureNode
 {
     /// <summary>
     ///     Gets or sets the Id value.
     /// </summary>
     public long Id { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the name value.
-    /// </summary>
-    public string Name { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the Parent value.
-    /// </summary>
-    public Structure Parent { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the Children value.
-    /// </summary>
-    public List<Structure> Children { get; set; }
-
-    /// <summary>
-    ///     Gets or sets the Parent Id value.
-    /// </summary>
-    public long ParentId { get; set; }
 }

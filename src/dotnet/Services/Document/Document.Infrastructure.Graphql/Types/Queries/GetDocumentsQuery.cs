@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Queries;
 
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Resolvers;
 using HotChocolate.Types;
+using Resolvers.QueryResolvers;
 using Result;
 
 public class GetDocumentsQuery : ObjectTypeExtension<Query>
@@ -12,6 +12,6 @@ public class GetDocumentsQuery : ObjectTypeExtension<Query>
             .Field("getDocuments")
             .Description("Document entity")
             .Type<ListType<DocumentOutput>>()
-            .ResolveWith<DocumentResolvers>(res => res.GetAllAsync(default, default));
+            .ResolveWith<DocumentQueryResolvers>(res => res.GetAllAsync(default, default));
     }
 }

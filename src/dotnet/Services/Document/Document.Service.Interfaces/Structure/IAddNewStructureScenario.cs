@@ -1,23 +1,25 @@
 namespace EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure;
 
 using Contracts.Input;
+using Contracts.Output;
+using Entities;
 
-public interface IAddNewStructureCommand
+public interface IAddNewStructureScenario
 {
     /// <summary>
-    ///     Adds a new <see cref="Structure" /> to the system based on the provided information in the
-    ///     <see cref="StructureInput" />.
+    ///     Creates a new <see cref="StructureNode" /> to the system based on the provided information in the
+    ///     <see cref="StructureNodeInput" />.
     /// </summary>
     /// <param name="parentId">Id of the parent <see cref="Structure" /></param>
-    /// <param name="structureInput">The <see cref="StructureInput" /> providing details</param>
+    /// <param name="structureNodeInput">The <see cref="StructureNodeInput" /> providing details</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
     /// <returns>
     ///     <see cref="Task{TResult}" /> representing result of asynchronous operation.
     /// </returns>
-    Task<StructureInput> AddNewAsync(
+    Task<StructureNodeResult> AddNewAsync(
         long parentId,
-        StructureInput structureInput,
+        StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default);
 }

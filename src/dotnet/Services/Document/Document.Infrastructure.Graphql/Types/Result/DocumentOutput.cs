@@ -1,7 +1,8 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Result;
 
-using EncyclopediaGalactica.Services.Document.Contracts.Output;
+using Contracts.Output;
 using HotChocolate.Types;
+using Resolvers.FieldResolvers;
 
 public class DocumentOutput : ObjectType<DocumentResult>
 {
@@ -26,5 +27,11 @@ public class DocumentOutput : ObjectType<DocumentResult>
             .Field(f => f.Uri)
             .Description("The source url of the document")
             .Type<StringType>();
+
+        descriptor
+            .Field(f => f.StructureNode)
+            .Description("The root Structure Node of the Document")
+            .Type<StructureNodeOutput>()
+            .ResolveWith<StructureNodeFieldResolvers>(r => r.GetNode(default, default));
     }
 }

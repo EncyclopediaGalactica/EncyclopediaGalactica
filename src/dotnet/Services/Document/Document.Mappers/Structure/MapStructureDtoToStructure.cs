@@ -3,16 +3,14 @@ namespace EncyclopediaGalactica.Services.Document.Mappers.Structure;
 using Contracts.Input;
 using Entities;
 
-public partial class StructureMappers
+public partial class StructureNodeMappers
 {
     /// <inheritdoc />
-    public Structure MapStructureDtoToStructure(StructureInput structureInput)
+    public StructureNode MapStructureNodeInputToStructureNode(StructureNodeInput structureNodeInput)
     {
-        return new Structure
+        return new StructureNode
         {
-            Id = structureInput.Id,
-            ParentId = structureInput.ParentId,
-            Children = MapStructureDtosToStructures(structureInput.Children)
+            Id = structureNodeInput.Id,
         };
     }
 }

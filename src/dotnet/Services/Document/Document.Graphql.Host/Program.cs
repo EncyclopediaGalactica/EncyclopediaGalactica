@@ -4,12 +4,15 @@ using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Input;
 using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Mutations;
 using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Queries;
 using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Result;
+using EncyclopediaGalactica.Services.Document.Mappers;
 using EncyclopediaGalactica.Services.Document.Mappers.Document;
 using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
 using EncyclopediaGalactica.Services.Document.Repository.Document;
 using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
 using EncyclopediaGalactica.Services.Document.Service.Document;
 using EncyclopediaGalactica.Services.Document.Service.Interfaces.Document;
+using EncyclopediaGalactica.Services.Document.Service.Interfaces.Structure;
+using EncyclopediaGalactica.Services.Document.Service.Structure;
 using EncyclopediaGalactica.Services.Document.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;
 using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
@@ -26,7 +29,9 @@ builder.Services
     .AddScoped<IGetAllDocumentsScenario, GetAllDocumentsScenario>()
     .AddScoped<IGetDocumentByIdScenario, GetDocumentByIdScenario>()
     .AddScoped<IUpdateDocumentScenario, UpdateDocumentScenario>()
+    .AddScoped<IGetStructureNodeScenario, GetStructureNodeScenario>()
     .AddScoped<IDocumentsRepository, DocumentRepository>()
+    .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
     .AddScoped<IDocumentMappers, DocumentMappers>()
     .AddScoped<IGuardsService, GuardsService>();
 
@@ -81,6 +86,7 @@ builder.Services
     .RegisterService<IGetAllDocumentsScenario>()
     .RegisterService<IGetDocumentByIdScenario>()
     .RegisterService<IUpdateDocumentScenario>()
+    .RegisterService<IGetStructureNodeScenario>()
     .AddType<DocumentOutput>()
     .AddType<DocumentInputType>();
 

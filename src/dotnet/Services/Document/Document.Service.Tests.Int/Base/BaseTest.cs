@@ -37,9 +37,7 @@ public partial class BaseTest
         IValidator<SourceFormatNode> nodeValidator = new SourceFormatNodeValidator();
         ISourceFormatNodeMappers sourceFormatNodeMappers = new SourceFormatNodeMappers();
         IDocumentMappers documentMappers = new DocumentMappers();
-        ISourceFormatMappers mappers = new SourceFormatMappers(
-            sourceFormatNodeMappers,
-            documentMappers);
+        ISourceFormatMappers mappers = new SourceFormatMappers(documentMappers);
 
         DbContextOptions<DocumentDbContext> dbContextOptions =
             new DbContextOptionsBuilder<DocumentDbContext>()

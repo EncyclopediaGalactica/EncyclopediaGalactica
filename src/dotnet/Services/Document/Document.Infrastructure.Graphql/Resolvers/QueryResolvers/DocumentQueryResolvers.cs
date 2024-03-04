@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Resolvers;
+namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Resolvers.QueryResolvers;
 
 using Arguments;
 using Contracts.Input;
@@ -7,11 +7,11 @@ using HotChocolate.Resolvers;
 using Microsoft.Extensions.Logging;
 using Service.Interfaces.Document;
 
-public class DocumentResolvers
+public class DocumentQueryResolvers
 {
-    private readonly ILogger<DocumentResolvers> _logger;
+    private readonly ILogger<DocumentQueryResolvers> _logger;
 
-    public DocumentResolvers(ILogger<DocumentResolvers> logger)
+    public DocumentQueryResolvers(ILogger<DocumentQueryResolvers> logger)
     {
         ArgumentNullException.ThrowIfNull(logger);
         _logger = logger;
@@ -21,7 +21,8 @@ public class DocumentResolvers
         IResolverContext resolverContext,
         IAddDocumentScenario addDocumentScenario)
     {
-        DocumentInput newDocumentInputType = resolverContext.ArgumentValue<DocumentInput>(ArgumentNames.Document.NewDocument);
+        DocumentInput newDocumentInputType =
+            resolverContext.ArgumentValue<DocumentInput>(ArgumentNames.Document.NewDocument);
         return await addDocumentScenario.AddAsync(newDocumentInputType);
     }
 

@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.ValidatorService;
 using Entities;
 using FluentValidation;
 
-public class StructureValidator : AbstractValidator<Structure>
+public class StructureValidator : AbstractValidator<StructureNode>
 {
     public StructureValidator()
     {

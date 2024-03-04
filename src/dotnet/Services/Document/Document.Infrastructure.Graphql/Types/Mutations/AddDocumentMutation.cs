@@ -1,8 +1,8 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Mutations;
 
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Resolvers;
 using HotChocolate.Types;
 using Input;
+using Resolvers.QueryResolvers;
 using Result;
 
 public class AddDocumentMutation : ObjectTypeExtension<Mutation>
@@ -14,6 +14,6 @@ public class AddDocumentMutation : ObjectTypeExtension<Mutation>
             .Type<NonNullType<DocumentOutput>>()
             .Description("Recording new documents in the system")
             .Argument("newDocument", arg => arg.Type<NonNullType<DocumentInputType>>())
-            .ResolveWith<DocumentResolvers>(documentResolvers => documentResolvers.AddAsync(default, default));
+            .ResolveWith<DocumentQueryResolvers>(documentResolvers => documentResolvers.AddAsync(default, default));
     }
 }

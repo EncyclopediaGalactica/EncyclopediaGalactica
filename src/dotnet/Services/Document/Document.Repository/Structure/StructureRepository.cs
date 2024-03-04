@@ -5,7 +5,8 @@ using Interfaces;
 
 public class StructureRepository : IStructureRepository
 {
-    public async Task<Structure> AddNewAsync(Structure structure, CancellationToken cancellationToken = default)
+    public async Task<StructureNode> AddNewAsync(StructureNode structureNode,
+        CancellationToken cancellationToken = default)
     {
         throw new NotImplementedException();
     }
