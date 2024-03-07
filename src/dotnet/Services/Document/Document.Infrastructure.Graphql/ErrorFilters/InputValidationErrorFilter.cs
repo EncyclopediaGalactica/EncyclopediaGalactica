@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.ErrorFilters;
 
-using EncyclopediaGalactica.Services.Document.Service.Exceptions;
+using Scenario.Exceptions;
 
 public class InputValidationErrorFilter :
     CustomErrorFilter<InvalidInputToDocumentServiceException>

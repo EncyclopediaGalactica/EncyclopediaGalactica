@@ -5,18 +5,10 @@ using Contracts.Input;
 using Contracts.Output;
 using HotChocolate.Resolvers;
 using Microsoft.Extensions.Logging;
-using Service.Interfaces.Document;
+using Scenario.Interfaces.Document;
 
-public class DocumentQueryResolvers
+public class DocumentQueryResolvers(ILogger<DocumentQueryResolvers> logger)
 {
-    private readonly ILogger<DocumentQueryResolvers> _logger;
-
-    public DocumentQueryResolvers(ILogger<DocumentQueryResolvers> logger)
-    {
-        ArgumentNullException.ThrowIfNull(logger);
-        _logger = logger;
-    }
-
     public async Task<DocumentResult> AddAsync(
         IResolverContext resolverContext,
         IAddDocumentScenario addDocumentScenario)
@@ -61,7 +53,19 @@ public class DocumentQueryResolvers
         IResolverContext resolverContext,
         IGetAllDocumentsScenario getAllDocumentsScenario)
     {
-        return await getAllDocumentsScenario.GetAllAsync();
+        try
+        {
+            return await getAllDocumentsScenario.GetAllAsync();
+        }
+        catch (Exception e)
+        {
+            logger.LogDebug("{OperationName} has failed. Message: {Message}; Stacktrace: {StackTrace}",
+                nameof(GetAllAsync),
+                e.Message,
+                e.StackTrace);
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
     /// <summary>

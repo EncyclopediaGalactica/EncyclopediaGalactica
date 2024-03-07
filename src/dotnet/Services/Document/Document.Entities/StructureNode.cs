@@ -19,4 +19,8 @@ public class StructureNode
     ///     Gets or sets the Id value.
     /// </summary>
     public long Id { get; set; }
+
+    public Document? Document { get; set; }
+    public long DocumentId { get; set; }
+    public int IsRootNode { get; set; }
 }

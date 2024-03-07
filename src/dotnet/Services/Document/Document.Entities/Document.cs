@@ -34,4 +34,6 @@ public class Document
     ///     Gets or sets the Uri value
     /// </summary>
     public Uri? Uri { get; set; }
+
+    public StructureNode? StructureNode { get; set; }
 }

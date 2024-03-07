@@ -14,9 +14,8 @@ public class DocumentDbContext : DbContext
     {
     }
 
-    public DbSet<SourceFormatNode> SourceFormatNodes => Set<SourceFormatNode>();
     public DbSet<Document> Documents => Set<Document>();
-    public DbSet<StructureNode> Structures => Set<StructureNode>();
+    public DbSet<StructureNode> StructureNodes => Set<StructureNode>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -25,6 +24,5 @@ public class DocumentDbContext : DbContext
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DocumentEntityConfiguration).Assembly);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(StructureEntityConfiguration).Assembly);
-        modelBuilder.ApplyConfigurationsFromAssembly(typeof(SourceFormatNodeEntityConfiguration).Assembly);
     }
 }

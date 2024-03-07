@@ -2,6 +2,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Mutati
 
 using Arguments;
 using HotChocolate.Types;
+using Infrastructure.Graphql.RootTypes;
 using Input;
 using Resolvers.QueryResolvers;
 using Result;

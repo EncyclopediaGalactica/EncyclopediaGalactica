@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>EncyclopediaGalactica.Infrastructure.Graphql.RootTypes</AssemblyName>
+        <RootNamespace>EncyclopediaGalactica.Infrastructure.Graphql.RootTypes</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="HotChocolate.Types" Version="13.9.0"/>
+    </ItemGroup>
+
+</Project>

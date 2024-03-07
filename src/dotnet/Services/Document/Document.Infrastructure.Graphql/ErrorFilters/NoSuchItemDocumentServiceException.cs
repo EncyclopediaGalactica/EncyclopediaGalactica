@@ -1,7 +1,7 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.ErrorFilters;
 
-using EncyclopediaGalactica.Services.Document.Service.Exceptions;
+using Scenario.Exceptions;
 
-public class NoSuchItemErrorFilter : CustomErrorFilter<NoSuchItemDocumentServiceException>
+public class NoSuchItemErrorFilter : CustomErrorFilter<NoSuchItemScenarioException>
 {
 }

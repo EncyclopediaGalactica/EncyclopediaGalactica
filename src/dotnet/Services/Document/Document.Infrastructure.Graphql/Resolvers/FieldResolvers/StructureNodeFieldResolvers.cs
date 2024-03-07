@@ -2,14 +2,25 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Resolvers.Fi
 
 using Contracts.Output;
 using HotChocolate.Resolvers;
-using Service.Interfaces.Structure;
+using Microsoft.Extensions.Logging;
+using Scenario.Interfaces.StructureNode;
 
-public class StructureNodeFieldResolvers
+public class StructureNodeFieldResolvers(
+    ILogger<StructureNodeFieldResolvers> logger)
 {
     public async Task<StructureNodeResult> GetNode(
         IResolverContext resolverContext,
-        IGetStructureNodeScenario getStructureNodeScenario)
+        IGetRootStructureNodeByDocumentIdScenario getRootStructureNodeByDocumentIdScenario)
     {
-        return null;
+        try
+        {
+            DocumentResult parent = resolverContext.Parent<DocumentResult>();
+            return await getRootStructureNodeByDocumentIdScenario.GetRootNodeByDocumentIdAsync(parent.Id);
+        }
+        catch (Exception e)
+        {
+            logger.LogDebug("=== ERROR ===, {Message}, {StackTrace}", e.Message, e.StackTrace);
+            return default;
+        }
     }
 }

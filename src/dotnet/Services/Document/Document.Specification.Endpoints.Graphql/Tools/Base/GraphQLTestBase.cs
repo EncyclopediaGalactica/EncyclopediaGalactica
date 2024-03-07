@@ -14,10 +14,10 @@ using Ctx;
 using Entities;
 using FluentValidation;
 using HotChocolate.Execution;
+using Infrastructure.Graphql.RootTypes;
 using Mappers;
 using Mappers.Document;
 using Mappers.Interfaces;
-using Mappers.SourceFormatNode;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,9 +25,8 @@ using Microsoft.Extensions.Logging;
 using Repository;
 using Repository.Document;
 using Repository.Interfaces;
-using Repository.SourceFormatNode;
-using Service.Document;
-using Service.Interfaces.Document;
+using Scenario.Document;
+using Scenario.Interfaces.Document;
 using Utils.GuardsService;
 using Utils.GuardsService.Interfaces;
 using ValidatorService;
@@ -52,14 +51,11 @@ public partial class GraphQLTestBase
             .AddScoped<IDocumentsRepository, DocumentRepository>()
             .AddScoped<IDocumentMappers, DocumentMappers>()
             .AddScoped<IGuardsService, GuardsService>()
-            .AddScoped<ISourceFormatNodeRepository, SourceFormatNodeRepository>()
-            .AddScoped<ISourceFormatNodeMappers, SourceFormatNodeMappers>()
             .AddScoped<ISourceFormatsRepository, SourceFormatsRepository>()
             .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
-            .AddScoped<IValidator<SourceFormatNode>, SourceFormatNodeValidator>()
             .AddScoped<IValidator<SourceFormatNodeInput>, SourceFormatNodeDtoValidator>()
             .AddScoped<IValidator<Contracts.Input.DocumentInput>, DocumentInputValidator>()
-            .AddScoped<IValidator<EncyclopediaGalactica.Services.Document.Entities.Document>, DocumentValidator>()
+            .AddScoped<IValidator<Document>, DocumentValidator>()
             .AddLogging(log =>
             {
                 log.ClearProviders();

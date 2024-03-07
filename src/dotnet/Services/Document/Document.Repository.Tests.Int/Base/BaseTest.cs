@@ -2,14 +2,11 @@ namespace EncyclopediaGalactica.Services.Document.Repository.Tests.Int.Base;
 
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using System.Threading.Tasks;
 using Ctx;
 using Interfaces;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Repository.Document;
-using Repository.SourceFormatNode;
-using Utils.GuardsService;
 using ValidatorService;
 
 [ExcludeFromCodeCoverage]
@@ -31,38 +28,10 @@ public partial class BaseTest
         DocumentDbContext ctx = new DocumentDbContext(sourceFormatsDbContextOptions);
         ctx.Database.EnsureCreated();
 
-        ISourceFormatNodeRepository sourceFormatNodeRepository = new SourceFormatNodeRepository(
-            sourceFormatsDbContextOptions,
-            new SourceFormatNodeValidator(),
-            new GuardsService());
         IDocumentsRepository documentsRepository = new DocumentRepository(
             sourceFormatsDbContextOptions,
             new DocumentValidator());
         Sut = new SourceFormatsRepository(
-            sourceFormatNodeRepository,
             documentsRepository);
-    }
-
-    protected async Task<(
-        int childCount,
-        long childId,
-        long parentId,
-        long rootNodeId)> PrepareSourceFormatNodeRepoWith_OneParentAnd_OneChild()
-    {
-        Entities.SourceFormatNode parent = await Sut.SourceFormatNodes.AddAsync(
-            new Entities.SourceFormatNode("parent")).ConfigureAwait(false);
-        Entities.SourceFormatNode child = await Sut.SourceFormatNodes.AddAsync(
-            new Entities.SourceFormatNode("child1")).ConfigureAwait(false);
-
-        Entities.SourceFormatNode result = await Sut.SourceFormatNodes.AddChildNodeAsync(
-            child.Id,
-            parent.Id,
-            parent.Id).ConfigureAwait(false);
-        (int, long, long, long) res = (
-            1,
-            child.Id,
-            parent.Id,
-            parent.Id);
-        return res;
     }
 }

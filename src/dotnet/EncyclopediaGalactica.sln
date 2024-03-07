@@ -52,15 +52,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Repository.Tests.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Repository.Tests.Unit", "Services\Document\Document.Repository.Tests.Unit\Document.Repository.Tests.Unit.csproj", "{822279B6-F32D-4EC1-8DE9-8B97979BFC26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Service", "Services\Document\Document.Service\Document.Service.csproj", "{0CA84505-3E3F-46F0-AD08-80AA5BF7656D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario", "Services\Document\Document.Scenario\Document.Scenario.csproj", "{0CA84505-3E3F-46F0-AD08-80AA5BF7656D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Service.Exceptions", "Services\Document\Document.Service.Exceptions\Document.Service.Exceptions.csproj", "{73EAE1FE-0CE6-4C50-9A8D-2AA0F932C782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Exceptions", "Services\Document\Document.Scenario.Exceptions\Document.Scenario.Exceptions.csproj", "{73EAE1FE-0CE6-4C50-9A8D-2AA0F932C782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Service.Interfaces", "Services\Document\Document.Service.Interfaces\Document.Service.Interfaces.csproj", "{E09CA441-6B69-4C5D-B2A2-6FB6CDEB8B1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Interfaces", "Services\Document\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj", "{E09CA441-6B69-4C5D-B2A2-6FB6CDEB8B1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Service.Tests.Int", "Services\Document\Document.Service.Tests.Int\Document.Service.Tests.Int.csproj", "{377B75A5-B731-4962-8B02-99D383CE6CE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Tests.Int", "Services\Document\Document.Scenario.Tests.Int\Document.Scenario.Tests.Int.csproj", "{377B75A5-B731-4962-8B02-99D383CE6CE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Service.Tests.Unit", "Services\Document\Document.Service.Tests.Unit\Document.Service.Tests.Unit.csproj", "{AEFFC93A-BD01-445A-84EF-6689FC63E6CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Tests.Unit", "Services\Document\Document.Scenario.Tests.Unit\Document.Scenario.Tests.Unit.csproj", "{AEFFC93A-BD01-445A-84EF-6689FC63E6CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Tests.Datasets", "Services\Document\Document.Tests.Datasets\Document.Tests.Datasets.csproj", "{08112000-839D-4287-A9A1-F92F794051CA}"
 EndProject
@@ -122,8 +122,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Tests.Datasets", "Servi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IAM.Tests.E2E", "Services\IAM\IAM.Tests.E2E\IAM.Tests.E2E.csproj", "{EB02B7AF-7B08-4187-B638-6DFA5864E80F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Graphql.Host", "Services\Document\Document.Graphql.Host\Document.Graphql.Host.csproj", "{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Specification.Endpoints.Graphql", "Services\Document\Document.Specification.Endpoints.Graphql\Document.Specification.Endpoints.Graphql.csproj", "{79F22CDE-F85A-43C6-8950-1E1FD62C949E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Infrastructure.Graphql", "Services\Document\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj", "{577B73B8-0CFA-4766-9D84-8B940FFBC4B7}"
@@ -133,6 +131,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Result.Graphql", "Services\Document\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj", "{B9E19CCB-6F26-44D3-8981-73674A895B17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Contracts.Result.Graphql.Tests.Unit", "Services\Document\Document.Contracts.Result.Graphql.Tests.Unit\Document.Contracts.Result.Graphql.Tests.Unit.csproj", "{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Tests.Tools", "Services\Document\Document.Tests.Tools\Document.Tests.Tools.csproj", "{A75A2C98-BD24-4E5F-A598-34E878456D93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Host", "Host", "{1EC776F8-6154-4C31-942D-F76F91D9FB00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphql.Host", "Host\Graphql.Host\Graphql.Host.csproj", "{CB723329-7BA5-435C-A2CD-410B45A3F84B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graphql.RootTypes", "Host\Graphql.RootTypes\Graphql.RootTypes.csproj", "{CEB336C3-2224-45CF-A721-E72ECB5112B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -344,10 +350,6 @@ Global
 		{EB02B7AF-7B08-4187-B638-6DFA5864E80F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB02B7AF-7B08-4187-B638-6DFA5864E80F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB02B7AF-7B08-4187-B638-6DFA5864E80F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -368,6 +370,18 @@ Global
 		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75A2C98-BD24-4E5F-A598-34E878456D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75A2C98-BD24-4E5F-A598-34E878456D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75A2C98-BD24-4E5F-A598-34E878456D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75A2C98-BD24-4E5F-A598-34E878456D93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB723329-7BA5-435C-A2CD-410B45A3F84B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB723329-7BA5-435C-A2CD-410B45A3F84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB723329-7BA5-435C-A2CD-410B45A3F84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB723329-7BA5-435C-A2CD-410B45A3F84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB336C3-2224-45CF-A721-E72ECB5112B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB336C3-2224-45CF-A721-E72ECB5112B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB336C3-2224-45CF-A721-E72ECB5112B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB336C3-2224-45CF-A721-E72ECB5112B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D95496D8-08A2-4AA4-A020-AF9DB150FA6B} = {A68E61C6-5EE5-4D53-ADCA-51B667BFA9F3}
@@ -423,11 +437,13 @@ Global
 		{7D364A92-3F83-4A75-BDAF-354AD5467485} = {64582B23-FEE0-4315-B14F-A319A05BDBE5}
 		{6A17E587-F2C5-41F1-BEE0-81E84CF704C1} = {64582B23-FEE0-4315-B14F-A319A05BDBE5}
 		{EB02B7AF-7B08-4187-B638-6DFA5864E80F} = {64582B23-FEE0-4315-B14F-A319A05BDBE5}
-		{D52F815A-F5FF-4C48-9EC9-3D4E8D6278E6} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{79F22CDE-F85A-43C6-8950-1E1FD62C949E} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{577B73B8-0CFA-4766-9D84-8B940FFBC4B7} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{93339F64-D864-4FA7-8543-2EE89DF34864} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{B9E19CCB-6F26-44D3-8981-73674A895B17} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
 		{D81D6B33-2481-4480-8ACA-E9DFFEE5D514} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{A75A2C98-BD24-4E5F-A598-34E878456D93} = {37C84772-74FE-4A8A-8C5A-528040202EBD}
+		{CB723329-7BA5-435C-A2CD-410B45A3F84B} = {1EC776F8-6154-4C31-942D-F76F91D9FB00}
+		{CEB336C3-2224-45CF-A721-E72ECB5112B1} = {1EC776F8-6154-4C31-942D-F76F91D9FB00}
 	EndGlobalSection
 EndGlobal

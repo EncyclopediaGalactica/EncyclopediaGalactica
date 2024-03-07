@@ -12,12 +12,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="35.4.0" />
+        <PackageReference Include="Bogus" Version="35.4.0"/>
         <PackageReference Include="FluentAssertions" Version="6.12.0"/>
-        <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0" />
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.0"/>
         <PackageReference Include="HotChocolate.Server" Version="10.5.5"/>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-        <PackageReference Include="xunit" Version="2.7.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0"/>
+        <PackageReference Include="xunit" Version="2.7.0"/>
         <PackageReference Include="xunit.runner.visualstudio" Version="2.5.7">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -25,7 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Document.Graphql.Host\Document.Graphql.Host.csproj"/>
+        <ProjectReference Include="..\Document.Ctx\Document.Ctx.csproj"/>
+        <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
+        <ProjectReference Include="..\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj"/>
+        <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>
+        <ProjectReference Include="..\Document.Repository\Document.Repository.csproj"/>
+        <ProjectReference Include="..\Document.Scenario\Document.Scenario.csproj"/>
         <ProjectReference Include="..\Document.Tests.Datasets\Document.Tests.Datasets.csproj"/>
     </ItemGroup>
 
