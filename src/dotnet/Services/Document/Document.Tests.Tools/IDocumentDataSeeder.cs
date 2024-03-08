@@ -7,6 +7,6 @@ public interface IDocumentDataSeeder
     Task SeedDocuments(int amount);
 
     Task SeedDocumentsWithRootStructureNode(int documentAmount, int structureAmountPerDocument);
-    Task<DocumentResult> SeedDocument();
+    Task<long> SeedDocument();
     Task<StructureNodeResult> SeedStructureNode(long documentId, int isRootNode = 0);
 }

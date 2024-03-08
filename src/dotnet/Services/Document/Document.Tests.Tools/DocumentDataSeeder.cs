@@ -25,11 +25,11 @@ public class DocumentDataSeeder(
         {
             for (int i = 0; i < documentAmount; i++)
             {
-                DocumentResult res = await SeedDocument().ConfigureAwait(false);
+                long resId = await SeedDocument().ConfigureAwait(false);
 
                 for (int j = 0; j < structureAmountPerDocument; j++)
                 {
-                    await SeedStructureNode(res.Id, 1).ConfigureAwait(false);
+                    await SeedStructureNode(resId, 1).ConfigureAwait(false);
                 }
             }
         }
@@ -46,18 +46,6 @@ public class DocumentDataSeeder(
         }
     }
 
-    public async Task<DocumentResult> SeedDocument()
-    {
-        DocumentResult result = await addDocumentScenario.AddAsync(new DocumentInput
-        {
-            Name = DocumentNameBase + _random.Next(RandomSeedLow, RandomSeedHigh),
-            Description = DocumentDescriptionBase + _random.Next(RandomSeedLow, RandomSeedHigh)
-        }).ConfigureAwait(false);
-
-        logger.LogInformation("DocumentInput: Id: {Id}", result.Id);
-        return result;
-    }
-
     public async Task<StructureNodeResult> SeedStructureNode(long documentId, int isRootNode = 0)
     {
         StructureNodeResult result = await addNewRootStructureNodeScenario.AddNewRootNodeAsync(
@@ -70,5 +58,17 @@ public class DocumentDataSeeder(
         logger.LogInformation("Structure Node: Id: {Id}", result.Id);
 
         return result;
+    }
+
+    public async Task<long> SeedDocument()
+    {
+        long resultId = await addDocumentScenario.AddAsync(new DocumentInput
+        {
+            Name = DocumentNameBase + _random.Next(RandomSeedLow, RandomSeedHigh),
+            Description = DocumentDescriptionBase + _random.Next(RandomSeedLow, RandomSeedHigh)
+        }).ConfigureAwait(false);
+
+        logger.LogInformation("DocumentInput: Id: {Id}", resultId);
+        return resultId;
     }
 }

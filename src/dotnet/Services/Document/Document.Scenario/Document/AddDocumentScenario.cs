@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Scenario.Document;
 
 using Contracts.Input;
-using Contracts.Output;
 using Entities;
 using Errors;
 using Exceptions;
@@ -38,7 +37,7 @@ public class AddDocumentScenario : IAddDocumentScenario
     }
 
     /// <inheritdoc />
-    public async Task<DocumentResult> AddAsync(DocumentInput inputInput,
+    public async Task<long> AddAsync(DocumentInput inputInput,
         CancellationToken cancellationToken = default)
     {
         try
@@ -67,14 +66,13 @@ public class AddDocumentScenario : IAddDocumentScenario
         }
     }
 
-    private async Task<DocumentResult> AddBusinessLogicAsync(DocumentInput inputInput,
+    private async Task<long> AddBusinessLogicAsync(DocumentInput input,
         CancellationToken cancellationToken)
     {
-        await ValidationDocumentInputForAdding(inputInput);
-        Document document = _mappers.DocumentMappers.MapDocumentInputToDocument(inputInput);
+        await ValidationDocumentInputForAdding(input);
+        Document document = _mappers.DocumentMappers.MapDocumentInputToDocument(input);
         Document result = await _repository.AddAsync(document, cancellationToken).ConfigureAwait(false);
-        DocumentResult resultInput = _mappers.DocumentMappers.MapDocumentToDocumentResult(result);
-        return resultInput;
+        return result.Id;
     }
 
     private async Task ValidationDocumentInputForAdding(DocumentInput inputInput)

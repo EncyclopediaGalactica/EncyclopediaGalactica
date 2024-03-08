@@ -1,7 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Scenario.Interfaces.Document;
 
 using Contracts.Input;
-using Contracts.Output;
 using Entities;
 using Exceptions;
 
@@ -16,7 +15,8 @@ public interface IAddDocumentScenario
     ///     <see cref="CancellationToken" />
     /// </param>
     /// <returns>
-    ///     Returns a <see cref="Task{TResult}" /> object representing the result of an asynchronous operation.
+    ///     Returns a <see cref="Task{TResult}" /> object representing the result of an asynchronous operation which in this
+    ///     case is the id of the newly created entity.
     /// </returns>
     /// <exception cref="InvalidInputToDocumentServiceException">
     ///     When invalid input is provided to the service
@@ -27,6 +27,5 @@ public interface IAddDocumentScenario
     /// <exception cref="UnknownErrorScenarioException">
     ///     When any other error happens.
     /// </exception>
-    Task<DocumentResult> AddAsync(DocumentInput inputInput,
-        CancellationToken cancellationToken = default);
+    Task<long> AddAsync(DocumentInput inputInput, CancellationToken cancellationToken = default);
 }

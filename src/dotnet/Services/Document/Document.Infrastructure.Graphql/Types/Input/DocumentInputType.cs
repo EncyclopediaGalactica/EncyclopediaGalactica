@@ -1,6 +1,6 @@
 namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Input;
 
-using EncyclopediaGalactica.Services.Document.Contracts.Input;
+using Contracts.Input;
 using HotChocolate.Types;
 
 public class DocumentInputType : InputObjectType<DocumentInput>
@@ -26,5 +26,10 @@ public class DocumentInputType : InputObjectType<DocumentInput>
             .Field(f => f.Uri)
             .Description("The source url of the document")
             .Type<StringType>();
+
+        descriptor
+            .Field(f => f.RootStructureNode)
+            .Description("The root Structure Node.")
+            .Type<StructureNodeInputType>();
     }
 }

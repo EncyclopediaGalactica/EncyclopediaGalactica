@@ -17,7 +17,7 @@ using EncyclopediaGalactica.Services.Document.Repository.Structure;
 using EncyclopediaGalactica.Services.Document.Scenario.Document;
 using EncyclopediaGalactica.Services.Document.Scenario.Interfaces.Document;
 using EncyclopediaGalactica.Services.Document.Scenario.Interfaces.StructureNode;
-using EncyclopediaGalactica.Services.Document.Scenario.Structure;
+using EncyclopediaGalactica.Services.Document.Scenario.StructureNode;
 using EncyclopediaGalactica.Services.Document.Tests.Tools;
 using EncyclopediaGalactica.Services.Document.ValidatorService;
 using EncyclopediaGalactica.Utils.GuardsService;

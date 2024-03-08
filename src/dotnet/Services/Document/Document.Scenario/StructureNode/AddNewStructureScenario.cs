@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Services.Document.Scenario.Structure;
+namespace EncyclopediaGalactica.Services.Document.Scenario.StructureNode;
 
 using Contracts.Input;
 using Contracts.Output;

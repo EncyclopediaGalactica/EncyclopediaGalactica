@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Mutati
 using Arguments;
 using HotChocolate.Types;
 using Infrastructure.Graphql.RootTypes;
-using Resolvers.QueryResolvers;
+using Resolvers.MutationResolvers;
 using Result;
 
 public class DeleteDocumentMutation : ObjectTypeExtension<Mutation>
@@ -15,6 +15,6 @@ public class DeleteDocumentMutation : ObjectTypeExtension<Mutation>
             .Type<NonNullType<DocumentOutput>>()
             .Description("Delete the designated Document.")
             .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<LongType>>())
-            .ResolveWith<DocumentQueryResolvers>(res => res.DeleteAsync(default, default));
+            .ResolveWith<DocumentMutationResolvers>(res => res.DeleteAsync(default, default));
     }
 }
