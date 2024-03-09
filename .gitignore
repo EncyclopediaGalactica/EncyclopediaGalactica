@@ -11,3 +11,6 @@ target/
 .project
 .idea
 .settings
+
+# docs
+docs/_site
