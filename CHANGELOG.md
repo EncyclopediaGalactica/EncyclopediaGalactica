@@ -1,3 +1,10 @@
+# [0.18.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.3...0.18.0) (2024-03-09)
+
+
+### Features
+
+* **docs:** introducing Writerside ([#170](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/170)) ([4568c73](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/4568c7328dcab8992a2693d5253f5d5d937be100))
+
 ## [0.17.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.2...0.17.3) (2024-03-03)
 
 
