@@ -8,6 +8,7 @@
 
     <toc-element topic="starter-topic.md"/>
     <toc-element topic="Use-cases.md"/>
+    <toc-element topic="Document.md"/>
     <toc-element topic="Architecture.md"/>
     <toc-element topic="Dev-Diary.md"/>
 </instance-profile>
