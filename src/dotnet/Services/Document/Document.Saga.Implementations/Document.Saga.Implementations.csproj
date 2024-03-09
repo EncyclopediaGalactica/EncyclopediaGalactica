@@ -8,4 +8,10 @@
         <RootNamespace>EncyclopediaGalactica.Document.Saga.Implementations</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Document.Commands.Implementations\Document.Commands.Implementations.csproj"/>
+        <ProjectReference Include="..\Document.Saga.Exceptions\Document.Saga.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Saga.Interfaces\Document.Saga.Interfaces.csproj"/>
+    </ItemGroup>
+
 </Project>

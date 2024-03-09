@@ -55,9 +55,12 @@ public interface IAddDocumentSaga
     ///     Creates a <see cref="Document" /> entity based on the provided input and returns with it.
     /// </summary>
     /// <param name="documentInput">The provided <see cref="DocumentInput" />.</param>
+    /// <param name="cancellationToken">
+    ///     <see cref="CancellationToken" />
+    /// </param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation. The result type includes
     ///     <see cref="DocumentResult" />.
     /// </returns>
-    Task<DocumentResult> AddAsync(DocumentInput documentInput);
+    Task<DocumentResult> AddAsync(DocumentInput documentInput, CancellationToken cancellationToken = default);
 }

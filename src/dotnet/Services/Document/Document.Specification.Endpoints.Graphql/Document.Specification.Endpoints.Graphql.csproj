@@ -30,7 +30,7 @@
         <ProjectReference Include="..\Document.Infrastructure.Graphql\Document.Infrastructure.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>
         <ProjectReference Include="..\Document.Repository\Document.Repository.csproj"/>
-        <ProjectReference Include="..\Document.Scenario\Document.Scenario.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Implementations\Document.Commands.Implementations.csproj"/>
         <ProjectReference Include="..\Document.Tests.Datasets\Document.Tests.Datasets.csproj"/>
     </ItemGroup>
 

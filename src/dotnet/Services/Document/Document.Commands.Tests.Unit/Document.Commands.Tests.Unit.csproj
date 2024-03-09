@@ -6,9 +6,9 @@
 
         <IsPackable>false</IsPackable>
 
-        <AssemblyName>EncyclopediaGalactica.Services.Document.Scenario.Tests.Unit</AssemblyName>
+        <AssemblyName>EncyclopediaGalactica.Services.Document.Commands.Tests.Unit</AssemblyName>
 
-        <RootNamespace>EncyclopediaGalactica.Services.Document.Scenario.Tests.Unit</RootNamespace>
+        <RootNamespace>EncyclopediaGalactica.Services.Document.Commands.Tests.Unit</RootNamespace>
 
         <LangVersion>default</LangVersion>
     </PropertyGroup>
@@ -38,8 +38,8 @@
         <ProjectReference Include="..\Document.Mappers\Document.Mappers.csproj"/>
         <ProjectReference Include="..\Document.Repository.Interfaces\Document.Repository.Interfaces.csproj"/>
         <ProjectReference Include="..\Document.Repository\Document.Repository.csproj"/>
-        <ProjectReference Include="..\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj"/>
-        <ProjectReference Include="..\Document.Scenario\Document.Scenario.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Interfaces\Document.Commands.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Implementations\Document.Commands.Implementations.csproj"/>
         <ProjectReference Include="..\Document.ValidatorService\Document.ValidatorService.csproj"/>
     </ItemGroup>
 

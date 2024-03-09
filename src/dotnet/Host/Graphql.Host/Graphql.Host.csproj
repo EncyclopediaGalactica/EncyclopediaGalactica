@@ -30,9 +30,9 @@
         <ProjectReference Include="..\..\Services\Document\Document.Reposiory.Exceptions\Document.Reposiory.Exceptions.csproj"/>
         <ProjectReference Include="..\..\Services\Document\Document.Repository.Interfaces\Document.Repository.Interfaces.csproj"/>
         <ProjectReference Include="..\..\Services\Document\Document.Repository\Document.Repository.csproj"/>
-        <ProjectReference Include="..\..\Services\Document\Document.Scenario.Exceptions\Document.Scenario.Exceptions.csproj"/>
-        <ProjectReference Include="..\..\Services\Document\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj"/>
-        <ProjectReference Include="..\..\Services\Document\Document.Scenario\Document.Scenario.csproj"/>
+        <ProjectReference Include="..\..\Services\Document\Document.Commands.Exceptions\Document.Commands.Exceptions.csproj"/>
+        <ProjectReference Include="..\..\Services\Document\Document.Commands.Interfaces\Document.Commands.Interfaces.csproj"/>
+        <ProjectReference Include="..\..\Services\Document\Document.Commands.Implementations\Document.Commands.Implementations.csproj"/>
         <ProjectReference Include="..\..\Services\Document\Document.Tests.Datasets\Document.Tests.Datasets.csproj"/>
         <ProjectReference Include="..\..\Services\Document\Document.Tests.Tools\Document.Tests.Tools.csproj"/>
         <ProjectReference Include="..\..\Services\Document\Document.ValidatorService\Document.ValidatorService.csproj"/>

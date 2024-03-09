@@ -52,13 +52,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Repository.Tests.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Repository.Tests.Unit", "Services\Document\Document.Repository.Tests.Unit\Document.Repository.Tests.Unit.csproj", "{822279B6-F32D-4EC1-8DE9-8B97979BFC26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario", "Services\Document\Document.Scenario\Document.Scenario.csproj", "{0CA84505-3E3F-46F0-AD08-80AA5BF7656D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Commands.Implementations", "Services\Document\Document.Commands.Implementations\Document.Commands.Implementations.csproj", "{0CA84505-3E3F-46F0-AD08-80AA5BF7656D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Exceptions", "Services\Document\Document.Scenario.Exceptions\Document.Scenario.Exceptions.csproj", "{73EAE1FE-0CE6-4C50-9A8D-2AA0F932C782}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Commands.Exceptions", "Services\Document\Document.Commands.Exceptions\Document.Commands.Exceptions.csproj", "{73EAE1FE-0CE6-4C50-9A8D-2AA0F932C782}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Interfaces", "Services\Document\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj", "{E09CA441-6B69-4C5D-B2A2-6FB6CDEB8B1D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Commands.Interfaces", "Services\Document\Document.Commands.Interfaces\Document.Commands.Interfaces.csproj", "{E09CA441-6B69-4C5D-B2A2-6FB6CDEB8B1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Scenario.Tests.Unit", "Services\Document\Document.Scenario.Tests.Unit\Document.Scenario.Tests.Unit.csproj", "{AEFFC93A-BD01-445A-84EF-6689FC63E6CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Commands.Tests.Unit", "Services\Document\Document.Commands.Tests.Unit\Document.Commands.Tests.Unit.csproj", "{AEFFC93A-BD01-445A-84EF-6689FC63E6CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Document.Tests.Datasets", "Services\Document\Document.Tests.Datasets\Document.Tests.Datasets.csproj", "{08112000-839D-4287-A9A1-F92F794051CA}"
 EndProject

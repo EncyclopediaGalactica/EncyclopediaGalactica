@@ -12,7 +12,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Entities\Document.Entities.csproj"/>
-        <ProjectReference Include="..\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Interfaces\Document.Commands.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>

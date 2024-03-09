@@ -18,8 +18,8 @@
         <ProjectReference Include="..\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj"/>
         <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
         <ProjectReference Include="..\Document.Saga.Interfaces\Document.Saga.Interfaces.csproj"/>
-        <ProjectReference Include="..\Document.Scenario.Exceptions\Document.Scenario.Exceptions.csproj"/>
-        <ProjectReference Include="..\Document.Scenario.Interfaces\Document.Scenario.Interfaces.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Exceptions\Document.Commands.Exceptions.csproj"/>
+        <ProjectReference Include="..\Document.Commands.Interfaces\Document.Commands.Interfaces.csproj"/>
     </ItemGroup>
 
 </Project>
