@@ -1,3 +1,10 @@
+# [0.19.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.18.0...0.19.0) (2024-03-09)
+
+
+### Features
+
+* **docs:** removing WriterSide ([#172](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/172)) ([a501f75](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/a501f7533e1adc1530db77e776a3c7d8a728f214))
+
 # [0.18.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.3...0.18.0) (2024-03-09)
 
 
