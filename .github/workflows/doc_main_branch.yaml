@@ -1,15 +1,15 @@
-name: Documentation - Feature
-run-name: Documentation - Feature
+name: Documentation - Main
+run-name: Documentation - Main
 
 on:
-  pull_request:
+  push:
     branches:
       - main
     paths:
-      - 'docs/**'
+      - 'Docs/**'
         
 env:
-  INSTANCE: 'Docs/EncyclopediaGalactica/eg'
+  INSTANCE: 'EncyclopediaGalactica/eg'
   ARTIFACT: 'webHelpEG2-all.zip'
   DOCKER_VERSION: '233.14389'
 
@@ -27,8 +27,8 @@ jobs:
           echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
   
-  feature_branch:
-    name: Feature Branch Build
+  main_branch:
+    name: Main Branch Build
     runs-on: ubuntu-latest
     needs: debug
 #    environment:
@@ -63,12 +63,21 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: docs
-          path: artifacts
 
-      - name: Test documentation
-        uses: JetBrains/writerside-checker-action@v1
+      - name: Unzip artifact
+        run: unzip -O UTF-8 -qq '${{ env.ARTIFACT }}' -d dir
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Package and upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          instance: ${{ env.INSTANCE }}
+          path: dir
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
 
 #      - run: dotnet tool update -g docfx
 #
