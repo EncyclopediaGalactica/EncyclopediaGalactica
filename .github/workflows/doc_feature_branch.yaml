@@ -2,7 +2,7 @@ name: Documentation - Main
 run-name: Documentation - Main
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
@@ -43,19 +43,3 @@ jobs:
 
       - run: docfx Docs/docfx.json --output Docs/_site
 
-      - name: Setup pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
-        with:
-          path: 'Docs/_site'
-
-      - name: Deploy to Github Pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
-        id: deployment
-        uses: actions/deploy-pages@v2
-      
