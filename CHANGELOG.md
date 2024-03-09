@@ -1,3 +1,10 @@
+## [0.19.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.1...0.19.2) (2024-03-09)
+
+
+### Bug Fixes
+
+* **doc:** testing build and publish ([#174](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/174)) ([d1643ff](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d1643ff4e0af1abbde7bdc4fc5eee87d5128ff6a))
+
 ## [0.19.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.0...0.19.1) (2024-03-09)
 
 
