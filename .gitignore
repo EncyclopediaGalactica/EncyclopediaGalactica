@@ -13,4 +13,4 @@ target/
 .settings
 
 # docs
-docs/_site
+Docs/_site
