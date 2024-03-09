@@ -1,12 +1,12 @@
-name: Documentation - Main
-run-name: Documentation - Main
+name: Documentation - Feature
+run-name: Documentation - Feature
 
 on:
   pull_request:
     branches:
       - main
     paths:
-      - 'docs/**'
+      - 'Docs/**'
         
 jobs:
   
@@ -23,18 +23,18 @@ jobs:
           echo "event name: " ${{ github.event_name }}
   
   main_branch:
-    name: Main Branch Build
+    name: Feature Branch Build
     runs-on: ubuntu-latest
     needs: debug
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      pages: write
-      id-token: write
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    permissions:
+#      contents: write
+#      issues: write
+#      pull-requests: write
+#      pages: write
+#      id-token: write
     
     steps:
       - uses: actions/checkout@v4
