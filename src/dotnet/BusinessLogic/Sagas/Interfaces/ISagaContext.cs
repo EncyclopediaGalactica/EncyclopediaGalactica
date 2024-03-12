@@ -1,6 +1,5 @@
 namespace EncyclopediaGalactica.BusinessLogic.Sagas.Interfaces;
 
-public interface ISagaContext<T>
+public interface ISagaContext
 {
-    T Payload { get; set; }
 }

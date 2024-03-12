@@ -1,5 +1,8 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
+using Contracts;
+using Exceptions;
+
 /// <summary>
 ///     Get root <see cref="StructureNode" /> by <see cref="Document.Id" /> scenario.
 ///     <remarks>
@@ -7,7 +10,7 @@ namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 ///         entities in Graphql output.
 ///     </remarks>
 /// </summary>
-public interface IGetRootStructureNodeByDocumentIdScenario
+public interface IGetStructureNodeTreeCommand
 {
     /// <summary>
     ///     Returns the <see cref="StructureNodeResult" /> which is the root node of the designated <see cref="Document" />
@@ -18,6 +21,7 @@ public interface IGetRootStructureNodeByDocumentIdScenario
     ///     internal check if there are multiple root nodes of a <see cref="Document" />. If so, it throws an exception.
     /// </remarks>
     /// <param name="documentId">The <see cref="Document" /> Id field.</param>
+    /// <param name="cancellationToken"></param>
     /// <returns>The root node of the designated <see cref="Document" /> entity.</returns>
     /// <exception cref="InvalidArgumentScenarioException">
     ///     When invalid arguments were passed to the scenario.
@@ -34,5 +38,7 @@ public interface IGetRootStructureNodeByDocumentIdScenario
     /// <exception cref="UnknownErrorScenarioException">
     ///     Any further exception happen in the scenario.
     /// </exception>
-    Task<StructureNodeResult> GetRootNodeByDocumentIdAsync(long documentId);
+    Task<StructureNodeResult> GetRootNodeByDocumentIdAsync(
+        long documentId,
+        CancellationToken cancellationToken = default);
 }

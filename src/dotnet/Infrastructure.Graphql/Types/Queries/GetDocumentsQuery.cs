@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Types.Queries;
 
+using BusinessLogic.Entities;
 using HotChocolate.Types;
 using Resolvers.QueryResolvers;
 using Result;

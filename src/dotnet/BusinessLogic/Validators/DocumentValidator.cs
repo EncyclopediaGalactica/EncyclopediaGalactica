@@ -1,5 +1,8 @@
 namespace EncyclopediaGalactica.BusinessLogic.Validators;
 
+using Entities;
+using FluentValidation;
+
 public class DocumentValidator : AbstractValidator<Document>
 {
     public DocumentValidator()

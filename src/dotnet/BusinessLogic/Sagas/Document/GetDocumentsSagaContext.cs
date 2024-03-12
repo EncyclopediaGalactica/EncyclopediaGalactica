@@ -2,7 +2,6 @@ namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 
 using Interfaces;
 
-public class GetDocumentsSagaContext : ISagaContext<DocumentInput>
+public class GetDocumentsSagaContext : ISagaContext
 {
-    public DocumentInput Payload { get; set; }
 }

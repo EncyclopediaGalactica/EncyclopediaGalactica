@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Types.Input;
 
+using BusinessLogic.Contracts;
 using HotChocolate.Types;
 
 public class StructureNodeInputType : InputObjectType<StructureNodeInput>

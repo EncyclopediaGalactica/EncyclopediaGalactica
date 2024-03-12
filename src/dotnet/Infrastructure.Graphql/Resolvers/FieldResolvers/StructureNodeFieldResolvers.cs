@@ -1,18 +1,21 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Resolvers.FieldResolvers;
 
+using BusinessLogic.Commands.StructureNode;
+using BusinessLogic.Contracts;
 using HotChocolate.Resolvers;
+using Microsoft.Extensions.Logging;
 
 public class StructureNodeFieldResolvers(
     ILogger<StructureNodeFieldResolvers> logger)
 {
     public async Task<StructureNodeResult> GetNode(
         IResolverContext resolverContext,
-        IGetRootStructureNodeByDocumentIdScenario getRootStructureNodeByDocumentIdScenario)
+        IGetStructureNodeTreeCommand getStructureNodeTreeCommand)
     {
         try
         {
             DocumentResult parent = resolverContext.Parent<DocumentResult>();
-            return await getRootStructureNodeByDocumentIdScenario.GetRootNodeByDocumentIdAsync(parent.Id);
+            return await getStructureNodeTreeCommand.GetRootNodeByDocumentIdAsync(parent.Id);
         }
         catch (Exception e)
         {

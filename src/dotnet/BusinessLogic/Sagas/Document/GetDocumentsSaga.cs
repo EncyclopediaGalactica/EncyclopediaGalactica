@@ -1,7 +1,9 @@
 namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 
 using Commands.Document;
+using Contracts;
 using Interfaces;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 ///     Get Document Saga.
@@ -12,7 +14,8 @@ using Interfaces;
 /// </summary>
 public class GetDocumentsSaga(
     IGetAllDocumentsCommand getAllDocumentsCommand,
-    ILogger<GetDocumentsSaga> logger) : IHaveInputAndResultSaga<List<DocumentResult>, GetDocumentsSagaContext>
+    ILogger<GetDocumentsSaga> logger)
+    : IHaveResultSaga<List<DocumentResult>>
 {
     /// <summary>
     ///     Returns list of <see cref="DocumentResult" />.
@@ -23,7 +26,7 @@ public class GetDocumentsSaga(
     ///     Returns <see cref="Task{TResult}" /> representing result of the asynchronous operation.
     /// </returns>
     public async Task<List<DocumentResult>> ExecuteAsync(
-        GetDocumentsSagaContext context,
+        ISagaContext context,
         CancellationToken cancellationToken = default)
     {
         try

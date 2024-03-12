@@ -1,7 +1,9 @@
 namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 
 using Commands.Document;
+using Contracts;
 using Interfaces;
+using Microsoft.Extensions.Logging;
 
 /// <summary>
 ///     Update A Document Saga.
@@ -29,7 +31,8 @@ public class UpdateDocumentSaga(
     {
         try
         {
-            await updateDocumentCommand.UpdateAsync(context.Payload, cancellationToken).ConfigureAwait(false);
+            await updateDocumentCommand.UpdateAsync(context.Payload, cancellationToken)
+                .ConfigureAwait(false);
             return await getDocumentByIdCommand.GetByIdAsync(context.Payload.Id, cancellationToken)
                 .ConfigureAwait(false);
         }

@@ -4,7 +4,7 @@ using Contracts;
 using Entities;
 
 /// <inheritdoc />
-public partial class StructureNodeMappers : IStructureNodeMappers
+public partial class StructureNodeMapper : IStructureNodeMapper
 {
     /// <inheritdoc />
     public StructureNode MapStructureNodeInputToStructureNode(StructureNodeInput structureNodeInput)

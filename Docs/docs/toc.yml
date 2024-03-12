@@ -1,4 +1,8 @@
-- name: User stories
-  href: user_stories/toc.yml
+- name: Introduction
+  href: introduction.md
+- name: Domain
+  href: domain/toc.yml
+- name: Stories
+  href: stories/toc.yml
 - name: Software modules
   href: modules/toc.yml

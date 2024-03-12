@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Types.Mutations;
 
+using BusinessLogic.Entities;
 using HotChocolate.Types;
 using Input;
 using Resolvers.MutationResolvers;
@@ -12,7 +13,7 @@ public class AddDocumentMutation : ObjectTypeExtension<Mutation>
         descriptor
             .Field("addDocument")
             .Type<NonNullType<DocumentOutput>>()
-            .Description($"Creates a {nameof(Services.Document)} entity in the system. " +
+            .Description($"Creates a {nameof(Document)} entity in the system. " +
                          $"If the input contains {nameof(StructureNode)}s those also will be recorded.")
             .Argument("newDocument", arg => arg.Type<NonNullType<DocumentInputType>>())
             .ResolveWith<DocumentMutationResolvers>(documentResolvers => documentResolvers.AddAsync(default, default));

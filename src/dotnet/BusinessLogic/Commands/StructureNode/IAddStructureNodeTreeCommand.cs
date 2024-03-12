@@ -1,5 +1,7 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
+using Contracts;
+
 /// <summary>
 ///     Add Structure Node Tree Scenario.
 ///     <remarks>
@@ -18,7 +20,6 @@ public interface IAddStructureNodeTreeCommand
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
-    Task AddTreeAsync(
-        StructureNodeInput structureNodeInput,
+    Task AddTreeAsync(StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default);
 }

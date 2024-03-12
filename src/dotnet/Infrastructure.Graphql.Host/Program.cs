@@ -1,26 +1,15 @@
 using System.Diagnostics;
-using EncyclopediaGalactica.Infrastructure.Graphql.RootTypes;
-using EncyclopediaGalactica.Services.Document.Commands.Interfaces.Document;
-using EncyclopediaGalactica.Services.Document.Commands.Interfaces.StructureNode;
-using EncyclopediaGalactica.Services.Document.Contracts.Input;
-using EncyclopediaGalactica.Services.Document.Ctx;
-using EncyclopediaGalactica.Services.Document.Entities;
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Input;
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Mutations;
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Queries;
-using EncyclopediaGalactica.Services.Document.Graphql.Arguments.Types.Result;
-using EncyclopediaGalactica.Services.Document.Mappers.Document;
-using EncyclopediaGalactica.Services.Document.Mappers.Interfaces;
-using EncyclopediaGalactica.Services.Document.Mappers.Structure;
-using EncyclopediaGalactica.Services.Document.Repository.Document;
-using EncyclopediaGalactica.Services.Document.Repository.Interfaces;
-using EncyclopediaGalactica.Services.Document.Repository.Structure;
-using EncyclopediaGalactica.Services.Document.Scenario.Document;
-using EncyclopediaGalactica.Services.Document.Scenario.StructureNode;
-using EncyclopediaGalactica.Services.Document.Tests.Tools;
-using EncyclopediaGalactica.Services.Document.ValidatorService;
-using EncyclopediaGalactica.Utils.GuardsService;
-using EncyclopediaGalactica.Utils.GuardsService.Interfaces;
+using EncyclopediaGalactica.BusinessLogic.Commands.Document;
+using EncyclopediaGalactica.BusinessLogic.Contracts;
+using EncyclopediaGalactica.BusinessLogic.Database;
+using EncyclopediaGalactica.BusinessLogic.Mappers;
+using EncyclopediaGalactica.BusinessLogic.Sagas.Document;
+using EncyclopediaGalactica.BusinessLogic.Sagas.Interfaces;
+using EncyclopediaGalactica.Infrastructure.Graphql.Types.Input;
+using EncyclopediaGalactica.Infrastructure.Graphql.Types.Mutations;
+using EncyclopediaGalactica.Infrastructure.Graphql.Types.Queries;
+using EncyclopediaGalactica.Infrastructure.Graphql.Types.Result;
+using EncyclopediaGalactica.Tools;
 using FluentValidation;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
@@ -29,30 +18,21 @@ var builder = WebApplication.CreateBuilder(args);
 
 // registered Document services
 builder.Services
-    // document scenarios
-    .AddScoped<IDeleteDocumentCommand, DeleteDocumentCommand>()
+    // sagas
+    .AddScoped<IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext>, AddDocumentSaga>()
+    .AddScoped<IHaveInputSaga<DeleteDocumentSagaContext>, DeleteDocumentSaga>()
+    .AddScoped<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>, UpdateDocumentSaga>()
+    .AddScoped<IHaveResultSaga<List<DocumentResult>>, GetDocumentsSaga>()
+    // commands
     .AddScoped<IAddDocumentCommand, AddDocumentCommand>()
-    .AddScoped<IGetAllDocumentsCommand, GetAllDocumentsCommand>()
     .AddScoped<IGetDocumentByIdCommand, GetDocumentByIdCommand>()
+    .AddScoped<IGetAllDocumentsCommand, GetAllDocumentsCommand>()
+    .AddScoped<IDeleteDocumentCommand, DeleteDocumentCommand>()
     .AddScoped<IUpdateDocumentCommand, UpdateDocumentCommand>()
-    // structure node scenarios
-    .AddScoped<IGetRootStructureNodeByDocumentIdScenario, GetRootStructureNodeByDocumentIdByDocumentIdScenario>()
-    .AddScoped<IAddStructureNodeTreeCommand, AddStructureNodeTreeCommand>()
-    // repositories
-    .AddScoped<IDocumentsRepository, DocumentRepository>()
-    .AddScoped<IStructureNodeRepository, StructureNodeRepository>()
+    // validators
+    .AddScoped<IValidator<DocumentInput>>()
     // mappers
-    .AddScoped<ISourceFormatMappers, SourceFormatMappers>()
-    .AddScoped<IStructureNodeMappers, StructureNodeMappers>()
-    .AddScoped<IDocumentMappers, DocumentMappers>()
-    .AddScoped<IGuardsService, GuardsService>()
-    .AddScoped<IDocumentDataSeeder, DocumentDataSeeder>();
-
-// registered validators
-builder.Services
-    .AddScoped<IValidator<Document>, DocumentValidator>()
-    .AddScoped<IValidator<DocumentInput>, DocumentInputValidator>()
-    .AddScoped<IValidator<StructureNode>, StructureNodeValidator>();
+    .AddScoped<IDocumentMapper, DocumentMapper>();
 
 // database
 SqliteConnection connection = new("Filename=:memory:");
@@ -95,16 +75,14 @@ builder.Services
     .AddTypeExtension<AddDocumentMutation>()
     .AddTypeExtension<DeleteDocumentMutation>()
     .AddTypeExtension<UpdateDocumentMutation>()
-    .RegisterService<IDeleteDocumentCommand>()
-    .RegisterService<IAddDocumentCommand>()
-    .RegisterService<IGetAllDocumentsCommand>()
-    .RegisterService<IGetDocumentByIdCommand>()
-    .RegisterService<IUpdateDocumentCommand>()
-    .RegisterService<IGetRootStructureNodeByDocumentIdScenario>()
-    .RegisterService<IAddStructureNodeTreeCommand>()
-    .RegisterService<IDocumentDataSeeder>()
+    // types
     .AddType<DocumentOutput>()
-    .AddType<DocumentInputType>();
+    .AddType<DocumentInputType>()
+    // sagas
+    .RegisterService<IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext>>()
+    .RegisterService<IHaveInputSaga<DeleteDocumentSagaContext>>()
+    .RegisterService<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>>()
+    .RegisterService<IHaveResultSaga<List<DocumentResult>>>();
 
 WebApplication app = builder.Build();
 
@@ -114,7 +92,7 @@ using (IServiceScope scope = app.Services.CreateScope())
     {
         IServiceProvider scopedServices = scope.ServiceProvider;
         IDocumentDataSeeder documentDataSeeder = scopedServices.GetRequiredService<IDocumentDataSeeder>();
-        await documentDataSeeder.SeedDocumentsWithRootStructureNode(5, 1);
+        await documentDataSeeder.SeedDocuments(2);
     }
     catch (Exception e)
     {

@@ -1,8 +1,12 @@
 namespace EncyclopediaGalactica.Tools;
 
+using BusinessLogic.Contracts;
+using BusinessLogic.Sagas.Document;
+using BusinessLogic.Sagas.Interfaces;
+using Microsoft.Extensions.Logging;
+
 public class DocumentDataSeeder(
-    IAddDocumentCommand addDocumentCommand,
-    IAddStructureNodeTreeCommand addStructureNodeTreeCommand,
+    IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext> addDocumentSaga,
     ILogger<DocumentDataSeeder> logger)
     : IDocumentDataSeeder
 {
@@ -12,22 +16,6 @@ public class DocumentDataSeeder(
     private const int RandomSeedLow = 0;
 
     private readonly Random _random = new Random();
-
-    public async Task SeedDocumentsWithRootStructureNode(int documentAmount, int structureAmountPerDocument)
-    {
-        if (documentAmount > 0)
-        {
-            for (int i = 0; i < documentAmount; i++)
-            {
-                long resId = await SeedDocument().ConfigureAwait(false);
-
-                for (int j = 0; j < structureAmountPerDocument; j++)
-                {
-                    await SeedStructureNode(resId, 1).ConfigureAwait(false);
-                }
-            }
-        }
-    }
 
     public async Task SeedDocuments(int amount)
     {
@@ -40,27 +28,29 @@ public class DocumentDataSeeder(
         }
     }
 
-    public async Task SeedStructureNode(long documentId, int isRootNode = 0)
+    public async Task<DocumentResult> SeedDocument()
     {
-        await addStructureNodeTreeCommand.AddTreeAsync(
-            new StructureNodeInput
+        AddDocumentSagaContext ctx = new AddDocumentSagaContext
+        {
+            Payload = new DocumentInput
             {
-                DocumentId = documentId,
-                IsRootNode = isRootNode
-            }).ConfigureAwait(false);
+                Name = CreateDocumentName(),
+                Description = CreateDocumentDescription()
+            }
+        };
+        DocumentResult result = await addDocumentSaga.ExecuteAsync(ctx).ConfigureAwait(false);
 
-        logger.LogInformation("Structure Node has been created");
+        logger.LogInformation("DocumentInput: Id: {Id}", result);
+        return result;
     }
 
-    public async Task<long> SeedDocument()
+    private string CreateDocumentName()
     {
-        long resultId = await addDocumentCommand.AddAsync(new DocumentInput
-        {
-            Name = DocumentNameBase + _random.Next(RandomSeedLow, RandomSeedHigh),
-            Description = DocumentDescriptionBase + _random.Next(RandomSeedLow, RandomSeedHigh)
-        }).ConfigureAwait(false);
+        return $"{DocumentNameBase}{_random.Next(RandomSeedLow, RandomSeedHigh)}";
+    }
 
-        logger.LogInformation("DocumentInput: Id: {Id}", resultId);
-        return resultId;
+    private string CreateDocumentDescription()
+    {
+        return $"{DocumentDescriptionBase}{_random.Next(RandomSeedLow, RandomSeedHigh)}";
     }
 }

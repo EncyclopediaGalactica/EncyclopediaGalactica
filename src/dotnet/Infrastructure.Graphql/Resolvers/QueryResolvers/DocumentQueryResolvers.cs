@@ -1,6 +1,9 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Resolvers.QueryResolvers;
 
+using BusinessLogic.Commands.Document;
+using BusinessLogic.Contracts;
 using HotChocolate.Resolvers;
+using Microsoft.Extensions.Logging;
 
 public class DocumentQueryResolvers(ILogger<DocumentQueryResolvers> logger)
 {

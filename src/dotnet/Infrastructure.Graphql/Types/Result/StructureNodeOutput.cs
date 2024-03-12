@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Types.Result;
 
+using BusinessLogic.Contracts;
 using HotChocolate.Types;
 
 public class StructureNodeOutput : ObjectType<StructureNodeResult>

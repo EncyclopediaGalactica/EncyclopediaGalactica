@@ -1,12 +1,16 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
-public interface IAddNewStructureScenario
+using Contracts;
+
+/// <summary>
+///     Add a New Structure Node to the system.
+/// </summary>
+public interface IAddNewStructureNodeCommand
 {
     /// <summary>
     ///     Creates a new <see cref="StructureNode" /> to the system based on the provided information in the
     ///     <see cref="StructureNodeInput" />.
     /// </summary>
-    /// <param name="parentId">Id of the parent <see cref="Structure" /></param>
     /// <param name="structureNodeInput">The <see cref="StructureNodeInput" /> providing details</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
@@ -14,8 +18,5 @@ public interface IAddNewStructureScenario
     /// <returns>
     ///     <see cref="Task{TResult}" /> representing result of asynchronous operation.
     /// </returns>
-    Task<StructureNodeResult> AddNewAsync(
-        long parentId,
-        StructureNodeInput structureNodeInput,
-        CancellationToken cancellationToken = default);
+    Task AddNewAsync(StructureNodeInput structureNodeInput, CancellationToken cancellationToken = default);
 }

@@ -1,5 +1,8 @@
 namespace EncyclopediaGalactica.BusinessLogic.Validators;
 
+using Contracts;
+using FluentValidation;
+
 public class DocumentInputValidator : AbstractValidator<DocumentInput>
 {
     public enum Scenarios

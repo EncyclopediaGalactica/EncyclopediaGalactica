@@ -2,7 +2,9 @@ namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 
 using Commands.Document;
 using Commands.StructureNode;
+using Contracts;
 using Interfaces;
+using Microsoft.Extensions.Logging;
 
 /// <inheritdoc />
 public class AddDocumentSaga(
@@ -26,7 +28,8 @@ public class AddDocumentSaga(
             .ConfigureAwait(false);
         if (context.Payload.RootStructureNode is not null)
         {
-            await addStructureNodeTreeCommand.AddTreeAsync(context.Payload.RootStructureNode, cancellationToken)
+            await addStructureNodeTreeCommand
+                .AddTreeAsync(context.Payload.RootStructureNode, cancellationToken)
                 .ConfigureAwait(false);
         }
 

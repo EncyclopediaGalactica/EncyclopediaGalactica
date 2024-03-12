@@ -9,16 +9,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="HotChocolate" Version="13.9.0"/>
         <PackageReference Include="HotChocolate.Types" Version="13.9.0"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\Host\Graphql.RootTypes\Graphql.RootTypes.csproj"/>
-        <ProjectReference Include="..\Document.Contracts.Input.Graphql\Document.Contracts.Input.Graphql.csproj"/>
-        <ProjectReference Include="..\Document.Contracts.Result.Graphql\Document.Contracts.Result.Graphql.csproj"/>
-        <ProjectReference Include="..\Document.Errors\Document.Errors.csproj"/>
-        <ProjectReference Include="..\Document.Saga.Implementations\Document.Saga.Implementations.csproj"/>
-        <ProjectReference Include="..\Document.Saga.Interfaces\Document.Saga.Interfaces.csproj"/>
+        <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj"/>
     </ItemGroup>
 
 </Project>

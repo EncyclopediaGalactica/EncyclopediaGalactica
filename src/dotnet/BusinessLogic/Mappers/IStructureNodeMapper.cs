@@ -9,7 +9,7 @@ using Entities;
 ///         Interface for mapping between <see cref="StructureNode" /> and <see cref="StructureNodeInput" />.
 ///     </remarks>
 /// </summary>
-public interface IStructureNodeMappers
+public interface IStructureNodeMapper
 {
     /// <summary>
     ///     Maps <see cref="StructureNodeInput" /> object to <see cref="StructureNode" />.

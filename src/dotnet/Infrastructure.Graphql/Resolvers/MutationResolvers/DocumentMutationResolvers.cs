@@ -1,7 +1,12 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.Resolvers.MutationResolvers;
 
 using Arguments;
+using BusinessLogic.Commands.Document;
+using BusinessLogic.Contracts;
+using BusinessLogic.Sagas.Document;
+using BusinessLogic.Sagas.Interfaces;
 using HotChocolate.Resolvers;
+using Microsoft.Extensions.Logging;
 
 public class DocumentMutationResolvers(ILogger<DocumentMutationResolvers> logger)
 {
@@ -15,7 +20,8 @@ public class DocumentMutationResolvers(ILogger<DocumentMutationResolvers> logger
             {
                 Payload = resolverContext.ArgumentValue<DocumentInput>(ArgumentNames.Document.NewDocument)
             };
-            return await addDocumentHaveInputAndResultSaga.ExecuteAsync(sagaContext.Payload).ConfigureAwait(false);
+            return await addDocumentHaveInputAndResultSaga.ExecuteAsync(sagaContext.Payload)
+                .ConfigureAwait(false);
         }
         catch (Exception e)
         {
@@ -37,10 +43,11 @@ public class DocumentMutationResolvers(ILogger<DocumentMutationResolvers> logger
         IResolverContext resolverContext,
         IDeleteDocumentCommand deleteDocumentCommand)
     {
-        DeleteDocumentSagaContext deleteDocumentSagaContext = new DeleteDocumentSagaContext
-        {
-            Payload = resolverContext.ArgumentValue<long>(ArgumentNames.Document.DocumentId)
-        };
+        DeleteDocumentSagaContext deleteDocumentSagaContext =
+            new DeleteDocumentSagaContext
+            {
+                Payload = resolverContext.ArgumentValue<long>(ArgumentNames.Document.DocumentId)
+            };
         await deleteDocumentCommand.DeleteAsync(deleteDocumentSagaContext.Payload).ConfigureAwait(false);
     }
 
@@ -100,6 +107,7 @@ public class DocumentMutationResolvers(ILogger<DocumentMutationResolvers> logger
         {
             Payload = resolverContext.ArgumentValue<DocumentInput>(ArgumentNames.Document.UpdatedDocument)
         };
-        return await updateDocumentHaveInputAndResultSaga.ExecuteAsync(context.Payload).ConfigureAwait(false);
+        return await updateDocumentHaveInputAndResultSaga.ExecuteAsync(context.Payload)
+            .ConfigureAwait(false);
     }
 }

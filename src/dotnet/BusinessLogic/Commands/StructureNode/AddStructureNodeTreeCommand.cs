@@ -1,38 +1,25 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
+using Contracts;
+using Database;
+using Entities;
+using Exceptions;
+using FluentValidation;
 using Mappers;
+using Microsoft.EntityFrameworkCore;
 using Validators;
 
-public class AddStructureNodeTreeCommand : IAddStructureNodeTreeCommand
+public class AddStructureNodeTreeCommand(
+    IStructureNodeMapper mapper,
+    DbContextOptions<DocumentDbContext> dbContextOptions,
+    IValidator<StructureNode> validator) : IAddStructureNodeTreeCommand
 {
-    private readonly IGuardsService _guardService;
-    private readonly IStructureNodeMappers _structureNodeMappers;
-    private readonly IStructureNodeRepository _structureNodeRepository;
-    private readonly IValidator<StructureNode> _structureValidator;
-
-    public AddStructureNodeTreeCommand(
-        IStructureNodeRepository structureNodeRepository,
-        IStructureNodeMappers structureNodeMappers,
-        IValidator<StructureNode> structureValidator,
-        IGuardsService guardsService)
-    {
-        ArgumentNullException.ThrowIfNull(structureNodeRepository);
-        ArgumentNullException.ThrowIfNull(structureNodeMappers);
-        ArgumentNullException.ThrowIfNull(structureValidator);
-        ArgumentNullException.ThrowIfNull(guardsService);
-
-        _structureNodeMappers = structureNodeMappers;
-        _guardService = guardsService;
-        _structureValidator = structureValidator;
-        _structureNodeRepository = structureNodeRepository;
-    }
-
     public async Task AddTreeAsync(StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            await AddNewRootNodeBusinessLogicAsync(structureNodeInput)
+            await AddNewRootNodeBusinessLogicAsync(structureNodeInput, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception e)
@@ -42,26 +29,42 @@ public class AddStructureNodeTreeCommand : IAddStructureNodeTreeCommand
         }
     }
 
-    private async Task AddNewRootNodeBusinessLogicAsync(StructureNodeInput structureNodeInput)
+    private async Task AddNewRootNodeBusinessLogicAsync(
+        StructureNodeInput structureNodeInput,
+        CancellationToken cancellationToken = default)
     {
         ValidateProvidedInput(structureNodeInput);
-        StructureNode structureNode = _structureNodeMappers.MapStructureNodeInputToStructureNode(structureNodeInput);
-        ValidateStructureEntity(structureNode);
-        StructureNode newStructureNode =
-            await _structureNodeRepository.AddNewAsync(structureNode).ConfigureAwait(false);
+        StructureNode structureNode = mapper.MapStructureNodeInputToStructureNode(structureNodeInput);
+        await ValidateStructureEntity(structureNode, cancellationToken).ConfigureAwait(false);
+        await AddTreeAsyncDatabaseOperation(structureNode, cancellationToken).ConfigureAwait(false);
     }
 
-    private void ValidateStructureEntity(StructureNode structureNode)
+    private async Task AddTreeAsyncDatabaseOperation(
+        StructureNode structureNode,
+        CancellationToken cancellationToken = default)
     {
-        _structureValidator.ValidateAsync(structureNode, o =>
+        await using DocumentDbContext ctx = new DocumentDbContext(dbContextOptions);
+        // dfs to add the whole tree
+    }
+
+    private async Task ValidateStructureEntity(
+        StructureNode structureNode,
+        CancellationToken cancellationToken = default)
+    {
+        // todo: make the validator in a way it validates every item in the tree
+        await validator.ValidateAsync(structureNode, o =>
         {
             o.IncludeRuleSets(Operations.Add);
             o.ThrowOnFailures();
-        });
+        }, cancellationToken);
     }
 
     private void ValidateProvidedInput(StructureNodeInput structureNodeInput)
     {
-        _guardService.NotNull(structureNodeInput);
+        if (structureNodeInput is null)
+        {
+            string m = $"{nameof(structureNodeInput)} must not be null";
+            throw new InvalidArgumentCommandException(m);
+        }
     }
 }

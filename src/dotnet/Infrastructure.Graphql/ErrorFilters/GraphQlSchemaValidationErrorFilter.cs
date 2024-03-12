@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Infrastructure.Graphql.ErrorFilters;
 
+using BusinessLogic.Errors;
 using HotChocolate;
 
 public class GraphQlSchemaValidationErrorFilter : IErrorFilter
@@ -18,7 +19,7 @@ public class GraphQlSchemaValidationErrorFilter : IErrorFilter
             && error.Code == "HC0018")
         {
             error = RemoveSensitiveInformation(error);
-            return error.WithMessage(Errors.Errors.InvalidInput);
+            return error.WithMessage(Errors.InvalidInput);
         }
 
         return error;

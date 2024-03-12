@@ -1,4 +1,4 @@
 - name: Introduction
   href: introduction.md
-- name: User
-  href: user/toc.yml
+- name: Document
+  href: document.md
