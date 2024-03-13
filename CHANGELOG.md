@@ -1,3 +1,10 @@
+## [0.19.4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.3...0.19.4) (2024-03-13)
+
+
+### Bug Fixes
+
+* **devops:** dependabot ([#184](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/184)) ([080a253](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/080a25309035564fb41f4c97f8690ffc1c904ec9))
+
 ## [0.19.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.2...0.19.3) (2024-03-13)
 
 
