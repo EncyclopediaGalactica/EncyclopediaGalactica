@@ -1,0 +1,45 @@
+name: Documentation - Feature
+run-name: Documentation - Feature
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Docs/**'
+        
+jobs:
+  
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "============="
+          echo "=== Debug ==="
+          echo "============="
+          echo "github ref: " ${{ vars.GITHUB_REF }}
+          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
+          echo "event name: " ${{ github.event_name }}
+  
+  main_branch:
+    name: Feature Branch Build
+    runs-on: ubuntu-latest
+    needs: debug
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    permissions:
+#      contents: write
+#      issues: write
+#      pull-requests: write
+#      pages: write
+#      id-token: write
+    
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: dotnet tool update -g docfx
+
+      - run: docfx Docs/docfx.json --output Docs/_site
+

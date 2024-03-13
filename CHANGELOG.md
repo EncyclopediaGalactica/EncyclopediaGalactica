@@ -1,3 +1,31 @@
+## [0.19.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.1...0.19.2) (2024-03-09)
+
+
+### Bug Fixes
+
+* **doc:** testing build and publish ([#174](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/174)) ([d1643ff](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d1643ff4e0af1abbde7bdc4fc5eee87d5128ff6a))
+
+## [0.19.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.0...0.19.1) (2024-03-09)
+
+
+### Bug Fixes
+
+* **docs:** fixing doc build and publish ([#173](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/173)) ([43b6a85](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/43b6a85abb76adb5d7ac3e8b85110e0759232371))
+
+# [0.19.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.18.0...0.19.0) (2024-03-09)
+
+
+### Features
+
+* **docs:** removing WriterSide ([#172](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/172)) ([a501f75](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/a501f7533e1adc1530db77e776a3c7d8a728f214))
+
+# [0.18.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.3...0.18.0) (2024-03-09)
+
+
+### Features
+
+* **docs:** introducing Writerside ([#170](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/170)) ([4568c73](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/4568c7328dcab8992a2693d5253f5d5d937be100))
+
 ## [0.17.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.17.2...0.17.3) (2024-03-03)
 
 
