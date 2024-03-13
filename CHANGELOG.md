@@ -1,3 +1,10 @@
+## [0.19.3](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.2...0.19.3) (2024-03-13)
+
+
+### Bug Fixes
+
+* **docs:** adding back the missing template name ([#183](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/183)) ([b7c8771](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/b7c87716750eb25b6bca969d497306b2dba6edab))
+
 ## [0.19.2](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.1...0.19.2) (2024-03-09)
 
 
