@@ -7,12 +7,14 @@ using Exceptions;
 using FluentValidation;
 using Mappers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Validators;
 
 public class AddDocumentCommand(
     IDocumentMapper documentMapper,
     IValidator<DocumentInput> documentInputValidator,
-    DbContextOptions<DocumentDbContext> dbContextOptions) : IAddDocumentCommand
+    DbContextOptions<DocumentDbContext> dbContextOptions,
+    ILogger<AddDocumentCommand> logger) : IAddDocumentCommand
 {
     /// <inheritdoc />
     public async Task<long> AddAsync(DocumentInput inputInput,
@@ -60,6 +62,10 @@ public class AddDocumentCommand(
     {
         await using DocumentDbContext ctx = new DocumentDbContext(dbContextOptions);
         await ctx.Documents.AddAsync(document, cancellationToken).ConfigureAwait(false);
+        await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+
+        logger.LogDebug("Newly created {EntityName} id value: {IdValue}", nameof(Document), document.Id);
+
         return document;
     }
 

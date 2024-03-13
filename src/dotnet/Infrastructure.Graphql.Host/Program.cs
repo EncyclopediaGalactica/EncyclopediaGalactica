@@ -1,10 +1,12 @@
 using System.Diagnostics;
 using EncyclopediaGalactica.BusinessLogic.Commands.Document;
+using EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using EncyclopediaGalactica.BusinessLogic.Database;
 using EncyclopediaGalactica.BusinessLogic.Mappers;
 using EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 using EncyclopediaGalactica.BusinessLogic.Sagas.Interfaces;
+using EncyclopediaGalactica.BusinessLogic.Validators;
 using EncyclopediaGalactica.Infrastructure.Graphql.Types.Input;
 using EncyclopediaGalactica.Infrastructure.Graphql.Types.Mutations;
 using EncyclopediaGalactica.Infrastructure.Graphql.Types.Queries;
@@ -23,16 +25,23 @@ builder.Services
     .AddScoped<IHaveInputSaga<DeleteDocumentSagaContext>, DeleteDocumentSaga>()
     .AddScoped<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>, UpdateDocumentSaga>()
     .AddScoped<IHaveResultSaga<List<DocumentResult>>, GetDocumentsSaga>()
+    .AddScoped<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>, GetDocumentByIdSaga>()
     // commands
     .AddScoped<IAddDocumentCommand, AddDocumentCommand>()
+    .AddScoped<IAddStructureNodeTreeCommand, AddStructureNodeTreeCommand>()
     .AddScoped<IGetDocumentByIdCommand, GetDocumentByIdCommand>()
     .AddScoped<IGetAllDocumentsCommand, GetAllDocumentsCommand>()
     .AddScoped<IDeleteDocumentCommand, DeleteDocumentCommand>()
     .AddScoped<IUpdateDocumentCommand, UpdateDocumentCommand>()
     // validators
-    .AddScoped<IValidator<DocumentInput>>()
+    .AddScoped<IValidator<DocumentInput>, DocumentInputValidator>()
+    .AddScoped<IValidator<StructureNodeInput>, StructureNodeInputValidator>()
     // mappers
-    .AddScoped<IDocumentMapper, DocumentMapper>();
+    .AddScoped<IDocumentMapper, DocumentMapper>()
+    .AddScoped<IStructureNodeMapper, StructureNodeMapper>()
+    // seeder
+    .AddScoped<IDocumentDataSeeder, DocumentDataSeeder>()
+    ;
 
 // database
 SqliteConnection connection = new("Filename=:memory:");
@@ -69,12 +78,13 @@ builder.Services
     .AddGraphQLServer()
     // queries
     .AddQueryType<Query>()
-    .AddTypeExtension<GetDocumentsQuery>()
+    .AddTypeExtension<GetDocuments>()
+    .AddTypeExtension<GetDocumentById>()
     // mutations
     .AddMutationType<Mutation>()
-    .AddTypeExtension<AddDocumentMutation>()
-    .AddTypeExtension<DeleteDocumentMutation>()
-    .AddTypeExtension<UpdateDocumentMutation>()
+    .AddTypeExtension<AddDocument>()
+    .AddTypeExtension<DeleteDocument>()
+    .AddTypeExtension<UpdateDocument>()
     // types
     .AddType<DocumentOutput>()
     .AddType<DocumentInputType>()
@@ -82,7 +92,8 @@ builder.Services
     .RegisterService<IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext>>()
     .RegisterService<IHaveInputSaga<DeleteDocumentSagaContext>>()
     .RegisterService<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>>()
-    .RegisterService<IHaveResultSaga<List<DocumentResult>>>();
+    .RegisterService<IHaveResultSaga<List<DocumentResult>>>()
+    .RegisterService<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>>();
 
 WebApplication app = builder.Build();
 
@@ -92,12 +103,14 @@ using (IServiceScope scope = app.Services.CreateScope())
     {
         IServiceProvider scopedServices = scope.ServiceProvider;
         IDocumentDataSeeder documentDataSeeder = scopedServices.GetRequiredService<IDocumentDataSeeder>();
-        await documentDataSeeder.SeedDocuments(2);
+        await documentDataSeeder.SeedDocuments(1).ConfigureAwait(false);
     }
     catch (Exception e)
     {
+        Console.WriteLine("=== Failed data seeding ===");
         Console.WriteLine(e.Message);
         Console.WriteLine(e.StackTrace);
+        Console.WriteLine("===========================");
     }
 }
 

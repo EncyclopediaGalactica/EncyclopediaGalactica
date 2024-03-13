@@ -10,7 +10,7 @@ public class DocumentInputType : InputObjectType<DocumentInput>
         descriptor
             .Field(f => f.Id)
             .Description("Unique identifier of the entity")
-            .Type<NonNullType<LongType>>();
+            .Type<LongType>();
 
         descriptor
             .Field(f => f.Name)

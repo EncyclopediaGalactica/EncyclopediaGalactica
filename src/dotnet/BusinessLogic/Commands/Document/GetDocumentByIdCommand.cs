@@ -6,10 +6,12 @@ using Entities;
 using Exceptions;
 using Mappers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 public class GetDocumentByIdCommand(
     IDocumentMapper documentMapper,
-    DbContextOptions<DocumentDbContext> dbContextOptions) : IGetDocumentByIdCommand
+    DbContextOptions<DocumentDbContext> dbContextOptions,
+    ILogger<GetDocumentByIdCommand> logger) : IGetDocumentByIdCommand
 {
     /// <inheritdoc />
     public async Task<DocumentResult> GetByIdAsync(
@@ -18,7 +20,7 @@ public class GetDocumentByIdCommand(
     {
         try
         {
-            return await GetByIdBusinessLogicAsync(id, cancellationToken);
+            return await GetByIdBusinessLogicAsync(id, cancellationToken).ConfigureAwait(false);
         }
         catch (InvalidOperationException e)
         {
@@ -56,6 +58,7 @@ public class GetDocumentByIdCommand(
 
     private void ValidateInput(long id)
     {
+        logger.LogDebug("Input value: {InputValue}", id);
         const long notAllowedValue = 0;
         if (id == notAllowedValue)
         {

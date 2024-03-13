@@ -26,7 +26,7 @@
 
 ```mermaid
 sequenceDiagram
-    UI -->> GQL: details of the new Document
+    UI -->> GQL: posts details of the new Document
     activate GQL
     GQL -->> CreateNewDocumentSaga: details of the new Document
     activate CreateNewDocumentSaga

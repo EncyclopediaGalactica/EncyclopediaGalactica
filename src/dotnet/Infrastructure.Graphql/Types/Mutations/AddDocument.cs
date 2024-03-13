@@ -6,7 +6,7 @@ using Input;
 using Resolvers.MutationResolvers;
 using Result;
 
-public class AddDocumentMutation : ObjectTypeExtension<Mutation>
+public class AddDocument : ObjectTypeExtension<Mutation>
 {
     protected override void Configure(IObjectTypeDescriptor<Mutation> descriptor)
     {
@@ -16,6 +16,7 @@ public class AddDocumentMutation : ObjectTypeExtension<Mutation>
             .Description($"Creates a {nameof(Document)} entity in the system. " +
                          $"If the input contains {nameof(StructureNode)}s those also will be recorded.")
             .Argument("newDocument", arg => arg.Type<NonNullType<DocumentInputType>>())
-            .ResolveWith<DocumentMutationResolvers>(documentResolvers => documentResolvers.AddAsync(default, default));
+            .ResolveWith<DocumentMutationResolvers>(documentResolvers =>
+                documentResolvers.AddAsync(default, default, default));
     }
 }

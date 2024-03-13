@@ -5,15 +5,16 @@ using HotChocolate.Types;
 using Resolvers.MutationResolvers;
 using Result;
 
-public class DeleteDocumentMutation : ObjectTypeExtension<Mutation>
+public class DeleteDocument : ObjectTypeExtension<Mutation>
 {
     protected override void Configure(IObjectTypeDescriptor<Mutation> descriptor)
     {
         descriptor
             .Field("deleteDocument")
-            .Type<NonNullType<DocumentOutput>>()
-            .Description("Delete the designated Document.")
+            .Type<DocumentOutput>()
+            .Description("Deletes the designated Document. The delete operation also includes cleaning up the " +
+                         "accompanied structures like Structure tree.")
             .Argument(ArgumentNames.Document.DocumentId, arg => arg.Type<NonNullType<LongType>>())
-            .ResolveWith<DocumentMutationResolvers>(res => res.DeleteAsync(default, default));
+            .ResolveWith<DocumentMutationResolvers>(res => res.DeleteAsync(default, default, default));
     }
 }

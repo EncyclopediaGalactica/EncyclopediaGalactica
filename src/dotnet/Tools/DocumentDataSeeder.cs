@@ -40,7 +40,7 @@ public class DocumentDataSeeder(
         };
         DocumentResult result = await addDocumentSaga.ExecuteAsync(ctx).ConfigureAwait(false);
 
-        logger.LogInformation("DocumentInput: Id: {Id}", result);
+        logger.LogInformation("=== Document has been created: Id: {Id}", result.Id);
         return result;
     }
 

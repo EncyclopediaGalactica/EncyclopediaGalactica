@@ -5,7 +5,7 @@ using HotChocolate.Types;
 using Resolvers.QueryResolvers;
 using Result;
 
-public class GetDocumentsQuery : ObjectTypeExtension<Query>
+public class GetDocuments : ObjectTypeExtension<Query>
 {
     protected override void Configure(IObjectTypeDescriptor<Query> descriptor)
     {

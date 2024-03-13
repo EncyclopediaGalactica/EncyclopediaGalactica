@@ -12,7 +12,7 @@ using Validators;
 public class AddNewStructureNodeCommand(
     IStructureNodeMapper structureNodeMapper,
     DbContextOptions<DocumentDbContext> dbContextOptions,
-    IValidator<StructureNode> validator) : IAddNewStructureNodeCommand
+    IValidator<StructureNodeInput> validator) : IAddNewStructureNodeCommand
 {
     public async Task AddNewAsync(StructureNodeInput structureNodeInput, CancellationToken cancellationToken = default)
     {
@@ -34,7 +34,6 @@ public class AddNewStructureNodeCommand(
     {
         ValidateProvidedInput(structureNodeInput);
         StructureNode structureNode = structureNodeMapper.MapStructureNodeInputToStructureNode(structureNodeInput);
-        ValidateStructureEntity(structureNode);
         StructureNode newStructureNode = await AddDatabaseOperationAsync(structureNode, cancellationToken)
             .ConfigureAwait(false);
     }
@@ -47,15 +46,6 @@ public class AddNewStructureNodeCommand(
         return structureNode;
     }
 
-    private void ValidateStructureEntity(StructureNode structureNode)
-    {
-        validator.ValidateAsync(structureNode, o =>
-        {
-            o.IncludeRuleSets(Operations.Add);
-            o.ThrowOnFailures();
-        });
-    }
-
     private void ValidateProvidedInput(StructureNodeInput structureNodeInput)
     {
         if (structureNodeInput is null)
@@ -63,5 +53,11 @@ public class AddNewStructureNodeCommand(
             string m = $"{nameof(structureNodeInput)} cannot be null";
             throw new InvalidArgumentCommandException(m);
         }
+
+        validator.ValidateAsync(structureNodeInput, o =>
+        {
+            o.IncludeRuleSets(Operations.Add);
+            o.ThrowOnFailures();
+        });
     }
 }

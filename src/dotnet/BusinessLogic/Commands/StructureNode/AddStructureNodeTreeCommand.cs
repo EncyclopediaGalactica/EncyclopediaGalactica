@@ -12,7 +12,7 @@ using Validators;
 public class AddStructureNodeTreeCommand(
     IStructureNodeMapper mapper,
     DbContextOptions<DocumentDbContext> dbContextOptions,
-    IValidator<StructureNode> validator) : IAddStructureNodeTreeCommand
+    IValidator<StructureNodeInput> validator) : IAddStructureNodeTreeCommand
 {
     public async Task AddTreeAsync(StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
@@ -33,9 +33,8 @@ public class AddStructureNodeTreeCommand(
         StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
-        ValidateProvidedInput(structureNodeInput);
+        await ValidateProvidedInput(structureNodeInput, cancellationToken).ConfigureAwait(false);
         StructureNode structureNode = mapper.MapStructureNodeInputToStructureNode(structureNodeInput);
-        await ValidateStructureEntity(structureNode, cancellationToken).ConfigureAwait(false);
         await AddTreeAsyncDatabaseOperation(structureNode, cancellationToken).ConfigureAwait(false);
     }
 
@@ -47,24 +46,20 @@ public class AddStructureNodeTreeCommand(
         // dfs to add the whole tree
     }
 
-    private async Task ValidateStructureEntity(
-        StructureNode structureNode,
+    private async Task ValidateProvidedInput(StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
-    {
-        // todo: make the validator in a way it validates every item in the tree
-        await validator.ValidateAsync(structureNode, o =>
-        {
-            o.IncludeRuleSets(Operations.Add);
-            o.ThrowOnFailures();
-        }, cancellationToken);
-    }
-
-    private void ValidateProvidedInput(StructureNodeInput structureNodeInput)
     {
         if (structureNodeInput is null)
         {
             string m = $"{nameof(structureNodeInput)} must not be null";
             throw new InvalidArgumentCommandException(m);
         }
+
+        // todo: make the validator in a way it validates every item in the tree
+        await validator.ValidateAsync(structureNodeInput, o =>
+        {
+            o.IncludeRuleSets(Operations.Add);
+            o.ThrowOnFailures();
+        }, cancellationToken);
     }
 }

@@ -1,4 +1,12 @@
 - name: Introduction
   href: introduction.md
-- name: Create
+- name: Create a Document
   href: create_new_document_domain_object.md
+- name: List Documents
+  href: listing_document_domain_objects.md
+- name: Find a Document
+  href: retrieving_a_document_domain_object.md
+- name: Update a Document
+  href: update_document_domain_object.md
+- name: Delete a Document
+  href: delete_document_domain_object.md

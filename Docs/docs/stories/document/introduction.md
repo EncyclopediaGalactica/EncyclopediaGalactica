@@ -4,6 +4,8 @@ Further details of the Document entity is available [here](../../domain/document
 
 Functionalities related to Document domain object are the following:
 
-- create a new Document domain object
-- update a Document domain object
-- delete a Document domain object
+- [create](create_new_document_domain_object.md) a new Document domain object
+- [update](update_document_domain_object.md) a Document domain object
+- [delete](delete_document_domain_object.md) a Document domain object
+- [listing](listing_document_domain_objects.md) Document domain objects
+- [retrieving](retrieving_a_document_domain_object.md) a single Document domain object
