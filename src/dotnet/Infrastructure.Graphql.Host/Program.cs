@@ -24,7 +24,7 @@ builder.Services
     .AddScoped<IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext>, AddDocumentSaga>()
     .AddScoped<IHaveInputSaga<DeleteDocumentSagaContext>, DeleteDocumentSaga>()
     .AddScoped<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>, UpdateDocumentSaga>()
-    .AddScoped<IHaveResultSaga<List<DocumentResult>>, GetDocumentsSaga>()
+    .AddScoped<IHaveInputAndResultSaga<List<DocumentResult>, GetDocumentsSagaContext>, GetDocumentsSaga>()
     .AddScoped<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>, GetDocumentByIdSaga>()
     // commands
     .AddScoped<IAddDocumentCommand, AddDocumentCommand>()
@@ -33,6 +33,7 @@ builder.Services
     .AddScoped<IGetAllDocumentsCommand, GetAllDocumentsCommand>()
     .AddScoped<IDeleteDocumentCommand, DeleteDocumentCommand>()
     .AddScoped<IUpdateDocumentCommand, UpdateDocumentCommand>()
+    .AddScoped<IGetStructureNodeTreeCommand, GetStructureNodeTreeCommand>()
     // validators
     .AddScoped<IValidator<DocumentInput>, DocumentInputValidator>()
     .AddScoped<IValidator<StructureNodeInput>, StructureNodeInputValidator>()
@@ -92,8 +93,11 @@ builder.Services
     .RegisterService<IHaveInputAndResultSaga<DocumentResult, AddDocumentSagaContext>>()
     .RegisterService<IHaveInputSaga<DeleteDocumentSagaContext>>()
     .RegisterService<IHaveInputAndResultSaga<DocumentResult, UpdateDocumentSagaContext>>()
-    .RegisterService<IHaveResultSaga<List<DocumentResult>>>()
-    .RegisterService<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>>();
+    .RegisterService<IHaveInputAndResultSaga<List<DocumentResult>, GetDocumentsSagaContext>>()
+    .RegisterService<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>>()
+    // commands
+    .RegisterService<IGetStructureNodeTreeCommand>()
+    ;
 
 WebApplication app = builder.Build();
 

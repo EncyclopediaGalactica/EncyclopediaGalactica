@@ -13,6 +13,6 @@ public class GetDocuments : ObjectTypeExtension<Query>
             .Field("getDocuments")
             .Description($"Returns the list of {nameof(Document)} entities available in the system.")
             .Type<ListType<DocumentOutput>>()
-            .ResolveWith<DocumentQueryResolvers>(res => res.GetAllAsync(default, default));
+            .ResolveWith<DocumentQueryResolvers>(res => res.GetAllAsync(default, default, default));
     }
 }

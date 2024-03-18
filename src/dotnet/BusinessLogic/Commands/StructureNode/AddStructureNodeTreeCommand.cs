@@ -14,12 +14,14 @@ public class AddStructureNodeTreeCommand(
     DbContextOptions<DocumentDbContext> dbContextOptions,
     IValidator<StructureNodeInput> validator) : IAddStructureNodeTreeCommand
 {
-    public async Task AddTreeAsync(StructureNodeInput structureNodeInput,
+    public async Task AddTreeAsync(
+        long documentId,
+        StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
         try
         {
-            await AddNewRootNodeBusinessLogicAsync(structureNodeInput, cancellationToken)
+            await AddNewRootNodeBusinessLogicAsync(documentId, structureNodeInput, cancellationToken)
                 .ConfigureAwait(false);
         }
         catch (Exception e)
@@ -30,10 +32,12 @@ public class AddStructureNodeTreeCommand(
     }
 
     private async Task AddNewRootNodeBusinessLogicAsync(
+        long documentId,
         StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
-        await ValidateProvidedInput(structureNodeInput, cancellationToken).ConfigureAwait(false);
+        OverwriteStructureNodesDocumentIdValue(structureNodeInput, documentId);
+        await ValidateProvidedInput(documentId, structureNodeInput, cancellationToken).ConfigureAwait(false);
         StructureNode structureNode = mapper.MapStructureNodeInputToStructureNode(structureNodeInput);
         await AddTreeAsyncDatabaseOperation(structureNode, cancellationToken).ConfigureAwait(false);
     }
@@ -46,9 +50,23 @@ public class AddStructureNodeTreeCommand(
         // dfs to add the whole tree
     }
 
-    private async Task ValidateProvidedInput(StructureNodeInput structureNodeInput,
+    private void OverwriteStructureNodesDocumentIdValue(StructureNodeInput structureNodeInput, long documentId)
+    {
+        structureNodeInput.DocumentId = documentId;
+    }
+
+    private async Task ValidateProvidedInput(
+        long documentId,
+        StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
+        long notAllowedValue = 0;
+        if (documentId == notAllowedValue)
+        {
+            string m = $"{nameof(documentId)} cannot be {notAllowedValue}";
+            throw new InvalidArgumentCommandException(m);
+        }
+
         if (structureNodeInput is null)
         {
             string m = $"{nameof(structureNodeInput)} must not be null";

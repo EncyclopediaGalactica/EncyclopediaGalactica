@@ -32,6 +32,6 @@ public class DocumentOutput : ObjectType<DocumentResult>
             .Field(f => f.StructureNode)
             .Description("The root Structure Node of the Document")
             .Type<StructureNodeOutput>()
-            .ResolveWith<StructureNodeFieldResolvers>(r => r.GetNode(default, default));
+            .ResolveWith<StructureNodeFieldResolvers>(r => r.GetNodeAsync(default, default, default));
     }
 }

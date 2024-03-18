@@ -5,17 +5,18 @@ using BusinessLogic.Contracts;
 using HotChocolate.Resolvers;
 using Microsoft.Extensions.Logging;
 
-public class StructureNodeFieldResolvers(
-    ILogger<StructureNodeFieldResolvers> logger)
+public class StructureNodeFieldResolvers(ILogger<StructureNodeFieldResolvers> logger)
 {
-    public async Task<StructureNodeResult> GetNode(
+    public async Task<StructureNodeResult> GetNodeAsync(
         IResolverContext resolverContext,
-        IGetStructureNodeTreeCommand getStructureNodeTreeCommand)
+        IGetStructureNodeTreeCommand getStructureNodeTreeCommand,
+        CancellationToken cancellationToken = default)
     {
         try
         {
             DocumentResult parent = resolverContext.Parent<DocumentResult>();
-            return await getStructureNodeTreeCommand.GetRootNodeByDocumentIdAsync(parent.Id);
+            return await getStructureNodeTreeCommand.GetRootNodeByDocumentIdAsync(parent.Id, cancellationToken)
+                .ConfigureAwait(false);
         }
         catch (Exception e)
         {

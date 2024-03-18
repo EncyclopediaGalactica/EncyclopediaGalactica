@@ -15,7 +15,7 @@ using Microsoft.Extensions.Logging;
 public class GetDocumentsSaga(
     IGetAllDocumentsCommand getAllDocumentsCommand,
     ILogger<GetDocumentsSaga> logger)
-    : IHaveResultSaga<List<DocumentResult>>
+    : IHaveInputAndResultSaga<List<DocumentResult>, GetDocumentsSagaContext>
 {
     /// <summary>
     ///     Returns list of <see cref="DocumentResult" />.
@@ -26,7 +26,7 @@ public class GetDocumentsSaga(
     ///     Returns <see cref="Task{TResult}" /> representing result of the asynchronous operation.
     /// </returns>
     public async Task<List<DocumentResult>> ExecuteAsync(
-        ISagaContext context,
+        GetDocumentsSagaContext context,
         CancellationToken cancellationToken = default)
     {
         try

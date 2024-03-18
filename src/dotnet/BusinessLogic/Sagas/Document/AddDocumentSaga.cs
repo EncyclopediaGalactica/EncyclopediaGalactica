@@ -26,12 +26,10 @@ public class AddDocumentSaga(
     {
         long documentId = await addDocumentCommand.AddAsync(context.Payload, cancellationToken)
             .ConfigureAwait(false);
-        if (context.Payload.RootStructureNode is not null)
-        {
-            await addStructureNodeTreeCommand
-                .AddTreeAsync(context.Payload.RootStructureNode, cancellationToken)
-                .ConfigureAwait(false);
-        }
+
+        await addStructureNodeTreeCommand
+            .AddTreeAsync(documentId, context.Payload.RootStructureNode, cancellationToken)
+            .ConfigureAwait(false);
 
         DocumentResult result = await getDocumentByIdCommand.GetByIdAsync(documentId, cancellationToken)
             .ConfigureAwait(false);

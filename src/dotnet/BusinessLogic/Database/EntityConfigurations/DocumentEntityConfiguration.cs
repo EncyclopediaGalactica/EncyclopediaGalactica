@@ -16,9 +16,5 @@ public class DocumentEntityConfiguration : IEntityTypeConfiguration<Document>
         builder.HasIndex(k => k.Name).IsUnique();
         builder.Property(k => k.Description).HasColumnName("description");
         builder.Property(k => k.Uri).HasColumnName("uri");
-
-        builder.HasOne<StructureNode>(n => n.StructureNode)
-            .WithOne(n => n.Document)
-            .HasForeignKey<StructureNode>(e => e.DocumentId);
     }
 }

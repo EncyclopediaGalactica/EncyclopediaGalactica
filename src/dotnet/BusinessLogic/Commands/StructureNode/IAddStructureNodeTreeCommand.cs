@@ -16,10 +16,13 @@ public interface IAddStructureNodeTreeCommand
     /// <summary>
     ///     Adds the provided tree to the system.
     /// </summary>
+    /// <param name="documentId"></param>
     /// <param name="structureNodeInput">The <see cref="StructureNode" /> tree.</param>
     /// <param name="cancellationToken">
     ///     <see cref="CancellationToken" />
     /// </param>
-    Task AddTreeAsync(StructureNodeInput structureNodeInput,
+    Task AddTreeAsync(
+        long documentId,
+        StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default);
 }
