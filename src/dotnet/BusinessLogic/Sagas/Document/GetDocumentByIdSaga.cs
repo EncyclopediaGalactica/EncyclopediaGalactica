@@ -18,8 +18,8 @@ public class GetDocumentByIdSaga(
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            string m = $"Error happened during execution of {nameof(GetDocumentByIdSaga)}";
+            throw new SagaException(m, e);
         }
     }
 }

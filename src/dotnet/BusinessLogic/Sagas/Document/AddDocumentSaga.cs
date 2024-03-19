@@ -24,15 +24,30 @@ public class AddDocumentSaga(
     public async Task<DocumentResult> ExecuteAsync(AddDocumentSagaContext context,
         CancellationToken cancellationToken = default)
     {
-        long documentId = await addDocumentCommand.AddAsync(context.Payload, cancellationToken)
-            .ConfigureAwait(false);
+        try
+        {
+            long documentId = await addDocumentCommand.AddAsync(context.Payload, cancellationToken)
+                .ConfigureAwait(false);
 
-        await addStructureNodeTreeCommand
-            .AddTreeAsync(documentId, context.Payload.RootStructureNode, cancellationToken)
-            .ConfigureAwait(false);
+            CheckIfPayloadHasRootNodeAndAdd(context.Payload);
 
-        DocumentResult result = await getDocumentByIdCommand.GetByIdAsync(documentId, cancellationToken)
-            .ConfigureAwait(false);
-        return result;
+            await addStructureNodeTreeCommand
+                .AddTreeAsync(documentId, context.Payload.RootStructureNode, cancellationToken)
+                .ConfigureAwait(false);
+
+            DocumentResult result = await getDocumentByIdCommand.GetByIdAsync(documentId, cancellationToken)
+                .ConfigureAwait(false);
+            return result;
+        }
+        catch (Exception e)
+        {
+            string m = $"Error happened while executing {nameof(AddDocumentSaga)}.";
+            throw new SagaException(m, e);
+        }
+    }
+
+    private void CheckIfPayloadHasRootNodeAndAdd(DocumentInput input)
+    {
+        input.RootStructureNode ??= new StructureNodeInput();
     }
 }

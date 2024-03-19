@@ -7,5 +7,5 @@ public class DocumentInput
     public string? Description { get; set; }
     public Uri? Uri { get; set; }
 
-    public StructureNodeInput RootStructureNode { get; set; } = new StructureNodeInput();
+    public StructureNodeInput? RootStructureNode { get; set; }
 }

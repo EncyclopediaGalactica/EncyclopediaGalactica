@@ -35,8 +35,8 @@ public class GetDocumentsSaga(
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            string m = $"Error happened during execution of {nameof(GetDocumentsSaga)}.";
+            throw new SagaException(m, e);
         }
     }
 }

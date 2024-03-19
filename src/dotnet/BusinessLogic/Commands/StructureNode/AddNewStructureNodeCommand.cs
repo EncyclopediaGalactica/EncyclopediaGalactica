@@ -3,6 +3,7 @@ namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 using Contracts;
 using Database;
 using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Mappers;
@@ -21,10 +22,18 @@ public class AddNewStructureNodeCommand(
             await AddNewBusinessLogicAsync(structureNodeInput, cancellationToken)
                 .ConfigureAwait(false);
         }
+        catch (Exception e) when (e is ValidationException or InvalidArgumentCommandException)
+        {
+            string m = $"{nameof(AddNewStructureNodeCommand)} received invalid input.";
+            throw new InvalidArgumentCommandException(m, e);
+        }
+        catch (OperationCanceledException e)
+        {
+            throw new OperationCancelledCommandException(Errors.OperationCancelled, e);
+        }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new UnknownErrorCommandException(Errors.UnexpectedError, e);
         }
     }
 
@@ -34,8 +43,7 @@ public class AddNewStructureNodeCommand(
     {
         ValidateProvidedInput(structureNodeInput);
         StructureNode structureNode = structureNodeMapper.MapStructureNodeInputToStructureNode(structureNodeInput);
-        StructureNode newStructureNode = await AddDatabaseOperationAsync(structureNode, cancellationToken)
-            .ConfigureAwait(false);
+        await AddDatabaseOperationAsync(structureNode, cancellationToken).ConfigureAwait(false);
     }
 
     private async Task<StructureNode> AddDatabaseOperationAsync(StructureNode structureNode,

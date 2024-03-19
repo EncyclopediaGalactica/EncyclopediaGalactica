@@ -8,22 +8,22 @@ using System.Runtime.Serialization;
 ///         It is thrown when an unknown error happens in the service.
 ///     </remarks>
 /// </summary>
-public class UnknownErrorScenarioException : Exception
+public class UnknownErrorCommandException : Exception
 {
-    public UnknownErrorScenarioException()
+    public UnknownErrorCommandException()
     {
     }
 
-    protected UnknownErrorScenarioException(SerializationInfo info, StreamingContext context) : base(info,
+    protected UnknownErrorCommandException(SerializationInfo info, StreamingContext context) : base(info,
         context)
     {
     }
 
-    public UnknownErrorScenarioException(string? message) : base(message)
+    public UnknownErrorCommandException(string? message) : base(message)
     {
     }
 
-    public UnknownErrorScenarioException(string? message, Exception? innerException) : base(message,
+    public UnknownErrorCommandException(string? message, Exception? innerException) : base(message,
         innerException)
     {
     }

@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
 using Contracts;
+using Exceptions;
 
 /// <summary>
 ///     Add a New Structure Node to the system.
@@ -18,5 +19,14 @@ public interface IAddNewStructureNodeCommand
     /// <returns>
     ///     <see cref="Task{TResult}" /> representing result of asynchronous operation.
     /// </returns>
+    /// <exception cref="InvalidArgumentCommandException">
+    ///     When the command receives invalid input.
+    /// </exception>
+    /// <exception cref="OperationCancelledCommandException">
+    ///     When the operation is cancelled by receiving a <see cref="CancellationToken" />.
+    /// </exception>
+    /// <exception cref="UnknownErrorCommandException">
+    ///     When the execution stops with an unknown error.
+    /// </exception>
     Task AddNewAsync(StructureNodeInput structureNodeInput, CancellationToken cancellationToken = default);
 }

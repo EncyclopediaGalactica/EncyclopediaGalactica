@@ -3,16 +3,19 @@ namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 using Contracts;
 using Database;
 using Entities;
+using Errors;
 using Exceptions;
 using FluentValidation;
 using Mappers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Validators;
 
 public class AddStructureNodeTreeCommand(
     IStructureNodeMapper mapper,
     DbContextOptions<DocumentDbContext> dbContextOptions,
-    IValidator<StructureNodeInput> validator) : IAddStructureNodeTreeCommand
+    IValidator<StructureNodeInput> validator,
+    ILogger<AddStructureNodeTreeCommand> logger) : IAddStructureNodeTreeCommand
 {
     public async Task AddTreeAsync(
         long documentId,
@@ -24,10 +27,17 @@ public class AddStructureNodeTreeCommand(
             await AddNewRootNodeBusinessLogicAsync(documentId, structureNodeInput, cancellationToken)
                 .ConfigureAwait(false);
         }
+        catch (ValidationException e)
+        {
+            throw new InvalidArgumentCommandException(Errors.InvalidInput, e);
+        }
+        catch (OperationCanceledException e)
+        {
+            throw new OperationCancelledCommandException(Errors.OperationCancelled, e);
+        }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new UnknownErrorCommandException(Errors.UnexpectedError, e);
         }
     }
 
@@ -36,6 +46,7 @@ public class AddStructureNodeTreeCommand(
         StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
+        OverWriteRootNode(structureNodeInput);
         OverwriteStructureNodesDocumentIdValue(structureNodeInput, documentId);
         await ValidateProvidedInput(documentId, structureNodeInput, cancellationToken).ConfigureAwait(false);
         StructureNode structureNode = mapper.MapStructureNodeInputToStructureNode(structureNodeInput);
@@ -47,7 +58,13 @@ public class AddStructureNodeTreeCommand(
         CancellationToken cancellationToken = default)
     {
         await using DocumentDbContext ctx = new DocumentDbContext(dbContextOptions);
-        // dfs to add the whole tree
+        await ctx.StructureNodes.AddAsync(structureNode, cancellationToken).ConfigureAwait(false);
+        await ctx.SaveChangesAsync(cancellationToken).ConfigureAwait(false);
+    }
+
+    private void OverWriteRootNode(StructureNodeInput input)
+    {
+        input.IsRootNode = 1;
     }
 
     private void OverwriteStructureNodesDocumentIdValue(StructureNodeInput structureNodeInput, long documentId)
@@ -60,7 +77,7 @@ public class AddStructureNodeTreeCommand(
         StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default)
     {
-        long notAllowedValue = 0;
+        const long notAllowedValue = 0;
         if (documentId == notAllowedValue)
         {
             string m = $"{nameof(documentId)} cannot be {notAllowedValue}";

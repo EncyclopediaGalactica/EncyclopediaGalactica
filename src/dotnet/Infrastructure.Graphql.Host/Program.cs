@@ -97,6 +97,8 @@ builder.Services
     .RegisterService<IHaveInputAndResultSaga<DocumentResult, GetDocumentByIdContext>>()
     // commands
     .RegisterService<IGetStructureNodeTreeCommand>()
+    .RegisterService<IAddNewStructureNodeCommand>()
+    .RegisterService<IAddStructureNodeTreeCommand>()
     ;
 
 WebApplication app = builder.Build();

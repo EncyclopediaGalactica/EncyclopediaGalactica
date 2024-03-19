@@ -17,16 +17,16 @@ public interface IGetDocumentByIdCommand
     ///     Returns <see cref="Task{TResult}" /> representing result of an asynchronous operation. It includes the
     ///     <see cref="DocumentInput" /> result.
     /// </returns>
-    /// <exception cref="InvalidInputToDocumentServiceException">
+    /// <exception cref="InvalidArgumentCommandException">
     ///     Invalid input provided to the service
     /// </exception>
-    /// <exception cref="DocumentServiceOperationCancelledException">
+    /// <exception cref="OperationCancelledCommandException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />.
     /// </exception>
-    /// <exception cref="NoSuchItemScenarioException">
+    /// <exception cref="NoSuchItemCommandException">
     ///     When there is no such item in the system based on, probably, entity id.
     /// </exception>
-    /// <exception cref="UnknownErrorScenarioException">
+    /// <exception cref="UnknownErrorCommandException">
     ///     In case of any other errors
     /// </exception>
     Task<DocumentResult> GetByIdAsync(long id, CancellationToken cancellationToken = default);

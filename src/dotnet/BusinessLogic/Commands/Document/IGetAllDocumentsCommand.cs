@@ -17,10 +17,10 @@ public interface IGetAllDocumentsCommand
     /// <exception cref="ArgumentNullException">
     ///     When input is null.
     /// </exception>
-    /// <exception cref="DocumentServiceOperationCancelledException">
+    /// <exception cref="OperationCancelledCommandException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />
     /// </exception>
-    /// <exception cref="UnknownErrorScenarioException">
+    /// <exception cref="UnknownErrorCommandException">
     ///     In case of any other errors
     /// </exception>
     Task<List<DocumentResult>> GetAllAsync(CancellationToken cancellationToken = default);

@@ -23,19 +23,16 @@ public interface IGetStructureNodeTreeCommand
     /// <param name="documentId">The <see cref="Document" /> Id field.</param>
     /// <param name="cancellationToken"></param>
     /// <returns>The root node of the designated <see cref="Document" /> entity.</returns>
-    /// <exception cref="InvalidArgumentScenarioException">
+    /// <exception cref="InvalidArgumentCommandException">
     ///     When invalid arguments were passed to the scenario.
     /// </exception>
-    /// <exception cref="NoSuchItemScenarioException">
-    ///     When there is no such item in the system.
-    /// </exception>
-    /// <exception cref="OperationCancelledScenarioException">
+    /// <exception cref="OperationCancelledCommandException">
     ///     When the scenario execution is been cancelled by <see cref="CancellationToken" />.
     /// </exception>
     /// <exception cref="DataCohesionScenarioException">
     ///     When the code executed by the scenario cause data cohesion issues.
     /// </exception>
-    /// <exception cref="UnknownErrorScenarioException">
+    /// <exception cref="UnknownErrorCommandException">
     ///     Any further exception happen in the scenario.
     /// </exception>
     Task<StructureNodeResult> GetRootNodeByDocumentIdAsync(
