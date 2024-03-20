@@ -20,7 +20,6 @@ public class StructureNode
     /// </summary>
     public long Id { get; set; }
 
-    public Document? Document { get; set; }
     public long DocumentId { get; set; }
     public int IsRootNode { get; set; }
 }

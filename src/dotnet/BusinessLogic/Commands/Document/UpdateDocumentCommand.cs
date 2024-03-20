@@ -23,7 +23,8 @@ public class UpdateDocumentCommand(
             await UpdateBusinessLogicAsync(modifiedInput, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception e) when (e is DbUpdateException
-                                      or ValidationException)
+                                      or ValidationException
+                                      or ArgumentNullException)
         {
             throw new InvalidArgumentCommandException(
                 Errors.Errors.InvalidInput,
@@ -31,7 +32,7 @@ public class UpdateDocumentCommand(
         }
         catch (Exception e) when (e is OperationCanceledException)
         {
-            throw new CommandCancelledException(
+            throw new OperationCancelledCommandException(
                 Errors.Errors.OperationCancelled,
                 e);
         }
@@ -44,7 +45,7 @@ public class UpdateDocumentCommand(
         catch (Exception e) when (e is DbUpdateConcurrencyException
                                       or not null)
         {
-            throw new UnknownErrorScenarioException(
+            throw new UnknownErrorCommandException(
                 Errors.Errors.UnexpectedError,
                 e);
         }

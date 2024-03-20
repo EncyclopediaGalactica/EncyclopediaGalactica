@@ -3,6 +3,8 @@ namespace EncyclopediaGalactica.BusinessLogic.Commands.Document;
 using Contracts;
 using Database;
 using Entities;
+using Errors;
+using Exceptions;
 using Mappers;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +19,16 @@ public class GetAllDocumentsCommand(
         {
             return await GetAllBusinessLogicAsync(cancellationToken).ConfigureAwait(false);
         }
+        catch (OperationCanceledException e)
+        {
+            string m = $"{nameof(GetAllDocumentsCommand)} execution has been cancelled.";
+            throw new OperationCancelledCommandException(m, e);
+        }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            throw new UnknownErrorCommandException(
+                Errors.UnexpectedError,
+                e);
         }
     }
 

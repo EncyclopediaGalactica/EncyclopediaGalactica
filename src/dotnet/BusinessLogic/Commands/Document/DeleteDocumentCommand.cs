@@ -23,13 +23,13 @@ public class DeleteDocumentCommand(
         }
         catch (OperationCanceledException e)
         {
-            throw new CommandCancelledException(
+            throw new OperationCancelledCommandException(
                 Errors.Errors.OperationCancelled,
                 e);
         }
         catch (DbUpdateException e)
         {
-            throw new UnknownErrorScenarioException(
+            throw new UnknownErrorCommandException(
                 Errors.Errors.UnexpectedError,
                 e);
         }

@@ -2,7 +2,7 @@
   href: introduction.md
 - name: Domain
   href: domain/toc.yml
-- name: Stories
-  href: stories/toc.yml
+- name: Sagas
+  href: sagas/toc.yml
 - name: Software modules
   href: modules/toc.yml

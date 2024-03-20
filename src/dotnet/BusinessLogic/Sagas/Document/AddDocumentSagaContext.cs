@@ -5,5 +5,5 @@ using Interfaces;
 
 public class AddDocumentSagaContext : ISagaContextWithPayload<DocumentInput>
 {
-    public DocumentInput Payload { get; set; }
+    public DocumentInput Payload { get; set; } = new DocumentInput();
 }

@@ -1,6 +1,7 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
 using Contracts;
+using Exceptions;
 
 /// <summary>
 ///     Add Structure Node Tree Scenario.
@@ -14,12 +15,23 @@ using Contracts;
 public interface IAddStructureNodeTreeCommand
 {
     /// <summary>
-    ///     Adds the provided tree to the system.
+    ///     Adds <see cref="StructureNode" /> tree to the designated <see cref="Document" />.
     /// </summary>
-    /// <param name="structureNodeInput">The <see cref="StructureNode" /> tree.</param>
-    /// <param name="cancellationToken">
-    ///     <see cref="CancellationToken" />
-    /// </param>
-    Task AddTreeAsync(StructureNodeInput structureNodeInput,
+    /// <param name="documentId">The document id.</param>
+    /// <param name="structureNodeInput">The <see cref="StructureNodeInput" /> including the tree.</param>
+    /// <param name="cancellationToken"><see cref="CancellationToken" />.</param>
+    /// <returns></returns>
+    /// <exception cref="InvalidArgumentCommandException">
+    ///     When the command receives invalid input.
+    /// </exception>
+    /// <exception cref="OperationCancelledCommandException">
+    ///     When the command operation is cancelled by receiving a <see cref="CancellationToken" />.
+    /// </exception>
+    /// <exception cref="UnknownErrorCommandException">
+    ///     When unknown error happens during command execution.
+    /// </exception>
+    Task AddTreeAsync(
+        long documentId,
+        StructureNodeInput structureNodeInput,
         CancellationToken cancellationToken = default);
 }

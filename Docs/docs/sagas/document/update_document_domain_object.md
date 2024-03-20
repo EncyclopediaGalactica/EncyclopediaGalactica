@@ -25,6 +25,9 @@
 
 ## Update the StructureNode tree
 
+Until there are no items connecting to a Structure Node the update Document saga will delete and 
+re-add the StructureNode tree for a Document.
+
 # Sequence diagram
 
 ```mermaid

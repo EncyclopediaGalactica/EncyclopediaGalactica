@@ -28,19 +28,19 @@ public class AddDocumentCommand(
                                       or ValidationException
                                       or DbUpdateException)
         {
-            throw new InvalidInputToDocumentServiceException(
+            throw new InvalidArgumentCommandException(
                 Errors.Errors.InvalidInput,
                 e);
         }
         catch (Exception e) when (e is OperationCanceledException)
         {
-            throw new CommandCancelledException(
+            throw new OperationCancelledCommandException(
                 Errors.Errors.OperationCancelled,
                 e);
         }
         catch (Exception e)
         {
-            throw new UnknownErrorScenarioException(
+            throw new UnknownErrorCommandException(
                 Errors.Errors.UnexpectedError,
                 e);
         }

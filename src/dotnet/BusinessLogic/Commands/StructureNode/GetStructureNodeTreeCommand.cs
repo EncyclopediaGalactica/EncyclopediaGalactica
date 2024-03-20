@@ -1,13 +1,17 @@
 namespace EncyclopediaGalactica.BusinessLogic.Commands.StructureNode;
 
 using Contracts;
+using Database;
 using Entities;
+using Errors;
 using Exceptions;
 using Mappers;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 public class GetStructureNodeTreeCommand(
     IStructureNodeMapper mapper,
+    DbContextOptions<DocumentDbContext> dbContextOptions,
     ILogger<IGetStructureNodeTreeCommand> logger) : IGetStructureNodeTreeCommand
 {
     public async Task<StructureNodeResult> GetRootNodeByDocumentIdAsync(
@@ -18,10 +22,18 @@ public class GetStructureNodeTreeCommand(
         {
             return await GetNodeBusinessLogicAsync(documentId, cancellationToken).ConfigureAwait(false);
         }
+        catch (OperationCanceledException e)
+        {
+            throw new OperationCancelledCommandException(Errors.OperationCancelled, e);
+        }
+        catch (Exception e) when (e is ArgumentNullException or InvalidOperationException)
+        {
+            throw new InvalidArgumentCommandException(Errors.InvalidInput, e);
+        }
         catch (Exception e)
         {
             string m = $"Unknown error happened!";
-            throw new UnknownErrorScenarioException(m, e);
+            throw new UnknownErrorCommandException(m, e);
         }
     }
 
@@ -39,7 +51,9 @@ public class GetStructureNodeTreeCommand(
         long documentId,
         CancellationToken cancellationToken = default)
     {
-        return new StructureNode();
+        await using DocumentDbContext ctx = new DocumentDbContext(dbContextOptions);
+        return await ctx.StructureNodes
+            .FirstAsync(f => f.DocumentId == documentId && f.IsRootNode == 1, cancellationToken);
     }
 
     private void ValidateInput(long id)

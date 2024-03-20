@@ -16,17 +16,19 @@ public class DocumentQueryResolvers(ILogger<DocumentQueryResolvers> logger)
     /// <param name="resolverContext">
     /// </param>
     /// <param name="getDocumentsSaga"></param>
+    /// <param name="cancellationToken"></param>
     /// <returns>
     ///     Returns <see cref="Task{TResult}" /> representing result of asynchronous operation.
     /// </returns>
     public async Task<IList<DocumentResult>> GetAllAsync(
         IResolverContext resolverContext,
-        IHaveResultSaga<List<DocumentResult>> getDocumentsSaga)
+        IHaveInputAndResultSaga<List<DocumentResult>, GetDocumentsSagaContext> getDocumentsSaga,
+        CancellationToken cancellationToken = default)
     {
         try
         {
-            ISagaContext sagaContext = new GetDocumentsSagaContext();
-            return await getDocumentsSaga.ExecuteAsync(sagaContext).ConfigureAwait(false);
+            GetDocumentsSagaContext sagaContext = new GetDocumentsSagaContext();
+            return await getDocumentsSaga.ExecuteAsync(sagaContext, cancellationToken).ConfigureAwait(false);
         }
         catch (Exception e)
         {

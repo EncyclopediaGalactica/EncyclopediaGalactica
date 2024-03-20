@@ -30,13 +30,13 @@ public class GetDocumentByIdCommand(
         }
         catch (OperationCanceledException e)
         {
-            throw new CommandCancelledException(
+            throw new OperationCancelledCommandException(
                 Errors.Errors.OperationCancelled,
                 e);
         }
         catch (Exception e)
         {
-            throw new UnknownErrorScenarioException(
+            throw new UnknownErrorCommandException(
                 Errors.Errors.UnexpectedError,
                 e);
         }

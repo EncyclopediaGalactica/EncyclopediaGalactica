@@ -11,16 +11,16 @@ public interface IUpdateDocumentCommand
     /// </summary>
     /// <param name="modifiedInput">The provided changes</param>
     /// <param name="cancellationToken"><see cref="CancellationToken" />.</param>
-    /// <exception cref="InvalidInputToDocumentServiceException">
+    /// <exception cref="InvalidArgumentCommandException">
     ///     Invalid input provided to the service
     /// </exception>
-    /// <exception cref="DocumentServiceOperationCancelledException">
+    /// <exception cref="OperationCancelledCommandException">
     ///     When the operation is cancelled by a <see cref="CancellationToken" />.
     /// </exception>
-    /// <exception cref="NoSuchItemScenarioException">
+    /// <exception cref="NoSuchItemCommandException">
     ///     When there is no such item in the system based on, probably, entity id.
     /// </exception>
-    /// <exception cref="UnknownErrorScenarioException">
+    /// <exception cref="UnknownErrorCommandException">
     ///     In case of any other errors
     /// </exception>
     Task UpdateAsync(DocumentInput modifiedInput, CancellationToken cancellationToken = default);

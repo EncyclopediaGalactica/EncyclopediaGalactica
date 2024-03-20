@@ -1,11 +1,13 @@
 namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
 
 using Commands.Document;
+using Commands.StructureNode;
 using Interfaces;
 using Microsoft.Extensions.Logging;
 
 public class DeleteDocumentSaga(
     IDeleteDocumentCommand deleteDocumentCommand,
+    IDeleteStructureNodesCommand deleteStructureNodesCommand,
     ILogger<DeleteDocumentSaga> logger) : IHaveInputSaga<DeleteDocumentSagaContext>
 {
     public async Task ExecuteAsync(DeleteDocumentSagaContext context,
@@ -15,12 +17,13 @@ public class DeleteDocumentSaga(
         {
             await deleteDocumentCommand.DeleteAsync(context.Payload, cancellationToken)
                 .ConfigureAwait(false);
-            // todo clean up structure nodes
+            await deleteStructureNodesCommand.DeleteAsync(context.Payload, cancellationToken)
+                .ConfigureAwait(false);
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            string m = $"Error happened during {nameof(DeleteDocumentSaga)}.";
+            throw new SagaException(m, e);
         }
     }
 }

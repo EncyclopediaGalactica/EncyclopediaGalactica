@@ -8,22 +8,22 @@ using System.Runtime.Serialization;
 ///         When a Document Service operation is cancelled by providing a <see cref="CancellationToken" />.
 ///     </remarks>
 /// </summary>
-public class CommandCancelledException : Exception
+public class OperationCancelledCommandException : Exception
 {
-    public CommandCancelledException()
+    public OperationCancelledCommandException()
     {
     }
 
-    protected CommandCancelledException(SerializationInfo info, StreamingContext context) : base(info,
+    protected OperationCancelledCommandException(SerializationInfo info, StreamingContext context) : base(info,
         context)
     {
     }
 
-    public CommandCancelledException(string? message) : base(message)
+    public OperationCancelledCommandException(string? message) : base(message)
     {
     }
 
-    public CommandCancelledException(string? message, Exception? innerException) : base(message,
+    public OperationCancelledCommandException(string? message, Exception? innerException) : base(message,
         innerException)
     {
     }

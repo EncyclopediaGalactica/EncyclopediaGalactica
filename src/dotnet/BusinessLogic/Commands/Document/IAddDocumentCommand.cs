@@ -17,13 +17,13 @@ public interface IAddDocumentCommand
     ///     Returns a <see cref="Task{TResult}" /> object representing the result of an asynchronous operation which in this
     ///     case is the id of the newly created entity.
     /// </returns>
-    /// <exception cref="InvalidInputToDocumentServiceException">
+    /// <exception cref="InvalidArgumentCommandException">
     ///     When invalid input is provided to the service
     /// </exception>
-    /// <exception cref="CommandCancelledException">
+    /// <exception cref="OperationCancelledCommandException">
     ///     When the operation cancelled by <see cref="CancellationToken" />.
     /// </exception>
-    /// <exception cref="UnknownErrorScenarioException">
+    /// <exception cref="UnknownErrorCommandException">
     ///     When any other error happens.
     /// </exception>
     Task<long> AddAsync(DocumentInput inputInput, CancellationToken cancellationToken = default);

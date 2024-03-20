@@ -38,8 +38,8 @@ public class UpdateDocumentSaga(
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
-            throw;
+            string m = $"Error happened during execution of {nameof(UpdateDocumentSaga)}.";
+            throw new SagaException(m, e);
         }
     }
 }

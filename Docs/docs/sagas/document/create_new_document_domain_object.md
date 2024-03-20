@@ -21,6 +21,10 @@
 | Description | Must be longer than 3 chars    | Exception |
 | Description | Must be shorter than 255 chars | Exception |
 
+# Remarks
+
+- Every Document object will get its root Structure Node by default
+
 
 # Sequence diagram
 
