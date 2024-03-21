@@ -1,5 +1,7 @@
 - name: Introduction
   href: introduction.md
+- name: Examples
+  href: examples/toc.yml
 - name: Domain
   href: domain/toc.yml
 - name: Sagas
