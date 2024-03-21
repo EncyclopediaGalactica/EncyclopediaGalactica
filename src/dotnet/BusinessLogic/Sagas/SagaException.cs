@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.BusinessLogic.Sagas.Document;
+namespace EncyclopediaGalactica.BusinessLogic.Sagas;
 
 using System.Runtime.Serialization;
 

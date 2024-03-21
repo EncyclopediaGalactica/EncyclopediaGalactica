@@ -16,6 +16,7 @@ public class DocumentDbContext : DbContext
 
     public DbSet<Document> Documents => Set<Document>();
     public DbSet<StructureNode> StructureNodes => Set<StructureNode>();
+    public DbSet<Relation> Relations => Set<Relation>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -24,5 +25,6 @@ public class DocumentDbContext : DbContext
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(DocumentEntityConfiguration).Assembly);
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(StructureEntityConfiguration).Assembly);
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(RelationEntityConfiguration).Assembly);
     }
 }
