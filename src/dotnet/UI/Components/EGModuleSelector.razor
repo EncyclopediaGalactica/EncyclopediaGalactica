@@ -1,0 +1,6 @@
+<FluentCombobox Items=@_moduleResults
+                OptionText="@(i => i.Name)"
+                OptionValue="@(i => i.Id.ToString())"
+                SelectedOptionChanged="@SelectedOptionChanged()"
+                bind-SelectedOption="@SelectedModule">
+</FluentCombobox>

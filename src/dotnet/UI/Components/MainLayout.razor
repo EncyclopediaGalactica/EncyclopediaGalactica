@@ -1,0 +1,29 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page container-fluid">
+    <div class="row">
+        <EGNav/>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xxl-1 bg-black d-flex align-items-stretch"></div>
+
+        <div class="col-xxl-11">
+            <main>
+                <article>
+                    @Body
+                </article>
+            </main>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <EGFooter/>
+    </div>
+</div>
+<FluentToastProvider/>
+<FluentDialogProvider/>
+<FluentTooltipProvider/>
+<FluentMessageBarProvider/>
