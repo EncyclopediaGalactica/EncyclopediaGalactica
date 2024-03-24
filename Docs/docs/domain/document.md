@@ -42,11 +42,26 @@ All the above helps us identify the domain and value objects when it comes to Do
 
 ## Value objects
 
-- StructureNode
+### StructureNode
+
+Structure node tree describes the structure of a document.
+The goal of the detailed structure is being able to attach other documents to the small parts of 
+a document.
+This is useful in case of text where a paragraph has its own main sentence and other sentences 
+supporting the meaning of the main sentence.
+Any sentence in a paragraph can have a meaning based link to other document's section and 
+knowing the structure of the document helps fine tune these relations.
+
+For example, when it is a text it describes the document as chapters, sections and 
+paragraphs as LaTeX does down to the sentence level.
+
+For how StructureNode plays a role please see the [examples](../examples/).
+
 
 ### The complete diagram
 
 ```mermaid
 erDiagram
     Document || -- || StructureNode: contains
+    StructureNode }o -- o{ StructureNode: tree
 ```
