@@ -1,3 +1,10 @@
+# [0.20.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.4...0.20.0) (2024-03-24)
+
+
+### Features
+
+* Relation management ([#196](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/196)) ([9b48709](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/9b487097127ef2e1af346e60dd909d69fb5e41f7))
+
 ## [0.19.4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.3...0.19.4) (2024-03-13)
 
 
