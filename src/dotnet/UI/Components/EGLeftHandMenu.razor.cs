@@ -7,7 +7,10 @@ using States;
 public partial class EGLeftHandMenu
 {
     [Inject]
-    private IState<ModuleState> ModuleState { get; set; }
+    public IState<ModuleState> ModuleState { get; set; }
+
+    [Inject]
+    public IDispatcher Dispatcher { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

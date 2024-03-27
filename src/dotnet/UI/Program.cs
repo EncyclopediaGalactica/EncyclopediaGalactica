@@ -3,6 +3,8 @@ using Microsoft.FluentUI.AspNetCore.Components;
 using UI.Components;
 
 var builder = WebApplication.CreateBuilder(args);
+// builder.Logging.AddConfiguration(
+// builder.Configuration.GetSection("Logging"));
 
 // Add services to the container.
 builder.Services

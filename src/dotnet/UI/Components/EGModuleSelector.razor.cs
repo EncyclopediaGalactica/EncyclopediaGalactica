@@ -1,7 +1,10 @@
 namespace UI.Components;
 
 using EncyclopediaGalactica.BusinessLogic.Contracts;
+using Fluxor;
 using Microsoft.AspNetCore.Components;
+using States;
+using Store.Actions;
 
 public partial class EGModuleSelector
 {
@@ -15,8 +18,27 @@ public partial class EGModuleSelector
 
     private ModuleResult? SelectedModule;
 
-    private EventCallback SelectedOptionChanged()
+    [Inject]
+    public IState<ModuleState> ModuleState { get; set; }
+
+    [Inject]
+    public IDispatcher Dispatcher { get; set; }
+
+    [Inject]
+    private ILogger<EGModuleSelector> Logger { get; set; }
+
+    protected override async Task OnInitializedAsync()
     {
-        throw new NotImplementedException();
+        Logger.LogInformation("===> Init: Module name: {ModuleName}", nameof(EGModuleSelector));
+        Logger.LogInformation("===> Init: Selected module is: {Module}", SelectedModule);
+        await base.OnInitializedAsync();
+    }
+
+    private async Task ModuleSelectionChanged(ChangeEventArgs args)
+    {
+        Logger.LogInformation("===> change: Module selected. The selected module is: {Value}", args.Value);
+        Logger.LogInformation("===> change: Selected module is: {Module}", SelectedModule);
+        Console.WriteLine("Whatever");
+        Dispatcher.Dispatch(new ChangeModuleAction { ModuleId = 2 });
     }
 }

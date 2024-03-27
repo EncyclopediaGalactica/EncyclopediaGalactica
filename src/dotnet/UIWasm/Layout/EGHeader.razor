@@ -1,0 +1,18 @@
+@using EncyclopediaGalactica.BusinessLogic.Contracts
+<FluentHeader>
+    <FluentGrid>
+        <FluentGridItem xl="1">
+            Encyclopedia Galactica
+        </FluentGridItem>
+        <FluentGridItem xl="10"></FluentGridItem>
+        <FluentGridItem xl="1">
+            <FluentCombobox TOption="ModuleResult"
+                            Items="_moduleResults"
+                            OptionValue="@(i => i.Id.ToString())"
+                            OptionText="@(i => i.Name)"
+                            SelectedOptionChanged="@ModuleSelectionChanged"
+                            SelectedOption="SelectedModule">
+            </FluentCombobox>
+        </FluentGridItem>
+    </FluentGrid>
+</FluentHeader>

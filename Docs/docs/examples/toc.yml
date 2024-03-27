@@ -1,2 +1,6 @@
 - name: introduction.md
   href: Introduction
+- name: Library
+  href: library.md
+- name: Star Map
+  href: starmap.md
