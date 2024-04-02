@@ -1,0 +1,8 @@
+@using EncyclopediaGalactica.BusinessLogic.Contracts
+<FluentCombobox Items="@_moduleResults"
+                TOption="ModuleResult"
+                OptionText="@(i => i.Name)"
+                OptionValue="@(i => i.Id.ToString())"
+                @onChange="@ModuleSelectionChanged"
+                @bind-SelectedOption="@SelectedModule">
+</FluentCombobox>

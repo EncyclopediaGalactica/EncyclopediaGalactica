@@ -1,0 +1,26 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@if (ModuleAndScreenState?.Value.SelectedModule is not null)
+{
+    @switch (ModuleAndScreenState.Value.SelectedModule.UnifiedName)
+    {
+        case "administration":
+            <EGAdministrationMainContent/>
+            break;
+
+        case "finance":
+            <EGFinanceMainContent/>
+            break;
+
+        case "documents":
+            <EGDocumentsMainContent/>
+            break;
+
+        case "starmap":
+            <EGStarMapMainContent/>
+            break;
+
+        default:
+            <EGDefaultMainContent/>
+            break;
+    }
+}

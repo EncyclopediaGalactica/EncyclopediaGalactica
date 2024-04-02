@@ -17,4 +17,12 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.3"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\BusinessLogic.Contracts\BusinessLogic.Contracts.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Contracts\"/>
+    </ItemGroup>
+
 </Project>
