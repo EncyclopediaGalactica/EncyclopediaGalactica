@@ -1,3 +1,10 @@
+# [0.21.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.20.0...0.21.0) (2024-04-02)
+
+
+### Features
+
+* adding UI ([#197](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/197)) ([7291409](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/7291409eff3fc4d6aa34bd5ba3ad4776bf4894e6))
+
 # [0.20.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.19.4...0.20.0) (2024-03-24)
 
 
