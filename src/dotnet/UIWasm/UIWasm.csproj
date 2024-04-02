@@ -23,4 +23,10 @@
         <ProjectReference Include="..\BusinessLogic.Contracts\BusinessLogic.Contracts.csproj"/>
     </ItemGroup>
 
+    <ItemGroup>
+        <_ContentIncludedByDefault Remove="Pages\Counter.razor"/>
+        <_ContentIncludedByDefault Remove="Pages\Home.razor"/>
+        <_ContentIncludedByDefault Remove="Pages\Weather.razor"/>
+    </ItemGroup>
+
 </Project>

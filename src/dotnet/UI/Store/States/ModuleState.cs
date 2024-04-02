@@ -1,4 +1,4 @@
-namespace UI.States;
+namespace UI.Store.States;
 
 using Fluxor;
 

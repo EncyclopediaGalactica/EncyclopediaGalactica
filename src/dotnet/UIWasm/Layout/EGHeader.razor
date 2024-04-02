@@ -7,11 +7,10 @@
         <FluentGridItem xl="10"></FluentGridItem>
         <FluentGridItem xl="1">
             <FluentCombobox TOption="ModuleResult"
-                            Items="_moduleResults"
+                            Items="_modules"
                             OptionValue="@(i => i.Id.ToString())"
                             OptionText="@(i => i.Name)"
-                            SelectedOptionChanged="@ModuleSelectionChanged"
-                            SelectedOption="SelectedModule">
+                            SelectedOptionChanged="ModuleSelectionChanged">
             </FluentCombobox>
         </FluentGridItem>
     </FluentGrid>

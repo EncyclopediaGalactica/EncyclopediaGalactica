@@ -3,8 +3,8 @@ namespace UI.Components;
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
-using States;
 using Store.Actions;
+using Store.States;
 
 public partial class EGModuleSelector
 {

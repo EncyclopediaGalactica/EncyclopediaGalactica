@@ -2,7 +2,7 @@ namespace UI.Components;
 
 using Fluxor;
 using Microsoft.AspNetCore.Components;
-using States;
+using Store.States;
 
 public partial class EGLeftHandMenu
 {

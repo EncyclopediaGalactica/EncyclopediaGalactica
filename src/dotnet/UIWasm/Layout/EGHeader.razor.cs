@@ -3,22 +3,12 @@ namespace UIWasm.Layout;
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Fluxor;
 using Microsoft.AspNetCore.Components;
-using UI.States;
+using Services;
+using Store.SelectModuleAndSetScreens;
 
 public partial class EGHeader
 {
-    private List<ModuleResult> _moduleResults = new List<ModuleResult>
-    {
-        new ModuleResult { Id = 0, Name = "Administration", Description = "Administration" },
-        new ModuleResult { Id = 1, Name = "Documents", Description = "Documents" },
-        new ModuleResult { Id = 2, Name = "Finance", Description = "Finance" },
-        new ModuleResult { Id = 3, Name = "StarMap", Description = "StarMap" },
-    };
-
-    private ModuleResult? SelectedModule;
-
-    [Inject]
-    public IState<ModuleAndScreenState> ModuleState { get; set; }
+    private IEnumerable<ModuleResult> _modules;
 
     [Inject]
     public IDispatcher Dispatcher { get; set; }
@@ -26,9 +16,18 @@ public partial class EGHeader
     [Inject]
     private ILogger<EGHeader> Logger { get; set; }
 
-    private async Task ModuleSelectionChanged(ModuleResult args)
+    [Inject]
+    private IModuleService ModuleService { get; set; }
+
+    protected override void OnInitialized()
     {
-        Logger.LogInformation("===> change: Module selected. The selected module id: {Id}, ", args.Id);
-        Dispatcher.Dispatch(new ChangeModuleAndScreenStateAction { ModuleId = args.Id });
+        base.OnInitializedAsync();
+        _modules = ModuleService.GetAll();
+    }
+
+    private void ModuleSelectionChanged(ModuleResult selectedModule)
+    {
+        Logger.LogInformation("Module selected: Id: {Id}, Name: {Name}. ", selectedModule.Id, selectedModule.Name);
+        Dispatcher.Dispatch(new ModuleIsSelectedAction(selectedModule));
     }
 }
