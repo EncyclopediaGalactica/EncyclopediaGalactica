@@ -1,9 +1,11 @@
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
 @if (ModuleAndScreenState?.Value.SelectedModule is not null)
 {
-    @switch (ModuleAndScreenState.Value.SelectedModule.UnifiedName)
+    Logger.LogInformation("Module selection component: {Module}", ModuleAndScreenState?.Value.SelectedModule.UnifiedName);
+    @switch (ModuleAndScreenState?.Value.SelectedModule.UnifiedName)
     {
         case "administration":
+            Logger.LogInformation("administration switch");
             <EGAdministrationMainContent/>
             break;
 

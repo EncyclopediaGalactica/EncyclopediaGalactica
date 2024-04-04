@@ -21,8 +21,4 @@
         <ProjectReference Include="..\BusinessLogic.Contracts\BusinessLogic.Contracts.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Contracts\"/>
-    </ItemGroup>
-
 </Project>

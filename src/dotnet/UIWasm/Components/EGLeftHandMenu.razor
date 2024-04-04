@@ -1,12 +1,17 @@
 @using EncyclopediaGalactica.BusinessLogic.Contracts
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
+
 <div class="navmenu">
     <FluentNavMenu Id="main-menu" Width="250" Collapsible="true" Title="Navigation menu" @bind-Expanded="expanded">
         @if (ModuleAndScreenState.Value.ScreensOfModule is not null)
         {
             @foreach (ScreenResult screenResult in ModuleAndScreenState.Value.ScreensOfModule)
             {
-                <FluentNavLink Href="#" Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())">
+                <FluentNavLink
+                    Href="#"
+                    Icon="@(new Icons.Regular.Size20.NumberSymbolSquare())"
+                    OnClick="@(e => OnClick(e, screenResult.UnifiedName))"
+                    ScreenUnifiedName="@screenResult.UnifiedName">
                     @screenResult.Name
                 </FluentNavLink>
             }
