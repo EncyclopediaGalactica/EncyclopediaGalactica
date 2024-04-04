@@ -1,3 +1,10 @@
+# [0.22.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.21.0...0.22.0) (2024-04-04)
+
+
+### Features
+
+* Administration screens [#198](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/198) ([731ab76](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/731ab76a2ac16688e8ed27c4700cc61b06762701))
+
 # [0.21.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.20.0...0.21.0) (2024-04-02)
 
 
