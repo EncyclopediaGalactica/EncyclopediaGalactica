@@ -12,8 +12,8 @@ public class ScreenService : IScreenService
         new ScreenResult { Id = 103, Name = "Expenses", ModuleId = 2 },
         new ScreenResult { Id = 104, Name = "Stellar items", ModuleId = 3 },
         new ScreenResult { Id = 105, Name = "Route planner", ModuleId = 3 },
-        new ScreenResult { Id = 106, Name = "Users", ModuleId = 4 },
-        new ScreenResult { Id = 107, Name = "Roles", ModuleId = 4 },
+        new ScreenResult { Id = 106, Name = "Users", UnifiedName = "users", ModuleId = 4 },
+        new ScreenResult { Id = 107, Name = "Roles", UnifiedName = "roles", ModuleId = 4 },
     };
 
     public async Task<IEnumerable<ScreenResult>> GetAll()

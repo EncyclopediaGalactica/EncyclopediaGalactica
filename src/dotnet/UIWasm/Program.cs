@@ -14,7 +14,9 @@ builder.Logging.AddConfiguration(
 
 builder.Services
     .AddScoped<IModuleService, ModuleService>()
-    .AddScoped<IScreenService, ScreenService>();
+    .AddScoped<IScreenService, ScreenService>()
+    .AddScoped<IUserService, UserService>()
+    .AddScoped<IRoleService, RoleService>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddFluentUIComponents();

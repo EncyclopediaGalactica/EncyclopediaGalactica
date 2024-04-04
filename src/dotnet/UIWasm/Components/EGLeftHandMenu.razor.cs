@@ -2,6 +2,7 @@ namespace UIWasm.Components;
 
 using Fluxor;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using Store.SelectModuleAndSetScreens;
 
 public partial class EGLeftHandMenu
@@ -9,7 +10,10 @@ public partial class EGLeftHandMenu
     private bool expanded = true;
 
     [Inject]
-    private IState<ModuleState> ModuleAndScreenState { get; set; }
+    private IState<ModuleAndScreenState> ModuleAndScreenState { get; set; }
+
+    [Inject]
+    private IDispatcher Dispatcher { get; set; }
 
     [Inject]
     private ILogger<EGLeftHandMenu> Logger { get; set; }
@@ -18,5 +22,11 @@ public partial class EGLeftHandMenu
     {
         Logger.LogInformation("Init");
         base.OnInitialized();
+    }
+
+    private void OnClick(MouseEventArgs arg, string moduleUnifiedName)
+    {
+        Logger.LogInformation("Menu clicked: {ScreenName}", moduleUnifiedName);
+        Dispatcher.Dispatch(new ScreenIsSelectedAction(moduleUnifiedName));
     }
 }

@@ -1,0 +1,19 @@
+@implements IDialogContentComponent<EncyclopediaGalactica.BusinessLogic.Contracts.UserResult>
+@* <FluentDialogHeader ShowDismiss="true"> *@
+@* <FluentStack VerticalAlignment="VerticalAlignment.Center"> *@
+@* <FluentIcon Value="@(new Icons.Regular.Size24.Person())"/> *@
+@* <FluentLabel Typo="Typography.Header">Edit user</FluentLabel> *@
+@* </FluentStack> *@
+@* </FluentDialogHeader> *@
+
+@* <FluentDialogFooter> *@
+@* <FluentButton Appearance="Appearance.Accent">Save</FluentButton> *@
+@* <FluentButton Appearance="Appearance.Neutral">Cancel</FluentButton> *@
+@* </FluentDialogFooter> *@
+
+<FluentDialogBody>
+    <FluentNumberField TValue="long" @bind-Value="Content.Id" Disabled="true">User id:</FluentNumberField>
+    <FluentTextField @bind-Value="Content.UserName">Username: </FluentTextField>
+    <FluentTextField @bind-Value="Content.FirstName">First name: </FluentTextField>
+    <FluentTextField @bind-Value="Content.LastName">Last name: </FluentTextField>
+</FluentDialogBody>

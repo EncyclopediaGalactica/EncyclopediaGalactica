@@ -7,7 +7,7 @@ using Store.SelectModuleAndSetScreens;
 public partial class EGMainContent
 {
     [Inject]
-    private IState<ModuleState> ModuleAndScreenState { get; set; }
+    private IState<ModuleAndScreenState> ModuleAndScreenState { get; set; }
 
     [Inject]
     private ILogger<EGMainContent> Logger { get; set; }
