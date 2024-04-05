@@ -16,7 +16,8 @@ builder.Services
     .AddScoped<IModuleService, ModuleService>()
     .AddScoped<IScreenService, ScreenService>()
     .AddScoped<IUserService, UserService>()
-    .AddScoped<IRoleService, RoleService>();
+    .AddScoped<IRoleService, RoleService>()
+    .AddScoped<IDocumentService, DocumentService>();
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddFluentUIComponents();

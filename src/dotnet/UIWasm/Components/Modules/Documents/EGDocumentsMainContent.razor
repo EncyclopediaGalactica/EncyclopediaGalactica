@@ -1,2 +1,14 @@
 @inherits Fluxor.Blazor.Web.Components.FluxorComponent
-<h1>Documents main content</h1>
+@if (ModuleAndScreenState?.Value.SelectedScreen is null)
+{
+    <h1>Documents main content</h1>
+}
+else
+{
+    @switch (ModuleAndScreenState.Value.SelectedScreen)
+    {
+        case "documents":
+            <EGDocumentsScreen/>
+            break;
+    }
+}
