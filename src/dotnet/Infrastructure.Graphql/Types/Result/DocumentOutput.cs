@@ -29,7 +29,7 @@ public class DocumentOutput : ObjectType<DocumentResult>
             .Type<StringType>();
 
         descriptor
-            .Field(f => f.StructureNode)
+            .Field(f => f.StructureNodes)
             .Description("The root Structure Node of the Document")
             .Type<StructureNodeOutput>()
             .ResolveWith<StructureNodeFieldResolvers>(r => r.GetNodeAsync(default, default, default));
