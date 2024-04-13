@@ -39,12 +39,6 @@ jobs:
       - name: Checkout 
         uses: actions/checkout@v3
 
-      - name: Variables
-        run: |
-          APPVERSION=$(cat version.txt)
-          echo "EGVERSION=$APPVERSION" >> $GITHUB_ENV
-          echo $GITHUB_ENV
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -108,5 +102,5 @@ jobs:
       - name: Publish
         run: |
           dotnet nuget add source --username Andras-Csanyi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json"
-          dotnet nuget push "/home/runner/work/EncyclopediaGalactica/EncyclopediaGalactica/src/EG.Common/BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg" --source "github" --api-key ${{ secrets.GITHUB_TOKEN }}
+          dotnet nuget push "/home/runner/work/EncyclopediaGalactica/EncyclopediaGalactica/src/EG.Common/BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg" --source "github" --api-key ${{ secrets.TOKEN_PUBLISH_NUGET }}
           
