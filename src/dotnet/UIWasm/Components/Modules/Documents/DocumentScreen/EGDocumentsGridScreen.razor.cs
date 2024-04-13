@@ -5,13 +5,13 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Services;
 
-public partial class EGDocumentsScreen
+public partial class EGDocumentsGridScreen
 {
     private FluentDataGrid<DocumentResult> Grid;
     private GridItemsProvider<DocumentResult> GridItemsProvider;
 
     [Inject]
-    private ILogger<EGDocumentsScreen> Logger { get; set; }
+    private ILogger<EGDocumentsGridScreen> Logger { get; set; }
 
     [Inject]
     private IDocumentService DocumentService { get; set; }

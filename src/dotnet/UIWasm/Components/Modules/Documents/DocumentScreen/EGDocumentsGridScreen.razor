@@ -1,0 +1,26 @@
+@using EncyclopediaGalactica.BusinessLogic.Contracts
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+<FluentGrid Justify="JustifyContent.SpaceEvenly" Style="border: #1b6ec2; border-style: solid; border-width: 1px;">
+    <FluentGridItem xs="2">Documents</FluentGridItem>
+    <FluentGridItem xs="8"></FluentGridItem>
+    <FluentGridItem xs="2">
+        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())">Add</FluentButton>
+    </FluentGridItem>
+    <FluentGridItem xs="12">
+        <FluentDataGrid TGridItem="DocumentResult"
+                        ItemsProvider="GridItemsProvider"
+                        Virtualize="true"
+                        @ref="Grid">
+            <PropertyColumn Title="Id" Property="@(item => item.Id)"/>
+            <PropertyColumn Title="Name" Property="@(item => item.Name)"/>
+            <PropertyColumn Title="Description" Property="@(item => item.Description)"/>
+            <TemplateColumn Title="Structure">
+                <FluentButton IconEnd="@(new Icons.Regular.Size16.PreviewLink())"></FluentButton>
+            </TemplateColumn>
+            <TemplateColumn Title="Actions">
+                <FluentButton IconEnd="@(new Icons.Regular.Size16.Edit())"/>
+                <FluentButton IconEnd="@(new Icons.Regular.Size16.Delete())"/>
+            </TemplateColumn>
+        </FluentDataGrid>
+    </FluentGridItem>
+</FluentGrid>
