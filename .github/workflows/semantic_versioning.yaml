@@ -103,7 +103,7 @@ jobs:
 
       - name: Pack
         run: |
-          dotnet pack --no-restore --verbosity normal --include-symbols --include-source src/EG.Common/BusinessLogic.Contracts.csproj
+          dotnet pack --no-restore --verbosity normal --include-symbols --include-source src/EG.Common/BusinessLogic.Contracts/BusinessLogic.Contracts.csproj
 
       - name: Publish
         run: |
