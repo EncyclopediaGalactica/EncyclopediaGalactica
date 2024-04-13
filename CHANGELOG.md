@@ -1,3 +1,10 @@
+# [0.26.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.25.0...0.26.0) (2024-04-13)
+
+
+### Features
+
+* semantic release [#221](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/221) ([986dc44](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/986dc449c8003b3a36d726560bc2a94fdfa82239))
+
 # [0.25.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.24.0...0.25.0) (2024-04-13)
 
 
