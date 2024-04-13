@@ -1,3 +1,10 @@
+# [0.25.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.24.0...0.25.0) (2024-04-13)
+
+
+### Features
+
+* significant restructuring ([#212](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/212)) ([211c670](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/211c6702eaa6f8e56298f93be8cc6c9358f48e84))
+
 # [0.24.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.23.0...0.24.0) (2024-04-13)
 
 
