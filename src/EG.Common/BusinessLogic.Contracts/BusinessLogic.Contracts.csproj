@@ -8,7 +8,7 @@
         <RootNamespace>EncyclopediaGalactica.BusinessLogic.Contracts</RootNamespace>
         <Title>EncyclopediaGalactica.BusinessLogic.Contracts</Title>
         <PackageId>EncyclopediaGalactica.BusinessLogic.Contracts</PackageId>
-        <Version>0.29.0</Version>
+        <Version>0.30.0</Version>
         <Authors>Andras Csanyi</Authors>
         <Company>Andras Csanyi's Freetime</Company>
         <Description>Contract objects between the EG backend and frontend.</Description>
