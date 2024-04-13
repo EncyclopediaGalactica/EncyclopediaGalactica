@@ -1,5 +1,5 @@
-name: Semantic Versioning
-run-name: Semantic Versioning
+name: Release
+run-name: Release
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
           echo "event name: " ${{ github.event_name }}
   
   main_branch:
-    name: Main Branch Build
+    name: Release
     runs-on: ubuntu-latest
     needs: debug
     environment:
@@ -35,7 +35,14 @@ jobs:
       id-token: write
     
     steps:
-      - uses: actions/checkout@v3
+      - name: Variables
+        run: |
+          APPVERSION=$(cat version.txt)
+          echo "EGVERSION=$APPVERSION" >> $GITHUB_ENV
+          echo $GITHUB_ENV
+          
+      - name: Checkout 
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -67,3 +74,32 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         run: |
           npx semantic-release
+          
+      # nuget package publish has to happen after the version is bumped
+          
+      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+
+      - name: Restore
+        run: |
+          dotnet restore src/EG.Common/EG.Common.sln
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release --no-restore src/EG.Common/EG.Common.sln
+
+      - name: Test
+        run: |
+          dotnet test --no-restore --verbosity normal src/EG.Common/EG.Common.sln
+
+      - name: Pack
+        run: |
+          dotnet pack --no-restore --verbosity normal --include-symbols --include-source src/EG.Common/BusinessLogic.Contracts.csproj
+
+      - name: Publish
+        run: |
+          dotnet nuget add source --username Andras-Csanyi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json"
+          dotnet nuget push "BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg"
+          
