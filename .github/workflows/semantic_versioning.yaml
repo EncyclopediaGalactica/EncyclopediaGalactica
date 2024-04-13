@@ -78,6 +78,12 @@ jobs:
           
       # nuget package publish has to happen after the version is bumped
           
+      - name: Variables
+        run: |
+          APPVERSION=$(cat version.txt)
+          echo "EGVERSION=$APPVERSION" >> $GITHUB_ENV
+          echo $GITHUB_ENV
+          
       - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
         uses: actions/setup-dotnet@v3
         with:
