@@ -25,6 +25,7 @@ jobs:
   feature_branch:
     name: Feature Branch Build
     runs-on: ubuntu-latest
+    needs: debug
     
     steps:
       - uses: actions/checkout@v3
