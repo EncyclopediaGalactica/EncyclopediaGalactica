@@ -102,5 +102,5 @@ jobs:
       - name: Publish
         run: |
           dotnet nuget add source --username Andras-Csanyi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json"
-          dotnet nuget push "/home/runner/work/EncyclopediaGalactica/EncyclopediaGalactica/src/EG.Common/BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg" --source "github" --api-key ${{ secrets.TOKEN_PUBLISH_NUGET }}
+          dotnet nuget push "/home/runner/work/EncyclopediaGalactica/EncyclopediaGalactica/src/EG.Common/BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg" --source "github" --api-key ${{ secrets.TOKEN_PUBLISH_NUGET }} --skip-duplicate
           
