@@ -1,3 +1,10 @@
+# [0.29.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.28.0...0.29.0) (2024-04-13)
+
+
+### Features
+
+* backend is separated ([#225](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/225)) ([7c1c27d](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/7c1c27dc3c4bd629c2226178b5289b382ee6cf05))
+
 # [0.28.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.27.0...0.28.0) (2024-04-13)
 
 
