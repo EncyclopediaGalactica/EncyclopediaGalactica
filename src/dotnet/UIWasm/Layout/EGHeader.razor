@@ -1,13 +1,13 @@
 @using EncyclopediaGalactica.BusinessLogic.Contracts
 <FluentHeader>
-    <FluentGrid>
-        <FluentGridItem xl="1" Justify="JustifyContent.FlexStart">
+    <FluentGrid Justify="JustifyContent.FlexStart" Class="whatever" Style="whatever">
+        <FluentGridItem xxl="2" Justify="JustifyContent.FlexStart">
             Encyclopedia Galactica
         </FluentGridItem>
-        <FluentGridItem xl="0" Style="width: 200px;;">
+        <FluentGridItem xxl="9" Style="width: 200px;;">
 
         </FluentGridItem>
-        <FluentGridItem xl="1" Justify="JustifyContent.FlexEnd">
+        <FluentGridItem xxl="1" Justify="JustifyContent.FlexEnd">
             <FluentCombobox TOption="ModuleResult"
                             Items="_modules"
                             OptionValue="@(i => i.Id.ToString())"
@@ -15,7 +15,7 @@
                             SelectedOptionChanged="ModuleSelectionChanged">
             </FluentCombobox>
         </FluentGridItem>
-        <FluentGridItem xl="1" Justify="JustifyContent.FlexEnd">
+        <FluentGridItem xl="1" xxl="1" Justify="JustifyContent.FlexEnd">
             <FluentIcon Value="@(new Icons.Regular.Size32.Person())"
                         Title="Person"
                         Color="Color.Neutral"/>
