@@ -12,7 +12,7 @@
         <Authors>Andras Csanyi</Authors>
         <Company>Andras Csanyi's Freetime</Company>
         <Description>Contract objects between the EG backend and frontend.</Description>
-        <PackageProjectUrl>https://github.com/EncyclopediaGalactica/EncyclopediaGalactica</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/nuget</PackageProjectUrl>
         <RepositoryUrl>https://github.com/EncyclopediaGalactica/EncyclopediaGalactica</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
         <PackageReadmeFile>README.md</PackageReadmeFile>
