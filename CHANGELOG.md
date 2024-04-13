@@ -1,3 +1,10 @@
+# [0.24.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.23.0...0.24.0) (2024-04-13)
+
+
+### Features
+
+* Relation type screen [#211](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/211) ([5a075c8](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/5a075c826f454ee655f6845e369d4387e12d995f))
+
 # [0.23.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.22.0...0.23.0) (2024-04-05)
 
 
