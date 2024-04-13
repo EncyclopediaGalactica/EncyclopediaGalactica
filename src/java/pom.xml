@@ -11,7 +11,7 @@
     <groupId>com.encyclopediagalactica</groupId>
     <packaging>jar</packaging>
     <artifactId>Encyclopedia-Galactica</artifactId>
-    <version>0.23.0</version>
+    <version>0.24.0</version>
     <name>Encyclopedia-Galactica</name>
     <description>Encyclopedia-Galactica</description>
     <properties>
