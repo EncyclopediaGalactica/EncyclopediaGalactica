@@ -4,6 +4,16 @@
 ### Features
 
 * build and release ([#227](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/227)) ([1b152b8](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/1b152b8ecabff9800e4bf7d49baf7b858ce3fde8))
+* version ([#228](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/228)) ([5df711f](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/5df711fd2b7eae0237b49747f914aae0120ea980))
+* version ([#229](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/229)) ([78fd98d](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/78fd98ddb1925f16688332742692e79a56335c64))
+* version ([#230](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/230)) ([f5339fd](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/f5339fdaf38d8a428f583fdc7025111d147e5020))
+
+# [0.31.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.30.0...0.31.0) (2024-04-14)
+
+
+### Features
+
+* build and release ([#227](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/227)) ([1b152b8](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/1b152b8ecabff9800e4bf7d49baf7b858ce3fde8))
 
 # [0.30.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.29.0...0.30.0) (2024-04-13)
 
