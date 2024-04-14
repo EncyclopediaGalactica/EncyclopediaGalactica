@@ -1,5 +1,5 @@
-name: Feature Branch Build
-run-name: Feature Branch Build
+name: Feature
+run-name: Feature
 
 on:
   pull_request:
