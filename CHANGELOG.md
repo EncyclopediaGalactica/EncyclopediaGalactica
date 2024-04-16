@@ -1,3 +1,10 @@
+# [0.32.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.31.0...0.32.0) (2024-04-16)
+
+
+### Features
+
+* adding ApplicationResult type to Common [#231](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/231) ([3327009](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/332700939f367b941b746a66fdbbc9c02f36d8e7))
+
 # [0.31.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.30.0...0.31.0) (2024-04-14)
 
 
