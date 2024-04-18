@@ -29,7 +29,7 @@ public class DocumentService : IDocumentService
         },
     };
 
-    public async Task<ICollection<DocumentResult>> GetAll()
+    public async Task<ICollection<DocumentResult>> GetAllAsync()
     {
         return _storage;
     }

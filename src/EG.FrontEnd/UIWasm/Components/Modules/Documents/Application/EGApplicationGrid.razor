@@ -14,9 +14,6 @@
             <PropertyColumn Title="Id" Property="@(item => item.Id)"/>
             <PropertyColumn Title="Name" Property="@(item => item.Name)"/>
             <PropertyColumn Title="Description" Property="@(item => item.Description)"/>
-            <TemplateColumn Title="Structure">
-                <FluentButton IconEnd="@(new Icons.Regular.Size16.PreviewLink())"></FluentButton>
-            </TemplateColumn>
             <TemplateColumn Title="Actions">
                 <FluentButton IconEnd="@(new Icons.Regular.Size16.Edit())"/>
                 <FluentButton IconEnd="@(new Icons.Regular.Size16.Delete())"/>

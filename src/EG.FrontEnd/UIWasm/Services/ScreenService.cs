@@ -8,6 +8,7 @@ public class ScreenService : IScreenService
     {
         new ScreenResult { Id = 100, Name = "Documents", UnifiedName = "documents", ModuleId = 1 },
         new ScreenResult { Id = 101, Name = "Relation Types", UnifiedName = "relation_types", ModuleId = 1 },
+        new ScreenResult { Id = 110, Name = "Applications", UnifiedName = "applications", ModuleId = 1 },
         new ScreenResult { Id = 102, Name = "Incomes", UnifiedName = "incomes", ModuleId = 2 },
         new ScreenResult { Id = 103, Name = "Expenses", UnifiedName = "expenses", ModuleId = 2 },
         new ScreenResult { Id = 104, Name = "Stellar items", UnifiedName = "stellar_items", ModuleId = 3 },
