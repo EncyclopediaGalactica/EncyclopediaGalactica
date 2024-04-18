@@ -1,3 +1,10 @@
+# [0.33.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.32.0...0.33.0) (2024-04-18)
+
+
+### Features
+
+* **doc:** Publish module initial doc [#232](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/232) ([c884d90](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/c884d905f43292e73017f4172319c9654163f102))
+
 # [0.32.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.31.0...0.32.0) (2024-04-16)
 
 
