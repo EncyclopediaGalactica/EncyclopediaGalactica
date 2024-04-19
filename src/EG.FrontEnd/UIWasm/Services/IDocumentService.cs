@@ -4,5 +4,5 @@ using EncyclopediaGalactica.BusinessLogic.Contracts;
 
 public interface IDocumentService
 {
-    Task<ICollection<DocumentResult>> GetAll();
+    Task<ICollection<DocumentResult>> GetAllAsync();
 }

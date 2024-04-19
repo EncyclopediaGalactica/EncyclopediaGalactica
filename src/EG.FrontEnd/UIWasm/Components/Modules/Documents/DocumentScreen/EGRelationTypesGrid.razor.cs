@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Services;
 
-public partial class EGRelationTypesGridScreen
+public partial class EGRelationTypesGrid
 {
     private FluentDataGrid<RelationTypeResult> Grid;
     private GridItemsProvider<RelationTypeResult> GridItemsProvider;
 
     [Inject]
-    private ILogger<EGRelationTypesGridScreen> Logger { get; set; }
+    private ILogger<EGRelationTypesGrid> Logger { get; set; }
 
     [Inject]
     private IRelationTypeService RelationTypeService { get; set; }
@@ -62,5 +62,32 @@ public partial class EGRelationTypesGridScreen
             Logger.LogInformation("Data is saved.");
             await Grid.RefreshDataAsync();
         }
+    }
+
+    private async Task HandleClickOnAddAsync()
+    {
+        await DialogService.ShowDialogAsync<EGAddRelationTypeDialog>(
+            null,
+            new DialogParameters
+            {
+                Height = "400px",
+                Width = "1000px",
+                Title = $"Create a new Relation Type",
+                PreventDismissOnOverlayClick = true,
+                PreventScroll = true,
+                OnDialogResult = DialogService.CreateDialogCallback(this, HandleAddRelationTypeSaveAsync),
+                PrimaryAction = "Save",
+                PrimaryActionEnabled = true
+            });
+    }
+
+    private Task HandleAddRelationTypeSaveAsync(DialogResult dialogResult)
+    {
+        if (dialogResult is { Cancelled: false, Data: not null })
+        {
+            // Logger.LogInformation();
+        }
+
+        return null;
     }
 }

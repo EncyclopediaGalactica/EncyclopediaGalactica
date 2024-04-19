@@ -20,7 +20,7 @@ public partial class EGDocumentsGridScreen
     {
         GridItemsProvider = async request =>
         {
-            ICollection<DocumentResult> r = await DocumentService.GetAll().ConfigureAwait(false);
+            ICollection<DocumentResult> r = await DocumentService.GetAllAsync().ConfigureAwait(false);
             return GridItemsProviderResult.From<DocumentResult>(
                 r,
                 r.Count);

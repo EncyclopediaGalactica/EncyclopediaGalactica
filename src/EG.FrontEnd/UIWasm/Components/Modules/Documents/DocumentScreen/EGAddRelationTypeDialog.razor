@@ -1,0 +1,31 @@
+@implements IDialogContentComponent<EncyclopediaGalactica.BusinessLogic.Contracts.RelationTypeResult>
+@using EncyclopediaGalactica.BusinessLogic.Contracts
+<FluentDialogHeader>Add new Relation Type</FluentDialogHeader>
+<FluentDialogBody>
+    <FluentGrid>
+        <FluentGridItem xxl="4">
+            <FluentSelect TOption="DocumentResult"
+                          Items="_documents"
+                          OptionValue="@(item => item.Id.ToString())"
+                          OptionText="@(item => item.Name)"
+                          SelectedOption="SelectedLeftDocument">
+            </FluentSelect>
+        </FluentGridItem>
+        <FluentGridItem xxl="4">
+            <FluentSelect TOption="ApplicationResult"
+                          Items="_applications"
+                          OptionValue="@(item => item.Id.ToString())"
+                          OptionText="@(item => item.Name)"
+                          SelectedOption="SelectedApplication">
+            </FluentSelect>
+        </FluentGridItem>
+        <FluentGridItem xxl="4">
+            <FluentSelect TOption="DocumentResult"
+                          Items="_documents"
+                          OptionValue="@(item => item.Id.ToString())"
+                          OptionText="@(item => item.Name)"
+                          SelectedOption="SelectedRightDocument">
+            </FluentSelect>
+        </FluentGridItem>
+    </FluentGrid>
+</FluentDialogBody>
