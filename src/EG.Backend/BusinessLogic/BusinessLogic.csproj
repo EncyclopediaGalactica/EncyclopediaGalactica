@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="EncyclopediaGalactica.BusinessLogic.Contracts" Version="0.34.0" />
+        <PackageReference Include="EncyclopediaGalactica.BusinessLogic.Contracts" Version="0.35.0" />
         <PackageReference Include="FluentValidation" Version="11.9.0"/>
         <PackageReference Include="HotChocolate" Version="13.9.0"/>
         <PackageReference Include="HotChocolate.Types" Version="13.9.0"/>
