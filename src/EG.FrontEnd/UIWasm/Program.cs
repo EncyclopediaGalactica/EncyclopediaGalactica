@@ -20,6 +20,7 @@ builder.Services
     .AddScoped<IDocumentService, DocumentService>()
     .AddScoped<IRelationTypeService, RelationTypeService>()
     .AddScoped<IApplicationService, ApplicationService>()
+    .AddScoped<IDocumentTypeService, DocumentTypeService>()
     ;
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });

@@ -7,8 +7,12 @@ else
 {
     @switch (ModuleAndScreenState.Value.SelectedScreen)
     {
-        case "documents":
-            <EGDocumentsGrid/>
+        case "document":
+            <EGDocumentGrid/>
+            break;
+
+        case "document_type":
+            <EGDocumentTypeGrid/>
             break;
 
         case "relation_types":
