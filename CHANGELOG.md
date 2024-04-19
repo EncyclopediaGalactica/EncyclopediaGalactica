@@ -1,3 +1,10 @@
+# [0.36.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.35.0...0.36.0) (2024-04-19)
+
+
+### Features
+
+* Document Type Grid [#235](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/235) ([6eae036](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/6eae036085eabcc17f12c98ff05ab01dfcbc247d))
+
 # [0.35.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.34.0...0.35.0) (2024-04-19)
 
 
