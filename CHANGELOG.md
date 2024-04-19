@@ -1,3 +1,10 @@
+# [0.35.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.34.0...0.35.0) (2024-04-19)
+
+
+### Features
+
+* Document Type Result [#234](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/234) ([50d8699](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/50d8699bfc77a4936d73bec7f19270fdef913680))
+
 # [0.34.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.33.0...0.34.0) (2024-04-19)
 
 
