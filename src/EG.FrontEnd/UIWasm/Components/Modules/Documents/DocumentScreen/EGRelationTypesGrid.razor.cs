@@ -81,8 +81,13 @@ public partial class EGRelationTypesGrid
             });
     }
 
-    private Task HandleAddRelationTypeSaveAsync(DialogResult arg)
+    private Task HandleAddRelationTypeSaveAsync(DialogResult dialogResult)
     {
-        throw new NotImplementedException();
+        if (dialogResult is { Cancelled: false, Data: not null })
+        {
+            // Logger.LogInformation();
+        }
+
+        return null;
     }
 }

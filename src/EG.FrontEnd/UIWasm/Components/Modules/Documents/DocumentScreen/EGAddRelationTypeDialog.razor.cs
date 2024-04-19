@@ -26,7 +26,7 @@ public partial class EGAddRelationTypeDialog
     private IApplicationService ApplicationService { get; set; }
 
     [Parameter]
-    public ApplicationResult Content { get; set; }
+    public RelationTypeResult Content { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

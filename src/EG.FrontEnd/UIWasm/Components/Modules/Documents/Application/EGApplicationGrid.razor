@@ -4,7 +4,10 @@
     <FluentGridItem xs="2">Applications</FluentGridItem>
     <FluentGridItem xs="8"></FluentGridItem>
     <FluentGridItem xs="2">
-        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())">Add</FluentButton>
+        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())"
+                      OnClick="@(async () => await HandleAddClick().ConfigureAwait(false))">
+            Add
+        </FluentButton>
     </FluentGridItem>
     <FluentGridItem xs="12">
         <FluentDataGrid TGridItem="ApplicationResult"

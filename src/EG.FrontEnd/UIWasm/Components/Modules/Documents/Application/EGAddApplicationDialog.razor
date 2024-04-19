@@ -1,0 +1,7 @@
+@implements IDialogContentComponent<EncyclopediaGalactica.BusinessLogic.Contracts.ApplicationResult>
+
+<FluentDialogBody>
+    <FluentNumberField TValue="long" @bind-Value="Content.Id" Disabled="true">Application id:</FluentNumberField>
+    <FluentTextField @bind-Value="Content.Name">Name: </FluentTextField>
+    <FluentTextField @bind-Value="Content.Description">Description: </FluentTextField>
+</FluentDialogBody>
