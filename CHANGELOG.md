@@ -1,3 +1,10 @@
+# [0.34.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.33.0...0.34.0) (2024-04-19)
+
+
+### Features
+
+* Application grid and AddApplicationDialog ([#233](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/233)) ([dbc135b](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/dbc135bee4c6ec9a465ac5e3b7df319f02d2ae37))
+
 # [0.33.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.32.0...0.33.0) (2024-04-18)
 
 
