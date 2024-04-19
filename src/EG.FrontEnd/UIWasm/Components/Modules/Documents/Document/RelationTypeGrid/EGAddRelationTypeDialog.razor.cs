@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using UIWasm.Services;
 
-namespace UIWasm.Components.Modules.Documents.DocumentScreen;
+namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
 
 public partial class EGAddRelationTypeDialog
 {

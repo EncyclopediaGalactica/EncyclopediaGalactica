@@ -1,4 +1,4 @@
-namespace UIWasm.Components.Modules.Documents.DocumentScreen;
+namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
 
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Microsoft.AspNetCore.Components;

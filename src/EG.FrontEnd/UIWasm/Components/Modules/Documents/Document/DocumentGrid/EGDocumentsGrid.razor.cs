@@ -1,17 +1,17 @@
-namespace UIWasm.Components.Modules.Documents.DocumentScreen;
+namespace UIWasm.Components.Modules.Documents.Document.DocumentGrid;
 
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Services;
 
-public partial class EGDocumentsGridScreen
+public partial class EGDocumentsGrid
 {
     private FluentDataGrid<DocumentResult> Grid;
     private GridItemsProvider<DocumentResult> GridItemsProvider;
 
     [Inject]
-    private ILogger<EGDocumentsGridScreen> Logger { get; set; }
+    private ILogger<EGDocumentsGrid> Logger { get; set; }
 
     [Inject]
     private IDocumentService DocumentService { get; set; }

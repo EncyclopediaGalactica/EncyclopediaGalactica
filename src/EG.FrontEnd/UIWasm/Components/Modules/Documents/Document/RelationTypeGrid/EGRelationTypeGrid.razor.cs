@@ -1,4 +1,4 @@
-namespace UIWasm.Components.Modules.Documents.DocumentScreen;
+namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
 
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Microsoft.AspNetCore.Components;
@@ -6,13 +6,13 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Services;
 
-public partial class EGRelationTypesGrid
+public partial class EGRelationTypeGrid
 {
     private FluentDataGrid<RelationTypeResult> Grid;
     private GridItemsProvider<RelationTypeResult> GridItemsProvider;
 
     [Inject]
-    private ILogger<EGRelationTypesGrid> Logger { get; set; }
+    private ILogger<EGRelationTypeGrid> Logger { get; set; }
 
     [Inject]
     private IRelationTypeService RelationTypeService { get; set; }
