@@ -1,3 +1,10 @@
+# [0.38.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.37.1...0.38.0) (2024-04-21)
+
+
+### Features
+
+* adding grids and dialogs ([#238](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/238)) ([fc5f94a](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/fc5f94a36bcd387a8e42f8b3b7175da360a1a079))
+
 ## [0.37.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.37.0...0.37.1) (2024-04-21)
 
 
