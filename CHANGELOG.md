@@ -1,3 +1,10 @@
+## [0.37.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.37.0...0.37.1) (2024-04-21)
+
+
+### Bug Fixes
+
+* fix DocumentStructure name to DocumentStructureResult [#237](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/237) ([0c1e88f](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0c1e88f4fa48e097dc803da6e3a540e1b0347ca9))
+
 # [0.37.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.36.0...0.37.0) (2024-04-21)
 
 
