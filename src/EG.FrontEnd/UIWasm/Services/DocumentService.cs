@@ -4,53 +4,29 @@ namespace UIWasm.Services;
 
 public class DocumentService : IDocumentService
 {
-    private ICollection<DocumentTypeResult> _storage = new List<DocumentTypeResult>
+    private ICollection<DocumentResult> _storage = new List<DocumentResult>
     {
-        new DocumentTypeResult
+        new DocumentResult
         {
             Id = 1,
-            Name = "Wikipedia HTML Document",
-            Description = "Content from Wikipedia."
+            Name = "Karman Todor Wikipedia page",
+            Description = "Karman Todor Wikipedia page"
         },
-        new DocumentTypeResult
+        new DocumentResult
         {
             Id = 2,
-            Name = "HTML 4.0 Document",
-            Description = "HTML v4.0 document type"
+            Name = "NeoVim Editor Wikipedia page",
+            Description = "NeoVim Editor Wikipedia Page"
         },
-        new DocumentTypeResult
+        new DocumentResult
         {
             Id = 3,
-            Name = "XML Document",
-            Description = "XML Document"
-        },
-        new DocumentTypeResult
-        {
-            Id = 4,
-            Name = "Atom XML Document",
-            Description = "Atom XML Document"
-        },
-        new DocumentTypeResult
-        {
-            Id = 5,
-            Name = "Gutenberg.org Text File",
-            Description = "Gutenberg.org Text File"
-        },
-        new DocumentTypeResult
-        {
-            Id = 6,
-            Name = "HTML5 Document",
-            Description = "HTML5 Document"
-        },
-        new DocumentTypeResult
-        {
-            Id = 6,
-            Name = "Epub format",
-            Description = "Epub format"
-        },
+            Name = "Jules Verne book from Gutenberg.org",
+            Description = "Jules Verne book from Gutenberg.org"
+        }
     };
 
-    public async Task<ICollection<DocumentTypeResult>> GetAllAsync()
+    public async Task<ICollection<DocumentResult>> GetAllAsync()
     {
         return _storage;
     }

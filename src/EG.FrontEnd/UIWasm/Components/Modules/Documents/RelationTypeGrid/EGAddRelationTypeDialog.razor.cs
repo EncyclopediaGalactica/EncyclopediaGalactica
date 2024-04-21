@@ -7,10 +7,10 @@ namespace UIWasm.Components.Modules.Documents.RelationTypeGrid;
 
 public partial class EGAddRelationTypeDialog
 {
-    private DocumentTypeResult? SelectedLeftDocument;
+    private DocumentResult? SelectedLeftDocument;
     private ApplicationResult? SelectedApplication;
-    private DocumentTypeResult? SelectedRightDocument;
-    private IEnumerable<DocumentTypeResult>? _documents = new List<DocumentTypeResult>();
+    private DocumentResult? SelectedRightDocument;
+    private IEnumerable<DocumentResult>? _documents = new List<DocumentResult>();
     private IEnumerable<ApplicationResult>? _applications = new List<ApplicationResult>();
 
     [CascadingParameter]

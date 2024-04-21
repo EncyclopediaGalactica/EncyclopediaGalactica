@@ -12,7 +12,7 @@ public partial class EGDocumentTypeGrid
     private ILogger<EGDocumentTypeGrid> Logger { get; set; }
 
     [Inject]
-    private IDocumentService DocumentTypeService { get; set; }
+    private IDocumentTypeService DocumentTypeService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }

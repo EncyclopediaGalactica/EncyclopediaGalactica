@@ -4,7 +4,7 @@
 <FluentDialogBody>
     <FluentGrid>
         <FluentGridItem xxl="4">
-            <FluentSelect TOption="DocumentTypeResult"
+            <FluentSelect TOption="DocumentResult"
                           Items="_documents"
                           OptionValue="@(item => item.Id.ToString())"
                           OptionText="@(item => item.Name)"
@@ -20,7 +20,7 @@
             </FluentSelect>
         </FluentGridItem>
         <FluentGridItem xxl="4">
-            <FluentSelect TOption="DocumentTypeResult"
+            <FluentSelect TOption="DocumentResult"
                           Items="_documents"
                           OptionValue="@(item => item.Id.ToString())"
                           OptionText="@(item => item.Name)"

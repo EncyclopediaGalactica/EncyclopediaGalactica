@@ -21,6 +21,7 @@ builder.Services
     .AddScoped<IRelationTypeService, RelationTypeService>()
     .AddScoped<IApplicationService, ApplicationService>()
     .AddScoped<IDocumentService, DocumentService>()
+    .AddScoped<IDocumentTypeService, DocumentTypeService>()
     ;
 
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });

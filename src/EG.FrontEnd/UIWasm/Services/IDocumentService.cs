@@ -4,5 +4,5 @@ namespace UIWasm.Services;
 
 public interface IDocumentService
 {
-    Task<ICollection<DocumentTypeResult>> GetAllAsync();
+    Task<ICollection<DocumentResult>> GetAllAsync();
 }
