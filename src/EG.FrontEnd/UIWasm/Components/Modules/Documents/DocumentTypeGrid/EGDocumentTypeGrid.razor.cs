@@ -29,7 +29,6 @@ public partial class EGDocumentTypeGrid
                 r,
                 r.Count);
         };
-        await base.OnInitializedAsync();
     }
 
     private async Task HandleAddOnClickAsync()
