@@ -12,7 +12,7 @@ public partial class EGDocumentTypeGrid
     private ILogger<EGDocumentTypeGrid> Logger { get; set; }
 
     [Inject]
-    private IDocumentTypeService DocumentTypeService { get; set; }
+    private IDocumentService DocumentTypeService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
@@ -24,7 +24,7 @@ public partial class EGDocumentTypeGrid
     {
         GridItemsProvider = async request =>
         {
-            ICollection<DocumentTypeResult> r = await DocumentTypeService.GetAll().ConfigureAwait(false);
+            ICollection<DocumentTypeResult> r = await DocumentTypeService.GetAllAsync().ConfigureAwait(false);
             return GridItemsProviderResult.From(
                 r,
                 r.Count);

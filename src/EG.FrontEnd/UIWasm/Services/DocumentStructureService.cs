@@ -4,32 +4,29 @@ namespace UIWasm.Services;
 
 public class DocumentStructureService : IDocumentStructureService
 {
-    private ICollection<DocumentResult> _storage = new List<DocumentResult>
+    private ICollection<DocumentStructureResult> _storage = new List<DocumentStructureResult>
     {
-        new DocumentResult
+        new DocumentStructureResult
         {
             Id = 1,
-            Name = "HTML page",
-            Description = "HTML page",
-            StructureNodes = new List<StructureNodeResult>()
+            Name = "HTML5 Page Structure",
+            Description = "A HTML5 Page structure.",
         },
-        new DocumentResult
+        new DocumentStructureResult
         {
             Id = 2,
-            Name = "TXT Book",
-            Description = "TXT Book",
-            StructureNodes = new List<StructureNodeResult>()
+            Name = "Gutenberg.org TXT file structure.",
+            Description = "The structure of the TXT files used at Gutenberg.org.",
         },
-        new DocumentResult
+        new DocumentStructureResult
         {
             Id = 3,
-            Name = "RSS",
-            Description = "RSS",
-            StructureNodes = new List<StructureNodeResult>()
+            Name = "Atom2 RSS XML Structure",
+            Description = "Atom2 RSS XML Structure",
         },
     };
 
-    public async Task<ICollection<DocumentResult>> GetAllAsync()
+    public async Task<ICollection<DocumentStructureResult>> GetAllAsync()
     {
         return _storage;
     }

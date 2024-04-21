@@ -7,8 +7,8 @@ namespace UIWasm.Components.Modules.Documents.DocumentStructuresGrid;
 
 public partial class EGDocumentStructuresGrid
 {
-    private FluentDataGrid<DocumentResult> Grid;
-    private GridItemsProvider<DocumentResult> GridItemsProvider;
+    private FluentDataGrid<DocumentStructureResult> Grid;
+    private GridItemsProvider<DocumentStructureResult> GridItemsProvider;
 
     [Inject]
     private ILogger<EGDocumentStructuresGrid> Logger { get; set; }
@@ -23,11 +23,16 @@ public partial class EGDocumentStructuresGrid
     {
         GridItemsProvider = async request =>
         {
-            ICollection<DocumentResult> r = await DocumentStructureService.GetAllAsync().ConfigureAwait(false);
-            return GridItemsProviderResult.From<DocumentResult>(
+            ICollection<DocumentStructureResult> r = await DocumentStructureService.GetAllAsync().ConfigureAwait(false);
+            return GridItemsProviderResult.From<DocumentStructureResult>(
                 r,
                 r.Count);
         };
         await base.OnInitializedAsync();
+    }
+
+    private async Task HandleOnClickAsync()
+    {
+        throw new NotImplementedException();
     }
 }

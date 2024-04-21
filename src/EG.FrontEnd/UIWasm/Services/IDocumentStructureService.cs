@@ -4,5 +4,5 @@ namespace UIWasm.Services;
 
 public interface IDocumentStructureService
 {
-    Task<ICollection<DocumentResult>> GetAllAsync();
+    Task<ICollection<DocumentStructureResult>> GetAllAsync();
 }

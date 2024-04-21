@@ -2,7 +2,7 @@ using EncyclopediaGalactica.BusinessLogic.Contracts;
 
 namespace UIWasm.Services;
 
-public class DocumentTypeService : IDocumentTypeService
+public class DocumentService : IDocumentService
 {
     private ICollection<DocumentTypeResult> _storage = new List<DocumentTypeResult>
     {
@@ -50,7 +50,7 @@ public class DocumentTypeService : IDocumentTypeService
         },
     };
 
-    public async Task<ICollection<DocumentTypeResult>> GetAll()
+    public async Task<ICollection<DocumentTypeResult>> GetAllAsync()
     {
         return _storage;
     }

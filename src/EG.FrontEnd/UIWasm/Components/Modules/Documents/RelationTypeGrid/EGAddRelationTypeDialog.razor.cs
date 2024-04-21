@@ -7,10 +7,10 @@ namespace UIWasm.Components.Modules.Documents.RelationTypeGrid;
 
 public partial class EGAddRelationTypeDialog
 {
-    private DocumentResult? SelectedLeftDocument;
+    private DocumentTypeResult? SelectedLeftDocument;
     private ApplicationResult? SelectedApplication;
-    private DocumentResult? SelectedRightDocument;
-    private IEnumerable<DocumentResult>? _documents = new List<DocumentResult>();
+    private DocumentTypeResult? SelectedRightDocument;
+    private IEnumerable<DocumentTypeResult>? _documents = new List<DocumentTypeResult>();
     private IEnumerable<ApplicationResult>? _applications = new List<ApplicationResult>();
 
     [CascadingParameter]
@@ -20,7 +20,7 @@ public partial class EGAddRelationTypeDialog
     private ILogger<EGAddRelationTypeDialog> Logger { get; set; }
 
     [Inject]
-    private IDocumentStructureService DocumentStructureService { get; set; }
+    private IDocumentService DocumentService { get; set; }
 
     [Inject]
     private IApplicationService ApplicationService { get; set; }
@@ -30,7 +30,7 @@ public partial class EGAddRelationTypeDialog
 
     protected override async Task OnInitializedAsync()
     {
-        _documents = await DocumentStructureService.GetAllAsync().ConfigureAwait(false);
+        _documents = await DocumentService.GetAllAsync().ConfigureAwait(false);
         _applications = await ApplicationService.GetAllAsync().ConfigureAwait(false);
     }
 }

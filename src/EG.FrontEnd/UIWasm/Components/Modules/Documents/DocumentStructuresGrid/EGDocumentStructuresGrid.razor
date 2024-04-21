@@ -3,12 +3,13 @@
     <FluentGridItem xs="2">Document Structures</FluentGridItem>
     <FluentGridItem xs="8"></FluentGridItem>
     <FluentGridItem xs="2">
-        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())">
+        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())"
+                      OnClick="@(async e => await HandleOnClickAsync().ConfigureAwait(false))">
             Add
         </FluentButton>
     </FluentGridItem>
     <FluentGridItem xs="12">
-        <FluentDataGrid TGridItem="DocumentResult"
+        <FluentDataGrid TGridItem="DocumentStructureResult"
                         ItemsProvider="GridItemsProvider"
                         Virtualize="true"
                         @ref="Grid">
