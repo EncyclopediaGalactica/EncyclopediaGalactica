@@ -1,3 +1,10 @@
+# [0.37.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.36.0...0.37.0) (2024-04-21)
+
+
+### Features
+
+* Adding DocumentStructure contract [#236](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/236) ([60fcf63](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/60fcf63050d3ba0b7ea2d05237da13f8000d17f2))
+
 # [0.36.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.35.0...0.36.0) (2024-04-19)
 
 
