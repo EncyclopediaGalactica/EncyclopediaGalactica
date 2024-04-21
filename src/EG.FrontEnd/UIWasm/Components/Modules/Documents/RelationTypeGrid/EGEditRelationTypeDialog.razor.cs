@@ -1,8 +1,8 @@
-namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
+
+namespace UIWasm.Components.Modules.Documents.RelationTypeGrid;
 
 public partial class EGEditRelationTypeDialog
 {

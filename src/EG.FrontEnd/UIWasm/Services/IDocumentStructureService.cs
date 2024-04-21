@@ -1,8 +1,8 @@
-namespace UIWasm.Services;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 
-public interface IDocumentService
+namespace UIWasm.Services;
+
+public interface IDocumentStructureService
 {
     Task<ICollection<DocumentResult>> GetAllAsync();
 }

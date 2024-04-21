@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.FluentUI.AspNetCore.Components;
 using UIWasm.Services;
 
-namespace UIWasm.Components.Modules.Documents.Document.DocumentTypeGrid;
+namespace UIWasm.Components.Modules.Documents.DocumentTypeGrid;
 
 public partial class EGDocumentTypeGrid
 {

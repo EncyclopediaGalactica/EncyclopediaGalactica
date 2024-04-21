@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using UIWasm.Services;
 
-namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
+namespace UIWasm.Components.Modules.Documents.RelationTypeGrid;
 
 public partial class EGAddRelationTypeDialog
 {
@@ -20,7 +20,7 @@ public partial class EGAddRelationTypeDialog
     private ILogger<EGAddRelationTypeDialog> Logger { get; set; }
 
     [Inject]
-    private IDocumentService DocumentService { get; set; }
+    private IDocumentStructureService DocumentStructureService { get; set; }
 
     [Inject]
     private IApplicationService ApplicationService { get; set; }
@@ -30,7 +30,7 @@ public partial class EGAddRelationTypeDialog
 
     protected override async Task OnInitializedAsync()
     {
-        _documents = await DocumentService.GetAllAsync().ConfigureAwait(false);
+        _documents = await DocumentStructureService.GetAllAsync().ConfigureAwait(false);
         _applications = await ApplicationService.GetAllAsync().ConfigureAwait(false);
     }
 }

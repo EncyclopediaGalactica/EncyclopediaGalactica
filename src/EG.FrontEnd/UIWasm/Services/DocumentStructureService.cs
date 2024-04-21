@@ -1,8 +1,8 @@
-namespace UIWasm.Services;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 
-public class DocumentService : IDocumentService
+namespace UIWasm.Services;
+
+public class DocumentStructureService : IDocumentStructureService
 {
     private ICollection<DocumentResult> _storage = new List<DocumentResult>
     {

@@ -1,10 +1,10 @@
-namespace UIWasm.Components.Modules.Documents.Document.RelationTypeGrid;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.FluentUI.AspNetCore.Components;
-using Services;
+using UIWasm.Services;
+
+namespace UIWasm.Components.Modules.Documents.RelationTypeGrid;
 
 public partial class EGRelationTypeGrid
 {

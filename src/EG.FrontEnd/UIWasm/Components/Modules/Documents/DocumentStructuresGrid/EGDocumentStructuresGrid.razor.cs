@@ -3,18 +3,18 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.FluentUI.AspNetCore.Components;
 using UIWasm.Services;
 
-namespace UIWasm.Components.Modules.Documents.Document.DocumentGrid;
+namespace UIWasm.Components.Modules.Documents.DocumentStructuresGrid;
 
-public partial class EGDocumentGrid
+public partial class EGDocumentStructuresGrid
 {
     private FluentDataGrid<DocumentResult> Grid;
     private GridItemsProvider<DocumentResult> GridItemsProvider;
 
     [Inject]
-    private ILogger<EGDocumentGrid> Logger { get; set; }
+    private ILogger<EGDocumentStructuresGrid> Logger { get; set; }
 
     [Inject]
-    private IDocumentService DocumentService { get; set; }
+    private IDocumentStructureService DocumentStructureService { get; set; }
 
     [Inject]
     private IDialogService DialogService { get; set; }
@@ -23,7 +23,7 @@ public partial class EGDocumentGrid
     {
         GridItemsProvider = async request =>
         {
-            ICollection<DocumentResult> r = await DocumentService.GetAllAsync().ConfigureAwait(false);
+            ICollection<DocumentResult> r = await DocumentStructureService.GetAllAsync().ConfigureAwait(false);
             return GridItemsProviderResult.From<DocumentResult>(
                 r,
                 r.Count);
