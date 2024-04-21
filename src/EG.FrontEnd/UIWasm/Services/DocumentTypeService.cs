@@ -50,7 +50,7 @@ public class DocumentTypeService : IDocumentTypeService
         },
     };
 
-    public async Task<ICollection<DocumentTypeResult>> GetAll()
+    public async Task<ICollection<DocumentTypeResult>> GetAllAsync()
     {
         return _storage;
     }

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.FluentUI.AspNetCore.Components;
 using UIWasm.Services;
 
-namespace UIWasm.Components.Modules.Documents.Document.DocumentTypeGrid;
+namespace UIWasm.Components.Modules.Documents.DocumentTypeGrid;
 
 public partial class EGDocumentTypeGrid
 {
@@ -24,12 +24,11 @@ public partial class EGDocumentTypeGrid
     {
         GridItemsProvider = async request =>
         {
-            ICollection<DocumentTypeResult> r = await DocumentTypeService.GetAll().ConfigureAwait(false);
+            ICollection<DocumentTypeResult> r = await DocumentTypeService.GetAllAsync().ConfigureAwait(false);
             return GridItemsProviderResult.From(
                 r,
                 r.Count);
         };
-        await base.OnInitializedAsync();
     }
 
     private async Task HandleAddOnClickAsync()

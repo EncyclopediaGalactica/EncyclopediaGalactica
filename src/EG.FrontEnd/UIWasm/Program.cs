@@ -17,9 +17,10 @@ builder.Services
     .AddScoped<IScreenService, ScreenService>()
     .AddScoped<IUserService, UserService>()
     .AddScoped<IRoleService, RoleService>()
-    .AddScoped<IDocumentService, DocumentService>()
+    .AddScoped<IDocumentStructureService, DocumentStructureService>()
     .AddScoped<IRelationTypeService, RelationTypeService>()
     .AddScoped<IApplicationService, ApplicationService>()
+    .AddScoped<IDocumentService, DocumentService>()
     .AddScoped<IDocumentTypeService, DocumentTypeService>()
     ;
 

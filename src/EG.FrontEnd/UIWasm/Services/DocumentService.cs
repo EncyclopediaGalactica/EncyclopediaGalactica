@@ -1,6 +1,6 @@
-namespace UIWasm.Services;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
+
+namespace UIWasm.Services;
 
 public class DocumentService : IDocumentService
 {
@@ -9,24 +9,21 @@ public class DocumentService : IDocumentService
         new DocumentResult
         {
             Id = 1,
-            Name = "HTML page",
-            Description = "HTML page",
-            StructureNodes = new List<StructureNodeResult>()
+            Name = "Karman Todor Wikipedia page",
+            Description = "Karman Todor Wikipedia page"
         },
         new DocumentResult
         {
             Id = 2,
-            Name = "TXT Book",
-            Description = "TXT Book",
-            StructureNodes = new List<StructureNodeResult>()
+            Name = "NeoVim Editor Wikipedia page",
+            Description = "NeoVim Editor Wikipedia Page"
         },
         new DocumentResult
         {
             Id = 3,
-            Name = "RSS",
-            Description = "RSS",
-            StructureNodes = new List<StructureNodeResult>()
-        },
+            Name = "Jules Verne book from Gutenberg.org",
+            Description = "Jules Verne book from Gutenberg.org"
+        }
     };
 
     public async Task<ICollection<DocumentResult>> GetAllAsync()

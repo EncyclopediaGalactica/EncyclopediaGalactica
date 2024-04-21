@@ -6,8 +6,9 @@ public class ScreenService : IScreenService
 {
     private readonly List<ScreenResult> _storage = new List<ScreenResult>
     {
-        new ScreenResult { Id = 100, Name = "Document", UnifiedName = "document", ModuleId = 1 },
+        new ScreenResult { Id = 100, Name = "Document Structures", UnifiedName = "document_structure", ModuleId = 1 },
         new ScreenResult { Id = 120, Name = "Document Type", UnifiedName = "document_type", ModuleId = 1 },
+        new ScreenResult { Id = 130, Name = "Documents Catalog", UnifiedName = "document_catalog", ModuleId = 1 },
         new ScreenResult { Id = 101, Name = "Relation Types", UnifiedName = "relation_types", ModuleId = 1 },
         new ScreenResult { Id = 110, Name = "Applications", UnifiedName = "applications", ModuleId = 1 },
         new ScreenResult { Id = 102, Name = "Incomes", UnifiedName = "incomes", ModuleId = 2 },

@@ -3,7 +3,7 @@
     <FluentGridItem xs="2">Documents</FluentGridItem>
     <FluentGridItem xs="8"></FluentGridItem>
     <FluentGridItem xs="2">
-        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())">
+        <FluentButton IconStart="@(new Icons.Filled.Size24.AddCircle())" Disabled="true">
             Add
         </FluentButton>
     </FluentGridItem>
@@ -15,12 +15,11 @@
             <PropertyColumn Title="Id" Property="@(item => item.Id)"/>
             <PropertyColumn Title="Name" Property="@(item => item.Name)"/>
             <PropertyColumn Title="Description" Property="@(item => item.Description)"/>
-            <TemplateColumn Title="Structure">
-                <FluentButton IconEnd="@(new Icons.Regular.Size16.PreviewLink())"></FluentButton>
-            </TemplateColumn>
             <TemplateColumn Title="Actions">
-                <FluentButton IconEnd="@(new Icons.Regular.Size16.Edit())"/>
-                <FluentButton IconEnd="@(new Icons.Regular.Size16.Delete())"/>
+                <FluentButton IconEnd="@(new Icons.Regular.Size16.PreviewLink())"
+                              OnClick="@(async e => await HandlePreviewOnClickAsync(e, context).ConfigureAwait(false))"/>
+                <FluentButton IconEnd="@(new Icons.Regular.Size16.Delete())"
+                              OnClick="@(async e => await HandleDeleteOnClickAsync(e, context).ConfigureAwait(false))"/>
             </TemplateColumn>
         </FluentDataGrid>
     </FluentGridItem>

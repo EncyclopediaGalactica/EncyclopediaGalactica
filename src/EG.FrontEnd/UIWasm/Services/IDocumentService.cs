@@ -1,6 +1,6 @@
-namespace UIWasm.Services;
-
 using EncyclopediaGalactica.BusinessLogic.Contracts;
+
+namespace UIWasm.Services;
 
 public interface IDocumentService
 {
