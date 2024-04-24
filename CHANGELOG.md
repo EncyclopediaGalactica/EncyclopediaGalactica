@@ -1,3 +1,10 @@
+# [0.41.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.40.0...0.41.0) (2024-04-24)
+
+
+### Features
+
+* RelationResult includes DocumentResult instead of only Id [#241](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/241) ([fdb2ce4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/fdb2ce4c4529a1f049de9876df910c9f689178b4))
+
 # [0.40.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.39.0...0.40.0) (2024-04-24)
 
 
