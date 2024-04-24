@@ -1,3 +1,10 @@
+# [0.39.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.38.0...0.39.0) (2024-04-24)
+
+
+### Features
+
+* add FileFormatResult [#239](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/239) ([822278a](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/822278ad3a434db0cc0a39bd4244c6258b228139))
+
 # [0.38.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.37.1...0.38.0) (2024-04-21)
 
 
