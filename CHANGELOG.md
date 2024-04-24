@@ -1,3 +1,10 @@
+# [0.40.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.39.0...0.40.0) (2024-04-24)
+
+
+### Features
+
+* File Format grid and dialogs ([#240](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/240)) ([ad89e30](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/ad89e30697b039a5a4ba95b03216cd940f61169e))
+
 # [0.39.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.38.0...0.39.0) (2024-04-24)
 
 
