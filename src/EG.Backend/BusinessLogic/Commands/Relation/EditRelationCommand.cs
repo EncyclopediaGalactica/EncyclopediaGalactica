@@ -49,8 +49,8 @@ public class EditRelationCommand(
 
     private void UpdateModifiedValues(Relation toBeModified, Relation inputRelation)
     {
-        toBeModified.LeftEndStructureNodeId = inputRelation.LeftEndStructureNodeId;
-        toBeModified.RightEndStructureNodeId = inputRelation.RightEndStructureNodeId;
+        toBeModified.LeftId = inputRelation.LeftId;
+        toBeModified.RightId = inputRelation.RightId;
     }
 
     private async Task ValidateInput(RelationInput relationInput, CancellationToken cancellationToken = default)
