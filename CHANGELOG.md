@@ -1,3 +1,10 @@
+# [0.43.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.42.0...0.43.0) (2024-04-27)
+
+
+### Features
+
+* remove src ([#244](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/244)) ([e37e069](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/e37e069bf16777c4eab4bcd5b11f7dc595a2b468))
+
 # [0.42.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.41.0...0.42.0) (2024-04-27)
 
 
