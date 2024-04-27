@@ -1,3 +1,10 @@
+# [0.42.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.41.0...0.42.0) (2024-04-27)
+
+
+### Features
+
+* RelationResult is extended by RelationTypeResult ([#242](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/242)) ([0c4c0c0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0c4c0c0cef61533f28889866bb698a619f3fb7f7))
+
 # [0.41.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.40.0...0.41.0) (2024-04-24)
 
 
