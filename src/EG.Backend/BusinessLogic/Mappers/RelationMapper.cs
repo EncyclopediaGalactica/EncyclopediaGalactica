@@ -10,8 +10,8 @@ public class RelationMapper : IRelationMapper
         return new Relation
         {
             Id = payload.Id,
-            LeftEndStructureNodeId = payload.LeftEndId,
-            RightEndStructureNodeId = payload.RightEndId
+            LeftId = payload.LeftEndId,
+            RightId = payload.RightEndId
         };
     }
 
@@ -20,8 +20,8 @@ public class RelationMapper : IRelationMapper
         return new RelationResult
         {
             Id = result.Id,
-            LeftEndId = result.LeftEndStructureNodeId,
-            RightEndId = result.RightEndStructureNodeId
+            // LeftDocument = result.,
+            // RightDocument = result.RightEndStructureNodeId
         };
     }
 

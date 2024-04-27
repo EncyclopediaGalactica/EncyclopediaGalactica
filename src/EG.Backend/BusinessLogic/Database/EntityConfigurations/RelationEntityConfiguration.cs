@@ -11,7 +11,7 @@ public class RelationEntityConfiguration : IEntityTypeConfiguration<Relation>
         builder.ToTable("relation");
         builder.HasKey(k => k.Id);
         builder.Property(p => p.Id).HasColumnName("id");
-        builder.Property(p => p.LeftEndStructureNodeId).HasColumnName("left_end_id");
-        builder.Property(p => p.RightEndStructureNodeId).HasColumnName("right_end_id");
+        builder.Property(p => p.LeftId).HasColumnName("left_end_id");
+        builder.Property(p => p.RightId).HasColumnName("right_end_id");
     }
 }
