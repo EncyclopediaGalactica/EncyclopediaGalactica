@@ -1,3 +1,10 @@
+# [0.45.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.44.1...0.45.0) (2024-05-02)
+
+
+### Features
+
+* Relation Grid specification [#247](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/247) ([dc70c03](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/dc70c03a1e226f05b3d7632f0fa90d2231a8d94a))
+
 ## [0.44.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.44.0...0.44.1) (2024-05-02)
 
 
