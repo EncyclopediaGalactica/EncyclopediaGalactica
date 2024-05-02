@@ -1,3 +1,10 @@
+## [0.44.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.44.0...0.44.1) (2024-05-02)
+
+
+### Bug Fixes
+
+* document module ui specs aren't displayed in the menu [#246](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/246) ([d1d8862](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d1d8862aa342d9fc9185d3f20cfcc65b8bfbe71a))
+
 # [0.44.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.43.0...0.44.0) (2024-05-02)
 
 
