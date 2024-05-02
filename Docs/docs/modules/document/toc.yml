@@ -1,4 +1,6 @@
-- name: Document module
-  href: document.md
 - name: Document entity
   href: entity.md
+- name: Document module
+  href: document.md
+- name: UI specs
+  href: ui/toc.yml
