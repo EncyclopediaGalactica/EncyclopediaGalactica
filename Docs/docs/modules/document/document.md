@@ -23,10 +23,10 @@ For managing the Document entity and its value objects the system provides the f
 
 - Applications Grid
 - [Relation Type Grid](ui/relation_type_grid.md)
-- File Format Grid
+- [File Format Grid](ui/file_format.md)
 - Document Type Grid
 - Document Structures Grid
-- Relation Grid
+- [Relation Grid](ui/relation_grid.md)
 
 The other mission of the module is providing a rich interface adding data to the structures
 stored and managed in the system.
