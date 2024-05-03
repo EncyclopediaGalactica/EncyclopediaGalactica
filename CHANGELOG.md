@@ -1,3 +1,10 @@
+# [0.47.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.46.0...0.47.0) (2024-05-03)
+
+
+### Features
+
+* Application Grid spec ([#251](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/251)) ([50996bd](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/50996bd1c46f79484a7e7630d06fe6c809cc39d3))
+
 # [0.46.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.45.0...0.46.0) (2024-05-03)
 
 
