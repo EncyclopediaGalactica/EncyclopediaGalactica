@@ -21,7 +21,7 @@ This depends on how the abstraction of a document and its data evolves in the sy
 
 For managing the Document entity and its value objects the system provides the following grids:
 
-- Applications Grid
+- [Applications Grid](ui/application_grid.md)
 - [Relation Type Grid](ui/relation_type_grid.md)
 - [File Format Grid](ui/file_format.md)
 - Document Type Grid
