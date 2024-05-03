@@ -1,3 +1,10 @@
+# [0.46.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.45.0...0.46.0) (2024-05-03)
+
+
+### Features
+
+* File Format Grid specification [#249](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/249) ([d61c803](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/d61c803dc54760a537aac99e8ddad5f491280b31))
+
 # [0.45.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.44.1...0.45.0) (2024-05-02)
 
 
