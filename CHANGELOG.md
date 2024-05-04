@@ -1,3 +1,10 @@
+# [0.49.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.48.0...0.49.0) (2024-05-04)
+
+
+### Features
+
+* Document Structure Grif spec [#255](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/255) ([f9787d7](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/f9787d70515e6b8a8de3bbafe5a64cd046ed44a1))
+
 # [0.48.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.47.0...0.48.0) (2024-05-04)
 
 
