@@ -1,0 +1,16 @@
+.DS_Store
+
+# dotnet
+bin/
+obj/
+
+# java
+target/
+.classpath
+.factorypath
+.project
+.idea
+.settings
+
+# docs
+Docs/_site

@@ -1,0 +1,27 @@
+@using EncyclopediaGalactica.Common.Contracts
+<FluentHeader>
+    <FluentGrid Justify="JustifyContent.FlexStart" Class="whatever" Style="whatever">
+        <FluentGridItem xxl="2" Justify="JustifyContent.FlexStart">
+            Encyclopedia Galactica
+        </FluentGridItem>
+        <FluentGridItem xxl="9" Style="width: 200px;;">
+
+        </FluentGridItem>
+        <FluentGridItem xxl="1" Justify="JustifyContent.FlexEnd">
+            <FluentCombobox TOption="ModuleResult"
+                            Items="_modules"
+                            OptionValue="@(i => i.Id.ToString())"
+                            OptionText="@(i => i.Name)"
+                            SelectedOptionChanged="ModuleSelectionChanged">
+            </FluentCombobox>
+        </FluentGridItem>
+        <FluentGridItem xl="1" xxl="1" Justify="JustifyContent.FlexEnd">
+            <FluentIcon Value="@(new Icons.Regular.Size32.Person())"
+                        Title="Person"
+                        Color="Color.Neutral"/>
+            <FluentIcon Value="@(new Icons.Regular.Size32.Settings())"
+                        Title="Settings"
+                        Color="Color.Neutral"/>
+        </FluentGridItem>
+    </FluentGrid>
+</FluentHeader>

@@ -1,0 +1,24 @@
+@using EncyclopediaGalactica.Common.Contracts
+@if (StructureNode is not null)
+{
+    <FluentTreeItem Text="@StructureNode.Id.ToString()">
+
+        <FluentIcon Value="@(new Icons.Regular.Size16.ListBarTree())" Color="Color.Neutral" Slot="start"/>
+        <FluentButton Appearance="Appearance.Neutral"
+                      OnClick="@(async e => await HandleAddStructureNodeAsync(e, StructureNode.Id).ConfigureAwait(false))">
+            +1
+        </FluentButton>
+        <FluentButton Appearance="Appearance.Accent"
+                      OnClick="@(async e => await HandleDeleteStructureNodeAsync(e, StructureNode.Id).ConfigureAwait(false))">
+            Delete
+        </FluentButton>
+
+        @if (StructureNode.HasChildren && StructureNodes.Any())
+        {
+            foreach (DocumentStructureNodeResult child in StructureNodes)
+            {
+                <EGDocumentStructureTree StructureNode="child"/>
+            }
+        }
+    </FluentTreeItem>
+}

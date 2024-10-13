@@ -1,0 +1,25 @@
+@using EncyclopediaGalactica.Common.Contracts
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+<FluentGrid>
+    <FluentGridItem>
+        <FluentDataGrid TGridItem="RoleResult"
+                        ItemsProvider="GridItemsProvider"
+                        @ref="Grid"
+                        Virtualize="true">
+            <PropertyColumn Property="@(item => item.Id)" Title="Id"/>
+            <PropertyColumn Property="@(item => item.Name)" Title="Name"/>
+            <PropertyColumn Property="@(item => item.Description)" Title="Description"/>
+            <TemplateColumn Title="Actions" Align="Align.End">
+                <FluentButton IconEnd="@(new Icons.Filled.Size16.Edit())"
+                              OnClick="@(async e => await HandleEditClick(e, context))">
+                    Edit
+                </FluentButton>
+                <FluentButton IconEnd="@(new Icons.Filled.Size16.Delete())"
+                              OnClick="@(async e => await HandleDeleteClick(e, context))">
+                    Delete
+                </FluentButton>
+            </TemplateColumn>
+
+        </FluentDataGrid>
+    </FluentGridItem>
+</FluentGrid>

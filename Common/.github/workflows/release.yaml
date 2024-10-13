@@ -1,0 +1,128 @@
+name: Release
+run-name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "============="
+          echo "=== Debug ==="
+          echo "============="
+          echo "github ref: " ${{ vars.GITHUB_REF }}
+          echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
+          echo "event name: " ${{ github.event_name }}
+
+  commons:
+    name: EG.Commons
+    runs-on: ubuntu-latest
+    needs: debug
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+
+      - name: Restore
+        run: |
+          dotnet restore Common.sln
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release Common.sln
+
+      - name: Test
+        run: |
+          dotnet test --no-restore --verbosity normal Common.sln
+
+  semantic_versioning:
+    name: Semantic Versioning
+    runs-on: ubuntu-latest
+    needs:
+      - commons
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      pages: write
+      id-token: write
+    
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+
+      - name: Install Semantic Dependencies
+        run: |
+          npm install npm
+          npm install semantic-release
+          npm install @semantic-release/changelog
+          npm install @semantic-release/exec
+          npm install @semantic-release/git
+          npm install @semantic-release/github
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          cache: 'pip'
+
+      - name: Debug Info Python tools
+        run: |
+          pip3 --version
+          pip3 install --user bump2version
+
+      - name: Semantic Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
+        run: |
+          npx semantic-release
+      
+      - name: Variables
+        run: |
+          APPVERSION=$(cat version.txt)
+          echo "EGVERSION=$APPVERSION" >> $GITHUB_ENV
+          echo $GITHUB_ENV
+
+      - name: Setting up Dotnet with ${{ vars.DOTNET_VERSION }} version
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ vars.DOTNET_VERSION }}
+
+      - name: Restore
+        run: |
+          dotnet restore Common.sln
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release --no-restore Common.sln
+
+      - name: Test
+        run: |
+          dotnet test --no-restore --verbosity normal Common.sln
+
+      - name: Pack
+        run: |
+          dotnet pack --no-restore --verbosity normal --include-symbols --include-source BusinessLogic.Contracts/BusinessLogic.Contracts.csproj
+
+      - name: Publish
+        run: |
+          dotnet nuget add source --username Andras-Csanyi --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/EncyclopediaGalactica/index.json"
+          dotnet nuget push "/home/runner/work/Common/Common/BusinessLogic.Contracts/bin/Release/EncyclopediaGalactica.BusinessLogic.Contracts.${{ env.EGVERSION }}.nupkg" --source "github" --api-key ${{ secrets.TOKEN_PUBLISH_NUGET }} --skip-duplicate

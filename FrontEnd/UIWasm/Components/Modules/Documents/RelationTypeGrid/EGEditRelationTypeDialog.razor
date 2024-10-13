@@ -1,0 +1,7 @@
+@implements IDialogContentComponent<EncyclopediaGalactica.Common.Contracts.RelationTypeResult>
+
+<FluentDialogBody>
+    <FluentNumberField TValue="long" @bind-Value="Content.Id" Disabled="true">Relation type id:</FluentNumberField>
+    <FluentTextField @bind-Value="Content.Name">Name: </FluentTextField>
+    <FluentTextField @bind-Value="Content.Description">Description: </FluentTextField>
+</FluentDialogBody>
