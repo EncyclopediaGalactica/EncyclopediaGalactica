@@ -1,3 +1,10 @@
+# [0.50.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.49.0...0.50.0) (2024-10-13)
+
+
+### Features
+
+* Frontend and Backend is back in this solution ([#258](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/258)) ([50a89e8](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/50a89e879b683a31eb1e66585b15af23a88ac402))
+
 # [0.49.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.48.0...0.49.0) (2024-05-04)
 
 
