@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="EncyclopediaGalactica.BusinessLogic.Contracts" Version="2.7.0"/>
+        <PackageReference Include="FluentValidation" Version="11.10.0"/>
+        <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.14" />
+        <PackageReference Include="LanguageExt.Core" Version="4.4.9"/>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers" Version="8.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.10" />
+        <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.1" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Common\Contracts\Contracts.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <AssemblyName>EncyclopediaGalactica.DocumentDomain</AssemblyName>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>EncyclopediaGalactica.DocumentDomain</RootNamespace>
+        <TargetFramework>net8.0</TargetFramework>
+    </PropertyGroup>
+
+</Project>
