@@ -1,0 +1,9 @@
+@implements IDialogContentComponent<EncyclopediaGalactica.Common.Contracts.FiletypeResult>
+
+<FluentDialogHeader ShowDismiss="true">Add new File format</FluentDialogHeader>
+<FluentDialogBody>
+    <FluentNumberField TValue="long" @bind-Value="Content.Id" Disabled="true">File format id:</FluentNumberField>
+    <FluentTextField @bind-Value="Content.Name">Name: </FluentTextField>
+    <FluentTextField @bind-Value="Content.Description">Description: </FluentTextField>
+    <FluentTextField @bind-Value="Content.FileExtension">File extension: </FluentTextField>
+</FluentDialogBody>

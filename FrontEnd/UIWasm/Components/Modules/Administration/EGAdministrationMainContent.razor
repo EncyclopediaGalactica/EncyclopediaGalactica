@@ -1,0 +1,18 @@
+@inherits Fluxor.Blazor.Web.Components.FluxorComponent
+@if (ModuleAndScreenState?.Value.SelectedScreen is null)
+{
+    <h1>Administration main content</h1>
+}
+else
+{
+    @switch (ModuleAndScreenState.Value.SelectedScreen)
+    {
+        case "users":
+            <EGUsersScreen/>
+            break;
+
+        case "roles":
+            <EGRolesScreen/>
+            break;
+    }
+}
