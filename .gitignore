@@ -1,6 +1,9 @@
 .DS_Store
 
-.idea
+# dotnet
+bin/
+obj/
 
-# docs
-Docs/_site
+# java
+.idea
+.settings
