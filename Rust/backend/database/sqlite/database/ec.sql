@@ -1,0 +1,1 @@
+CREATE DATABASE encyclopedia_galactica;

@@ -1,0 +1,10 @@
+binop_separator = "Front"
+blank_lines_lower_bound = 0
+chain_indent_style = "Visual"
+fn_params_layout = "Vertical"
+format_strings = true
+match_block_trailing_comma = true
+spaces_around_ranges = true
+struct_field_align_threshold = 20
+struct_lit_single_line = false
+brace_style = "AlwaysNextLine"

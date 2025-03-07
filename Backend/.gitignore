@@ -1,9 +1,0 @@
-.DS_Store
-
-# dotnet
-bin/
-obj/
-
-# java
-.idea
-.settings
