@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "EncyclopediaGalactica"
+version = "0.0.1"
+description = "All the knowledge in the known Universe"
+requires-python = ">=3.8"
+dependencies = ["sqlalchemy", "psycopg2-binary"]
+
+
+[project.scripts]
+eg = "cli.cli:app"
