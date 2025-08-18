@@ -10,9 +10,11 @@ public record EdgeTypeResult(
     string Name,
     string Description);
 
-public record AddEdgeTypeScenarioInput(
-    string Name,
-    string Description);
+public record AddEdgeTypeScenarioInput
+{
+    public string Name { get; init; } = string.Empty;
+    public string Description { get; init; } = string.Empty;
+}
 
 public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeScenarioInput>
 {
