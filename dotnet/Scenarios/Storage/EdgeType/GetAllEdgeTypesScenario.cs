@@ -21,8 +21,10 @@ public class GetAllEdgeTypesScenario(
         Table table = new();
         table.AddColumn("Id");
         table.AddColumn("Name");
+        table.AddColumn("Description");
+        table.AddColumn("Reference");
 
-        edgeTypes.ForEach(item => table.AddRow(item.Id.ToString(), item.Name));
+        edgeTypes.ForEach(item => table.AddRow(item.Id.ToString(), item.Name, item.Description, item.Reference));
         AnsiConsole.Write(table);
         return Right(0);
     }

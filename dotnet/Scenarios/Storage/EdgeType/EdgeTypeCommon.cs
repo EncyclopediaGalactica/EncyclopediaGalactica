@@ -8,12 +8,14 @@ using FluentValidation.Results;
 public record EdgeTypeResult(
     long Id,
     string Name,
-    string Description);
+    string Description,
+    string Reference);
 
 public record AddEdgeTypeScenarioInput
 {
     public string Name { get; init; } = string.Empty;
     public string Description { get; init; } = string.Empty;
+    public string Reference { get; init; } = string.Empty;
 }
 
 public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeScenarioInput>
@@ -23,6 +25,8 @@ public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeSc
         RuleFor(x => x.Name).NotEmpty();
         RuleFor(x => x.Name.Trim().Length).GreaterThanOrEqualTo(3);
         RuleFor(x => x.Description).NotEmpty();
+        RuleFor(x => x.Reference).NotEmpty();
+        RuleFor(x => x.Reference.Contains(' ')).Equal(false);
     }
 
     public Either<EgError, AddEdgeTypeScenarioInput> IsValid(AddEdgeTypeScenarioInput input)
@@ -38,7 +42,12 @@ public static class EdgeTypeExtensions
     {
         try
         {
-            return Right(new EdgeTypeEntity() { Name = input.Name, Description = input.Description, });
+            return Right(
+                new EdgeTypeEntity()
+                {
+                    Name = input.Name, Description = input.Description, Reference = input.Reference,
+                }
+            );
         }
         catch (Exception e)
         {
@@ -50,7 +59,7 @@ public static class EdgeTypeExtensions
     {
         try
         {
-            return Right(new EdgeTypeResult(edgeType.Id, edgeType.Name, edgeType.Description));
+            return Right(new EdgeTypeResult(edgeType.Id, edgeType.Name, edgeType.Description, edgeType.Reference));
         }
         catch (Exception e)
         {

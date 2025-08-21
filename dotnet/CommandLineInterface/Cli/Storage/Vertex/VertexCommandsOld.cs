@@ -2,24 +2,24 @@ namespace EncyclopediaGalactica.CommandLineInterface.Cli.Storage.Vertex;
 
 using System.CommandLine;
 
-public class VertexCommands
+public class VertexCommandsOld
 {
     public Command CreateCommand()
     {
-        Command vertexCommand = new Command("vertex");
-        
-        Command addCommand = new Command("add");
+        Command vertexCommand = new("vertex");
+
+        Command addCommand = new("add");
         vertexCommand.Subcommands.Add(addCommand);
-        
-        Command deleteCommand = new Command("delete");
+
+        Command deleteCommand = new("delete");
         vertexCommand.Subcommands.Add(deleteCommand);
-        
-        Command listCommand = new Command("list");
+
+        Command listCommand = new("list");
         vertexCommand.Subcommands.Add(listCommand);
-        
-        Command updateCommand = new Command("update");
+
+        Command updateCommand = new("update");
         vertexCommand.Subcommands.Add(updateCommand);
-        
+
         return vertexCommand;
     }
 }

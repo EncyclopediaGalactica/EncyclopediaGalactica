@@ -8,6 +8,7 @@ public class EdgeTypeEntity
     public long Id { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
+    public string Reference { get; set; }
 }
 
 public class EdgeTypeEntityConfiguration : IEntityTypeConfiguration<EdgeTypeEntity>
@@ -20,5 +21,6 @@ public class EdgeTypeEntityConfiguration : IEntityTypeConfiguration<EdgeTypeEnti
         builder.Property(e => e.Id).HasColumnName("id");
         builder.Property(e => e.Name).HasColumnName("name");
         builder.Property(e => e.Description).HasColumnName("description");
+        builder.Property(e => e.Reference).HasColumnName("reference");
     }
 }

@@ -4,7 +4,7 @@ using System.CommandLine;
 using Common;
 using Scenarios.Storage.EdgeType;
 
-public class EdgeTypeCommands(
+public class EdgeTypeCommandsOld(
     AddEdgeTypeScenario addEdgeTypeScenario,
     GetAllEdgeTypesScenario getAllEdgeTypesScenario
 )
@@ -75,6 +75,11 @@ public class EdgeTypeCommands(
         addCommand.Options.Add(edgeNameOption);
         Option<string> edgeDescOption = new("--desc") { Description = "The rationale why we have this edge type.", };
         addCommand.Options.Add(edgeDescOption);
+        Option<string> referenceOption = new("--reference")
+        {
+            Description = "The string how the item can be referenced in the cli command.",
+        };
+        addCommand.Options.Add(referenceOption);
         addCommand.SetAction(parseResult =>
             {
                 Either<EgError, EdgeTypeResult> r = from inputWithName in GetNameParameterValueAndToNameProperty(
@@ -85,17 +90,43 @@ public class EdgeTypeCommands(
                         inputWithName,
                         parseResult
                     )
-                    from executionResult in addEdgeTypeScenario.Execute(inputWithNameAndDesc)
+                    from inputWithNameAndDescAndRef in GetRefParamValueAndAddToDto(
+                        inputWithNameAndDesc,
+                        parseResult
+                    )
+                    from executionResult in addEdgeTypeScenario.Execute(inputWithNameAndDescAndRef)
                     select executionResult;
 
                 return r.Match(
                     Right: _ => 0,
-                    Left: _ => 1
+                    Left: nopes =>
+                    {
+                        Console.WriteLine($"{nopes.Message}");
+                        return 1;
+                    }
                 );
             }
         );
 
         return addCommand;
+    }
+
+    private Either<EgError, AddEdgeTypeScenarioInput> GetRefParamValueAndAddToDto(
+        AddEdgeTypeScenarioInput input,
+        ParseResult parseResult
+    )
+    {
+        string? reference = parseResult.GetValue<string>("--reference");
+        if (string.IsNullOrWhiteSpace(reference) || string.IsNullOrWhiteSpace(reference))
+        {
+            return Left(
+                new EgError(
+                    $"{nameof(AddEdgeTypeScenarioInput)}.{nameof(AddEdgeTypeScenarioInput.Reference)} must not be null or whitespace."
+                )
+            );
+        }
+
+        return Right(input with { Reference = reference, });
     }
 
     private Either<EgError, AddEdgeTypeScenarioInput> GetDescParameterValueAndAddToDescProperty(

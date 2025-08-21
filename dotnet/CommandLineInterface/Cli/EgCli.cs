@@ -3,13 +3,13 @@ namespace EncyclopediaGalactica.CommandLineInterface.Cli;
 using System.CommandLine;
 using Storage;
 
-public class EgCli(StorageCommand storageCommand)
+public class EgCli(
+    StorageCommandOld storageCommandOld)
 {
-   public RootCommand Cli()
-   {
-      RootCommand egRootCommand = new RootCommand("Encyclopedia Galactica CLI");
-      egRootCommand.Subcommands.Add(storageCommand.CreateCommand());
-      return egRootCommand;
-   } 
-    
+    public RootCommand Cli()
+    {
+        RootCommand egRootCommand = new("Encyclopedia Galactica CLI");
+        egRootCommand.Subcommands.Add(storageCommandOld.CreateCommand());
+        return egRootCommand;
+    }
 }
