@@ -15,7 +15,8 @@ public partial class EdgeRepository
         }
         catch (Exception e)
         {
-            return Left(new EgError(e.Message));
+            string message = $"{nameof(EdgeRepository)}.{nameof(Add)}: {e.Message}";
+            return Left(new EgError(message, e.StackTrace));
         }
     }
 }

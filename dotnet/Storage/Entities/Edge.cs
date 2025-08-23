@@ -23,7 +23,9 @@ public class EdgeEntityConfiguration : IEntityTypeConfiguration<EdgeEntity>
         builder.Property(e => e.Id).ValueGeneratedOnAdd();
         builder.Property(e => e.Id).HasColumnName("id");
         builder.Property(e => e.FromVertexId).HasColumnName("from_vertex_id");
+        builder.Property(e => e.FromVertexId).HasDefaultValue(0);
         builder.Property(e => e.ToVertexId).HasColumnName("to_vertex_id");
+        builder.Property(e => e.ToVertexId).HasDefaultValue(0);
         builder.Property(e => e.EdgeTypeId).HasColumnName("edge_type_id");
     }
 }

@@ -1,4 +1,4 @@
-namespace EncyclopediaGalactica.Storage.Repository;
+namespace EncyclopediaGalactica.Storage.Repository.Vertex;
 
 using Common;
 using Entities;
@@ -17,5 +17,4 @@ public partial class VertexRepository
             return Left(new EgError(e.Message));
         }
     }
-    
 }

@@ -5,15 +5,18 @@ using EncyclopediaGalactica.Storage.Entities;
 using FluentValidation;
 using FluentValidation.Results;
 
-public record AddEdgeScenarioInput
-{
-    public long Id { get; set; }
-    public long FromVertexId { get; set; }
-    public long ToVertexId { get; set; }
-    public long EdgeTypeId { get; set; }
-}
+public record AddEdgeScenarioInput(
+    long FromVertexId,
+    long ToVertexId,
+    long EdgeTypeId
+);
 
-public record AddEdgeScenarioResult : AddEdgeScenarioInput;
+public record AddEdgeScenarioResult(
+    long Id,
+    long FromVertexId,
+    long ToVertexId,
+    long EdgeTypeId
+);
 
 public static class EdgeExtensions
 {
@@ -21,18 +24,18 @@ public static class EdgeExtensions
     {
         try
         {
-            AddEdgeScenarioResult result = new()
-            {
-                Id = input.Id,
-                FromVertexId = input.FromVertexId,
-                ToVertexId = input.ToVertexId,
-                EdgeTypeId = input.EdgeTypeId,
-            };
-            return Right(result);
+            return Right(
+                new AddEdgeScenarioResult(
+                    input.Id,
+                    input.FromVertexId,
+                    input.ToVertexId,
+                    input.EdgeTypeId
+                )
+            );
         }
         catch (Exception e)
         {
-            return Left(new EgError(e.Message));
+            return Left(new EgError(e.Message, e.StackTrace));
         }
     }
 
@@ -42,16 +45,14 @@ public static class EdgeExtensions
         {
             EdgeEntity result = new()
             {
-                Id = input.Id,
-                FromVertexId = input.FromVertexId,
-                ToVertexId = input.ToVertexId,
-                EdgeTypeId = input.EdgeTypeId,
+                FromVertexId = input.FromVertexId, ToVertexId = input.ToVertexId, EdgeTypeId = input.EdgeTypeId,
             };
             return Right(result);
         }
         catch (Exception e)
         {
-            return Left(new EgError(e.Message));
+            string message = $"{nameof(EdgeEntity)}.{nameof(ToEdgeEntity)}: {e.Message}";
+            return Left(new EgError(message, e.StackTrace));
         }
     }
 }
@@ -60,15 +61,22 @@ public class AddEdgeScenarioInputValidator : AbstractValidator<AddEdgeScenarioIn
 {
     public AddEdgeScenarioInputValidator()
     {
-        RuleFor(r => r.Id).Equal(0);
-        RuleFor(r => r.FromVertexId).GreaterThanOrEqualTo(1);
-        RuleFor(r => r.ToVertexId).GreaterThanOrEqualTo(1);
+        RuleFor(r => r.FromVertexId).GreaterThanOrEqualTo(0);
+        RuleFor(r => r.ToVertexId).GreaterThanOrEqualTo(0);
         RuleFor(r => r.EdgeTypeId).GreaterThanOrEqualTo(1);
     }
 
     public Either<EgError, AddEdgeScenarioInput> IsValid(AddEdgeScenarioInput input)
     {
-        ValidationResult? validationResult = Validate(input);
-        return validationResult.IsValid == true ? Right(input) : Left(validationResult.ToEgError());
+        try
+        {
+            ValidationResult? validationResult = Validate(input);
+            return validationResult.IsValid == true ? Right(input) : Left(validationResult.ToEgError());
+        }
+        catch (Exception e)
+        {
+            string message = $"{nameof(AddEdgeScenarioInput)}.{nameof(IsValid)}: {e.Message}";
+            return Left(new EgError(message, e.StackTrace));
+        }
     }
 }

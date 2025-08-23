@@ -1,15 +1,97 @@
 namespace EncyclopediaGalactica.CommandLineInterface.Cli;
 
-using System.CommandLine;
+using Common;
+using Exercises;
+using Exercises.Generate;
+using Exercises.Generate.Book;
+using Infrastructure;
+using Spectre.Console;
+using Spectre.Console.Cli;
 using Storage;
+using Storage.Edge;
+using Storage.EdgeType;
+using Storage.Vertex;
+using Storage.VertexType;
 
-public class EgCli(
-    StorageCommandOld storageCommandOld)
+public static class EgCli
 {
-    public RootCommand Cli()
+    public static void RenderError(EgError error)
     {
-        RootCommand egRootCommand = new("Encyclopedia Galactica CLI");
-        egRootCommand.Subcommands.Add(storageCommandOld.CreateCommand());
-        return egRootCommand;
+        Table table = new();
+        table.AddColumn("Message").AddColumn("Trace");
+        table.AddRow(
+            error.Message == null ? "No message" : error.Message,
+            error.Trace == null ? "Notrace" : error.Trace
+        );
+        AnsiConsole.Write(table);
+    }
+
+    public static CommandApp CreateCommandApp(TypeRegistrar registrar)
+    {
+        CommandApp app = new(registrar);
+        app.Configure(config =>
+            {
+                config.AddBranch<ExercisesSettings>(
+                    "exercise",
+                    exercise =>
+                    {
+                        exercise.AddBranch<GenerateSettings>(
+                            "generate",
+                            generate =>
+                            {
+                                generate.AddCommand<BooksCommand>("books");
+                            }
+                        );
+                    }
+                );
+                config.AddBranch<StorageSettings>(
+                    "storage",
+                    storage =>
+                    {
+                        storage.AddBranch<EdgeTypeSettings>(
+                            "edge-type",
+                            edgeType =>
+                            {
+                                edgeType.AddCommand<AddEdgeTypeCommand>("add");
+                                edgeType.AddCommand<UpdateEdgeTypeCommand>("update");
+                                edgeType.AddCommand<ListEdgeTypeCommand>("list");
+                                edgeType.AddCommand<DeleteEdgeTypeCommand>("delete");
+                            }
+                        );
+                        storage.AddBranch<EdgeSettings>(
+                            "edge",
+                            edge =>
+                            {
+                                edge.AddCommand<AddEdgeCommand>("add");
+                                edge.AddCommand<UpdateEdgeCommand>("update");
+                                edge.AddCommand<ListEdgeCommand>("list");
+                                edge.AddCommand<DeleteEdgeCommand>("delete");
+                            }
+                        );
+                        storage.AddBranch<VertexSettings>(
+                            "vertex",
+                            vertex =>
+                            {
+                                vertex.AddCommand<AddVertexCommand>("add");
+                                vertex.AddCommand<UpdateVertexCommand>("update");
+                                vertex.AddCommand<ListVertexCommand>("list");
+                                vertex.AddCommand<DeleteVertexCommand>("delete");
+                            }
+                        );
+                        storage.AddBranch<VertexTypeSettings>(
+                            "vertex-type",
+                            vertexType =>
+                            {
+                                vertexType.AddCommand<AddVertexTypeCommand>("add");
+                                vertexType.AddCommand<UpdateVertexTypeCommand>("update");
+                                vertexType.AddCommand<ListVertexTypeCommand>("list");
+                                vertexType.AddCommand<DeleteVertexTypeCommand>("delete");
+                            }
+                        );
+                    }
+                );
+            }
+        );
+        return app;
     }
 }

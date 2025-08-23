@@ -8,14 +8,12 @@ using FluentValidation.Results;
 public record EdgeTypeResult(
     long Id,
     string Name,
-    string Description,
-    string Reference);
+    string Description);
 
 public record AddEdgeTypeScenarioInput
 {
     public string Name { get; init; } = string.Empty;
     public string Description { get; init; } = string.Empty;
-    public string Reference { get; init; } = string.Empty;
 }
 
 public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeScenarioInput>
@@ -25,8 +23,6 @@ public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeSc
         RuleFor(x => x.Name).NotEmpty();
         RuleFor(x => x.Name.Trim().Length).GreaterThanOrEqualTo(3);
         RuleFor(x => x.Description).NotEmpty();
-        RuleFor(x => x.Reference).NotEmpty();
-        RuleFor(x => x.Reference.Contains(' ')).Equal(false);
     }
 
     public Either<EgError, AddEdgeTypeScenarioInput> IsValid(AddEdgeTypeScenarioInput input)
@@ -38,15 +34,24 @@ public class AddEdgeTypeScenarioInputValidator : AbstractValidator<AddEdgeTypeSc
 
 public static class EdgeTypeExtensions
 {
+    public static Either<EgError, List<EdgeTypeResult>> ToEdgeTypeResults(this List<EdgeTypeEntity> entities)
+    {
+        try
+        {
+            return Right(entities.Select(item => new EdgeTypeResult(item.Id, item.Name, item.Description)).ToList());
+        }
+        catch (Exception e)
+        {
+            return Left(new EgError(e.Message, e.StackTrace));
+        }
+    }
+
     public static Either<EgError, EdgeTypeEntity> ToEntity(this AddEdgeTypeScenarioInput input)
     {
         try
         {
             return Right(
-                new EdgeTypeEntity()
-                {
-                    Name = input.Name, Description = input.Description, Reference = input.Reference,
-                }
+                new EdgeTypeEntity() { Name = input.Name, Description = input.Description, }
             );
         }
         catch (Exception e)
@@ -59,7 +64,7 @@ public static class EdgeTypeExtensions
     {
         try
         {
-            return Right(new EdgeTypeResult(edgeType.Id, edgeType.Name, edgeType.Description, edgeType.Reference));
+            return Right(new EdgeTypeResult(edgeType.Id, edgeType.Name, edgeType.Description));
         }
         catch (Exception e)
         {

@@ -1,8 +1,5 @@
-namespace EncyclopediaGalactica.Storage.Repository;
-
-using Microsoft.EntityFrameworkCore;
+namespace EncyclopediaGalactica.Storage.Repository.Vertex;
 
 public partial class VertexRepository
 {
-    
 }

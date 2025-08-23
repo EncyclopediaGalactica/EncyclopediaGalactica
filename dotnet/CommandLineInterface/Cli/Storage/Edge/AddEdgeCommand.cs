@@ -1,140 +1,105 @@
 namespace EncyclopediaGalactica.CommandLineInterface.Cli.Storage.Edge;
 
 using System.ComponentModel;
+using Common;
+using Scenarios.Storage.Edge;
+using Spectre.Console;
 using Spectre.Console.Cli;
 
-public sealed class AddEdgeCommand : Command<AddEdgeCommand.Settings>
+public sealed class AddEdgeCommand(
+    AddEdgeScenario addEdgeScenario
+) : Command<AddEdgeCommand.Settings>
 {
     public override int Execute(CommandContext context, Settings settings)
     {
-        //             AddEdgeScenarioInput input = new();
-        //             Either<EgError, Unit> executionResult =
-        //                 from edgeTypeAdded in ExtractEdgeTypeIdAndAddToDto(
-        //                     input,
-        //                     parseResult
-        //                 )
-        //                 from fromEdgeId in ExtractFromVertexIdAndAddToDto(edgeTypeAdded, parseResult)
-        //                 from toEdgeId in ExtractToVertexIdAndAddToDto(fromEdgeId, parseResult)
-        //                 from res in addEdgeScenario.Execute(toEdgeId)
-        //                 select res;
-        //             return executionResult.Match(
-        //                 Right: _ => 0,
-        //                 Left: nopes =>
-        //                 {
-        //                     Console.WriteLine($"Message: {nopes.Message} \n Trace: {nopes.Trace}");
-        //                     return 1;
-        //                 }
-        //             );
-        Console.WriteLine("Adding edge type");
-        return 0;
+        Either<EgError, AddEdgeScenarioResult> executionResult =
+            from mappedInput in settings.ToAddEdgeScenarioInput()
+            from res in addEdgeScenario.Execute(mappedInput)
+            select res;
+        return executionResult.Match(
+            Right: yolo =>
+            {
+                Either<EgError, Unit> r = from res in RenderOperationResult(yolo)
+                    select res;
+                return r.Match(
+                    Right: _ => 0,
+                    Left: nopes =>
+                    {
+                        EgCli.RenderError(nopes);
+                        return 1;
+                    }
+                );
+            },
+            Left: nopes =>
+            {
+                EgCli.RenderError(nopes);
+                return 1;
+            }
+        );
+    }
+
+    private Either<EgError, Unit> RenderOperationResult(AddEdgeScenarioResult result)
+    {
+        try
+        {
+            Console.WriteLine($"result: {result.Id}, {result.FromVertexId}, {result.ToVertexId}, {result.EdgeTypeId}");
+            Table table = new();
+            table.AddColumn("Id")
+                .AddColumn("From Vertex Id")
+                .AddColumn("To Vertex Id")
+                .AddColumn("Edge Type Id");
+
+            table.AddRow(
+                result.Id.ToString(),
+                result.FromVertexId.ToString(),
+                result.ToVertexId.ToString(),
+                result.EdgeTypeId.ToString()
+            );
+            AnsiConsole.Write(table);
+            return Right(Unit.Default);
+        }
+        catch (Exception e)
+        {
+            string message = $"{nameof(AddEdgeScenario)}.{nameof(RenderOperationResult)}: {e.Message}";
+            return Left(new EgError(message, e.StackTrace));
+        }
     }
 
     public sealed class Settings : EdgeSettings
     {
         [CommandOption("--edge-type-id", true)]
         [Description("The edge type id")]
-        public long EdgeTypeId { get; set; }
+        [DefaultValue(0)]
+        public int EdgeTypeId { get; set; }
 
         [CommandOption("--from-edge-id")]
         [Description("The from edge id")]
-        public long FromEdgeId { get; set; }
+        [DefaultValue(0)]
+        public int FromEdgeId { get; set; }
 
         [CommandOption("--to-edge-id")]
         [Description("The to edge id")]
-        public long ToEdgeId { get; set; }
+        public int ToEdgeId { get; set; }
     }
+}
 
-    // private Either<EgError, System.CommandLine.Command> CreateAddCommand(System.CommandLine.Command command)
-    // {
-    //     System.CommandLine.Command addCommand = new("add");
-    //     Option<string> edgeTypeId = new("--edge-type-id")
-    //     {
-    //         Description = "The type reference of the type of this command.", Required = true,
-    //     };
-    //     addCommand.Options.Add(edgeTypeId);
-    //     Option<long> fromVertexOption =
-    //         new("--from-vertex-id") { Description = "The from-vertex ID.", Required = false, };
-    //     addCommand.Options.Add(fromVertexOption);
-    //     Option<long> toVertexOption = new("--to-vertex-id") { Description = "The to-vertex ID.", Required = false, };
-    //     addCommand.Options.Add(toVertexOption);
-    //     addCommand.SetAction(parseResult =>
-    //         {
-    //             AddEdgeScenarioInput input = new();
-    //             Either<EgError, Unit> executionResult =
-    //                 from edgeTypeAdded in ExtractEdgeTypeIdAndAddToDto(
-    //                     input,
-    //                     parseResult
-    //                 )
-    //                 from fromEdgeId in ExtractFromVertexIdAndAddToDto(edgeTypeAdded, parseResult)
-    //                 from toEdgeId in ExtractToVertexIdAndAddToDto(fromEdgeId, parseResult)
-    //                 from res in addEdgeScenario.Execute(toEdgeId)
-    //                 select res;
-    //             return executionResult.Match(
-    //                 Right: _ => 0,
-    //                 Left: nopes =>
-    //                 {
-    //                     Console.WriteLine($"Message: {nopes.Message} \n Trace: {nopes.Trace}");
-    //                     return 1;
-    //                 }
-    //             );
-    //         }
-    //     );
-    //     command.Subcommands.Add(addCommand);
-    //     return Right(command);
-    // }
-    //
-    // private Either<EgError, AddEdgeScenarioInput> ExtractToVertexIdAndAddToDto(
-    //     AddEdgeScenarioInput input,
-    //     ParseResult parseResult
-    // )
-    //     => from parsedResult in LanguageExtHelpers.GetValueFromParseResult<long>("--to-vertex-id", parseResult)
-    //         select input with { ToVertexId = parsedResult, };
-    //
-    // private Either<EgError, AddEdgeScenarioInput> ExtractFromVertexIdAndAddToDto(
-    //     AddEdgeScenarioInput input,
-    //     ParseResult parseResult
-    // ) =>
-    //     from parsedValue in LanguageExtHelpers.GetValueFromParseResult<long>("--from-vertex-id", parseResult)
-    //     select input with { FromVertexId = parsedValue, };
-    //
-    // private Either<EgError, AddEdgeScenarioInput> ExtractEdgeTypeIdAndAddToDto(
-    //     AddEdgeScenarioInput input,
-    //     ParseResult parseResult
-    // ) =>
-    //     from parsedValue in LanguageExtHelpers.GetValueFromParseResult<long>("--edge-type-id", parseResult)
-    //     select input with { EdgeTypeId = parsedValue, };
-    //
-    // private Either<EgError, System.CommandLine.Command> CreateUpdateCommand(System.CommandLine.Command command)
-    // {
-    //     System.CommandLine.Command updateCommand = new("update");
-    //     command.Subcommands.Add(updateCommand);
-    //     return Right(command);
-    // }
-    //
-    // private Either<EgError, System.CommandLine.Command> CreateListCommand(System.CommandLine.Command command)
-    // {
-    //     System.CommandLine.Command listCommand = new("list");
-    //     command.Subcommands.Add(listCommand);
-    //     command.SetAction(_ =>
-    //         {
-    //             Either<EgError, Unit> executionResult = getAllEdgesScenario.Execute();
-    //             return executionResult.Match(
-    //                 Right: _ => 0,
-    //                 Left: nopes =>
-    //                 {
-    //                     Console.WriteLine($"{nopes.Message}");
-    //                     return 1;
-    //                 }
-    //             );
-    //         }
-    //     );
-    //     return Right(command);
-    // }
-    //
-    // private Either<EgError, System.CommandLine.Command> CreateDeleteCommand(System.CommandLine.Command command)
-    // {
-    //     System.CommandLine.Command deleteCommand = new("delete");
-    //     command.Subcommands.Add(deleteCommand);
-    //     return Right(command);
-    // }
+public static class AddEdgeCommandExtensions
+{
+    public static Either<EgError, AddEdgeScenarioInput> ToAddEdgeScenarioInput(this AddEdgeCommand.Settings settings)
+    {
+        try
+        {
+            AddEdgeScenarioInput input = new(
+                settings.FromEdgeId,
+                settings.ToEdgeId,
+                settings.EdgeTypeId
+            );
+            return Right(input);
+        }
+        catch (Exception e)
+        {
+            string message = $"{nameof(AddEdgeCommandExtensions)}.{nameof(ToAddEdgeScenarioInput)}: {e.Message}";
+            return Left(new EgError(message, e.StackTrace));
+        }
+    }
 }
