@@ -4,6 +4,7 @@ using Common;
 using Exercises;
 using Exercises.Generate;
 using Exercises.Generate.Book;
+using Exercises.List;
 using Infrastructure;
 using Spectre.Console;
 using Spectre.Console.Cli;
@@ -40,6 +41,13 @@ public static class EgCli
                             generate =>
                             {
                                 generate.AddCommand<BooksCommand>("books");
+                            }
+                        );
+                        exercise.AddBranch<ListSettings>(
+                            "list",
+                            list =>
+                            {
+                                list.AddCommand<ExercisesListBooksCommand>("book");
                             }
                         );
                     }

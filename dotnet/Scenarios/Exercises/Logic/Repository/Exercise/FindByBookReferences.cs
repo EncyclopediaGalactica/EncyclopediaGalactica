@@ -14,7 +14,6 @@ public partial class ExerciseRepository
             List<ExerciseEntity> exercises = ctx.Exercises.Include(i => i.Book)
                 .Where(w => bookReferences.Contains(w.Book.Reference))
                 .ToList();
-            Console.WriteLine($"size: {exercises.Count}");
             return Right(exercises);
         }
         catch (Exception e)

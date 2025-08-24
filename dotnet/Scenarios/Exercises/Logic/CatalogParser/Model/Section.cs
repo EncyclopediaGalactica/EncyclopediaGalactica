@@ -16,37 +16,37 @@ public class Section
     public int PageStart { get; set; }
 
     [YamlMember(Alias = "page_exercises_start", ApplyNamingConventions = false)]
-    public int PageExercisesStart { get; set; }
+    public string PageExercisesStart { get; set; } = string.Empty;
 
     [YamlMember(Alias = "concepts_questions_interval_start", ApplyNamingConventions = false)]
-    public int ConceptQuestionsIntervalStart { get; set; }
+    public string ConceptQuestionsIntervalStart { get; set; } = string.Empty;
 
     [YamlMember(Alias = "concepts_questions_interval_end", ApplyNamingConventions = false)]
-    public int ConceptQuestionsIntervalEnd { get; set; }
+    public string ConceptQuestionsIntervalEnd { get; set; } = string.Empty;
 
     [YamlMember(Alias = "skills_questions_interval_start", ApplyNamingConventions = false)]
-    public int SkillQuestionsIntervalStart { get; set; }
+    public string SkillQuestionsIntervalStart { get; set; } = string.Empty;
 
     [YamlMember(Alias = "skills_questions_interval_end", ApplyNamingConventions = false)]
-    public int SkillQuestionsIntervalEnd { get; set; }
+    public string SkillQuestionsIntervalEnd { get; set; } = string.Empty;
 
     [YamlMember(Alias = "applications_questions_interval_start", ApplyNamingConventions = false)]
-    public int ApplicationQuestionsIntervalStart { get; set; }
+    public string ApplicationQuestionsIntervalStart { get; set; } = string.Empty;
 
     [YamlMember(Alias = "applications_questions_interval_end", ApplyNamingConventions = false)]
-    public int ApplicationQuestionsIntervalEnd { get; set; }
+    public string ApplicationQuestionsIntervalEnd { get; set; } = string.Empty;
 
     [YamlMember(Alias = "discussion_questions_interval_start", ApplyNamingConventions = false)]
-    public int DiscussionQuestionsIntervalStart { get; set; }
+    public string DiscussionQuestionsIntervalStart { get; set; } = string.Empty;
 
     [YamlMember(Alias = "discussion_questions_interval_end", ApplyNamingConventions = false)]
-    public int DiscussionQuestionsIntervalEnd { get; set; }
+    public string DiscussionQuestionsIntervalEnd { get; set; } = string.Empty;
 
     [YamlMember(Alias = "page_end", ApplyNamingConventions = false)]
     public int PageEnd { get; set; }
 
     [YamlMember(Alias = "chapter_reference", ApplyNamingConventions = false)]
-    public string ChapterReference { get; set; }
+    public string ChapterReference { get; set; } = string.Empty;
 }
 
 public static class SectionExtensions
@@ -62,15 +62,33 @@ public static class SectionExtensions
                 Title = parsedSection.Title,
                 SectionNumber = parsedSection.SectionNumber,
                 PageStart = parsedSection.PageStart,
-                PageExercisesStart = parsedSection.PageExercisesStart,
-                ConceptQuestionsIntervalStart = parsedSection.ConceptQuestionsIntervalStart,
-                ConceptQuestionsIntervalEnd = parsedSection.ConceptQuestionsIntervalEnd,
-                SkillQuestionsIntervalStart = parsedSection.SkillQuestionsIntervalStart,
-                SkillQuestionsIntervalEnd = parsedSection.SkillQuestionsIntervalEnd,
-                ApplicationQuestionsIntervalStart = parsedSection.ApplicationQuestionsIntervalStart,
-                ApplicationQuestionsIntervalEnd = parsedSection.ApplicationQuestionsIntervalEnd,
-                DiscussionQuestionsIntervalStart = parsedSection.DiscussionQuestionsIntervalStart,
-                DiscussionQuestionsIntervalEnd = parsedSection.DiscussionQuestionsIntervalEnd,
+                PageExercisesStart = parsedSection.PageExercisesStart == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.PageExercisesStart),
+                ConceptQuestionsIntervalStart = parsedSection.ConceptQuestionsIntervalStart == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.ConceptQuestionsIntervalStart),
+                ConceptQuestionsIntervalEnd = parsedSection.ConceptQuestionsIntervalEnd == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.ConceptQuestionsIntervalEnd),
+                SkillQuestionsIntervalStart = parsedSection.SkillQuestionsIntervalStart == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.SkillQuestionsIntervalStart),
+                SkillQuestionsIntervalEnd = parsedSection.SkillQuestionsIntervalEnd == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.SkillQuestionsIntervalEnd),
+                ApplicationQuestionsIntervalStart = parsedSection.ApplicationQuestionsIntervalStart == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.ApplicationQuestionsIntervalStart),
+                ApplicationQuestionsIntervalEnd = parsedSection.ApplicationQuestionsIntervalEnd == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.ApplicationQuestionsIntervalEnd),
+                DiscussionQuestionsIntervalStart = parsedSection.DiscussionQuestionsIntervalStart == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.DiscussionQuestionsIntervalStart),
+                DiscussionQuestionsIntervalEnd = parsedSection.DiscussionQuestionsIntervalEnd == "NA"
+                    ? 0
+                    : int.Parse(parsedSection.DiscussionQuestionsIntervalEnd),
                 PageEnd = parsedSection.PageEnd,
             };
             return Right(result);

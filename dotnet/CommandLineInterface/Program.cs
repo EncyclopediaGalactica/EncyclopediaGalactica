@@ -68,9 +68,9 @@ internal class Program
                 options.LogTo(Console.WriteLine, LogLevel.Information);
             }
         );
-        using ExercisesContext? exerciseContext = services.BuildServiceProvider().GetService<ExercisesContext>();
-        exerciseContext!.Database.EnsureDeleted();
-        exerciseContext!.Database.EnsureCreated();
+        // using ExercisesContext? exerciseContext = services.BuildServiceProvider().GetService<ExercisesContext>();
+        // exerciseContext!.Database.EnsureDeleted();
+        // exerciseContext!.Database.EnsureCreated();
 
         services.AddTransient<FindTopicByNameAndReferenceScenario>();
         services.AddTransient<FindBookByTopicIdAndReferenceScenario>();
