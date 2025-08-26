@@ -1,5 +1,6 @@
 namespace EncyclopediaGalactica.Scenarios.Exercises.Logic.Repository.Topic;
 
+using System.Collections.Immutable;
 using Common;
 using Microsoft.EntityFrameworkCore;
 using Models;
@@ -34,6 +35,21 @@ public partial class TopicRepository
         try
         {
             List<TopicEntity> result = ctx.Topics.ToList();
+            return Right(result);
+        }
+        catch (Exception e)
+        {
+            return Left(new EgError(e.Message));
+        }
+    }
+
+    public Either<EgError, ImmutableList<TopicEntity>> FindAllWithBooksIncluded(
+        ExercisesContext ctx
+    )
+    {
+        try
+        {
+            ImmutableList<TopicEntity> result = ctx.Topics.Include(i => i.Books).ToImmutableList();
             return Right(result);
         }
         catch (Exception e)

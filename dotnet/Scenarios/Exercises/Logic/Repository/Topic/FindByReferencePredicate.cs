@@ -6,14 +6,14 @@ using static Prelude;
 
 public partial class TopicRepository
 {
-    public Either<EgError, Option<TopicEntity>> FindByReference(
+    public Either<EgError, Option<TopicEntity>> FindByReferencePredicate(
         string reference,
         ExercisesContext dbContext
     )
     {
         try
         {
-            TopicEntity? result = dbContext.Topics.FirstOrDefault(t => t.Reference == reference);
+            TopicEntity? result = dbContext.Topics.FirstOrDefault(t => t.Reference.Contains(reference));
             return Right(result == null ? Option<TopicEntity>.None : Option<TopicEntity>.Some(result));
         }
         catch (Exception e)

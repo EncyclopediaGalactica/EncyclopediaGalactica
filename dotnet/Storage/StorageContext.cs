@@ -9,7 +9,7 @@ public class StorageContext : DbContext
     {
     }
 
-    public StorageContext(DbContextOptions options) : base(options)
+    public StorageContext(DbContextOptions<StorageContext> options) : base(options)
     {
     }
 

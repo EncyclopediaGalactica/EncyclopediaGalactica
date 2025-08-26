@@ -79,7 +79,7 @@ public partial class BookRepository
     {
         try
         {
-            List<BookEntity> result = ctx.Books.ToList();
+            List<BookEntity> result = ctx.Books.Include(i => i.Topic).ToList();
             return Right(result);
         }
         catch (Exception e)

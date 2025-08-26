@@ -2,11 +2,13 @@ namespace EncyclopediaGalactica.Scenarios.Exercises.Logic.Repository.Topic;
 
 using Common;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Models;
 using static Prelude;
 
 public partial class TopicRepository(
-    DbContextOptions<ExercisesContext> dbContextOptions
+    DbContextOptions<ExercisesContext> dbContextOptions,
+    ILogger<TopicRepository> logger
 )
 {
     public async Task<List<TopicEntity>> GetEverything()

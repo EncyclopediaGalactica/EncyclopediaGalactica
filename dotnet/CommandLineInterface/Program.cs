@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Scenarios.Exercises.Book.AddNew;
 using Scenarios.Exercises.Book.Find;
+using Scenarios.Exercises.Book.List;
 using Scenarios.Exercises.Book.UpdateBook;
 using Scenarios.Exercises.Chapter.Add;
 using Scenarios.Exercises.Chapter.Find;
@@ -42,6 +43,12 @@ internal class Program
             .AddJsonFile("appSettings.json", true, true)
             .AddEnvironmentVariables()
             .Build();
+        services.AddLogging(builder =>
+            {
+                builder.AddConfiguration(configuration.GetSection("Logging"));
+                builder.AddConsole();
+            }
+        );
         services.AddSingleton(configuration);
         AppSettings appSettings = configuration.GetSection("AppSettings").Get<AppSettings>()!;
         services.AddSingleton(appSettings);
@@ -65,7 +72,6 @@ internal class Program
                 options.UseNpgsql(connectionString);
                 options.EnableDetailedErrors();
                 options.EnableSensitiveDataLogging();
-                options.LogTo(Console.WriteLine, LogLevel.Information);
             }
         );
         // using ExercisesContext? exerciseContext = services.BuildServiceProvider().GetService<ExercisesContext>();
@@ -95,6 +101,9 @@ internal class Program
         services.AddTransient<GenerateFromBooksScenario>();
         services.AddTransient<FindChapterByReferenceScenario>();
         services.AddTransient<GenerateFromBooksScenario>();
+        services.AddTransient<ListBooksByTopicScenario>();
+        services.AddTransient<FindAllTopicsByNamePredicateScenario>();
+        services.AddTransient<FindChaptersByTitlePredicateAndBookAndTopicScenario>();
 
         // Add new book scenario
         services.AddTransient<AddNewBookByTopicIdAndParsedBook>();
@@ -126,8 +135,14 @@ internal class Program
         // using StorageContext? context = services.BuildServiceProvider().GetService<StorageContext>();
         // context!.Database.EnsureDeleted();
         // context!.Database.EnsureCreated();
+
         TypeRegistrar registrar = new(services);
         CommandApp app = EgCli.CreateCommandApp(registrar);
+        app.Configure(config =>
+            {
+                config.PropagateExceptions();
+            }
+        );
         return app.Run(args);
     }
 }

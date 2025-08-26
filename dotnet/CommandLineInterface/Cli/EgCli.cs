@@ -30,29 +30,31 @@ public static class EgCli
     public static CommandApp CreateCommandApp(TypeRegistrar registrar)
     {
         CommandApp app = new(registrar);
-        app.Configure(config =>
+        app.Configure(cliConfig =>
             {
-                config.AddBranch<ExercisesSettings>(
+                cliConfig.AddBranch<ExercisesSettings>(
                     "exercise",
                     exercise =>
                     {
                         exercise.AddBranch<GenerateSettings>(
                             "generate",
-                            generate =>
+                            generateBranch =>
                             {
-                                generate.AddCommand<BooksCommand>("books");
+                                generateBranch.AddCommand<BooksCommand>("books");
                             }
                         );
                         exercise.AddBranch<ListSettings>(
                             "list",
-                            list =>
+                            listBranch =>
                             {
-                                list.AddCommand<ExercisesListBooksCommand>("book");
+                                listBranch.AddCommand<ExercisesListBooksCommand>("books");
+                                listBranch.AddCommand<ExercisesListTopicsCommand>("topics");
+                                listBranch.AddCommand<ExercisesListChaptersCommand>("chapters");
                             }
                         );
                     }
                 );
-                config.AddBranch<StorageSettings>(
+                cliConfig.AddBranch<StorageSettings>(
                     "storage",
                     storage =>
                     {

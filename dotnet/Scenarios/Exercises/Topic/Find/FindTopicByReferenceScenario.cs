@@ -20,7 +20,7 @@ public class FindTopicByReferenceScenario(
             return Left(new EgError($"Either name or reference wasn't provided."));
         }
 
-        return from r in topicRepository.FindByReference(reference, dbContext)
+        return from r in topicRepository.FindByReferencePredicate(reference, dbContext)
             select r;
     }
 }

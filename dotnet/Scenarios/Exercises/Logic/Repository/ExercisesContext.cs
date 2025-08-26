@@ -6,7 +6,7 @@ using Models;
 
 public class ExercisesContext : DbContext
 {
-    public ExercisesContext(DbContextOptions options) : base(options)
+    public ExercisesContext(DbContextOptions<ExercisesContext> options) : base(options)
     {
     }
 

@@ -2,13 +2,15 @@ namespace EncyclopediaGalactica.CommandLineInterface.Cli.Exercises.List;
 
 using System.ComponentModel;
 using Common;
+using Microsoft.Extensions.Logging;
 using Scenarios.Exercises.Book.List;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
 [Description("Lists catalogised books.")]
 public sealed class ExercisesListBooksCommand(
-    ListBooksByTopicScenario listBooksByTopicScenario
+    ListBooksByTopicScenario listBooksByTopicScenario,
+    ILogger<ExercisesListBooksCommand> logger
 ) : Command<ExercisesListBooksCommand.Settings>
 {
     public override int Execute(CommandContext context, Settings settings)
@@ -20,13 +22,23 @@ public sealed class ExercisesListBooksCommand(
         return result.Match(
             Right: yolo =>
             {
+                logger.LogDebug("Result count: {YoloCount}", yolo.Count);
                 return RenderResult(yolo).Match(
-                    Right: _ => 0,
-                    Left: _ => 1
+                    Right: _ =>
+                    {
+                        logger.LogDebug("Result rendered:");
+                        return 0;
+                    },
+                    Left: nopesNopes =>
+                    {
+                        logger.LogDebug("Render error: {error} and {trace}", nopesNopes.Message, nopesNopes.Trace);
+                        return 1;
+                    }
                 );
             },
             Left: nopes =>
             {
+                logger.LogDebug("Failed with error: {error} and {trace}", nopes.Message, nopes.Trace);
                 EgCli.RenderError(nopes);
                 return 1;
             }
@@ -46,12 +58,13 @@ public sealed class ExercisesListBooksCommand(
                 .AddColumn("Topic");
             result.ForEach(item =>
                 {
+                    string topicName = string.IsNullOrEmpty(item.TopicName) ? "not defined" : item.TopicName;
                     table.AddRow(
                         item.BookId.ToString(),
                         item.BookTitle,
                         item.Author,
                         item.BookReference,
-                        item.TopicName
+                        topicName
                     );
                 }
             );

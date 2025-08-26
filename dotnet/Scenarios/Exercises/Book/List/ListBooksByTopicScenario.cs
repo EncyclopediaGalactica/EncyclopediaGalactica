@@ -4,10 +4,12 @@ using Common;
 using Logic.Repository;
 using Logic.Repository.Book;
 using Logic.Repository.Models;
+using Microsoft.Extensions.Logging;
 
 public class ListBooksByTopicScenario(
     ExercisesContext ctx,
-    BookRepository bookRepository
+    BookRepository bookRepository,
+    ILogger<ListBooksByTopicScenario> logger
 )
 {
     public Either<EgError, List<ListBooksByTopicScenarioResult>> Execute(
@@ -24,7 +26,10 @@ public class ListBooksByTopicScenario(
     {
         if (topicNameOption.IsNone)
         {
-            return bookRepository.GetAllBooks(ctx);
+            Either<EgError, List<BookEntity>> r = bookRepository.GetAllBooks(ctx);
+            r.IfRight(res => { logger.LogDebug($"Result count: {res.Count}"); });
+            r.IfLeft(res => { logger.LogError($"Error: {res.Message}"); });
+            return r;
         }
 
         string t = string.Empty;
@@ -39,7 +44,7 @@ public record ListBooksByTopicScenarioResult()
     public string BookTitle { get; init; } = string.Empty;
     public string Author { get; init; } = string.Empty;
     public string BookReference { get; init; } = string.Empty;
-    public string TopicName { get; init; } = string.Empty;
+    public string? TopicName { get; init; } = string.Empty;
 };
 
 public record ListBooksByTopicScenarioInput()
@@ -70,7 +75,7 @@ public static class ListBooksByTopicScenarioExtensions
                     BookTitle = bookEntity.Title,
                     Author = bookEntity.Authors,
                     BookReference = bookEntity.Reference,
-                    TopicName = bookEntity.Topic.Name,
+                    TopicName = bookEntity.Topic?.Name,
                 }
             );
         }
@@ -78,7 +83,7 @@ public static class ListBooksByTopicScenarioExtensions
         {
             return Left(
                 new EgError(
-                    $"{nameof(ListBooksByTopicScenarioExtensions)}.{nameof(ToListBooksByTopicScenarioResult)}",
+                    $"{nameof(ListBooksByTopicScenarioExtensions)}.{nameof(ToListBooksByTopicScenarioResult)}: {ex.Message}",
                     ex.StackTrace
                 )
             );
