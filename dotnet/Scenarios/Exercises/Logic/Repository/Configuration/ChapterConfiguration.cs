@@ -22,5 +22,10 @@ public class ChapterConfiguration : IEntityTypeConfiguration<ChapterEntity>
             .HasMany(many => many.Sections)
             .WithOne(one => one.Chapter)
             .HasForeignKey(key => key.ChapterId);
+
+        builder
+            .HasOne(one => one.Book)
+            .WithMany(b => b.Chapters)
+            .HasForeignKey(key => key.BookId);
     }
 }

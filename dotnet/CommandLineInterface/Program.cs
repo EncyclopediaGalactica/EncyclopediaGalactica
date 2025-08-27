@@ -104,6 +104,7 @@ internal class Program
         services.AddTransient<ListBooksByTopicScenario>();
         services.AddTransient<FindAllTopicsByNamePredicateScenario>();
         services.AddTransient<FindChaptersByTitlePredicateAndBookAndTopicScenario>();
+        services.AddTransient<FindSectionsByTitlePredicateScenario>();
 
         // Add new book scenario
         services.AddTransient<AddNewBookByTopicIdAndParsedBook>();
