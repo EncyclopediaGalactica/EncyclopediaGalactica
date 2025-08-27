@@ -32,5 +32,10 @@ public class SectionConfiguration : IEntityTypeConfiguration<SectionEntity>
             .HasMany(many => many.Exercises)
             .WithOne(one => one.Section)
             .HasForeignKey(foreignKey => foreignKey.SectionId);
+
+        builder
+            .HasOne(one => one.Chapter)
+            .WithMany(chapter => chapter.Sections)
+            .HasForeignKey(foreignKey => foreignKey.ChapterId);
     }
 }

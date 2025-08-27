@@ -23,5 +23,10 @@ public class BookConfiguration : IEntityTypeConfiguration<BookEntity>
             .HasMany(m => m.Chapters)
             .WithOne(one => one.Book)
             .HasForeignKey(key => key.BookId);
+
+        builder
+            .HasOne(one => one.Topic)
+            .WithMany(t => t.Books)
+            .HasForeignKey(key => key.TopicId);
     }
 }

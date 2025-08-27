@@ -50,6 +50,7 @@ public static class EgCli
                                 listBranch.AddCommand<ExercisesListBooksCommand>("books");
                                 listBranch.AddCommand<ExercisesListTopicsCommand>("topics");
                                 listBranch.AddCommand<ExercisesListChaptersCommand>("chapters");
+                                listBranch.AddCommand<ExercisesListSectionsCommand>("sections");
                             }
                         );
                     }

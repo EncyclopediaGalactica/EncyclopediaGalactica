@@ -5,9 +5,8 @@ on:
   push:
     branches:
       - main
-        
+
 jobs:
-  
   debug:
     name: Debug
     runs-on: ubuntu-latest
@@ -19,7 +18,7 @@ jobs:
           echo "github ref: " ${{ vars.GITHUB_REF }}
           echo "dotnet version: " ${{ vars.DOTNET_VERSION }}
           echo "event name: " ${{ github.event_name }}
-  
+
   main_branch:
     name: Main Branch Build
     runs-on: ubuntu-latest
@@ -33,7 +32,7 @@ jobs:
       pull-requests: write
       pages: write
       id-token: write
-    
+
     steps:
       - uses: actions/checkout@v4
 
@@ -58,7 +57,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          cache: 'pip'
+          cache: "pip"
 
       - name: Debug Info Python tools
         run: |
@@ -75,15 +74,15 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         with:
-          path: 'Docs/_site'
+          path: "Docs/_site"
 
       - name: Deploy to Github Pages
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_FOR_SEMANTIC_RELEASE }}
         id: deployment
-        uses: actions/deploy-pages@v2
-      
+        uses: actions/deploy-pages@v4
+

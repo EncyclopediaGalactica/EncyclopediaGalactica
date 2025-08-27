@@ -3,7 +3,7 @@ namespace EncyclopediaGalactica.Scenarios.Exercises.Logic.Repository.Models;
 public class SectionEntity
 {
     public long Id { get; set; }
-    public string? Title { get; set; }
+    public string Title { get; set; } = string.Empty;
 
     public double SectionNumber { get; set; }
 
