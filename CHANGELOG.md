@@ -1,3 +1,11 @@
+# [0.51.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.50.0...0.51.0) (2025-08-27)
+
+
+### Features
+
+* **Exercises:** list chapters ([#261](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/261)) ([54f720d](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/54f720d1c3970b754cc68da0639cb09356ddf5dc))
+* full rework ([#260](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/260)) ([1bf300c](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/1bf300c43e4a63c9db8ba43fee5552474681c138))
+
 # [0.50.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.49.0...0.50.0) (2024-10-13)
 
 
