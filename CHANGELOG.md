@@ -1,3 +1,10 @@
+# [0.52.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.51.0...0.52.0) (2025-08-29)
+
+
+### Features
+
+* **Exercises:** adding generated files and catalog locations to config file ([#262](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/262)) ([0d23048](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/0d2304827e0e35b6019559182ba883b5d8bf211b))
+
 # [0.51.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.50.0...0.51.0) (2025-08-27)
 
 
