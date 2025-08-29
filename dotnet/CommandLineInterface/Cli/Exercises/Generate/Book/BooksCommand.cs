@@ -12,7 +12,7 @@ using Spectre.Console.Cli;
 public sealed class BooksCommand(
     GenerateFromBooksScenario generateFromBooksScenario,
     SyncFsWithDb syncFsWithDb,
-    AppSettings appSettings
+    ExercisesSettings appSettings
 ) : Command<BooksCommand.Settings>
 {
     public override int Execute(CommandContext context, Settings settings)

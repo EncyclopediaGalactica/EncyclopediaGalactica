@@ -5,17 +5,18 @@ using Common;
 using Repository.Models;
 using Scriban;
 
-public static class LaTeXGenerator
+public class LaTeXGenerator(
+    ExercisesSettings exerciseSettings
+)
 {
-    public static Either<EgError, Unit> Execute(ImmutableList<ExerciseEntity> entities)
+    public Either<EgError, Unit> Execute(ImmutableList<ExerciseEntity> entities)
     {
-        Console.WriteLine($"entities size: {entities.Count}");
         return from parsedTemplate in ParseTemplateFile()
-            from compiledTemplate in CompiledTemplate(parsedTemplate)
-            from processedTemplate in ProcessTemplate(compiledTemplate, entities)
-            from targetFile in CreateTargetFile()
-            from _ in WriteFile(targetFile, processedTemplate)
-            select Unit.Default;
+               from compiledTemplate in CompiledTemplate(parsedTemplate)
+               from processedTemplate in ProcessTemplate(compiledTemplate, entities)
+               from targetFile in CreateTargetFile()
+               from _ in WriteFile(targetFile, processedTemplate)
+               select Unit.Default;
     }
 
     private static Either<EgError, Unit> WriteFile(string targetFile, string processedTemplate)
@@ -47,12 +48,16 @@ public static class LaTeXGenerator
         }
     }
 
-    private static Either<EgError, string> CreateTargetFile()
+    private Either<EgError, string> CreateTargetFile()
     {
         try
         {
+            string fileName = DateTime.Now.ToString("yyyy-MM-dd-HHmmss") + ".tex";
             string currentDirectory = Directory.GetCurrentDirectory();
-            string targetPath = Path.Combine(currentDirectory, "target.tex");
+            string configRelativePath = exerciseSettings.Exercises?.GeneratedTestsPath!;
+            string combinedPath = Path.Combine(currentDirectory, configRelativePath, fileName);
+            string targetPath = Path.GetFullPath(combinedPath);
+            Console.WriteLine("combined path: " + targetPath);
             return Right(targetPath);
         }
         catch (Exception e)

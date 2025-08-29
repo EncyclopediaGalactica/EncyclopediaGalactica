@@ -10,14 +10,16 @@ using Logic.Sync;
 
 public class GenerateFromBooksScenario(
     SyncFsWithDb syncFsWithDb,
-    ExerciseRepository exerciseRepository
+    ExerciseRepository exerciseRepository,
+    LaTeXGenerator latexGenerator
 )
 {
     private readonly Random _random = new();
 
     public Either<EgError, int> Execute(GenerateFromBooksScenarioInput parameters)
     {
-        Either<EgError, Unit> scenarioResult = from exerciseRecord in CatalogParser.Parse(parameters.BookCatalogPath!)
+        Either<EgError, Unit> scenarioResult =
+            from exerciseRecord in CatalogParser.Parse(parameters.BookCatalogPath!)
             from syncResult in syncFsWithDb.Execute(exerciseRecord)
             from selectedExercises in SelectExercises(parameters)
             from enrichedExercises in EnrichSelectedExercises(selectedExercises)
@@ -51,7 +53,7 @@ public class GenerateFromBooksScenario(
     }
 
     private Either<EgError, Unit> CreateLatexFile(ImmutableList<ExerciseEntity> exercises) =>
-        LaTeXGenerator.Execute(exercises);
+        latexGenerator.Execute(exercises);
 
     private Either<EgError, ImmutableList<ExerciseEntity>> EnrichSelectedExercises(
         ImmutableList<ExerciseEntity> selectedExercises
@@ -60,7 +62,7 @@ public class GenerateFromBooksScenario(
         ImmutableList<long> exerciseIds = selectedExercises.Select(item => item.Id)
             .ToImmutableList();
         return from enrichedList in exerciseRepository.EnrichExercises(exerciseIds)
-            select enrichedList;
+               select enrichedList;
     }
 
     private Either<EgError, ImmutableList<ExerciseEntity>> SelectExercises(
@@ -71,24 +73,24 @@ public class GenerateFromBooksScenario(
         Console.WriteLine($"input: {parameters.ApplicationQuestionVolume}");
         Console.WriteLine($"input: {parameters.Books}");
         return from booksListInParam in ExtractBooksFromParamForQuery(parameters.Books)
-            from exercisesAcrossBooks in GetExercisesAcrossBooks(booksListInParam)
-            from selectedApplicationExercises in SelectApplicationExercises(exercisesAcrossBooks, parameters)
-            from skillExercisesAddedList in SelectAndAppendSkillExercises(
-                exercisesAcrossBooks,
-                selectedApplicationExercises,
-                parameters
-            )
-            from selectedConceptsAdded in SelectAndAppendConceptExercises(
-                exercisesAcrossBooks,
-                skillExercisesAddedList,
-                parameters
-            )
-            from selectedDiscussionsAdded in SelectAndAppendDiscussionExercises(
-                exercisesAcrossBooks,
-                selectedConceptsAdded,
-                parameters
-            )
-            select selectedDiscussionsAdded;
+               from exercisesAcrossBooks in GetExercisesAcrossBooks(booksListInParam)
+               from selectedApplicationExercises in SelectApplicationExercises(exercisesAcrossBooks, parameters)
+               from skillExercisesAddedList in SelectAndAppendSkillExercises(
+                   exercisesAcrossBooks,
+                   selectedApplicationExercises,
+                   parameters
+               )
+               from selectedConceptsAdded in SelectAndAppendConceptExercises(
+                   exercisesAcrossBooks,
+                   skillExercisesAddedList,
+                   parameters
+               )
+               from selectedDiscussionsAdded in SelectAndAppendDiscussionExercises(
+                   exercisesAcrossBooks,
+                   selectedConceptsAdded,
+                   parameters
+               )
+               select selectedDiscussionsAdded;
     }
 
     private Either<EgError, ImmutableList<ExerciseEntity>> SelectAndAppendDiscussionExercises(
@@ -150,7 +152,7 @@ public class GenerateFromBooksScenario(
     {
         Console.WriteLine($"parameter: {booksListInParam[0]}");
         return from exercises in exerciseRepository.FindByBookReferences(booksListInParam)
-            select exercises;
+               select exercises;
     }
 
     private static Either<EgError, string[]> ExtractBooksFromParamForQuery(

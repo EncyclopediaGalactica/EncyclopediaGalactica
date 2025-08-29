@@ -1,6 +1,8 @@
 ﻿namespace EncyclopediaGalactica.CommandLineInterface;
 
 using Cli;
+using EncyclopediaGalactica.Common;
+using EncyclopediaGalactica.Scenarios.Exercises.Logic.Generators.LaTeX;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -50,7 +52,7 @@ internal class Program
             }
         );
         services.AddSingleton(configuration);
-        AppSettings appSettings = configuration.GetSection("AppSettings").Get<AppSettings>()!;
+        ExercisesSettings appSettings = configuration.GetSection("AppSettings").Get<ExercisesSettings>()!;
         services.AddSingleton(appSettings);
 
         // scenarios
@@ -67,7 +69,7 @@ internal class Program
         services.AddDbContext<ExercisesContext>(options =>
             {
                 string? connectionString = services.BuildServiceProvider()
-                    .GetService<AppSettings>()!
+                    .GetService<ExercisesSettings>()!
                     .Exercises!.ConnectionStrings!.DefaultConnection;
                 options.UseNpgsql(connectionString);
                 options.EnableDetailedErrors();
@@ -105,6 +107,7 @@ internal class Program
         services.AddTransient<FindAllTopicsByNamePredicateScenario>();
         services.AddTransient<FindChaptersByTitlePredicateAndBookAndTopicScenario>();
         services.AddTransient<FindSectionsByTitlePredicateScenario>();
+        services.AddTransient<LaTeXGenerator>();
 
         // Add new book scenario
         services.AddTransient<AddNewBookByTopicIdAndParsedBook>();
@@ -125,7 +128,7 @@ internal class Program
         // EG db context
         services.AddDbContext<StorageContext>(options =>
             {
-                string? connectionString = services.BuildServiceProvider().GetService<AppSettings>()!
+                string? connectionString = services.BuildServiceProvider().GetService<ExercisesSettings>()!
                     .ConnectionStrings!.DefaultConnection;
                 options.UseNpgsql(connectionString);
                 options.EnableDetailedErrors();
