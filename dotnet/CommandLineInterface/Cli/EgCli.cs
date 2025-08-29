@@ -32,7 +32,7 @@ public static class EgCli
         CommandApp app = new(registrar);
         app.Configure(cliConfig =>
             {
-                cliConfig.AddBranch<ExercisesSettings>(
+                cliConfig.AddBranch<Exercises.ExercisesSettings>(
                     "exercise",
                     exercise =>
                     {

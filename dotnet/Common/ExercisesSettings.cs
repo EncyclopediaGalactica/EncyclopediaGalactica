@@ -1,6 +1,6 @@
-namespace EncyclopediaGalactica.CommandLineInterface.Infrastructure;
+namespace EncyclopediaGalactica.Common;
 
-public class AppSettings
+public class ExercisesSettings
 {
     public ConnectionStrings? ConnectionStrings { get; set; }
     public Exercises? Exercises { get; set; }
