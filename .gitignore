@@ -11,3 +11,7 @@ obj/
 # python
 *.egg-info
 __pycache__
+
+# latex
+*.log
+*.aux

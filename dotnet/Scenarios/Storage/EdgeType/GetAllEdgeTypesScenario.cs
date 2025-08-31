@@ -9,7 +9,7 @@ public class GetAllEdgeTypesScenario(
     StorageContext ctx
 )
 {
-    public Either<EgError, List<EdgeTypeResult>> Execute()
+    public Either<EgError, List<AddEdgeTypeScenarioResult>> Execute()
         => from edgeTypes in repository.GetAll(ctx)
             from edgeTypeResults in edgeTypes.ToEdgeTypeResults()
             select edgeTypeResults;

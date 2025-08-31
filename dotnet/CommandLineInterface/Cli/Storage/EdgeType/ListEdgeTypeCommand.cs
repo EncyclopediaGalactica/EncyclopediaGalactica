@@ -13,7 +13,7 @@ public sealed class ListEdgeTypeCommand(
 {
     public override int Execute(CommandContext context, Settings settings)
     {
-        Either<EgError, List<EdgeTypeResult>> result = from edgeTypes in getAllEdgeTypesScenario.Execute()
+        Either<EgError, List<AddEdgeTypeScenarioResult>> result = from edgeTypes in getAllEdgeTypesScenario.Execute()
             select edgeTypes;
         return result.Match(
             Right: yolo =>
@@ -37,7 +37,7 @@ public sealed class ListEdgeTypeCommand(
         );
     }
 
-    private Either<EgError, Unit> RenderResult(List<EdgeTypeResult> edgeTypes)
+    private Either<EgError, Unit> RenderResult(List<AddEdgeTypeScenarioResult> edgeTypes)
     {
         Table table = new();
         table.AddColumn("Id");

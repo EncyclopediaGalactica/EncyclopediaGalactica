@@ -13,7 +13,7 @@ public sealed class AddEdgeTypeCommand(
 {
     public override int Execute(CommandContext context, Settings settings)
     {
-        Either<EgError, EdgeTypeResult> r =
+        Either<EgError, AddEdgeTypeScenarioResult> r =
             from scenarioInput in settings.ToAddEdgeTypeScenarioInput()
             from executionResult in addEdgeTypeScenario.Execute(scenarioInput)
             select executionResult;
@@ -39,14 +39,18 @@ public sealed class AddEdgeTypeCommand(
         );
     }
 
-    private Either<EgError, Unit> RenderResult(EdgeTypeResult edgeTypeResult)
+    private Either<EgError, Unit> RenderResult(AddEdgeTypeScenarioResult addEdgeTypeScenarioResult)
     {
         try
         {
             Table table = new();
             table.Caption = new TableTitle($"The following Edge Type has been recorded");
             table.AddColumn("Id").AddColumn("Name").AddColumn("Description");
-            table.AddRow(edgeTypeResult.Id.ToString(), edgeTypeResult.Name, edgeTypeResult.Description);
+            table.AddRow(
+                addEdgeTypeScenarioResult.Id.ToString(),
+                addEdgeTypeScenarioResult.Name,
+                addEdgeTypeScenarioResult.Description
+            );
             AnsiConsole.Write(table);
             return Right(Unit.Default);
         }

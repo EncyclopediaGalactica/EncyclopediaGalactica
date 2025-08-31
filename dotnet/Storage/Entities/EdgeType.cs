@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 public class EdgeTypeEntity
 {
     public long Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
+    public IEnumerable<VertexEntity> Vertices { get; } = [];
+    public IEnumerable<VertexEntity>? EdgeTypeVertices { get; } = [];
+    public string Name { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
 }
 
 public class EdgeTypeEntityConfiguration : IEntityTypeConfiguration<EdgeTypeEntity>
@@ -20,5 +22,10 @@ public class EdgeTypeEntityConfiguration : IEntityTypeConfiguration<EdgeTypeEnti
         builder.Property(e => e.Id).HasColumnName("id");
         builder.Property(e => e.Name).HasColumnName("name");
         builder.Property(e => e.Description).HasColumnName("description");
+
+        builder
+            .HasMany(e => e.Vertices)
+            .WithMany(e => e.EdgeTypeVertices)
+            .UsingEntity<EdgeTypeVertices>("edgetype_vertices");
     }
 }
