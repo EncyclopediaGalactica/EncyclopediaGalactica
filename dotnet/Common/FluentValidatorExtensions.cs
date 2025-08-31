@@ -1,6 +1,5 @@
-namespace EncyclopediaGalactica.Scenarios;
+namespace EncyclopediaGalactica.Common;
 
-using Common;
 using FluentValidation.Results;
 
 public static class FluentValidatorExtensions

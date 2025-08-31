@@ -1,6 +1,8 @@
 namespace EncyclopediaGalactica.CommandLineInterface.Cli;
 
 using Common;
+using EncyclopediaGalactica.CommandLineInterface.Cli.GalaxyMap;
+using EncyclopediaGalactica.CommandLineInterface.Cli.GalaxyMap.Add;
 using Exercises;
 using Exercises.Generate;
 using Exercises.Generate.Book;
@@ -32,6 +34,16 @@ public static class EgCli
         CommandApp app = new(registrar);
         app.Configure(cliConfig =>
             {
+                cliConfig.AddBranch<GalaxyMapSettings>(
+                        "galaxy-map",
+                        galaxyMap =>
+                        {
+                            galaxyMap.AddBranch<AddSettings>("add", add =>
+                            {
+                                add.AddCommand<AddGalaxyCommand>("galaxy");
+                            });
+                        }
+                        );
                 cliConfig.AddBranch<Exercises.ExercisesSettings>(
                     "exercise",
                     exercise =>
