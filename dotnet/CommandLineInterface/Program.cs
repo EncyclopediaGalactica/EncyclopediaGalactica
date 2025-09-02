@@ -1,8 +1,7 @@
 ﻿namespace EncyclopediaGalactica.CommandLineInterface;
 
 using Cli;
-using EncyclopediaGalactica.Common;
-using EncyclopediaGalactica.Scenarios.Exercises.Logic.Generators.LaTeX;
+using Common;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -15,8 +14,10 @@ using Scenarios.Exercises.Book.UpdateBook;
 using Scenarios.Exercises.Chapter.Add;
 using Scenarios.Exercises.Chapter.Find;
 using Scenarios.Exercises.Chapter.Update;
+using Scenarios.Exercises.Exercise;
 using Scenarios.Exercises.Exercise.UpdateOrInsert;
 using Scenarios.Exercises.Generate;
+using Scenarios.Exercises.Logic.Generators.LaTeX;
 using Scenarios.Exercises.Logic.Repository;
 using Scenarios.Exercises.Logic.Repository.Book;
 using Scenarios.Exercises.Logic.Repository.Chapter;
@@ -108,6 +109,7 @@ internal class Program
         services.AddTransient<FindChaptersByTitlePredicateAndBookAndTopicScenario>();
         services.AddTransient<FindSectionsByTitlePredicateScenario>();
         services.AddTransient<LaTeXGenerator>();
+        services.AddTransient<ListExercisesScenario>();
 
         // Add new book scenario
         services.AddTransient<AddNewBookByTopicIdAndParsedBook>();
