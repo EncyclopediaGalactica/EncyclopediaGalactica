@@ -1,16 +1,13 @@
-use std::path::Path;
-
-use self::book::book_matchers;
-// use self::generate::generate_matchers;
-use self::list::list_matchers;
 use clap::ArgMatches;
 
-pub mod book;
-pub mod generate;
-pub mod list;
+use self::eg_storage::find_eg_storage_matchers;
+use self::exercises::find_exercises_matchers;
 
-pub async fn find_matches(arg_matches: ArgMatches, base_path: &Path) {
-    // generate_matchers(arg_matches.clone(), base_path).await;
-    book_matchers(arg_matches.clone(), base_path);
-    list_matchers(arg_matches.clone(), base_path);
+pub mod eg_storage;
+pub mod exercises;
+pub mod starmap;
+
+pub async fn find_matches(arg_matches: ArgMatches) {
+    find_eg_storage_matchers(arg_matches.clone());
+    find_exercises_matchers(arg_matches.clone()).await;
 }

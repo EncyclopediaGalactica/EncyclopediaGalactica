@@ -10,13 +10,13 @@ pub mod exercises;
 pub mod starmap;
 
 pub fn build_cli() -> ArgMatches {
-    let root_command = command!()
+    let root_command = command!("eg")
         .about("Encyclopedia Galactica CLI")
         .long_about(
             "
-Encyclopedia Galactica CLI.
-This CLI provides access to Encyclopedia Galactica's storage directly and to the extensions it has.
-The extensions are available as subcommands.
+         Encyclopedia Galactica CLI.
+         This CLI provides access to Encyclopedia Galactica's storage directly and to the extensions it has.
+         The extensions are available as subcommands.
         ",
         )
         .propagate_version(true)
