@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS topics (
     id INT GENERATED ALWAYS AS IDENTITY,
-    topic_name VARCHAR(255) NOT NULL,
-    topic_cli_reference VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    reference VARCHAR(255) NOT NULL,
     PRIMARY KEY (id)
 );

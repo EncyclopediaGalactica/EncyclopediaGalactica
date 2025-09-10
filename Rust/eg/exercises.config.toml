@@ -1,2 +1,0 @@
-[database]
-url = "postgres://exercises:3x3rc1s3s@localhost:5432/exercises"

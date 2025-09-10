@@ -22,7 +22,7 @@ pub fn build_cli() -> ArgMatches {
         .propagate_version(true)
         .arg_required_else_help(true);
     let root_command = build_exercises_cli(root_command);
-    let root_command = build_eg_storage_cli(root_command);
-    let root_command = build_starmap_cli(root_command);
+    // let root_command = build_eg_storage_cli(root_command);
+    // let root_command = build_starmap_cli(root_command);
     root_command.get_matches()
 }
