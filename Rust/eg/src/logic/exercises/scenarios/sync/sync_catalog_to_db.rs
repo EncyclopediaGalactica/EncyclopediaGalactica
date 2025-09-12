@@ -9,10 +9,14 @@ use sqlx::Postgres;
 use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
 use crate::logic::exercises::parsers::books::parse_book_files;
+use crate::logic::exercises::parsers::chapters::parse_chapter_files;
 use crate::logic::exercises::parsers::topics::parse_topic_files;
 use crate::logic::exercises::repository::book::BookEntity;
 use crate::logic::exercises::repository::book::add::add_book;
 use crate::logic::exercises::repository::book::truncate::truncate_books_table;
+use crate::logic::exercises::repository::chapter::ChapterEntity;
+use crate::logic::exercises::repository::chapter::add::add_chapter;
+use crate::logic::exercises::repository::chapter::truncate::truncate_chapters_table;
 use crate::logic::exercises::repository::get_connection;
 use crate::logic::exercises::repository::topic::add::add_topic;
 use crate::logic::exercises::repository::topic::truncate::truncate_topics_table;
@@ -22,8 +26,34 @@ pub async fn sync_catalog_to_db(config: ExercisesConfig) -> anyhow::Result<()> {
     let db_connection = get_connection(&config.database_connection_string).await?;
     truncate_topics_table(db_connection.clone()).await?;
     truncate_books_table(db_connection.clone()).await?;
+    truncate_chapters_table(db_connection.clone()).await?;
     sync_topics_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
     sync_books_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    sync_chapters_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    Ok(())
+}
+
+async fn sync_chapters_to_db(
+    book_catalog_absolute_path: PathBuf,
+    db_connection: Pool<Postgres>,
+) -> anyhow::Result<()> {
+    let chapter_files_with_absolute_path = scan_and_collect_catalog_files_by_pattern(
+        book_catalog_absolute_path.clone(),
+        "chapter.toml",
+    )?;
+    let parsed_chapters = parse_chapter_files(chapter_files_with_absolute_path)?;
+    if parsed_chapters.is_empty() {
+        anyhow::bail!("Parsed chapter list is empty");
+    }
+
+    for chapter in parsed_chapters {
+        add_chapter(
+            ChapterEntity::from(chapter.clone()),
+            chapter.book_reference(),
+            db_connection.clone(),
+        )
+        .await?;
+    }
     Ok(())
 }
 
