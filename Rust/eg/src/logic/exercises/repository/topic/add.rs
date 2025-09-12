@@ -15,9 +15,9 @@ pub async fn add_topic(
     {
         Ok(yolo) => {
             let affected_rows = yolo.rows_affected();
-            println!("affected rows: {:#?}", affected_rows);
+            println!("topic affected rows: {:#?}", affected_rows);
             Ok(())
         }
-        Err(nopes) => Err(anyhow::anyhow!("nopes: {:#?}", nopes)),
+        Err(nopes) => Err(anyhow::anyhow!("add_topic method: {:#?}", nopes)),
     }
 }

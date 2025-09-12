@@ -1,10 +1,10 @@
 CREATE TABLE IF NOT EXISTS exercises (
-    id INT GENERATED ALWAYS AS IDENTITY,
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
     id_in_the_book INT NOT NULL,
-    topic_id INT NOT NULL DEFAULT 0,
-    book_id INT NOT NULL DEFAULT 0,
-    chapter_id INT NOT NULL DEFAULT 0,
-    section_id INT NOT NULL DEFAULT 0,
+    topic_id BIGINT NOT NULL DEFAULT 0,
+    book_id BIGINT NOT NULL DEFAULT 0,
+    chapter_id BIGINT NOT NULL DEFAULT 0,
+    section_id BIGINT NOT NULL DEFAULT 0,
     PRIMARY KEY (id),
 
     CONSTRAINT fk_topic_id

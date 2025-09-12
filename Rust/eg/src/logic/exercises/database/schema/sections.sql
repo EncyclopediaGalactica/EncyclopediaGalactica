@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS sections (
-    id INT GENERATED ALWAYS AS IDENTITY,
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
     section_title VARCHAR(255) NOT NULL,
     section_number DOUBLE PRECISION NOT NULL,
     page_start INT,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS sections (
     discussion_questions_interval_start INT,
     discussion_questions_interval_end INT,
     page_end INT,
-    chapter_id INT,
+    chapter_id BIGINT,
     PRIMARY KEY (id),
 
     CONSTRAINT fk_chapter_id

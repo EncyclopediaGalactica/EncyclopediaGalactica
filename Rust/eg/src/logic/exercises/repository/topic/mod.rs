@@ -1,4 +1,5 @@
 pub mod add;
+pub mod get_topic_id_by_reference;
 pub mod truncate;
 
 use crate::logic::exercises::parsers::topics::Topic;
@@ -6,7 +7,7 @@ use sqlx::prelude::FromRow;
 
 #[derive(FromRow, Debug)]
 pub struct TopicEntity {
-    pub id: i32,
+    pub id: i64,
     pub name: String,
     pub reference: String,
 }
