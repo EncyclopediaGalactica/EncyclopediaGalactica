@@ -8,3 +8,4 @@ DROP TABLE IF EXISTS topics;
 \include books.sql
 \include chapters.sql
 \include sections.sql
+\include exercises.sql

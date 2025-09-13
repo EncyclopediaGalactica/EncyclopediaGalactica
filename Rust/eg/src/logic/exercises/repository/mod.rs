@@ -4,6 +4,8 @@ use sqlx::postgres::PgPoolOptions;
 
 pub mod book;
 pub mod chapter;
+pub mod exercises;
+pub mod sections;
 pub mod topic;
 
 pub async fn get_connection(connection_string: &str) -> anyhow::Result<Pool<Postgres>> {
