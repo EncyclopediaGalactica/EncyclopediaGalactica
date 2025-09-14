@@ -58,7 +58,6 @@ async fn sync_exercises_to_db(db_connection: Pool<Postgres>) -> anyhow::Result<(
         let mut discussion_exercises = create_discussion_exercises(raw_exercise.clone())?;
         exercises.append(&mut discussion_exercises);
     }
-    println!("exercises: {:#?}", exercises.len());
     for exercise in exercises {
         add_exercise(exercise, db_connection.clone()).await?;
     }
