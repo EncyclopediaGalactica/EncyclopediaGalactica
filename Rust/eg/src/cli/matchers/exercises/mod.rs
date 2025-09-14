@@ -3,7 +3,7 @@ use clap::ArgMatches;
 
 use crate::ExercisesConfig;
 
-use self::generate::generate;
+use self::generate::generate_subcommand_matchers;
 
 pub mod book;
 pub mod generate;
@@ -16,7 +16,7 @@ pub async fn find_exercises_subcommand_matchers(
 ) -> anyhow::Result<()> {
     match arg_matches.subcommand() {
         Some(("generate", generate_matches)) => {
-            // println!("generate_matches: {:#?}", generate_matches);
+            generate_subcommand_matchers(generate_matches.clone(), config.clone()).await?;
             Ok(())
         }
         Some(("sync", sync_matches)) => {

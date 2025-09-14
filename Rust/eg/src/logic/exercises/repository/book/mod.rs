@@ -2,7 +2,7 @@ use sqlx::FromRow;
 
 use crate::logic::exercises::parsers::books::Book;
 pub mod add;
-pub mod get_book_id_by_reference;
+pub mod find_book_id_by_reference;
 pub mod truncate;
 
 #[derive(Debug, FromRow)]

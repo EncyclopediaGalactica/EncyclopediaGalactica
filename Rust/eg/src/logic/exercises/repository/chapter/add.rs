@@ -1,7 +1,7 @@
 use sqlx::Pool;
 use sqlx::Postgres;
 
-use crate::logic::exercises::repository::book::get_book_id_by_reference::get_book_id_by_reference;
+use crate::logic::exercises::repository::book::find_book_id_by_reference::find_book_id_by_reference;
 
 use super::ChapterEntity;
 
@@ -10,7 +10,7 @@ pub async fn add_chapter(
     book_reference: &str,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<()> {
-    let book_id = get_book_id_by_reference(book_reference, db_connection.clone()).await?;
+    let book_id = find_book_id_by_reference(book_reference, db_connection.clone()).await?;
     match sqlx::query(
         "INSERT INTO chapters (title, reference, page_start, page_end, book_id) VALUES ($1, $2, $3, $4, $5)",
     )

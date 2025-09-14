@@ -3,6 +3,7 @@ use sqlx::FromRow;
 use crate::logic::exercises::parsers::chapters::Chapter;
 pub mod add;
 pub mod find_chapter_id_by_chapter_and_book_reference;
+pub mod find_chapter_ids_by_references_and_book_reference;
 pub mod truncate;
 
 #[derive(Debug, FromRow)]
