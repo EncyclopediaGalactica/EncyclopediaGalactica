@@ -7,6 +7,7 @@ use sqlx::prelude::FromRow;
 pub mod add_exercise;
 pub mod find_all_raw_exercise_entities;
 pub mod find_exercises_by_chapter_ids_and_type;
+pub mod find_exercises_by_ids;
 
 #[derive(Debug, Clone, FromRow)]
 pub struct ExerciseEntity {

@@ -82,5 +82,15 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(usize)),
+                    )
+                    .arg(
+                        Arg::new("LOG LEVEL")
+                            .short('l')
+                            .long("log-level")
+                            .help("log level")
+                            .long_help("long help")
+                            .required(false)
+                            .action(ArgAction::Set)
+                            .value_parser(value_parser!(String)),
                     ))
 }

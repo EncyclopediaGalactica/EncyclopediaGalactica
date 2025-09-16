@@ -6,13 +6,15 @@ edition = "2024"
 [dependencies]
 tokio = { version = "1.47.1", features = ["full"] }
 sqlx = { version = "0.8.6", features = [
-    "runtime-tokio",
-    "tls-rustls",
-    "postgres",
-    "macros",
+  "runtime-tokio",
+  "tls-rustls",
+  "postgres",
+  "macros",
 ] }
 dotenvy = "0.15.7"
 dotenvy_macro = "0.15.7"
+log = "0.4.28"
+env_logger = "0.11.8"
 config = "0.15.15"
 clap = { version = "4.5.47", features = ["derive", "cargo"] }
 serde = { version = "1.0.219", features = ["derive"] }
