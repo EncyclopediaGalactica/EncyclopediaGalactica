@@ -209,6 +209,7 @@ pub async fn exercises_generate_book_scenario(
         find_exercises_by_ids(exercise_candidates, db_connection.clone()).await?;
     let filename = provide_filename()?;
     debug!("filename: {:#?}", filename);
+    debug!("generated_tests_path: {:#?}", input.generated_tests_path);
     let absolute_path_for_filename = canonicalize(input.generated_tests_path.clone())?;
     debug!(
         "target directory absolute path: {:#?}",
@@ -219,7 +220,7 @@ pub async fn exercises_generate_book_scenario(
         "Absolute path with filename: {:#?}",
         target_absolute_path_with_filename
     );
-    render_latex(final_exercises, filename.clone())?;
+    render_latex(final_exercises, target_absolute_path_with_filename.clone())?;
 
     Ok(())
 }
@@ -228,7 +229,7 @@ fn validate_scenario_input(input: ExercisesGenerateBookScenarioInput) -> anyhow:
     if input.book_reference.is_empty() {
         return Err(anyhow::anyhow!("book_reference must be provided."));
     }
-    if input.generated_tests_path.is_empty() {
+    if input.book_catalog_path.is_empty() {
         return Err(anyhow::anyhow!("target_directory must be provided."));
     }
     Ok(())
@@ -239,6 +240,7 @@ pub struct ExercisesGenerateBookScenarioResult {}
 
 #[derive(Debug, Clone)]
 pub struct ExercisesGenerateBookScenarioInput {
+    pub book_catalog_path: String,
     pub generated_tests_path: String,
     pub db_connection_string: String,
     pub book_reference: String,

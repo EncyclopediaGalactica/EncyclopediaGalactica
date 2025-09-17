@@ -1,9 +1,14 @@
+use std::path::PathBuf;
+
+use log::debug;
+
 use crate::logic::exercises::repository::exercises::find_exercises_by_ids::EnrichedExerciseEntity;
 
 pub fn render_latex(
     questions: Vec<EnrichedExerciseEntity>,
-    filename_partial: String,
+    mut filename_partial: PathBuf,
 ) -> anyhow::Result<()> {
+    debug!("Latex rendering {:#?} items.", questions.len());
     let mut items: String = String::from("");
     questions.iter().for_each(|question| {
         let single_question = format!(
@@ -56,9 +61,14 @@ pub fn render_latex(
         items
     );
 
+    filename_partial.set_extension("tex");
     match std::fs::write(&filename_partial, latex) {
-        Ok(_) => Ok(()),
+        Ok(_) => {
+            debug!("File written successfully: {:#?}", filename_partial.clone());
+            Ok(())
+        }
         Err(e) => {
+            debug!("Error while writing the file: {:#?}", e);
             anyhow::bail!("Error while writing the file: {}", e);
         }
     }

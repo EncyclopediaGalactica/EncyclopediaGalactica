@@ -1,7 +1,6 @@
 use clap::Arg;
 use clap::ArgAction;
 use clap::Command;
-use clap::arg;
 use clap::value_parser;
 
 pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
@@ -9,13 +8,13 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                 .subcommand(
                     Command::new("book")
                     .about(r#"
-                    Exercises will be generated randomly from the defined book.
+Generate exercises from the given book. For more details see the `eg exercises generate book --help` command.
                         "#)
                    .long_about(r#"
-                   Exercises will be generated randomly from the defined book.
-                   The book needs to be referenced by its reference. The list of book references can be list by the
-                   `eg exercises list books` 
-                   command.
+Exercises will be generated randomly from the defined book.
+The book needs to be referenced by its reference. The list of book references can be list by the
+`eg exercises list books` 
+command.
                    "#
                 )
                     .propagate_version(true)
@@ -51,7 +50,6 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                         Arg::new("CONCEPT QUESTIONS VOLUME")
                             .long("concept-questions")
                             .help("The volume of concept checking questions to be generated")
-                            .long_help("long help")
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(usize)),
@@ -60,7 +58,6 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                         Arg::new("SKILL QUESTIONS VOLUME")
                             .long("skill-questions")
                             .help("The volume of skill checking questions to be generated")
-                            .long_help("long help")
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(usize)),
@@ -69,7 +66,6 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                         Arg::new("APPLICATION QUESTIONS VOLUME")
                             .long("application-questions")
                             .help("The volume of application checking questions to be generated")
-                            .long_help("long help")
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(usize)),
@@ -78,7 +74,6 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                         Arg::new("DISCUSSION QUESTIONS VOLUME")
                             .long("discussion-questions")
                             .help("The volume of application checking questions to be generated")
-                            .long_help("long help")
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(usize)),
@@ -87,8 +82,7 @@ pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
                         Arg::new("LOG LEVEL")
                             .short('l')
                             .long("log-level")
-                            .help("log level")
-                            .long_help("long help")
+                            .help("Setting up the log levels. Only debug works now.")
                             .required(false)
                             .action(ArgAction::Set)
                             .value_parser(value_parser!(String)),

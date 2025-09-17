@@ -55,7 +55,8 @@ pub async fn exercises_generate_book_matchers(
     Builder::new().filter(None, log_level_filter).init();
 
     let exercises_generate_book_scenario_input = ExercisesGenerateBookScenarioInput {
-        generated_tests_path: config.generated_tests_path.clone(),
+        book_catalog_path: config.catalog_path,
+        generated_tests_path: config.generated_tests_path,
         db_connection_string: config.database_connection_string.clone(),
         book_reference: book_reference.to_string(),
         chapters: chapters,
