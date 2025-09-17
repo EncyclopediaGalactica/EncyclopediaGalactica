@@ -1,3 +1,10 @@
+# [0.53.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.52.0...0.53.0) (2025-09-17)
+
+
+### Features
+
+* **exercises:** Rust again ([#264](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/264)) ([6dde55d](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/6dde55d564534bef51abf2854fb182fcc430f188))
+
 # [0.52.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.51.0...0.52.0) (2025-08-29)
 
 
