@@ -1,0 +1,15 @@
+title = "Chapter review"
+section_number = 1.13
+chapter_reference = "fundamentals"
+book_reference = "james_stewart_precalculus"
+page_start = 131
+page_exercises_start = 131
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "40"
+skills_questions_interval_start = "1"
+skills_questions_interval_end = "160"
+applications_questions_interval_start = "NA"
+applications_questions_interval_end = "NA"
+discussion_questions_interval_start = "NA"
+discussion_questions_interval_end = "NA"
+page_end = 138

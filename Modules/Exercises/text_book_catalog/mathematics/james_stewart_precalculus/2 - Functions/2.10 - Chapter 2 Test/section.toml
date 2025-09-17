@@ -1,0 +1,15 @@
+title = "Chapter 2 Test"
+section_number = 2.10
+chapter_reference = "functions"
+book_reference = "james_stewart_precalculus"
+page_start = 241
+page_exercises_start = 241
+concepts_questions_interval_start = "NA"
+concepts_questions_interval_end = "NA"
+skills_questions_interval_start = "1"
+skills_questions_interval_end = "23"
+applications_questions_interval_start = "NA"
+applications_questions_interval_end = "NA"
+discussion_questions_interval_start = "NA"
+discussion_questions_interval_end = "NA"
+page_end = 240

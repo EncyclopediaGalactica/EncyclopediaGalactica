@@ -1,0 +1,15 @@
+title = "Polynomial and Rational Inequalities"
+section_number = 3.7
+chapter_reference = "3_polynomial_and_rational_functions"
+book_reference = "james_stewart_precalculus"
+page_start = 318
+page_exercises_start = 323
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "2"
+skills_questions_interval_start = "3"
+skills_questions_interval_end = "58"
+applications_questions_interval_start = "59"
+applications_questions_interval_end = "62"
+discussion_questions_interval_start = "NA"
+discussion_questions_interval_end = "NA"
+page_end = 324

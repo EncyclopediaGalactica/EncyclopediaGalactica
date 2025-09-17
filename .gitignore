@@ -4,6 +4,9 @@
 bin/
 obj/
 
+# rust
+target/
+
 # java
 .idea
 .settings

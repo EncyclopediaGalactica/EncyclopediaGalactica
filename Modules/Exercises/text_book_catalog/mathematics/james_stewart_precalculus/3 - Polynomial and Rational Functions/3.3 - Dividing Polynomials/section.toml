@@ -1,0 +1,15 @@
+title = "Dividing Polynomials"
+section_number = 3.3
+chapter_reference = "3_polynomial_and_rational_functions"
+book_reference = "james_stewart_precalculus"
+page_start = 275
+page_exercises_start = 279
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "2"
+skills_questions_interval_start = "3"
+skills_questions_interval_end = "74"
+applications_questions_interval_start = "NA"
+applications_questions_interval_end = "NA"
+discussion_questions_interval_start = "75"
+discussion_questions_interval_end = "76"
+page_end = 281

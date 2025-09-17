@@ -1,0 +1,15 @@
+title = "Combining Functions"
+section_number = 2.7
+chapter_reference = "functions"
+book_reference = "james_stewart_precalculus"
+page_start = 214
+page_exercises_start = 220
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "6"
+skills_questions_interval_start = "7"
+skills_questions_interval_end = "80"
+applications_questions_interval_start = "81"
+applications_questions_interval_end = "89"
+discussion_questions_interval_start = "90"
+discussion_questions_interval_end = "94"
+page_end = 223

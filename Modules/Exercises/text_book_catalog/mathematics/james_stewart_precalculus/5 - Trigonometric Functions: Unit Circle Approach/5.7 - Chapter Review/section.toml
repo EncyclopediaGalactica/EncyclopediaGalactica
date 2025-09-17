@@ -1,0 +1,15 @@
+title = "Chapter Review"
+section_number = 5.7
+chapter_reference = "5_trigonometric_functions_unit_circle_approach"
+book_reference = "james_stewart_precalculus"
+page_start = 472
+page_exercises_start = 472
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "13"
+skills_questions_interval_start = "1"
+skills_questions_interval_end = "75"
+applications_questions_interval_start = "NA"
+applications_questions_interval_end = "NA"
+discussion_questions_interval_start = "NA"
+discussion_questions_interval_end = "NA"
+page_end = 477

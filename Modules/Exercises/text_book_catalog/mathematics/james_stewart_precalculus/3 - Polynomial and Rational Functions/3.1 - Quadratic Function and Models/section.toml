@@ -1,0 +1,15 @@
+title = "Quadratic Function and Models"
+section_number = 3.1
+chapter_reference = "3_polynomial_and_rational_functions"
+book_reference = "james_stewart_precalculus"
+page_start = 252
+page_exercises_start = 257
+concepts_questions_interval_start = "1"
+concepts_questions_interval_end = "4"
+skills_questions_interval_start = "5"
+skills_questions_interval_end = "50"
+applications_questions_interval_start = "51"
+applications_questions_interval_end = "66"
+discussion_questions_interval_start = "67"
+discussion_questions_interval_end = "69"
+page_end = 260
