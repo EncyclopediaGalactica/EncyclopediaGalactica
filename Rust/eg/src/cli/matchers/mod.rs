@@ -15,6 +15,9 @@ pub async fn find_matches(arg_matches: ArgMatches, config: AppConfig) -> anyhow:
             find_exercises_subcommand_matchers(exercises_matches.clone(), config.exercises.clone())
                 .await?;
         }
+        Some(("eg-storage", eg_storage_matches)) => {
+            find_eg_storage_matchers(eg_storage_matches.clone());
+        }
         _ => {}
     }
     Ok(())
