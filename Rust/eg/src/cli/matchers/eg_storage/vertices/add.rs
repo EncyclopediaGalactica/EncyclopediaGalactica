@@ -1,24 +1,29 @@
 use clap::ArgMatches;
-use tabled::builder::Builder;
+use log::debug;
 
-use crate::logic::eg_storage::repository::get_connection;
+use crate::AppConfig;
+use crate::cli::matchers::get_log_level;
 use crate::logic::eg_storage::scenarios::vertices::add::AddVertexScenarioInput;
-use crate::logic::eg_storage::scenarios::vertices::add::add;
+use crate::logic::eg_storage::scenarios::vertices::add::add_vertex_scenario;
 
-pub async fn eg_storage_vertices_add(args: ArgMatches) -> anyhow::Result<()> {
-    let db_connection = get_connection(&args.get_one::<String>("db-connection").unwrap()).await?;
-    let data = args.get_one::<String>("data").unwrap();
+pub async fn eg_storage_vertices_add_matcher(
+    args: ArgMatches,
+    config: AppConfig,
+) -> anyhow::Result<()> {
+    env_logger::Builder::new()
+        .filter(
+            None,
+            get_log_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
+        )
+        .init();
+    debug!("matcher args: {:#?}", args);
+    debug!("matcher config: {:#?}", config);
+    let data = args.get_one::<String>("DATA").unwrap();
+    let database_connection_string = config.eg_storage.database_connection_string.clone();
     let scenario_input = AddVertexScenarioInput {
         data: data.to_string(),
+        database_connection_string: database_connection_string,
     };
-    add(db_connection, scenario_input).await?;
-    show_results();
+    add_vertex_scenario(scenario_input).await?;
     Ok(())
-}
-
-fn show_results() {
-    let mut table_builder = Builder::with_capacity(2, 2);
-    table_builder.push_record(["Operation:", "Add vertex."]);
-    table_builder.push_record(["Result:", "Success"]);
-    println!("{}", table_builder.build());
 }

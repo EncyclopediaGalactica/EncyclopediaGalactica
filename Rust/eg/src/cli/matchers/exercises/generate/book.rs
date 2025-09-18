@@ -2,6 +2,7 @@ use clap::ArgMatches;
 use env_logger::Builder;
 
 use crate::ExercisesConfig;
+use crate::cli::matchers::get_log_level;
 use crate::logic::exercises::scenarios::generate::book::ExercisesGenerateBookScenarioInput;
 use crate::logic::exercises::scenarios::generate::book::exercises_generate_book_scenario;
 
@@ -39,20 +40,12 @@ pub async fn exercises_generate_book_matchers(
         .get_one::<usize>("DISCUSSION QUESTIONS VOLUME")
         .unwrap_or_else(|| &0);
 
-    let log_level_filter = match args
-        .get_one::<String>("LOG LEVEL")
-        .map(|s| s.as_str())
-        .unwrap_or("off")
-    {
-        "off" => log::LevelFilter::Off,
-        "error" => log::LevelFilter::Error,
-        "warn" => log::LevelFilter::Warn,
-        "info" => log::LevelFilter::Info,
-        "debug" => log::LevelFilter::Debug,
-        "trace" => log::LevelFilter::Trace,
-        _ => log::LevelFilter::Info,
-    };
-    Builder::new().filter(None, log_level_filter).init();
+    Builder::new()
+        .filter(
+            None,
+            get_log_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
+        )
+        .init();
 
     let exercises_generate_book_scenario_input = ExercisesGenerateBookScenarioInput {
         book_catalog_path: config.catalog_path,

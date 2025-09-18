@@ -1,6 +1,7 @@
 use sqlx::Pool;
 use sqlx::Postgres;
 use sqlx::postgres::PgPoolOptions;
+pub mod vertices;
 
 pub async fn get_connection(connection_string: &str) -> anyhow::Result<Pool<Postgres>> {
     let connection = PgPoolOptions::new()

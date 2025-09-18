@@ -1,4 +1,5 @@
 use clap::Arg;
+use clap::ArgAction;
 use clap::Command;
 use clap::value_parser;
 
@@ -20,6 +21,15 @@ pub fn add_subcommand(edges_subcommand: Command) -> Command {
                     .long_help("The data of the vertex")
                     .value_parser(value_parser!(String))
                     .required(false),
+            )
+            .arg(
+                Arg::new("LOG LEVEL")
+                    .short('l')
+                    .long("log-level")
+                    .help("Setting up the log levels. Only debug works now.")
+                    .required(false)
+                    .action(ArgAction::Set)
+                    .value_parser(value_parser!(String)),
             ),
     )
 }

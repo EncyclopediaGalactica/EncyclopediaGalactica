@@ -1,3 +1,3 @@
-DROP TABLE vertices;
+DROP TABLE vertices CASCADE;
 
 \include vertices.sql

@@ -25,8 +25,13 @@ fn load_config() -> anyhow::Result<AppConfig> {
 #[derive(Deserialize, Clone, Debug)]
 pub struct AppConfig {
     exercises: ExercisesConfig,
+    eg_storage: EGStorageConfig,
 }
 
+#[derive(Deserialize, Clone, Debug)]
+pub struct EGStorageConfig {
+    database_connection_string: String,
+}
 #[derive(Deserialize, Clone, Debug)]
 pub struct ExercisesConfig {
     database_connection_string: String,

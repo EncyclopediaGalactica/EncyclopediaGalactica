@@ -1,4 +1,5 @@
 use clap::ArgMatches;
+use log::LevelFilter;
 
 use crate::AppConfig;
 
@@ -16,9 +17,25 @@ pub async fn find_matches(arg_matches: ArgMatches, config: AppConfig) -> anyhow:
                 .await?;
         }
         Some(("eg-storage", eg_storage_matches)) => {
-            find_eg_storage_matchers(eg_storage_matches.clone());
+            find_eg_storage_matchers(eg_storage_matches.clone(), config.clone()).await?;
         }
         _ => {}
     }
     Ok(())
+}
+pub fn get_log_level(args: ArgMatches) -> anyhow::Result<LevelFilter> {
+    let log_level = match args
+        .get_one::<String>("LOG LEVEL")
+        .map(|s| s.as_str())
+        .unwrap_or("off")
+    {
+        "off" => log::LevelFilter::Off,
+        "error" => log::LevelFilter::Error,
+        "warn" => log::LevelFilter::Warn,
+        "info" => log::LevelFilter::Info,
+        "debug" => log::LevelFilter::Debug,
+        "trace" => log::LevelFilter::Trace,
+        _ => log::LevelFilter::Info,
+    };
+    Ok(log_level)
 }
