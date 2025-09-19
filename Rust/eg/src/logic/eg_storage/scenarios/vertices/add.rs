@@ -10,8 +10,8 @@ pub async fn add_vertex_scenario(input: AddVertexScenarioInput) -> anyhow::Resul
     debug!("scenario with input: {:?}", input);
     let db_connection = get_connection(&input.database_connection_string).await?;
     debug!("Connected to database");
-    let affected_rows =
-        add_vertex(VertexEntity::new(json!(input.data.clone())), db_connection).await?;
+    let data = json!({ "data": input.data.clone() });
+    let affected_rows = add_vertex(VertexEntity::new(data), db_connection).await?;
     show_results(affected_rows);
     Ok(())
 }
