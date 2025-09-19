@@ -1,6 +1,8 @@
 use sqlx::Pool;
 use sqlx::Postgres;
 use sqlx::postgres::PgPoolOptions;
+
+pub mod edge_type;
 pub mod vertices;
 
 pub async fn get_connection(connection_string: &str) -> anyhow::Result<Pool<Postgres>> {

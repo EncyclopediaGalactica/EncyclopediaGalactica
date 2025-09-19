@@ -1,7 +1,9 @@
+use self::edge_types::edge_types_subcommand;
 use self::edges::edges_subcommand;
 use self::vertices::vertices_subcommand;
 use clap::Command;
 
+pub mod edge_types;
 pub mod edges;
 pub mod vertices;
 
@@ -12,5 +14,6 @@ pub fn build_eg_storage_cli(root_command: Command) -> Command {
         .arg_required_else_help(true);
     let storage_command = edges_subcommand(storage_command);
     let storage_command = vertices_subcommand(storage_command);
+    let storage_command = edge_types_subcommand(storage_command);
     root_command.subcommand(storage_command)
 }

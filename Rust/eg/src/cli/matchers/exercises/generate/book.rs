@@ -2,7 +2,7 @@ use clap::ArgMatches;
 use env_logger::Builder;
 
 use crate::ExercisesConfig;
-use crate::cli::matchers::get_log_level;
+use crate::cli::matchers::set_cli_logging_level;
 use crate::logic::exercises::scenarios::generate::book::ExercisesGenerateBookScenarioInput;
 use crate::logic::exercises::scenarios::generate::book::exercises_generate_book_scenario;
 
@@ -43,7 +43,7 @@ pub async fn exercises_generate_book_matchers(
     Builder::new()
         .filter(
             None,
-            get_log_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
+            set_cli_logging_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
         )
         .init();
 
