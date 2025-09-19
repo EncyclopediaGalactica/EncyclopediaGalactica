@@ -1,3 +1,10 @@
+# [0.54.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.53.0...0.54.0) (2025-09-19)
+
+
+### Features
+
+* **eg_storage:** scenario for adding vertices ([#266](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/266)) ([85bedb0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/85bedb0dfc0ad95d71508a90d72ec994aa108c01))
+
 # [0.53.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.52.0...0.53.0) (2025-09-17)
 
 
