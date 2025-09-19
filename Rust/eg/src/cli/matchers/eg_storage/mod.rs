@@ -1,12 +1,21 @@
+use anyhow::Ok;
 use clap::ArgMatches;
 
-pub mod edges;
+use crate::AppConfig;
 
-pub fn find_eg_storage_matchers(args: ArgMatches) {
-    match args.subcommand_matches("eg-storage") {
-        Some(eg_storage_matches) => {
-            edges::edges(eg_storage_matches.clone());
+pub mod edges;
+pub mod vertices;
+
+pub async fn find_eg_storage_matchers(args: ArgMatches, config: AppConfig) -> anyhow::Result<()> {
+    match args.subcommand() {
+        Some(("edges", edges_matches)) => {
+            edges::eg_storage_edges_matcher(edges_matches.clone()).await?;
+            Ok(())
         }
-        None => {}
+        Some(("vertices", vertices_matches)) => {
+            vertices::eg_storage_vertices_matcher(vertices_matches.clone(), config.clone()).await?;
+            Ok(())
+        }
+        _ => Ok(()),
     }
 }
