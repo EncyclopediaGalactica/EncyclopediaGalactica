@@ -23,7 +23,7 @@ pub async fn find_matches(arg_matches: ArgMatches, config: AppConfig) -> anyhow:
     }
     Ok(())
 }
-pub fn get_log_level(args: ArgMatches) -> anyhow::Result<LevelFilter> {
+pub fn set_cli_logging_level(args: ArgMatches) -> anyhow::Result<LevelFilter> {
     let log_level = match args
         .get_one::<String>("LOG LEVEL")
         .map(|s| s.as_str())

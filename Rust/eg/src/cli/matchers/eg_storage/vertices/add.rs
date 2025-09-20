@@ -2,7 +2,7 @@ use clap::ArgMatches;
 use log::debug;
 
 use crate::AppConfig;
-use crate::cli::matchers::get_log_level;
+use crate::cli::matchers::set_cli_logging_level;
 use crate::logic::eg_storage::scenarios::vertices::add::AddVertexScenarioInput;
 use crate::logic::eg_storage::scenarios::vertices::add::add_vertex_scenario;
 
@@ -13,7 +13,7 @@ pub async fn eg_storage_vertices_add_matcher(
     env_logger::Builder::new()
         .filter(
             None,
-            get_log_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
+            set_cli_logging_level(args.clone()).unwrap_or_else(|_| log::LevelFilter::Off),
         )
         .init();
     debug!("matcher args: {:#?}", args);
