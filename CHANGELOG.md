@@ -1,3 +1,10 @@
+# [0.55.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.54.0...0.55.0) (2025-09-20)
+
+
+### Features
+
+* **eg storage:** adding edge types ([#267](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/267)) ([bdc463a](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/bdc463a39213208fffc297652257060b3c03cee2))
+
 # [0.54.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.53.0...0.54.0) (2025-09-19)
 
 
