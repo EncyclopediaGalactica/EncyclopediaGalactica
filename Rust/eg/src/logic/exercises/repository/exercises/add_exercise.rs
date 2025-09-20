@@ -35,7 +35,7 @@ pub async fn add_exercise(
     .execute(&db_connection)
     .await
     {
-        Ok(yolo) => Ok(()),
+        Ok(_) => Ok(()),
         Err(nope) => Err(anyhow::anyhow!("Failed to add exercise: {:#?}", nope)),
     }
 }

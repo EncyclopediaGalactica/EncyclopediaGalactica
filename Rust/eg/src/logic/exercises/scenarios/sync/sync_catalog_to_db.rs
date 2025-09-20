@@ -8,6 +8,7 @@ use sqlx::Postgres;
 
 use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
+use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_wildcard_pattern;
 use crate::logic::exercises::parsers::books::parse_book_files;
 use crate::logic::exercises::parsers::chapters::parse_chapter_files;
 use crate::logic::exercises::parsers::sections::parse_section_files;
@@ -23,6 +24,7 @@ use crate::logic::exercises::repository::exercises::ExerciseType;
 use crate::logic::exercises::repository::exercises::RawExerciseEntity;
 use crate::logic::exercises::repository::exercises::add_exercise::add_exercise;
 use crate::logic::exercises::repository::exercises::find_all_raw_exercise_entities::find_all_raw_exercise_entities;
+use crate::logic::exercises::repository::exercises::truncate::truncate_exercises_table;
 use crate::logic::exercises::repository::get_connection;
 use crate::logic::exercises::repository::sections::SectionEntity;
 use crate::logic::exercises::repository::sections::add::add_section;
@@ -37,15 +39,29 @@ pub async fn sync_catalog_to_db(config: ExercisesConfig) -> anyhow::Result<()> {
     truncate_books_table(db_connection.clone()).await?;
     truncate_chapters_table(db_connection.clone()).await?;
     truncate_sections_table(db_connection.clone()).await?;
+    truncate_exercises_table(db_connection.clone()).await?;
     sync_topics_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
     sync_books_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
     sync_chapters_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
     sync_sections_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
-    sync_exercises_to_db(db_connection.clone()).await?;
+    sync_added_exercises_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    sync_textbook_exercises_to_db(db_connection.clone()).await?;
     Ok(())
 }
 
-async fn sync_exercises_to_db(db_connection: Pool<Postgres>) -> anyhow::Result<()> {
+async fn sync_added_exercises_to_db(
+    book_catalog_absolute_path: PathBuf,
+    db_connection: Pool<Postgres>,
+) -> anyhow::Result<()> {
+    let added_exercise_files = scan_and_collect_catalog_files_by_wildcard_pattern(
+        book_catalog_absolute_path.clone(),
+        "exercise_*.tex",
+    )?;
+    let parsed_added_exercises = parse_added_exercise_files(added_exercise_files)?;
+    Ok(())
+}
+
+async fn sync_textbook_exercises_to_db(db_connection: Pool<Postgres>) -> anyhow::Result<()> {
     let raw_exercises = find_all_raw_exercise_entities(db_connection.clone()).await?;
     let mut exercises: Vec<ExerciseEntity> = Vec::new();
     for raw_exercise in raw_exercises {

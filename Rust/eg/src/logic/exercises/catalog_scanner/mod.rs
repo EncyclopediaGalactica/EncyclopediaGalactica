@@ -2,6 +2,8 @@ use std::fs;
 use std::path::PathBuf;
 
 use anyhow::Result;
+use glob::Pattern;
+use log::debug;
 use walkdir::WalkDir;
 
 pub fn scan_and_collect_catalog_files_by_pattern(
@@ -27,4 +29,36 @@ pub fn scan_and_collect_catalog_files_by_pattern(
         }
     }
     Ok(collected_files)
+}
+
+pub fn scan_and_collect_catalog_files_by_wildcard_pattern(
+    path: PathBuf,
+    pattern: &str,
+) -> Result<Vec<PathBuf>> {
+    let pattern = Pattern::new(pattern)?;
+    let exercise_files: Vec<PathBuf> = WalkDir::new(path.parent().unwrap())
+        .into_iter()
+        .filter_entry(|entry| {
+            let entry_str = entry.file_name().to_str().unwrap();
+            if !entry_str.starts_with(".") {
+                return true;
+            }
+            return false;
+        })
+        .filter_map(|e| e.ok())
+        .filter(|e| e.file_type().is_file())
+        .filter(|e| pattern.matches(&e.file_name().to_string_lossy().to_string()))
+        .map(|entry| entry.path().to_path_buf())
+        .map(|entry| -> PathBuf {
+            match fs::canonicalize(entry.clone()) {
+                Ok(absolute_path) => absolute_path,
+                Err(e) => {
+                    debug!("Cannot transform path entry to absolute path: {:#?}", e);
+                    entry.clone()
+                }
+            }
+        })
+        .collect();
+
+    Ok(exercise_files)
 }

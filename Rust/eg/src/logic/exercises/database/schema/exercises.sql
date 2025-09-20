@@ -1,5 +1,6 @@
 CREATE TABLE IF NOT EXISTS exercises (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
+    manual_id BIGINT DEFAULT 0,
     id_in_the_book INT NOT NULL,
     exercise_type VARCHAR(255) NOT NULL,
     topic_id BIGINT NOT NULL DEFAULT 0,
