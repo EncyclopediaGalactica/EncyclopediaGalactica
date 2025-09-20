@@ -10,6 +10,7 @@ pub fn edge_types_subcommand(eg_root_command: Command) -> Command {
                 Edge-type related operations in the graph storage long version.
                 "#,
         )
+        .propagate_version(true)
         .arg_required_else_help(true);
     let edge_types_subcommand = add::add_edges_type_command(edge_types_subcommand);
     eg_root_command.subcommand(edge_types_subcommand)

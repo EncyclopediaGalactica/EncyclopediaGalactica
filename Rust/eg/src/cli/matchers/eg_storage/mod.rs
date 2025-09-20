@@ -3,6 +3,10 @@ use clap::ArgMatches;
 
 use crate::AppConfig;
 
+use self::edge_types::eg_storage_edge_types_matcher;
+use self::edges::eg_storage_edges_matcher;
+use self::vertices::eg_storage_vertices_matcher;
+
 pub mod edge_types;
 pub mod edges;
 pub mod vertices;
@@ -10,15 +14,15 @@ pub mod vertices;
 pub async fn find_eg_storage_matchers(args: ArgMatches, config: AppConfig) -> anyhow::Result<()> {
     match args.subcommand() {
         Some(("edges", edges_matches)) => {
-            edges::eg_storage_edges_matcher(edges_matches.clone()).await?;
+            eg_storage_edges_matcher(edges_matches.clone()).await?;
             Ok(())
         }
         Some(("edge-types", edge_types_matches)) => {
-            edges::eg_storage_edges_matcher(edge_types_matches.clone()).await?;
+            eg_storage_edge_types_matcher(edge_types_matches.clone(), config.clone()).await?;
             Ok(())
         }
         Some(("vertices", vertices_matches)) => {
-            vertices::eg_storage_vertices_matcher(vertices_matches.clone(), config.clone()).await?;
+            eg_storage_vertices_matcher(vertices_matches.clone(), config.clone()).await?;
             Ok(())
         }
         _ => Ok(()),
