@@ -4,9 +4,12 @@ use tabled::builder::Builder;
 use tabled::settings::Style;
 
 use crate::ExercisesConfig;
+use crate::cli::matchers::set_cli_logging_level;
 use crate::logic::exercises::scenarios::sync::sync_catalog_to_db;
 
 pub async fn sync(matches: ArgMatches, config: ExercisesConfig) -> Result<()> {
+    set_cli_logging_level(matches.clone())?;
+
     if matches.get_flag("full-overwrite") {
         match sync_catalog_to_db::sync_catalog_to_db(config.clone()).await {
             Ok(_) => {

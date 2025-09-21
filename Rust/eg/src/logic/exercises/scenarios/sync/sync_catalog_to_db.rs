@@ -9,6 +9,7 @@ use sqlx::Postgres;
 use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_wildcard_pattern;
+use crate::logic::exercises::parsers::added_exercises::parse_added_exercise_files;
 use crate::logic::exercises::parsers::books::parse_book_files;
 use crate::logic::exercises::parsers::chapters::parse_chapter_files;
 use crate::logic::exercises::parsers::sections::parse_section_files;
@@ -58,6 +59,14 @@ async fn sync_added_exercises_to_db(
         "exercise_*.tex",
     )?;
     let parsed_added_exercises = parse_added_exercise_files(added_exercise_files)?;
+    let mut exercises: Vec<ExerciseEntity> = Vec::new();
+    for added_exercise in parsed_added_exercises {
+        if added_exercise.topic_reference() != "" {
+            let topic_id =
+                find_topic_id_by_reference(db_connection.clone(), added_exercise.topic_reference())
+                    .await?;
+        }
+    }
     Ok(())
 }
 

@@ -7,6 +7,8 @@ CREATE TABLE IF NOT EXISTS exercises (
     book_id BIGINT NOT NULL DEFAULT 0,
     chapter_id BIGINT NOT NULL DEFAULT 0,
     section_id BIGINT NOT NULL DEFAULT 0,
+    question TEXT,
+    solution TEXT,
     PRIMARY KEY (id),
 
     CONSTRAINT fk_topic_id

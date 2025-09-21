@@ -1,3 +1,4 @@
+pub mod added_exercises;
 pub mod books;
 pub mod chapters;
 pub mod config;
