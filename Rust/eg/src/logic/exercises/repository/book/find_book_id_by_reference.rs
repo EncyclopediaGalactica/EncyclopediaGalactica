@@ -6,7 +6,7 @@ pub async fn find_book_id_by_reference(
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<i64> {
     let result = sqlx::query_as::<_, FindBookIdByReferenceEntity>(
-        "SELECT id FROM books WHERE reference = $1",
+        "SELECT id FROM books WHERE reference ANY($1)",
     )
     .bind(reference)
     .fetch_one(&db_connection)

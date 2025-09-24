@@ -3,17 +3,21 @@ use env_logger::Builder;
 
 use crate::ExercisesConfig;
 use crate::cli::matchers::set_cli_logging_level;
-use crate::logic::exercises::scenarios::generate::book::ExercisesGenerateBookScenarioInput;
-use crate::logic::exercises::scenarios::generate::book::exercises_generate_book_scenario;
+use crate::logic::exercises::scenarios::generate::books::ExercisesGenerateBooksScenarioInput;
+use crate::logic::exercises::scenarios::generate::books::exercises_generate_books_scenario;
 
-pub async fn exercises_generate_book_matchers(
+pub async fn exercises_generate_books_matchers(
     args: ArgMatches,
     config: ExercisesConfig,
 ) -> anyhow::Result<()> {
-    let book_reference = args
-        .get_one::<String>("BOOK")
-        .ok_or_else(|| anyhow::anyhow!("BOOK is required."))
+    let book_references = args
+        .get_one::<String>("BOOKS")
+        .ok_or_else(|| anyhow::anyhow!("BOOKS is required"))
         .unwrap();
+    let mut books = vec![];
+    book_references
+        .rsplit(',')
+        .map(|f| books.push(f.trim().to_string()));
 
     let chapters_input = args
         .get_one::<String>("CHAPTERS")
@@ -48,11 +52,11 @@ pub async fn exercises_generate_book_matchers(
         )
         .init();
 
-    let exercises_generate_book_scenario_input = ExercisesGenerateBookScenarioInput {
+    let exercises_generate_books_scenario_input = ExercisesGenerateBooksScenarioInput {
         book_catalog_path: config.catalog_path,
         generated_tests_path: config.generated_tests_path,
         db_connection_string: config.database_connection_string.clone(),
-        book_reference: book_reference.to_string(),
+        book_references: books,
         chapters: chapters,
         concept_questions_volume: *concept_questions_volume,
         skill_questions_volume: *skill_questions_volume,
@@ -60,7 +64,7 @@ pub async fn exercises_generate_book_matchers(
         discussion_questions_volume: *discussion_questions_volume,
     };
 
-    match exercises_generate_book_scenario(exercises_generate_book_scenario_input.clone()).await {
+    match exercises_generate_books_scenario(exercises_generate_books_scenario_input.clone()).await {
         Ok(_) => Ok(()),
         Err(e) => Err(e),
     }
