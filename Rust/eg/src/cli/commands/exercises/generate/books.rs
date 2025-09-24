@@ -3,27 +3,28 @@ use clap::ArgAction;
 use clap::Command;
 use clap::value_parser;
 
-pub fn generate_book_subcommand(generate_subcommand: Command) -> Command {
+pub fn generate_books_subcommand(generate_subcommand: Command) -> Command {
     generate_subcommand
                 .subcommand(
-                    Command::new("book")
+                    Command::new("books")
                     .about(r#"
-Generate exercises from the given book. For more details see the `eg exercises generate book --help` command.
+Generate exercises from the listed books. For more details see the `eg exercises generate books --help` command.
                         "#)
                    .long_about(r#"
-Exercises will be generated randomly from the defined book.
+Exercises will be generated randomly from the mentioned books.
 The book needs to be referenced by its reference. The list of book references can be list by the
 `eg exercises list books` 
 command.
+Books can be from different topics.
                    "#
                 )
                     .propagate_version(true)
                     .arg_required_else_help(true)
                     .arg(
-                        Arg::new("BOOK")
+                        Arg::new("BOOKS")
                             .short('b')
-                            .long("book")
-                            .help("The reference of the book")
+                            .long("books")
+                            .help("The references of the books. The list must be comma separated.")
                             .long_help("long help")
                             .required(true)
                             .value_parser(value_parser!(String))
@@ -36,8 +37,8 @@ command.
                             .long_help(r#"
                             From which chapters the exercises going to be generated.
                             The chapters must be referenced by their reference names.
-                            When multiple chapters are given they must be command separated.
-                            When no chapters were provided the available chapters will be used.
+                            When multiple chapters are given they must be comma separated.
+                            When no chapters were provided all the available, catalogized, chapters will be used.
                             The list of chapters and their references can be seen in the 
                             `eg exercises list chapters`
                             command.

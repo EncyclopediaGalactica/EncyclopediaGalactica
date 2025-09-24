@@ -1,8 +1,10 @@
 use clap::Command;
 
 use self::book::generate_book_subcommand;
+use self::books::generate_books_subcommand;
 
 pub mod book;
+pub mod books;
 
 pub fn generate_command(root_command: Command) -> Command {
     let generate_subcommand = Command::new("generate")
@@ -18,6 +20,7 @@ command.
         .propagate_version(true)
         .arg_required_else_help(true);
     let generate_subcommand = generate_book_subcommand(generate_subcommand);
+    let generate_subcommand = generate_books_subcommand(generate_subcommand);
 
     root_command.subcommand(generate_subcommand)
 }
