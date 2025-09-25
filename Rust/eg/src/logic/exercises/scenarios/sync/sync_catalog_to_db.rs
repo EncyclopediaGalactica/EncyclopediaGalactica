@@ -1,11 +1,15 @@
 use std::fs;
 use std::path::Path;
 use std::path::PathBuf;
+use std::str::FromStr;
 
 use anyhow::Ok;
 use sqlx::Pool;
 use sqlx::Postgres;
 
+use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_book_id::find_chapter_id_by_chapter_reference_and_book_id;
+use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_topic_id::find_chapter_id_by_chapter_reference_and_topic_id;
+use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_topic_id_and_book_id::find_chapter_id_by_chapter_reference_and_topic_id_and_book_id;
 use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_wildcard_pattern;
@@ -16,6 +20,7 @@ use crate::logic::exercises::parsers::sections::parse_section_files;
 use crate::logic::exercises::parsers::topics::parse_topic_files;
 use crate::logic::exercises::repository::book::BookEntity;
 use crate::logic::exercises::repository::book::add::add_book;
+use crate::logic::exercises::repository::book::find_book_id_by_reference::find_book_id_by_reference;
 use crate::logic::exercises::repository::book::truncate::truncate_books_table;
 use crate::logic::exercises::repository::chapter::ChapterEntity;
 use crate::logic::exercises::repository::chapter::add::add_chapter;
@@ -31,6 +36,7 @@ use crate::logic::exercises::repository::sections::SectionEntity;
 use crate::logic::exercises::repository::sections::add::add_section;
 use crate::logic::exercises::repository::sections::truncate::truncate_sections_table;
 use crate::logic::exercises::repository::topic::add::add_topic;
+use crate::logic::exercises::repository::topic::get_topic_id_by_reference::find_topic_id_by_reference;
 use crate::logic::exercises::repository::topic::truncate::truncate_topics_table;
 
 pub async fn sync_catalog_to_db(config: ExercisesConfig) -> anyhow::Result<()> {
@@ -61,11 +67,61 @@ async fn sync_added_exercises_to_db(
     let parsed_added_exercises = parse_added_exercise_files(added_exercise_files)?;
     let mut exercises: Vec<ExerciseEntity> = Vec::new();
     for added_exercise in parsed_added_exercises {
+        let mut exercise = ExerciseEntity::default();
         if added_exercise.topic_reference() != "" {
             let topic_id =
-                find_topic_id_by_reference(db_connection.clone(), added_exercise.topic_reference())
+                find_topic_id_by_reference(added_exercise.topic_reference(), db_connection.clone())
                     .await?;
+            exercise.topic_id = topic_id;
         }
+        if added_exercise.book_reference() != "" {
+            let book_id =
+                find_book_id_by_reference(added_exercise.book_reference(), db_connection.clone())
+                    .await?;
+            exercise.book_id = book_id;
+        }
+        if added_exercise.chapter_reference() != "" {
+            if exercise.topic_id != 0 && exercise.book_id != 0 {
+                let chapter_id = find_chapter_id_by_chapter_reference_and_topic_id_and_book_id(
+                    added_exercise.chapter_reference(),
+                    exercise.topic_id,
+                    exercise.book_id,
+                    db_connection.clone(),
+                )
+                .await?;
+                exercise.chapter_id = chapter_id;
+            }
+            if exercise.topic_id == 0 && exercise.book_id != 0 {
+                let chapter_id = find_chapter_id_by_chapter_reference_and_book_id(
+                    added_exercise.chapter_reference(),
+                    exercise.book_id,
+                    db_connection.clone(),
+                )
+                .await?;
+                exercise.chapter_id = chapter_id;
+            }
+            if exercise.topic_id != 0 && exercise.book_id == 0 {
+                let chapter_id = find_chapter_id_by_chapter_reference_and_topic_id(
+                    added_exercise.chapter_reference(),
+                    exercise.topic_id,
+                    db_connection.clone(),
+                )
+                .await?;
+                exercise.chapter_id = chapter_id;
+            }
+        }
+        if added_exercise.exercise_type() != "" {
+            exercise.exercise_type = ExerciseType::from_str(added_exercise.exercise_type())
+                .unwrap()
+                .to_string();
+        }
+        exercise.id_in_book = added_exercise.manual_id();
+        exercise.question = added_exercise.question().to_string();
+        exercise.solution = added_exercise.solution().to_string();
+        exercises.push(exercise);
+    }
+    for exercise in exercises {
+        add_exercise(exercise, db_connection.clone()).await?;
     }
     Ok(())
 }
@@ -104,6 +160,8 @@ fn create_discussion_exercises(
             chapter_id: raw_exercise.chapter_id,
             section_id: raw_exercise.section_id,
             exercise_type: ExerciseType::Discussion.to_string(),
+            question: String::from(""),
+            solution: String::from(""),
         });
     }
     Ok(discussion_exercises)
@@ -124,6 +182,8 @@ fn create_applications_exercises(
             chapter_id: raw_exercise.chapter_id,
             section_id: raw_exercise.section_id,
             exercise_type: ExerciseType::Applications.to_string(),
+            question: String::from(""),
+            solution: String::from(""),
         });
     }
     Ok(application_exercises)
@@ -144,6 +204,8 @@ fn create_concept_exercises(
             chapter_id: raw_exercise.chapter_id,
             section_id: raw_exercise.section_id,
             exercise_type: ExerciseType::Concepts.to_string(),
+            question: String::from(""),
+            solution: String::from(""),
         });
     }
     Ok(concept_exercises)
@@ -162,6 +224,8 @@ fn create_skill_exercises(raw_exercise: RawExerciseEntity) -> anyhow::Result<Vec
             chapter_id: raw_exercise.chapter_id,
             section_id: raw_exercise.section_id,
             exercise_type: ExerciseType::Skills.to_string(),
+            question: String::from(""),
+            solution: String::from(""),
         });
     }
     Ok(skill_exercises)

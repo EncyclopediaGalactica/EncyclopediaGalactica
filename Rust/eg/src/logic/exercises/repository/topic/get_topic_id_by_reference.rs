@@ -1,7 +1,7 @@
 use sqlx::Pool;
 use sqlx::Postgres;
 
-pub async fn get_topic_id_by_reference(
+pub async fn find_topic_id_by_reference(
     reference: &str,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<i64> {

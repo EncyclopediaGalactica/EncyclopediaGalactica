@@ -7,8 +7,6 @@ use regex::Regex;
 use serde::Deserialize;
 use serde::Serialize;
 
-use crate::logic::exercises::repository::exercises::ExerciseEntity;
-
 pub fn parse_added_exercise_files(files: Vec<PathBuf>) -> anyhow::Result<Vec<AddedExercise>> {
     let topic_reference = format!(
         r#"%\s*{}\s*=\s*("?)([^"]*)\1"#,
@@ -108,20 +106,12 @@ impl AddedExercise {
         }
     }
 
-    fn id(&self) -> i64 {
+    pub fn id(&self) -> i64 {
         self.id
     }
 
-    fn set_id(&mut self, id: i64) {
-        self.id = id;
-    }
-
-    fn exercise_type(&self) -> &str {
+    pub fn exercise_type(&self) -> &str {
         &self.exercise_type
-    }
-
-    fn set_exercise_type(&mut self, exercise_type: String) {
-        self.exercise_type = exercise_type;
     }
 
     pub fn topic_reference(&self) -> &str {
@@ -132,7 +122,7 @@ impl AddedExercise {
         self.topic_reference = topic_reference;
     }
 
-    fn book_reference(&self) -> &str {
+    pub fn book_reference(&self) -> &str {
         &self.book_reference
     }
 
@@ -140,7 +130,7 @@ impl AddedExercise {
         self.book_reference = book_reference;
     }
 
-    fn chapter_reference(&self) -> &str {
+    pub fn chapter_reference(&self) -> &str {
         &self.chapter_reference
     }
 
@@ -148,7 +138,7 @@ impl AddedExercise {
         self.chapter_reference = chapter_reference;
     }
 
-    fn section_reference(&self) -> &str {
+    pub fn section_reference(&self) -> &str {
         &self.section_reference
     }
 
@@ -156,27 +146,15 @@ impl AddedExercise {
         self.section_reference = section_reference;
     }
 
-    fn manual_id(&self) -> i32 {
+    pub fn manual_id(&self) -> i32 {
         self.manual_id
     }
 
-    fn set_manual_id(&mut self, manual_id: i32) {
-        self.manual_id = manual_id;
-    }
-
-    fn question(&self) -> &str {
+    pub fn question(&self) -> &str {
         &self.question
     }
 
-    fn set_question(&mut self, question: String) {
-        self.question = question;
-    }
-
-    fn solution(&self) -> &str {
+    pub fn solution(&self) -> &str {
         &self.solution
-    }
-
-    fn set_solution(&mut self, solution: String) {
-        self.solution = solution;
     }
 }

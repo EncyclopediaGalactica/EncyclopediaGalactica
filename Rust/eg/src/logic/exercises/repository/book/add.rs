@@ -1,7 +1,7 @@
 use sqlx::Pool;
 use sqlx::Postgres;
 
-use crate::logic::exercises::repository::topic::get_topic_id_by_reference::get_topic_id_by_reference;
+use crate::logic::exercises::repository::topic::get_topic_id_by_reference::find_topic_id_by_reference;
 
 use super::BookEntity;
 
@@ -10,7 +10,7 @@ pub async fn add_book(
     topic_reference: &str,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<()> {
-    let topic_id = get_topic_id_by_reference(topic_reference, db_connection.clone()).await?;
+    let topic_id = find_topic_id_by_reference(topic_reference, db_connection.clone()).await?;
     match sqlx::query("INSERT INTO books (title, authors, page_start, page_end, reference, topic_id) VALUES ($1, $2, $3, $4, $5, $6)")
         .bind(book_entity.title)
         .bind(book_entity.authors)
