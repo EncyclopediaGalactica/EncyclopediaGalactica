@@ -1,5 +1,6 @@
 use anyhow::Result;
 use clap::ArgMatches;
+use log::debug;
 use tabled::builder::Builder;
 use tabled::settings::Style;
 
@@ -8,7 +9,12 @@ use crate::cli::matchers::set_cli_logging_level;
 use crate::logic::exercises::scenarios::sync::sync_catalog_to_db;
 
 pub async fn sync(matches: ArgMatches, config: ExercisesConfig) -> Result<()> {
-    set_cli_logging_level(matches.clone())?;
+    println!("Matches: {:#?}", matches);
+    let log_level =
+        set_cli_logging_level(matches.clone()).unwrap_or_else(|_| log::LevelFilter::Off);
+    println!("Logging level set to: {:?}", log_level);
+    env_logger::Builder::new().filter(None, log_level).init();
+    debug!("Logging level set to: {:?}", log_level);
 
     if matches.get_flag("full-overwrite") {
         match sync_catalog_to_db::sync_catalog_to_db(config.clone()).await {

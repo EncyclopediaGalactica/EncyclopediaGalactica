@@ -1,3 +1,4 @@
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -7,6 +8,7 @@ pub async fn add_topic(
     topic_entity: TopicEntity,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<()> {
+    debug!("Adding topic: {:#?}", topic_entity);
     match sqlx::query("INSERT INTO topics (name, reference) VALUES ($1, $2)")
         .bind(topic_entity.name)
         .bind(topic_entity.reference)
@@ -15,9 +17,14 @@ pub async fn add_topic(
     {
         Ok(yolo) => {
             let affected_rows = yolo.rows_affected();
-            println!("topic affected rows: {:#?}", affected_rows);
+            debug!("topic affected rows: {:#?}", affected_rows);
             Ok(())
         }
-        Err(nopes) => Err(anyhow::anyhow!("add_topic method: {:#?}", nopes)),
+        Err(nopes) => Err(anyhow::anyhow!(
+            "add_topic method: {:#?} at {}:{}",
+            nopes,
+            file!(),
+            line!()
+        )),
     }
 }

@@ -24,9 +24,11 @@ pub async fn find_matches(arg_matches: ArgMatches, config: AppConfig) -> anyhow:
     Ok(())
 }
 pub fn set_cli_logging_level(args: ArgMatches) -> anyhow::Result<LevelFilter> {
+    println!("Args: {:#?}", args);
     let log_level = match args
         .get_one::<String>("LOG LEVEL")
-        .map(|s| s.as_str())
+        .map(|s| s.to_lowercase())
+        .as_deref()
         .unwrap_or("off")
     {
         "off" => log::LevelFilter::Off,

@@ -4,6 +4,7 @@ use std::path::PathBuf;
 use std::str::FromStr;
 
 use anyhow::Ok;
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -43,16 +44,27 @@ pub async fn sync_catalog_to_db(config: ExercisesConfig) -> anyhow::Result<()> {
     let book_catalog_absolute_path = canonicalize_path_from_config(config.clone().catalog_path)?;
     let db_connection = get_connection(&config.database_connection_string).await?;
     truncate_topics_table(db_connection.clone()).await?;
+    debug!("Truncated topics table");
     truncate_books_table(db_connection.clone()).await?;
+    debug!("Truncated books table");
     truncate_chapters_table(db_connection.clone()).await?;
+    debug!("Truncated chapters table");
     truncate_sections_table(db_connection.clone()).await?;
+    debug!("Truncated sections table");
     truncate_exercises_table(db_connection.clone()).await?;
+    debug!("Truncated exercises table");
     sync_topics_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    debug!("Synced topics to db");
     sync_books_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    debug!("Synced books to db");
     sync_chapters_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    debug!("Synced chapters to db");
     sync_sections_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
-    sync_added_exercises_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    debug!("Synced sections to db");
     sync_textbook_exercises_to_db(db_connection.clone()).await?;
+    debug!("Synced textbook exercises to db");
+    sync_added_exercises_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+    debug!("Synced added exercises to db");
     Ok(())
 }
 
@@ -315,7 +327,6 @@ async fn sync_topics_to_db(
     if parsed_topics.is_empty() {
         anyhow::bail!("Parsed topics list is empty");
     }
-    // truncate_topics_table(db_connection.clone()).await?;
 
     for topic in parsed_topics {
         add_topic(topic.into(), db_connection.clone()).await?;

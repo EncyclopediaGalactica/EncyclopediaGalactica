@@ -45,8 +45,6 @@ pub struct RawExerciseEntity {
     pub book_id: i64,
     pub chapter_id: i64,
     pub section_id: i64,
-    pub question: String,
-    pub solution: String,
     pub concepts_questions_interval_start: i32,
     pub concepts_questions_interval_end: i32,
     pub skills_questions_interval_start: i32,

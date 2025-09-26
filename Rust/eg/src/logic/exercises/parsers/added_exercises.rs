@@ -9,25 +9,25 @@ use serde::Serialize;
 
 pub fn parse_added_exercise_files(files: Vec<PathBuf>) -> anyhow::Result<Vec<AddedExercise>> {
     let topic_reference = format!(
-        r#"%\s*{}\s*=\s*("?)([^"]*)\1"#,
+        r#"% \s*{}\s*=\s*(?:"([^"]*)"|[^\s]*)"#,
         regex::escape("topic_reference")
     );
     let topic_reference_pattern = Regex::new(&topic_reference).unwrap();
 
     let book_reference = format!(
-        r#"%\s*{}\s*=\s*("?)([^"]*)\1"#,
+        r#"% \s*{}\s*=\s*(?:"([^"]*)"|[^\s]*)"#,
         regex::escape("book_reference")
     );
     let book_reference_pattern = Regex::new(&book_reference).unwrap();
 
     let chapter_reference = format!(
-        r#"%\s*{}\s*=\s*("?)([^"]*)\1"#,
+        r#"% \s*{}\s*=\s*(?:"([^"]*)"|[^\s]*)"#,
         regex::escape("chapter_reference")
     );
     let chapter_reference_pattern = Regex::new(&chapter_reference).unwrap();
 
     let section_reference = format!(
-        r#"%\s*{}\s*=\s*("?)([^"]*)\1"#,
+        r#"% \s*{}\s*=\s*(?:"([^"]*)"|[^\s]*)"#,
         regex::escape("section_reference")
     );
     let section_reference_pattern = Regex::new(&section_reference).unwrap();
@@ -35,7 +35,8 @@ pub fn parse_added_exercise_files(files: Vec<PathBuf>) -> anyhow::Result<Vec<Add
     let mut added_exercises: Vec<AddedExercise> = Vec::new();
 
     for added_exercise in files {
-        let parsed_file = File::open(added_exercise)?;
+        let parsed_file = File::open(added_exercise.clone())?;
+        debug!("Parsing added exercise file: {:?}", added_exercise.clone());
         let reader = std::io::BufReader::new(parsed_file);
         let mut added_exercise_result = AddedExercise::new();
 
@@ -43,32 +44,36 @@ pub fn parse_added_exercise_files(files: Vec<PathBuf>) -> anyhow::Result<Vec<Add
             let line = a_single_line.unwrap();
             if let Some(topic_captures) = topic_reference_pattern.captures(&line) {
                 if let Some(topic_captures_value) =
-                    topic_captures.get(2).map(|m| m.as_str().trim().to_string())
+                    topic_captures.get(1).map(|m| m.as_str().trim().to_string())
                 {
-                    added_exercise_result.set_topic_reference(topic_captures_value);
+                    added_exercise_result.set_topic_reference(topic_captures_value.clone());
+                    debug!("Topic reference: {:?}", topic_captures_value.clone());
                 }
             }
             if let Some(book_captures) = book_reference_pattern.captures(&line) {
                 if let Some(book_captures_value) =
-                    book_captures.get(2).map(|m| m.as_str().trim().to_string())
+                    book_captures.get(1).map(|m| m.as_str().trim().to_string())
                 {
-                    added_exercise_result.set_book_reference(book_captures_value);
+                    added_exercise_result.set_book_reference(book_captures_value.clone());
+                    debug!("Book reference: {:?}", book_captures_value.clone());
                 }
             }
             if let Some(chapter_captures) = chapter_reference_pattern.captures(&line) {
                 if let Some(chapter_captures_value) = chapter_captures
-                    .get(2)
+                    .get(1)
                     .map(|m| m.as_str().trim().to_string())
                 {
-                    added_exercise_result.set_chapter_reference(chapter_captures_value);
+                    added_exercise_result.set_chapter_reference(chapter_captures_value.clone());
+                    debug!("Chapter reference: {:?}", chapter_captures_value.clone());
                 }
             }
             if let Some(section_captures) = section_reference_pattern.captures(&line) {
                 if let Some(section_captures_value) = section_captures
-                    .get(2)
+                    .get(1)
                     .map(|m| m.as_str().trim().to_string())
                 {
-                    added_exercise_result.set_section_reference(section_captures_value);
+                    added_exercise_result.set_section_reference(section_captures_value.clone());
+                    debug!("Section reference: {:?}", section_captures_value.clone());
                 }
             }
         }
