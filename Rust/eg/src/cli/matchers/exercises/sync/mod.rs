@@ -9,10 +9,8 @@ use crate::cli::matchers::set_cli_logging_level;
 use crate::logic::exercises::scenarios::sync::sync_catalog_to_db;
 
 pub async fn sync(matches: ArgMatches, config: ExercisesConfig) -> Result<()> {
-    println!("Matches: {:#?}", matches);
     let log_level =
         set_cli_logging_level(matches.clone()).unwrap_or_else(|_| log::LevelFilter::Off);
-    println!("Logging level set to: {:?}", log_level);
     env_logger::Builder::new().filter(None, log_level).init();
     debug!("Logging level set to: {:?}", log_level);
 
@@ -28,7 +26,7 @@ pub async fn sync(matches: ArgMatches, config: ExercisesConfig) -> Result<()> {
                 result_table.with(Style::modern());
                 println!("{}", result_table);
             }
-            Err(e) => println!("Catalog sync failed: {}", e),
+            Err(e) => println!("Catalog sync failed: {:#?}", e),
         }
     }
     Ok(())

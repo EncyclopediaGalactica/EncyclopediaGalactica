@@ -17,14 +17,18 @@ pub async fn add_exercise(
             topic_id,
             book_id,
             chapter_id,
-            section_id
+            section_id,
+            question,
+            solution
         ) VALUES (
             $1,
             $2,
             $3,
             $4,
             $5,
-            $6
+            $6,
+            $7,
+            $8
         )
         "#,
     )
@@ -34,6 +38,8 @@ pub async fn add_exercise(
     .bind(&exercise.book_id)
     .bind(&exercise.chapter_id)
     .bind(&exercise.section_id)
+    .bind(&exercise.question)
+    .bind(&exercise.solution)
     .execute(&db_connection)
     .await
     {

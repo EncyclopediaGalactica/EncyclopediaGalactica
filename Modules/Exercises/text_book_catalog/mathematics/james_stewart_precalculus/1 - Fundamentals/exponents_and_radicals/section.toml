@@ -1,5 +1,6 @@
 section_number = 1.2
 title = "Exponents and radicals"
+reference = "exponents_and_radicals"
 chapter_reference = "fundamentals"
 book_reference = "james_stewart_precalculus"
 page_start = 13

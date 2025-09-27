@@ -4,8 +4,6 @@ use crate::logic::exercises::parsers::chapters::Chapter;
 pub mod add;
 pub mod find_chapter_id_by_chapter_and_book_reference;
 pub mod find_chapter_id_by_chapter_reference_and_book_id;
-pub mod find_chapter_id_by_chapter_reference_and_topic_id;
-pub mod find_chapter_id_by_chapter_reference_and_topic_id_and_book_id;
 pub mod find_chapter_ids_by_book_reference;
 pub mod find_chapter_ids_by_references_and_book_reference;
 pub mod truncate;

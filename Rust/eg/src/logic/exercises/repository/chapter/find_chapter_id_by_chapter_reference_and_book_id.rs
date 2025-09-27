@@ -18,11 +18,13 @@ pub async fn find_chapter_id_by_chapter_reference_and_book_id(
     .await
     {
         Ok(yolo) => Ok(yolo),
-        Err(nope) => Err(anyhow::anyhow!(
-            "Failed to find chapter id by chapter reference and book id: {:#?} at {}:{}",
-            nope,
+        Err(nopes) => Err(anyhow::anyhow!(
+            "Failed to find chapter id by chapter reference and book id: chapter reference: {:#?}, book id: {:#?} at {}:{}; {:#?}",
+            &reference,
+            &book_id,
             file!(),
-            line!()
+            line!(),
+            nopes
         )),
     }
 }

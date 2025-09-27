@@ -1,4 +1,5 @@
 title = "Chapter test"
+reference = "chapter_test"
 section_number = 1.14
 chapter_reference = "fundamentals"
 book_reference = "james_stewart_precalculus"

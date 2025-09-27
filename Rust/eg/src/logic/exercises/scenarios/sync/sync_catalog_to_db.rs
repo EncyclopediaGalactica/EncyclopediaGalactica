@@ -3,14 +3,14 @@ use std::path::Path;
 use std::path::PathBuf;
 use std::str::FromStr;
 
+use anyhow::Context;
 use anyhow::Ok;
 use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
 use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_book_id::find_chapter_id_by_chapter_reference_and_book_id;
-use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_topic_id::find_chapter_id_by_chapter_reference_and_topic_id;
-use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_topic_id_and_book_id::find_chapter_id_by_chapter_reference_and_topic_id_and_book_id;
+use crate::logic::exercises::repository::sections::find_section_id_by_section_reference_and_chapter_id::find_section_id_by_section_reference_and_chapter_id;
 use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_wildcard_pattern;
@@ -43,28 +43,86 @@ use crate::logic::exercises::repository::topic::truncate::truncate_topics_table;
 pub async fn sync_catalog_to_db(config: ExercisesConfig) -> anyhow::Result<()> {
     let book_catalog_absolute_path = canonicalize_path_from_config(config.clone().catalog_path)?;
     let db_connection = get_connection(&config.database_connection_string).await?;
-    truncate_topics_table(db_connection.clone()).await?;
+    truncate_topics_table(db_connection.clone())
+        .await
+        .context("Failed to truncate topics table")?;
     debug!("Truncated topics table");
-    truncate_books_table(db_connection.clone()).await?;
+
+    truncate_books_table(db_connection.clone())
+        .await
+        .context("Failed to truncate books table")?;
     debug!("Truncated books table");
-    truncate_chapters_table(db_connection.clone()).await?;
+
+    truncate_chapters_table(db_connection.clone())
+        .await
+        .context("Failed to truncate chapters table")?;
     debug!("Truncated chapters table");
-    truncate_sections_table(db_connection.clone()).await?;
+
+    truncate_sections_table(db_connection.clone())
+        .await
+        .context("Failed to truncate sections table")?;
     debug!("Truncated sections table");
-    truncate_exercises_table(db_connection.clone()).await?;
+
+    truncate_exercises_table(db_connection.clone())
+        .await
+        .context("Failed to truncate exercises table")?;
     debug!("Truncated exercises table");
-    sync_topics_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+
+    sync_topics_to_db(book_catalog_absolute_path.clone(), db_connection.clone())
+        .await
+        .with_context(|| {
+            format!(
+                "Failed to sync topics to db. book_catalog_absolute_path: {:#?}",
+                book_catalog_absolute_path
+            )
+        })?;
     debug!("Synced topics to db");
-    sync_books_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+
+    sync_books_to_db(book_catalog_absolute_path.clone(), db_connection.clone())
+        .await
+        .with_context(|| {
+            format!(
+                "Failed to sync books to db. book_catalog_absolute_path: {:#?}",
+                book_catalog_absolute_path
+            )
+        })?;
     debug!("Synced books to db");
-    sync_chapters_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+
+    sync_chapters_to_db(book_catalog_absolute_path.clone(), db_connection.clone())
+        .await
+        .with_context(|| {
+            format!(
+                "Failed to sync chapters to db. book_catalog_absolute_path: {:#?}",
+                book_catalog_absolute_path
+            )
+        })?;
     debug!("Synced chapters to db");
-    sync_sections_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+
+    sync_sections_to_db(book_catalog_absolute_path.clone(), db_connection.clone())
+        .await
+        .with_context(|| {
+            format!(
+                "Failed to sync sections to db. book_catalog_absolute_path: {:#?}",
+                book_catalog_absolute_path
+            )
+        })?;
     debug!("Synced sections to db");
-    sync_textbook_exercises_to_db(db_connection.clone()).await?;
+
+    sync_textbook_exercises_to_db(db_connection.clone())
+        .await
+        .with_context(|| format!("Failed to sync textbook exercises to db"))?;
     debug!("Synced textbook exercises to db");
-    sync_added_exercises_to_db(book_catalog_absolute_path.clone(), db_connection.clone()).await?;
+
+    sync_added_exercises_to_db(book_catalog_absolute_path.clone(), db_connection.clone())
+        .await
+        .with_context(|| {
+            format!(
+                "Failed to sync added exercises to db. book_catalog_absolute_path: {:#?}",
+                book_catalog_absolute_path
+            )
+        })?;
     debug!("Synced added exercises to db");
+
     Ok(())
 }
 
@@ -85,42 +143,77 @@ async fn sync_added_exercises_to_db(
                 find_topic_id_by_reference(added_exercise.topic_reference(), db_connection.clone())
                     .await?;
             exercise.topic_id = topic_id;
+        } else {
+            anyhow::bail!("At least topic reference is required.");
         }
-        if added_exercise.book_reference() != "" {
+        if added_exercise.book_reference() != ""
+            && added_exercise.book_reference() != "NA"
+            && exercise.topic_id != 0
+        {
             let book_id =
                 find_book_id_by_reference(added_exercise.book_reference(), db_connection.clone())
                     .await?;
             exercise.book_id = book_id;
+        } else {
+            anyhow::bail!(
+                r#"
+            The 
+            `added_exercise.book_reference() != ""
+            && added_exercise.book_reference() != "NA"
+            && exercise.topic_id != 0`
+            conditions are not met.
+            "#
+            );
         }
-        if added_exercise.chapter_reference() != "" {
-            if exercise.topic_id != 0 && exercise.book_id != 0 {
-                let chapter_id = find_chapter_id_by_chapter_reference_and_topic_id_and_book_id(
-                    added_exercise.chapter_reference(),
-                    exercise.topic_id,
-                    exercise.book_id,
-                    db_connection.clone(),
-                )
-                .await?;
-                exercise.chapter_id = chapter_id;
-            }
-            if exercise.topic_id == 0 && exercise.book_id != 0 {
-                let chapter_id = find_chapter_id_by_chapter_reference_and_book_id(
-                    added_exercise.chapter_reference(),
-                    exercise.book_id,
-                    db_connection.clone(),
-                )
-                .await?;
-                exercise.chapter_id = chapter_id;
-            }
-            if exercise.topic_id != 0 && exercise.book_id == 0 {
-                let chapter_id = find_chapter_id_by_chapter_reference_and_topic_id(
-                    added_exercise.chapter_reference(),
-                    exercise.topic_id,
-                    db_connection.clone(),
-                )
-                .await?;
-                exercise.chapter_id = chapter_id;
-            }
+        if added_exercise.chapter_reference() != ""
+            && added_exercise.chapter_reference() != "NA"
+            && exercise.book_id != 0
+            && exercise.topic_id != 0
+        {
+            let chapter_id = find_chapter_id_by_chapter_reference_and_book_id(
+                added_exercise.chapter_reference(),
+                exercise.book_id,
+                db_connection.clone(),
+            )
+            .await?;
+            exercise.chapter_id = chapter_id;
+        } else {
+            anyhow::bail!(
+                r#"
+            The
+            `added_exercise.chapter_reference() != ""
+            && added_exercise.chapter_reference() != "NA"
+            && exercise.book_id != 0
+            && exercise.topic_id != 0`
+            conditions are not met.
+            "#
+            );
+        }
+        if added_exercise.section_reference() != ""
+            && added_exercise.section_reference() != "NA"
+            && exercise.book_id != 0
+            && exercise.topic_id != 0
+            && exercise.chapter_id != 0
+        {
+            let section_id = find_section_id_by_section_reference_and_chapter_id(
+                added_exercise.section_reference(),
+                exercise.chapter_id,
+                db_connection.clone(),
+            )
+            .await?;
+            exercise.section_id = section_id;
+        } else {
+            anyhow::bail!(
+                r#"
+            The
+            `added_exercise.section_reference() != ""
+            && added_exercise.section_reference() != "NA"
+            && exercise.book_id != 0
+            && exercise.topic_id != 0
+            && exercise.chapter_id != 0`
+            are not met.
+            "#
+            );
         }
         if added_exercise.exercise_type() != "" {
             exercise.exercise_type = ExerciseType::from_str(added_exercise.exercise_type())
@@ -133,7 +226,9 @@ async fn sync_added_exercises_to_db(
         exercises.push(exercise);
     }
     for exercise in exercises {
-        add_exercise(exercise, db_connection.clone()).await?;
+        add_exercise(exercise.clone(), db_connection.clone())
+            .await
+            .with_context(|| format!("Failed to add exercise to database: {:#?}", exercise))?;
     }
     Ok(())
 }

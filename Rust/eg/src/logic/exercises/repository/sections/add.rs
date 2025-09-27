@@ -37,7 +37,8 @@ pub async fn add_section(
             discussion_questions_interval_start,
             discussion_questions_interval_end,
             page_end,
-            chapter_id
+            chapter_id,
+            reference
         )
         VALUES (
             $1,
@@ -53,7 +54,8 @@ pub async fn add_section(
             $11,
             $12,
             $13,
-            $14
+            $14,
+            $15
         )
         "#,
     )
@@ -71,13 +73,11 @@ pub async fn add_section(
     .bind(&section.discussion_questions_interval_end)
     .bind(&section.page_end)
     .bind(&chapter_id)
+    .bind(&section.reference)
     .execute(&pool)
     .await
     {
-        Ok(yolo) => {
-            println!("Added section affected rows: {:#?}", yolo.rows_affected());
-            Ok(())
-        }
+        Ok(_yolo) => Ok(()),
         Err(nopes) => Err(anyhow::anyhow!(
             "Failed to add section: {:#?} at {}:{}",
             nopes,
