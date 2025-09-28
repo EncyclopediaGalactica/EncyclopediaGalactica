@@ -220,7 +220,7 @@ async fn sync_added_exercises_to_db(
                 .unwrap()
                 .to_string();
         }
-        exercise.id_in_book = added_exercise.manual_id();
+        exercise.manual_id = added_exercise.manual_id();
         exercise.question = added_exercise.question().to_string();
         exercise.solution = added_exercise.solution().to_string();
         exercises.push(exercise);
@@ -262,6 +262,7 @@ fn create_discussion_exercises(
         discussion_exercises.push(ExerciseEntity {
             id: 0,
             id_in_book: exercise_id_in_book,
+            manual_id: 0,
             topic_id: raw_exercise.topic_id,
             book_id: raw_exercise.book_id,
             chapter_id: raw_exercise.chapter_id,
@@ -284,6 +285,7 @@ fn create_applications_exercises(
         application_exercises.push(ExerciseEntity {
             id: 0,
             id_in_book: exercise_id_in_book,
+            manual_id: 0,
             topic_id: raw_exercise.topic_id,
             book_id: raw_exercise.book_id,
             chapter_id: raw_exercise.chapter_id,
@@ -306,6 +308,7 @@ fn create_concept_exercises(
         concept_exercises.push(ExerciseEntity {
             id: 0,
             id_in_book: exercise_id_in_book,
+            manual_id: 0,
             topic_id: raw_exercise.topic_id,
             book_id: raw_exercise.book_id,
             chapter_id: raw_exercise.chapter_id,
@@ -326,6 +329,7 @@ fn create_skill_exercises(raw_exercise: RawExerciseEntity) -> anyhow::Result<Vec
         skill_exercises.push(ExerciseEntity {
             id: 0,
             id_in_book: exercise_id_in_book,
+            manual_id: 0,
             topic_id: raw_exercise.topic_id,
             book_id: raw_exercise.book_id,
             chapter_id: raw_exercise.chapter_id,

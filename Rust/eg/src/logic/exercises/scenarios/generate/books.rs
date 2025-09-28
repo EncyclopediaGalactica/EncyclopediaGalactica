@@ -6,12 +6,12 @@ use rand::Rng;
 use crate::logic::exercises::providers::provide_filename;
 use crate::logic::exercises::renderers::latex::render_latex;
 use crate::logic::exercises::repository::book::find_book_ids_by_references::find_book_ids_by_references;
-use crate::logic::exercises::repository::chapter::find_chapter_ids_by_book_reference::find_chapter_ids_by_book_reference;
-use crate::logic::exercises::repository::chapter::find_chapter_ids_by_references_and_book_reference::find_chapter_ids_by_references_and_book_reference;
-use crate::logic::exercises::repository::exercises::find_exercises_by_chapter_ids_and_type::find_exercises_by_chapter_ids_and_type;
-use crate::logic::exercises::repository::exercises::find_exercises_by_ids::find_exercises_by_ids;
-use crate::logic::exercises::repository::exercises::find_exercises_by_ids::EnrichedExerciseEntity;
+use crate::logic::exercises::repository::chapter::find_chapter_ids_by_book_ids::find_chapter_ids_by_book_ids;
+use crate::logic::exercises::repository::chapter::find_chapter_ids_by_book_ids_and_chapter_references::find_chapter_ids_by_book_ids_and_chapter_references;
 use crate::logic::exercises::repository::exercises::ExerciseType;
+use crate::logic::exercises::repository::exercises::find_exercises_by_chapter_ids_and_type::find_exercises_by_chapter_ids_and_type;
+use crate::logic::exercises::repository::exercises::find_exercises_by_ids::EnrichedExerciseEntity;
+use crate::logic::exercises::repository::exercises::find_exercises_by_ids::find_exercises_by_ids;
 use crate::logic::exercises::repository::get_connection;
 
 pub async fn exercises_generate_books_scenario(
@@ -28,58 +28,35 @@ pub async fn exercises_generate_books_scenario(
     validate_scenario_input(input.clone())?;
     debug!("Input has been validated.");
 
-    match find_book_ids_by_references(input.book_references.clone(), db_connection.clone()).await {
-        Ok(yolo) => {
-            if yolo.len() == 0 {
-                debug!(
-                    "Book with reference {} not found.",
-                    input.book_references.clone().join(",")
-                );
-                return Err(anyhow::anyhow!(
-                    "Book with reference {} not found.",
-                    input.book_references.clone().join(",")
-                ));
-            } else {
-                debug!(
-                    "Book with references {} and with ids {} found.",
-                    input.book_references.clone().join(","),
-                    yolo.iter()
-                        .map(|f| f.to_string())
-                        .collect::<Vec<String>>()
-                        .join(",")
-                );
-            }
-        }
-        Err(nopes) => {
-            debug!("Failed to execute database query: {:#?}", nopes);
-            return Err(anyhow::anyhow!("Failed to find book: {:#?}", nopes));
-        }
-    };
+    let book_ids =
+        find_book_ids_by_references(input.book_references.clone(), db_connection.clone()).await?;
+    if book_ids.is_empty() {
+        anyhow::bail!(
+            "Book with reference {} not found.",
+            input.book_references.join(",")
+        );
+    }
 
     let mut chapter_ids: Vec<i64> = Vec::new();
     if input.chapters.len() == 1 && input.chapters.get(0).unwrap() == "all" {
-        let mut result =
-            find_chapter_ids_by_book_reference(input.book_reference.clone(), db_connection.clone())
-                .await?;
-        debug!(
-            "Found chapter ids based on that NO chapter ids were provided: {:#?}",
-            result.len()
-        );
-        chapter_ids.append(&mut result);
-    } else {
-        let mut result = find_chapter_ids_by_references_and_book_reference(
+        let mut all_chapters_of_given_books =
+            find_chapter_ids_by_book_ids(&book_ids, db_connection.clone()).await?;
+        chapter_ids.append(&mut all_chapters_of_given_books);
+    }
+    if input.chapters.len() > 1 {
+        let mut all_chapters_of_given_books = find_chapter_ids_by_book_ids_and_chapter_references(
             input.chapters.clone(),
-            input.book_reference.clone(),
+            &book_ids,
             db_connection.clone(),
         )
-        .await?;
-        debug!(
-            "Found chapter ids based on the provided chapter references: {:#?}",
-            result.len()
-        );
-        chapter_ids.append(&mut result);
+        .await
+        .unwrap();
+        chapter_ids.append(&mut all_chapters_of_given_books);
     }
     debug!("Chapter ids volume: {:#?}", chapter_ids.len());
+    if chapter_ids.is_empty() {
+        anyhow::bail!("chapter ids is empty. Nothing to process. Quitting.");
+    }
 
     let mut exercise_candidates: Vec<i64> = Vec::new();
     if input.concept_questions_volume > 0 {
@@ -97,7 +74,7 @@ pub async fn exercises_generate_books_scenario(
                 "Selecting {} volume concept exercises.",
                 input.concept_questions_volume
             );
-            for counter in 0..input.concept_questions_volume {
+            for _counter in 0..input.concept_questions_volume {
                 let randomly_selected_concept_exercise = rand.random_range(0..candidates_len + 1);
                 debug!(
                     "Adding concept exercise with id {}",
@@ -130,12 +107,17 @@ pub async fn exercises_generate_books_scenario(
             input.skill_questions_volume
         );
         if !skill_exercise_candidates.is_empty() {
-            for counter in 0..input.skill_questions_volume {
+            for _counter in 0..input.skill_questions_volume {
                 let randomly_selected_skill_exercise =
-                    rand.random_range(0..skill_exercise_candidates.len() + 1);
+                    rand.random_range(0..skill_exercise_candidates.len());
                 debug!(
                     "Adding Skills type exercise with id {}",
                     randomly_selected_skill_exercise
+                );
+                debug!("exercise_candidates: {:#?}", exercise_candidates);
+                debug!(
+                    "skill exercise_candidates: {:#?}",
+                    skill_exercise_candidates
                 );
                 exercise_candidates.push(
                     skill_exercise_candidates
@@ -164,7 +146,7 @@ pub async fn exercises_generate_books_scenario(
             input.application_questions_volume
         );
         if !application_exercise_candidates.is_empty() {
-            for counter in 0..input.application_questions_volume {
+            for _counter in 0..input.application_questions_volume {
                 let randomly_selected_application_exercise =
                     rand.random_range(0..application_exercise_candidates.len() + 1);
                 debug!(
@@ -198,7 +180,7 @@ pub async fn exercises_generate_books_scenario(
             input.discussion_questions_volume
         );
         if !discussion_exercise_candidates.is_empty() {
-            for counter in 0..input.discussion_questions_volume {
+            for _counter in 0..input.discussion_questions_volume {
                 let randomly_selected_discussion_exercise =
                     rand.random_range(0..discussion_exercise_candidates.len() + 1);
                 debug!(

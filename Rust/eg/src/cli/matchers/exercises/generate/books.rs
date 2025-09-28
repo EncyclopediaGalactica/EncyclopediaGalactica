@@ -14,10 +14,10 @@ pub async fn exercises_generate_books_matchers(
         .get_one::<String>("BOOKS")
         .ok_or_else(|| anyhow::anyhow!("BOOKS is required"))
         .unwrap();
-    let mut books = vec![];
-    book_references
+    let books = book_references
         .rsplit(',')
-        .map(|f| books.push(f.trim().to_string()));
+        .map(|f| f.trim().to_string())
+        .collect();
 
     let chapters_input = args
         .get_one::<String>("CHAPTERS")

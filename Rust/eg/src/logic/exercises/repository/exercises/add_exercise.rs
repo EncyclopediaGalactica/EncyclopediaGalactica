@@ -13,6 +13,7 @@ pub async fn add_exercise(
         r#"
         INSERT INTO exercises (
             id_in_the_book,
+            manual_id,
             exercise_type,
             topic_id,
             book_id,
@@ -28,11 +29,13 @@ pub async fn add_exercise(
             $5,
             $6,
             $7,
-            $8
+            $8,
+            $9
         )
         "#,
     )
     .bind(&exercise.id_in_book)
+    .bind(&exercise.manual_id)
     .bind(&exercise.exercise_type)
     .bind(&exercise.topic_id)
     .bind(&exercise.book_id)

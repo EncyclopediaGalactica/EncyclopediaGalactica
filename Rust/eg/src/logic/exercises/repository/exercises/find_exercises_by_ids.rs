@@ -19,6 +19,9 @@ pub async fn find_exercises_by_ids(
         r#"
         SELECT 
             e.id_in_the_book as id_in_book,
+            e.manual_id as manual_id,
+            e.question as question,
+            e.solution as solution,
             e.exercise_type as exercise_type,
             t.name as topic_name,
             b.title as book_title,
@@ -57,6 +60,9 @@ pub async fn find_exercises_by_ids(
 #[derive(Debug, Clone, FromRow)]
 pub struct EnrichedExerciseEntity {
     pub id_in_book: i32,
+    pub manual_id: i32,
+    pub question: String,
+    pub solution: String,
     pub exercise_type: String,
     pub topic_name: String,
     pub book_title: String,

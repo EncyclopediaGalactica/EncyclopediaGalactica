@@ -15,6 +15,7 @@ pub mod truncate;
 pub struct ExerciseEntity {
     pub id: i64,
     pub id_in_book: i32,
+    pub manual_id: i32,
     pub topic_id: i64,
     pub book_id: i64,
     pub chapter_id: i64,
@@ -28,6 +29,7 @@ impl ExerciseEntity {
         ExerciseEntity {
             id: 0,
             id_in_book: 0,
+            manual_id: 0,
             topic_id: 0,
             book_id: 0,
             chapter_id: 0,

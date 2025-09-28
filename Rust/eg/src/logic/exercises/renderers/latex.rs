@@ -13,7 +13,9 @@ pub fn render_latex(
     questions.iter().for_each(|question| {
         let single_question = format!(
             r#"
-            \paragraph{{}}
+            \newpage
+            \paragraph{{Exercise}}\par
+            \noindent
             \begin{{tabularx}}{{1\textwidth}}{{
                     p{{\dimexpr0.5\textwidth\relax}}
                     p{{\dimexpr0.5\textwidth\relax}}
@@ -38,6 +40,10 @@ pub fn render_latex(
                 \\
                 \bottomrule
             \end{{tabularx}}
+            \subparagraph{{Question}}
+            {question_text}
+            \subparagraph{{Solution}}
+            {solution_text}
             "#,
             book = question.book_title,
             chapter = question.chapter_title,
@@ -45,7 +51,9 @@ pub fn render_latex(
             section_title = question.section_title,
             page = question.section_page_exercises_start,
             question_type = question.exercise_type,
-            question_number = question.id_in_book
+            question_number = question.id_in_book,
+            question_text = question.question,
+            solution_text = question.solution
         );
         items.push_str(&single_question);
     });
@@ -54,6 +62,7 @@ pub fn render_latex(
         \documentclass{{article}}
         \usepackage{{tabularx}}
         \usepackage{{booktabs}}
+        \usepackage{{amsmath}}
         \begin{{document}}
         {}
         \end{{document}}
