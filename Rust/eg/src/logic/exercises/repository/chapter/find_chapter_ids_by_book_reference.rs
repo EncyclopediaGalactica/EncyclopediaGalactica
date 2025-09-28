@@ -1,8 +1,11 @@
+use log::debug;
+
 pub async fn find_chapter_ids_by_book_reference(
     book_reference: String,
     pool: sqlx::Pool<sqlx::Postgres>,
 ) -> anyhow::Result<Vec<i64>> {
-    let chapter_ids = sqlx::query_as::<_, FindChapterIdsByBookReference>(
+    debug!("find_chapter_ids_by_book_reference: {:#?}", book_reference);
+    match sqlx::query_scalar::<_, i64>(
         r#"
         SELECT id
         FROM chapters
@@ -15,12 +18,14 @@ pub async fn find_chapter_ids_by_book_reference(
     )
     .bind(book_reference)
     .fetch_all(&pool)
-    .await?;
-    let chapter_ids_result: Vec<i64> = chapter_ids.iter().map(|c| c.id).collect();
-    Ok(chapter_ids_result)
-}
-
-#[derive(sqlx::FromRow, Debug)]
-struct FindChapterIdsByBookReference {
-    pub id: i64,
+    .await
+    {
+        Ok(yolo) => Ok(yolo),
+        Err(nope) => Err(anyhow::anyhow!(
+            "Failed to find chapter ids by book reference: {:#?} at {}:{}",
+            nope,
+            file!(),
+            line!()
+        )),
+    }
 }

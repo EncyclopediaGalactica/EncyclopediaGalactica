@@ -2,7 +2,7 @@ use std::path::Path;
 
 use clap::ArgMatches;
 
-pub fn list_matchers(arg_matches: ArgMatches, base_path: &Path) {
+pub fn list_matchers(_arg_matches: ArgMatches, _base_path: &Path) {
     // match arg_matches.subcommand() {
     //     Some(("list", argument_matches)) => {
     //         match argument_matches.subcommand_matches("books") {

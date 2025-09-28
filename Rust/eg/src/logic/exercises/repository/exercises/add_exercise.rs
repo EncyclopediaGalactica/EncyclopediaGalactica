@@ -1,3 +1,4 @@
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -7,6 +8,7 @@ pub async fn add_exercise(
     exercise: ExerciseEntity,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<()> {
+    debug!("Inserting exercise: {:#?}", &exercise);
     match sqlx::query(
         r#"
         INSERT INTO exercises (
@@ -15,27 +17,39 @@ pub async fn add_exercise(
             topic_id,
             book_id,
             chapter_id,
-            section_id
+            section_id,
+            question,
+            solution
         ) VALUES (
             $1,
             $2,
             $3,
             $4,
             $5,
-            $6
+            $6,
+            $7,
+            $8
         )
         "#,
     )
-    .bind(exercise.id_in_book)
-    .bind(exercise.exercise_type)
-    .bind(exercise.topic_id)
-    .bind(exercise.book_id)
-    .bind(exercise.chapter_id)
-    .bind(exercise.section_id)
+    .bind(&exercise.id_in_book)
+    .bind(&exercise.exercise_type)
+    .bind(&exercise.topic_id)
+    .bind(&exercise.book_id)
+    .bind(&exercise.chapter_id)
+    .bind(&exercise.section_id)
+    .bind(&exercise.question)
+    .bind(&exercise.solution)
     .execute(&db_connection)
     .await
     {
-        Ok(yolo) => Ok(()),
-        Err(nope) => Err(anyhow::anyhow!("Failed to add exercise: {:#?}", nope)),
+        Ok(_) => Ok(()),
+        Err(nope) => Err(anyhow::anyhow!(
+            "Failed to add exercise: {:#?}. Error: {:#?} at {}:{}",
+            &exercise,
+            nope,
+            file!(),
+            line!()
+        )),
     }
 }

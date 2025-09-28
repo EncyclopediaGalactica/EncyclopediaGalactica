@@ -1,4 +1,5 @@
 title = "Chapter Test"
+reference = "chapter_test"
 section_number = 3.9
 chapter_reference = "3_polynomial_and_rational_functions"
 book_reference = "james_stewart_precalculus"

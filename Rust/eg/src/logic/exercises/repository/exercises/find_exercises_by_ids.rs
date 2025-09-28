@@ -15,7 +15,7 @@ pub async fn find_exercises_by_ids(
         .join(",");
     debug!("ids_string: {:#?}", ids_string);
 
-    let result = query_as::<_, EnrichedExerciseEntity>(
+    match query_as::<_, EnrichedExerciseEntity>(
         r#"
         SELECT 
             e.id_in_the_book as id_in_book,
@@ -42,14 +42,16 @@ pub async fn find_exercises_by_ids(
     )
     .bind(&ids)
     .fetch_all(&db_connection)
-    .await?;
-
-    debug!(
-        "Enriched exercises entities volume: result: {:#?}",
-        result.len()
-    );
-
-    Ok(result)
+    .await
+    {
+        Ok(yolo) => Ok(yolo),
+        Err(nope) => Err(anyhow::anyhow!(
+            "Failed to find exercises by ids: {:#?} at {}:{}",
+            nope,
+            file!(),
+            line!()
+        )),
+    }
 }
 
 #[derive(Debug, Clone, FromRow)]

@@ -1,7 +1,9 @@
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
 pub async fn truncate_topics_table(db_connnection: Pool<Postgres>) -> anyhow::Result<()> {
+    debug!("Truncating topics table");
     match sqlx::query("TRUNCATE TABLE topics CASCADE")
         .execute(&db_connnection)
         .await
@@ -9,12 +11,14 @@ pub async fn truncate_topics_table(db_connnection: Pool<Postgres>) -> anyhow::Re
         Ok(yolo) => {
             // todo: for logging purposes
             let affected_rows = yolo.rows_affected();
-            println!("truncate_topics_table affected rows: {:#?}", affected_rows);
+            debug!("truncate_topics_table affected rows: {:#?}", affected_rows);
             Ok(())
         }
-        Err(nopes) => {
-            println!("truncate_topics_table nopes: {:#?}", nopes);
-            Err(anyhow::anyhow!("truncate_topics_table nopes: {:#?}", nopes))
-        }
+        Err(nopes) => Err(anyhow::anyhow!(
+            "truncate_topics_table nopes: {:#?} at {}:{}",
+            nopes,
+            file!(),
+            line!()
+        )),
     }
 }

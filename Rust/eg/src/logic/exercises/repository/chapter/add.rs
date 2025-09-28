@@ -1,3 +1,4 @@
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -10,7 +11,12 @@ pub async fn add_chapter(
     book_reference: &str,
     db_connection: Pool<Postgres>,
 ) -> anyhow::Result<()> {
+    debug!(
+        "Adding chapter: chapter entity: {:#?}; book reference: {:#?}",
+        chapter_entity, book_reference
+    );
     let book_id = find_book_id_by_reference(book_reference, db_connection.clone()).await?;
+    debug!("Found book id: {:#?}", book_id);
     match sqlx::query(
         "INSERT INTO chapters (title, reference, page_start, page_end, book_id) VALUES ($1, $2, $3, $4, $5)",
     )
@@ -22,11 +28,11 @@ pub async fn add_chapter(
     .execute(&db_connection)
     .await {
         Ok(yolo) => {
-            println!("Added chapter with id: {:#?}", yolo.rows_affected());
+            debug!("Added chapter with id: {:#?}", yolo.rows_affected());
             Ok(())
         },
         Err(nopes) => {
-            Err(anyhow::anyhow!("Failed to add chapter: {:#?}", nopes))
+            Err(anyhow::anyhow!("Failed to add chapter: {:#?} at {}:{}", nopes, file!(), line!()))
         }
     }
 }

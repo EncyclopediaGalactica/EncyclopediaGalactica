@@ -1,0 +1,7 @@
+# only to control what is included in the books
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.synctex.gz

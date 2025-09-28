@@ -1,6 +1,7 @@
 use clap::Arg;
 use clap::ArgAction;
 use clap::Command;
+use clap::value_parser;
 
 pub fn sync_subcommand(exercises_command: Command) -> Command {
     exercises_command.subcommand(
@@ -23,6 +24,15 @@ Full overwrites the whole catalogue.
 This operation is going to truncate all tables in the system by default meaning that all data will be lost.
 ")
                     .action(ArgAction::SetTrue),
-            ),
+            )
+            .arg(
+                Arg::new("LOG LEVEL")
+                    .short('l')
+                    .long("log-level")
+                    .help("Setting up the log levels. Only debug works now.")
+                    .required(false)
+                    .action(ArgAction::Set)
+                    .value_parser(value_parser!(String)),
+            )
     )
 }

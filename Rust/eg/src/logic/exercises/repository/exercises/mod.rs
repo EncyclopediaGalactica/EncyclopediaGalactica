@@ -1,4 +1,5 @@
 use std::fmt;
+use std::str::FromStr;
 
 use serde::Deserialize;
 use serde::Serialize;
@@ -8,6 +9,7 @@ pub mod add_exercise;
 pub mod find_all_raw_exercise_entities;
 pub mod find_exercises_by_chapter_ids_and_type;
 pub mod find_exercises_by_ids;
+pub mod truncate;
 
 #[derive(Debug, Clone, FromRow)]
 pub struct ExerciseEntity {
@@ -18,6 +20,23 @@ pub struct ExerciseEntity {
     pub chapter_id: i64,
     pub section_id: i64,
     pub exercise_type: String,
+    pub question: String,
+    pub solution: String,
+}
+impl ExerciseEntity {
+    pub fn default() -> ExerciseEntity {
+        ExerciseEntity {
+            id: 0,
+            id_in_book: 0,
+            topic_id: 0,
+            book_id: 0,
+            chapter_id: 0,
+            section_id: 0,
+            exercise_type: ExerciseType::None.to_string(),
+            question: String::from(""),
+            solution: String::from(""),
+        }
+    }
 }
 
 #[derive(Debug, Clone, FromRow)]
@@ -42,6 +61,21 @@ pub enum ExerciseType {
     Skills,
     Applications,
     Discussion,
+    None,
+}
+
+impl FromStr for ExerciseType {
+    type Err = anyhow::Error;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "concepts" => Ok(ExerciseType::Concepts),
+            "skills" => Ok(ExerciseType::Skills),
+            "applications" => Ok(ExerciseType::Applications),
+            "discussion" => Ok(ExerciseType::Discussion),
+            _ => Ok(ExerciseType::None),
+        }
+    }
 }
 
 impl fmt::Display for ExerciseType {
@@ -51,6 +85,7 @@ impl fmt::Display for ExerciseType {
             ExerciseType::Skills => write!(f, "skills"),
             ExerciseType::Applications => write!(f, "applications"),
             ExerciseType::Discussion => write!(f, "discussion"),
+            ExerciseType::None => write!(f, "none"),
         }
     }
 }

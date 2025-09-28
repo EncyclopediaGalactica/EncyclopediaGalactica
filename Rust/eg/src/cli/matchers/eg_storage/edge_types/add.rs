@@ -17,7 +17,7 @@ fn populate_scenario_input(
     args: ArgMatches,
     config: AppConfig,
 ) -> anyhow::Result<AddEdgeTypeScenarioInput> {
-    set_cli_logging_level(args.clone());
+    let _ = set_cli_logging_level(args.clone());
     let name = args.get_one::<String>("NAME").unwrap();
     let description = args.get_one::<String>("DESC").unwrap();
     let input = AddEdgeTypeScenarioInput {

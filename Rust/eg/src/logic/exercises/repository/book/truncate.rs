@@ -1,3 +1,4 @@
+use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -9,11 +10,11 @@ pub async fn truncate_books_table(db_connnection: Pool<Postgres>) -> anyhow::Res
         Ok(yolo) => {
             // todo: for logging purposes
             let affected_rows = yolo.rows_affected();
-            println!("truncate_books_table affected rows: {:#?}", affected_rows);
+            debug!("truncate_books_table affected rows: {:#?}", affected_rows);
             Ok(())
         }
         Err(nopes) => {
-            println!("truncate_books_table nopes: {:#?}", nopes);
+            debug!("truncate_books_table nopes: {:#?}", nopes);
             Err(anyhow::anyhow!("truncate_books_table nopes: {:#?}", nopes))
         }
     }
