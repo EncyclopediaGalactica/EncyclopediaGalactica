@@ -13,12 +13,15 @@ pub async fn find_exercises_by_chapter_ids_and_type(
         "find_exercises_by_chapter_ids_and_type: chapter_ids: {:#?}, exercise_type: {:#?}",
         chapter_ids, exercise_type
     );
-    match sqlx::query_as::<_, FindExercisesByChapterIdsAndType>(
+    match sqlx::query_scalar::<_, i64>(
         r#"
-        SELECT id
-        FROM exercises
-        WHERE chapter_id = ANY($1)
-        AND exercise_type = $2
+        SELECT 
+            id
+        FROM 
+            exercises
+        WHERE 
+            chapter_id = ANY($1)
+            AND exercise_type = $2
         "#,
     )
     .bind(chapter_ids)
@@ -26,7 +29,7 @@ pub async fn find_exercises_by_chapter_ids_and_type(
     .fetch_all(&db_connection)
     .await
     {
-        Ok(yolo) => Ok(yolo.iter().map(|e| e.id).collect()),
+        Ok(yolo) => Ok(yolo),
         Err(nope) => Err(anyhow::anyhow!(
             "Failed to find exercises by chapter ids and type: {:#?} at {}:{}",
             nope,
@@ -34,9 +37,4 @@ pub async fn find_exercises_by_chapter_ids_and_type(
             line!()
         )),
     }
-}
-
-#[derive(sqlx::FromRow, Debug)]
-struct FindExercisesByChapterIdsAndType {
-    pub id: i64,
 }

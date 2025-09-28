@@ -3,6 +3,7 @@ use sqlx::FromRow;
 use crate::logic::exercises::parsers::books::Book;
 pub mod add;
 pub mod find_book_id_by_reference;
+pub mod find_book_ids_by_references;
 pub mod truncate;
 
 #[derive(Debug, FromRow)]

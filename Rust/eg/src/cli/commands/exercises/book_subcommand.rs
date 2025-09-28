@@ -5,6 +5,7 @@ use clap::value_parser;
 pub fn book_subcommand(commands: Command) -> Command {
     commands.subcommand(
         Command::new("book")
+            .color(clap::ColorChoice::Always)
             .about(
                 "
 Getting the details of a book.

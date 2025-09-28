@@ -1,3 +1,4 @@
+use clap::ColorChoice;
 use clap::Command;
 
 use self::generate::generate_command;
@@ -20,6 +21,7 @@ After the above is possible to generate exercises.
 "#,
         )
         .propagate_version(true)
+        .color(ColorChoice::Always)
         .arg_required_else_help(true);
     let exercises_command = generate_command(exercises_command);
     // let exercises_command = list_subcommand(exercises_command);
