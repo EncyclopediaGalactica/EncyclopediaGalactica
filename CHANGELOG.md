@@ -1,3 +1,10 @@
+# [0.56.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.55.0...0.56.0) (2025-09-28)
+
+
+### Features
+
+* **exercises:** possible to add exercises manually ([#269](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/269)) ([2d8c622](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/2d8c622566ea6bfebc0e02830c9092504fb10e17))
+
 # [0.55.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.54.0...0.55.0) (2025-09-20)
 
 
