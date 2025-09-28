@@ -87,7 +87,7 @@ pub async fn exercises_generate_book_scenario(
                 "Selecting {} volume concept exercises.",
                 input.concept_questions_volume
             );
-            for counter in 0..input.concept_questions_volume {
+            for _counter in 0..input.concept_questions_volume {
                 let randomly_selected_concept_exercise = rand.random_range(0..candidates_len + 1);
                 debug!(
                     "Adding concept exercise with id {}",
@@ -120,7 +120,7 @@ pub async fn exercises_generate_book_scenario(
             input.skill_questions_volume
         );
         if !skill_exercise_candidates.is_empty() {
-            for counter in 0..input.skill_questions_volume {
+            for _counter in 0..input.skill_questions_volume {
                 let randomly_selected_skill_exercise =
                     rand.random_range(0..skill_exercise_candidates.len() + 1);
                 debug!(
@@ -154,7 +154,7 @@ pub async fn exercises_generate_book_scenario(
             input.application_questions_volume
         );
         if !application_exercise_candidates.is_empty() {
-            for counter in 0..input.application_questions_volume {
+            for _counter in 0..input.application_questions_volume {
                 let randomly_selected_application_exercise =
                     rand.random_range(0..application_exercise_candidates.len() + 1);
                 debug!(
@@ -188,7 +188,7 @@ pub async fn exercises_generate_book_scenario(
             input.discussion_questions_volume
         );
         if !discussion_exercise_candidates.is_empty() {
-            for counter in 0..input.discussion_questions_volume {
+            for _counter in 0..input.discussion_questions_volume {
                 let randomly_selected_discussion_exercise =
                     rand.random_range(0..discussion_exercise_candidates.len() + 1);
                 debug!(

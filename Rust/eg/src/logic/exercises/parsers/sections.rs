@@ -41,6 +41,7 @@ pub struct Section {
     pub discussion_questions_interval_end: String,
     pub page_end: i32,
     pub chapter_reference: String,
+    pub reference: String,
     pub book_reference: String,
 }
 
@@ -178,5 +179,13 @@ impl Section {
 
     pub fn book_reference(&self) -> &str {
         &self.book_reference
+    }
+
+    pub fn set_reference(&mut self, reference: String) {
+        self.reference = reference;
+    }
+
+    pub fn reference(&self) -> &str {
+        &self.reference
     }
 }

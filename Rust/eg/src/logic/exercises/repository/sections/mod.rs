@@ -4,6 +4,7 @@ use serde::Serialize;
 use crate::logic::exercises::parsers::sections::Section;
 
 pub mod add;
+pub mod find_section_id_by_section_reference_and_chapter_id;
 pub mod truncate;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
@@ -23,6 +24,7 @@ pub struct SectionEntity {
     pub discussion_questions_interval_end: i32,
     pub page_end: i32,
     pub chapter_id: i64,
+    pub reference: String,
 }
 
 impl From<Section> for SectionEntity {
@@ -67,6 +69,7 @@ impl From<Section> for SectionEntity {
             .unwrap_or_else(|_| panic!("Cannot parse discussion interval end")),
             page_end: section.page_end(),
             chapter_id: 0,
+            reference: section.reference().to_string(),
         }
     }
 }

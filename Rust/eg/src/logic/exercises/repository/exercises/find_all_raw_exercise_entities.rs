@@ -1,8 +1,11 @@
+use log::debug;
+
 use super::RawExerciseEntity;
 
 pub async fn find_all_raw_exercise_entities(
     db_connection: sqlx::Pool<sqlx::Postgres>,
 ) -> anyhow::Result<Vec<RawExerciseEntity>> {
+    debug!("find_all_raw_exercise_entities");
     match sqlx::query_as::<_, RawExerciseEntity>(
         r#"
         SELECT 
@@ -34,8 +37,10 @@ pub async fn find_all_raw_exercise_entities(
     {
         Ok(yolo) => Ok(yolo),
         Err(nope) => Err(anyhow::anyhow!(
-            "Failed to find all raw exercise entities: {:#?}",
-            nope
+            "Failed to find all raw exercise entities: {:#?} at {:#?}:{:#?}",
+            nope,
+            file!(),
+            line!()
         )),
     }
 }

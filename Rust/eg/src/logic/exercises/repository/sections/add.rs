@@ -1,3 +1,5 @@
+use log::debug;
+
 use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_and_book_reference::find_chapter_id_by_chapter_and_book_reference;
 
 use super::SectionEntity;
@@ -8,12 +10,17 @@ pub async fn add_section(
     book_reference: &str,
     pool: sqlx::Pool<sqlx::Postgres>,
 ) -> anyhow::Result<()> {
+    debug!(
+        "Lookup chapter id by chapter reference and book reference: chapter_reference: {:?}, book_reference: {:?}",
+        chapter_reference, book_reference
+    );
     let chapter_id = find_chapter_id_by_chapter_and_book_reference(
         chapter_reference,
         book_reference,
         pool.clone(),
     )
     .await?;
+    debug!("Adding section: {:#?}", section);
     match sqlx::query(
         r#"
         INSERT INTO sections (
@@ -30,7 +37,8 @@ pub async fn add_section(
             discussion_questions_interval_start,
             discussion_questions_interval_end,
             page_end,
-            chapter_id
+            chapter_id,
+            reference
         )
         VALUES (
             $1,
@@ -46,7 +54,8 @@ pub async fn add_section(
             $11,
             $12,
             $13,
-            $14
+            $14,
+            $15
         )
         "#,
     )
@@ -64,13 +73,16 @@ pub async fn add_section(
     .bind(&section.discussion_questions_interval_end)
     .bind(&section.page_end)
     .bind(&chapter_id)
+    .bind(&section.reference)
     .execute(&pool)
     .await
     {
-        Ok(yolo) => {
-            println!("Added section affected rows: {:#?}", yolo.rows_affected());
-            Ok(())
-        }
-        Err(nopes) => Err(anyhow::anyhow!("Failed to add section: {:#?}", nopes)),
+        Ok(_yolo) => Ok(()),
+        Err(nopes) => Err(anyhow::anyhow!(
+            "Failed to add section: {:#?} at {}:{}",
+            nopes,
+            file!(),
+            line!()
+        )),
     }
 }

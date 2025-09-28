@@ -3,7 +3,6 @@ use clap::command;
 
 use self::eg_storage::build_eg_storage_cli;
 use self::exercises::build_exercises_cli;
-use self::starmap::build_starmap_cli;
 
 pub mod eg_storage;
 pub mod exercises;
