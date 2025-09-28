@@ -18,6 +18,7 @@ pub fn build_cli() -> ArgMatches {
          The extensions are available as subcommands.
         ",
         )
+        .color(clap::ColorChoice::Always)
         .propagate_version(true)
         .arg_required_else_help(true);
     let root_command = build_exercises_cli(root_command);

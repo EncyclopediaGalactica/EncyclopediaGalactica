@@ -7,6 +7,7 @@ pub fn generate_books_subcommand(generate_subcommand: Command) -> Command {
     generate_subcommand
                 .subcommand(
                     Command::new("books")
+                    .color(clap::ColorChoice::Always)
                     .about(r#"
 Generate exercises from the listed books. For more details see the `eg exercises generate books --help` command.
                         "#)

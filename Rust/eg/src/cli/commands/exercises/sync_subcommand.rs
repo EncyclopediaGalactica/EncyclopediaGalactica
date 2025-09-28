@@ -1,11 +1,13 @@
 use clap::Arg;
 use clap::ArgAction;
+use clap::ColorChoice;
 use clap::Command;
 use clap::value_parser;
 
 pub fn sync_subcommand(exercises_command: Command) -> Command {
     exercises_command.subcommand(
         Command::new("sync")
+            .color(ColorChoice::Always)
             .about("Synchronises the exercises catalogue. Read the --help version!")
             .long_about("
 Synchronises the exercises catalogue long versions.

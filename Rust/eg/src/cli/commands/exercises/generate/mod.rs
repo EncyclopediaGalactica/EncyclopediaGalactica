@@ -8,6 +8,7 @@ pub mod books;
 
 pub fn generate_command(root_command: Command) -> Command {
     let generate_subcommand = Command::new("generate")
+        .color(clap::ColorChoice::Always)
         .about("Generating exercises randomly in the given volume from the defined book.")
         .long_about(
             r#"

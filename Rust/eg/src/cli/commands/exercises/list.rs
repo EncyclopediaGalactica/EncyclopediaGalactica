@@ -3,6 +3,7 @@ use clap::Command;
 pub fn list_subcommand(commands: Command) -> Command {
     commands.subcommand(
         Command::new("list")
+            .color(clap::ColorChoice::Always)
             .about("Listing the available books and topics.")
             .long_about(
                 "
