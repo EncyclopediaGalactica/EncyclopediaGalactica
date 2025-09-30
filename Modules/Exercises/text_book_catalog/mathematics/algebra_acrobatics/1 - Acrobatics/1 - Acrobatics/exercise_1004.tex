@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\begin{document}
+
+% exercises
+
+% exercise_type = "skills"
+% topic_reference = "mathematics"
+% book_reference = "algebra_acrobatics"
+% chapter_reference = "acrobatics"
+% section_reference = "acrobatics"
+% manual_id = 1004
+
+% paragraph title is the question number
+\section{Exercise 1004}
+
+% question start
+Solve the following equation:
+\begin{align*}
+	\left( x^2 + 6x + 1\right)\left( x^2 + 6x - 3 \right) = 5
+\end{align*}
+% question end
+
+% solution start
+\begin{align*}
+	\left( x^2 + 6x + 1\right)\left( x^2 + 6x - 3 \right) & = 5                                                                \\
+	\text{ let } u                                        & = x^2 + 6x                                                         \\
+	\left( u + 1 \right)\left(u - 3\right)                & = 5 \text{// substitute u}                                         \\
+	u^2 - 2u - 3                                          & = 5 \text{// factor}                                               \\
+	u^2 - 2u - 8                                          & = 0                                                                \\
+	\left( u - 4 \right)\left( u + 2 \right)              & = 0                                                                \\
+	\left( u - 4 \right) = 0                              & \text{ and } \left( u + 2 \right) = 0 \text{// the two solutions } \\
+	u = 4                                                 & \text{, } u = -2                                                   \\
+	\text{ \textbf{solution 1 for substitution:} } u      & = 4                                                                \\
+	x^2 + 6x + 9                                          & = 4 + 9                                                            \\
+	\left( x + 3 \right)^2                                & = \sqrt{13}                                                        \\
+	x                                                     & = -3 \pm \sqrt{13} \text{ // \textbf{real solution 1}}             \\
+	\text{ \textbf{solution 2 for substitution: } } u     & = -2                                                               \\
+	x^2 + 6x + 9                                          & = -2 + 9                                                           \\
+	\left( x + 3 \right)^2                                & = \sqrt{7}                                                         \\
+	x                                                     & = -3 \pm \sqrt{7} \text{ // \textbf{real solution 2}}              \\
+\end{align*}
+
+\subparagraph{Notes}
+\begin{itemize}
+	\item we haven't multiplied the two together because it would result in a complex mess where
+	      easy to make mistakes
+	\item we used substitution
+	\item to find the correct numbers to transform the $$ u^2 - 2u - 8 = 0 $$ to $$ \left( u - 4 \right)\left( u + 2 \right) = 0 $$ we used the trick described below.
+	\item the magic to find the integer added to the $$ x^2 + 6x $$ to get a perfect square is
+	      described below too.
+	\item we haven't used the quadratic formula due to \dots
+\end{itemize}
+% solution end
+
+% exercises end
+
+\end{document}
