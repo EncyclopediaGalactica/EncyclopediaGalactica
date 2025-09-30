@@ -1,3 +1,10 @@
+# [0.57.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.56.0...0.57.0) (2025-09-30)
+
+
+### Features
+
+* **exercises:** Generate from books - multiple books ([#270](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/270)) ([ec4b26b](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/ec4b26bc76616753148d27fc39d21e44917e17f3)), closes [#269](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/269)
+
 # [0.56.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.55.0...0.56.0) (2025-09-28)
 
 
