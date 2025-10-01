@@ -1,0 +1,16 @@
+title = "Testing"
+reference = "testing"
+section_number = 1.3
+chapter_reference = "testing"
+book_reference = "graduation"
+page_start = 0
+page_exercises_start = 0
+concepts_questions_interval_start = "NA"
+concepts_questions_interval_end = "NA"
+skills_questions_interval_start = "NA"
+skills_questions_interval_end = "NA"
+applications_questions_interval_start = "NA"
+applications_questions_interval_end = "NA"
+discussion_questions_interval_start = "NA"
+discussion_questions_interval_end = "NA"
+page_end = 35
