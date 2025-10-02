@@ -1,0 +1,37 @@
+{% raw %}
+\newpage
+\paragraph{{Exercise}}
+
+\begin{tabularx}{1\textwidth}{
+		p{\dimexpr0.5\textwidth\relax}
+		p{\dimexpr0.5\textwidth\relax}
+	}
+	\toprule
+	{% endraw %}
+	Book:            & {{book}}
+	\\
+	\midrule
+	Chapter:         & {{chapter}}
+	\\
+	\midrule
+	Section::        & {{section_number}} - {{section_title}}
+	\\
+	\midrule
+	Page:            & {{page}}
+	\\
+	\midrule
+	Question type:   & {{question_type}}
+	\\
+	\midrule
+	Question number: & {{question_number}}
+	{% raw %}
+	\\
+	\bottomrule
+\end{tabularx}
+\subparagraph{Question}
+{% endraw %}
+{{question_text}}
+{% raw %}
+\subparagraph{Solution}
+{% endraw %}
+{{solution_text}}
