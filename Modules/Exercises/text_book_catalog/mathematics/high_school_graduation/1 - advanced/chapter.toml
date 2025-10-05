@@ -1,5 +1,5 @@
-title = "Testing"
-reference = "testing"
+title = "Mathematics Examination - Advanced"
+reference = "mathematics_examination_advanced"
 page_start = 1
-page_end = 130
-book_reference = "graduation"
+page_end = 1000
+book_reference = "high_school_graduation_mathematics"
