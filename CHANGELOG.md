@@ -1,3 +1,10 @@
+# [0.58.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.57.0...0.58.0) (2025-10-09)
+
+
+### Features
+
+* **exercises:** adding english and hungarian intermediate and advanced level physics and math exam questions and answer sheets ([#276](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/276)) ([bc9818c](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/bc9818cbfc10343871e5529dd38a2d0e65abe44d))
+
 # [0.57.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.56.0...0.57.0) (2025-09-30)
 
 
