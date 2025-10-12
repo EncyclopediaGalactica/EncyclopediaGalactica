@@ -2,9 +2,11 @@ use clap::ColorChoice;
 use clap::Command;
 
 use self::generate::generate_command;
+use self::languages::languages_command;
 
 pub mod book_subcommand;
 pub mod generate;
+pub mod languages;
 pub mod list;
 pub mod sync_subcommand;
 
@@ -26,5 +28,6 @@ After the above is possible to generate exercises.
     let exercises_command = generate_command(exercises_command);
     // let exercises_command = list_subcommand(exercises_command);
     let exercises_command = sync_subcommand::sync_subcommand(exercises_command);
+    let exercises_command = languages_command(exercises_command);
     root_command.subcommand(exercises_command)
 }
