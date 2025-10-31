@@ -4,9 +4,11 @@ use clap::ArgMatches;
 use crate::ExercisesConfig;
 
 use self::generate::generate_subcommand_matchers;
+use self::languages::languages_subcommand_matchers;
 
 pub mod book;
 pub mod generate;
+pub mod languages;
 pub mod list;
 pub mod sync;
 
@@ -21,6 +23,10 @@ pub async fn find_exercises_subcommand_matchers(
         }
         Some(("sync", sync_matches)) => {
             sync::sync(sync_matches.clone(), config.clone()).await?;
+            Ok(())
+        }
+        Some(("languages", language_matches)) => {
+            languages_subcommand_matchers(language_matches.clone(), config.clone()).await?;
             Ok(())
         }
         // Some(exercises_matches) => {
