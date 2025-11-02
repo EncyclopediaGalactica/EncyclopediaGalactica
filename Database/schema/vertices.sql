@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS vertices (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(255) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    data JSONB NOT NULL,
+
+    PRIMARY KEY (id)
+);

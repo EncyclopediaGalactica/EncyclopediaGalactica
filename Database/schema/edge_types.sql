@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS edge_types (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+
+    PRIMARY KEY (id)
+);

@@ -14,6 +14,7 @@ target/
 # python
 *.egg-info
 __pycache__
+dist/
 
 # latex
 *.log
@@ -23,3 +24,6 @@ __pycache__
 *.blg
 *.synctex.gz
 *.toc
+
+# env
+*.env
