@@ -1,0 +1,2 @@
+[workspace]
+members = ["eg_python_api", "encyclopedia_galactica"]

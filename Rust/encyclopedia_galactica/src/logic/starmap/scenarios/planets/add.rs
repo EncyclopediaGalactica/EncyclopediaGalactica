@@ -1,5 +1,6 @@
 use anyhow::ensure;
 use log::debug;
+use pyo3::pyclass;
 use sqlx::Pool;
 use sqlx::Postgres;
 
@@ -59,11 +60,13 @@ async fn validate_add_planet_scenario_input(
 }
 
 #[derive(Debug, Clone)]
+#[pyclass]
 pub struct AddPlanetScenarioInput {
     pub name: String,
     pub description: String,
 }
 #[derive(Debug, Clone)]
+#[pyclass]
 pub struct AddPlanetScenarioResult {
     pub id: i64,
     pub name: String,
