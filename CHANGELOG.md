@@ -1,3 +1,10 @@
+# [0.59.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.58.0...0.59.0) (2026-01-02)
+
+
+### Features
+
+* **starmap:** add planet ([#277](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/277)) ([fdc7ab4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/fdc7ab44b9de1940e23c60717d6e6b4047391ea2))
+
 # [0.58.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.57.0...0.58.0) (2025-10-09)
 
 
