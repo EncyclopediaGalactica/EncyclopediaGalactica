@@ -1,0 +1,52 @@
+use sqlx::prelude::FromRow;
+
+use self::add::AddPlanetScenarioInput;
+
+pub mod add;
+
+#[derive(Debug, Clone, FromRow)]
+pub struct PlanetEntity {
+    id: i64,
+    name: String,
+    description: String,
+}
+
+impl From<AddPlanetScenarioInput> for PlanetEntity {
+    fn from(value: AddPlanetScenarioInput) -> Self {
+        return PlanetEntity::new(0, value.name, value.description);
+    }
+}
+
+impl PlanetEntity {
+    pub fn new(id: i64, name: String, description: String) -> Self {
+        Self {
+            id,
+            name,
+            description,
+        }
+    }
+
+    pub fn id(&self) -> i64 {
+        self.id
+    }
+
+    pub fn set_id(&mut self, id: i64) {
+        self.id = id;
+    }
+
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    pub fn set_name(&mut self, name: String) {
+        self.name = name;
+    }
+
+    pub fn description(&self) -> &str {
+        &self.description
+    }
+
+    pub fn set_description(&mut self, description: String) {
+        self.description = description;
+    }
+}

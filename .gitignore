@@ -1,4 +1,5 @@
 .DS_Store
+.env
 
 # dotnet
 bin/
@@ -14,6 +15,9 @@ target/
 # python
 *.egg-info
 __pycache__
+*.venv
+dist/
+.ropeproject/
 
 # latex
 *.log
