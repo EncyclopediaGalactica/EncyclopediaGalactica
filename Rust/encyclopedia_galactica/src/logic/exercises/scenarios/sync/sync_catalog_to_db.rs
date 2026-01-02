@@ -9,9 +9,9 @@ use log::debug;
 use sqlx::Pool;
 use sqlx::Postgres;
 
+use crate::logic::ExercisesConfig;
 use crate::logic::exercises::repository::chapter::find_chapter_id_by_chapter_reference_and_book_id::find_chapter_id_by_chapter_reference_and_book_id;
 use crate::logic::exercises::repository::sections::find_section_id_by_section_reference_and_chapter_id::find_section_id_by_section_reference_and_chapter_id;
-use crate::ExercisesConfig;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_pattern;
 use crate::logic::exercises::catalog_scanner::scan_and_collect_catalog_files_by_wildcard_pattern;
 use crate::logic::exercises::parsers::added_exercises::parse_added_exercise_files;
