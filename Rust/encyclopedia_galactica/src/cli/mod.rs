@@ -1,6 +1,6 @@
 use anyhow::Result;
 
-use crate::AppConfig;
+use crate::logic::AppConfig;
 
 use self::commands::build_cli;
 use self::matchers::find_matches;

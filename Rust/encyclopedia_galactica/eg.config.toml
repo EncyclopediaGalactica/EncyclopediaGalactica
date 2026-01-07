@@ -5,3 +5,9 @@ generated_tests_path = "../../Modules/Exercises/generated_tests/"
 
 [eg_storage]
 database_connection_string = "postgres://eg:eg@localhost:5432/eg"
+
+[starmap]
+database_connection_string = "postgres://starmap:starmap@localhost:5432/starmap"
+
+[starmap_test]
+database_connection_string = "postgres://starmap:starmap@localhost:5432/starmap_test"

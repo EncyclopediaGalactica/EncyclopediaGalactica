@@ -1,8 +1,8 @@
 use clap::ArgMatches;
 use log::debug;
 
-use crate::AppConfig;
 use crate::cli::matchers::set_cli_logging_level;
+use crate::logic::AppConfig;
 use crate::logic::eg_storage::scenarios::edge_types::add::AddEdgeTypeScenarioInput;
 use crate::logic::eg_storage::scenarios::edge_types::add::eg_storage_edge_types_add_scenario;
 

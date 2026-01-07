@@ -1,7 +1,7 @@
 use clap::ArgMatches;
 use log::LevelFilter;
 
-use crate::AppConfig;
+use crate::logic::AppConfig;
 
 use self::eg_storage::find_eg_storage_matchers;
 use self::exercises::find_exercises_subcommand_matchers;

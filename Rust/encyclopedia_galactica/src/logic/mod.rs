@@ -6,17 +6,17 @@ pub mod starmap;
 
 #[derive(Deserialize, Clone, Debug)]
 pub struct AppConfig {
-    exercises: ExercisesConfig,
-    eg_storage: EGStorageConfig,
+    pub exercises: ExercisesConfig,
+    pub eg_storage: EGStorageConfig,
 }
 
 #[derive(Deserialize, Clone, Debug)]
 pub struct EGStorageConfig {
-    database_connection_string: String,
+    pub database_connection_string: String,
 }
 #[derive(Deserialize, Clone, Debug)]
 pub struct ExercisesConfig {
-    database_connection_string: String,
-    catalog_path: String,
-    generated_tests_path: String,
+    pub database_connection_string: String,
+    pub catalog_path: String,
+    pub generated_tests_path: String,
 }

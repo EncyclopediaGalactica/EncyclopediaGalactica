@@ -1,7 +1,7 @@
 use anyhow::Ok;
 use clap::ArgMatches;
 
-use crate::AppConfig;
+use crate::logic::AppConfig;
 
 use self::edge_types::eg_storage_edge_types_matcher;
 use self::edges::eg_storage_edges_matcher;

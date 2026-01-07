@@ -1,8 +1,8 @@
 use clap::ArgMatches;
 use env_logger::Builder;
 
-use crate::ExercisesConfig;
 use crate::cli::matchers::set_cli_logging_level;
+use crate::logic::ExercisesConfig;
 use crate::logic::exercises::scenarios::generate::books::ExercisesGenerateBooksScenarioInput;
 use crate::logic::exercises::scenarios::generate::books::exercises_generate_books_scenario;
 

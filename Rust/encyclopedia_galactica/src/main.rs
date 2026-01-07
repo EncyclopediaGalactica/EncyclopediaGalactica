@@ -2,8 +2,8 @@ use anyhow::Ok;
 use cli::encyclopedia_galactica_cli;
 use config::Config;
 use config::File;
-use encyclopedia_galactica::logic::AppConfig;
-use serde::Deserialize;
+
+use self::logic::AppConfig;
 
 pub mod cli;
 pub mod logic;

@@ -1,6 +1,6 @@
 use clap::ArgMatches;
 
-use crate::ExercisesConfig;
+use crate::logic::ExercisesConfig;
 
 use self::book::exercises_generate_book_matchers;
 use self::books::exercises_generate_books_matchers;

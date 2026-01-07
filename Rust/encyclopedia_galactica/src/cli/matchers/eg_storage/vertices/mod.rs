@@ -1,6 +1,6 @@
 use clap::ArgMatches;
 
-use crate::AppConfig;
+use crate::logic::AppConfig;
 
 use self::add::eg_storage_vertices_add_matcher;
 

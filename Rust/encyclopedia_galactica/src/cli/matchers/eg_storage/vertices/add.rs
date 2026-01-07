@@ -1,8 +1,8 @@
 use clap::ArgMatches;
 use log::debug;
 
-use crate::AppConfig;
 use crate::cli::matchers::set_cli_logging_level;
+use crate::logic::AppConfig;
 use crate::logic::eg_storage::scenarios::vertices::add::AddVertexScenarioInput;
 use crate::logic::eg_storage::scenarios::vertices::add::add_vertex_scenario;
 

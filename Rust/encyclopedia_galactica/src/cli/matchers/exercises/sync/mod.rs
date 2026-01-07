@@ -4,8 +4,8 @@ use log::debug;
 use tabled::builder::Builder;
 use tabled::settings::Style;
 
-use crate::ExercisesConfig;
 use crate::cli::matchers::set_cli_logging_level;
+use crate::logic::ExercisesConfig;
 use crate::logic::exercises::scenarios::sync::sync_catalog_to_db;
 
 pub async fn sync(matches: ArgMatches, config: ExercisesConfig) -> Result<()> {

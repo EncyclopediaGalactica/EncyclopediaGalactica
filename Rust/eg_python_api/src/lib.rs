@@ -1,6 +1,6 @@
-use encyclopedia_galactica::logic::starmap::scenarios::planets::add::AddPlanetScenarioInput;
-use encyclopedia_galactica::logic::starmap::scenarios::planets::add::AddPlanetScenarioResult;
-use encyclopedia_galactica::logic::starmap::scenarios::planets::add::add_planet_scenario;
+use encyclopedia_galactica::logic::starmap::scenarios::planets::add::add::add_planet_scenario;
+use encyclopedia_galactica::logic::starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
+use encyclopedia_galactica::logic::starmap::scenarios::planets::add::types::AddPlanetScenarioResult;
 use once_cell::sync::Lazy;
 use pyo3::prelude::*;
 use tokio::runtime::Runtime;
@@ -19,6 +19,6 @@ fn eg_python_api(module: &Bound<'_, PyModule>) -> PyResult<()> {
     // starmap submodule
     let starmap_submodule = PyModule::new(module.py(), "starmap")?;
     starmap_submodule.add_function(wrap_pyfunction!(add_planet, &starmap_submodule)?)?;
-    module.add_submodule(starmap_submodule)?;
+    module.add_submodule(&starmap_submodule)?;
     Ok(())
 }

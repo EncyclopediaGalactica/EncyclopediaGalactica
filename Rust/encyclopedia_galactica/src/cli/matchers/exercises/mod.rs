@@ -1,7 +1,7 @@
 use anyhow::Ok;
 use clap::ArgMatches;
 
-use crate::ExercisesConfig;
+use crate::logic::ExercisesConfig;
 
 use self::generate::generate_subcommand_matchers;
 

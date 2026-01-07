@@ -8,8 +8,8 @@ pub mod scenarios;
 #[derive(Debug, Error)]
 #[error("StarMap Validation Error happened")]
 pub struct StarMapValidationResult {
-    is_valid: bool,
-    message: String,
+    pub is_valid: bool,
+    pub message: String,
 }
 
 impl StarMapValidationResult {

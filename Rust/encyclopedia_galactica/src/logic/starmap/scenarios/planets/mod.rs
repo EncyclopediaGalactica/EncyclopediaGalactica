@@ -1,6 +1,6 @@
 use sqlx::prelude::FromRow;
 
-use self::add::AddPlanetScenarioInput;
+use self::add::types::AddPlanetScenarioInput;
 
 pub mod add;
 
