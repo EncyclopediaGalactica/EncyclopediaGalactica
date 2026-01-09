@@ -9,8 +9,8 @@ static RT: Lazy<Runtime> = Lazy::new(|| Runtime::new().expect("Failed to create 
 
 #[pyfunction]
 fn add_planet(input: AddPlanetScenarioInput) -> PyResult<AddPlanetScenarioResult> {
-    let db_connection_string = "";
-    let result = RT.block_on(async { add_planet_scenario(input, db_connection_string).await })?;
+    let _db_connection_string = "";
+    let result = RT.block_on(async { add_planet_scenario(input, None, None).await })?;
     Ok(result)
 }
 

@@ -1,12 +1,11 @@
 use log::debug;
-use sqlx::Pool;
-use sqlx::Postgres;
+use sqlx::PgPool;
 
 use crate::logic::starmap::scenarios::planets::PlanetEntity;
 
 pub async fn add_to_storage(
     input: PlanetEntity,
-    db_connection: Pool<Postgres>,
+    db_connection: PgPool,
 ) -> anyhow::Result<PlanetEntity> {
     let result: PlanetEntity = sqlx::query_as(
         r#"

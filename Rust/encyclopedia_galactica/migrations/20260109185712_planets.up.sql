@@ -1,3 +1,4 @@
+-- Add up migration script here
 CREATE TABLE IF NOT EXISTS planets (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255) NOT NULL,
