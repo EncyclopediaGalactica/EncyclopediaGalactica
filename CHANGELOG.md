@@ -1,3 +1,10 @@
+# [0.60.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.59.0...0.60.0) (2026-01-09)
+
+
+### Features
+
+* **starmap python api:** starmap - planet - add python api and cli ([#278](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/278)) ([7f496b9](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/7f496b92df8ee995181b1ba2ae86ee2facc6adf3))
+
 # [0.59.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.58.0...0.59.0) (2026-01-02)
 
 
