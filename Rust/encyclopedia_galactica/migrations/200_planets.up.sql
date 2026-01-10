@@ -3,6 +3,8 @@ CREATE TABLE IF NOT EXISTS planets (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
     name VARCHAR(255) NOT NULL,
     description TEXT,
+    star_system_id BIGINT NOT NULL,
 
-    PRIMARY KEY (id)
+    PRIMARY KEY (id),
+    FOREIGN KEY (star_system_id) REFERENCES star_systems (id)
 );
