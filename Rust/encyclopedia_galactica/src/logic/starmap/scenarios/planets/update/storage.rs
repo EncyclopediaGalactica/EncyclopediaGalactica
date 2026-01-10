@@ -41,15 +41,30 @@ pub async fn update_in_storage(
 
 #[cfg(test)]
 mod tests {
+    use super::*;
+    use crate::logic::starmap::scenarios::planets::add::storage::add_to_storage;
+    use sqlx::PgPool;
 
-    // Note: For unit tests, we would need to mock the database.
-    // Since this is an async function with database calls, integration tests will cover it.
-    // Here we can test error handling if we mock, but for now, placeholder.
+    #[sqlx::test]
+    async fn test_update_in_storage_success(pool: PgPool) {
+        // First, add a planet to have an existing ID
+        let add_input = PlanetEntity::new(
+            0,
+            "Original Planet".to_string(),
+            "Original Description".to_string(),
+        );
+        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
-    #[test]
-    fn test_placeholder() {
-        // Unit tests for storage would require mocking PgPool
-        // Integration tests in update.rs will test this
-        assert!(true);
+        // Now update it
+        let update_input = UpdatePlanetScenarioInput {
+            id: added.id,
+            name: "Updated Planet".to_string(),
+            description: "Updated Description".to_string(),
+        };
+        let result = update_in_storage(&pool, update_input).await.unwrap();
+
+        assert_eq!(result.id, added.id);
+        assert_eq!(result.name, "Updated Planet");
+        assert_eq!(result.description, "Updated Description");
     }
 }
