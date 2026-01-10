@@ -25,7 +25,7 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test]
-    async fn test_delete_from_storage_success(pool: PgPool) {
+    async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // Insert a planet
         let planet =
             PlanetEntity::new(0, "Test Planet".to_string(), "Test Description".to_string());
@@ -38,5 +38,6 @@ mod tests {
         // Verify it's gone
         let remaining = get_all_from_storage(&pool).await.unwrap();
         assert_eq!(remaining.len(), 0);
+        Ok(())
     }
 }

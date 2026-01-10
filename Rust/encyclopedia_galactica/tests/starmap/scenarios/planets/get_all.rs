@@ -1,9 +1,10 @@
 use encyclopedia_galactica::logic::starmap::scenarios::planets::add::add::add_planet_scenario;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::get_all::get_all::get_all_planets_scenario;
+use sqlx::Result;
 
 #[sqlx::test]
-async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) {
+async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add two planets for test data
     let add_input1 = AddPlanetScenarioInput {
         name: "Earth".to_string(),
@@ -35,4 +36,5 @@ async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) {
     let mars_planet = result.planets.iter().find(|p| p.name == "Mars").unwrap();
     assert_eq!(mars_planet.description, "Red planet");
     assert_eq!(mars_planet.id, add_result2.id);
+    Ok(())
 }

@@ -2,9 +2,10 @@ use encyclopedia_galactica::logic::starmap::scenarios::planets::add::add::add_pl
 use encyclopedia_galactica::logic::starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::update::types::UpdatePlanetScenarioInput;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::update::update::update_planet_scenario;
+use sqlx::Result;
 
 #[sqlx::test]
-async fn test_update_planet_scenario_success(pool: sqlx::PgPool) {
+async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // First, add a planet to update
     let add_input = AddPlanetScenarioInput {
         name: "Earth".to_string(),
@@ -28,10 +29,11 @@ async fn test_update_planet_scenario_success(pool: sqlx::PgPool) {
     assert_eq!(update_result.id, planet_id);
     assert_eq!(update_result.name, "Updated Earth");
     assert_eq!(update_result.description, "Updated home planet");
+    Ok(())
 }
 
 #[sqlx::test]
-async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) {
+async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()> {
     let update_input = UpdatePlanetScenarioInput {
         id: 99999, // Non-existent ID
         name: "Fake Planet".to_string(),
@@ -41,10 +43,11 @@ async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) {
     assert!(result.is_err());
     let err = result.unwrap_err();
     assert!(err.to_string().contains("Id does not exist"));
+    Ok(())
 }
 
 #[sqlx::test]
-async fn test_update_planet_scenario_invalid_input_short_name(pool: sqlx::PgPool) {
+async fn test_update_planet_scenario_invalid_input_short_name(pool: sqlx::PgPool) -> Result<()> {
     let update_input = UpdatePlanetScenarioInput {
         id: 1,
         name: "Ab".to_string(),
@@ -52,4 +55,5 @@ async fn test_update_planet_scenario_invalid_input_short_name(pool: sqlx::PgPool
     };
     let result = update_planet_scenario(update_input, Some(pool), None).await;
     assert!(result.is_err());
+    Ok(())
 }

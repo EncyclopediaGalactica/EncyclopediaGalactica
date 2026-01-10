@@ -19,7 +19,7 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test]
-    async fn test_get_all_from_storage_success(pool: PgPool) {
+    async fn test_get_all_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add some star systems
         let add_input1 =
             StarSystemEntity::new(0, "Star System 1".to_string(), "Description 1".to_string());
@@ -37,5 +37,6 @@ mod tests {
         let names: Vec<String> = all.iter().map(|s| s.name.clone()).collect();
         assert!(names.contains(&"Star System 1".to_string()));
         assert!(names.contains(&"Star System 2".to_string()));
+        Ok(())
     }
 }

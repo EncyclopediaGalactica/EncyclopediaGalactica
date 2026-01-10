@@ -46,7 +46,7 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test]
-    async fn test_update_in_storage_success(pool: PgPool) {
+    async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a planet to have an existing ID
         let add_input = PlanetEntity::new(
             0,
@@ -66,5 +66,6 @@ mod tests {
         assert_eq!(result.id, added.id);
         assert_eq!(result.name, "Updated Planet");
         assert_eq!(result.description, "Updated Description");
+        Ok(())
     }
 }

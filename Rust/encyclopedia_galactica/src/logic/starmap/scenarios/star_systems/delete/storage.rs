@@ -23,7 +23,7 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test]
-    async fn test_delete_from_storage_success(pool: PgPool) {
+    async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system to have an existing ID
         let add_input = StarSystemEntity::new(
             0,
@@ -44,5 +44,6 @@ mod tests {
                 .unwrap();
 
         assert_eq!(remaining.len(), 0);
+        Ok(())
     }
 }

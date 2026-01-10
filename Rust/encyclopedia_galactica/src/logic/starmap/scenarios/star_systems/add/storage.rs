@@ -34,7 +34,7 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test]
-    async fn test_add_to_storage_success(pool: PgPool) {
+    async fn test_add_to_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system
         let add_input = StarSystemEntity::new(
             0,
@@ -46,5 +46,6 @@ mod tests {
         assert_eq!(added.id, added.id);
         assert_eq!(added.name, "Original Star System");
         assert_eq!(added.description, "Original Description");
+        Ok(())
     }
 }

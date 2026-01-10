@@ -2,9 +2,10 @@ use encyclopedia_galactica::logic::starmap::scenarios::planets::add::add::add_pl
 use encyclopedia_galactica::logic::starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::delete::delete::delete_planet_scenario;
 use encyclopedia_galactica::logic::starmap::scenarios::planets::delete::types::DeletePlanetScenarioInput;
+use sqlx::Result;
 
 #[sqlx::test]
-async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) {
+async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add a planet first
     let add_input = AddPlanetScenarioInput {
         name: "Earth".to_string(),
@@ -18,4 +19,5 @@ async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) {
     let delete_input = DeletePlanetScenarioInput { id: add_result.id };
     let result = delete_planet_scenario(delete_input, Some(pool), None).await;
     assert!(result.is_ok());
+    Ok(())
 }
