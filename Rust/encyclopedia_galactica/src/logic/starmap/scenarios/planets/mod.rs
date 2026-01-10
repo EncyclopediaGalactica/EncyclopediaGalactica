@@ -1,15 +1,16 @@
 use sqlx::prelude::FromRow;
 
-use self::add::types::AddPlanetScenarioInput;
-
-pub mod add;
-
 #[derive(Debug, Clone, FromRow)]
 pub struct PlanetEntity {
     id: i64,
     name: String,
     description: String,
 }
+
+use self::add::types::AddPlanetScenarioInput;
+
+pub mod add;
+pub mod update;
 
 impl From<AddPlanetScenarioInput> for PlanetEntity {
     fn from(value: AddPlanetScenarioInput) -> Self {
