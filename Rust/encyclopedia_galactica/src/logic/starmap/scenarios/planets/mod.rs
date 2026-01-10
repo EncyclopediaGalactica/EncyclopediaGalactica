@@ -1,15 +1,16 @@
 use sqlx::prelude::FromRow;
 
-#[derive(Debug, Clone, FromRow)]
+#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct PlanetEntity {
-    id: i64,
-    name: String,
-    description: String,
+    pub id: i64,
+    pub name: String,
+    pub description: String,
 }
 
 use self::add::types::AddPlanetScenarioInput;
 
 pub mod add;
+pub mod get_all;
 pub mod update;
 
 impl From<AddPlanetScenarioInput> for PlanetEntity {
