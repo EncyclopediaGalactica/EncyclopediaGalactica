@@ -1,0 +1,17 @@
+[package]
+name = "eg_py"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "eg_py"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { workspace = true }
+once_cell = { workspace = true }
+tokio = { workspace = true }
+starmap = { version = "0.1.0", path = "../starmap" }
+
+[build-dependencies]
+pyo3-build-config = "0.27.2"
