@@ -1,3 +1,10 @@
+# [0.61.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.60.0...0.61.0) (2026-01-11)
+
+
+### Features
+
+* **starmap:** Planets and Star Systems CRUD ([#280](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/280)) ([29b7bda](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/29b7bdab4466a81b0eba0193eed597ec4dd72fbc))
+
 # [0.60.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.59.0...0.60.0) (2026-01-09)
 
 
