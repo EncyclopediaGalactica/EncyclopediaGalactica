@@ -1,26 +1,33 @@
 use sqlx::prelude::FromRow;
 
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
-pub struct PlanetEntity {
+pub struct StarSystemEntity {
     pub id: i64,
     pub name: String,
     pub description: String,
 }
 
-use self::add::types::AddPlanetScenarioInput;
+use self::add::types::AddStarSystemScenarioInput;
+use self::update::types::UpdateStarSystemScenarioInput;
 
 pub mod add;
 pub mod delete;
 pub mod get_all;
 pub mod update;
 
-impl From<AddPlanetScenarioInput> for PlanetEntity {
-    fn from(value: AddPlanetScenarioInput) -> Self {
-        return PlanetEntity::new(0, value.name, value.description);
+impl From<AddStarSystemScenarioInput> for StarSystemEntity {
+    fn from(value: AddStarSystemScenarioInput) -> Self {
+        return StarSystemEntity::new(0, value.name, value.description);
     }
 }
 
-impl PlanetEntity {
+impl From<UpdateStarSystemScenarioInput> for StarSystemEntity {
+    fn from(value: UpdateStarSystemScenarioInput) -> Self {
+        return StarSystemEntity::new(value.id, value.name, value.description);
+    }
+}
+
+impl StarSystemEntity {
     pub fn new(id: i64, name: String, description: String) -> Self {
         Self {
             id,

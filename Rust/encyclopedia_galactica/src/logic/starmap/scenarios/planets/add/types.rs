@@ -55,4 +55,3 @@ mod tests {
         assert_eq!(result.description, "Red planet");
     }
 }
-
