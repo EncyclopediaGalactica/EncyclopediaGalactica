@@ -1,3 +1,10 @@
+# [0.62.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.61.0...0.62.0) (2026-01-11)
+
+
+### Features
+
+* **rework:** full rework of modules ([#282](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/282)) ([ff66b58](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/ff66b586cde06734e47d3c9d54a7f6c613f5ed96))
+
 # [0.61.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.60.0...0.61.0) (2026-01-11)
 
 
