@@ -3,7 +3,7 @@ use sqlx::Result;
 use starmap::scenarios::planets::add::add::add_planet_scenario;
 use starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_add_planet_scenario_success(db_pool: PgPool) -> Result<()> {
     let input = AddPlanetScenarioInput {
         name: "Earth".to_string(),
@@ -19,7 +19,7 @@ async fn test_add_planet_scenario_success(db_pool: PgPool) -> Result<()> {
     Ok(())
 }
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_add_planet_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
     let input = AddPlanetScenarioInput {
         name: "Hi".to_string(),

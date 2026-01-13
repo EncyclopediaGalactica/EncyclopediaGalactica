@@ -5,7 +5,7 @@ use starmap::scenarios::star_systems::add::types::AddStarSystemScenarioInput;
 use starmap::scenarios::star_systems::update::types::UpdateStarSystemScenarioInput;
 use starmap::scenarios::star_systems::update::update::update_star_system_scenario;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_update_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
     // First add a star system
     let add_input = AddStarSystemScenarioInput {

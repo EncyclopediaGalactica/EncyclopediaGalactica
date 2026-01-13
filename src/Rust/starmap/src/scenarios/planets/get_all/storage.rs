@@ -28,7 +28,7 @@ mod tests {
     use crate::scenarios::planets::add::storage::add_to_storage;
     use sqlx::PgPool;
 
-    #[sqlx::test]
+    #[sqlx::test(migrations = "./../migrations")]
     async fn test_get_all_from_storage_returns_correct_count(pool: PgPool) -> sqlx::Result<()> {
         // Insert a few test planets
         let planet1 = PlanetEntity::new(0, "Test Planet 1".to_string(), "Desc 1".to_string());

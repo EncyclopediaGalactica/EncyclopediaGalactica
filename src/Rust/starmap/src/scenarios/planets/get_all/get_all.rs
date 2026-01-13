@@ -16,8 +16,8 @@ use super::types::GetAllPlanetsScenarioResult;
 pub async fn get_all_planets_scenario(
     pg_pool: Option<PgPool>,
     db_connection_string: Option<&str>,
-) -> anyhow::Result<GetAllPlanetsScenarioResult> {
+) -> anyhow::Result<Vec<GetAllPlanetsScenarioResult>> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     let planets = get_all_from_storage(&db_pool).await?;
-    Ok(GetAllPlanetsScenarioResult::new(planets))
+    Ok(planets.into_iter().map(GetAllPlanetsScenarioResult::from).collect())
 }

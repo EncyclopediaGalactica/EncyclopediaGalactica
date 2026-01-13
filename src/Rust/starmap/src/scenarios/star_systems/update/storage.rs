@@ -37,7 +37,7 @@ mod tests {
     use crate::scenarios::star_systems::add::storage::add_to_storage;
     use sqlx::PgPool;
 
-    #[sqlx::test]
+    #[sqlx::test(migrations = "./../migrations")]
     async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system to have an existing ID
         let add_input = StarSystemEntity::new(

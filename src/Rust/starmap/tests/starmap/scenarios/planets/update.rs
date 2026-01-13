@@ -4,7 +4,7 @@ use starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use starmap::scenarios::planets::update::types::UpdatePlanetScenarioInput;
 use starmap::scenarios::planets::update::update::update_planet_scenario;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // First, add a planet to update
     let add_input = AddPlanetScenarioInput {
@@ -32,7 +32,7 @@ async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     Ok(())
 }
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()> {
     let update_input = UpdatePlanetScenarioInput {
         id: 99999, // Non-existent ID

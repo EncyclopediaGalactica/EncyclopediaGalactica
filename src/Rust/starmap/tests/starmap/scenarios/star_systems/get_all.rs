@@ -4,7 +4,7 @@ use starmap::scenarios::star_systems::add::add::add_star_system_scenario;
 use starmap::scenarios::star_systems::add::types::AddStarSystemScenarioInput;
 use starmap::scenarios::star_systems::get_all::get_all::get_all_star_systems_scenario;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<()> {
     // Add some star systems
     let add_input1 = AddStarSystemScenarioInput {
@@ -28,9 +28,9 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
         .await
         .expect("Failed to get all star systems");
 
-    assert!(all.star_systems.len() >= 2);
+    assert!(all.len() >= 2);
     // Check names
-    let names: Vec<String> = all.star_systems.iter().map(|s| s.name.clone()).collect();
+    let names: Vec<String> = all.iter().map(|s| s.name.clone()).collect();
     assert!(names.contains(&"Star System 1".to_string()));
     assert!(names.contains(&"Star System 2".to_string()));
     Ok(())
