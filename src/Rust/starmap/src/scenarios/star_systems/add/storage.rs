@@ -1,3 +1,4 @@
+use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
@@ -9,16 +10,17 @@ pub async fn add_to_storage(
 ) -> anyhow::Result<StarSystemEntity> {
     let result: StarSystemEntity = sqlx::query_as(
         r#"
-        INSERT INTO 
-            star_systems (name, description) 
+        INSERT INTO
+            star_systems (name, description)
             VALUES ($1, $2)
         RETURNING id, name, description
         "#,
     )
-    .bind(input.name)
-    .bind(input.description)
+    .bind(&input.name)
+    .bind(&input.description)
     .fetch_one(&db_connection)
-    .await?;
+    .await
+    .with_context(|| format!("Failed to insert star system: (name: {:?})", input.name))?;
 
     debug!(
         "Star system table: entity inserted with id: {:?}",
