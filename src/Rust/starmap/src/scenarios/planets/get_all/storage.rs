@@ -1,4 +1,4 @@
-use anyhow::Result;
+use anyhow::{Context, Result};
 use log::debug;
 use sqlx::{PgPool, Row, query};
 
@@ -8,7 +8,8 @@ use crate::scenarios::planets::PlanetEntity;
 pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
     let planets: Vec<PlanetEntity> = query("SELECT id, name, description FROM planets")
         .fetch_all(pool)
-        .await?
+        .await
+        .with_context(|| "Failed to get all planets")?
         .into_iter()
         .map(|row| PlanetEntity {
             id: row.get(0),

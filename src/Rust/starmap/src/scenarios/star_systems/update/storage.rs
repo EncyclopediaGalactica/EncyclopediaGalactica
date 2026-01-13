@@ -1,3 +1,4 @@
+use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
@@ -11,13 +12,14 @@ pub async fn update_in_storage(
     let _existing: (i64,) = sqlx::query_as("SELECT id FROM star_systems WHERE id = $1")
         .bind(input.id)
         .fetch_one(&db_connection)
-        .await?;
+        .await
+        .with_context(|| format!("Failed to check if star system exists: (id: {})", input.id))?;
 
     let result: StarSystemEntity = sqlx::query_as(
         r#"
-        UPDATE star_systems 
-        SET name = $2, description = $3 
-        WHERE id = $1 
+        UPDATE star_systems
+        SET name = $2, description = $3
+        WHERE id = $1
         RETURNING id, name, description
         "#,
     )
@@ -25,7 +27,8 @@ pub async fn update_in_storage(
     .bind(input.name)
     .bind(input.description)
     .fetch_one(&db_connection)
-    .await?;
+    .await
+    .with_context(|| format!("Failed to update star system: (id: {})", input.id))?;
 
     debug!("Star system table: entity updated with id: {:?}", result.id);
     Ok(result)

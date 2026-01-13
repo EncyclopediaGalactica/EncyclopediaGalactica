@@ -30,7 +30,7 @@ pub async fn update_in_storage(
     .bind(&input.description)
     .fetch_one(pool)
     .await
-    .context("Failed to update planet")?;
+    .with_context(|| "Failed to update planet")?;
 
     let entity = PlanetEntity::new(row.get(0), row.get(1), row.get(2));
 

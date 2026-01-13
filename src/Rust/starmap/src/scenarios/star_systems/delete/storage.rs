@@ -1,3 +1,4 @@
+use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
@@ -5,7 +6,8 @@ pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Resu
     let result = sqlx::query("DELETE FROM star_systems WHERE id = $1")
         .bind(id)
         .execute(&db_connection)
-        .await?;
+        .await
+        .with_context(|| format!("Failed to delete star system: (id: {})", id))?;
 
     debug!(
         "Star system table: deleted {} rows with id: {}",

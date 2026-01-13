@@ -1,3 +1,4 @@
+use anyhow::Context;
 use sqlx::PgPool;
 
 use crate::scenarios::star_systems::StarSystemEntity;
@@ -6,7 +7,8 @@ pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<S
     let star_systems: Vec<StarSystemEntity> =
         sqlx::query_as("SELECT id, name, description FROM star_systems")
             .fetch_all(&db_connection)
-            .await?;
+            .await
+            .with_context(|| "Failed to get all star systems")?;
 
     Ok(star_systems)
 }
