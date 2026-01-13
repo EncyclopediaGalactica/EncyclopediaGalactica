@@ -6,15 +6,23 @@ use crate::scenarios::star_systems::StarSystemEntity;
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllStarSystemsScenarioInput {}
 
-/// Result data structure for getting all star systems
+/// Result data structure for a single star system
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllStarSystemsScenarioResult {
-    pub star_systems: Vec<StarSystemEntity>,
+    pub id: i64,
+    pub name: String,
+    pub description: String,
 }
 
 impl GetAllStarSystemsScenarioResult {
-    pub fn new(star_systems: Vec<StarSystemEntity>) -> Self {
-        Self { star_systems }
+    pub fn new(id: i64, name: String, description: String) -> Self {
+        Self { id, name, description }
+    }
+}
+
+impl From<StarSystemEntity> for GetAllStarSystemsScenarioResult {
+    fn from(entity: StarSystemEntity) -> Self {
+        GetAllStarSystemsScenarioResult::new(entity.id, entity.name, entity.description)
     }
 }
 
@@ -24,21 +32,22 @@ mod tests {
 
     #[test]
     fn test_get_all_star_systems_scenario_result_new() {
-        let star_systems = vec![
-            StarSystemEntity::new(
-                1,
-                "Solar System".to_string(),
-                "Home star system".to_string(),
-            ),
-            StarSystemEntity::new(
-                2,
-                "Alpha Centauri".to_string(),
-                "Nearby star system".to_string(),
-            ),
-        ];
-        let result = GetAllStarSystemsScenarioResult::new(star_systems.clone());
-        assert_eq!(result.star_systems.len(), 2);
-        assert_eq!(result.star_systems[0].name, "Solar System");
-        assert_eq!(result.star_systems[1].name, "Alpha Centauri");
+        let result = GetAllStarSystemsScenarioResult::new(1, "Solar System".to_string(), "Home star system".to_string());
+        assert_eq!(result.id, 1);
+        assert_eq!(result.name, "Solar System");
+        assert_eq!(result.description, "Home star system");
+    }
+
+    #[test]
+    fn test_get_all_star_systems_scenario_result_from_entity() {
+        let entity = StarSystemEntity::new(
+            2,
+            "Alpha Centauri".to_string(),
+            "Nearby star system".to_string(),
+        );
+        let result = GetAllStarSystemsScenarioResult::from(entity);
+        assert_eq!(result.id, 2);
+        assert_eq!(result.name, "Alpha Centauri");
+        assert_eq!(result.description, "Nearby star system");
     }
 }

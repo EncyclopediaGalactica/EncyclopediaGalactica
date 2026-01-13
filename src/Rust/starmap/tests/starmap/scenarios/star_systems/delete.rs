@@ -6,7 +6,7 @@ use starmap::scenarios::star_systems::delete::delete::delete_star_system_scenari
 use starmap::scenarios::star_systems::delete::types::DeleteStarSystemScenarioInput;
 use starmap::scenarios::star_systems::get_all::get_all::get_all_star_systems_scenario;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_delete_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
     // First add a star system
     let add_input = AddStarSystemScenarioInput {
@@ -28,7 +28,7 @@ async fn test_delete_star_system_scenario_success(db_pool: PgPool) -> Result<()>
         .await
         .expect("Failed to get all star systems");
 
-    let ids: Vec<i64> = all.star_systems.iter().map(|s| s.id).collect();
+    let ids: Vec<i64> = all.iter().map(|s| s.id).collect();
     assert!(!ids.contains(&added.id));
     Ok(())
 }

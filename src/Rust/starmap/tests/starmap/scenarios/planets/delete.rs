@@ -4,7 +4,7 @@ use starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use starmap::scenarios::planets::delete::delete::delete_planet_scenario;
 use starmap::scenarios::planets::delete::types::DeletePlanetScenarioInput;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add a planet first
     let add_input = AddPlanetScenarioInput {
@@ -17,7 +17,8 @@ async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
 
     // Now delete it
     let delete_input = DeletePlanetScenarioInput { id: add_result.id };
-    let result = delete_planet_scenario(delete_input, Some(pool), None).await;
-    assert!(result.is_ok());
+    delete_planet_scenario(delete_input, Some(pool), None)
+        .await
+        .expect("Failed to delete planet");
     Ok(())
 }

@@ -1,3 +1,4 @@
+use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
@@ -15,10 +16,11 @@ pub async fn add_to_storage(
         RETURNING id, name, description
         "#,
     )
-    .bind(input.name)
-    .bind(input.description)
+    .bind(&input.name)
+    .bind(&input.description)
     .fetch_one(&db_connection)
-    .await?;
+    .await
+    .with_context(|| format!("Failed to insert planet: (name: {:?}", input.name))?;
 
     debug!("Planet table: entity inserted with id: {:?}", result.id);
     Ok(result)
@@ -29,7 +31,7 @@ mod tests {
     use super::*;
     use sqlx::PgPool;
 
-    #[sqlx::test]
+    #[sqlx::test(migrations = "./../migrations")]
     async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a planet to have an existing ID
         let add_input = PlanetEntity::new(

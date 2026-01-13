@@ -3,7 +3,7 @@ use sqlx::Result;
 use starmap::scenarios::star_systems::add::add::add_star_system_scenario;
 use starmap::scenarios::star_systems::add::types::AddStarSystemScenarioInput;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_add_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
     let input = AddStarSystemScenarioInput {
         name: "Solar System".to_string(),

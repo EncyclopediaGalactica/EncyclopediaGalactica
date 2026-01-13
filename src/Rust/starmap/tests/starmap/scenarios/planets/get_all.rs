@@ -3,7 +3,7 @@ use starmap::scenarios::planets::add::add::add_planet_scenario;
 use starmap::scenarios::planets::add::types::AddPlanetScenarioInput;
 use starmap::scenarios::planets::get_all::get_all::get_all_planets_scenario;
 
-#[sqlx::test]
+#[sqlx::test(migrations = "./../migrations")]
 async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add two planets for test data
     let add_input1 = AddPlanetScenarioInput {
@@ -26,14 +26,14 @@ async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()>
     let result = get_all_planets_scenario(Some(pool), None).await.unwrap();
 
     // Assert that we have exactly 2 planets
-    assert_eq!(result.planets.len(), 2);
+    assert_eq!(result.len(), 2);
 
     // Assert that both planets are present with correct content
-    let earth_planet = result.planets.iter().find(|p| p.name == "Earth").unwrap();
+    let earth_planet = result.iter().find(|p| p.name == "Earth").unwrap();
     assert_eq!(earth_planet.description, "Home planet");
     assert_eq!(earth_planet.id, add_result1.id);
 
-    let mars_planet = result.planets.iter().find(|p| p.name == "Mars").unwrap();
+    let mars_planet = result.iter().find(|p| p.name == "Mars").unwrap();
     assert_eq!(mars_planet.description, "Red planet");
     assert_eq!(mars_planet.id, add_result2.id);
     Ok(())

@@ -7,6 +7,8 @@ obj/
 
 # rust
 target/
+# sqlx
+.sqlx/
 
 # java
 .idea

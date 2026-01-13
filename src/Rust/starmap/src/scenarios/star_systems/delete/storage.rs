@@ -22,7 +22,7 @@ mod tests {
     use crate::scenarios::star_systems::add::storage::add_to_storage;
     use sqlx::PgPool;
 
-    #[sqlx::test]
+    #[sqlx::test(migrations = "./../migrations")]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system to have an existing ID
         let add_input = StarSystemEntity::new(
@@ -30,6 +30,8 @@ mod tests {
             "Star System to Delete".to_string(),
             "Description".to_string(),
         );
+        print!("########################");
+        print!("{:?}", pool);
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         // Now delete it

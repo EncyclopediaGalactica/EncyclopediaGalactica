@@ -24,7 +24,7 @@ mod tests {
     use crate::scenarios::planets::get_all::storage::get_all_from_storage;
     use sqlx::PgPool;
 
-    #[sqlx::test]
+    #[sqlx::test(migrations = "./../migrations")]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // Insert a planet
         let planet =
