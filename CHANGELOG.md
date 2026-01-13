@@ -1,3 +1,10 @@
+# [0.63.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.62.0...0.63.0) (2026-01-13)
+
+
+### Features
+
+* **starmap:** moons [#284](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/284) ([909e234](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/909e2348ae0c215b57e5334dcc4d5dd00fb74539))
+
 # [0.62.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.61.0...0.62.0) (2026-01-11)
 
 
