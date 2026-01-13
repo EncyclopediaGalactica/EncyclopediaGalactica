@@ -1,3 +1,10 @@
+## [0.63.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.63.0...0.63.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* **starmap:** repo fixes [#285](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/285) ([811c0d4](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/811c0d4b70e1500b440e8a7ddd3c4d064345cf72))
+
 # [0.63.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.62.0...0.63.0) (2026-01-13)
 
 
