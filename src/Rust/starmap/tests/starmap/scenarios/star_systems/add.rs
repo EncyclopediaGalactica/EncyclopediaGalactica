@@ -8,6 +8,9 @@ async fn test_add_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
     let input = AddStarSystemScenarioInput {
         name: "Solar System".to_string(),
         description: "Home star system".to_string(),
+        x: Some(1.0),
+        y: Some(2.0),
+        z: Some(3.0),
     };
     let result = add_star_system_scenario(input, Option::from(db_pool), None)
         .await
@@ -24,6 +27,9 @@ async fn test_add_star_system_scenario_invalid_input(db_pool: PgPool) -> Result<
     let input = AddStarSystemScenarioInput {
         name: "Hi".to_string(),
         description: "Home star system".to_string(),
+        x: None,
+        y: None,
+        z: None,
     };
     let result = add_star_system_scenario(input, Option::from(db_pool), None).await;
     assert!(result.is_err());

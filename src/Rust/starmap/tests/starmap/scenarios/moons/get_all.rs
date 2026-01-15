@@ -29,7 +29,7 @@ async fn test_get_all_moons_scenario_success(db_pool: PgPool) -> Result<()> {
         .await
         .expect("Failed to get all moons");
 
-    assert!(result.len() >= 2);
+    assert!(result.len() == 2);
     // Check that our moons are there
     let luna_exists = result.iter().any(|m| m.name == "Luna");
     let titan_exists = result.iter().any(|m| m.name == "Titan");
@@ -37,3 +37,4 @@ async fn test_get_all_moons_scenario_success(db_pool: PgPool) -> Result<()> {
     assert!(titan_exists);
     Ok(())
 }
+

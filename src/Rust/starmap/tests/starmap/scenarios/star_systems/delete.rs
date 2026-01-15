@@ -12,6 +12,9 @@ async fn test_delete_star_system_scenario_success(db_pool: PgPool) -> Result<()>
     let add_input = AddStarSystemScenarioInput {
         name: "Star System to Delete".to_string(),
         description: "Description".to_string(),
+        x: Some(0.0),
+        y: Some(0.0),
+        z: Some(0.0),
     };
     let added = add_star_system_scenario(add_input, Option::from(db_pool.clone()), None)
         .await

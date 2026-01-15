@@ -10,6 +10,9 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
     let add_input1 = AddStarSystemScenarioInput {
         name: "Star System 1".to_string(),
         description: "Description 1".to_string(),
+        x: Some(0.0),
+        y: Some(0.0),
+        z: Some(0.0),
     };
     let _ = add_star_system_scenario(add_input1, Option::from(db_pool.clone()), None)
         .await
@@ -18,6 +21,9 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
     let add_input2 = AddStarSystemScenarioInput {
         name: "Star System 2".to_string(),
         description: "Description 2".to_string(),
+        x: Some(0.0),
+        y: Some(0.0),
+        z: Some(0.0),
     };
     let _ = add_star_system_scenario(add_input2, Option::from(db_pool.clone()), None)
         .await
@@ -28,7 +34,7 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
         .await
         .expect("Failed to get all star systems");
 
-    assert!(all.len() >= 2);
+    assert!(all.len() == 2);
     // Check names
     let names: Vec<String> = all.iter().map(|s| s.name.clone()).collect();
     assert!(names.contains(&"Star System 1".to_string()));

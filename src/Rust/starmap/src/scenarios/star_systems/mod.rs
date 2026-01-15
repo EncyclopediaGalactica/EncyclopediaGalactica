@@ -5,6 +5,9 @@ pub struct StarSystemEntity {
     pub id: i64,
     pub name: String,
     pub description: String,
+    pub x: Option<f64>,
+    pub y: Option<f64>,
+    pub z: Option<f64>,
 }
 
 use self::add::types::AddStarSystemScenarioInput;
@@ -17,22 +20,25 @@ pub mod update;
 
 impl From<AddStarSystemScenarioInput> for StarSystemEntity {
     fn from(value: AddStarSystemScenarioInput) -> Self {
-        return StarSystemEntity::new(0, value.name, value.description);
+        StarSystemEntity::new(0, value.name, value.description, value.x, value.y, value.z)
     }
 }
 
 impl From<UpdateStarSystemScenarioInput> for StarSystemEntity {
     fn from(value: UpdateStarSystemScenarioInput) -> Self {
-        return StarSystemEntity::new(value.id, value.name, value.description);
+        StarSystemEntity::new(value.id, value.name, value.description, value.x, value.y, value.z)
     }
 }
 
 impl StarSystemEntity {
-    pub fn new(id: i64, name: String, description: String) -> Self {
+    pub fn new(id: i64, name: String, description: String, x: Option<f64>, y: Option<f64>, z: Option<f64>) -> Self {
         Self {
             id,
             name,
             description,
+            x,
+            y,
+            z,
         }
     }
 
@@ -58,5 +64,29 @@ impl StarSystemEntity {
 
     pub fn set_description(&mut self, description: String) {
         self.description = description;
+    }
+
+    pub fn x(&self) -> Option<f64> {
+        self.x
+    }
+
+    pub fn set_x(&mut self, x: Option<f64>) {
+        self.x = x;
+    }
+
+    pub fn y(&self) -> Option<f64> {
+        self.y
+    }
+
+    pub fn set_y(&mut self, y: Option<f64>) {
+        self.y = y;
+    }
+
+    pub fn z(&self) -> Option<f64> {
+        self.z
+    }
+
+    pub fn set_z(&mut self, z: Option<f64>) {
+        self.z = z;
     }
 }
