@@ -31,6 +31,9 @@ mod tests {
             0,
             "Star System to Delete".to_string(),
             "Description".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
         );
         print!("########################");
         print!("{:?}", pool);

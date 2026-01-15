@@ -24,6 +24,9 @@ mod tests {
         let input = AddStarSystemScenarioInput {
             name: "Solar System".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_add_star_system_scenario_input(input.clone())
             .await
@@ -37,6 +40,9 @@ mod tests {
         let input = AddStarSystemScenarioInput {
             name: "Hi".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_add_star_system_scenario_input(input)
             .await
@@ -49,6 +55,9 @@ mod tests {
         let input = AddStarSystemScenarioInput {
             name: "Solar System".to_string(),
             description: "Hi".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_add_star_system_scenario_input(input)
             .await
@@ -61,6 +70,9 @@ mod tests {
         let input = AddStarSystemScenarioInput {
             name: "  A  ".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_add_star_system_scenario_input(input)
             .await
@@ -73,6 +85,9 @@ mod tests {
         let input = AddStarSystemScenarioInput {
             name: "Solar System".to_string(),
             description: "  Hi                ".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_add_star_system_scenario_input(input)
             .await

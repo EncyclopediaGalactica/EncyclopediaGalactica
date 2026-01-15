@@ -26,6 +26,9 @@ mod tests {
             id: 1,
             name: "Solar System".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input.clone())
             .await
@@ -41,6 +44,9 @@ mod tests {
             id: 0,
             name: "Solar System".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input)
             .await
@@ -54,6 +60,9 @@ mod tests {
             id: 1,
             name: "Hi".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input)
             .await
@@ -67,6 +76,9 @@ mod tests {
             id: 1,
             name: "Solar System".to_string(),
             description: "Hi".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input)
             .await
@@ -80,6 +92,9 @@ mod tests {
             id: 1,
             name: "  A  ".to_string(),
             description: "Our home star system".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input)
             .await
@@ -93,6 +108,9 @@ mod tests {
             id: 1,
             name: "Solar System".to_string(),
             description: "  Hi                ".to_string(),
+            x: None,
+            y: None,
+            z: None,
         };
         let result = validate_update_star_system_scenario_input(input)
             .await

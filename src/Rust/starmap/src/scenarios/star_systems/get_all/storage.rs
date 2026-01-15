@@ -5,7 +5,7 @@ use crate::scenarios::star_systems::StarSystemEntity;
 
 pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
     let star_systems: Vec<StarSystemEntity> =
-        sqlx::query_as("SELECT id, name, description FROM star_systems")
+        sqlx::query_as("SELECT id, name, description, x, y, z FROM star_systems")
             .fetch_all(&db_connection)
             .await
             .with_context(|| "Failed to get all star systems")?;
@@ -24,11 +24,11 @@ mod tests {
     async fn test_get_all_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add some star systems
         let add_input1 =
-            StarSystemEntity::new(0, "Star System 1".to_string(), "Description 1".to_string());
+            StarSystemEntity::new(0, "Star System 1".to_string(), "Description 1".to_string(), Some(0.0), Some(0.0), Some(0.0));
         let _ = add_to_storage(add_input1, pool.clone()).await.unwrap();
 
         let add_input2 =
-            StarSystemEntity::new(0, "Star System 2".to_string(), "Description 2".to_string());
+            StarSystemEntity::new(0, "Star System 2".to_string(), "Description 2".to_string(), Some(0.0), Some(0.0), Some(0.0));
         let _ = add_to_storage(add_input2, pool.clone()).await.unwrap();
 
         // Now get all

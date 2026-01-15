@@ -18,14 +18,17 @@ pub async fn update_in_storage(
     let result: StarSystemEntity = sqlx::query_as(
         r#"
         UPDATE star_systems
-        SET name = $2, description = $3
+        SET name = $2, description = $3, x = $4, y = $5, z = $6
         WHERE id = $1
-        RETURNING id, name, description
+        RETURNING id, name, description, x, y, z
         "#,
     )
     .bind(input.id)
     .bind(input.name)
     .bind(input.description)
+    .bind(input.x)
+    .bind(input.y)
+    .bind(input.z)
     .fetch_one(&db_connection)
     .await
     .with_context(|| format!("Failed to update star system: (id: {})", input.id))?;
@@ -47,6 +50,9 @@ mod tests {
             0,
             "Original Star System".to_string(),
             "Original Description".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
         );
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
@@ -55,6 +61,9 @@ mod tests {
             added.id,
             "Updated Star System".to_string(),
             "Updated Description".to_string(),
+            Some(1.0),
+            Some(2.0),
+            Some(3.0),
         );
         let updated = update_in_storage(update_input, pool.clone()).await.unwrap();
 

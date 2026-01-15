@@ -11,13 +11,16 @@ pub async fn add_to_storage(
     let result: StarSystemEntity = sqlx::query_as(
         r#"
         INSERT INTO
-            star_systems (name, description)
-            VALUES ($1, $2)
-        RETURNING id, name, description
+            star_systems (name, description, x, y, z)
+            VALUES ($1, $2, $3, $4, $5)
+        RETURNING id, name, description, x, y, z
         "#,
     )
     .bind(&input.name)
     .bind(&input.description)
+    .bind(&input.x)
+    .bind(&input.y)
+    .bind(&input.z)
     .fetch_one(&db_connection)
     .await
     .with_context(|| format!("Failed to insert star system: (name: {:?})", input.name))?;
@@ -42,6 +45,9 @@ mod tests {
             0,
             "Original Star System".to_string(),
             "Original Description".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
         );
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
