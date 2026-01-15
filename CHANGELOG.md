@@ -1,3 +1,10 @@
+# [0.64.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.63.1...0.64.0) (2026-01-15)
+
+
+### Features
+
+* **starmap:** star system coordinates ([#286](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/286)) ([888a911](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/888a911bde2e72e95e963287fa008d217039c6b2))
+
 ## [0.63.1](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.63.0...0.63.1) (2026-01-13)
 
 
