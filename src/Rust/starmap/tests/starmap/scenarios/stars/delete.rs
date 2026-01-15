@@ -26,3 +26,11 @@ async fn test_delete_star_scenario_success(db_pool: PgPool) -> Result<()> {
     assert!(result.is_ok());
     Ok(())
 }
+
+#[sqlx::test(migrations = "./../migrations")]
+async fn test_delete_star_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
+    let delete_input = DeleteStarScenarioInput { id: 0 };
+    let result = delete_star_scenario(delete_input, Option::from(db_pool), None).await;
+    assert!(result.is_err());
+    Ok(())
+}

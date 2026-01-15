@@ -4,6 +4,7 @@ use crate::get_connection;
 
 use super::storage::delete_from_storage;
 use super::types::DeleteMoonScenarioInput;
+use super::validation::validate_delete_moon_scenario_input;
 
 /// Deletes a moon from the starmap
 ///
@@ -19,6 +20,7 @@ pub async fn delete_moon_scenario(
     pg_pool: Option<PgPool>,
     db_connection_string: Option<&str>,
 ) -> anyhow::Result<()> {
+    validate_delete_moon_scenario_input(&input)?;
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     delete_from_storage(input.id, db_pool).await?;
     Ok(())

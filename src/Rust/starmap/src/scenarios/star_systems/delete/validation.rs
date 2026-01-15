@@ -32,4 +32,13 @@ mod tests {
             .unwrap_err();
         assert_eq!(result.to_string(), INVALID_ID_ERROR);
     }
+
+    #[tokio::test]
+    async fn test_validation_invalid_id_negative() {
+        let input = DeleteStarSystemScenarioInput { id: -1 };
+        let result = validate_delete_star_system_scenario_input(input)
+            .await
+            .unwrap_err();
+        assert_eq!(result.to_string(), INVALID_ID_ERROR);
+    }
 }
