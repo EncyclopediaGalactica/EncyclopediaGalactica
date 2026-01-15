@@ -53,7 +53,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_name() {
+    async fn test_validation_short_trimmed_name() {
         let input = AddMoonScenarioInput {
             name: "  A  ".to_string(),
             description: "Earth's moon".to_string(),
@@ -63,7 +63,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_description() {
+    async fn test_validation_short_trimmed_description() {
         let input = AddMoonScenarioInput {
             name: "Luna".to_string(),
             description: "  Hi                ".to_string(),

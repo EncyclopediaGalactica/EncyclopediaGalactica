@@ -75,7 +75,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_name() {
+    async fn test_validation_short_trimmed_name() {
         let input = UpdateStarSystemScenarioInput {
             id: 1,
             name: "  A  ".to_string(),
@@ -88,7 +88,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_description() {
+    async fn test_validation_short_trimmed_description() {
         let input = UpdateStarSystemScenarioInput {
             id: 1,
             name: "Solar System".to_string(),

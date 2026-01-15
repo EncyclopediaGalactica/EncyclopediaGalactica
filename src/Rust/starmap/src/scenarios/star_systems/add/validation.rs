@@ -57,7 +57,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_name() {
+    async fn test_validation_short_trimmed_name() {
         let input = AddStarSystemScenarioInput {
             name: "  A  ".to_string(),
             description: "Our home star system".to_string(),
@@ -69,7 +69,7 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn test_validation_trimmed_description() {
+    async fn test_validation_short_trimmed_description() {
         let input = AddStarSystemScenarioInput {
             name: "Solar System".to_string(),
             description: "  Hi                ".to_string(),
