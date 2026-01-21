@@ -5,31 +5,25 @@ use crate::scenarios::planets::PlanetEntity;
 #[derive(Debug, Clone)]
 #[pyclass]
 pub struct AddPlanetScenarioInput {
-    pub name: String,
-    pub description: String,
+    pub data: serde_json::Value,
 }
 
 #[derive(Debug, Clone)]
 #[pyclass]
 pub struct AddPlanetScenarioResult {
     pub id: i64,
-    pub name: String,
-    pub description: String,
+    pub data: serde_json::Value,
 }
 
 impl AddPlanetScenarioResult {
-    pub fn new(id: i64, name: String, description: String) -> Self {
-        Self {
-            id,
-            name,
-            description,
-        }
+    pub fn new(id: i64, data: serde_json::Value) -> Self {
+        Self { id, data }
     }
 }
 
 impl From<PlanetEntity> for AddPlanetScenarioResult {
     fn from(value: PlanetEntity) -> Self {
-        AddPlanetScenarioResult::new(value.id, value.name, value.description)
+        AddPlanetScenarioResult::new(value.id, value.data)
     }
 }
 
@@ -39,19 +33,18 @@ mod tests {
 
     #[test]
     fn test_add_planet_scenario_result_new() {
-        let result =
-            AddPlanetScenarioResult::new(1, "Earth".to_string(), "Home planet".to_string());
+        let data = serde_json::json!({"name": "Earth", "description": "Home planet"});
+        let result = AddPlanetScenarioResult::new(1, data.clone());
         assert_eq!(result.id, 1);
-        assert_eq!(result.name, "Earth");
-        assert_eq!(result.description, "Home planet");
+        assert_eq!(result.data, data);
     }
 
     #[test]
     fn test_from_planet_entity() {
-        let entity = PlanetEntity::new(2, "Mars".to_string(), "Red planet".to_string());
+        let data = serde_json::json!({"name": "Mars", "description": "Red planet"});
+        let entity = PlanetEntity::new(2, data.clone());
         let result = AddPlanetScenarioResult::from(entity);
         assert_eq!(result.id, 2);
-        assert_eq!(result.name, "Mars");
-        assert_eq!(result.description, "Red planet");
+        assert_eq!(result.data, data);
     }
 }

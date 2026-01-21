@@ -18,14 +18,35 @@ pub struct GetAllStarSystemsScenarioResult {
 }
 
 impl GetAllStarSystemsScenarioResult {
-    pub fn new(id: i64, name: String, description: String, x: Option<f64>, y: Option<f64>, z: Option<f64>) -> Self {
-        Self { id, name, description, x, y, z }
+    pub fn new(
+        id: i64,
+        name: String,
+        description: String,
+        x: Option<f64>,
+        y: Option<f64>,
+        z: Option<f64>,
+    ) -> Self {
+        Self {
+            id,
+            name,
+            description,
+            x,
+            y,
+            z,
+        }
     }
 }
 
 impl From<StarSystemEntity> for GetAllStarSystemsScenarioResult {
     fn from(entity: StarSystemEntity) -> Self {
-        GetAllStarSystemsScenarioResult::new(entity.id, entity.name, entity.description, entity.x, entity.y, entity.z)
+        GetAllStarSystemsScenarioResult::new(
+            entity.id,
+            entity.name,
+            entity.description,
+            entity.x,
+            entity.y,
+            entity.z,
+        )
     }
 }
 
@@ -35,7 +56,14 @@ mod tests {
 
     #[test]
     fn test_get_all_star_systems_scenario_result_new() {
-        let result = GetAllStarSystemsScenarioResult::new(1, "Solar System".to_string(), "Home star system".to_string(), Some(13.0), Some(14.0), Some(15.0));
+        let result = GetAllStarSystemsScenarioResult::new(
+            1,
+            "Solar System".to_string(),
+            "Home star system".to_string(),
+            Some(13.0),
+            Some(14.0),
+            Some(15.0),
+        );
         assert_eq!(result.id, 1);
         assert_eq!(result.name, "Solar System");
         assert_eq!(result.description, "Home star system");

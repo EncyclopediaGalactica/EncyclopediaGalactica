@@ -10,19 +10,18 @@ pub struct GetAllPlanetsScenarioInput {}
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllPlanetsScenarioResult {
     pub id: i64,
-    pub name: String,
-    pub description: String,
+    pub data: serde_json::Value,
 }
 
 impl GetAllPlanetsScenarioResult {
-    pub fn new(id: i64, name: String, description: String) -> Self {
-        Self { id, name, description }
+    pub fn new(id: i64, data: serde_json::Value) -> Self {
+        Self { id, data }
     }
 }
 
 impl From<PlanetEntity> for GetAllPlanetsScenarioResult {
     fn from(entity: PlanetEntity) -> Self {
-        GetAllPlanetsScenarioResult::new(entity.id, entity.name, entity.description)
+        GetAllPlanetsScenarioResult::new(entity.id, entity.data)
     }
 }
 
@@ -31,19 +30,11 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_get_all_planets_scenario_result_new() {
-        let result = GetAllPlanetsScenarioResult::new(1, "Earth".to_string(), "Home planet".to_string());
-        assert_eq!(result.id, 1);
-        assert_eq!(result.name, "Earth");
-        assert_eq!(result.description, "Home planet");
-    }
-
-    #[test]
     fn test_get_all_planets_scenario_result_from_entity() {
-        let entity = PlanetEntity::new(2, "Mars".to_string(), "Red planet".to_string());
+        let data = serde_json::json!({"name": "Mars", "description": "Red planet"});
+        let entity = PlanetEntity::new(2, data.clone());
         let result = GetAllPlanetsScenarioResult::from(entity);
         assert_eq!(result.id, 2);
-        assert_eq!(result.name, "Mars");
-        assert_eq!(result.description, "Red planet");
+        assert_eq!(result.data, data);
     }
 }

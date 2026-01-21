@@ -16,7 +16,11 @@ pub struct GetAllStarsScenarioResult {
 
 impl GetAllStarsScenarioResult {
     pub fn new(id: i64, name: String, description: String) -> Self {
-        Self { id, name, description }
+        Self {
+            id,
+            name,
+            description,
+        }
     }
 }
 
@@ -32,7 +36,8 @@ mod tests {
 
     #[test]
     fn test_get_all_stars_scenario_result_new() {
-        let result = GetAllStarsScenarioResult::new(1, "Sirius".to_string(), "Dog star".to_string());
+        let result =
+            GetAllStarsScenarioResult::new(1, "Sirius".to_string(), "Dog star".to_string());
         assert_eq!(result.id, 1);
         assert_eq!(result.name, "Sirius");
         assert_eq!(result.description, "Dog star");

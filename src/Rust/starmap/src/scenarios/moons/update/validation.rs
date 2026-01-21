@@ -41,7 +41,9 @@ mod tests {
             name: "Luna".to_string(),
             description: "Earth's moon".to_string(),
         };
-        let result = validate_update_moon_scenario_input(input).await.unwrap_err();
+        let result = validate_update_moon_scenario_input(input)
+            .await
+            .unwrap_err();
         assert!(result.to_string().contains(INVALID_ID_ERROR));
     }
 
@@ -52,7 +54,9 @@ mod tests {
             name: "Hi".to_string(),
             description: "Earth's moon".to_string(),
         };
-        let result = validate_update_moon_scenario_input(input).await.unwrap_err();
+        let result = validate_update_moon_scenario_input(input)
+            .await
+            .unwrap_err();
         assert!(result.to_string().contains(SHORT_NAME_ERROR));
     }
 
@@ -63,7 +67,9 @@ mod tests {
             name: "Luna".to_string(),
             description: "Hi".to_string(),
         };
-        let result = validate_update_moon_scenario_input(input).await.unwrap_err();
+        let result = validate_update_moon_scenario_input(input)
+            .await
+            .unwrap_err();
         assert!(result.to_string().contains(SHORT_DESCRIPTION_ERROR));
     }
 }

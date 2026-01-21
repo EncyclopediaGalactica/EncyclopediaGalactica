@@ -2,8 +2,8 @@ use sqlx::PgPool;
 use sqlx::Result;
 use starmap::scenarios::moons::add::add::add_moon_scenario;
 use starmap::scenarios::moons::add::types::AddMoonScenarioInput;
-use starmap::scenarios::moons::update::update::update_moon_scenario;
 use starmap::scenarios::moons::update::types::UpdateMoonScenarioInput;
+use starmap::scenarios::moons::update::update::update_moon_scenario;
 
 #[sqlx::test(migrations = "./../migrations")]
 async fn test_update_moon_scenario_success(db_pool: PgPool) -> Result<()> {

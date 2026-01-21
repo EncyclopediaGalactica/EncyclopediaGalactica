@@ -43,4 +43,3 @@ async fn test_update_star_scenario_invalid_input(db_pool: PgPool) -> Result<()> 
     assert!(result.is_err());
     Ok(())
 }
-

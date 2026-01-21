@@ -42,8 +42,7 @@ mod tests {
 
     #[test]
     fn test_update_moon_scenario_result_new() {
-        let result =
-            UpdateMoonScenarioResult::new(1, "Luna".to_string(), "A moon".to_string());
+        let result = UpdateMoonScenarioResult::new(1, "Luna".to_string(), "A moon".to_string());
         assert_eq!(result.id, 1);
         assert_eq!(result.name, "Luna");
         assert_eq!(result.description, "A moon");

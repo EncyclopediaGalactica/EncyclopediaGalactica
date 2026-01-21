@@ -37,4 +37,3 @@ async fn test_get_all_moons_scenario_success(db_pool: PgPool) -> Result<()> {
     assert!(titan_exists);
     Ok(())
 }
-

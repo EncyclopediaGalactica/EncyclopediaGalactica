@@ -24,7 +24,14 @@ pub struct AddStarSystemScenarioResult {
 }
 
 impl AddStarSystemScenarioResult {
-    pub fn new(id: i64, name: String, description: String, x: Option<f64>, y: Option<f64>, z: Option<f64>) -> Self {
+    pub fn new(
+        id: i64,
+        name: String,
+        description: String,
+        x: Option<f64>,
+        y: Option<f64>,
+        z: Option<f64>,
+    ) -> Self {
         Self {
             id,
             name,
@@ -38,7 +45,14 @@ impl AddStarSystemScenarioResult {
 
 impl From<StarSystemEntity> for AddStarSystemScenarioResult {
     fn from(value: StarSystemEntity) -> Self {
-        AddStarSystemScenarioResult::new(value.id, value.name, value.description, value.x, value.y, value.z)
+        AddStarSystemScenarioResult::new(
+            value.id,
+            value.name,
+            value.description,
+            value.x,
+            value.y,
+            value.z,
+        )
     }
 }
 

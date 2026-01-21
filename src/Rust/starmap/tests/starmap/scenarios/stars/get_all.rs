@@ -37,4 +37,3 @@ async fn test_get_all_stars_scenario_success(db_pool: PgPool) -> Result<()> {
     assert!(vega_exists);
     Ok(())
 }
-

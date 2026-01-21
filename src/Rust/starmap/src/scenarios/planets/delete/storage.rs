@@ -28,8 +28,10 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // Insert a planet
-        let planet =
-            PlanetEntity::new(0, "Test Planet".to_string(), "Test Description".to_string());
+        let planet = PlanetEntity::new(
+            0,
+            serde_json::json!({"name": "Test Planet", "description": "Test Description"}),
+        );
         let added = add_to_storage(planet, pool.clone()).await.unwrap();
 
         // Delete it

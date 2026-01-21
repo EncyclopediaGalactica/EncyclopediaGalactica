@@ -17,11 +17,8 @@ async fn test_delete_moon_scenario_success(db_pool: PgPool) -> Result<()> {
         .expect("Failed to add moon");
 
     // Now delete it
-    let delete_input = DeleteMoonScenarioInput {
-        id: added.id,
-    };
-    let result = delete_moon_scenario(delete_input, Option::from(db_pool), None)
-        .await;
+    let delete_input = DeleteMoonScenarioInput { id: added.id };
+    let result = delete_moon_scenario(delete_input, Option::from(db_pool), None).await;
 
     assert!(result.is_ok());
     Ok(())

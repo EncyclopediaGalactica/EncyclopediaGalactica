@@ -8,8 +8,7 @@ use starmap::scenarios::planets::delete::types::DeletePlanetScenarioInput;
 async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add a planet first
     let add_input = AddPlanetScenarioInput {
-        name: "Earth".to_string(),
-        description: "Home planet".to_string(),
+        data: serde_json::json!({"name": "Earth", "description": "Home planet"}),
     };
     let add_result = add_planet_scenario(add_input, Some(pool.clone()), None)
         .await

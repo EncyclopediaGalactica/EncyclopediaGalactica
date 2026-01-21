@@ -21,5 +21,8 @@ pub async fn get_all_moons_scenario(
 ) -> anyhow::Result<Vec<GetAllMoonsScenarioResult>> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     let all_moons = get_all_from_storage(db_pool).await?;
-    Ok(all_moons.into_iter().map(GetAllMoonsScenarioResult::from).collect())
+    Ok(all_moons
+        .into_iter()
+        .map(GetAllMoonsScenarioResult::from)
+        .collect())
 }
