@@ -34,11 +34,7 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_add_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // Add a moon to test
-        let add_input = MoonEntity::new(
-            0,
-            "Test Moon".to_string(),
-            "Test Description".to_string(),
-        );
+        let add_input = MoonEntity::new(0, "Test Moon".to_string(), "Test Description".to_string());
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         assert_eq!(added.id, added.id);

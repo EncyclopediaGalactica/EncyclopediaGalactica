@@ -42,8 +42,7 @@ mod tests {
 
     #[test]
     fn test_update_star_scenario_result_new() {
-        let result =
-            UpdateStarScenarioResult::new(1, "Sirius".to_string(), "A star".to_string());
+        let result = UpdateStarScenarioResult::new(1, "Sirius".to_string(), "A star".to_string());
         assert_eq!(result.id, 1);
         assert_eq!(result.name, "Sirius");
         assert_eq!(result.description, "A star");

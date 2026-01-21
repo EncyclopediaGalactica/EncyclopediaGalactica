@@ -23,12 +23,24 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_get_all_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add some star systems
-        let add_input1 =
-            StarSystemEntity::new(0, "Star System 1".to_string(), "Description 1".to_string(), Some(0.0), Some(0.0), Some(0.0));
+        let add_input1 = StarSystemEntity::new(
+            0,
+            "Star System 1".to_string(),
+            "Description 1".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
+        );
         let _ = add_to_storage(add_input1, pool.clone()).await.unwrap();
 
-        let add_input2 =
-            StarSystemEntity::new(0, "Star System 2".to_string(), "Description 2".to_string(), Some(0.0), Some(0.0), Some(0.0));
+        let add_input2 = StarSystemEntity::new(
+            0,
+            "Star System 2".to_string(),
+            "Description 2".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
+        );
         let _ = add_to_storage(add_input2, pool.clone()).await.unwrap();
 
         // Now get all

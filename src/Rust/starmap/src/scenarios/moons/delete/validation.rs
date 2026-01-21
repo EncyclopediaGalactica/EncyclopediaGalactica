@@ -1,9 +1,7 @@
 use super::types::DeleteMoonScenarioInput;
 
 /// Validates the input for deleting a moon
-pub fn validate_delete_moon_scenario_input(
-    input: &DeleteMoonScenarioInput,
-) -> anyhow::Result<()> {
+pub fn validate_delete_moon_scenario_input(input: &DeleteMoonScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {
         return Err(anyhow::anyhow!("The moon id must be positive."));
     }

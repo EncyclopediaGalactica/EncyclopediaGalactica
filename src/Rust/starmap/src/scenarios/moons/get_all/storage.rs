@@ -4,9 +4,7 @@ use sqlx::PgPool;
 
 use crate::scenarios::moons::MoonEntity;
 
-pub async fn get_all_from_storage(
-    db_connection: PgPool,
-) -> anyhow::Result<Vec<MoonEntity>> {
+pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<MoonEntity>> {
     let result: Vec<MoonEntity> = sqlx::query_as(
         r#"
         SELECT id, name, description
@@ -40,8 +38,12 @@ mod tests {
             "Moon 2".to_string(),
             "Description 2".to_string(),
         );
-        crate::scenarios::moons::add::storage::add_to_storage(moon1, pool.clone()).await.unwrap();
-        crate::scenarios::moons::add::storage::add_to_storage(moon2, pool.clone()).await.unwrap();
+        crate::scenarios::moons::add::storage::add_to_storage(moon1, pool.clone())
+            .await
+            .unwrap();
+        crate::scenarios::moons::add::storage::add_to_storage(moon2, pool.clone())
+            .await
+            .unwrap();
 
         // Get all
         let all_moons = get_all_from_storage(pool.clone()).await.unwrap();

@@ -22,17 +22,14 @@ pub async fn update_in_storage(
     }
 
     // Perform the update
-    let row = sqlx::query(
-        "UPDATE planets SET name = $2, description = $3 WHERE id = $1 RETURNING id, name, description",
-    )
-    .bind(input.id)
-    .bind(&input.name)
-    .bind(&input.description)
-    .fetch_one(pool)
-    .await
-    .with_context(|| "Failed to update planet")?;
+    let row = sqlx::query("UPDATE planets SET data = $2 WHERE id = $1 RETURNING id, data")
+        .bind(input.id)
+        .bind(&input.data)
+        .fetch_one(pool)
+        .await
+        .with_context(|| "Failed to update planet")?;
 
-    let entity = PlanetEntity::new(row.get(0), row.get(1), row.get(2));
+    let entity = PlanetEntity::new(row.get(0), row.get(1));
 
     debug!("Updated planet: {:?}", entity);
 
@@ -50,22 +47,20 @@ mod tests {
         // First, add a planet to have an existing ID
         let add_input = PlanetEntity::new(
             0,
-            "Original Planet".to_string(),
-            "Original Description".to_string(),
+            serde_json::json!({"name": "Original Planet", "description": "Original Description"}),
         );
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         // Now update it
         let update_input = UpdatePlanetScenarioInput {
             id: added.id,
-            name: "Updated Planet".to_string(),
-            description: "Updated Description".to_string(),
+            data: serde_json::json!({"name": "Updated Planet", "description": "Updated Description"}),
         };
         let result = update_in_storage(&pool, update_input).await.unwrap();
 
         assert_eq!(result.id, added.id);
-        assert_eq!(result.name, "Updated Planet");
-        assert_eq!(result.description, "Updated Description");
+        assert_eq!(result.data["name"], "Updated Planet");
+        assert_eq!(result.data["description"], "Updated Description");
         Ok(())
     }
 }

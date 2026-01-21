@@ -6,15 +6,14 @@ use crate::scenarios::planets::PlanetEntity;
 
 /// Retrieves all planets from the database
 pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
-    let planets: Vec<PlanetEntity> = query("SELECT id, name, description FROM planets")
+    let planets: Vec<PlanetEntity> = query("SELECT id, data FROM planets")
         .fetch_all(pool)
         .await
         .with_context(|| "Failed to get all planets")?
         .into_iter()
         .map(|row| PlanetEntity {
             id: row.get(0),
-            name: row.get(1),
-            description: row.get(2),
+            data: row.get(1),
         })
         .collect();
 
@@ -32,8 +31,14 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_get_all_from_storage_returns_correct_count(pool: PgPool) -> sqlx::Result<()> {
         // Insert a few test planets
-        let planet1 = PlanetEntity::new(0, "Test Planet 1".to_string(), "Desc 1".to_string());
-        let planet2 = PlanetEntity::new(0, "Test Planet 2".to_string(), "Desc 2".to_string());
+        let planet1 = PlanetEntity::new(
+            0,
+            serde_json::json!({"name": "Test Planet 1", "description": "Desc 1"}),
+        );
+        let planet2 = PlanetEntity::new(
+            0,
+            serde_json::json!({"name": "Test Planet 2", "description": "Desc 2"}),
+        );
 
         add_to_storage(planet1, pool.clone()).await.unwrap();
         add_to_storage(planet2, pool.clone()).await.unwrap();

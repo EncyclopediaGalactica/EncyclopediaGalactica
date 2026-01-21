@@ -23,6 +23,10 @@ pub async fn update_moon_scenario(
 ) -> anyhow::Result<UpdateMoonScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_update_moon_scenario_input(input.clone()).await?;
-    let updated_moon = update_in_storage(MoonEntity::new(input.id, input.name, input.description), db_pool).await?;
+    let updated_moon = update_in_storage(
+        MoonEntity::new(input.id, input.name, input.description),
+        db_pool,
+    )
+    .await?;
     Ok(UpdateMoonScenarioResult::from_entity(updated_moon))
 }

@@ -10,17 +10,16 @@ pub async fn add_to_storage(
 ) -> anyhow::Result<PlanetEntity> {
     let result: PlanetEntity = sqlx::query_as(
         r#"
-        INSERT INTO 
-            planets (name, description) 
-            VALUES ($1, $2)
-        RETURNING id, name, description
+        INSERT INTO
+            planets (data)
+            VALUES ($1)
+        RETURNING id, data
         "#,
     )
-    .bind(&input.name)
-    .bind(&input.description)
+    .bind(&input.data)
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert planet: (name: {:?}", input.name))?;
+    .with_context(|| format!("Failed to insert planet: (data: {:?}", input.data))?;
 
     debug!("Planet table: entity inserted with id: {:?}", result.id);
     Ok(result)
@@ -36,15 +35,14 @@ mod tests {
         // First, add a planet to have an existing ID
         let add_input = PlanetEntity::new(
             0,
-            "Original Planet".to_string(),
-            "Original Description".to_string(),
+            serde_json::json!({"name": "Original Planet", "description": "Original Description"}),
         );
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         // Now update it
         assert_eq!(added.id, added.id);
-        assert_eq!(added.name, "Original Planet");
-        assert_eq!(added.description, "Original Description");
+        assert_eq!(added.data["name"], "Original Planet");
+        assert_eq!(added.data["description"], "Original Description");
         Ok(())
     }
 }

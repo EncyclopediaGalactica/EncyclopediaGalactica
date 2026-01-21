@@ -23,6 +23,10 @@ pub async fn update_star_scenario(
 ) -> anyhow::Result<UpdateStarScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_update_star_scenario_input(input.clone()).await?;
-    let updated_star = update_in_storage(StarEntity::new(input.id, input.name, input.description), db_pool).await?;
+    let updated_star = update_in_storage(
+        StarEntity::new(input.id, input.name, input.description),
+        db_pool,
+    )
+    .await?;
     Ok(UpdateStarScenarioResult::from_entity(updated_star))
 }

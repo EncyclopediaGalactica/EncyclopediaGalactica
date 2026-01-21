@@ -19,5 +19,8 @@ pub async fn get_all_planets_scenario(
 ) -> anyhow::Result<Vec<GetAllPlanetsScenarioResult>> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     let planets = get_all_from_storage(&db_pool).await?;
-    Ok(planets.into_iter().map(GetAllPlanetsScenarioResult::from).collect())
+    Ok(planets
+        .into_iter()
+        .map(GetAllPlanetsScenarioResult::from)
+        .collect())
 }

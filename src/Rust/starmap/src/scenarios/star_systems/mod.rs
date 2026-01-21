@@ -26,12 +26,26 @@ impl From<AddStarSystemScenarioInput> for StarSystemEntity {
 
 impl From<UpdateStarSystemScenarioInput> for StarSystemEntity {
     fn from(value: UpdateStarSystemScenarioInput) -> Self {
-        StarSystemEntity::new(value.id, value.name, value.description, value.x, value.y, value.z)
+        StarSystemEntity::new(
+            value.id,
+            value.name,
+            value.description,
+            value.x,
+            value.y,
+            value.z,
+        )
     }
 }
 
 impl StarSystemEntity {
-    pub fn new(id: i64, name: String, description: String, x: Option<f64>, y: Option<f64>, z: Option<f64>) -> Self {
+    pub fn new(
+        id: i64,
+        name: String,
+        description: String,
+        x: Option<f64>,
+        y: Option<f64>,
+        z: Option<f64>,
+    ) -> Self {
         Self {
             id,
             name,

@@ -40,7 +40,9 @@ mod tests {
             "Original Moon".to_string(),
             "Original Description".to_string(),
         );
-        let added = crate::scenarios::moons::add::storage::add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = crate::scenarios::moons::add::storage::add_to_storage(add_input, pool.clone())
+            .await
+            .unwrap();
 
         // Now update it
         let update_input = MoonEntity::new(

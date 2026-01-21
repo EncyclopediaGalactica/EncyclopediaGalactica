@@ -6,32 +6,25 @@ use crate::scenarios::planets::PlanetEntity;
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdatePlanetScenarioInput {
     pub id: i64,
-    pub name: String,
-    pub description: String,
+    pub data: serde_json::Value,
 }
 
 /// Result data structure for updating a planet
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdatePlanetScenarioResult {
     pub id: i64,
-    pub name: String,
-    pub description: String,
+    pub data: serde_json::Value,
 }
 
 impl UpdatePlanetScenarioResult {
-    pub fn new(id: i64, name: String, description: String) -> Self {
-        Self {
-            id,
-            name,
-            description,
-        }
+    pub fn new(id: i64, data: serde_json::Value) -> Self {
+        Self { id, data }
     }
 
     pub fn from_entity(entity: PlanetEntity) -> Self {
         Self {
             id: entity.id(),
-            name: entity.name().to_string(),
-            description: entity.description().to_string(),
+            data: entity.data().clone(),
         }
     }
 }
@@ -42,19 +35,18 @@ mod tests {
 
     #[test]
     fn test_update_planet_scenario_result_new() {
-        let result =
-            UpdatePlanetScenarioResult::new(1, "Earth".to_string(), "A planet".to_string());
+        let data = serde_json::json!({"name": "Earth", "description": "A planet"});
+        let result = UpdatePlanetScenarioResult::new(1, data.clone());
         assert_eq!(result.id, 1);
-        assert_eq!(result.name, "Earth");
-        assert_eq!(result.description, "A planet");
+        assert_eq!(result.data, data);
     }
 
     #[test]
     fn test_update_planet_scenario_result_from_entity() {
-        let entity = PlanetEntity::new(2, "Mars".to_string(), "Red planet".to_string());
+        let data = serde_json::json!({"name": "Mars", "description": "Red planet"});
+        let entity = PlanetEntity::new(2, data.clone());
         let result = UpdatePlanetScenarioResult::from_entity(entity);
         assert_eq!(result.id, 2);
-        assert_eq!(result.name, "Mars");
-        assert_eq!(result.description, "Red planet");
+        assert_eq!(result.data, data);
     }
 }

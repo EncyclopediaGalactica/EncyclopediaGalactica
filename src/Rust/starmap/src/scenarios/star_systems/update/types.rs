@@ -25,7 +25,14 @@ pub struct UpdateStarSystemScenarioResult {
 }
 
 impl UpdateStarSystemScenarioResult {
-    pub fn new(id: i64, name: String, description: String, x: Option<f64>, y: Option<f64>, z: Option<f64>) -> Self {
+    pub fn new(
+        id: i64,
+        name: String,
+        description: String,
+        x: Option<f64>,
+        y: Option<f64>,
+        z: Option<f64>,
+    ) -> Self {
         Self {
             id,
             name,

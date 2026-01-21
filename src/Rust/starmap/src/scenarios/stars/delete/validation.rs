@@ -1,9 +1,7 @@
 use super::types::DeleteStarScenarioInput;
 
 /// Validates the input for deleting a star
-pub fn validate_delete_star_scenario_input(
-    input: &DeleteStarScenarioInput,
-) -> anyhow::Result<()> {
+pub fn validate_delete_star_scenario_input(input: &DeleteStarScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {
         return Err(anyhow::anyhow!("The star id must be positive."));
     }
