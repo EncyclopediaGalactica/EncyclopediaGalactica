@@ -1,3 +1,10 @@
+# [0.65.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.64.0...0.65.0) (2026-01-21)
+
+
+### Features
+
+* **starmap:** planets have only a data field that storing data in json format [#287](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/issues/287) ([f685420](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/commit/f6854204aec914a5301652eb1656ac3129310146))
+
 # [0.64.0](https://github.com/EncyclopediaGalactica/EncyclopediaGalactica/compare/0.63.1...0.64.0) (2026-01-15)
 
 
