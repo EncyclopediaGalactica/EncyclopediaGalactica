@@ -1,8 +1,8 @@
 -- Add up migration script here
-CREATE TABLE IF NOT EXISTS stars (
+DROP TABLE IF EXISTS stars;
+CREATE TABLE stars (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
+    data JSONB NOT NULL,
     star_system_id BIGINT,
 
     PRIMARY KEY (id),

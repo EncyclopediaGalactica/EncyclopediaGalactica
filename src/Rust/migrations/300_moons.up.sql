@@ -1,8 +1,8 @@
 -- Add up migration script here
-CREATE TABLE IF NOT EXISTS moons (
+DROP TABLE IF EXISTS moons;
+CREATE TABLE moons (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    name VARCHAR(255) NOT NULL,
-    description TEXT,
+    data JSONB NOT NULL,
     planet_id BIGINT,
 
     PRIMARY KEY (id),
