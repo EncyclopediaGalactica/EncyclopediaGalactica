@@ -1,10 +1,9 @@
 [package]
-authors = ["Andras Csanyi"]
-name = "eg_cli"
+name = "galaxymap"
 version = "0.1.0"
 edition = "2024"
 description = """
-Rust CLI for Encyclopedia Galactica
+The GalaxyMap module of the Encyclopedia Galactica
 """
 
 [dependencies]
@@ -27,7 +26,5 @@ regex = { workspace = true }
 anyhow = { workspace = true }
 thiserror = { workspace = true }
 derive_more = { workspace = true }
-
-exercises = { version = "0.1.0", path = "../exercises" }
-starmap = { version = "0.1.0", path = "../galaxymap" }
-storage = { version = "0.1.0", path = "../storage" }
+sqlx = { workspace = true }
+pyo3 = { workspace = true }

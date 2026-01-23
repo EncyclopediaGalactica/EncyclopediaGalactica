@@ -4,7 +4,7 @@ members = [
   # "cli",
   "eg_py",
   # "exercises",
-  "starmap",
+  "galaxymap",
   # "storage",
 ]
 

@@ -1,0 +1,48 @@
+use anyhow::Context;
+use log::debug;
+use sqlx::PgPool;
+
+use crate::scenarios::stars::StarEntity;
+
+pub async fn add_to_storage(
+    input: StarEntity,
+    db_connection: PgPool,
+) -> anyhow::Result<StarEntity> {
+    let result: StarEntity = sqlx::query_as(
+        r#"
+        INSERT INTO
+            stars (data)
+            VALUES ($1)
+        RETURNING id, data
+        "#,
+    )
+    .bind(&input.data)
+    .fetch_one(&db_connection)
+    .await
+    .with_context(|| format!("Failed to insert star: (data: {:?})", input.data))?;
+
+    debug!("Star table: entity inserted with id: {:?}", result.id);
+    Ok(result)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use sqlx::PgPool;
+
+    #[sqlx::test(migrations = "./../migrations")]
+    async fn test_add_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
+        // Add a star to test
+        let data = serde_json::json!({
+            "name": "Test Star",
+            "description": "Test Description"
+        });
+        let add_input = StarEntity::new(0, data);
+        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+
+        assert_eq!(added.id, added.id);
+        assert_eq!(added.data["name"], "Test Star");
+        assert_eq!(added.data["description"], "Test Description");
+        Ok(())
+    }
+}
