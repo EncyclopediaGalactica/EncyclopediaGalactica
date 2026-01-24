@@ -1,0 +1,7 @@
+CREATE TABLE galaxy (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    data JSONB NOT NULL,
+
+    PRIMARY KEY (id)
+
+);

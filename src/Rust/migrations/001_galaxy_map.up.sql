@@ -1,0 +1,6 @@
+CREATE TABLE galaxy_map (
+    id BIGINT GENERATED ALWAYS AS IDENTITY,
+    details JSONB NOT NULL,
+
+    PRIMARY KEY (id)
+);
