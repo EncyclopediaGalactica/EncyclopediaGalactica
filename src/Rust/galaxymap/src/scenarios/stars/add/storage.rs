@@ -11,15 +11,15 @@ pub async fn add_to_storage(
     let result: StarEntity = sqlx::query_as(
         r#"
         INSERT INTO
-            stars (data)
+            stars (details)
             VALUES ($1)
-        RETURNING id, data
+        RETURNING id, details
         "#,
     )
-    .bind(&input.data)
+    .bind(&input.details)
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert star: (data: {:?})", input.data))?;
+    .with_context(|| format!("Failed to insert star: (data: {:?})", input.details))?;
 
     debug!("Star table: entity inserted with id: {:?}", result.id);
     Ok(result)
@@ -41,8 +41,8 @@ mod tests {
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         assert_eq!(added.id, added.id);
-        assert_eq!(added.data["name"], "Test Star");
-        assert_eq!(added.data["description"], "Test Description");
+        assert_eq!(added.details["name"], "Test Star");
+        assert_eq!(added.details["description"], "Test Description");
         Ok(())
     }
 }

@@ -7,14 +7,14 @@ use sqlx::Result;
 async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add two planets for test data
     let add_input1 = AddPlanetScenarioInput {
-        data: serde_json::json!({"name": "Earth", "description": "Home planet"}),
+        details: serde_json::json!({"name": "Earth", "description": "Home planet"}),
     };
     let add_result1 = add_planet_scenario(add_input1.clone(), Some(pool.clone()), None)
         .await
         .unwrap();
 
     let add_input2 = AddPlanetScenarioInput {
-        data: serde_json::json!({"name": "Mars", "description": "Red planet"}),
+        details: serde_json::json!({"name": "Mars", "description": "Red planet"}),
     };
     let add_result2 = add_planet_scenario(add_input2.clone(), Some(pool.clone()), None)
         .await

@@ -5,7 +5,7 @@ use crate::scenarios::planets::PlanetEntity;
 #[derive(Debug, Clone)]
 #[pyclass]
 pub struct AddPlanetScenarioInput {
-    pub data: serde_json::Value,
+    pub details: serde_json::Value,
 }
 
 #[derive(Debug, Clone)]
@@ -23,7 +23,7 @@ impl AddPlanetScenarioResult {
 
 impl From<PlanetEntity> for AddPlanetScenarioResult {
     fn from(value: PlanetEntity) -> Self {
-        AddPlanetScenarioResult::new(value.id, value.data)
+        AddPlanetScenarioResult::new(value.id, value.details)
     }
 }
 

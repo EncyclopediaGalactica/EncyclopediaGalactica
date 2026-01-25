@@ -1,6 +1,11 @@
 CREATE TABLE galaxy_map (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    details JSONB NOT NULL,
+    name TEXT,
+    baricenter TEXT,
+    x_axis TEXT,
+    y_axis TEXT,
+    z_axis TEXT,
+    star_systems TEXT,
 
     PRIMARY KEY (id)
 );

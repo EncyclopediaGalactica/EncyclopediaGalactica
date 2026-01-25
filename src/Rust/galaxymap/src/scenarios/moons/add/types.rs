@@ -29,8 +29,11 @@ impl AddMoonScenarioResult {
 
 impl From<MoonEntity> for AddMoonScenarioResult {
     fn from(value: MoonEntity) -> Self {
-        let name = value.data["name"].as_str().unwrap_or("").to_string();
-        let description = value.data["description"].as_str().unwrap_or("").to_string();
+        let name = value.details["name"].as_str().unwrap_or("").to_string();
+        let description = value.details["description"]
+            .as_str()
+            .unwrap_or("")
+            .to_string();
         AddMoonScenarioResult::new(value.id, name, description)
     }
 }

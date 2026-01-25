@@ -26,8 +26,8 @@ impl GetAllMoonsScenarioResult {
 
 impl From<MoonEntity> for GetAllMoonsScenarioResult {
     fn from(entity: MoonEntity) -> Self {
-        let name = entity.data["name"].as_str().unwrap_or("").to_string();
-        let description = entity.data["description"]
+        let name = entity.details["name"].as_str().unwrap_or("").to_string();
+        let description = entity.details["description"]
             .as_str()
             .unwrap_or("")
             .to_string();

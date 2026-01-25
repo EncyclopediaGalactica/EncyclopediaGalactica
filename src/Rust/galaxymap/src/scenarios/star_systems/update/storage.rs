@@ -18,13 +18,13 @@ pub async fn update_in_storage(
     let result: StarSystemEntity = sqlx::query_as(
         r#"
         UPDATE star_systems
-        SET data = $2
+        SET details = $2
         WHERE id = $1
-        RETURNING id, data
+        RETURNING id, details
         "#,
     )
     .bind(input.id)
-    .bind(&input.data)
+    .bind(&input.details)
     .fetch_one(&db_connection)
     .await
     .with_context(|| format!("Failed to update star system: (id: {})", input.id))?;
@@ -64,8 +64,8 @@ mod tests {
         let updated = update_in_storage(update_input, pool.clone()).await.unwrap();
 
         assert_eq!(updated.id, added.id);
-        assert_eq!(updated.data["name"], "Updated Star System");
-        assert_eq!(updated.data["description"], "Updated Description");
+        assert_eq!(updated.details["name"], "Updated Star System");
+        assert_eq!(updated.details["description"], "Updated Description");
         Ok(())
     }
 }

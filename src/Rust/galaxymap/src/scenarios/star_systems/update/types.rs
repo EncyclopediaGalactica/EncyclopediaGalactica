@@ -44,14 +44,14 @@ impl UpdateStarSystemScenarioResult {
     }
 
     pub fn from_entity(entity: StarSystemEntity) -> Self {
-        let name = entity.data()["name"].as_str().unwrap_or("").to_string();
-        let description = entity.data()["description"]
+        let name = entity.details()["name"].as_str().unwrap_or("").to_string();
+        let description = entity.details()["description"]
             .as_str()
             .unwrap_or("")
             .to_string();
-        let x = entity.data()["x"].as_f64();
-        let y = entity.data()["y"].as_f64();
-        let z = entity.data()["z"].as_f64();
+        let x = entity.details()["x"].as_f64();
+        let y = entity.details()["y"].as_f64();
+        let z = entity.details()["z"].as_f64();
         Self {
             id: entity.id(),
             name,

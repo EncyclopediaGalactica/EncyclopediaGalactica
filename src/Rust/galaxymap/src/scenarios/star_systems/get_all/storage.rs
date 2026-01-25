@@ -4,11 +4,17 @@ use sqlx::PgPool;
 use crate::scenarios::star_systems::StarSystemEntity;
 
 pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
-    let star_systems: Vec<StarSystemEntity> =
-        sqlx::query_as("SELECT id, data FROM star_systems")
-            .fetch_all(&db_connection)
-            .await
-            .with_context(|| "Failed to get all star systems")?;
+    let star_systems: Vec<StarSystemEntity> = sqlx::query_as(
+        r#"
+        SELECT id, details 
+        FROM star_systems
+        "#,
+    )
+    .fetch_all(&db_connection)
+    .await
+    .with_context(|| "Failed to get all star systems")?;
+
+    println!("star_systems: {:?}", star_systems);
 
     Ok(star_systems)
 }
@@ -26,9 +32,9 @@ mod tests {
         let data1 = serde_json::json!({
             "name": "Star System 1",
             "description": "Description 1",
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
+            "x": 1.0,
+            "y": 2.0,
+            "z": 3.0
         });
         let add_input1 = StarSystemEntity::new(0, data1);
         let _ = add_to_storage(add_input1, pool.clone()).await.unwrap();
@@ -36,9 +42,9 @@ mod tests {
         let data2 = serde_json::json!({
             "name": "Star System 2",
             "description": "Description 2",
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
+            "x": 2.0,
+            "y": 2.0,
+            "z": 2.0
         });
         let add_input2 = StarSystemEntity::new(0, data2);
         let _ = add_to_storage(add_input2, pool.clone()).await.unwrap();
@@ -48,7 +54,14 @@ mod tests {
 
         assert!(all.len() >= 2);
         // Check that our added ones are there
-        let names: Vec<String> = all.iter().map(|s| s.data["name"].as_str().unwrap().to_string()).collect();
+        let names: Vec<String> = all
+            .iter()
+            .map(|s| {
+                println!("s: {:?}", s.details);
+                println!("s: {:?}", s.details["name"]);
+                s.details["name"].as_str().unwrap().to_string()
+            })
+            .collect();
         assert!(names.contains(&"Star System 1".to_string()));
         assert!(names.contains(&"Star System 2".to_string()));
         Ok(())

@@ -17,8 +17,10 @@ pub async fn get_all_star_systems_scenario(
     pg_pool: Option<PgPool>,
     db_connection_string: Option<&str>,
 ) -> anyhow::Result<Vec<GetAllStarSystemsScenarioResult>> {
+    print!("Getting all star systems");
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     let star_systems = get_all_from_storage(db_pool).await?;
+    println!("star_systems from scenario: {:?}", star_systems);
     Ok(star_systems
         .into_iter()
         .map(GetAllStarSystemsScenarioResult::from)

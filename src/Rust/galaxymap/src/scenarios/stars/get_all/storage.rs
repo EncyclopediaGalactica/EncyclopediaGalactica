@@ -7,7 +7,7 @@ use crate::scenarios::stars::StarEntity;
 pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarEntity>> {
     let result: Vec<StarEntity> = sqlx::query_as(
         r#"
-        SELECT id, data
+        SELECT id, details
         FROM stars
         ORDER BY id
         "#,

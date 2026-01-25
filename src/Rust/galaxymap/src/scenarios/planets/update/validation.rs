@@ -15,20 +15,20 @@ pub async fn validate_update_planet_scenario_input(
     ensure!(input.id > 0, INVALID_ID_ERROR);
 
     // Ensure data is an object
-    let data_obj = input
-        .data
+    let details_obj = input
+        .details
         .as_object()
         .ok_or_else(|| anyhow::anyhow!(INVALID_DATA_ERROR))?;
 
     // Extract and validate name
-    let name = data_obj
+    let name = details_obj
         .get("name")
         .and_then(|v| v.as_str())
         .ok_or_else(|| anyhow::anyhow!(INVALID_DATA_ERROR))?;
     ensure!(name.trim().len() >= 3, SHORT_NAME_ERROR);
 
     // Extract and validate description
-    let description = data_obj
+    let description = details_obj
         .get("description")
         .and_then(|v| v.as_str())
         .ok_or_else(|| anyhow::anyhow!(INVALID_DATA_ERROR))?;
@@ -43,22 +43,22 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_valid_input() {
-        let data = serde_json::json!({"name": "Earth", "description": "A blue planet"});
+        let details = serde_json::json!({"name": "Earth", "description": "A blue planet"});
         let input = UpdatePlanetScenarioInput {
             id: 1,
-            data: data.clone(),
+            details: details.clone(),
         };
         let result = validate_update_planet_scenario_input(input.clone())
             .await
             .unwrap();
         assert_eq!(result.id, input.id);
-        assert_eq!(result.data, data);
+        assert_eq!(result.details, details);
     }
 
     #[tokio::test]
     async fn test_validation_invalid_id_zero() {
-        let data = serde_json::json!({"name": "Earth", "description": "A blue planet"});
-        let input = UpdatePlanetScenarioInput { id: 0, data };
+        let details = serde_json::json!({"name": "Earth", "description": "A blue planet"});
+        let input = UpdatePlanetScenarioInput { id: 0, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();
@@ -67,8 +67,8 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_invalid_id_negative() {
-        let data = serde_json::json!({"name": "Earth", "description": "A blue planet"});
-        let input = UpdatePlanetScenarioInput { id: -1, data };
+        let details = serde_json::json!({"name": "Earth", "description": "A blue planet"});
+        let input = UpdatePlanetScenarioInput { id: -1, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();
@@ -77,8 +77,8 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_short_name() {
-        let data = serde_json::json!({"name": "Ab", "description": "A blue planet"});
-        let input = UpdatePlanetScenarioInput { id: 1, data };
+        let details = serde_json::json!({"name": "Ab", "description": "A blue planet"});
+        let input = UpdatePlanetScenarioInput { id: 1, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();
@@ -87,8 +87,8 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_short_description() {
-        let data = serde_json::json!({"name": "Earth", "description": "Ab"});
-        let input = UpdatePlanetScenarioInput { id: 1, data };
+        let details = serde_json::json!({"name": "Earth", "description": "Ab"});
+        let input = UpdatePlanetScenarioInput { id: 1, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();
@@ -97,8 +97,8 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_short_trimmed_name() {
-        let data = serde_json::json!({"name": "  Ea  ", "description": "A blue planet"});
-        let input = UpdatePlanetScenarioInput { id: 1, data };
+        let details = serde_json::json!({"name": "  Ea  ", "description": "A blue planet"});
+        let input = UpdatePlanetScenarioInput { id: 1, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();
@@ -107,8 +107,8 @@ mod tests {
 
     #[tokio::test]
     async fn test_validation_short_trimmed_description() {
-        let data = serde_json::json!({"name": "Earth", "description": "  Ab  "});
-        let input = UpdatePlanetScenarioInput { id: 1, data };
+        let details = serde_json::json!({"name": "Earth", "description": "  Ab  "});
+        let input = UpdatePlanetScenarioInput { id: 1, details };
         let result = validate_update_planet_scenario_input(input)
             .await
             .unwrap_err();

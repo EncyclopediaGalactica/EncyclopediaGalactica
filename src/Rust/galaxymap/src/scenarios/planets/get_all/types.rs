@@ -21,7 +21,7 @@ impl GetAllPlanetsScenarioResult {
 
 impl From<PlanetEntity> for GetAllPlanetsScenarioResult {
     fn from(entity: PlanetEntity) -> Self {
-        GetAllPlanetsScenarioResult::new(entity.id, entity.data)
+        GetAllPlanetsScenarioResult::new(entity.id, entity.details)
     }
 }
 

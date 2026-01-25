@@ -11,15 +11,15 @@ pub async fn add_to_storage(
     let result: PlanetEntity = sqlx::query_as(
         r#"
         INSERT INTO
-            planets (data)
+            planets (details)
             VALUES ($1)
-        RETURNING id, data
+        RETURNING id, details
         "#,
     )
-    .bind(&input.data)
+    .bind(&input.details)
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert planet: (data: {:?}", input.data))?;
+    .with_context(|| format!("Failed to insert planet: (data: {:?}", input.details))?;
 
     debug!("Planet table: entity inserted with id: {:?}", result.id);
     Ok(result)
@@ -41,8 +41,8 @@ mod tests {
 
         // Now update it
         assert_eq!(added.id, added.id);
-        assert_eq!(added.data["name"], "Original Planet");
-        assert_eq!(added.data["description"], "Original Description");
+        assert_eq!(added.details["name"], "Original Planet");
+        assert_eq!(added.details["description"], "Original Description");
         Ok(())
     }
 }

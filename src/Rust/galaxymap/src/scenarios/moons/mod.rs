@@ -3,7 +3,7 @@ use sqlx::prelude::FromRow;
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct MoonEntity {
     pub id: i64,
-    pub data: serde_json::Value,
+    pub details: serde_json::Value,
 }
 
 use self::add::types::AddMoonScenarioInput;
@@ -36,7 +36,7 @@ impl From<UpdateMoonScenarioInput> for MoonEntity {
 
 impl MoonEntity {
     pub fn new(id: i64, data: serde_json::Value) -> Self {
-        Self { id, data }
+        Self { id, details: data }
     }
 
     pub fn id(&self) -> i64 {
@@ -48,10 +48,10 @@ impl MoonEntity {
     }
 
     pub fn data(&self) -> &serde_json::Value {
-        &self.data
+        &self.details
     }
 
     pub fn set_data(&mut self, data: serde_json::Value) {
-        self.data = data;
+        self.details = data;
     }
 }

@@ -8,7 +8,7 @@ use sqlx::Result;
 async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // First, add a planet to update
     let add_input = AddPlanetScenarioInput {
-        data: serde_json::json!({"name": "Earth", "description": "Home planet"}),
+        details: serde_json::json!({"name": "Earth", "description": "Home planet"}),
     };
     let add_result = add_planet_scenario(add_input, Some(pool.clone()), None)
         .await
@@ -18,7 +18,7 @@ async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Now update it
     let update_input = UpdatePlanetScenarioInput {
         id: planet_id,
-        data: serde_json::json!({"name": "Updated Earth", "description": "Updated home planet"}),
+        details: serde_json::json!({"name": "Updated Earth", "description": "Updated home planet"}),
     };
     let update_result = update_planet_scenario(update_input, Some(pool), None)
         .await
@@ -34,7 +34,7 @@ async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
 async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()> {
     let update_input = UpdatePlanetScenarioInput {
         id: 99999, // Non-existent ID
-        data: serde_json::json!({"name": "Fake Planet", "description": "Does not exist"}),
+        details: serde_json::json!({"name": "Fake Planet", "description": "Does not exist"}),
     };
     let result = update_planet_scenario(update_input, Some(pool), None).await;
     assert!(result.is_err());
@@ -47,7 +47,7 @@ async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()
 async fn test_update_planet_scenario_invalid_input_short_name(pool: sqlx::PgPool) -> Result<()> {
     let update_input = UpdatePlanetScenarioInput {
         id: 1,
-        data: serde_json::json!({"name": "Ab", "description": "Valid description"}),
+        details: serde_json::json!({"name": "Ab", "description": "Valid description"}),
     };
     let result = update_planet_scenario(update_input, Some(pool), None).await;
     assert!(result.is_err());

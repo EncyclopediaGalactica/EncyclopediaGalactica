@@ -9,7 +9,6 @@ const SHORT_DESCRIPTION_ERROR: &str =
 pub async fn validate_add_star_system_scenario_input(
     input: AddStarSystemScenarioInput,
 ) -> anyhow::Result<AddStarSystemScenarioInput> {
-    println!("the input: {:?}", input);
     ensure!(input.name.trim().len() >= 3, SHORT_NAME_ERROR);
     ensure!(input.description.trim().len() >= 3, SHORT_DESCRIPTION_ERROR);
     Ok(input)

@@ -6,7 +6,7 @@ use crate::scenarios::planets::PlanetEntity;
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdatePlanetScenarioInput {
     pub id: i64,
-    pub data: serde_json::Value,
+    pub details: serde_json::Value,
 }
 
 /// Result data structure for updating a planet

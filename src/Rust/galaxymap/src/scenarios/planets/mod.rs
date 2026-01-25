@@ -3,7 +3,7 @@ use sqlx::prelude::FromRow;
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct PlanetEntity {
     pub id: i64,
-    pub data: serde_json::Value,
+    pub details: serde_json::Value,
 }
 
 use self::add::types::AddPlanetScenarioInput;
@@ -15,13 +15,13 @@ pub mod update;
 
 impl From<AddPlanetScenarioInput> for PlanetEntity {
     fn from(value: AddPlanetScenarioInput) -> Self {
-        return PlanetEntity::new(0, value.data);
+        return PlanetEntity::new(0, value.details);
     }
 }
 
 impl PlanetEntity {
-    pub fn new(id: i64, data: serde_json::Value) -> Self {
-        Self { id, data }
+    pub fn new(id: i64, details: serde_json::Value) -> Self {
+        Self { id, details }
     }
 
     pub fn id(&self) -> i64 {
@@ -33,10 +33,10 @@ impl PlanetEntity {
     }
 
     pub fn data(&self) -> &serde_json::Value {
-        &self.data
+        &self.details
     }
 
     pub fn set_data(&mut self, data: serde_json::Value) {
-        self.data = data;
+        self.details = data;
     }
 }

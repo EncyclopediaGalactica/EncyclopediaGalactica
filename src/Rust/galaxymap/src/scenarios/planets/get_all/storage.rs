@@ -6,16 +6,21 @@ use crate::scenarios::planets::PlanetEntity;
 
 /// Retrieves all planets from the database
 pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
-    let planets: Vec<PlanetEntity> = query("SELECT id, data FROM planets")
-        .fetch_all(pool)
-        .await
-        .with_context(|| "Failed to get all planets")?
-        .into_iter()
-        .map(|row| PlanetEntity {
-            id: row.get(0),
-            data: row.get(1),
-        })
-        .collect();
+    let planets: Vec<PlanetEntity> = query(
+        r#"
+    SELECT id, details
+    FROM planets
+    "#,
+    )
+    .fetch_all(pool)
+    .await
+    .with_context(|| "Failed to get all planets")?
+    .into_iter()
+    .map(|row| PlanetEntity {
+        id: row.get(0),
+        details: row.get(1),
+    })
+    .collect();
 
     debug!("Retrieved {} planets", planets.len());
 

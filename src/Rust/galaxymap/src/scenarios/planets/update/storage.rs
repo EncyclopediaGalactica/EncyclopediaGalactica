@@ -11,23 +11,36 @@ pub async fn update_in_storage(
     input: UpdatePlanetScenarioInput,
 ) -> Result<PlanetEntity> {
     // First, check if the planet exists
-    let exists: Option<i64> = sqlx::query("SELECT id FROM planets WHERE id = $1")
-        .bind(input.id)
-        .fetch_optional(pool)
-        .await?
-        .map(|row| row.get(0));
+    let exists: Option<i64> = sqlx::query(
+        r#"
+    SELECT id 
+    FROM planets 
+    WHERE id = $1
+    "#,
+    )
+    .bind(input.id)
+    .fetch_optional(pool)
+    .await?
+    .map(|row| row.get(0));
 
     if exists.is_none() {
         return Err(anyhow::anyhow!("Id does not exist"));
     }
 
     // Perform the update
-    let row = sqlx::query("UPDATE planets SET data = $2 WHERE id = $1 RETURNING id, data")
-        .bind(input.id)
-        .bind(&input.data)
-        .fetch_one(pool)
-        .await
-        .with_context(|| "Failed to update planet")?;
+    let row = sqlx::query(
+        r#"
+        UPDATE planets 
+        SET details = $2 
+        WHERE id = $1 
+        RETURNING id, details
+        "#,
+    )
+    .bind(input.id)
+    .bind(&input.details)
+    .fetch_one(pool)
+    .await
+    .with_context(|| "Failed to update planet")?;
 
     let entity = PlanetEntity::new(row.get(0), row.get(1));
 
@@ -54,13 +67,13 @@ mod tests {
         // Now update it
         let update_input = UpdatePlanetScenarioInput {
             id: added.id,
-            data: serde_json::json!({"name": "Updated Planet", "description": "Updated Description"}),
+            details: serde_json::json!({"name": "Updated Planet", "description": "Updated Description"}),
         };
         let result = update_in_storage(&pool, update_input).await.unwrap();
 
         assert_eq!(result.id, added.id);
-        assert_eq!(result.data["name"], "Updated Planet");
-        assert_eq!(result.data["description"], "Updated Description");
+        assert_eq!(result.details["name"], "Updated Planet");
+        assert_eq!(result.details["description"], "Updated Description");
         Ok(())
     }
 }

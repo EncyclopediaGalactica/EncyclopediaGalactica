@@ -8,7 +8,7 @@ use sqlx::Result;
 async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
     // Add a planet first
     let add_input = AddPlanetScenarioInput {
-        data: serde_json::json!({"name": "Earth", "description": "Home planet"}),
+        details: serde_json::json!({"name": "Earth", "description": "Home planet"}),
     };
     let add_result = add_planet_scenario(add_input, Some(pool.clone()), None)
         .await

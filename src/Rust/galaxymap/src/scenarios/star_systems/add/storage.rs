@@ -8,18 +8,21 @@ pub async fn add_to_storage(
     input: StarSystemEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarSystemEntity> {
+    println!("input: {:?}", input);
     let result: StarSystemEntity = sqlx::query_as(
         r#"
         INSERT INTO
-            star_systems (data)
+            star_systems (details)
             VALUES ($1)
-        RETURNING id, data
+        RETURNING id, details
         "#,
     )
-    .bind(&input.data)
+    .bind(&input.details)
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert star system: (data: {:?})", input.data))?;
+    .with_context(|| format!("Failed to insert star system: (data: {:?})", input.details))?;
+
+    println!("result: {:?}", result);
 
     debug!(
         "Star system table: entity inserted with id: {:?}",
@@ -48,8 +51,8 @@ mod tests {
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         assert_eq!(added.id, added.id);
-        assert_eq!(added.data["name"], "Original Star System");
-        assert_eq!(added.data["description"], "Original Description");
+        assert_eq!(added.details["name"], "Original Star System");
+        assert_eq!(added.details["description"], "Original Description");
         Ok(())
     }
 }

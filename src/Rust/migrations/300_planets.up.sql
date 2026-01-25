@@ -1,7 +1,7 @@
 -- Add up migration script here
-CREATE TABLE IF NOT EXISTS planets (
+CREATE TABLE planets (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    data JSONB NOT NULL,
+    details JSONB NOT NULL,
     star_system_id BIGINT,
 
     PRIMARY KEY (id),

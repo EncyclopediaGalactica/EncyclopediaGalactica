@@ -45,11 +45,14 @@ impl AddStarSystemScenarioResult {
 
 impl From<StarSystemEntity> for AddStarSystemScenarioResult {
     fn from(value: StarSystemEntity) -> Self {
-        let name = value.data["name"].as_str().unwrap_or("").to_string();
-        let description = value.data["description"].as_str().unwrap_or("").to_string();
-        let x = value.data["x"].as_f64();
-        let y = value.data["y"].as_f64();
-        let z = value.data["z"].as_f64();
+        let name = value.details["name"].as_str().unwrap_or("").to_string();
+        let description = value.details["description"]
+            .as_str()
+            .unwrap_or("")
+            .to_string();
+        let x = value.details["x"].as_f64();
+        let y = value.details["y"].as_f64();
+        let z = value.details["z"].as_f64();
         AddStarSystemScenarioResult::new(value.id, name, description, x, y, z)
     }
 }

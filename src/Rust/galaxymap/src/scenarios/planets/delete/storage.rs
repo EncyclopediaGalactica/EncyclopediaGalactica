@@ -6,11 +6,18 @@ use super::types::DeletePlanetScenarioInput;
 
 /// Deletes a planet from the database
 pub async fn delete_from_storage(pool: &PgPool, input: DeletePlanetScenarioInput) -> Result<()> {
-    let rows_affected = sqlx::query!("DELETE FROM planets WHERE id = $1", input.id)
-        .execute(pool)
-        .await
-        .with_context(|| format!("Failed to delete planet: (id: {})", input.id))?
-        .rows_affected();
+    let rows_affected = sqlx::query!(
+        r#"
+        DELETE 
+        FROM planets 
+        WHERE id = $1
+        "#,
+        input.id
+    )
+    .execute(pool)
+    .await
+    .with_context(|| format!("Failed to delete planet: (id: {})", input.id))?
+    .rows_affected();
 
     debug!("Deleted {} planet(s) with id {}", rows_affected, input.id);
 

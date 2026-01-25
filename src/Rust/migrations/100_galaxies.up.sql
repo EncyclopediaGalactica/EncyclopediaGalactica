@@ -1,6 +1,6 @@
-CREATE TABLE galaxy (
+CREATE TABLE galaxies (
     id BIGINT GENERATED ALWAYS AS IDENTITY,
-    data JSONB NOT NULL,
+    details JSONB NOT NULL,
 
     PRIMARY KEY (id)
 
