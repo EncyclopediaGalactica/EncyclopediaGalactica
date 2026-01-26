@@ -14,7 +14,7 @@ pub struct StarSystemEntity {
     details: Json<StarSystemEntityDetails>,
 }
 
-#[derive(Debug, Clone, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct StarSystemEntityDetails {
     name: String,
     description: String,

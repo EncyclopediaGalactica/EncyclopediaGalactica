@@ -22,8 +22,6 @@ pub async fn add_to_storage(
     .await
     .with_context(|| format!("Failed to insert star system: (data: {:?})", input.details))?;
 
-    println!("result: {:?}", result);
-
     debug!(
         "Star system table: entity inserted with id: {:?}",
         result.id
@@ -34,25 +32,27 @@ pub async fn add_to_storage(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::scenarios::star_systems::StarSystemEntityDetails;
     use crate::scenarios::star_systems::add::storage::add_to_storage;
     use sqlx::PgPool;
+    use sqlx::types::Json;
 
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_add_to_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system
-        let data = serde_json::json!({
-            "name": "Original Star System",
-            "description": "Original Description",
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-        });
-        let add_input = StarSystemEntity::new(0, data);
+        let data = StarSystemEntityDetails::new(
+            "Original Star System".to_string(),
+            "Original Description".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
+        );
+        let add_input = StarSystemEntity::new(0, Json(data));
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         assert_eq!(added.id, added.id);
-        assert_eq!(added.details["name"], "Original Star System");
-        assert_eq!(added.details["description"], "Original Description");
+        assert_eq!(added.details.name, "Original Star System");
+        assert_eq!(added.details.description, "Original Description");
         Ok(())
     }
 }

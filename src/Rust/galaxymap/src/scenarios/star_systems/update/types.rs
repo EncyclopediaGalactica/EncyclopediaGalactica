@@ -44,14 +44,11 @@ impl UpdateStarSystemScenarioResult {
     }
 
     pub fn from_entity(entity: StarSystemEntity) -> Self {
-        let name = entity.details()["name"].as_str().unwrap_or("").to_string();
-        let description = entity.details()["description"]
-            .as_str()
-            .unwrap_or("")
-            .to_string();
-        let x = entity.details()["x"].as_f64();
-        let y = entity.details()["y"].as_f64();
-        let z = entity.details()["z"].as_f64();
+        let name = entity.details.name.to_string();
+        let description = entity.details.description.to_string();
+        let x = entity.details.x;
+        let y = entity.details.y;
+        let z = entity.details.z;
         Self {
             id: entity.id(),
             name,
@@ -65,6 +62,10 @@ impl UpdateStarSystemScenarioResult {
 
 #[cfg(test)]
 mod tests {
+    use sqlx::types::Json;
+
+    use crate::scenarios::star_systems::StarSystemEntityDetails;
+
     use super::*;
 
     #[test]
@@ -87,14 +88,14 @@ mod tests {
 
     #[test]
     fn test_update_star_system_scenario_result_from_entity() {
-        let data = serde_json::json!({
-            "name": "Alpha Centauri",
-            "description": "Nearby star system",
-            "x": 10.0,
-            "y": 11.0,
-            "z": 12.0
-        });
-        let entity = StarSystemEntity::new(2, data);
+        let data = StarSystemEntityDetails::new(
+            "Alpha Centauri".to_string(),
+            "Nearby star system".to_string(),
+            Some(10.0),
+            Some(11.0),
+            Some(12.0),
+        );
+        let entity = StarSystemEntity::new(2, Json(data));
         let result = UpdateStarSystemScenarioResult::from_entity(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Alpha Centauri");

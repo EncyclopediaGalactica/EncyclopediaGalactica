@@ -36,36 +36,38 @@ pub async fn update_in_storage(
 #[cfg(test)]
 mod tests {
     use super::*;
+    use crate::scenarios::star_systems::StarSystemEntityDetails;
     use crate::scenarios::star_systems::add::storage::add_to_storage;
     use sqlx::PgPool;
+    use sqlx::types::Json;
 
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star system to have an existing ID
-        let add_data = serde_json::json!({
-            "name": "Original Star System",
-            "description": "Original Description",
-            "x": 0.0,
-            "y": 0.0,
-            "z": 0.0
-        });
-        let add_input = StarSystemEntity::new(0, add_data);
+        let add_data = StarSystemEntityDetails::new(
+            "Original Star System".to_string(),
+            "Original Description".to_string(),
+            Some(0.0),
+            Some(0.0),
+            Some(0.0),
+        );
+        let add_input = StarSystemEntity::new(0, Json(add_data));
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
         // Now update it
-        let update_data = serde_json::json!({
-            "name": "Updated Star System",
-            "description": "Updated Description",
-            "x": 1.0,
-            "y": 2.0,
-            "z": 3.0
-        });
-        let update_input = StarSystemEntity::new(added.id, update_data);
+        let update_data = StarSystemEntityDetails::new(
+            "Updated Star System".to_string(),
+            "Updated Description".to_string(),
+            Some(1.0),
+            Some(2.0),
+            Some(3.0),
+        );
+        let update_input = StarSystemEntity::new(added.id, Json(update_data));
         let updated = update_in_storage(update_input, pool.clone()).await.unwrap();
 
         assert_eq!(updated.id, added.id);
-        assert_eq!(updated.details["name"], "Updated Star System");
-        assert_eq!(updated.details["description"], "Updated Description");
+        assert_eq!(updated.details.name, "Updated Star System");
+        assert_eq!(updated.details.description, "Updated Description");
         Ok(())
     }
 }
