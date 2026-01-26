@@ -26,17 +26,18 @@ impl GetAllMoonsScenarioResult {
 
 impl From<MoonEntity> for GetAllMoonsScenarioResult {
     fn from(entity: MoonEntity) -> Self {
-        let name = entity.details["name"].as_str().unwrap_or("").to_string();
-        let description = entity.details["description"]
-            .as_str()
-            .unwrap_or("")
-            .to_string();
+        let name = entity.details.name.to_string();
+        let description = entity.details.description.to_string();
         GetAllMoonsScenarioResult::new(entity.id, name, description)
     }
 }
 
 #[cfg(test)]
 mod tests {
+    use sqlx::types::Json;
+
+    use crate::scenarios::moons::MoonEntityDetails;
+
     use super::*;
 
     #[test]
@@ -50,11 +51,8 @@ mod tests {
 
     #[test]
     fn test_get_all_moons_scenario_result_from_entity() {
-        let data = serde_json::json!({
-            "name": "Titan",
-            "description": "Saturn's moon"
-        });
-        let entity = MoonEntity::new(2, data);
+        let data = MoonEntityDetails::new("Titan".to_string(), "Saturn's moon".to_string());
+        let entity = MoonEntity::new(2, Json(data));
         let result = GetAllMoonsScenarioResult::from(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Titan");

@@ -29,17 +29,18 @@ impl AddMoonScenarioResult {
 
 impl From<MoonEntity> for AddMoonScenarioResult {
     fn from(value: MoonEntity) -> Self {
-        let name = value.details["name"].as_str().unwrap_or("").to_string();
-        let description = value.details["description"]
-            .as_str()
-            .unwrap_or("")
-            .to_string();
+        let name = value.details.name.to_string();
+        let description = value.details.description.to_string();
         AddMoonScenarioResult::new(value.id, name, description)
     }
 }
 
 #[cfg(test)]
 mod tests {
+    use sqlx::types::Json;
+
+    use crate::scenarios::moons::MoonEntityDetails;
+
     use super::*;
 
     #[test]
@@ -52,11 +53,8 @@ mod tests {
 
     #[test]
     fn test_from_moon_entity() {
-        let data = serde_json::json!({
-            "name": "Titan",
-            "description": "Saturn's moon"
-        });
-        let entity = MoonEntity::new(2, data);
+        let data = MoonEntityDetails::new("Titan".to_string(), "Saturn's moon".to_string());
+        let entity = MoonEntity::new(2, Json(data));
         let result = AddMoonScenarioResult::from(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Titan");

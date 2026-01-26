@@ -1,42 +1,64 @@
-use sqlx::prelude::FromRow;
-
-#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
-pub struct MoonEntity {
-    pub id: i64,
-    pub details: serde_json::Value,
-}
-
-use self::add::types::AddMoonScenarioInput;
-use self::update::types::UpdateMoonScenarioInput;
-
 pub mod add;
 pub mod delete;
 pub mod get_all;
 pub mod update;
 
+use self::add::types::AddMoonScenarioInput;
+use self::update::types::UpdateMoonScenarioInput;
+use sqlx::prelude::FromRow;
+use sqlx::types::Json;
+
+#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
+pub struct MoonEntity {
+    id: i64,
+    details: Json<MoonEntityDetails>,
+}
+
+#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
+pub struct MoonEntityDetails {
+    name: String,
+    description: String,
+}
+
 impl From<AddMoonScenarioInput> for MoonEntity {
     fn from(value: AddMoonScenarioInput) -> Self {
-        let data = serde_json::json!({
-            "name": value.name,
-            "description": value.description,
-        });
-        MoonEntity::new(0, data)
+        let data = MoonEntityDetails::new(value.name, value.description);
+        MoonEntity::new(0, Json(data))
     }
 }
 
 impl From<UpdateMoonScenarioInput> for MoonEntity {
     fn from(value: UpdateMoonScenarioInput) -> Self {
-        let data = serde_json::json!({
-            "name": value.name,
-            "description": value.description,
-        });
-        MoonEntity::new(value.id, data)
+        let data = MoonEntityDetails::new(value.name, value.description);
+        MoonEntity::new(value.id, Json(data))
+    }
+}
+
+impl MoonEntityDetails {
+    pub fn new(name: String, description: String) -> Self {
+        Self { name, description }
+    }
+
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    pub fn set_name(&mut self, name: String) {
+        self.name = name;
+    }
+
+    pub fn description(&self) -> &str {
+        &self.description
+    }
+
+    pub fn set_description(&mut self, description: String) {
+        self.description = description;
     }
 }
 
 impl MoonEntity {
-    pub fn new(id: i64, data: serde_json::Value) -> Self {
-        Self { id, details: data }
+    pub fn new(id: i64, details: Json<MoonEntityDetails>) -> Self {
+        Self { id, details }
     }
 
     pub fn id(&self) -> i64 {
@@ -47,11 +69,11 @@ impl MoonEntity {
         self.id = id;
     }
 
-    pub fn data(&self) -> &serde_json::Value {
+    pub fn details(&self) -> &Json<MoonEntityDetails> {
         &self.details
     }
 
-    pub fn set_data(&mut self, data: serde_json::Value) {
-        self.details = data;
+    pub fn set_details(&mut self, details: Json<MoonEntityDetails>) {
+        self.details = details;
     }
 }
