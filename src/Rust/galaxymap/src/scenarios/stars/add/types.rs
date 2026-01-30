@@ -29,11 +29,8 @@ impl AddStarScenarioResult {
 
 impl From<StarEntity> for AddStarScenarioResult {
     fn from(value: StarEntity) -> Self {
-        let name = value.details["name"].as_str().unwrap_or("").to_string();
-        let description = value.details["description"]
-            .as_str()
-            .unwrap_or("")
-            .to_string();
+        let name = value.details.name.to_string();
+        let description = value.details.description.to_string();
         AddStarScenarioResult::new(value.id, name, description)
     }
 }
@@ -52,11 +49,12 @@ mod tests {
 
     #[test]
     fn test_from_star_entity() {
-        let data = serde_json::json!({
-            "name": "Vega",
-            "description": "Bright star"
-        });
-        let entity = StarEntity::new(2, data);
+        use sqlx::types::Json;
+
+        use crate::scenarios::stars::StarEntityDetails;
+
+        let details = StarEntityDetails::new("Vega".to_string(), "Bright star".to_string());
+        let entity = StarEntity::new(2, Json(details));
         let result = AddStarScenarioResult::from(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Vega");

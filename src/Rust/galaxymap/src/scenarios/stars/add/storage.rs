@@ -32,17 +32,18 @@ mod tests {
 
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_add_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
+        use sqlx::types::Json;
+
+        use crate::scenarios::stars::StarEntityDetails;
+
         // Add a star to test
-        let data = serde_json::json!({
-            "name": "Test Star",
-            "description": "Test Description"
-        });
-        let add_input = StarEntity::new(0, data);
+        let details = StarEntityDetails::new("Test Star".to_string(), "Test Description".to_string());
+        let add_input = StarEntity::new(0, Json(details));
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
-        assert_eq!(added.id, added.id);
-        assert_eq!(added.details["name"], "Test Star");
-        assert_eq!(added.details["description"], "Test Description");
+        assert!(added.id > 0);
+        assert_eq!(added.details.name, "Test Star");
+        assert_eq!(added.details.description, "Test Description");
         Ok(())
     }
 }

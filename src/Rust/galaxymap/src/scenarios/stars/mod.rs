@@ -1,9 +1,38 @@
 use sqlx::prelude::FromRow;
+use sqlx::types::Json;
+
+#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
+pub struct StarEntityDetails {
+    name: String,
+    description: String,
+}
 
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct StarEntity {
-    pub id: i64,
-    pub details: serde_json::Value,
+    id: i64,
+    details: Json<StarEntityDetails>,
+}
+
+impl StarEntityDetails {
+    pub fn new(name: String, description: String) -> Self {
+        Self { name, description }
+    }
+
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+
+    pub fn set_name(&mut self, name: String) {
+        self.name = name;
+    }
+
+    pub fn description(&self) -> &str {
+        &self.description
+    }
+
+    pub fn set_description(&mut self, description: String) {
+        self.description = description;
+    }
 }
 
 use self::add::types::AddStarScenarioInput;
@@ -16,27 +45,21 @@ pub mod update;
 
 impl From<AddStarScenarioInput> for StarEntity {
     fn from(value: AddStarScenarioInput) -> Self {
-        let data = serde_json::json!({
-            "name": value.name,
-            "description": value.description,
-        });
-        StarEntity::new(0, data)
+        let details = StarEntityDetails::new(value.name, value.description);
+        StarEntity::new(0, Json(details))
     }
 }
 
 impl From<UpdateStarScenarioInput> for StarEntity {
     fn from(value: UpdateStarScenarioInput) -> Self {
-        let details = serde_json::json!({
-            "name": value.name,
-            "description": value.description,
-        });
-        StarEntity::new(value.id, details)
+        let details = StarEntityDetails::new(value.name, value.description);
+        StarEntity::new(value.id, Json(details))
     }
 }
 
 impl StarEntity {
-    pub fn new(id: i64, data: serde_json::Value) -> Self {
-        Self { id, details: data }
+    pub fn new(id: i64, details: Json<StarEntityDetails>) -> Self {
+        Self { id, details }
     }
 
     pub fn id(&self) -> i64 {
@@ -47,11 +70,11 @@ impl StarEntity {
         self.id = id;
     }
 
-    pub fn data(&self) -> &serde_json::Value {
+    pub fn details(&self) -> &Json<StarEntityDetails> {
         &self.details
     }
 
-    pub fn set_data(&mut self, data: serde_json::Value) {
-        self.details = data;
+    pub fn set_details(&mut self, details: Json<StarEntityDetails>) {
+        self.details = details;
     }
 }

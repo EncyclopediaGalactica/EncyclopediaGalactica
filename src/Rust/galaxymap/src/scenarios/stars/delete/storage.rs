@@ -26,11 +26,12 @@ mod tests {
     #[sqlx::test(migrations = "../migrations")]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // First, add a star to have an existing ID
-        let data = serde_json::json!({
-            "name": "Star to Delete",
-            "description": "Will be deleted"
-        });
-        let add_input = crate::scenarios::stars::StarEntity::new(0, data);
+        use sqlx::types::Json;
+
+        use crate::scenarios::stars::StarEntityDetails;
+
+        let details = StarEntityDetails::new("Star to Delete".to_string(), "Will be deleted".to_string());
+        let add_input = crate::scenarios::stars::StarEntity::new(0, Json(details));
         let added = crate::scenarios::stars::add::storage::add_to_storage(add_input, pool.clone())
             .await
             .unwrap();

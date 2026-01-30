@@ -26,11 +26,8 @@ impl GetAllStarsScenarioResult {
 
 impl From<StarEntity> for GetAllStarsScenarioResult {
     fn from(entity: StarEntity) -> Self {
-        let name = entity.details["name"].as_str().unwrap_or("").to_string();
-        let description = entity.details["description"]
-            .as_str()
-            .unwrap_or("")
-            .to_string();
+        let name = entity.details.name.to_string();
+        let description = entity.details.description.to_string();
         GetAllStarsScenarioResult::new(entity.id, name, description)
     }
 }
@@ -50,11 +47,12 @@ mod tests {
 
     #[test]
     fn test_get_all_stars_scenario_result_from_entity() {
-        let data = serde_json::json!({
-            "name": "Vega",
-            "description": "Bright star"
-        });
-        let entity = StarEntity::new(2, data);
+        use sqlx::types::Json;
+
+        use crate::scenarios::stars::StarEntityDetails;
+
+        let details = StarEntityDetails::new("Vega".to_string(), "Bright star".to_string());
+        let entity = StarEntity::new(2, Json(details));
         let result = GetAllStarsScenarioResult::from(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Vega");
