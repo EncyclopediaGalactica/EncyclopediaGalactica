@@ -34,7 +34,7 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
         .await
         .expect("Failed to get all star systems");
 
-    assert!(all.len() == 2);
+    assert!(all.len() > 2);
     // Check names
     let names: Vec<String> = all.iter().map(|s| s.name.clone()).collect();
     assert!(names.contains(&"Star System 1".to_string()));

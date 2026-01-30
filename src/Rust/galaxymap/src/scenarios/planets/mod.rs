@@ -1,3 +1,9 @@
+pub mod add;
+pub mod delete;
+pub mod get_all;
+pub mod update;
+
+use self::add::types::AddPlanetScenarioInput;
 use sqlx::prelude::FromRow;
 
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
@@ -5,13 +11,6 @@ pub struct PlanetEntity {
     pub id: i64,
     pub details: serde_json::Value,
 }
-
-use self::add::types::AddPlanetScenarioInput;
-
-pub mod add;
-pub mod delete;
-pub mod get_all;
-pub mod update;
 
 impl From<AddPlanetScenarioInput> for PlanetEntity {
     fn from(value: AddPlanetScenarioInput) -> Self {

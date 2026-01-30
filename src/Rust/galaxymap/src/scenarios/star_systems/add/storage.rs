@@ -8,7 +8,6 @@ pub async fn add_to_storage(
     input: StarSystemEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarSystemEntity> {
-    println!("input: {:?}", input);
     let result: StarSystemEntity = sqlx::query_as(
         r#"
         INSERT INTO

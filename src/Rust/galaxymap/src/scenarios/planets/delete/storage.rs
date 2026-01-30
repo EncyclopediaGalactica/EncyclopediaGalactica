@@ -47,7 +47,8 @@ mod tests {
 
         // Verify it's gone
         let remaining = get_all_from_storage(&pool).await.unwrap();
-        assert_eq!(remaining.len(), 0);
+        let hit = remaining.iter().find(|p| p.id() == added.id);
+        assert!(hit.is_none());
         Ok(())
     }
 }

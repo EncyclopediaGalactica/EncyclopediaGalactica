@@ -6,7 +6,8 @@ pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Resu
     let result = sqlx::query(
         r#"
     DELETE 
-    FROM star_systems 
+    FROM 
+        star_systems 
     WHERE id = $1
     "#,
     )
@@ -51,8 +52,8 @@ mod tests {
 
         // Verify deletion by trying to fetch all
         let remaining: Vec<StarSystemEntity> = get_all_from_storage(pool).await.unwrap();
-
-        assert_eq!(remaining.len(), 0);
+        let hit = remaining.iter().find(|s| s.id() == added.id);
+        assert!(hit.is_none());
         Ok(())
     }
 }

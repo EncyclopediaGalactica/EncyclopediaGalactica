@@ -9,10 +9,11 @@ pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<S
     let star_systems: Vec<StarSystemEntity> = sqlx::query_as!(
         StarSystemEntity,
         r#"
-        SELECT 
-            id, 
+        SELECT
+            id,
             details as "details: Json<StarSystemEntityDetails>"
-        FROM star_systems
+        FROM 
+            star_systems
         "#,
     )
     .fetch_all(&db_connection)

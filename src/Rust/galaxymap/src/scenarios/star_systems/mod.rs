@@ -1,12 +1,12 @@
-use self::add::types::AddStarSystemScenarioInput;
-use self::update::types::UpdateStarSystemScenarioInput;
-use sqlx::prelude::FromRow;
-use sqlx::types::Json;
-
 pub mod add;
 pub mod delete;
 pub mod get_all;
 pub mod update;
+
+use self::add::types::AddStarSystemScenarioInput;
+use self::update::types::UpdateStarSystemScenarioInput;
+use sqlx::prelude::FromRow;
+use sqlx::types::Json;
 
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct StarSystemEntity {
