@@ -2,6 +2,7 @@ use anyhow::Ok;
 use anyhow::ensure;
 use sqlx::PgPool;
 
+use crate::algs::distance_by_coordinates::calculate_distance_by_coordinates;
 use crate::get_connection;
 use crate::scenarios::star_systems::get_coordinates_by_name::get_star_system_coordinates_by_name;
 use crate::scenarios::star_systems::get_coordinates_by_name::types::StarSystemCoordinatesByNameScenarioInput;
@@ -36,7 +37,7 @@ pub async fn distance_of_star_systems_by_name(
         db_pool.clone(),
     )
     .await?;
-    let distance = calculate_distance(
+    let distance = calculate_distance_by_coordinates(
         &from_star_system_id.x,
         &from_star_system_id.y,
         &from_star_system_id.z,
@@ -46,17 +47,6 @@ pub async fn distance_of_star_systems_by_name(
     )
     .await?;
     Ok(TwoStarSystemsDistanceScenarioResult::new(distance))
-}
-
-async fn calculate_distance(
-    _from_x: &f64,
-    _from_y: &f64,
-    _from_z: &f64,
-    _to_x: &f64,
-    _to_y: &f64,
-    _to_z: &f64,
-) -> anyhow::Result<f64> {
-    Ok(0.0)
 }
 
 async fn validate_input(input: &TwoStarSystemsDistanceScenarioInput) -> anyhow::Result<()> {

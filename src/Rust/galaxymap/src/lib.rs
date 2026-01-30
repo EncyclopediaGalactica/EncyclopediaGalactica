@@ -3,6 +3,7 @@ use sqlx::PgPool;
 use sqlx::postgres::PgPoolOptions;
 use thiserror::Error;
 
+pub mod algs;
 pub mod scenarios;
 
 #[derive(Debug, Error)]
