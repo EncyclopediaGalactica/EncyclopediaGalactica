@@ -1,1 +1,2 @@
-pub mod two_star_systems;
+pub mod star_systems_by_id;
+pub mod star_systems_by_name;
