@@ -31,18 +31,23 @@ mod tests {
     use sqlx::PgPool;
 
     #[sqlx::test(migrations = "./../migrations")]
-    async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        // First, add a planet to have an existing ID
-        let add_input = PlanetEntity::new(
-            0,
-            serde_json::json!({"name": "Original Planet", "description": "Original Description"}),
+    async fn test_add_to_storage_success(pool: PgPool) -> sqlx::Result<()> {
+        use sqlx::types::Json;
+
+        use crate::scenarios::planets::PlanetEntityDetails;
+
+        // First, add a planet
+        let details = PlanetEntityDetails::new(
+            "Original Planet".to_string(),
+            "Original Description".to_string(),
         );
+        let add_input = PlanetEntity::new(0, Json(details));
         let added = add_to_storage(add_input, pool.clone()).await.unwrap();
 
-        // Now update it
-        assert_eq!(added.id, added.id);
-        assert_eq!(added.details["name"], "Original Planet");
-        assert_eq!(added.details["description"], "Original Description");
+        // Check
+        assert!(added.id > 0);
+        assert_eq!(added.details.name, "Original Planet");
+        assert_eq!(added.details.description, "Original Description");
         Ok(())
     }
 }

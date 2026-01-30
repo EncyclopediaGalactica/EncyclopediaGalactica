@@ -1,1 +1,1 @@
-INSERT INTO planets (details) VALUES ('{"details": {"name": "Earth"}}');
+INSERT INTO planets (details) VALUES ('{"name": "Test Planet", "description": "Test Description"}');

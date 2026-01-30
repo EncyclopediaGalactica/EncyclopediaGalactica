@@ -27,7 +27,8 @@ pub async fn delete_from_storage(pool: &PgPool, input: DeletePlanetScenarioInput
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::scenarios::planets::PlanetEntity;
+    use crate::scenarios::planets::{PlanetEntity, PlanetEntityDetails};
+use sqlx::types::Json;
     use crate::scenarios::planets::add::storage::add_to_storage;
     use crate::scenarios::planets::get_all::storage::get_all_from_storage;
     use sqlx::PgPool;
@@ -35,10 +36,8 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
         // Insert a planet
-        let planet = PlanetEntity::new(
-            0,
-            serde_json::json!({"name": "Test Planet", "description": "Test Description"}),
-        );
+        let details = PlanetEntityDetails::new("Test Planet".to_string(), "Test Description".to_string());
+        let planet = PlanetEntity::new(0, Json(details));
         let added = add_to_storage(planet, pool.clone()).await.unwrap();
 
         // Delete it

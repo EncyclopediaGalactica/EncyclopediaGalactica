@@ -1,26 +1,26 @@
 use anyhow::{Context, Result};
 use log::debug;
-use sqlx::{PgPool, Row, query};
+use sqlx::PgPool;
+use sqlx::types::Json;
 
 use crate::scenarios::planets::PlanetEntity;
+use crate::scenarios::planets::PlanetEntityDetails;
 
 /// Retrieves all planets from the database
 pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
-    let planets: Vec<PlanetEntity> = query(
+    let planets: Vec<PlanetEntity> = sqlx::query_as!(
+        PlanetEntity,
         r#"
-    SELECT id, details
-    FROM planets
+    SELECT 
+        id, 
+        details as "details: Json<PlanetEntityDetails>"
+    FROM 
+         planets
     "#,
     )
     .fetch_all(pool)
     .await
-    .with_context(|| "Failed to get all planets")?
-    .into_iter()
-    .map(|row| PlanetEntity {
-        id: row.get(0),
-        details: row.get(1),
-    })
-    .collect();
+    .with_context(|| "Failed to get all planets")?;
 
     debug!("Retrieved {} planets", planets.len());
 
@@ -36,14 +36,10 @@ mod tests {
     #[sqlx::test(migrations = "./../migrations")]
     async fn test_get_all_from_storage_returns_correct_count(pool: PgPool) -> sqlx::Result<()> {
         // Insert a few test planets
-        let planet1 = PlanetEntity::new(
-            0,
-            serde_json::json!({"name": "Test Planet 1", "description": "Desc 1"}),
-        );
-        let planet2 = PlanetEntity::new(
-            0,
-            serde_json::json!({"name": "Test Planet 2", "description": "Desc 2"}),
-        );
+        let details1 = PlanetEntityDetails::new("Test Planet 1".to_string(), "Desc 1".to_string());
+        let planet1 = PlanetEntity::new(0, Json(details1));
+        let details2 = PlanetEntityDetails::new("Test Planet 2".to_string(), "Desc 2".to_string());
+        let planet2 = PlanetEntity::new(0, Json(details2));
 
         add_to_storage(planet1, pool.clone()).await.unwrap();
         add_to_storage(planet2, pool.clone()).await.unwrap();
