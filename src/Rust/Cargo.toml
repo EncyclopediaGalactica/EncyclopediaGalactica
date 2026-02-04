@@ -1,11 +1,10 @@
 [workspace]
 resolver = "3"
 members = [
-  # "cli",
-  "eg_py",
-  # "exercises",
-  "galaxymap",
-  # "storage",
+  # "apps/py/",
+  "domains/galnav/algorithms/",
+  "domains/galnav/api/",
+  "domains/galnav/repository/",
 ]
 
 [workspace.dependencies]
@@ -36,5 +35,5 @@ regex = "1.12.2"
 anyhow = { version = "1.0.100", features = ["backtrace"] }
 thiserror = "2.0.17"
 derive_more = { version = "2.1.1", features = ["display", "from", "add"] }
-pyo3 = { version = "0.27.2", features = ["extension-module", "anyhow"] }
+pyo3 = { version = "0.28.0", features = ["extension-module", "anyhow"] }
 once_cell = "1.21.3"
