@@ -3,7 +3,7 @@ use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
 use log::debug;
 use sqlx::PgPool;
 
-pub async fn add_stars_to_storage(
+pub async fn add_star_to_storage(
     input: StarEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarEntity> {
@@ -42,7 +42,7 @@ mod tests {
         let details =
             StarEntityDetails::new("Test Star".to_string(), "Test Description".to_string());
         let add_input = StarEntity::new(0, Json(details));
-        let added = add_stars_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_star_to_storage(add_input, pool.clone()).await.unwrap();
 
         assert!(added.id() > 0);
         assert_eq!(added.details().name(), "Test Star");

@@ -1,16 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::stars::StarEntity;
+use crate::star::entities::star_entity::StarEntity;
 
-/// Input data structure for updating a star
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct UpdateStarScenarioInput {
-    pub id: i64,
-    pub name: String,
-    pub description: String,
-}
-
-/// Result data structure for updating a star
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdateStarScenarioResult {
     pub id: i64,
@@ -26,25 +17,26 @@ impl UpdateStarScenarioResult {
             description,
         }
     }
+}
 
-    pub fn from_entity(entity: StarEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
+impl From<StarEntity> for UpdateStarScenarioResult {
+    fn from(entity: StarEntity) -> Self {
         Self {
             id: entity.id(),
-            name,
-            description,
+            name: entity.details().name().to_string(),
+            description: entity.details().description().to_string(),
         }
     }
 }
 
 #[cfg(test)]
 mod tests {
+
     use sqlx::types::Json;
 
-    use crate::stars::StarEntityDetails;
-
-    use super::*;
+    use crate::star::entities::star_entity::StarEntity;
+    use crate::star::entities::star_entity_details::StarEntityDetails;
+    use crate::star::scenario_entities::update_star_scenario_result::UpdateStarScenarioResult;
 
     #[test]
     fn test_update_star_scenario_result_new() {
@@ -58,7 +50,7 @@ mod tests {
     fn test_update_star_scenario_result_from_entity() {
         let details = StarEntityDetails::new("Vega".to_string(), "Bright star".to_string());
         let entity = StarEntity::new(2, Json(details));
-        let result = UpdateStarScenarioResult::from_entity(entity);
+        let result = UpdateStarScenarioResult::from(entity);
         assert_eq!(result.id, 2);
         assert_eq!(result.name, "Vega");
         assert_eq!(result.description, "Bright star");

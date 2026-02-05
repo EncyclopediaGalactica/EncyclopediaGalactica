@@ -1,12 +1,8 @@
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
+use serde::Serialize;
 
-use crate::stars::StarEntity;
+use crate::star::entities::star_entity::StarEntity;
 
-/// Input data structure for getting all stars (empty for now)
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct GetAllStarsScenarioInput {}
-
-/// Result data structure for a single star
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllStarsScenarioResult {
     pub id: i64,
@@ -26,9 +22,9 @@ impl GetAllStarsScenarioResult {
 
 impl From<StarEntity> for GetAllStarsScenarioResult {
     fn from(entity: StarEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
-        GetAllStarsScenarioResult::new(entity.id, name, description)
+        let name = entity.details().name().to_string();
+        let description = entity.details().description().to_string();
+        GetAllStarsScenarioResult::new(entity.id(), name, description)
     }
 }
 
@@ -36,7 +32,7 @@ impl From<StarEntity> for GetAllStarsScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::stars::StarEntityDetails;
+    use crate::star::entities::star_entity_details::StarEntityDetails;
 
     use super::*;
 

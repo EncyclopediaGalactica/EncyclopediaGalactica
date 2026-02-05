@@ -1,5 +1,5 @@
 use gal_nav_api::stars::add::add::add_star_scenario;
-use gal_nav_api::stars::add::types::AddStarScenarioInput;
+use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 

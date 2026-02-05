@@ -1,15 +1,18 @@
 use anyhow::Context;
+use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
 use log::debug;
 use sqlx::PgPool;
 
-use crate::stars::StarEntity;
-
-pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarEntity>> {
+pub async fn get_all_stars_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarEntity>> {
     let result: Vec<StarEntity> = sqlx::query_as(
         r#"
-        SELECT id, details
-        FROM stars
-        ORDER BY id
+        SELECT 
+            id, 
+            details
+        FROM 
+            stars
+        ORDER BY 
+            id
         "#,
     )
     .fetch_all(&db_connection)
@@ -22,10 +25,11 @@ pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<S
 
 #[cfg(test)]
 mod tests {
-    use crate::stars::StarEntityDetails;
-    use crate::stars::add::storage::add_to_storage;
+
+    use crate::stars::add::add_star_to_storage;
 
     use super::*;
+    use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -40,11 +44,11 @@ mod tests {
         let star1 = StarEntity::new(0, Json(details1));
         let details2 = StarEntityDetails::new("Star 2".to_string(), "Description 2".to_string());
         let star2 = StarEntity::new(0, Json(details2));
-        add_to_storage(star1, pool.clone()).await.unwrap();
-        add_to_storage(star2, pool.clone()).await.unwrap();
+        add_star_to_storage(star1, pool.clone()).await.unwrap();
+        add_star_to_storage(star2, pool.clone()).await.unwrap();
 
         // Get all
-        let all_stars = get_all_from_storage(pool.clone()).await.unwrap();
+        let all_stars = get_all_stars_from_storage(pool.clone()).await.unwrap();
         assert!(all_stars.len() >= 2);
         Ok(())
     }

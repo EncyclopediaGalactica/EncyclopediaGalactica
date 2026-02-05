@@ -2,7 +2,7 @@ use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
-pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Result<()> {
+pub async fn delete_star_by_id(id: i64, db_connection: PgPool) -> anyhow::Result<()> {
     let _result = sqlx::query(
         r#"
         DELETE FROM stars
@@ -20,11 +20,11 @@ pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Resu
 
 #[cfg(test)]
 mod tests {
-    use crate::stars::StarEntity;
-    use crate::stars::StarEntityDetails;
-    use crate::stars::add::storage::add_to_storage;
+    use crate::stars::add::add_star_to_storage;
 
     use super::*;
+    use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
+    use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -38,10 +38,10 @@ mod tests {
         let details =
             StarEntityDetails::new("Star to Delete".to_string(), "Will be deleted".to_string());
         let add_input = StarEntity::new(0, Json(details));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_star_to_storage(add_input, pool.clone()).await.unwrap();
 
         // Now delete it
-        delete_from_storage(added.id, pool.clone()).await.unwrap();
+        delete_star_by_id(added.id(), pool.clone()).await.unwrap();
 
         // Verify it's gone by trying to get it (but since no get_by_id, just assume success)
         Ok(())

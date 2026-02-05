@@ -1,6 +1,5 @@
-use super::types::DeleteStarScenarioInput;
+use gal_nav_domain_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
 
-/// Validates the input for deleting a star
 pub fn validate_delete_star_scenario_input(input: &DeleteStarScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {
         return Err(anyhow::anyhow!("The star id must be positive."));

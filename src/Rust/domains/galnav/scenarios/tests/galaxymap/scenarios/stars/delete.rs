@@ -1,7 +1,7 @@
 use gal_nav_api::stars::add::add::add_star_scenario;
-use gal_nav_api::stars::add::types::AddStarScenarioInput;
 use gal_nav_api::stars::delete::delete::delete_star_scenario;
-use gal_nav_api::stars::delete::types::DeleteStarScenarioInput;
+use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
+use gal_nav_domain_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 
