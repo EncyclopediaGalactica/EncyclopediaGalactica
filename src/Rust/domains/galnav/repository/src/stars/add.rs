@@ -1,10 +1,9 @@
 use anyhow::Context;
+use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
 use log::debug;
 use sqlx::PgPool;
 
-use crate::stars::StarEntity;
-
-pub async fn add_to_storage(
+pub async fn add_stars_to_storage(
     input: StarEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarEntity> {
@@ -16,20 +15,20 @@ pub async fn add_to_storage(
         RETURNING id, details
         "#,
     )
-    .bind(&input.details)
+    .bind(&input.details())
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert star: (data: {:?})", input.details))?;
+    .with_context(|| format!("Failed to insert star: (data: {:?})", input.details()))?;
 
-    debug!("Star table: entity inserted with id: {:?}", result.id);
+    debug!("Star table: entity inserted with id: {:?}", result.id());
     Ok(result)
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::stars::StarEntityDetails;
 
     use super::*;
+    use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -43,11 +42,11 @@ mod tests {
         let details =
             StarEntityDetails::new("Test Star".to_string(), "Test Description".to_string());
         let add_input = StarEntity::new(0, Json(details));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_stars_to_storage(add_input, pool.clone()).await.unwrap();
 
-        assert!(added.id > 0);
-        assert_eq!(added.details.name, "Test Star");
-        assert_eq!(added.details.description, "Test Description");
+        assert!(added.id() > 0);
+        assert_eq!(added.details().name(), "Test Star");
+        assert_eq!(added.details().description(), "Test Description");
         Ok(())
     }
 }

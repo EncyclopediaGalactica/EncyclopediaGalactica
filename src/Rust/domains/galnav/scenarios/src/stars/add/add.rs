@@ -1,10 +1,10 @@
+use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
+use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_result::AddStarScenarioResult;
+use gal_nav_repository::stars::add::add_stars_to_storage;
 use sqlx::PgPool;
 
 use crate::get_connection;
-use crate::stars::StarEntity;
 
-use super::storage::add_to_storage;
-use super::types::{AddStarScenarioInput, AddStarScenarioResult};
 use super::validation::validate_add_star_scenario_input;
 
 /// Adds a star to the starmap
@@ -23,6 +23,6 @@ pub async fn add_star_scenario(
 ) -> anyhow::Result<AddStarScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_add_star_scenario_input(input.clone()).await?;
-    let recorded_star = add_to_storage(StarEntity::from(input), db_pool).await?;
+    let recorded_star = add_stars_to_storage(AddStarScenarioInput::into(input), db_pool).await?;
     Ok(AddStarScenarioResult::from(recorded_star))
 }

@@ -1,6 +1,5 @@
 use anyhow::ensure;
-
-use super::types::AddStarScenarioInput;
+use gal_nav_scenario_entities::star::add_star_scenario_input::AddStarScenarioInput;
 
 const SHORT_NAME_ERROR: &str = "The star name must be longer than 3 characters.";
 const SHORT_DESCRIPTION_ERROR: &str = "The star description must be longer than 3 characters.";

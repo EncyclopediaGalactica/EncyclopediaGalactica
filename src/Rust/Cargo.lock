@@ -734,6 +734,7 @@ dependencies = [
  "dotenvy_macro",
  "env_logger",
  "gal-nav-algorithms",
+ "gal-nav-domain-objects",
  "gal-nav-repository",
  "glob",
  "log",
@@ -751,6 +752,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "gal-nav-domain-objects"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "thiserror",
+]
+
+[[package]]
 name = "gal-nav-repository"
 version = "0.1.0"
 dependencies = [
@@ -762,6 +774,7 @@ dependencies = [
  "dotenvy",
  "dotenvy_macro",
  "env_logger",
+ "gal-nav-domain-objects",
  "glob",
  "log",
  "pyo3",

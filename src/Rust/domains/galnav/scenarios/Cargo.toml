@@ -9,6 +9,7 @@ The GalaxyMap module of the Encyclopedia Galactica
 [dependencies]
 gal-nav-algorithms = { path = "../algorithms" }
 gal-nav-repository = { path = "../repository" }
+gal-nav-domain-objects = { path = "../domain_objects/" }
 tokio = { workspace = true }
 dotenvy = { workspace = true }
 dotenvy_macro = { workspace = true }

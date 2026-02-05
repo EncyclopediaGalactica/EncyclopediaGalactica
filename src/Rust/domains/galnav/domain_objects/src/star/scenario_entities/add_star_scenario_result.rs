@@ -1,10 +1,4 @@
-use crate::stars::StarEntity;
-
-#[derive(Debug, Clone)]
-pub struct AddStarScenarioInput {
-    pub name: String,
-    pub description: String,
-}
+use crate::star::entities::star_entity::StarEntity;
 
 #[derive(Debug, Clone)]
 pub struct AddStarScenarioResult {
@@ -25,15 +19,15 @@ impl AddStarScenarioResult {
 
 impl From<StarEntity> for AddStarScenarioResult {
     fn from(value: StarEntity) -> Self {
-        let name = value.details.name.to_string();
-        let description = value.details.description.to_string();
-        AddStarScenarioResult::new(value.id, name, description)
+        let name = value.details().name().to_string();
+        let description = value.details().description().to_string();
+        AddStarScenarioResult::new(value.id(), name, description)
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::stars::StarEntityDetails;
+    use crate::star::entities::star_entity_details::StarEntityDetails;
 
     use super::*;
 

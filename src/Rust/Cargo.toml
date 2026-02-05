@@ -3,7 +3,8 @@ resolver = "3"
 members = [
   # "apps/py/",
   "domains/galnav/algorithms/",
-  "domains/galnav/api/",
+  "domains/galnav/domain_objects/",
+  "domains/galnav/scenarios/",
   "domains/galnav/repository/",
 ]
 

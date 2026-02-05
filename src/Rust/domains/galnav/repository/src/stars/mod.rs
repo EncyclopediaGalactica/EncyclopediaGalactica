@@ -1,6 +1,8 @@
 use sqlx::prelude::FromRow;
 use sqlx::types::Json;
 
+pub mod add;
+
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct StarEntityDetails {
     name: String,
@@ -32,28 +34,6 @@ impl StarEntityDetails {
 
     pub fn set_description(&mut self, description: String) {
         self.description = description;
-    }
-}
-
-use self::add::types::AddStarScenarioInput;
-use self::update::types::UpdateStarScenarioInput;
-
-pub mod add;
-pub mod delete;
-pub mod get_all;
-pub mod update;
-
-impl From<AddStarScenarioInput> for StarEntity {
-    fn from(value: AddStarScenarioInput) -> Self {
-        let details = StarEntityDetails::new(value.name, value.description);
-        StarEntity::new(0, Json(details))
-    }
-}
-
-impl From<UpdateStarScenarioInput> for StarEntity {
-    fn from(value: UpdateStarScenarioInput) -> Self {
-        let details = StarEntityDetails::new(value.name, value.description);
-        StarEntity::new(value.id, Json(details))
     }
 }
 
