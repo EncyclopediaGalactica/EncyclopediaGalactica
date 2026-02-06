@@ -1,10 +1,9 @@
 use anyhow::Context;
+use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
 use log::debug;
 use sqlx::PgPool;
 
-use crate::star_systems::StarSystemEntity;
-
-pub async fn add_to_storage(
+pub async fn add_star_system(
     input: StarSystemEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarSystemEntity> {
@@ -13,17 +12,24 @@ pub async fn add_to_storage(
         INSERT INTO
             star_systems (details)
             VALUES ($1)
-        RETURNING id, details
+        RETURNING 
+            id, 
+            details
         "#,
     )
-    .bind(&input.details)
+    .bind(&input.details())
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert star system: (data: {:?})", input.details))?;
+    .with_context(|| {
+        format!(
+            "Failed to insert star system: (data: {:?})",
+            input.details()
+        )
+    })?;
 
     debug!(
         "Star system table: entity inserted with id: {:?}",
-        result.id
+        result.id()
     );
     Ok(result)
 }
@@ -31,8 +37,7 @@ pub async fn add_to_storage(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::star_systems::StarSystemEntityDetails;
-    use crate::star_systems::add::storage::add_to_storage;
+    use gal_nav_domain_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

@@ -1,6 +1,5 @@
 use anyhow::ensure;
-
-use super::types::AddStarSystemScenarioInput;
+use gal_nav_domain_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
 
 const SHORT_NAME_ERROR: &str = "The star system name must be longer than 3 characters.";
 const SHORT_DESCRIPTION_ERROR: &str =

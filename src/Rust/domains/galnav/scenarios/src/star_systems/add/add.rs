@@ -1,10 +1,11 @@
+use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
+use gal_nav_domain_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
+use gal_nav_domain_objects::star_system::scenario_entities::add_star_system_scenario_result::AddStarSystemScenarioResult;
+use gal_nav_repository::star_system::add::add_star_system;
 use sqlx::PgPool;
 
 use crate::get_connection;
-use crate::star_systems::StarSystemEntity;
 
-use super::storage::add_to_storage;
-use super::types::{AddStarSystemScenarioInput, AddStarSystemScenarioResult};
 use super::validation::validate_add_star_system_scenario_input;
 
 /// Adds a star system to the starmap
@@ -23,6 +24,6 @@ pub async fn add_star_system_scenario(
 ) -> anyhow::Result<AddStarSystemScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_add_star_system_scenario_input(input.clone()).await?;
-    let recorded_star_system = add_to_storage(StarSystemEntity::from(input), db_pool).await?;
+    let recorded_star_system = add_star_system(StarSystemEntity::from(input), db_pool).await?;
     Ok(AddStarSystemScenarioResult::from(recorded_star_system))
 }

@@ -1,13 +1,4 @@
-use crate::star_systems::StarSystemEntity;
-
-#[derive(Debug, Clone)]
-pub struct AddStarSystemScenarioInput {
-    pub name: String,
-    pub description: String,
-    pub x: Option<f64>,
-    pub y: Option<f64>,
-    pub z: Option<f64>,
-}
+use crate::star_system::entities::star_system::StarSystemEntity;
 
 #[derive(Debug, Clone)]
 pub struct AddStarSystemScenarioResult {
@@ -41,12 +32,12 @@ impl AddStarSystemScenarioResult {
 
 impl From<StarSystemEntity> for AddStarSystemScenarioResult {
     fn from(value: StarSystemEntity) -> Self {
-        let name = value.details.name.to_string();
-        let description = value.details.description.to_string();
-        let x = value.details.x;
-        let y = value.details.y;
-        let z = value.details.z;
-        AddStarSystemScenarioResult::new(value.id, name, description, x, y, z)
+        let name = value.details().name().to_string();
+        let description = value.details().description().to_string();
+        let x = value.details().x();
+        let y = value.details().y();
+        let z = value.details().z();
+        AddStarSystemScenarioResult::new(value.id(), name, description, x, y, z)
     }
 }
 
@@ -54,7 +45,7 @@ impl From<StarSystemEntity> for AddStarSystemScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::star_systems::StarSystemEntityDetails;
+    use crate::star_system::entities::star_system_details::StarSystemEntityDetails;
 
     use super::*;
 
