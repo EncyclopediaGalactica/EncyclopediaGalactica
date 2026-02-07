@@ -1,7 +1,6 @@
 use anyhow::Context;
+use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
 use sqlx::PgPool;
-
-use crate::star_systems::StarSystemEntity;
 
 pub async fn get_from_storage(
     star_system_name: &str,

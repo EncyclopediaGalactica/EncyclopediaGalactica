@@ -1,6 +1,5 @@
 use anyhow::ensure;
-
-use super::types::UpdateStarSystemScenarioInput;
+use gal_nav_domain_objects::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 
 const INVALID_ID_ERROR: &str = "The star system ID must be greater than 0.";
 const SHORT_NAME_ERROR: &str = "The star system name must be longer than 3 characters.";

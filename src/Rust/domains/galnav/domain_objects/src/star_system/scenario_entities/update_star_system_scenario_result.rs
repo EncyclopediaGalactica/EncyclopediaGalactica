@@ -1,19 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::star_systems::StarSystemEntity;
+use crate::star_system::entities::star_system::StarSystemEntity;
 
-/// Input data structure for updating a star system
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct UpdateStarSystemScenarioInput {
-    pub id: i64,
-    pub name: String,
-    pub description: String,
-    pub x: Option<f64>,
-    pub y: Option<f64>,
-    pub z: Option<f64>,
-}
-
-/// Result data structure for updating a star system
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdateStarSystemScenarioResult {
     pub id: i64,
@@ -44,11 +32,11 @@ impl UpdateStarSystemScenarioResult {
     }
 
     pub fn from_entity(entity: StarSystemEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
-        let x = entity.details.x;
-        let y = entity.details.y;
-        let z = entity.details.z;
+        let name = entity.details().name().to_string();
+        let description = entity.details().description().to_string();
+        let x = entity.details().x();
+        let y = entity.details().y();
+        let z = entity.details().z();
         Self {
             id: entity.id(),
             name,
@@ -64,7 +52,7 @@ impl UpdateStarSystemScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::star_systems::StarSystemEntityDetails;
+    use crate::star_system::entities::star_system_details::StarSystemEntityDetails;
 
     use super::*;
 

@@ -1,8 +1,8 @@
 use anyhow::ensure;
-
-use super::types::StarSystemCoordinatesByNameScenarioInput;
+use gal_nav_domain_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
 
 const NAME_IS_EMPTY: &str = "The star system name cannot be empty";
+
 pub async fn validate_input(
     input: &StarSystemCoordinatesByNameScenarioInput,
 ) -> anyhow::Result<()> {

@@ -1,11 +1,12 @@
 use gal_nav_api::star_systems::add::add::add_star_system_scenario;
-use gal_nav_api::star_systems::add::types::AddStarSystemScenarioInput;
 use gal_nav_api::star_systems::get_all::get_all::get_all_star_systems_scenario;
+use gal_nav_domain_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<()> {
+    println!("========== before the migration");
     sqlx::migrate!("./../../../migrations")
         .run(&db_pool)
         .await
@@ -29,14 +30,16 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
         y: Some(3.0),
         z: Some(4.0),
     };
-    let _ = add_star_system_scenario(add_input2, Option::from(db_pool.clone()), None)
+    let r = add_star_system_scenario(add_input2, Option::from(db_pool.clone()), None)
         .await
         .expect("Failed to add star system");
+    println!("============ after the add: {:?}", r);
 
-    // Get all
+    println!("============= before the all");
     let all = get_all_star_systems_scenario(Option::from(db_pool), None)
         .await
         .expect("Failed to get all star systems");
+    println!("============ after the all");
 
     assert!(all.len() > 2);
     // Check names

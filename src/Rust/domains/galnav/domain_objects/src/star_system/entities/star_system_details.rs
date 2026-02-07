@@ -1,6 +1,7 @@
 use sqlx::prelude::FromRow;
 
 use crate::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
+use crate::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 
 #[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
 pub struct StarSystemEntityDetails {

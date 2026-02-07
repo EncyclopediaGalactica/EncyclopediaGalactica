@@ -33,7 +33,7 @@ pub async fn update_star_by_id(
 #[cfg(test)]
 mod tests {
 
-    use crate::stars::add::add_star_to_storage;
+    use crate::star::add::add_star;
 
     use super::*;
     use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
@@ -52,7 +52,7 @@ mod tests {
             "Original Description".to_string(),
         );
         let add_input = StarEntity::new(0, Json(add_details));
-        let added = add_star_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_star(add_input, pool.clone()).await.unwrap();
 
         // Now update it
         let update_details = StarEntityDetails::new(

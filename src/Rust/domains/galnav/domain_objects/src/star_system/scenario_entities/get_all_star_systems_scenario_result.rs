@@ -1,12 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::star_systems::StarSystemEntity;
+use crate::star_system::entities::star_system::StarSystemEntity;
 
-/// Input data structure for getting all star systems (empty for now)
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct GetAllStarSystemsScenarioInput {}
-
-/// Result data structure for a single star system
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllStarSystemsScenarioResult {
     pub id: i64,
@@ -39,12 +34,12 @@ impl GetAllStarSystemsScenarioResult {
 
 impl From<StarSystemEntity> for GetAllStarSystemsScenarioResult {
     fn from(entity: StarSystemEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
-        let x = entity.details.x;
-        let y = entity.details.y;
-        let z = entity.details.z;
-        GetAllStarSystemsScenarioResult::new(entity.id, name, description, x, y, z)
+        let name = entity.details().name().to_string();
+        let description = entity.details().description().to_string();
+        let x = entity.details().x();
+        let y = entity.details().y();
+        let z = entity.details().z();
+        GetAllStarSystemsScenarioResult::new(entity.id(), name, description, x, y, z)
     }
 }
 
@@ -52,7 +47,7 @@ impl From<StarSystemEntity> for GetAllStarSystemsScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::star_systems::StarSystemEntityDetails;
+    use crate::star_system::entities::star_system_details::StarSystemEntityDetails;
 
     use super::*;
 

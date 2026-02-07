@@ -1,26 +1,16 @@
+use gal_nav_domain_objects::star_system::scenario_entities::get_all_star_systems_scenario_result::GetAllStarSystemsScenarioResult;
+use gal_nav_repository::star_system::get_all::get_all_star_systems;
 use sqlx::PgPool;
 
 use crate::get_connection;
 
-use super::storage::get_all_from_storage;
-use super::types::GetAllStarSystemsScenarioResult;
-
-/// Gets all star systems from the starmap
-///
-/// This scenario can be called from the Python API too and that will provide
-/// a connection string instead of the `PgPool`.
-///
-/// # Arguments
-/// * `pg_pool::Option<PgPool>` - The Postgres connection pool
-/// * `db_connection_string::Option<&str>` - The database connection string
 pub async fn get_all_star_systems_scenario(
     pg_pool: Option<PgPool>,
     db_connection_string: Option<&str>,
 ) -> anyhow::Result<Vec<GetAllStarSystemsScenarioResult>> {
-    print!("Getting all star systems");
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
-    let star_systems = get_all_from_storage(db_pool).await?;
-    println!("star_systems from scenario: {:?}", star_systems);
+    println!("=== before the query");
+    let star_systems = get_all_star_systems(db_pool).await?;
     Ok(star_systems
         .into_iter()
         .map(GetAllStarSystemsScenarioResult::from)

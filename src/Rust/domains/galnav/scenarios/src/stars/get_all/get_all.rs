@@ -1,6 +1,6 @@
 use gal_nav_domain_objects::star::scenario_entities::get_all_scenario_input::GetAllStarsScenarioInput;
 use gal_nav_domain_objects::star::scenario_entities::get_all_scenario_result::GetAllStarsScenarioResult;
-use gal_nav_repository::stars::get_all::get_all_stars_from_storage;
+use gal_nav_repository::star::get_all::get_all_stars;
 use sqlx::PgPool;
 
 use crate::get_connection;
@@ -15,7 +15,7 @@ pub async fn get_all_stars_scenario(
     db_connection_string: Option<&str>,
 ) -> anyhow::Result<Vec<GetAllStarsScenarioResult>> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
-    let all_stars = get_all_stars_from_storage(db_pool).await?;
+    let all_stars = get_all_stars(db_pool).await?;
     Ok(all_stars
         .into_iter()
         .map(GetAllStarsScenarioResult::from)

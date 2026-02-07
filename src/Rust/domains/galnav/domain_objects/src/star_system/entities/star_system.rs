@@ -1,11 +1,14 @@
+use serde::Deserialize;
+use serde::Serialize;
 use sqlx::prelude::FromRow;
 use sqlx::types::Json;
 
 use crate::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
+use crate::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 
 use super::star_system_details::StarSystemEntityDetails;
 
-#[derive(Debug, Clone, FromRow, serde::Deserialize, serde::Serialize)]
+#[derive(Debug, Clone, FromRow, Deserialize, Serialize)]
 pub struct StarSystemEntity {
     id: i64,
     details: Json<StarSystemEntityDetails>,

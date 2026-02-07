@@ -3,7 +3,7 @@ use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
 use log::debug;
 use sqlx::PgPool;
 
-pub async fn get_all_stars_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarEntity>> {
+pub async fn get_all_stars(db_connection: PgPool) -> anyhow::Result<Vec<StarEntity>> {
     let result: Vec<StarEntity> = sqlx::query_as(
         r#"
         SELECT 
@@ -26,7 +26,7 @@ pub async fn get_all_stars_from_storage(db_connection: PgPool) -> anyhow::Result
 #[cfg(test)]
 mod tests {
 
-    use crate::stars::add::add_star_to_storage;
+    use crate::star::add::add_star;
 
     use super::*;
     use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
@@ -44,11 +44,11 @@ mod tests {
         let star1 = StarEntity::new(0, Json(details1));
         let details2 = StarEntityDetails::new("Star 2".to_string(), "Description 2".to_string());
         let star2 = StarEntity::new(0, Json(details2));
-        add_star_to_storage(star1, pool.clone()).await.unwrap();
-        add_star_to_storage(star2, pool.clone()).await.unwrap();
+        add_star(star1, pool.clone()).await.unwrap();
+        add_star(star2, pool.clone()).await.unwrap();
 
         // Get all
-        let all_stars = get_all_stars_from_storage(pool.clone()).await.unwrap();
+        let all_stars = get_all_stars(pool.clone()).await.unwrap();
         assert!(all_stars.len() >= 2);
         Ok(())
     }

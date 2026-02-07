@@ -1,13 +1,26 @@
 use anyhow::Context;
+use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
 use sqlx::PgPool;
-use sqlx::types::Json;
 
-use crate::star_systems::StarSystemEntity;
-use crate::star_systems::StarSystemEntityDetails;
+pub async fn get_all_star_systems(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
+    println!("=== before first");
+    let first = sqlx::query(
+        r#"
+        SELECT 
+            *
+        FROM
+            star_systems
+        LIMIT 1
+"#,
+    )
+    .execute(&db_connection)
+    .await
+    .with_context(|| "First failed")?;
 
-pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
-    let star_systems: Vec<StarSystemEntity> = sqlx::query_as!(
-        StarSystemEntity,
+    println!("=== first: {:?}", first);
+
+    println!("=== before the query in the repo");
+    let star_systems: Vec<StarSystemEntity> = sqlx::query_as::<_, StarSystemEntity>(
         r#"
         SELECT
             id,
@@ -20,17 +33,16 @@ pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<S
     .await
     .with_context(|| "Failed to get all star systems")?;
 
-    println!("star_systems: {:?}", star_systems);
-
+    println!("=== after the query in the repo: {:#?}", star_systems);
     Ok(star_systems)
 }
 
 #[cfg(test)]
 mod tests {
+    use crate::star_system::add::add_star_system;
+
     use super::*;
-    use crate::star_systems::StarSystemEntity;
-    use crate::star_systems::StarSystemEntityDetails;
-    use crate::star_systems::add::storage::add_to_storage;
+    use gal_nav_domain_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -49,7 +61,7 @@ mod tests {
             Some(3.0),
         );
         let add_input1 = StarSystemEntity::new(0, Json(data1));
-        let _ = add_to_storage(add_input1, pool.clone()).await.unwrap();
+        let _ = add_star_system(add_input1, pool.clone()).await.unwrap();
 
         let data2 = StarSystemEntityDetails::new(
             "Star System 2".to_string(),
@@ -59,14 +71,14 @@ mod tests {
             Some(2.0),
         );
         let add_input2 = StarSystemEntity::new(0, Json(data2));
-        let _ = add_to_storage(add_input2, pool.clone()).await.unwrap();
+        let _ = add_star_system(add_input2, pool.clone()).await.unwrap();
 
         // Now get all
-        let all = get_all_from_storage(pool.clone()).await.unwrap();
+        let all = get_all_star_systems(pool.clone()).await.unwrap();
 
         assert!(all.len() >= 2);
         // Check that our added ones are there
-        let names: Vec<String> = all.iter().map(|s| s.details.name.to_string()).collect();
+        let names: Vec<String> = all.iter().map(|s| s.details().name().to_string()).collect();
         assert!(names.contains(&"Star System 1".to_string()));
         assert!(names.contains(&"Star System 2".to_string()));
         Ok(())

@@ -56,11 +56,11 @@ mod tests {
             Some(0.0),
         );
         let add_input = StarSystemEntity::new(0, Json(data));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_star_system(add_input, pool.clone()).await.unwrap();
 
-        assert_eq!(added.id, added.id);
-        assert_eq!(added.details.name, "Original Star System");
-        assert_eq!(added.details.description, "Original Description");
+        assert_eq!(added.id(), added.id());
+        assert_eq!(added.details().name(), "Original Star System");
+        assert_eq!(added.details().description(), "Original Description");
         Ok(())
     }
 }
