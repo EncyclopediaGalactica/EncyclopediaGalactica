@@ -6,7 +6,6 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<()> {
-    println!("========== before the migration");
     sqlx::migrate!("./../../../migrations")
         .run(&db_pool)
         .await
@@ -30,18 +29,15 @@ async fn test_get_all_star_systems_scenario_success(db_pool: PgPool) -> Result<(
         y: Some(3.0),
         z: Some(4.0),
     };
-    let r = add_star_system_scenario(add_input2, Option::from(db_pool.clone()), None)
+    let _r = add_star_system_scenario(add_input2, Option::from(db_pool.clone()), None)
         .await
         .expect("Failed to add star system");
-    println!("============ after the add: {:?}", r);
 
-    println!("============= before the all");
     let all = get_all_star_systems_scenario(Option::from(db_pool), None)
         .await
         .expect("Failed to get all star systems");
-    println!("============ after the all");
 
-    assert!(all.len() > 2);
+    assert!(all.len() >= 2);
     // Check names
     let names: Vec<String> = all.iter().map(|s| s.name.clone()).collect();
     assert!(names.contains(&"Star System 1".to_string()));

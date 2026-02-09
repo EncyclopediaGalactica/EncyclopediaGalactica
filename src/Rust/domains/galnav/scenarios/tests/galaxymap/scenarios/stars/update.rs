@@ -11,7 +11,6 @@ async fn test_update_star_scenario_success(db_pool: PgPool) -> Result<()> {
         .run(&db_pool)
         .await
         .unwrap();
-    // First add a star
     let add_input = AddStarScenarioInput {
         name: "Sirius".to_string(),
         description: "Dog star".to_string(),
@@ -20,12 +19,12 @@ async fn test_update_star_scenario_success(db_pool: PgPool) -> Result<()> {
         .await
         .expect("Failed to add star");
 
-    // Now update it
     let update_input = UpdateStarScenarioInput {
         id: added.id,
         name: "Updated Sirius".to_string(),
         description: "Updated description".to_string(),
     };
+    println!("=== update_input: {:#?}", update_input);
     let result = update_star_scenario(update_input, Option::from(db_pool), None)
         .await
         .expect("Failed to update star");

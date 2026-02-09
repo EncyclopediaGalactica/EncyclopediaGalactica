@@ -3,28 +3,11 @@ use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity
 use sqlx::PgPool;
 
 pub async fn get_all_star_systems(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
-    println!("=== before first");
-    let first = sqlx::query(
-        r#"
-        SELECT 
-            *
-        FROM
-            star_systems
-        LIMIT 1
-"#,
-    )
-    .execute(&db_connection)
-    .await
-    .with_context(|| "First failed")?;
-
-    println!("=== first: {:?}", first);
-
-    println!("=== before the query in the repo");
     let star_systems: Vec<StarSystemEntity> = sqlx::query_as::<_, StarSystemEntity>(
         r#"
         SELECT
             id,
-            details as "details: Json<StarSystemEntityDetails>"
+            details
         FROM 
             star_systems
         "#,
@@ -33,7 +16,6 @@ pub async fn get_all_star_systems(db_connection: PgPool) -> anyhow::Result<Vec<S
     .await
     .with_context(|| "Failed to get all star systems")?;
 
-    println!("=== after the query in the repo: {:#?}", star_systems);
     Ok(star_systems)
 }
 

@@ -7,7 +7,8 @@ pub async fn update_star_by_id(
     input: StarEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<StarEntity> {
-    let result: StarEntity = sqlx::query_as(
+    println!("=== update_star_by_id: {:#?}", input);
+    let result: StarEntity = sqlx::query_as::<_, StarEntity>(
         r#"
         UPDATE 
             stars

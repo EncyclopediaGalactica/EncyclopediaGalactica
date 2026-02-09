@@ -13,6 +13,9 @@ pub struct UpdateStarScenarioInput {
 }
 impl Into<StarEntity> for UpdateStarScenarioInput {
     fn into(self) -> StarEntity {
-        StarEntity::new(0, Json(StarEntityDetails::new(self.name, self.description)))
+        StarEntity::new(
+            self.id,
+            Json(StarEntityDetails::new(self.name, self.description)),
+        )
     }
 }
