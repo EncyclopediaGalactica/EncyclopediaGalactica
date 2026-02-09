@@ -1,10 +1,4 @@
-use crate::planets::PlanetEntity;
-
-#[derive(Debug, Clone)]
-pub struct AddPlanetScenarioInput {
-    pub name: String,
-    pub description: String,
-}
+use crate::planet::entities::planet_entity::PlanetEntity;
 
 #[derive(Debug, Clone)]
 pub struct AddPlanetScenarioResult {
@@ -25,9 +19,9 @@ impl AddPlanetScenarioResult {
 
 impl From<PlanetEntity> for AddPlanetScenarioResult {
     fn from(value: PlanetEntity) -> Self {
-        let name = value.details.name.to_string();
-        let description = value.details.description.to_string();
-        AddPlanetScenarioResult::new(value.id, name, description)
+        let name = value.details().name().to_string();
+        let description = value.details().description().to_string();
+        AddPlanetScenarioResult::new(value.id(), name, description)
     }
 }
 
@@ -35,7 +29,7 @@ impl From<PlanetEntity> for AddPlanetScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::planets::PlanetEntityDetails;
+    use crate::planet::entities::planet_entity_details::PlanetEntityDetails;
 
     use super::*;
 

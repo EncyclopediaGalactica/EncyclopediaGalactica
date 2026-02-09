@@ -1,7 +1,7 @@
 use gal_nav_api::planets::add::add::add_planet_scenario;
-use gal_nav_api::planets::add::types::AddPlanetScenarioInput;
 use gal_nav_api::planets::delete::delete::delete_planet_scenario;
-use gal_nav_api::planets::delete::types::DeletePlanetScenarioInput;
+use gal_nav_domain_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
+use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 use sqlx::Result;
 
 #[sqlx::test]

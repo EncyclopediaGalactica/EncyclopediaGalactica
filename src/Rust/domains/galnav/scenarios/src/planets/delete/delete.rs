@@ -1,9 +1,9 @@
+use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
+use gal_nav_repository::planet::delete_by_id::delete_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;
 
-use super::storage::delete_from_storage;
-use super::types::DeletePlanetScenarioInput;
 use super::validation::validate_delete_planet_scenario_input;
 
 /// Deletes a planet from the starmap
@@ -22,6 +22,6 @@ pub async fn delete_planet_scenario(
 ) -> anyhow::Result<()> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_delete_planet_scenario_input(&input)?;
-    delete_from_storage(&db_pool, input).await?;
+    delete_by_id(&db_pool, input).await?;
     Ok(())
 }

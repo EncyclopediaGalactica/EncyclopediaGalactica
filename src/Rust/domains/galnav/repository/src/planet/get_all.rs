@@ -1,19 +1,15 @@
 use anyhow::{Context, Result};
+use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
 use log::debug;
 use sqlx::PgPool;
-use sqlx::types::Json;
-
-use crate::planets::PlanetEntity;
-use crate::planets::PlanetEntityDetails;
 
 /// Retrieves all planets from the database
-pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
-    let planets: Vec<PlanetEntity> = sqlx::query_as!(
-        PlanetEntity,
+pub async fn get_all_planets(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
+    let planets: Vec<PlanetEntity> = sqlx::query_as::<_, PlanetEntity>(
         r#"
     SELECT 
         id, 
-        details as "details: Json<PlanetEntityDetails>"
+        details
     FROM 
          planets
     "#,
@@ -29,9 +25,12 @@ pub async fn get_all_from_storage(pool: &PgPool) -> Result<Vec<PlanetEntity>> {
 
 #[cfg(test)]
 mod tests {
+    use crate::planet::add_planet::add_planet;
+
     use super::*;
-    use crate::planets::add::storage::add_to_storage;
+    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
+    use sqlx::types::Json;
 
     #[sqlx::test]
     async fn test_get_all_from_storage_returns_correct_count(pool: PgPool) -> sqlx::Result<()> {
@@ -45,11 +44,11 @@ mod tests {
         let details2 = PlanetEntityDetails::new("Test Planet 2".to_string(), "Desc 2".to_string());
         let planet2 = PlanetEntity::new(0, Json(details2));
 
-        add_to_storage(planet1, pool.clone()).await.unwrap();
-        add_to_storage(planet2, pool.clone()).await.unwrap();
+        add_planet(planet1, pool.clone()).await.unwrap();
+        add_planet(planet2, pool.clone()).await.unwrap();
 
         // Retrieve all
-        let result = get_all_from_storage(&pool).await.unwrap();
+        let result = get_all_planets(&pool).await.unwrap();
 
         // Assert that at least the inserted planets are present (DB may have more)
         assert!(result.len() >= 2);

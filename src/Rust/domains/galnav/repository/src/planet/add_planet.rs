@@ -1,10 +1,9 @@
 use anyhow::Context;
+use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
 use log::debug;
 use sqlx::PgPool;
 
-use crate::planets::PlanetEntity;
-
-pub async fn add_to_storage(
+pub async fn add_planet(
     input: PlanetEntity,
     db_connection: PgPool,
 ) -> anyhow::Result<PlanetEntity> {
@@ -16,20 +15,20 @@ pub async fn add_to_storage(
         RETURNING id, details
         "#,
     )
-    .bind(&input.details)
+    .bind(&input.details())
     .fetch_one(&db_connection)
     .await
-    .with_context(|| format!("Failed to insert planet: (data: {:?}", input.details))?;
+    .with_context(|| format!("Failed to insert planet: (data: {:?}", input.details()))?;
 
-    debug!("Planet table: entity inserted with id: {:?}", result.id);
+    debug!("Planet table: entity inserted with id: {:?}", result.id());
     Ok(result)
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::planets::PlanetEntityDetails;
 
     use super::*;
+    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -45,12 +44,12 @@ mod tests {
             "Original Description".to_string(),
         );
         let add_input = PlanetEntity::new(0, Json(details));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_planet(add_input, pool.clone()).await.unwrap();
 
         // Check
-        assert!(added.id > 0);
-        assert_eq!(added.details.name, "Original Planet");
-        assert_eq!(added.details.description, "Original Description");
+        assert!(added.id() > 0);
+        assert_eq!(added.details().name(), "Original Planet");
+        assert_eq!(added.details().description(), "Original Description");
         Ok(())
     }
 }

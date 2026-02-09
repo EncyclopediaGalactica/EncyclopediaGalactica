@@ -1,11 +1,9 @@
 use anyhow::{Context, Result};
+use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 use log::debug;
 use sqlx::PgPool;
 
-use super::types::DeletePlanetScenarioInput;
-
-/// Deletes a planet from the database
-pub async fn delete_from_storage(pool: &PgPool, input: DeletePlanetScenarioInput) -> Result<()> {
+pub async fn delete_by_id(pool: &PgPool, input: DeletePlanetScenarioInput) -> Result<()> {
     let rows_affected = sqlx::query!(
         r#"
         DELETE 
@@ -26,10 +24,12 @@ pub async fn delete_from_storage(pool: &PgPool, input: DeletePlanetScenarioInput
 
 #[cfg(test)]
 mod tests {
+    use crate::planet::add_planet::add_planet;
+    use crate::planet::get_all::get_all_planets;
+
     use super::*;
-    use crate::planets::add::storage::add_to_storage;
-    use crate::planets::get_all::storage::get_all_from_storage;
-    use crate::planets::{PlanetEntity, PlanetEntityDetails};
+    use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
+    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 
@@ -43,15 +43,15 @@ mod tests {
         let details =
             PlanetEntityDetails::new("Test Planet".to_string(), "Test Description".to_string());
         let planet = PlanetEntity::new(0, Json(details));
-        let added = add_to_storage(planet, pool.clone()).await.unwrap();
+        let added = add_planet(planet, pool.clone()).await.unwrap();
 
         // Delete it
-        let delete_input = DeletePlanetScenarioInput { id: added.id };
-        delete_from_storage(&pool, delete_input).await.unwrap();
+        let delete_input = DeletePlanetScenarioInput { id: added.id() };
+        delete_by_id(&pool, delete_input).await.unwrap();
 
         // Verify it's gone
-        let remaining = get_all_from_storage(&pool).await.unwrap();
-        let hit = remaining.iter().find(|p| p.id() == added.id);
+        let remaining = get_all_planets(&pool).await.unwrap();
+        let hit = remaining.iter().find(|p| p.id() == added.id());
         assert!(hit.is_none());
         Ok(())
     }

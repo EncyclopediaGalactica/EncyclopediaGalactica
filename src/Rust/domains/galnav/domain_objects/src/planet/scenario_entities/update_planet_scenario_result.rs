@@ -1,14 +1,7 @@
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
+use serde::Serialize;
 
-use crate::planets::PlanetEntity;
-
-/// Input data structure for updating a planet
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct UpdatePlanetScenarioInput {
-    pub id: i64,
-    pub name: String,
-    pub description: String,
-}
+use crate::planet::entities::planet_entity::PlanetEntity;
 
 /// Result data structure for updating a planet
 #[derive(Debug, Deserialize, Serialize, Clone)]
@@ -30,8 +23,8 @@ impl UpdatePlanetScenarioResult {
     pub fn from_entity(entity: PlanetEntity) -> Self {
         Self {
             id: entity.id(),
-            name: entity.details().name.to_string(),
-            description: entity.details().description.to_string(),
+            name: entity.details().name().to_string(),
+            description: entity.details().description().to_string(),
         }
     }
 }
@@ -40,7 +33,7 @@ impl UpdatePlanetScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::planets::PlanetEntityDetails;
+    use crate::planet::entities::planet_entity_details::PlanetEntityDetails;
 
     use super::*;
 

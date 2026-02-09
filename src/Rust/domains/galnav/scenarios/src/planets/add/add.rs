@@ -1,10 +1,10 @@
+use gal_nav_domain_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
+use gal_nav_domain_objects::planet::scenario_entities::add_planet_scenario_result::AddPlanetScenarioResult;
+use gal_nav_repository::planet::add_planet::add_planet;
 use sqlx::PgPool;
 
 use crate::get_connection;
-use crate::planets::PlanetEntity;
 
-use super::storage::add_to_storage;
-use super::types::{AddPlanetScenarioInput, AddPlanetScenarioResult};
 use super::validation::validate_add_planet_scenario_input;
 
 /// Adds a planet to the starmap
@@ -23,6 +23,6 @@ pub async fn add_planet_scenario(
 ) -> anyhow::Result<AddPlanetScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_add_planet_scenario_input(input.clone()).await?;
-    let recorded_planet = add_to_storage(PlanetEntity::from(input), db_pool).await?;
+    let recorded_planet = add_planet(AddPlanetScenarioInput::into(input), db_pool).await?;
     Ok(AddPlanetScenarioResult::from(recorded_planet))
 }

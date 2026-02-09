@@ -1,15 +1,10 @@
 use anyhow::{Context, Result};
+use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
+use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
 use log::debug;
 use sqlx::{PgPool, Row, types::Json};
 
-use super::types::UpdatePlanetScenarioInput;
-use crate::planets::{PlanetEntity, PlanetEntityDetails};
-
-/// Updates a planet in the database after verifying the ID exists
-pub async fn update_in_storage(
-    pool: &PgPool,
-    input: UpdatePlanetScenarioInput,
-) -> Result<PlanetEntity> {
+pub async fn update_by_id(pool: &PgPool, input: PlanetEntity) -> Result<PlanetEntity> {
     // First, check if the planet exists
     let exists: Option<i64> = sqlx::query(
         r#"
@@ -21,7 +16,7 @@ pub async fn update_in_storage(
             id = $1
     "#,
     )
-    .bind(input.id)
+    .bind(input.id())
     .fetch_optional(pool)
     .await?
     .map(|row| row.get(0));
@@ -31,7 +26,10 @@ pub async fn update_in_storage(
     }
 
     // Perform the update
-    let details = PlanetEntityDetails::new(input.name, input.description);
+    let details = PlanetEntityDetails::new(
+        input.details().name().to_string(),
+        input.details().description().to_string(),
+    );
     let json_details = Json(details);
     let row = sqlx::query(
         r#"
@@ -46,7 +44,7 @@ pub async fn update_in_storage(
             details
         "#,
     )
-    .bind(input.id)
+    .bind(input.id())
     .bind(&json_details)
     .fetch_one(pool)
     .await
@@ -61,8 +59,9 @@ pub async fn update_in_storage(
 
 #[cfg(test)]
 mod tests {
+    use crate::planet::add_planet::add_planet;
+
     use super::*;
-    use crate::planets::add::storage::add_to_storage;
     use sqlx::PgPool;
 
     #[sqlx::test]
@@ -77,19 +76,21 @@ mod tests {
             "Original Description".to_string(),
         );
         let add_input = PlanetEntity::new(0, Json(add_details));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_planet(add_input, pool.clone()).await.unwrap();
 
         // Now update it
-        let update_input = UpdatePlanetScenarioInput {
-            id: added.id,
-            name: "Updated Planet".to_string(),
-            description: "Updated Description".to_string(),
-        };
-        let result = update_in_storage(&pool, update_input).await.unwrap();
+        let update_input = PlanetEntity::new(
+            added.id(),
+            Json(PlanetEntityDetails::new(
+                "Updated Planet".to_string(),
+                "Updated Description".to_string(),
+            )),
+        );
+        let result = update_by_id(&pool, update_input).await.unwrap();
 
-        assert_eq!(result.id, added.id);
-        assert_eq!(result.details.name, "Updated Planet");
-        assert_eq!(result.details.description, "Updated Description");
+        assert_eq!(result.id(), added.id());
+        assert_eq!(result.details().name(), "Updated Planet");
+        assert_eq!(result.details().description(), "Updated Description");
         Ok(())
     }
 }

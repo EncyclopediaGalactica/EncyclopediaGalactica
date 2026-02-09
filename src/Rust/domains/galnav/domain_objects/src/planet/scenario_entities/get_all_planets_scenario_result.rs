@@ -1,12 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::planets::PlanetEntity;
+use crate::planet::entities::planet_entity::PlanetEntity;
 
-/// Input data structure for getting all planets (empty for now)
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct GetAllPlanetsScenarioInput {}
-
-/// Result data structure for a single planet
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllPlanetsScenarioResult {
     pub id: i64,
@@ -27,9 +22,9 @@ impl GetAllPlanetsScenarioResult {
 impl From<PlanetEntity> for GetAllPlanetsScenarioResult {
     fn from(entity: PlanetEntity) -> Self {
         GetAllPlanetsScenarioResult::new(
-            entity.id,
-            entity.details.name.to_string(),
-            entity.details.description.to_string(),
+            entity.id(),
+            entity.details().name().to_string(),
+            entity.details().description().to_string(),
         )
     }
 }
@@ -38,7 +33,7 @@ impl From<PlanetEntity> for GetAllPlanetsScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::planets::PlanetEntityDetails;
+    use crate::planet::entities::planet_entity_details::PlanetEntityDetails;
 
     use super::*;
 

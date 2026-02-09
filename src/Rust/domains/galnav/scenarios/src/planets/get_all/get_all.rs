@@ -1,9 +1,8 @@
+use gal_nav_domain_objects::planet::scenario_entities::get_all_planets_scenario_result::GetAllPlanetsScenarioResult;
+use gal_nav_repository::planet::get_all::get_all_planets;
 use sqlx::PgPool;
 
 use crate::get_connection;
-
-use super::storage::get_all_from_storage;
-use super::types::GetAllPlanetsScenarioResult;
 
 /// Retrieves all planets from the starmap
 ///
@@ -18,7 +17,7 @@ pub async fn get_all_planets_scenario(
     db_connection_string: Option<&str>,
 ) -> anyhow::Result<Vec<GetAllPlanetsScenarioResult>> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
-    let planets = get_all_from_storage(&db_pool).await?;
+    let planets = get_all_planets(&db_pool).await?;
     Ok(planets
         .into_iter()
         .map(GetAllPlanetsScenarioResult::from)

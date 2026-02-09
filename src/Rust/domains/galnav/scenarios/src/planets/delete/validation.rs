@@ -1,6 +1,5 @@
-use super::types::DeletePlanetScenarioInput;
+use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 
-/// Validates the input for deleting a planet
 pub fn validate_delete_planet_scenario_input(
     input: &DeletePlanetScenarioInput,
 ) -> anyhow::Result<()> {

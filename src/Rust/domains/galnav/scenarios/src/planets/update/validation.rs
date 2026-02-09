@@ -1,6 +1,5 @@
 use anyhow::ensure;
-
-use super::types::UpdatePlanetScenarioInput;
+use gal_nav_domain_objects::planet::scenario_entities::update_planet_scenario_input::UpdatePlanetScenarioInput;
 
 const INVALID_ID_ERROR: &str = "The planet id must be positive.";
 const SHORT_NAME_ERROR: &str = "The planet name must be longer than 3 characters.";
