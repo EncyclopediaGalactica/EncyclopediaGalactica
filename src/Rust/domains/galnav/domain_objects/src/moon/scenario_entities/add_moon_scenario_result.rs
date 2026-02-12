@@ -1,10 +1,4 @@
-use crate::moons::MoonEntity;
-
-#[derive(Debug, Clone)]
-pub struct AddMoonScenarioInput {
-    pub name: String,
-    pub description: String,
-}
+use crate::moon::entities::moon_entity::MoonEntity;
 
 #[derive(Debug, Clone)]
 pub struct AddMoonScenarioResult {
@@ -25,9 +19,9 @@ impl AddMoonScenarioResult {
 
 impl From<MoonEntity> for AddMoonScenarioResult {
     fn from(value: MoonEntity) -> Self {
-        let name = value.details.name.to_string();
-        let description = value.details.description.to_string();
-        AddMoonScenarioResult::new(value.id, name, description)
+        let name = value.details().name().to_string();
+        let description = value.details().description().to_string();
+        AddMoonScenarioResult::new(value.id(), name, description)
     }
 }
 
@@ -35,7 +29,7 @@ impl From<MoonEntity> for AddMoonScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::moons::MoonEntityDetails;
+    use crate::moon::entities::moon_entity_details::MoonEntityDetails;
 
     use super::*;
 

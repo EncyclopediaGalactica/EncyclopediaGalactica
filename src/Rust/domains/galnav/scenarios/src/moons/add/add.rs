@@ -1,21 +1,12 @@
+use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
+use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_result::AddMoonScenarioResult;
+use gal_nav_repository::moon::add::add_moon;
 use sqlx::PgPool;
 
 use crate::get_connection;
-use crate::moons::MoonEntity;
 
-use super::storage::add_to_storage;
-use super::types::{AddMoonScenarioInput, AddMoonScenarioResult};
 use super::validation::validate_add_moon_scenario_input;
 
-/// Adds a moon to the starmap
-///
-/// This scenario can be called from the Python API too and that will provide
-/// a connection string instead of the `PgPool`.
-///
-/// # Arguments
-/// * `input::AddMoonScenarioInput` - The input data for the scenario
-/// * `pg_pool::Option<PgPool>` - The Postgres connection pool
-/// * `db_connection_string::Option<&str>` - The database connection string
 pub async fn add_moon_scenario(
     input: AddMoonScenarioInput,
     pg_pool: Option<PgPool>,
@@ -23,6 +14,6 @@ pub async fn add_moon_scenario(
 ) -> anyhow::Result<AddMoonScenarioResult> {
     let db_pool = get_connection(pg_pool, db_connection_string).await?;
     validate_add_moon_scenario_input(input.clone()).await?;
-    let recorded_moon = add_to_storage(MoonEntity::from(input), db_pool).await?;
+    let recorded_moon = add_moon(AddMoonScenarioInput::into(input), db_pool).await?;
     Ok(AddMoonScenarioResult::from(recorded_moon))
 }

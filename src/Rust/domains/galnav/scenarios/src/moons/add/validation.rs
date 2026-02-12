@@ -1,6 +1,5 @@
 use anyhow::ensure;
-
-use super::types::AddMoonScenarioInput;
+use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
 
 const SHORT_NAME_ERROR: &str = "The moon name must be longer than 3 characters.";
 const SHORT_DESCRIPTION_ERROR: &str = "The moon description must be longer than 3 characters.";
