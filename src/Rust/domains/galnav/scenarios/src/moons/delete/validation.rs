@@ -1,6 +1,5 @@
-use super::types::DeleteMoonScenarioInput;
+use gal_nav_domain_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
 
-/// Validates the input for deleting a moon
 pub fn validate_delete_moon_scenario_input(input: &DeleteMoonScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {
         return Err(anyhow::anyhow!("The moon id must be positive."));

@@ -1,12 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::moons::MoonEntity;
+use crate::moon::entities::moon_entity::MoonEntity;
 
-/// Input data structure for getting all moons (empty for now)
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct GetAllMoonsScenarioInput {}
-
-/// Result data structure for a single moon
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct GetAllMoonsScenarioResult {
     pub id: i64,
@@ -26,9 +21,9 @@ impl GetAllMoonsScenarioResult {
 
 impl From<MoonEntity> for GetAllMoonsScenarioResult {
     fn from(entity: MoonEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
-        GetAllMoonsScenarioResult::new(entity.id, name, description)
+        let name = entity.details().name().to_string();
+        let description = entity.details().description().to_string();
+        GetAllMoonsScenarioResult::new(entity.id(), name, description)
     }
 }
 
@@ -36,7 +31,7 @@ impl From<MoonEntity> for GetAllMoonsScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::moons::MoonEntityDetails;
+    use crate::moon::entities::moon_entity_details::MoonEntityDetails;
 
     use super::*;
 

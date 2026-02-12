@@ -11,7 +11,7 @@ pub async fn add_moon(input: MoonEntity, db_connection: PgPool) -> anyhow::Resul
             VALUES ($1)
         RETURNING 
             id, 
-            details as "details: Json<MoonEntityDetails>"
+            details
         "#,
     )
     .bind(input.details())

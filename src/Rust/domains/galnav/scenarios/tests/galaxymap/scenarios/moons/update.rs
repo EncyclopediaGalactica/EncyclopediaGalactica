@@ -1,7 +1,7 @@
 use gal_nav_api::moons::add::add::add_moon_scenario;
-use gal_nav_api::moons::add::types::AddMoonScenarioInput;
-use gal_nav_api::moons::update::types::UpdateMoonScenarioInput;
 use gal_nav_api::moons::update::update::update_moon_scenario;
+use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
+use gal_nav_domain_objects::moon::scenario_entities::update_moon_scenario_input::UpdateMoonScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 

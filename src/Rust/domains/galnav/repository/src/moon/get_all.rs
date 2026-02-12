@@ -1,18 +1,14 @@
 use anyhow::Context;
+use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
 use log::debug;
 use sqlx::PgPool;
-use sqlx::types::Json;
 
-use crate::moons::MoonEntity;
-use crate::moons::MoonEntityDetails;
-
-pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<MoonEntity>> {
-    let result: Vec<MoonEntity> = sqlx::query_as!(
-        MoonEntity,
+pub async fn get_all_moons(db_connection: PgPool) -> anyhow::Result<Vec<MoonEntity>> {
+    let result: Vec<MoonEntity> = sqlx::query_as::<_, MoonEntity>(
         r#"
         SELECT 
             id, 
-            details as "details: Json<MoonEntityDetails>"
+            details
         FROM 
             moons
         "#,
@@ -27,10 +23,13 @@ pub async fn get_all_from_storage(db_connection: PgPool) -> anyhow::Result<Vec<M
 
 #[cfg(test)]
 mod tests {
-    use crate::moons::add::storage::add_to_storage;
+
+    use crate::moon::add::add_moon;
 
     use super::*;
+    use gal_nav_domain_objects::moon::entities::moon_entity_details::MoonEntityDetails;
     use sqlx::PgPool;
+    use sqlx::types::Json;
 
     #[sqlx::test]
     async fn test_get_all_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
@@ -38,16 +37,15 @@ mod tests {
             .run(&pool)
             .await
             .unwrap();
-        // Add a few moons
         let data1 = MoonEntityDetails::new("Moon 1".to_string(), "Description 1".to_string());
         let moon1 = MoonEntity::new(0, Json(data1));
         let data2 = MoonEntityDetails::new("Moon 2".to_string(), "Description 2".to_string());
         let moon2 = MoonEntity::new(0, Json(data2));
-        add_to_storage(moon1, pool.clone()).await.unwrap();
-        add_to_storage(moon2, pool.clone()).await.unwrap();
+        add_moon(moon1, pool.clone()).await.unwrap();
+        add_moon(moon2, pool.clone()).await.unwrap();
 
         // Get all
-        let all_moons = get_all_from_storage(pool.clone()).await.unwrap();
+        let all_moons = get_all_moons(pool.clone()).await.unwrap();
         assert!(all_moons.len() >= 2);
         Ok(())
     }

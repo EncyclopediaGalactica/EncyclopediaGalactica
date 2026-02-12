@@ -2,7 +2,7 @@ use anyhow::Context;
 use log::debug;
 use sqlx::PgPool;
 
-pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Result<()> {
+pub async fn delete_moon_by_id(id: i64, db_connection: PgPool) -> anyhow::Result<()> {
     let _result = sqlx::query(
         r#"
         DELETE 
@@ -22,13 +22,13 @@ pub async fn delete_from_storage(id: i64, db_connection: PgPool) -> anyhow::Resu
 
 #[cfg(test)]
 mod tests {
-    use crate::moons::MoonEntity;
-    use crate::moons::MoonEntityDetails;
-    use crate::moons::add::storage::add_to_storage;
-
-    use super::*;
+    use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
+    use gal_nav_domain_objects::moon::entities::moon_entity_details::MoonEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
+
+    use crate::moon::add::add_moon;
+    use crate::moon::delete_by_id::delete_moon_by_id;
 
     #[sqlx::test]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
@@ -36,16 +36,13 @@ mod tests {
             .run(&pool)
             .await
             .unwrap();
-        // First, add a moon to have an existing ID
         let data =
             MoonEntityDetails::new("Moon to Delete".to_string(), "Will be deleted".to_string());
         let add_input = MoonEntity::new(0, Json(data));
-        let added = add_to_storage(add_input, pool.clone()).await.unwrap();
+        let added = add_moon(add_input, pool.clone()).await.unwrap();
 
-        // Now delete it
-        delete_from_storage(added.id, pool.clone()).await.unwrap();
+        delete_moon_by_id(added.id(), pool.clone()).await.unwrap();
 
-        // Verify it's gone by trying to get it (but since no get_by_id, just assume success)
         Ok(())
     }
 }

@@ -1,16 +1,7 @@
 use serde::{Deserialize, Serialize};
 
-use crate::moons::MoonEntity;
+use crate::moon::entities::moon_entity::MoonEntity;
 
-/// Input data structure for updating a moon
-#[derive(Debug, Deserialize, Serialize, Clone)]
-pub struct UpdateMoonScenarioInput {
-    pub id: i64,
-    pub name: String,
-    pub description: String,
-}
-
-/// Result data structure for updating a moon
 #[derive(Debug, Deserialize, Serialize, Clone)]
 pub struct UpdateMoonScenarioResult {
     pub id: i64,
@@ -28,8 +19,8 @@ impl UpdateMoonScenarioResult {
     }
 
     pub fn from_entity(entity: MoonEntity) -> Self {
-        let name = entity.details.name.to_string();
-        let description = entity.details.description.to_string();
+        let name = entity.details().name().to_string();
+        let description = entity.details().description().to_string();
         Self {
             id: entity.id(),
             name,
@@ -42,7 +33,7 @@ impl UpdateMoonScenarioResult {
 mod tests {
     use sqlx::types::Json;
 
-    use crate::moons::MoonEntityDetails;
+    use crate::moon::entities::moon_entity_details::MoonEntityDetails;
 
     use super::*;
 
