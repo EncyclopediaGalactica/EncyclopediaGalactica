@@ -1,0 +1,11 @@
+pub mod add_star_system_scenario_input;
+pub mod add_star_system_scenario_result;
+pub mod delete_star_system_scenario_input;
+pub mod get_all_star_systems_scenario_input;
+pub mod get_all_star_systems_scenario_result;
+pub mod get_star_system_coordinates_by_name_scenario_input;
+pub mod get_star_system_coordinates_by_name_scenario_result;
+pub mod two_star_systems_distance_scenario_input;
+pub mod two_star_systems_distance_scenario_result;
+pub mod update_star_system_scenario_input;
+pub mod update_star_system_scenario_result;

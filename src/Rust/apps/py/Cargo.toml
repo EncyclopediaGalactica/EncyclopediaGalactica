@@ -1,0 +1,17 @@
+[package]
+name = "py"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "py"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { workspace = true }
+once_cell = { workspace = true }
+tokio = { workspace = true }
+gal-nav-api = { version = "0.1.0", path = "../../domains/galnav/api/" }
+
+[build-dependencies]
+pyo3-build-config = "0.28.0"
