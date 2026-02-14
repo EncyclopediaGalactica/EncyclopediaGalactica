@@ -5,11 +5,11 @@ members = [
   "crates/eg-qt/",
   "crates/eg-config/",
 
-  "crates/galnav-api/",
-  "crates/galnav-astro/",
-  "crates/galnav-cli/",
-  "crates/galnav-objects/",
-  "crates/galnav-storage/",
+  "crates/galsim-api/",
+  "crates/galsim-astro/",
+  "crates/galsim-cli/",
+  "crates/galsim-objects/",
+  "crates/galsim-storage/",
 ]
 
 [workspace.dependencies]

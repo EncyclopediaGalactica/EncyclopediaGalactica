@@ -740,7 +740,7 @@ dependencies = [
  "dotenvy_macro",
  "eg_config",
  "env_logger",
- "galnav_cli",
+ "galsim_cli",
  "log",
  "serde",
  "serde_json",
@@ -993,7 +993,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "galnav-api"
+name = "galsim-api"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1004,9 +1004,9 @@ dependencies = [
  "dotenvy",
  "dotenvy_macro",
  "env_logger",
- "galnav_astro",
- "galnav_objects",
- "galnav_storage",
+ "galsim_astro",
+ "galsim_objects",
+ "galsim_storage",
  "glob",
  "log",
  "rand 0.10.0",
@@ -1022,33 +1022,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "galnav_astro"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "clap",
- "config",
- "derive_more",
- "dotenvy",
- "dotenvy_macro",
- "env_logger",
- "glob",
- "log",
- "rand 0.10.0",
- "regex",
- "serde",
- "serde_json",
- "sqlx",
- "tabled",
- "thiserror 2.0.18",
- "tokio",
- "toml 1.0.1+spec-1.1.0",
- "walkdir",
-]
-
-[[package]]
-name = "galnav_cli"
+name = "galsim_astro"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1074,18 +1048,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "galnav_objects"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "serde",
- "serde_json",
- "sqlx",
- "thiserror 2.0.18",
-]
-
-[[package]]
-name = "galnav_storage"
+name = "galsim_cli"
 version = "0.1.0"
 dependencies = [
  "anyhow",
@@ -1096,7 +1059,43 @@ dependencies = [
  "dotenvy",
  "dotenvy_macro",
  "env_logger",
- "galnav_objects",
+ "glob",
+ "log",
+ "rand 0.10.0",
+ "regex",
+ "serde",
+ "serde_json",
+ "tabled",
+ "thiserror 2.0.18",
+ "tokio",
+ "toml 1.0.1+spec-1.1.0",
+ "walkdir",
+]
+
+[[package]]
+name = "galsim_objects"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "thiserror 2.0.18",
+]
+
+[[package]]
+name = "galsim_storage"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "clap",
+ "config",
+ "derive_more",
+ "dotenvy",
+ "dotenvy_macro",
+ "env_logger",
+ "galsim_objects",
  "glob",
  "log",
  "rand 0.10.0",

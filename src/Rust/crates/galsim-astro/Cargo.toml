@@ -1,10 +1,9 @@
 [package]
-authors = ["Andras Csanyi"]
-name = "eg_cli"
+name = "galsim_astro"
 version = "0.1.0"
 edition = "2024"
 description = """
-The main CLI crate for Encyclopedia Galactica
+The astrodynamics library for Encyclopedia Galactica Galaxy Navigator
 """
 
 [dependencies]
@@ -18,10 +17,13 @@ clap = { workspace = true }
 serde = { workspace = true }
 serde_json = { workspace = true }
 toml = { workspace = true }
+walkdir = { workspace = true }
+glob = { workspace = true }
 tabled = { workspace = true }
+rand = { workspace = true }
+chrono = { workspace = true }
+regex = { workspace = true }
 anyhow = { workspace = true }
 thiserror = { workspace = true }
 derive_more = { workspace = true }
-
-galsim_cli = { version = "0.1.0", path = "./../galsim-cli/" }
-eg_config = { version = "0.1.0", path = "./../eg-config/" }
+sqlx = { workspace = true }
