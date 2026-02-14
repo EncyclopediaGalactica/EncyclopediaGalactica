@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
+use galnav_objects::moon::entities::moon_entity::MoonEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -25,8 +25,8 @@ pub async fn add_moon(input: MoonEntity, db_connection: PgPool) -> anyhow::Resul
 
 #[cfg(test)]
 mod tests {
-    use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
-    use gal_nav_domain_objects::moon::entities::moon_entity_details::MoonEntityDetails;
+    use galnav_objects::moon::entities::moon_entity::MoonEntity;
+    use galnav_objects::moon::entities::moon_entity_details::MoonEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

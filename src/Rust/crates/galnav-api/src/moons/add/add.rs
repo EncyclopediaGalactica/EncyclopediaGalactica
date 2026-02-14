@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
-use gal_nav_domain_objects::moon::scenario_entities::add_moon_scenario_result::AddMoonScenarioResult;
+use galnav_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
+use galnav_objects::moon::scenario_entities::add_moon_scenario_result::AddMoonScenarioResult;
 use gal_nav_repository::moon::add::add_moon;
 use sqlx::PgPool;
 

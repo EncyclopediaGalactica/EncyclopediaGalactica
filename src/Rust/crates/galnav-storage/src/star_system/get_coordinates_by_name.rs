@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
+use galnav_objects::star_system::entities::star_system::StarSystemEntity;
 use sqlx::PgPool;
 
 pub async fn get_from_storage(

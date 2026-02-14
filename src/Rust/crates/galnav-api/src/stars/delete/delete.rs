@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
+use galnav_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
 use gal_nav_repository::star::delete_by_id::delete_star_by_id;
 use sqlx::PgPool;
 

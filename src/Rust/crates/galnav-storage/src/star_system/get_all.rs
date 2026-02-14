@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
+use galnav_objects::star_system::entities::star_system::StarSystemEntity;
 use sqlx::PgPool;
 
 pub async fn get_all_star_systems(db_connection: PgPool) -> anyhow::Result<Vec<StarSystemEntity>> {
@@ -24,7 +24,7 @@ mod tests {
     use crate::star_system::add::add_star_system;
 
     use super::*;
-    use gal_nav_domain_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
+    use galnav_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

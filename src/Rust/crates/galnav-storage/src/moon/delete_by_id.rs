@@ -22,8 +22,8 @@ pub async fn delete_moon_by_id(id: i64, db_connection: PgPool) -> anyhow::Result
 
 #[cfg(test)]
 mod tests {
-    use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
-    use gal_nav_domain_objects::moon::entities::moon_entity_details::MoonEntityDetails;
+    use galnav_objects::moon::entities::moon_entity::MoonEntity;
+    use galnav_objects::moon::entities::moon_entity_details::MoonEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
-use gal_nav_domain_objects::star::scenario_entities::add_star_scenario_result::AddStarScenarioResult;
+use galnav_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
+use galnav_objects::star::scenario_entities::add_star_scenario_result::AddStarScenarioResult;
 use gal_nav_repository::star::add::add_star;
 use sqlx::PgPool;
 

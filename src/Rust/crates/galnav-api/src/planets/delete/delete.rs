@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
+use galnav_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 use gal_nav_repository::planet::delete_by_id::delete_by_id;
 use sqlx::PgPool;
 

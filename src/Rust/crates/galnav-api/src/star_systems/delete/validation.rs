@@ -1,5 +1,5 @@
 use anyhow::ensure;
-use gal_nav_domain_objects::star_system::scenario_entities::delete_star_system_scenario_input::DeleteStarSystemScenarioInput;
+use galnav_objects::star_system::scenario_entities::delete_star_system_scenario_input::DeleteStarSystemScenarioInput;
 
 const INVALID_ID_ERROR: &str = "The star system ID must be greater than 0.";
 

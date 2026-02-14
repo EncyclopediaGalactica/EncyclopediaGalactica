@@ -1,6 +1,6 @@
 use anyhow::{Context, Result};
-use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
-use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
+use galnav_objects::planet::entities::planet_entity::PlanetEntity;
+use galnav_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
 use log::debug;
 use sqlx::{PgPool, Row, types::Json};
 

@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::moon::entities::moon_entity::MoonEntity;
+use galnav_objects::moon::entities::moon_entity::MoonEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -27,7 +27,7 @@ mod tests {
     use crate::moon::add::add_moon;
 
     use super::*;
-    use gal_nav_domain_objects::moon::entities::moon_entity_details::MoonEntityDetails;
+    use galnav_objects::moon::entities::moon_entity_details::MoonEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

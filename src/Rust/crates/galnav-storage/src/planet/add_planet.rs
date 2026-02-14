@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
+use galnav_objects::planet::entities::planet_entity::PlanetEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -28,7 +28,7 @@ pub async fn add_planet(
 mod tests {
 
     use super::*;
-    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
+    use galnav_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

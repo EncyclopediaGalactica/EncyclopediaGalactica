@@ -1,7 +1,7 @@
 use gal_nav_api::star_systems::add::add::add_star_system_scenario;
 use gal_nav_api::star_systems::update::update::update_star_system_scenario;
-use gal_nav_domain_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
-use gal_nav_domain_objects::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
+use galnav_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
+use galnav_objects::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 

@@ -30,8 +30,8 @@ mod tests {
     use crate::star_system::get_all::get_all_star_systems;
 
     use super::*;
-    use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
-    use gal_nav_domain_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
+    use galnav_objects::star_system::entities::star_system::StarSystemEntity;
+    use galnav_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

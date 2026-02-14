@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
+use galnav_objects::star::scenario_entities::delete_star_scenario_input::DeleteStarScenarioInput;
 
 pub fn validate_delete_star_scenario_input(input: &DeleteStarScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {

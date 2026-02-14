@@ -1,5 +1,5 @@
 use anyhow::{Context, Result};
-use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
+use galnav_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 use log::debug;
 use sqlx::PgPool;
 
@@ -28,8 +28,8 @@ mod tests {
     use crate::planet::get_all::get_all_planets;
 
     use super::*;
-    use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
-    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
+    use galnav_objects::planet::entities::planet_entity::PlanetEntity;
+    use galnav_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

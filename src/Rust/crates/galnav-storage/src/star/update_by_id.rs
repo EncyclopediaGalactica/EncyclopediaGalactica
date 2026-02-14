@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::star::entities::star_entity::StarEntity;
+use galnav_objects::star::entities::star_entity::StarEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -37,7 +37,7 @@ mod tests {
     use crate::star::add::add_star;
 
     use super::*;
-    use gal_nav_domain_objects::star::entities::star_entity_details::StarEntityDetails;
+    use galnav_objects::star::entities::star_entity_details::StarEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

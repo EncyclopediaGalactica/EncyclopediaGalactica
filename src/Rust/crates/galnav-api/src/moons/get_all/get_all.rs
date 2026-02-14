@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::moon::scenario_entities::get_all_moons_scenario_input::GetAllMoonsScenarioInput;
-use gal_nav_domain_objects::moon::scenario_entities::get_all_moons_scenario_result::GetAllMoonsScenarioResult;
+use galnav_objects::moon::scenario_entities::get_all_moons_scenario_input::GetAllMoonsScenarioInput;
+use galnav_objects::moon::scenario_entities::get_all_moons_scenario_result::GetAllMoonsScenarioResult;
 use gal_nav_repository::moon::get_all::get_all_moons;
 use sqlx::PgPool;
 

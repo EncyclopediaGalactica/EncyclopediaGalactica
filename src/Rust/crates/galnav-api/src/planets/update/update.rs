@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::planet::scenario_entities::update_planet_scenario_input::UpdatePlanetScenarioInput;
-use gal_nav_domain_objects::planet::scenario_entities::update_planet_scenario_result::UpdatePlanetScenarioResult;
+use galnav_objects::planet::scenario_entities::update_planet_scenario_input::UpdatePlanetScenarioInput;
+use galnav_objects::planet::scenario_entities::update_planet_scenario_result::UpdatePlanetScenarioResult;
 use gal_nav_repository::planet::update_by_id::update_by_id;
 use sqlx::PgPool;
 

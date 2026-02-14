@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
+use galnav_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
 
 pub fn validate_delete_moon_scenario_input(input: &DeleteMoonScenarioInput) -> anyhow::Result<()> {
     if input.id <= 0 {

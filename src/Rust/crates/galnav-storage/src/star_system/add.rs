@@ -1,5 +1,5 @@
 use anyhow::Context;
-use gal_nav_domain_objects::star_system::entities::star_system::StarSystemEntity;
+use galnav_objects::star_system::entities::star_system::StarSystemEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -37,7 +37,7 @@ pub async fn add_star_system(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use gal_nav_domain_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
+    use galnav_objects::star_system::entities::star_system_details::StarSystemEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::star::scenario_entities::get_all_scenario_input::GetAllStarsScenarioInput;
-use gal_nav_domain_objects::star::scenario_entities::get_all_scenario_result::GetAllStarsScenarioResult;
+use galnav_objects::star::scenario_entities::get_all_scenario_input::GetAllStarsScenarioInput;
+use galnav_objects::star::scenario_entities::get_all_scenario_result::GetAllStarsScenarioResult;
 use gal_nav_repository::star::get_all::get_all_stars;
 use sqlx::PgPool;
 

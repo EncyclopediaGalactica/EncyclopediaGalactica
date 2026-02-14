@@ -1,5 +1,5 @@
 use anyhow::ensure;
-use gal_nav_domain_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
+use galnav_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
 
 const NAME_IS_EMPTY: &str = "The star system name cannot be empty";
 

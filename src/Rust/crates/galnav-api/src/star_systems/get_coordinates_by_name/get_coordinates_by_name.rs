@@ -1,5 +1,5 @@
-use gal_nav_domain_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
-use gal_nav_domain_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_result::StarSystemCoordinatesByNameScenarioResult;
+use galnav_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
+use galnav_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_result::StarSystemCoordinatesByNameScenarioResult;
 
 use super::validation::validate_input;
 

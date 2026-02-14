@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
+use galnav_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 
 pub fn validate_delete_planet_scenario_input(
     input: &DeletePlanetScenarioInput,

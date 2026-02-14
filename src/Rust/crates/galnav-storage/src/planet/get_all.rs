@@ -1,5 +1,5 @@
 use anyhow::{Context, Result};
-use gal_nav_domain_objects::planet::entities::planet_entity::PlanetEntity;
+use galnav_objects::planet::entities::planet_entity::PlanetEntity;
 use log::debug;
 use sqlx::PgPool;
 
@@ -28,7 +28,7 @@ mod tests {
     use crate::planet::add_planet::add_planet;
 
     use super::*;
-    use gal_nav_domain_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
+    use galnav_objects::planet::entities::planet_entity_details::PlanetEntityDetails;
     use sqlx::PgPool;
     use sqlx::types::Json;
 

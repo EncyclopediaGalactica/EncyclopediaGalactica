@@ -1,4 +1,4 @@
-use gal_nav_domain_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
+use galnav_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
 use gal_nav_repository::moon::delete_by_id::delete_moon_by_id;
 use sqlx::PgPool;
 
