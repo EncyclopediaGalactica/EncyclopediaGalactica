@@ -1,0 +1,36 @@
+[package]
+authors = ["Andras Csanyi"]
+name = "eg_qt"
+version = "0.1.0"
+edition = "2024"
+description = """
+A QML application for Encyclopedia Galactica
+"""
+
+[dependencies]
+cxx = { workspace = true }
+cxx-qt = { workspace = true }
+cxx-qt-lib = { workspace = true }
+
+tokio = { workspace = true }
+dotenvy = { workspace = true }
+dotenvy_macro = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
+config = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+walkdir = { workspace = true }
+glob = { workspace = true }
+tabled = { workspace = true }
+rand = { workspace = true }
+chrono = { workspace = true }
+regex = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+derive_more = { workspace = true }
+
+[build-dependencies]
+cxx-qt-build = { version = "0.8", features = ["link_qt_object_files"] }

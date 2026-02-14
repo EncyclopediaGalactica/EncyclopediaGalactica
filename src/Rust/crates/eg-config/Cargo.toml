@@ -1,0 +1,10 @@
+[package]
+name = "eg_config"
+version = "0.1.0"
+edition = "2024"
+description = """
+Configuration structs for the Encyclopedia Galactica project
+"""
+
+[dependencies]
+serde = { workspace = true }

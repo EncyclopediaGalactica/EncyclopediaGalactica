@@ -1,0 +1,27 @@
+[package]
+authors = ["Andras Csanyi"]
+name = "eg_cli"
+version = "0.1.0"
+edition = "2024"
+description = """
+The main CLI crate for Encyclopedia Galactica
+"""
+
+[dependencies]
+tokio = { workspace = true }
+dotenvy = { workspace = true }
+dotenvy_macro = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
+config = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+tabled = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+derive_more = { workspace = true }
+
+galnav_cli = { version = "0.1.0", path = "./../galnav-cli/" }
+eg_config = { version = "0.1.0", path = "./../eg-config/" }
