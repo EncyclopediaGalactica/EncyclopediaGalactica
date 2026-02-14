@@ -43,7 +43,7 @@ mod tests {
 
     #[sqlx::test]
     async fn test_add_to_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./../../../migrations")
+        sqlx::migrate!("./migrations")
             .run(&pool)
             .await
             .unwrap();

@@ -7,7 +7,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_update_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../../../migrations")
+    sqlx::migrate!("./migrations")
         .run(&db_pool)
         .await
         .unwrap();
@@ -44,7 +44,7 @@ async fn test_update_star_system_scenario_success(db_pool: PgPool) -> Result<()>
 
 #[sqlx::test]
 async fn test_update_star_system_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../../../migrations")
+    sqlx::migrate!("./migrations")
         .run(&db_pool)
         .await
         .unwrap();

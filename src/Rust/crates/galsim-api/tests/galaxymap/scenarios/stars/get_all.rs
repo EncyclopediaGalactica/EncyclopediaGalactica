@@ -7,7 +7,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_stars_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../../../migrations")
+    sqlx::migrate!("./migrations")
         .run(&db_pool)
         .await
         .unwrap();

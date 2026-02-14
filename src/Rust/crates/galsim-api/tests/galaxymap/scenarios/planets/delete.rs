@@ -6,7 +6,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./../../../migrations")
+    sqlx::migrate!("./migrations")
         .run(&pool)
         .await
         .unwrap();
