@@ -1,6 +1,6 @@
 use galnav_objects::star::scenario_entities::update_star_scenario_input::UpdateStarScenarioInput;
 use galnav_objects::star::scenario_entities::update_star_scenario_result::UpdateStarScenarioResult;
-use gal_nav_repository::star::update_by_id::update_star_by_id;
+use galnav_storage::star::update_by_id::update_star_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;

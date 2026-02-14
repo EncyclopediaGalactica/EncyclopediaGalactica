@@ -1,7 +1,7 @@
 use galnav_objects::star_system::entities::star_system::StarSystemEntity;
 use galnav_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
 use galnav_objects::star_system::scenario_entities::add_star_system_scenario_result::AddStarSystemScenarioResult;
-use gal_nav_repository::star_system::add::add_star_system;
+use galnav_storage::star_system::add::add_star_system;
 use sqlx::PgPool;
 
 use crate::get_connection;

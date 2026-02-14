@@ -1,5 +1,5 @@
 use galnav_objects::moon::scenario_entities::delete_moon_scenario_input::DeleteMoonScenarioInput;
-use gal_nav_repository::moon::delete_by_id::delete_moon_by_id;
+use galnav_storage::moon::delete_by_id::delete_moon_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;

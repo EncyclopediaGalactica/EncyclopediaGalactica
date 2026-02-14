@@ -1,5 +1,5 @@
 use galnav_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
-use gal_nav_repository::planet::delete_by_id::delete_by_id;
+use galnav_storage::planet::delete_by_id::delete_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;

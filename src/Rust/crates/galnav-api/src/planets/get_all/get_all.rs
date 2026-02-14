@@ -1,5 +1,5 @@
 use galnav_objects::planet::scenario_entities::get_all_planets_scenario_result::GetAllPlanetsScenarioResult;
-use gal_nav_repository::planet::get_all::get_all_planets;
+use galnav_storage::planet::get_all::get_all_planets;
 use sqlx::PgPool;
 
 use crate::get_connection;

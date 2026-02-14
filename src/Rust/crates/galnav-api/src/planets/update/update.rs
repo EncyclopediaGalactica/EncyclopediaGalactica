@@ -1,6 +1,6 @@
 use galnav_objects::planet::scenario_entities::update_planet_scenario_input::UpdatePlanetScenarioInput;
 use galnav_objects::planet::scenario_entities::update_planet_scenario_result::UpdatePlanetScenarioResult;
-use gal_nav_repository::planet::update_by_id::update_by_id;
+use galnav_storage::planet::update_by_id::update_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;

@@ -1,7 +1,7 @@
 use galnav_objects::star_system::entities::star_system::StarSystemEntity;
 use galnav_objects::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 use galnav_objects::star_system::scenario_entities::update_star_system_scenario_result::UpdateStarSystemScenarioResult;
-use gal_nav_repository::star_system::update_by_id::update_by_id;
+use galnav_storage::star_system::update_by_id::update_by_id;
 use sqlx::PgPool;
 
 use super::validation::validate_update_star_system_scenario_input;

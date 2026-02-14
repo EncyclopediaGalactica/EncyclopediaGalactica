@@ -1,5 +1,5 @@
 use galnav_objects::star_system::scenario_entities::get_all_star_systems_scenario_result::GetAllStarSystemsScenarioResult;
-use gal_nav_repository::star_system::get_all::get_all_star_systems;
+use galnav_storage::star_system::get_all::get_all_star_systems;
 use sqlx::PgPool;
 
 use crate::get_connection;

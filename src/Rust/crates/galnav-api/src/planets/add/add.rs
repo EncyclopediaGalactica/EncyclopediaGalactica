@@ -1,6 +1,6 @@
 use galnav_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
 use galnav_objects::planet::scenario_entities::add_planet_scenario_result::AddPlanetScenarioResult;
-use gal_nav_repository::planet::add_planet::add_planet;
+use galnav_storage::planet::add_planet::add_planet;
 use sqlx::PgPool;
 
 use crate::get_connection;

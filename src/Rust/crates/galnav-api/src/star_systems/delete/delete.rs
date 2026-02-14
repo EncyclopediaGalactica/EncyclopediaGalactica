@@ -1,5 +1,5 @@
 use galnav_objects::star_system::scenario_entities::delete_star_system_scenario_input::DeleteStarSystemScenarioInput;
-use gal_nav_repository::star_system::delete_by_id::delete_star_system_by_id;
+use galnav_storage::star_system::delete_by_id::delete_star_system_by_id;
 use sqlx::PgPool;
 
 use crate::get_connection;
