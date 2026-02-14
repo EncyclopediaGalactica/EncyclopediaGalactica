@@ -1,5 +1,5 @@
 use anyhow::ensure;
-use gal_nav_algorithms::distance_by_coordinates::calculate_distance_by_coordinates;
+use galnav_astro::distance_by_coordinates::calculate_distance_by_coordinates;
 use galnav_objects::star_system::scenario_entities::get_star_system_coordinates_by_name_scenario_input::StarSystemCoordinatesByNameScenarioInput;
 use galnav_objects::star_system::scenario_entities::two_star_systems_distance_scenario_input::TwoStarSystemsDistanceScenarioInput;
 use galnav_objects::star_system::scenario_entities::two_star_systems_distance_scenario_result::TwoStarSystemsDistanceScenarioResult;
