@@ -1,11 +1,11 @@
-use gal_nav_api::moons::add::add::add_moon_scenario;
+use galsim_api::moons::add::add::add_moon_scenario;
 use galsim_objects::moon::scenario_entities::add_moon_scenario_input::AddMoonScenarioInput;
 use sqlx::PgPool;
 use sqlx::Result;
 
 #[sqlx::test]
 async fn test_add_moon_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations/")
         .run(&db_pool)
         .await
         .unwrap();
@@ -25,7 +25,7 @@ async fn test_add_moon_scenario_success(db_pool: PgPool) -> Result<()> {
 
 #[sqlx::test]
 async fn test_add_moon_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&db_pool)
         .await
         .unwrap();

@@ -1,12 +1,12 @@
-use gal_nav_api::planets::add::add::add_planet_scenario;
-use gal_nav_api::planets::delete::delete::delete_planet_scenario;
+use galsim_api::planets::add::add::add_planet_scenario;
+use galsim_api::planets::delete::delete::delete_planet_scenario;
 use galsim_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
 use galsim_objects::planet::scenario_entities::delete_planet_scenario_input::DeletePlanetScenarioInput;
 use sqlx::Result;
 
 #[sqlx::test]
 async fn test_delete_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&pool)
         .await
         .unwrap();

@@ -1,11 +1,11 @@
-use gal_nav_api::planets::add::add::add_planet_scenario;
-use gal_nav_api::planets::get_all::get_all::get_all_planets_scenario;
+use galsim_api::planets::add::add::add_planet_scenario;
+use galsim_api::planets::get_all::get_all::get_all_planets_scenario;
 use galsim_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
 use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&pool)
         .await
         .unwrap();

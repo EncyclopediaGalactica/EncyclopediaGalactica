@@ -1,5 +1,5 @@
-use gal_nav_api::star_systems::add::add::add_star_system_scenario;
-use gal_nav_api::star_systems::update::update::update_star_system_scenario;
+use galsim_api::star_systems::add::add::add_star_system_scenario;
+use galsim_api::star_systems::update::update::update_star_system_scenario;
 use galsim_objects::star_system::scenario_entities::add_star_system_scenario_input::AddStarSystemScenarioInput;
 use galsim_objects::star_system::scenario_entities::update_star_system_scenario_input::UpdateStarSystemScenarioInput;
 use sqlx::PgPool;
@@ -7,7 +7,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_update_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&db_pool)
         .await
         .unwrap();
@@ -44,7 +44,7 @@ async fn test_update_star_system_scenario_success(db_pool: PgPool) -> Result<()>
 
 #[sqlx::test]
 async fn test_update_star_system_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&db_pool)
         .await
         .unwrap();

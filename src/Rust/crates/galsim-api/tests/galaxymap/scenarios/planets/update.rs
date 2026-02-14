@@ -1,12 +1,12 @@
-use gal_nav_api::planets::add::add::add_planet_scenario;
-use gal_nav_api::planets::update::update::update_planet_scenario;
+use galsim_api::planets::add::add::add_planet_scenario;
+use galsim_api::planets::update::update::update_planet_scenario;
 use galsim_objects::planet::scenario_entities::add_planet_scenario_input::AddPlanetScenarioInput;
 use galsim_objects::planet::scenario_entities::update_planet_scenario_input::UpdatePlanetScenarioInput;
 use sqlx::Result;
 
 #[sqlx::test]
 async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&pool)
         .await
         .unwrap();
@@ -38,7 +38,7 @@ async fn test_update_planet_scenario_success(pool: sqlx::PgPool) -> Result<()> {
 
 #[sqlx::test]
 async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&pool)
         .await
         .unwrap();
@@ -56,7 +56,7 @@ async fn test_update_planet_scenario_invalid_id(pool: sqlx::PgPool) -> Result<()
 
 #[sqlx::test]
 async fn test_update_planet_scenario_invalid_input_short_name(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&pool)
         .await
         .unwrap();

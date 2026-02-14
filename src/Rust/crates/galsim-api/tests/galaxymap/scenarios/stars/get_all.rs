@@ -1,5 +1,5 @@
-use gal_nav_api::stars::add::add::add_star_scenario;
-use gal_nav_api::stars::get_all::get_all::get_all_stars_scenario;
+use galsim_api::stars::add::add::add_star_scenario;
+use galsim_api::stars::get_all::get_all::get_all_stars_scenario;
 use galsim_objects::star::scenario_entities::add_star_scenario_input::AddStarScenarioInput;
 use galsim_objects::star::scenario_entities::get_all_scenario_input::GetAllStarsScenarioInput;
 use sqlx::PgPool;
@@ -7,7 +7,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_stars_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./migrations")
+    sqlx::migrate!("./../galsim-storage/migrations")
         .run(&db_pool)
         .await
         .unwrap();
