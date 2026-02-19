@@ -32,7 +32,10 @@ mod tests {
 
     #[sqlx::test]
     async fn test_delete_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations").run(&pool).await.unwrap();
+        sqlx::migrate!("./../galsim-migrations")
+            .run(&pool)
+            .await
+            .unwrap();
         let data =
             MoonEntityDetails::new("Moon to Delete".to_string(), "Will be deleted".to_string());
         let add_input = MoonEntity::new(0, Json(data));

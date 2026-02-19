@@ -51,7 +51,7 @@ mod tests {
 
     #[sqlx::test]
     async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations")
+        sqlx::migrate!("./../galsim-migrations")
             .run(&pool)
             .await
             .unwrap();

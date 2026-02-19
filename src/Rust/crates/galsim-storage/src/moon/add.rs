@@ -34,7 +34,10 @@ mod tests {
 
     #[sqlx::test]
     async fn test_add_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations").run(&pool).await.unwrap();
+        sqlx::migrate!("./../galsim-migrations")
+            .run(&pool)
+            .await
+            .unwrap();
         // Add a moon to test
         let data = MoonEntityDetails::new("Test Moon".to_string(), "Test Description".to_string());
         let add_input = MoonEntity::new(0, Json(data));

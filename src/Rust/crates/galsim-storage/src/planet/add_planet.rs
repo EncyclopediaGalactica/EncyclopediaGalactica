@@ -34,7 +34,7 @@ mod tests {
 
     #[sqlx::test]
     async fn test_add_to_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations").run(&pool).await.unwrap();
+        sqlx::migrate!("./../galsim-migrations").run(&pool).await.unwrap();
         // First, add a planet
         let details = PlanetEntityDetails::new(
             "Original Planet".to_string(),

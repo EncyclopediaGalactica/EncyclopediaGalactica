@@ -34,7 +34,7 @@ mod tests {
 
     #[sqlx::test]
     async fn test_get_all_from_storage_returns_correct_count(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations")
+        sqlx::migrate!("./../galsim-migrations")
             .run(&pool)
             .await
             .unwrap();

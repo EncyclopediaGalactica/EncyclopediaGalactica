@@ -7,7 +7,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_update_star_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../galsim-storage/migrations")
+    sqlx::migrate!("./../galsim-migrations")
         .run(&db_pool)
         .await
         .unwrap();
@@ -37,7 +37,7 @@ async fn test_update_star_scenario_success(db_pool: PgPool) -> Result<()> {
 
 #[sqlx::test]
 async fn test_update_star_scenario_invalid_input(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../galsim-storage/migrations")
+    sqlx::migrate!("./../galsim-migrations")
         .run(&db_pool)
         .await
         .unwrap();

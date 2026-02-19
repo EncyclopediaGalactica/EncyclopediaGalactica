@@ -5,7 +5,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_get_all_planets_scenario_success(pool: sqlx::PgPool) -> Result<()> {
-    sqlx::migrate!("./../galsim-storage/migrations")
+    sqlx::migrate!("./../galsim-migrations")
         .run(&pool)
         .await
         .unwrap();
