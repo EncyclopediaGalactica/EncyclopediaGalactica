@@ -1027,24 +1027,12 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "chrono",
- "clap",
  "config",
  "derive_more",
- "dotenvy",
- "dotenvy_macro",
  "env_logger",
- "glob",
  "log",
- "rand 0.10.0",
- "regex",
- "serde",
- "serde_json",
- "sqlx",
- "tabled",
  "thiserror 2.0.18",
  "tokio",
- "toml 1.0.1+spec-1.1.0",
- "walkdir",
 ]
 
 [[package]]
