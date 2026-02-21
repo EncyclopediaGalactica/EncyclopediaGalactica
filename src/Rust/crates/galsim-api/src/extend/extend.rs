@@ -4,39 +4,39 @@ use crate::star_systems::get_coordinates_by_name::get_coordinates_by_name::get_s
 
 use super::types::ExtendGalaxyByAStarSystemInRespectToAStarSystemInput;
 
-// Extend the given galaxy by a star system.
-// The viewpoint of the extend operation is the center of the given galaxy.
-// The "in respect to" means a single star system.
+// Extend the given galaxy by a star system. In other words, adding a new star system to the
+// galagxy. 
+// The unique in this method is its viewpoint. It is similar to a from spherical to cartesian
+// coordinate transformation, but has its own customisations. 
 //
-//  The parameters are in the x, y and d directions, but not all of the means coordinates.
-//  Defining a star system by coordinates would be a pain in the rear and would not help to build a
-//  galaxy map. Even though the coordinates are the ultimate position of a star system they do not
-//  show information in an explicit, human understandable way. The case here is the same as the
-//  orbital elements versus the coordinates of the orbit.
+// The viewpoint is set up as follows:
+// - the galactic center is behind us.
+// - from the galactic center, we look at the reference star system
+// - the coordinates we have to provide about the new star system are relative to the reference
 //
-//  In this endpoint we use the galaxy center and another star system as a reference.
-//  The galaxy center reference in coordination with the star system reference tells us whether the
-//  The star system reference and the angles tell us whether the new star system is left or right
-//  and up or down if we look at it from the galaxy center.
-//  The next parameter is the distance of the new star system from the reference star system.
-//  I selected this measure becayse this endpoint is about to build a galaxy map that fits for my
-//  imagination. My imagination is what is the distance between star systems and not the distance
-//  from the galaxy center. The latter is important but doesn't tell us anything. Moreover, it can
-//  be calculated.
+// The galactic coordinate system is where the galactic center is the origin. The position of the
+// x-y plane is defined by other properties of the galaxy. In case of the Milky Way, the inner
+// section has a wand and the x-y plane position is this.
+// However, when we define the new star system coordinates, we do a little bit differently. The
+// viewpoint (the galactic center is behind us) assumes that the x axis to the reference star
+// system is a straight line. But, in realisty the x - line of the reference star system is
+// parallel, so our reference view have an angle to this x-axis. At this point we ignore this. This
+// would make the calculations more complicated and would not make a difference. If needed, by
+// additional calculations the necessary corrections can be made.
 //
-// The meaning of the parameters from the galaxy center point of view is the following:
-// - 'direction angle':
-//   - farther and right is the 0 - 90 degrees
-//   - farther and left is the 90 - 180 degrees
-//   - closer and left is the 180 - 270 degrees
-//   - closer and right is the 270 - 360 degrees
-// - 'elevation angle':
-//   - farther and up is the 0 - 90 degrees
-//   - closer and up is the 90 - 180 degrees
-//   - closer and down is the 180 - 270 degrees
-//   - farther and down is the 270 - 360 degrees
-// - 'd' is distance from the "in respect to" star system
+// The following picture shows how this extending works:
+// ![adding a new star system to the galaxy](media/adding_new_star_system_using_a_single_reference.drawio.png)
 //
+// The coordinates of the new star system relative to the reference star system are:
+// - distance in light years - feel free to use up to 10 decimal places
+// - elevation - whether the new star system is above or below the horizon. Where the horizon is
+// defined by the reference star system x-y plane. Negative angle means below the horizon, while
+// positive angle means above the horizon. The range is -90 to 90, But the range can be -180 to
+// 180, but not recommended.
+// - azimuth - where the new star system is left or right from our point of view to the reference
+// star system. The negative angle means right, while the positive angle means left. The
+// measurement is clockwise. The range is -90 to 90, but -180 to 180 also works, but the latter is
+// not recommended.
 pub async fn extend_galaxy_by_a_star_system_in_respect_to_a_star_system(
     input: ExtendGalaxyByAStarSystemInRespectToAStarSystemInput,
 ) -> Result<ExtendGalaxyByAStarSystemInRespectToAStarSystemResult> {
