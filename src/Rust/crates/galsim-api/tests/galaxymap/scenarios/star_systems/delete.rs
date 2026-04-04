@@ -8,7 +8,7 @@ use sqlx::Result;
 
 #[sqlx::test]
 async fn test_delete_star_system_scenario_success(db_pool: PgPool) -> Result<()> {
-    sqlx::migrate!("./../galsim-storage/migrations")
+    sqlx::migrate!("./../galsim-migrations")
         .run(&db_pool)
         .await
         .unwrap();

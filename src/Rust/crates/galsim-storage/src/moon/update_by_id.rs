@@ -41,7 +41,7 @@ mod tests {
 
     #[sqlx::test]
     async fn test_update_in_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations").run(&pool).await.unwrap();
+        sqlx::migrate!("./../galsim-migrations").run(&pool).await.unwrap();
         // First, add a moon to have an existing ID
         let add_data = MoonEntityDetails::new(
             "Original Moon".to_string(),

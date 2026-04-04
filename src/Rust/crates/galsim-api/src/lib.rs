@@ -4,6 +4,7 @@ use sqlx::postgres::PgPoolOptions;
 use thiserror::Error;
 
 pub mod distance;
+pub mod extend;
 pub mod moons;
 pub mod planets;
 pub mod star_systems;

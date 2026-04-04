@@ -33,7 +33,10 @@ mod tests {
 
     #[sqlx::test]
     async fn test_get_all_from_storage_success(pool: PgPool) -> sqlx::Result<()> {
-        sqlx::migrate!("./migrations").run(&pool).await.unwrap();
+        sqlx::migrate!("./../galsim-migrations")
+            .run(&pool)
+            .await
+            .unwrap();
         let data1 = MoonEntityDetails::new("Moon 1".to_string(), "Description 1".to_string());
         let moon1 = MoonEntity::new(0, Json(data1));
         let data2 = MoonEntityDetails::new("Moon 2".to_string(), "Description 2".to_string());

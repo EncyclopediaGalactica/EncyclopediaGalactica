@@ -1,1 +1,1 @@
-pub mod distance_by_coordinates;
+pub mod coordinate_geometry;
